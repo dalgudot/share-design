@@ -5,6 +5,7 @@ section {
 }
 
 body {
+  font-family: "Spoqa Han Sans", sans-serif;
   padding: 0;
   margin: 0 16vw;
   background-color: #121212;
@@ -22,10 +23,10 @@ a {
 }
 
 h1 {
-  font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 700;
   font-size: 4vw;
   margin: 0;
+  padding: 0;
 }
 
 /* S of Spoqa Han Sans */
