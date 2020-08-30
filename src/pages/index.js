@@ -11,6 +11,7 @@ const Home = () => {
         <h1>UI/UX 디자이너</h1>
       </IntroText>
       <h1 className={styles.share__text}>UI/UX 디자인 경험을 공유합니다.</h1>
+      <Line />
     </>
   );
 };
@@ -33,4 +34,11 @@ const IntroText = styled.section`
     margin-right: 17px;
     margin-top: 4px;
   }
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: #eeeeee;
+  margin-top: 30vh;
 `;
