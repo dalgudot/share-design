@@ -23,14 +23,14 @@ const IntroText = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 90px;
+  margin-top: 12vh;
 
   span {
-    width: 25vw;
+    width: 22vw;
     height: 2px;
     background-color: #eeeeee;
     margin-left: 16px;
-    margin-right: 16px;
+    margin-right: 17px;
     margin-top: 4px;
   }
 `;
