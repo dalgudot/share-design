@@ -1,7 +1,19 @@
 html,
-body {
+section {
   padding: 0;
   margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0 16vw;
+  background-color: #121212;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
@@ -9,8 +21,11 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  font-family: "Spoqa Han Sans", sans-serif;
+  font-weight: 700;
+  font-size: 4vw;
+  margin: 0;
 }
 
 /* S of Spoqa Han Sans */
