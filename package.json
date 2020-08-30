@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    // "build": "next build",
-    "build": "next export",
-    // 호스팅옵션을 node 로 할시, next start를 사용하지만, static HTML 배포시에는 next export를 해야한다. 즉 vercel 배포시, 배포 명령어 커맨드를 next build 대신 next export를 해주어야한다.
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
