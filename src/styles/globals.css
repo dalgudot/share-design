@@ -29,6 +29,24 @@ h1 {
   padding: 0;
 }
 
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: 3.5vw;
+  }
+}
+
+@media all and (max-width: 450px) {
+  h1 {
+    font-size: 3.3vw;
+  }
+}
+
+@media all and (max-width: 414px) {
+  h1 {
+    font-size: 3vw;
+  }
+}
+
 /* S of Spoqa Han Sans */
 @font-face {
   font-family: Spoqa Han Sans;

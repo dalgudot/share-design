@@ -16,9 +16,9 @@ const Home = () => {
         <h1>UI/UX 디자이너</h1>
       </IntroText>
       <h1 className={styles.share__text}>UI/UX 디자인 경험을 공유합니다.</h1>
-      <Subject order="001" title="Dark UI" date="2020.08.29 -" />
       {/* 문자열만 "~"로 표기. 나머지는 {~} */}
-      <Subject order="002" title="Reponsive UI" date="2020.09.07 -" />
+      <Subject order="001" title="반응형 UI 디자인" date="2020.08.29 -" />
+      <Subject order="002" title="다크 모드" date="2020.09.07 -" />
       <Footer />
     </>
   );
