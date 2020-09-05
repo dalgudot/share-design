@@ -24,26 +24,29 @@ a {
 
 h1 {
   font-weight: 700;
-  font-size: 4vw;
   margin: 0;
   padding: 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 320px) {
+  body {
+    margin: 0 4.5vw;
+  }
+
   h1 {
-    font-size: 3.5vw;
+    font-size: 8vw;
   }
 }
 
-@media all and (max-width: 450px) {
+@media all and (min-width: 768px) {
   h1 {
-    font-size: 3.3vw;
+    font-size: 8vw;
   }
 }
 
-@media all and (max-width: 414px) {
+@media all and (min-width: 1024px) {
   h1 {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 }
 

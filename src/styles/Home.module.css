@@ -1,11 +1,12 @@
-.name__text {
-  letter-spacing: 8px;
+.text__name {
+  letter-spacing: 4px;
 }
 
-.share__text {
+.text__job {
+}
+
+.text__share {
   color: #757575;
-  margin-top: 8px;
-  width: 100%;
 }
 
 /* Next Ref */

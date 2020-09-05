@@ -11,12 +11,13 @@ const Home = () => {
         <title>KHK Portfolio</title>
       </Head>
       <IntroText>
-        <h1 className={styles.name__text}>김경환</h1>
-        <span></span>
-        <h1>UI/UX 디자이너</h1>
+        <h1 className={styles.text__name}>김경환</h1>
+        {/* <span></span> */}
+        <h1 className={styles.text__job}>UI/UX 디자이너</h1>
+        <h1 className={styles.text__share}>UI/UX 디자인 경험을 </h1>
+        <h1 className={styles.text__share}> 공유합니다.</h1>
+        {/* 문자열만 "~"로 표기. 나머지는 {~} */}
       </IntroText>
-      <h1 className={styles.share__text}>UI/UX 디자인 경험을 공유합니다.</h1>
-      {/* 문자열만 "~"로 표기. 나머지는 {~} */}
       <Subject order="001" title="반응형 UI 디자인" date="2020.08.29 -" />
       <Subject order="002" title="다크 모드" date="2020.09.07 -" />
       <Footer />
@@ -29,9 +30,6 @@ export default Home;
 const IntroText = styled.section`
   width: 100%;
   color: #eeeeee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 12vh;
 
   span {
