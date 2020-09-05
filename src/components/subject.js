@@ -23,16 +23,16 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 30vh;
+  margin-top: 28vh;
 
   p {
-    font-size: 1.2vw;
+    font-size: 2.5vw;
     font-weight: 300;
   }
 
   h1 {
     font-weight: 400;
-    margin-left: 0.7vw;
+    margin-left: 1.2vw;
   }
 `;
 

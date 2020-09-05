@@ -40,13 +40,13 @@ h1 {
 
 @media all and (min-width: 768px) {
   h1 {
-    font-size: 8vw;
+    font-size: 7.5vw;
   }
 }
 
 @media all and (min-width: 1024px) {
   h1 {
-    font-size: 4vw;
+    font-size: 7vw;
   }
 }
 

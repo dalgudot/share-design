@@ -19,7 +19,7 @@ const Home = () => {
         {/* 문자열만 "~"로 표기. 나머지는 {~} */}
       </IntroText>
       <Subject order="001" title="반응형 UI 디자인" date="2020.08.29 -" />
-      <Subject order="002" title="다크 모드" date="2020.09.07 -" />
+      <Subject order="002" title="다크 모드" date="2020.00.00 -" />
       <Footer />
     </>
   );
