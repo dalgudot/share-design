@@ -2,11 +2,15 @@
   letter-spacing: 4px;
 }
 
-.text__job {
-}
-
 .text__share {
   color: #757575;
+}
+
+.align__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 96px;
 }
 
 /* Next Ref */
