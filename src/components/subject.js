@@ -23,7 +23,7 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 28vh;
+  margin-top: 20vh;
 
   p {
     font-size: 2.5vw;

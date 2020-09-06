@@ -28,21 +28,8 @@ h1 {
 }
 
 button {
-  background-color: transparent;
-  border: solid 4px var(--white);
   outline: none;
-  font-family: "Spoqa Han Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--white);
-  padding: 8px 16px;
   cursor: pointer;
-}
-
-.button a:hover,
-.button a:focus,
-.button a:active {
-  text-decoration: underline;
 }
 
 @media all and (min-width: 320px) {
@@ -59,7 +46,13 @@ button {
 
 @media all and (min-width: 1024px) {
   h1 {
-    font-size: 5vw;
+    font-size: 4.5vw;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  h1 {
+    font-size: 4.2vw;
   }
 }
 

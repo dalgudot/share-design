@@ -25,7 +25,9 @@ const Home = () => {
       <div className={styles.align__center}>
         <Link href="/twenties">
           <a>
-            <button>20대를 남기다</button>
+            <button className={styles.button__neumorphism}>
+              20대를 남기다
+            </button>
           </a>
         </Link>
       </div>
