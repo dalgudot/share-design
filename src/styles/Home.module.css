@@ -17,8 +17,14 @@
   font-family: "Spoqa Han Sans", sans-serif;
   font-size: 2vw;
   font-weight: 400;
-  color: #55b9f3;
+  color: var(--white);
   padding: 16px 32px;
   background-color: transparent;
-  border: solid 2px #55b9f3;
+  border: solid 2px var(--white);
+}
+
+@media all and (min-width: 320px) {
+  .button__neumorphism {
+    font-size: 18px;
+  }
 }
