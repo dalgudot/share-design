@@ -14,5 +14,8 @@
     "react-dom": "16.13.1",
     "react-scroll-parallax": "^2.3.4",
     "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }

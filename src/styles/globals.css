@@ -12,25 +12,20 @@
   box-sizing: border-box;
 }
 
-/* html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-section {
-  padding: 0;
-  margin: 0;
-} */
-
 body {
   font-family: "Spoqa Han Sans", sans-serif;
   background-color: var(--dark-background-color);
   overflow-x: hidden;
   overflow-y: auto;
+  /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+  /* https://gofnrk.tistory.com/48 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 a {
@@ -46,6 +41,18 @@ ul,
 ol,
 li {
   list-style: none;
+}
+
+/* https://developer.mozilla.org/ko/docs/Web/CSS/pointer-events */
+img {
+  pointer-events: none;
+  /* https://www.it-swarm.dev/ko/html/js%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EA%B3%A0-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EB%93%9C%EB%9E%98%EA%B7%B8%ED%95%98%EA%B1%B0%EB%82%98-%EC%84%A0%ED%83%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8F%84%EB%A1%9D-%EB%B0%A9%EC%A7%80/1069068617/ */
+  /* user-drag: none; */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 /* S of Spoqa Han Sans */

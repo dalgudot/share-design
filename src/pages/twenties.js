@@ -3,7 +3,11 @@ import Link from "next/link";
 import styles from "../styles/Twenties.module.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import {
+  ParallaxProvider,
+  Parallax,
+  ParallaxBanner,
+} from "react-scroll-parallax";
 
 const Twenties = () => {
   return (
@@ -19,20 +23,19 @@ const Twenties = () => {
 
       {/* react-scroll-parallax */}
       {/* https://www.npmjs.com/package/react-scroll-parallax */}
-
-      <TextContainer>
-        <div>
-          <p>20살</p>
-        </div>
-      </TextContainer>
-
       <ParallaxProvider>
+        <TextContainer>
+          <div>
+            <p>20살</p>
+          </div>
+        </TextContainer>
+
         {/* [y1, y2] -> style="transform: translate3d(0%, y1 -> y2, 0px); */}
         {/* y의 변화 */}
         <Parallax y={[-40, 15]} tagOuter="figure">
           <TextContainer>
             <div>
-              <p>참 설렜다</p>
+              <p>설렜다</p>
             </div>
           </TextContainer>
         </Parallax>
@@ -63,9 +66,25 @@ const Twenties = () => {
           </TextContainer>
         </Parallax>
 
-        <Parallax y={[15, -40]} tagOuter="figure">
+        <ParallaxBanner
+          className="image__banner"
+          layers={[
+            {
+              image: "/images/a.jpg",
+              amount: 0.05,
+            },
+          ]}
+          style={{
+            height: "100vh",
+          }}
+        ></ParallaxBanner>
+
+        <Parallax y={[15, -10]} tagOuter="figure">
           <TextContainer>
-            <img src="/images/a.jpg" />
+            <div>
+              <p>이대로 내 20대가</p>
+              <p>끝나버리면 어떡하지?</p>
+            </div>
           </TextContainer>
         </Parallax>
       </ParallaxProvider>
@@ -78,7 +97,6 @@ export default Twenties;
 const TextContainer = styled.main`
   width: 100vw;
   height: 100vh;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,10 +114,5 @@ const TextContainer = styled.main`
     color: var(--white);
     font-size: 48px;
     font-weight: 100;
-  }
-
-  img {
-    width: 100vw;
-    height: 100vh;
   }
 `;

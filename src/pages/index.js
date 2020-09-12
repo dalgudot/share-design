@@ -13,16 +13,16 @@ const Home = () => {
         <link rel="icon" href="/kh.ico" />
       </Head>
 
-      <Container>
-        <IntroText>
-          <h1 className={styles.text__name}>김경환</h1>
-          <h1>UI/UX 디자이너</h1>
-          <h1 className={styles.text__share}>UI/UX 디자인 경험을</h1>
-          <h1 className={styles.text__share}>공유합니다.</h1>
-        </IntroText>
+      <IntroText>
+        <h1 className={styles.text__name}>김경환</h1>
+        <h1>UI/UX 디자이너</h1>
+        <h1 className={styles.text__share}>UI/UX 디자인 경험을</h1>
+        <h1 className={styles.text__share}>공유합니다.</h1>
+      </IntroText>
 
+      <Container>
         {/* 문자열만 "~"로 표기. 나머지는 {~} */}
-        <Subject order="001" title="반응형 UI 디자인" date="2020.09.06 - " />
+        <Subject order="001" title="20대를 남기다" date="2017.05.26 - " />
         <div className={styles.align__center}>
           <Link href="/twenties">
             <a>
@@ -33,7 +33,7 @@ const Home = () => {
           </Link>
         </div>
 
-        <Subject order="002" title="다크 모드" date="2020.00.00 -" />
+        <Subject order="002" title="Coming Soon..." date="2020.00.00 -" />
 
         <Footer />
       </Container>
@@ -42,6 +42,29 @@ const Home = () => {
 };
 
 export default Home;
+
+const IntroText = styled.section`
+  /* width: 100%; */
+  color: var(--white);
+  margin-top: 16vh;
+  margin-left: 4.5vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: cneter;
+  align-items: flex-start;
+
+  h1 {
+    font-weight: 700;
+    font-size: 5vw;
+  }
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  height: 500px;
+`;
 
 const Container = styled.div`
   margin: 0 4.5vw;
@@ -77,15 +100,4 @@ const Container = styled.div`
       font-size: 4.2vw;
     }
   }
-`;
-
-const IntroText = styled.section`
-  width: 100%;
-  color: var(--white);
-  margin-top: 12vh;
-`;
-
-const Footer = styled.footer`
-  width: 100%;
-  height: 500px;
 `;
