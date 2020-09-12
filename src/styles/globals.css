@@ -1,30 +1,40 @@
-html,
+/* S of Color */
+:root {
+  --white: #eeeeee;
+  --dark-background-color: #121212;
+}
+/* E of Color */
+
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
 section {
   padding: 0;
   margin: 0;
-}
+} */
 
 body {
   font-family: "Spoqa Han Sans", sans-serif;
-  padding: 0;
-  margin: 0 4.5vw;
-  background-color: var(--black);
+  background-color: var(--dark-background-color);
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
-}
-
-h1 {
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
 }
 
 button {
@@ -32,28 +42,10 @@ button {
   cursor: pointer;
 }
 
-@media all and (min-width: 320px) {
-  h1 {
-    font-size: 8vw;
-  }
-}
-
-@media all and (min-width: 768px) {
-  h1 {
-    font-size: 6vw;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  h1 {
-    font-size: 4.5vw;
-  }
-}
-
-@media all and (min-width: 1440px) {
-  h1 {
-    font-size: 4.2vw;
-  }
+ul,
+ol,
+li {
+  list-style: none;
 }
 
 /* S of Spoqa Han Sans */
@@ -86,10 +78,3 @@ button {
     url("/fonts/Spoqa Han Sans Thin.ttf");
 }
 /* E of Spoqa Han Sans */
-
-/* S of Color */
-:root {
-  --white: #eeeeee;
-  --black: #121212;
-}
-/* E of Color */
