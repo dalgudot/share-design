@@ -57,7 +57,8 @@ const Twenties = () => {
         <Parallax y={[-40, 15]} tagOuter="figure">
           <TextContainer>
             <div>
-              <p>20대는 내 생각과 달랐다</p>
+              <p>20대는</p>
+              <p>내 생각과 달랐다</p>
             </div>
           </TextContainer>
         </Parallax>
