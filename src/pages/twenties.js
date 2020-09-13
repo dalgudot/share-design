@@ -67,15 +67,17 @@ const Twenties = () => {
         </Parallax>
 
         <ParallaxBanner
-          className="image__banner"
+          // className="image__banner"
           layers={[
             {
               image: "/images/a.jpg",
-              amount: 0.05,
+              amount: -0.2,
             },
           ]}
           style={{
-            height: "100vh",
+            width: "100vw",
+            height: "66.6667vw",
+            pointerEvents: "none",
           }}
         ></ParallaxBanner>
 
