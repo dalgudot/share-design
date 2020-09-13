@@ -127,6 +127,15 @@ const Twenties = () => {
             </div>
           </TextContainer>
         </Parallax>
+
+        <Parallax y={[-40, 15]} tagOuter="figure">
+          <TextContainer>
+            <div>
+              <p>앞으로 무엇을</p>
+              <p>하게 될까?</p>
+            </div>
+          </TextContainer>
+        </Parallax>
       </ParallaxProvider>
     </>
   );
