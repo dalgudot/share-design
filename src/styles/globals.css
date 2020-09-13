@@ -29,6 +29,7 @@ body::-webkit-scrollbar {
 
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {

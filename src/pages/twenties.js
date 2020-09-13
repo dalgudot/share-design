@@ -38,24 +38,23 @@ const Twenties = () => {
 
       {/* react-scroll-parallax */}
       {/* https://www.npmjs.com/package/react-scroll-parallax */}
-      <ParallaxProvider>
-        <TextContainer>
-          <motion.p
-            variants={InitialTextVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            20살
-          </motion.p>
-        </TextContainer>
 
+      <TextContainer>
+        <motion.p
+          variants={InitialTextVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          20살
+        </motion.p>
+      </TextContainer>
+
+      <ParallaxProvider>
         {/* [y1, y2] -> style="transform: translate3d(0%, y1 -> y2, 0px); */}
         {/* y의 변화 */}
         <Parallax y={[-40, 15]} tagOuter="figure">
           <TextContainer>
-            <div>
-              <p>설렜다</p>
-            </div>
+            <p>설렜다</p>
           </TextContainer>
         </Parallax>
 
@@ -133,6 +132,7 @@ const TextContainer = styled.main`
   justify-content: center;
   align-items: center;
 
+  /* div는 2줄 이상에서 필요 */
   div {
     width: auto;
     height: auto;

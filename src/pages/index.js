@@ -19,7 +19,7 @@ const Home = () => {
             <motion.button
               className={styles.button__test}
               whileHover={{ scale: 1.4 }}
-              transition={{ type: "spring", stiffness: 80, duration: 0.2 }}
+              transition={{ type: "spring", stiffness: 110, duration: 0.1 }}
             >
               20대를 남기다
             </motion.button>
