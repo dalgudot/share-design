@@ -13,20 +13,28 @@ const Home = () => {
         <link rel="icon" href="/kh.ico" />
       </Head>
 
-      <IntroText>
+      <Link href="/twenties">
+        <a>
+          <div className={styles.center__align}>
+            <button className={styles.button__test}>20대를 남기다</button>
+          </div>
+        </a>
+      </Link>
+
+      {/* <IntroText>
         <h1 className={styles.text__name}>김경환</h1>
         <h1>UI/UX 디자이너</h1>
         <h1 className={styles.text__share}>UI/UX 디자인 경험을</h1>
         <h1 className={styles.text__share}>공유합니다.</h1>
-      </IntroText>
+      </IntroText> */}
 
-      <Container>
-        {/* 문자열만 "~"로 표기. 나머지는 {~} */}
+      {/* 문자열만 "~"로 표기. 나머지는 {~} */}
+      {/* <Container>
         <Subject order="001" title="20대를 남기다" date="2017.05.26 - " />
         <div className={styles.align__center}>
           <Link href="/twenties">
             <a>
-              <button className={styles.button__neumorphism}>
+              <button className={styles.button__test}>
                 20대를 남기다
               </button>
             </a>
@@ -36,7 +44,7 @@ const Home = () => {
         <Subject order="002" title="Coming Soon..." date="2020.00.00 -" />
 
         <Footer />
-      </Container>
+      </Container> */}
     </>
   );
 };

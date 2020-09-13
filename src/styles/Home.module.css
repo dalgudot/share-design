@@ -13,12 +13,20 @@
   margin-top: 96px;
 }
 
-.button__neumorphism {
+.button__test {
   font-family: "Spoqa Han Sans", sans-serif;
-  font-size: 2vw;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 100;
   color: var(--white);
-  padding: 16px 32px;
+  padding: 18px 36px;
   background-color: transparent;
-  border: solid 2px var(--white);
+  border: solid 1px var(--white);
+}
+
+.center__align {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
