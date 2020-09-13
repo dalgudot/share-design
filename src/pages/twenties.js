@@ -9,6 +9,21 @@ import {
   ParallaxBanner,
 } from "react-scroll-parallax";
 
+// Framer Motion
+const InitialTextVariants = {
+  hidden: {
+    scale: 0.6,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+    },
+  },
+};
+
 const Twenties = () => {
   return (
     <>
@@ -21,51 +36,17 @@ const Twenties = () => {
         <a>Back</a>
       </Link> */}
 
-      {/* Framer Motion - NextJS 활용법 */}
-      {/* https://www.freecodecamp.org/news/how-to-add-interactive-animations-and-page-transitions-to-a-next-js-web-app-with-framer-motion/#step-0-installing-framer-motion-in-your-next-js-app */}
-      {/* <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            scale: 0.8,
-            opacity: 0,
-          },
-          visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-              delay: 0.4,
-            },
-          },
-        }}
-      >
-        <h1>프레이머</h1>
-      </motion.div> */}
-
       {/* react-scroll-parallax */}
       {/* https://www.npmjs.com/package/react-scroll-parallax */}
       <ParallaxProvider>
         <TextContainer>
-          <motion.div
+          <motion.p
+            variants={InitialTextVariants}
             initial="hidden"
             animate="visible"
-            variants={{
-              hidden: {
-                scale: 0.8,
-                opacity: 0,
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.4,
-                },
-              },
-            }}
           >
-            <p>20살</p>
-          </motion.div>
+            20살
+          </motion.p>
         </TextContainer>
 
         {/* [y1, y2] -> style="transform: translate3d(0%, y1 -> y2, 0px); */}
@@ -122,17 +103,19 @@ const Twenties = () => {
         <Parallax y={[15, -10]} tagOuter="figure">
           <TextContainer>
             <div>
-              <p>이대로 내 20대가</p>
-              <p>끝나버리면 어떡하지?</p>
+              <p>이대로</p>
+              <p>내 20대가</p>
+              <p>끝이 나버리면</p>
+              <p>어떡하지?</p>
             </div>
           </TextContainer>
         </Parallax>
 
-        <Parallax y={[-40, 15]} tagOuter="figure">
+        <Parallax y={[-10, 15]} tagOuter="figure">
           <TextContainer>
             <div>
-              <p>앞으로 무엇을</p>
-              <p>하게 될까?</p>
+              <p>나는 앞으로</p>
+              <p>무엇을 하게 될까?</p>
             </div>
           </TextContainer>
         </Parallax>

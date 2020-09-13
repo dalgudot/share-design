@@ -13,13 +13,19 @@ const Home = () => {
         <link rel="icon" href="/kh.ico" />
       </Head>
 
-      <Link href="/twenties">
-        <a>
-          <div className={styles.center__align}>
-            <button className={styles.button__test}>20대를 남기다</button>
-          </div>
-        </a>
-      </Link>
+      <div className={styles.center__align}>
+        <Link href="/twenties">
+          <a>
+            <motion.button
+              className={styles.button__test}
+              whileHover={{ scale: 1.4 }}
+              transition={{ type: "spring", stiffness: 80, duration: 0.2 }}
+            >
+              20대를 남기다
+            </motion.button>
+          </a>
+        </Link>
+      </div>
 
       {/* <IntroText>
         <h1 className={styles.text__name}>김경환</h1>
