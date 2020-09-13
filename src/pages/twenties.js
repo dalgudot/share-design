@@ -21,13 +21,51 @@ const Twenties = () => {
         <a>Back</a>
       </Link> */}
 
+      {/* Framer Motion - NextJS 활용법 */}
+      {/* https://www.freecodecamp.org/news/how-to-add-interactive-animations-and-page-transitions-to-a-next-js-web-app-with-framer-motion/#step-0-installing-framer-motion-in-your-next-js-app */}
+      {/* <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.4,
+            },
+          },
+        }}
+      >
+        <h1>프레이머</h1>
+      </motion.div> */}
+
       {/* react-scroll-parallax */}
       {/* https://www.npmjs.com/package/react-scroll-parallax */}
       <ParallaxProvider>
         <TextContainer>
-          <div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 0.8,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                },
+              },
+            }}
+          >
             <p>20살</p>
-          </div>
+          </motion.div>
         </TextContainer>
 
         {/* [y1, y2] -> style="transform: translate3d(0%, y1 -> y2, 0px); */}

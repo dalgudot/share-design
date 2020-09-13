@@ -47,6 +47,10 @@ img {
   pointer-events: none;
 }
 
+h1 {
+  color: var(--white);
+}
+
 /* S of Spoqa Han Sans */
 @font-face {
   font-family: Spoqa Han Sans;
