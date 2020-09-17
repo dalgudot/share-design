@@ -38,8 +38,7 @@ const Twenties = () => {
 
       {/* react-scroll-parallax */}
       {/* https://www.npmjs.com/package/react-scroll-parallax */}
-
-      <TextContainer className={styles.foo}>
+      <TextContainer>
         <motion.p
           variants={InitialTextVariants}
           initial="hidden"

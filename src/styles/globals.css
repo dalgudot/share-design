@@ -17,6 +17,7 @@ body {
   background-color: var(--dark-background-color);
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 https://gofnrk.tistory.com/48 */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

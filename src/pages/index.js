@@ -63,7 +63,7 @@ const IntroText = styled.section`
   margin-top: 16vh;
   margin-left: 4.5vw;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: cneter;
