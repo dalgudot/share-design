@@ -25,7 +25,13 @@
 
 .center__align {
   width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* S of Mobile & tablet Safari 중앙 정렬 안 되고 상하 스크롤되는 문제 해결 */
+  /* min-height: 100vh;
+  min-height: -webkit-fill-available; */
+  /* E of Mobile & tablet Safari*/
   display: flex;
   justify-content: center;
   align-items: center;

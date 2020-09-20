@@ -5,35 +5,32 @@ import styles from "../styles/Home.module.css";
 import Subject from "../components/subject";
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Index = () => {
   return (
     <>
       <Head>
-        <title>KHK Portfolio</title>
+        <title>KHK DESIGN</title>
         <link rel="icon" href="/kh.ico" />
       </Head>
-
       <div className={styles.center__align}>
         <Link href="/twenties">
           <a>
             <motion.button
               className={styles.button__test}
-              whileHover={{ scale: 1.4 }}
-              transition={{ type: "spring", stiffness: 110, duration: 0.1 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 120, duration: 0.2 }}
             >
               20대를 남기다
             </motion.button>
           </a>
         </Link>
       </div>
-
       {/* <IntroText>
         <h1 className={styles.text__name}>김경환</h1>
         <h1>UI/UX 디자이너</h1>
         <h1 className={styles.text__share}>UI/UX 디자인 경험을</h1>
         <h1 className={styles.text__share}>공유합니다.</h1>
       </IntroText> */}
-
       {/* 문자열만 "~"로 표기. 나머지는 {~} */}
       {/* <Container>
         <Subject order="001" title="20대를 남기다" date="2017.05.26 - " />
@@ -55,7 +52,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Index;
 
 const IntroText = styled.section`
   /* width: 100%; */
