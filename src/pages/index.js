@@ -11,9 +11,21 @@ const Index = () => {
       <Head>
         <title>KHK DESIGN</title>
         <link rel="icon" href="/kh.ico" />
+        <meta name="description" content="UI/UX 디자인 경험을 공유합니다" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="KHK DESIGN" />
+        <meta
+          property="og:description"
+          content="UI/UX 디자인 경험을 공유합니다"
+        />
+        <meta property="og:url" content="https://khk-design.kr/" />
+        <meta property="og:image" content="/images/a.jpg" />
+        {/* <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="400" /> */}
       </Head>
       <div className={styles.center__align}>
-        <Link href="/twenties">
+        <Link href="/twenties-gallary">
           <a>
             <motion.button
               className={styles.button__test}
