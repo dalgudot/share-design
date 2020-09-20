@@ -1,13 +1,98 @@
-import Head from "next/head";
+import HeadInfo from "../components/head-info";
 import Link from "next/link";
 import styles from "../styles/Twenties.module.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import {
-  ParallaxProvider,
-  Parallax,
-  ParallaxBanner,
-} from "react-scroll-parallax";
+import { ParallaxProvider } from "react-scroll-parallax";
+import ParallaxText from "../components/parallax-text";
+import ParallaxImage from "../components/parallax-image";
+
+const TwentiesGallary = () => {
+  return (
+    <>
+      <HeadInfo
+        title="20대를 남기다"
+        icoImage="/twenties.ico"
+        description="20대의 감정과 이야기"
+        url="https://khk-design.kr/twenties-gallary"
+        thumbnail="/images/a.jpg"
+      />
+
+      <TextContainer>
+        <motion.p
+          variants={InitialTextVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          20살
+        </motion.p>
+      </TextContainer>
+
+      {/* 문자열만 "~"로 표기. 나머지는 {~} */}
+      <ParallaxProvider>
+        <ParallaxText
+          yOne={-40}
+          yTwo={15}
+          textOne="설렜다"
+          textTwo=""
+          textThree=""
+          textFour=""
+        />
+
+        <ParallaxText
+          yOne={15}
+          yTwo={-10}
+          textOne="20대라는 게"
+          textTwo="좋았다"
+          textThree=""
+          textFour=""
+        />
+
+        <ParallaxText
+          yOne={-40}
+          yTwo={15}
+          textOne="하지만"
+          textTwo=""
+          textThree=""
+          textFour=""
+        />
+
+        <ParallaxText
+          yOne={15}
+          yTwo={-10}
+          textOne="20대는"
+          textTwo="내 생각과 달랐다"
+          textThree=""
+          textFour=""
+        />
+
+        {/* <ParallaxImage img="/images/a.jpg" amountFigure="-0.1" /> */}
+
+        <ParallaxImage imgOne="/images/a.jpg" amountOne={0.1} />
+
+        <ParallaxText
+          yOne={15}
+          yTwo={-10}
+          textOne="이대로"
+          textTwo="내 20대가"
+          textThree="끝이 나버리면"
+          textFour="어떡하지?"
+        />
+
+        <ParallaxText
+          yOne={-10}
+          yTwo={15}
+          textOne="나는 앞으로"
+          textTwo="무엇을 하게 될까?"
+          textThree=""
+          textFour=""
+        />
+      </ParallaxProvider>
+    </>
+  );
+};
+
+export default TwentiesGallary;
 
 // Framer Motion
 const InitialTextVariants = {
@@ -24,122 +109,12 @@ const InitialTextVariants = {
   },
 };
 
-const Twenties = () => {
-  return (
-    <>
-      <Head>
-        <title>20대를 남기다</title>
-        <link rel="icon" href="/twenties.ico" />
-      </Head>
-
-      {/* <Link href="/">
-        <a>Back</a>
-      </Link> */}
-
-      {/* react-scroll-parallax */}
-      {/* https://www.npmjs.com/package/react-scroll-parallax */}
-      <TextContainer>
-        <motion.p
-          variants={InitialTextVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          20살
-        </motion.p>
-      </TextContainer>
-
-      <ParallaxProvider>
-        {/* [y1, y2] -> style="transform: translate3d(0%, y1 -> y2, 0px); */}
-        {/* y의 변화 */}
-        <Parallax y={[-40, 15]} tagOuter="figure">
-          <TextContainer>
-            <p>설렜다</p>
-          </TextContainer>
-        </Parallax>
-
-        <Parallax y={[15, -40]} tagOuter="figure">
-          <TextContainer>
-            <div>
-              <p>20대라는 게</p>
-              <p>좋았다</p>
-            </div>
-          </TextContainer>
-        </Parallax>
-
-        <Parallax y={[15, -40]} tagOuter="figure">
-          <TextContainer>
-            <div>
-              <p>하지만</p>
-            </div>
-          </TextContainer>
-        </Parallax>
-
-        <Parallax y={[-40, 15]} tagOuter="figure">
-          <TextContainer>
-            <div>
-              <p>20대는</p>
-              <p>내 생각과 달랐다</p>
-            </div>
-          </TextContainer>
-        </Parallax>
-
-        <ParallaxBanner
-          // className="image__banner"
-          layers={[
-            {
-              image: "/images/a.jpg",
-              amount: -0.2,
-            },
-          ]}
-          style={{
-            width: "100vw",
-            height: "66.6667vw",
-            pointerEvents: "none",
-          }}
-        ></ParallaxBanner>
-
-        <Parallax y={[15, -10]} tagOuter="figure">
-          <TextContainer>
-            <div>
-              <p>이대로</p>
-              <p>내 20대가</p>
-              <p>끝이 나버리면</p>
-              <p>어떡하지?</p>
-            </div>
-          </TextContainer>
-        </Parallax>
-
-        <Parallax y={[-10, 15]} tagOuter="figure">
-          <TextContainer>
-            <div>
-              <p>나는 앞으로</p>
-              <p>무엇을 하게 될까?</p>
-            </div>
-          </TextContainer>
-        </Parallax>
-      </ParallaxProvider>
-    </>
-  );
-};
-
-export default Twenties;
-
 const TextContainer = styled.main`
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* div는 2줄 이상에서 필요 */
-  div {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
   p {
     color: var(--white);

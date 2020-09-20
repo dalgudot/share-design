@@ -1,28 +1,3 @@
-.text__name {
-  letter-spacing: 4px;
-}
-
-.text__share {
-  color: #757575;
-}
-
-.align__center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 96px;
-}
-
-.button__test {
-  font-family: "Spoqa Han Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 100;
-  color: var(--white);
-  padding: 18px 36px;
-  background-color: transparent;
-  border: solid 1px var(--white);
-}
-
 .center__align {
   width: 100vw;
   position: absolute;
@@ -35,4 +10,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button__test {
+  font-size: 24px;
+  font-weight: 100;
+  color: var(--white);
+  padding: 18px 36px;
+  background-color: transparent;
+  border: solid 1px var(--white);
 }

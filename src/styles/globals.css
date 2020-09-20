@@ -10,10 +10,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Spoqa Han Sans", sans-serif;
 }
 
 body {
-  font-family: "Spoqa Han Sans", sans-serif;
   background-color: var(--dark-background-color);
   overflow-x: hidden;
   overflow-y: auto;
