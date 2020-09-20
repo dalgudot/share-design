@@ -48,6 +48,12 @@ const TextContainer = styled.main`
     font-size: 48px;
     font-weight: 100;
   }
+
+  @media all and (min-width: 320px) and (max-width: 767px) {
+    p {
+      font-size: 36px;
+    }
+  }
 `;
 
 ParallaxText.propTypes = {

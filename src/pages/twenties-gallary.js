@@ -293,7 +293,16 @@ const TwentiesGallary = () => {
           yOne={-10}
           yTwo={15}
           textOne="나에게"
-          textTwo="미안하지 않도록"
+          textTwo=""
+          textThree=""
+          textFour=""
+        />
+
+        <ParallaxText
+          yOne={-10}
+          yTwo={15}
+          textOne="미안하지 않도록"
+          textTwo=""
           textThree=""
           textFour=""
         />
@@ -313,7 +322,16 @@ const TwentiesGallary = () => {
           yOne={-10}
           yTwo={15}
           textOne="조금만"
-          textTwo="내려놓으면 되는데"
+          textTwo=""
+          textThree=""
+          textFour=""
+        />
+
+        <ParallaxText
+          yOne={-10}
+          yTwo={15}
+          textOne="내려놓으면"
+          textTwo="되는데"
           textThree=""
           textFour=""
         />
@@ -361,5 +379,11 @@ const TextContainer = styled.main`
     color: var(--white);
     font-size: 48px;
     font-weight: 100;
+  }
+
+  @media all and (min-width: 320px) and (max-width: 767px) {
+    p {
+      font-size: 36px;
+    }
   }
 `;
