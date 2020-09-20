@@ -43,10 +43,11 @@ export default Index;
 
 const Button_Language = styled.section`
   position: fixed;
-  top: 36px;
-  right: 36px;
+  top: 24px;
+  right: 24px;
 
   button {
+    margin-right: -1px;
     font-size: 14px;
     font-weight: 100;
     color: var(--white);
