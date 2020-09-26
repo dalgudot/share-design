@@ -1,29 +1,20 @@
 import PropTypes from "prop-types";
-import { i18n, Link, withTranslation } from "../../i18n";
 
-const Homepage = ({ t }) => {
+const Homepage = () => {
   return (
     <>
-      <h1>{t("test")}</h1>
+      <h1>test</h1>
 
-      <button
+      {/* <button
         type="button"
         onClick={() =>
           i18n.changeLanguage(i18n.language === "ko" ? "en" : "ko")
         }
       >
         {t("test")}
-      </button>
+      </button> */}
     </>
   );
 };
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-Homepage.propTypes = {
-  t: PropTypes.func.isRequired,
-};
-
-export default withTranslation("common")(Homepage);
+export default Homepage;
