@@ -30,12 +30,14 @@ body::-webkit-scrollbar {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
 button {
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul,

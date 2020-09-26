@@ -1,9 +1,11 @@
-// https://github.com/vercel/next.js/blob/master/errors/no-document-title.md
-
 import "../styles/globals.css";
+import App from "next/app";
+import { appWithTranslation } from "../../i18n";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 
-export default MyApp;
+MyApp.getInitialProps = async (appContext) => ({
+  ...(await App.getInitialProps(appContext)),
+});
+
+export default appWithTranslation(MyApp);

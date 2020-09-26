@@ -10,11 +10,13 @@
   "dependencies": {
     "framer-motion": "^2.6.13",
     "next": "9.5.2",
+    "next-i18next": "^6.0.2",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scroll-parallax": "^2.3.4",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "typescript": "^4.0.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1"

@@ -1,6 +1,5 @@
 import HeadInfo from "../components/head-info";
 import Link from "next/link";
-import styles from "../styles/Twenties.module.css";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
