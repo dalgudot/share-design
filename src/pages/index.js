@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Index = () => {
-  const [state, setState] = useState("20대를 남기다");
+  // const [state, setState] = useState("20대를 남기다");
+  const [state, setState] = useState("ko");
 
   return (
     <>
@@ -18,7 +19,8 @@ const Index = () => {
       />
 
       <CenterAlign>
-        <Link href="/twenties-gallary">
+        {/* <Link href="/twenties-gallary"> */}
+        <Link href={`/twenties-gallary?lang=${state}`}>
           <a>
             <motion.button
               whileHover={{ scale: 1.1 }}

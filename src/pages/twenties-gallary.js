@@ -1,12 +1,15 @@
 import HeadInfo from "../components/head-info";
-import Link from "next/link";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ParallaxText from "../components/parallax-text";
 import ParallaxImage from "../components/parallax-image";
+import { useRouter } from "next/router";
 
 const TwentiesGallary = () => {
+  const router = useRouter();
+  console.log(router.query);
+
   return (
     <>
       <HeadInfo
@@ -16,7 +19,6 @@ const TwentiesGallary = () => {
         url="https://khk-design.kr/twenties-gallary"
         thumbnail="/images/a.jpg"
       />
-
       <TextContainer>
         <motion.p
           variants={InitialTextVariants}
