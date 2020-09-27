@@ -8,10 +8,17 @@ const initialState = {
   lastUpdate: 0,
   light: false,
   count: 0,
+  language: "ko",
 };
+//language 추가
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case "CHANGELANGUAGE":
+      return {
+        ...state,
+        language: state.language === "ko" ? "en" : "ko",
+      };
     case "TICK":
       return {
         ...state,

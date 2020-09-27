@@ -4,3 +4,11 @@ https://github.com/vercel/next.js/tree/canary/examples/with-redux
 
 https://github.com/vercel/next.js/issues/9285
 
+2. SSG vs SSR
+https://darrengwon.tistory.com/814
+
+페이지 컴포넌트에 SSG를 위한 api 2개와 Server Side Rendering(SSR)을 위한 api 1개가 추가되었습니다.
+
+getStaticProps (SSG): 빌드할 때 데이터를 fetch함.
+getStaticPaths (SSG): dynamic routes (예: /pages/titles/[id].tsx)가 적용된 페이지에 데이터(id)를 제공. 제공된 데이터마다 페이지가 생성됨.
+getServerSideProps (SSR): 무조건 서버를 통해 데이터를 fetch함.
