@@ -18,8 +18,8 @@ const Index = () => {
       />
 
       <CenterAlign>
-        {/* <Link href="/twenties-gallary"> */}
-        <Link href={`/twenties-gallary?lang=${state}`} as="/twenties-gallary">
+        {/* <Link href={`/twenties-gallary?lang=${state}`} as="/twenties-gallary"> */}
+        <Link href={`/twenties-gallary?lang=${state}`}>
           <a>
             <motion.button
               whileHover={{ scale: 1.1 }}

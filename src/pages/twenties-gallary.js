@@ -7,9 +7,10 @@ import ParallaxImage from "../components/parallax-image";
 import { useRouter } from "next/router";
 
 const TwentiesGallary = () => {
-  const router = useRouter().query;
+  const router = useRouter();
+  const lang = router.query;
 
-  console.log(router);
+  console.log(lang);
 
   return (
     <>
