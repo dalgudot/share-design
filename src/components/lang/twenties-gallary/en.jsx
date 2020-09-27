@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Korean = ({ text }) => {
+const English = ({ text }) => {
   return (
     <>
-      <h1>{text}</h1>
+      <p>{text}</p>
     </>
   );
 };
 
-export default Korean;
+export default English;
