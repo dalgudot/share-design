@@ -3,24 +3,12 @@ import Link from "next/link";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import PropTypes from "prop-types";
-import { i18n, withTranslation } from "../../i18n";
 
-const Index = ({ t }) => {
+const Index = () => {
   const [state, setState] = useState("20대를 남기다");
 
   return (
     <>
-      <h1>{t("lang")}</h1>
-      <button
-        type="button"
-        onClick={() =>
-          i18n.changeLanguage(i18n.language === "en" ? "de" : "en")
-        }
-      >
-        {t("description")}
-      </button>
-
       <HeadInfo
         title="KHK DESIGN"
         icoImage="/kh.ico"
@@ -50,15 +38,7 @@ const Index = ({ t }) => {
   );
 };
 
-Index.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
-});
-
-Index.propTypes = {
-  t: PropTypes.func.isRequired,
-};
-
-export default withTranslation("common")(Index);
+export default Index;
 
 const Button_Language = styled.section`
   position: fixed;
