@@ -20,3 +20,13 @@ const LangChan = () => {
 };
 
 export default LangChan;
+
+export function getStaticProps() {
+  return {
+    props: {
+      initialReduxState: {
+        language: "ko",
+      },
+    },
+  };
+}
