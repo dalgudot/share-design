@@ -6,7 +6,7 @@ import {
   ExtraInfo,
   Code,
 } from "../../components/components";
-import Carousel from "../Carousel";
+import Carousel from "./Carousel";
 
 const useLanguageChange = () => {
   const lang = useSelector((state) => state.language);
