@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { Item, AppContainer, ExtraInfo, Code } from "../components/components";
-import Carousel from "./Carousel";
+import {
+  Item,
+  AppContainer,
+  ExtraInfo,
+  Code,
+} from "../../components/components";
+import Carousel from "../Carousel";
 
 const useLanguageChange = () => {
   const lang = useSelector((state) => state.language);

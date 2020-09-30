@@ -1,32 +1,20 @@
 import HeadInfo from "../components/head-info";
+import { indexInfo } from "../components/text/head-info-text";
 import Link from "next/link";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Korean from "../components/lang/index/ko";
-import English from "../components/lang/index/en";
-import { useSelector, useDispatch } from "react-redux";
-
-const useLanguageChange = () => {
-  const lang = useSelector((state) => state.language);
-  const dispatch = useDispatch();
-  const languageChange = () =>
-    dispatch({
-      type: "CHANGELANGUAGE",
-    });
-  return { lang, languageChange };
-};
+import { k } from "../components/lang/index/ko-index";
+import { e } from "../components/lang/index/en-index";
+import LangChangeButton from "../components//button/lang-change-button";
+import { useSelector } from "react-redux";
 
 const Index = () => {
-  const { lang, languageChange } = useLanguageChange();
+  const lang = useSelector((state) => state.language);
   return (
     <>
-      <HeadInfo
-        title="KHK DESIGN"
-        icoImage="/kh.ico"
-        description="UI/UX 디자인 경험을 공유합니다"
-        url="https://khk-design.kr/"
-        thumbnail="/images/a.jpg"
-      />
+      <HeadInfo info={indexInfo} />
+      <LangChangeButton />
+
       <CenterAlign>
         <Link href="twenties-gallary">
           <a>
@@ -34,21 +22,11 @@ const Index = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 120, duration: 0.2 }}
             >
-              {`${lang}` === "ko" ? (
-                <Korean text="20대를 남기다" />
-              ) : (
-                <English text="TWENTIES" />
-              )}
+              {`${lang}` === "ko" ? k.twenty : e.twenty}
             </motion.button>
           </a>
         </Link>
       </CenterAlign>
-
-      <Button_Language>
-        <button onClick={languageChange}>
-          {`${lang}` === "ko" ? "View in English" : "한글로 보기"}
-        </button>
-      </Button_Language>
     </>
   );
 };

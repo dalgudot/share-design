@@ -1,42 +1,27 @@
 import HeadInfo from "../components/head-info";
+import { twentiesInfo } from "../components/text/head-info-text";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Korean from "../components/lang/index/ko";
-import English from "../components/lang/index/en";
-import { useSelector, useDispatch } from "react-redux";
-
-const useLanguageChange = () => {
-  const lang = useSelector((state) => state.language);
-  const dispatch = useDispatch();
-  const languageChange = () =>
-    dispatch({
-      type: "CHANGELANGUAGE",
-    });
-  return { lang, languageChange };
-};
+import LangChangeButton from "../components/button/lang-change-button";
+import { k } from "../components/lang/twenties-gallary/ko-twenties";
+import { e } from "../components/lang/twenties-gallary/en-twenties";
+import { useSelector } from "react-redux";
 
 const TwentiesGallary = () => {
-  const { lang, languageChange } = useLanguageChange();
+  const lang = useSelector((state) => state.language);
+
   return (
     <>
-      <HeadInfo
-        title="20대를 남기다"
-        icoImage="/twenties.ico"
-        description="20대의 감정과 이야기"
-        url="https://khk-design.kr/twenties-gallary"
-        thumbnail="/images/a.jpg"
-      />
+      <HeadInfo info={twentiesInfo} />
+      <LangChangeButton />
+
       <TextContainer>
         <motion.p
           variants={InitialTextVariants}
           initial="hidden"
           animate="visible"
         >
-          {`${lang}` === "ko" ? (
-            <Korean text="20살" />
-          ) : (
-            <English text="20 YEARS OLD" />
-          )}
+          {`${lang}` === "ko" ? k.twenty : e.twenty}
         </motion.p>
       </TextContainer>
     </>
