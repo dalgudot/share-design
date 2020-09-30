@@ -18,9 +18,12 @@ getStaticProps (SSG): 빌드할 때 데이터를 fetch함.
 getStaticPaths (SSG): dynamic routes (예: /pages/titles/[id].tsx)가 적용된 페이지에 데이터(id)를 제공. 제공된 데이터마다 페이지가 생성됨.
 getServerSideProps (SSR): 무조건 서버를 통해 데이터를 fetch함.
 
+[react-intersection-observer]
+https://www.npmjs.com/package/react-intersection-observer
 
 
-[Scrooll]
+
+[Scroll]
 -webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 https://gofnrk.tistory.com/48 */
 -ms-overflow-style: none; /* IE and Edge */

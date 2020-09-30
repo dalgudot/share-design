@@ -13,6 +13,7 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-intersection-observer": "^8.29.0",
     "react-redux": "^7.2.1",
     "react-scroll-parallax": "^2.3.4",
     "react-swipeable": "^5.5.1",
