@@ -35,7 +35,7 @@ const TwentiesGallary = () => {
           {`${lang}` === "ko" ? (
             <Korean text="20살" />
           ) : (
-            <English text="20 years old" />
+            <English text="20 YEARS OLD" />
           )}
         </motion.p>
       </TextContainer>

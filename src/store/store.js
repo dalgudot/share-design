@@ -10,7 +10,6 @@ const initialState = {
   count: 0,
   language: "ko",
 };
-//language 추가
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

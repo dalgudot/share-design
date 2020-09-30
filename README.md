@@ -1,30 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the UI/UX Design [Portfolio Website](https://khk-design.kr/) of `KyungHwan Kim`.
 
-## Getting Started
+## I share my UI/UX Design Experiences
 
-First, run the development server:
+Hi. My name is KyungHwan Kim. I am a UI/UX Designer based in South Korea. I am inspired and learning a lot thanks to the experiences shared by so many people around the world. As a UI/UX Designer, I also wanted to share my experiences and thoughts around the world. This portfolio website is the result. I plan to continue to update through this website and share my UI/UX Design Experiences.
 
 ```bash
-npm run dev
-# or
-yarn dev
+This Portfolio Website is for sharing my UI/UX Design Experiences with people around the world.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Artwork Copyrights
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This portfolio website contains my photographic artworks 'TWENTIES'.. All copyrights belong to KyungHwan Kim. In case of infringement of copyright, legal action can be taken.

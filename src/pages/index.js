@@ -27,7 +27,6 @@ const Index = () => {
         url="https://khk-design.kr/"
         thumbnail="/images/a.jpg"
       />
-
       <CenterAlign>
         <Link href="twenties-gallary">
           <a>
