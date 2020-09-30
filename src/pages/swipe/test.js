@@ -5,7 +5,7 @@ import {
   AppContainer,
   ExtraInfo,
   Code,
-} from "../../components/components";
+} from "../../../components/components";
 import Carousel from "./Carousel";
 
 const useLanguageChange = () => {
