@@ -36,7 +36,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.different : e.different}
       />
 
-      <ParallaxImage img="/images/1.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.likeThis : e.likeThis}
@@ -48,7 +48,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.whatIf : e.whatIf}
       />
 
-      <ParallaxImage img="/images/2.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.whatwill : e.whatwill}
@@ -59,14 +59,14 @@ const TwentiesGallary = () => {
         textOne={`${lang}` === "ko" ? k.anxious : e.anxious}
       />
 
-      <ParallaxImage img="/images/3.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.nothing : e.nothing}
         textTwo={`${lang}` === "ko" ? k.decide : e.decide}
       />
 
-      <ParallaxImage img="/images/4.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.choice : e.choice}
@@ -85,7 +85,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.lost : e.lost} />
 
-      <ParallaxImage img="/images/5.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.me : e.me} />
 
@@ -101,7 +101,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.now : e.now}
       />
 
-      <ParallaxImage img="/images/6.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.maybe : e.maybe}
@@ -136,7 +136,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.beOkay : e.beOkay}
       />
 
-      <ParallaxImage img="/images/7.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.beautiful : e.beautiful}
@@ -154,7 +154,7 @@ const TwentiesGallary = () => {
         textOne={`${lang}` === "ko" ? k.notToBeSorry : e.notToBeSorry}
       />
 
-      <ParallaxImage img="/images/8.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.whatIsThat : e.whatIsThat}
@@ -166,7 +166,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.letItBe : e.letItBe}
       />
 
-      <ParallaxImage img="/images/9.jpg" />
+      <ParallaxImage img="/images/a.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.twentiesYou : e.twentiesYou}
