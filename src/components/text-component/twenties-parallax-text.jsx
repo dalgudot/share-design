@@ -1,14 +1,9 @@
 import styled from "styled-components";
-import {
-  useViewportScroll,
-  motion,
-  useTransform,
-  useMotionValue,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const TwentiesParallaxText = ({ textOne, textTwo, textThree }) => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     /* Optional options */
     threshold: 0.5,
     triggerOnce: false,

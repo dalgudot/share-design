@@ -19,6 +19,8 @@ This portfolio website is the result. I plan to continue to update through this 
 
 - [NextJS](https://github.com/vercel/next.js/)
 
+- [Styled-Components](https://github.com/styled-components/styled-components)
+
 - [Redux](https://github.com/reduxjs/redux)
 
 - [React-Redux](https://github.com/reduxjs/react-redux)
@@ -32,6 +34,10 @@ This portfolio website is the result. I plan to continue to update through this 
 - [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
 
 - [Lottie Web](https://github.com/airbnb/lottie-web)
+
+#### Lecture
+
+- [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
 
 ## Artwork Copyrights 👨‍⚖️
 

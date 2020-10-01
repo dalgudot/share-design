@@ -8,22 +8,8 @@ import TwentiesText from "../components/text-component/twenties-text";
 import TwentiesParallaxText from "../components/text-component/twenties-parallax-text";
 import ArtworkTwenties from "../components/img-component/artwork-twenties";
 import LottieDownScroll from "../components/lottie/lottie-down-scroll";
-import { motion, useCycle } from "framer-motion";
-import styles from "../styles/motion.module.css";
+import ScrollDownAnimaition from "../components/animation/scoll-down";
 
-const loaderVariants = {
-  upAndDown: {
-    x: 0,
-    y: [-65, 10],
-    transition: {
-      y: {
-        yoyo: Infinity,
-        duration: 0.8,
-        ease: "easeInOut",
-      },
-    },
-  },
-};
 const TwentiesGallary = () => {
   const lang = useSelector((state) => state.language);
 
@@ -37,15 +23,7 @@ const TwentiesGallary = () => {
 
       <TwentiesText textOne={`${lang}` === "ko" ? k.twenty : e.twenty} />
 
-      <div className={styles.scrollDownWrap}>
-        <div className={styles.scrollDownBorder}>
-          <motion.div
-            className={styles.scrollDown}
-            variants={loaderVariants}
-            animate="upAndDown"
-          ></motion.div>
-        </div>
-      </div>
+      <ScrollDownAnimaition />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.flutter : e.flutter}
