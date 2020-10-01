@@ -27,7 +27,9 @@ const Artwork = styled.img`
   @media all and (min-width: 768px) {
     width: 135vh;
     height: 90vh;
-    border: 16px solid #212121;
-    filter: drop-shadow(2px 4px 24px #333333);
+    border: 16px solid #161616;
+    box-sizing: content-box;
+    border-radius: 2px;
+    filter: drop-shadow(0px 2px 8px #161616);
   }
 `;

@@ -35,7 +35,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.different : e.different}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/1.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.likeThis : e.likeThis}
@@ -47,7 +47,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.whatIf : e.whatIf}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/2.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.whatwill : e.whatwill}
@@ -58,14 +58,14 @@ const TwentiesGallary = () => {
         textOne={`${lang}` === "ko" ? k.anxious : e.anxious}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/3.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.nothing : e.nothing}
         textTwo={`${lang}` === "ko" ? k.decide : e.decide}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/4.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.choice : e.choice}
@@ -84,7 +84,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.lost : e.lost} />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/5.jpg" />
 
       <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.me : e.me} />
 
@@ -100,7 +100,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.now : e.now}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/6.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.maybe : e.maybe}
@@ -135,7 +135,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.beOkay : e.beOkay}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/7.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.beautiful : e.beautiful}
@@ -153,7 +153,7 @@ const TwentiesGallary = () => {
         textOne={`${lang}` === "ko" ? k.notToBeSorry : e.notToBeSorry}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/8.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.whatIsThat : e.whatIsThat}
@@ -165,7 +165,7 @@ const TwentiesGallary = () => {
         textTwo={`${lang}` === "ko" ? k.letItBe : e.letItBe}
       />
 
-      <ArtworkTwenties src="/images/a.jpg" />
+      <ArtworkTwenties src="/images/9.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.twentiesYou : e.twentiesYou}
