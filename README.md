@@ -13,23 +13,23 @@ This portfolio website is the result. I plan to continue to update through this 
 
 ## Reference 🙏
 
-### Web Front-End
+#### Front-End
 
-- [ReactJS](https://github.com/facebook/react) [![License][license-image]][license-url]
+- [ReactJS](https://github.com/facebook/react)
 
-- [NextJS](https://github.com/vercel/next.js/) [![License][license-image]][license-url]
+- [NextJS](https://github.com/vercel/next.js/)
 
-- [Redux](https://github.com/reduxjs/redux) [![License][license-image]][license-url]
+- [Redux](https://github.com/reduxjs/redux)
 
-- [React-Redux](https://github.com/reduxjs/react-redux) [![License][license-image]][license-url]
+- [React-Redux](https://github.com/reduxjs/react-redux)
 
-- [Redux on NextJS](https://github.com/vercel/next.js/tree/canary/examples/with-redux) [![License][license-image]][license-url]
+- [Redux on NextJS](https://github.com/vercel/next.js/tree/canary/examples/with-redux)
 
-### Web Interaction
+#### Interaction
 
-- [Framer Motion](https://github.com/framer/motion) [![License][license-image]][license-url]
+- [Framer Motion](https://github.com/framer/motion)
 
-- [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) [![License][license-image]][license-url]
+- [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
 
 ## Artwork Copyrights 👨‍⚖️
 
