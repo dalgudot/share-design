@@ -11,7 +11,7 @@ I am inspired and learning a lot thanks to the experiences shared by so many peo
 
 This portfolio website is the result. I plan to continue to update through this website and share my UI/UX Design Experiences.
 
-## Reference 🙏
+## Thanks to 🙏
 
 #### Front-End
 
