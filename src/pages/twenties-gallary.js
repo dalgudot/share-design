@@ -1,5 +1,5 @@
 import HeadInfo from "../components/head-info";
-import { twentiesInfo } from "../components/text/head-info-text";
+import { twentiesInfo } from "../components/lang/head-info/head-info-text";
 import LangChangeButton from "../components/button/lang-change-button";
 import { k } from "../components/lang/twenties-gallary/ko-twenties";
 import { e } from "../components/lang/twenties-gallary/en-twenties";
@@ -7,7 +7,23 @@ import { useSelector } from "react-redux";
 import TwentiesText from "../components/text-component/twenties-text";
 import TwentiesParallaxText from "../components/text-component/twenties-parallax-text";
 import ArtworkTwenties from "../components/img-component/artwork-twenties";
+import LottieDownScroll from "../components/lottie/lottie-down-scroll";
+import { motion, useCycle } from "framer-motion";
+import styles from "../styles/motion.module.css";
 
+const loaderVariants = {
+  upAndDown: {
+    x: 0,
+    y: [-65, 10],
+    transition: {
+      y: {
+        yoyo: Infinity,
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  },
+};
 const TwentiesGallary = () => {
   const lang = useSelector((state) => state.language);
 
@@ -15,9 +31,21 @@ const TwentiesGallary = () => {
     <>
       <HeadInfo info={twentiesInfo} />
 
-      <LangChangeButton />
+      {/* <LangChangeButton /> */}
+
+      {/* <LottieDownScroll /> */}
 
       <TwentiesText textOne={`${lang}` === "ko" ? k.twenty : e.twenty} />
+
+      <div className={styles.scrollDownWrap}>
+        <div className={styles.scrollDownBorder}>
+          <motion.div
+            className={styles.scrollDown}
+            variants={loaderVariants}
+            animate="upAndDown"
+          ></motion.div>
+        </div>
+      </div>
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.flutter : e.flutter}
@@ -130,12 +158,12 @@ const TwentiesGallary = () => {
         textThree={`${lang}` === "ko" ? k.not : e.not}
       />
 
+      <ArtworkTwenties src="/images/7.jpg" />
+
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.little : e.little}
         textTwo={`${lang}` === "ko" ? k.beOkay : e.beOkay}
       />
-
-      <ArtworkTwenties src="/images/7.jpg" />
 
       <TwentiesParallaxText
         textOne={`${lang}` === "ko" ? k.beautiful : e.beautiful}

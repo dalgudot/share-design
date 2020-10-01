@@ -31,6 +31,8 @@ This portfolio website is the result. I plan to continue to update through this 
 
 - [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
 
+- [Lottie Web](https://github.com/airbnb/lottie-web)
+
 ## Artwork Copyrights 👨‍⚖️
 
 This portfolio website displays my photographic artworks 'TWENTIES'. All copyrights belong to KyungHwan Kim.

@@ -18,6 +18,8 @@ const Container = styled.section`
 
 const Artwork = styled.img`
   pointer-events: none;
+  margin-top: 50vh;
+  margin-bottom: 25vh;
 
   @media all and (min-width: 320px) and (max-width: 767px) {
     width: 100vw;

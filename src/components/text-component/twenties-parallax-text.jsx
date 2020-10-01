@@ -19,7 +19,7 @@ const TwentiesParallaxText = ({ textOne, textTwo, textThree }) => {
       <motion.p
         animate={inView ? "visible" : "hidden"}
         variants={variants}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         ref={ref}
       >
         {textOne}
@@ -51,6 +51,7 @@ const TextContainer = styled.main`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 1vh;
 
   p {
     color: var(--white);
@@ -60,7 +61,7 @@ const TextContainer = styled.main`
 
   @media all and (min-width: 320px) and (max-width: 767px) {
     p {
-      font-size: 36px;
+      font-size: 30px;
     }
   }
 `;
