@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { k } from "../lang/twenties-gallary/ko-twenties";
+import { e } from "../lang/twenties-gallary/en-twenties";
 
 const TwentiesText = ({ textOne }) => {
+  const lang = useSelector((state) => state.language);
   return (
     <Container>
       <TextContainer>
@@ -10,7 +15,7 @@ const TwentiesText = ({ textOne }) => {
           initial="hidden"
           animate="visible"
         >
-          {textOne}
+          {`${lang}` === "ko" ? k[textOne] : e[textOne]}
         </motion.p>
       </TextContainer>
     </Container>
@@ -18,6 +23,35 @@ const TwentiesText = ({ textOne }) => {
 };
 
 export default TwentiesText;
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const TextContainer = styled.main`
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  p {
+    color: var(--white);
+    font-weight: 100;
+  }
+
+  @media all and (max-width: 768px) {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    p {
+      font-size: 48px;
+    }
+  }
+`;
 
 // Framer Motion
 const InitialTextVariants = {
@@ -34,33 +68,6 @@ const InitialTextVariants = {
   },
 };
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
-
-const TextContainer = styled.main`
-  /* width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
-  position: absolute;
-  top: 43%;
-  /* transform: translateY(-0%); */
-  left: 50%;
-  transform: translateX(-50%);
-
-  p {
-    color: var(--white);
-    font-size: 48px;
-    font-weight: 100;
-  }
-
-  @media all and (min-width: 320px) and (max-width: 767px) {
-    p {
-      font-size: 36px;
-    }
-  }
-`;
+TwentiesText.propTypes = {
+  textOne: PropTypes.string.isRequired,
+};

@@ -2,21 +2,6 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-// Framer Motion
-const loaderVariants = {
-  upAndDown: {
-    x: 0,
-    y: [-60, 10],
-    transition: {
-      y: {
-        yoyo: Infinity,
-        duration: 0.8,
-        ease: "easeInOut",
-      },
-    },
-  },
-};
-
 const ScrollDownAnimaition = () => {
   const [showScrollDown, setShowScrollDwon] = useState(true);
 
@@ -64,3 +49,18 @@ const Wrap = styled.section`
     background-color: var(--white);
   }
 `;
+
+// Framer Motion
+const loaderVariants = {
+  upAndDown: {
+    x: 0,
+    y: [-60, 10],
+    transition: {
+      y: {
+        yoyo: Infinity,
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  },
+};

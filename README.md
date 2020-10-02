@@ -37,6 +37,8 @@ This portfolio website is the result. I plan to continue to update through this 
 
 #### Lecture
 
+- [Ellie's Dream Coding](https://www.youtube.com/channel/UC_4u-bXaba7yrRz_6x6kb_w)
+
 - [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
 
 ## Artwork Copyrights 👨‍⚖️

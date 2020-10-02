@@ -1,181 +1,101 @@
 import HeadInfo from "../components/head-info";
 import { twentiesInfo } from "../components/lang/head-info/head-info-text";
 import LangChangeButton from "../components/button/lang-change-button";
-import { k } from "../components/lang/twenties-gallary/ko-twenties";
-import { e } from "../components/lang/twenties-gallary/en-twenties";
-import { useSelector } from "react-redux";
 import TwentiesText from "../components/text-component/twenties-text";
 import TwentiesParallaxText from "../components/text-component/twenties-parallax-text";
 import ArtworkTwenties from "../components/img-component/artwork-twenties";
-import LottieDownScroll from "../components/lottie/lottie-down-scroll";
 import ScrollDownAnimaition from "../components/animation/scoll-down";
 
 const TwentiesGallary = () => {
-  const lang = useSelector((state) => state.language);
-
   return (
     <>
       <HeadInfo info={twentiesInfo} />
 
-      {/* <LangChangeButton /> */}
+      <LangChangeButton />
 
-      {/* <LottieDownScroll /> */}
-
-      <TwentiesText textOne={`${lang}` === "ko" ? k.twenty : e.twenty} />
+      <TwentiesText textOne="twenty" />
 
       <ScrollDownAnimaition />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.flutter : e.flutter}
-      />
+      <TwentiesParallaxText textOne="flutter" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.iAmTwenties : e.iAmTwenties}
-        textTwo={`${lang}` === "ko" ? k.like : e.like}
-      />
+      <TwentiesParallaxText textOne="iAmTwenties" textTwo="like" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.but : e.but} />
+      <TwentiesParallaxText textOne="but" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.twentiesIs : e.twentiesIs}
-        textTwo={`${lang}` === "ko" ? k.different : e.different}
-      />
+      <TwentiesParallaxText textOne="twentiesIs" textTwo="different" />
 
       <ArtworkTwenties src="/images/1.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.likeThis : e.likeThis}
-        textTwo={`${lang}` === "ko" ? k.myTwenties : e.myTwenties}
-      />
+      <TwentiesParallaxText textOne="likeThis" textTwo="myTwenties" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.over : e.over}
-        textTwo={`${lang}` === "ko" ? k.whatIf : e.whatIf}
-      />
+      <TwentiesParallaxText textOne="over" textTwo="whatIf" />
 
       <ArtworkTwenties src="/images/2.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.whatwill : e.whatwill}
-        textTwo={`${lang}` === "ko" ? k.future : e.future}
-      />
+      <TwentiesParallaxText textOne="whatwill" textTwo="future" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.anxious : e.anxious}
-      />
+      <TwentiesParallaxText textOne="anxious" />
 
       <ArtworkTwenties src="/images/3.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.nothing : e.nothing}
-        textTwo={`${lang}` === "ko" ? k.decide : e.decide}
-      />
+      <TwentiesParallaxText textOne="nothing" textTwo="decide" />
 
       <ArtworkTwenties src="/images/4.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.choice : e.choice}
-        textTwo={`${lang}` === "ko" ? k.right : e.right}
-      />
+      <TwentiesParallaxText textOne="choice" textTwo="right" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.ok : e.ok}
-        textTwo={`${lang}` === "ko" ? k.toDoThis : e.toDoThis}
-      />
+      <TwentiesParallaxText textOne="ok" textTwo="toDoThis" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.thisRoad : e.thisRoad}
-        textTwo={`${lang}` === "ko" ? k.rightRoad : e.rightRoad}
-      />
+      <TwentiesParallaxText textOne="thisRoad" textTwo="rightRoad" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.lost : e.lost} />
+      <TwentiesParallaxText textOne="lost" />
 
       <ArtworkTwenties src="/images/5.jpg" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.me : e.me} />
+      <TwentiesParallaxText textOne="me" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.run : e.run}
-        textTwo={`${lang}` === "ko" ? k.toward : e.toward}
-      />
+      <TwentiesParallaxText textOne="run" textTwo="toward" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.medo : e.medo} />
+      <TwentiesParallaxText textOne="medo" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.doing : e.doing}
-        textTwo={`${lang}` === "ko" ? k.now : e.now}
-      />
+      <TwentiesParallaxText textOne="doing" textTwo="now" />
 
       <ArtworkTwenties src="/images/6.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.maybe : e.maybe}
-        textTwo={`${lang}` === "ko" ? k.justRun : e.justRun}
-      />
+      <TwentiesParallaxText textOne="maybe" textTwo="justRun" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.notMe : e.notMe} />
+      <TwentiesParallaxText textOne="notMe" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.eyesOfOthers : e.eyesOfOthers}
-        textTwo={`${lang}` === "ko" ? k.inTheEyes : e.inTheEyes}
-      />
+      <TwentiesParallaxText textOne="eyesOfOthers" textTwo="inTheEyes" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.living : e.living}
-        textTwo={`${lang}` === "ko" ? k.thanMe : e.thanMe}
-      />
+      <TwentiesParallaxText textOne="living" textTwo="thanMe" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.that : e.that}
-        textTwo={`${lang}` === "ko" ? k.forMe : e.forMe}
-      />
+      <TwentiesParallaxText textOne="that" textTwo="forMe" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.so : e.so}
-        textTwo={`${lang}` === "ko" ? k.sorry : e.sorry}
-        textThree={`${lang}` === "ko" ? k.not : e.not}
-      />
+      <TwentiesParallaxText textOne="so" textTwo="sorry" textThree="not" />
 
       <ArtworkTwenties src="/images/7.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.little : e.little}
-        textTwo={`${lang}` === "ko" ? k.beOkay : e.beOkay}
-      />
+      <TwentiesParallaxText textOne="little" textTwo="beOkay" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.beautiful : e.beautiful}
-        textTwo={`${lang}` === "ko" ? k.beautifulTwenties : e.beautifulTwenties}
-      />
+      <TwentiesParallaxText textOne="beautiful" textTwo="beautifulTwenties" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.inMyTwenties : e.inMyTwenties}
-        textTwo={`${lang}` === "ko" ? k.liveForMe : e.liveForMe}
-      />
+      <TwentiesParallaxText textOne="inMyTwenties" textTwo="liveForMe" />
 
-      <TwentiesParallaxText textOne={`${lang}` === "ko" ? k.toMe : e.toMe} />
+      <TwentiesParallaxText textOne="toMe" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.notToBeSorry : e.notToBeSorry}
-      />
+      <TwentiesParallaxText textOne="notToBeSorry" />
 
       <ArtworkTwenties src="/images/8.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.whatIsThat : e.whatIsThat}
-        textTwo={`${lang}` === "ko" ? k.difficult : e.difficult}
-      />
+      <TwentiesParallaxText textOne="whatIsThat" textTwo="difficult" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.aLittle : e.aLittle}
-        textTwo={`${lang}` === "ko" ? k.letItBe : e.letItBe}
-      />
+      <TwentiesParallaxText textOne="aLittle" textTwo="letItBe" />
 
       <ArtworkTwenties src="/images/9.jpg" />
 
-      <TwentiesParallaxText
-        textOne={`${lang}` === "ko" ? k.twentiesYou : e.twentiesYou}
-      />
+      <TwentiesParallaxText textOne="twentiesYou" />
     </>
   );
 };
