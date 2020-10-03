@@ -40,6 +40,7 @@ const YoutubePage = () => {
   return (
     <>
       <SearchHeader onSearch={search} />
+      <div></div>
       <VideoList videos={videos} />
     </>
   );
