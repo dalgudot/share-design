@@ -38,11 +38,13 @@ const TextContainer = styled.main`
   p {
     color: var(--white);
     font-weight: 100;
+    width: 100vw;
+    text-align: center;
   }
 
   @media all and (max-width: 768px) {
     p {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
 
