@@ -31,7 +31,7 @@ const Container = styled.div`
 
 const TextContainer = styled.main`
   position: absolute;
-  top: 43%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%);
 

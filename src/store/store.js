@@ -10,15 +10,6 @@ const InitialState = {
   language: "ko",
 };
 
-// export const actionTypes = {
-//   TICK: "TICK",
-//   INCREMENT: "INCREMENT",
-//   DECREMENT: "DECREMENT",
-//   RESET: "RESET",
-//   LOAD_EXAMPLE_DATA: "LOAD_EXAMPLE_DATA",
-//   LOADING_DATA_FAILURE: "LOADING_DATA_FAILURE",
-// };
-
 // REDUCERS
 export const reducer = (state = InitialState, action) => {
   switch (action.type) {
@@ -31,34 +22,6 @@ export const reducer = (state = InitialState, action) => {
     default:
       return state;
   }
-};
-
-// ACTIONS
-export const serverRenderClock = () => {
-  return { type: actionTypes.TICK, light: false, ts: Date.now() };
-};
-export const startClock = () => {
-  return { type: actionTypes.TICK, light: true, ts: Date.now() };
-};
-
-export const incrementCount = () => {
-  return { type: actionTypes.INCREMENT };
-};
-
-export const decrementCount = () => {
-  return { type: actionTypes.DECREMENT };
-};
-
-export const resetCount = () => {
-  return { type: actionTypes.RESET };
-};
-
-export const loadExampleData = (data) => {
-  return { type: actionTypes.LOAD_EXAMPLE_DATA, data };
-};
-
-export const loadingExampleDataFailure = () => {
-  return { type: actionTypes.LOADING_DATA_FAILURE };
 };
 
 const persistConfig = {

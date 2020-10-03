@@ -43,7 +43,7 @@ This portfolio website is the result. I plan to continue to update through this 
 
 - [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
 
-- [Maksim Ivanov's HTML Canvas Tutorial](https://www.youtube.com/watch?v=FLESHMJ-bI0)
+- [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0)
 
 ## Artwork Copyrights 👨‍⚖️
 
