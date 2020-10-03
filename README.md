@@ -21,11 +21,13 @@ This portfolio website is the result. I plan to continue to update through this 
 
 - [Styled-Components](https://github.com/styled-components/styled-components)
 
+- [NextJS Examples](https://github.com/vercel/next.js/tree/canary/examples)
+
 - [Redux](https://github.com/reduxjs/redux)
 
 - [React-Redux](https://github.com/reduxjs/react-redux)
 
-- [Redux on NextJS](https://github.com/vercel/next.js/tree/canary/examples/with-redux)
+- [Redux-Persist](https://www.npmjs.com/package/redux-persist)
 
 #### Interaction
 
@@ -40,6 +42,8 @@ This portfolio website is the result. I plan to continue to update through this 
 - [Ellie's Dream Coding](https://www.youtube.com/channel/UC_4u-bXaba7yrRz_6x6kb_w)
 
 - [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
+
+- [Maksim Ivanov's HTML Canvas Tutorial](https://www.youtube.com/watch?v=FLESHMJ-bI0)
 
 ## Artwork Copyrights 👨‍⚖️
 
