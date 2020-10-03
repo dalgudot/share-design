@@ -12,7 +12,7 @@ const YoutubePage = () => {
     };
 
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${process.env.PRODUCTION_ENV_YOUTUBE_API_KEY}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -30,7 +30,7 @@ const YoutubePage = () => {
     };
 
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=reactJS Tutorial&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=reactJS Tutorial&key=${process.env.PRODUCTION_ENV_YOUTUBE_API_KEY}`,
       requestOptions
     )
       .then((response) => response.json())
