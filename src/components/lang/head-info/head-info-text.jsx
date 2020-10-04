@@ -1,5 +1,5 @@
 export const indexInfo = {
-  title: "KHK DESIGN",
+  title: "KyungHwan Kim",
   icoImage: "/kh.ico",
   description: "UI/UX 디자인 경험을 공유합니다",
   url: "https://khk-design.kr/",

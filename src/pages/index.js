@@ -3,37 +3,40 @@ import { indexInfo } from "../components/lang/head-info/head-info-text";
 import Link from "next/link";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { k } from "../components/lang/index/ko-index";
-import { e } from "../components/lang/index/en-index";
 import LangChangeButton from "../components//button/lang-change-button";
-import { useSelector } from "react-redux";
-
-//Framer Motion
-const buttonVariants = {
-  hover: {
-    scale: 1.1,
-    // transition: {
-    //   yoyo: Infinity,
-    // },
-  },
-};
+import Header from "../components/index/header";
 
 const Index = () => {
-  const lang = useSelector((state) => state.language);
   return (
     <>
       <HeadInfo info={indexInfo} />
-      <LangChangeButton />
+      {/* <LangChangeButton /> */}
 
+      <Header />
       <CenterAlign>
-        <Link href="twenties-gallary">
-          <a>
-            <motion.button variants={buttonVariants} whileHover="hover">
-              {`${lang}` === "ko" ? k.twenty : e.twenty}
-            </motion.button>
-          </a>
-        </Link>
+        <MainText>
+          {/* Gradient Color Github Reference 참고 */}
+          UX 디자인 경험을
+          <br />
+          공유합니다.
+        </MainText>
+        <CenterLine />
+        <SubjectText>
+          첫 번째,
+          <br />
+          20대를 남기다
+        </SubjectText>
+        <SubjectButton>Comming Soon...</SubjectButton>
+        <SubjectList>
+          <li></li>
+          <div></div>
+          <li></li>
+          <div></div>
+          <li></li>
+        </SubjectList>
       </CenterAlign>
+
+      <Footer />
     </>
   );
 };
@@ -41,20 +44,67 @@ const Index = () => {
 export default Index;
 
 const CenterAlign = styled.section`
-  width: 100vw;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 10rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+`;
 
-  button {
-    font-size: 24px;
-    font-weight: 100;
-    color: var(--white);
-    padding: 18px 36px;
-    background-color: transparent;
-    border: solid 1px var(--white);
+const MainText = styled.h1`
+  font-size: 3.2rem;
+  font-weight: 300;
+  text-align: center;
+  /* -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+  background: -webkit-linear-gradient(-70deg, #db469f, #2188ff);
+  background-clip: text; */
+`;
+
+const CenterLine = styled.div`
+  width: 0.5px;
+  height: 9.6rem;
+  margin-top: 3.6rem;
+  background-color: var(--white);
+`;
+
+const SubjectText = styled.h1`
+  font-size: 3.2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 3.6rem;
+`;
+
+const SubjectButton = styled.button`
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: var(--white);
+  padding: 14px 24px;
+  background-color: transparent;
+  border: solid 1px var(--white);
+  margin-top: 2.4rem;
+`;
+
+const SubjectList = styled.ul`
+  width: 100%;
+  padding: 6rem 16.66667% 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media all and (max-width: 768px) {
+    padding: 6rem 6% 0;
   }
+
+  li {
+    width: 100%;
+    height: 36rem;
+    background-color: var(--white);
+  }
+
+  div {
+    padding-left: 1.1rem;
+  }
+`;
+
+const Footer = styled.footer`
+  height: 10rem;
 `;

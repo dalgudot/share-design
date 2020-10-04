@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { useLanguageChange } from "../func/lang-change-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const LangChangeButton = () => {
-  const { lang, languageChange } = useLanguageChange();
+  const lang = useSelector((state) => state.language);
+  const dispatch = useDispatch();
+  const languageChange = () =>
+    dispatch({
+      type: "CHANGELANGUAGE",
+    });
+
   return (
     <Button_Language>
       <button onClick={languageChange}>
