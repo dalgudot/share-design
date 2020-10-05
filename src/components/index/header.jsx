@@ -33,7 +33,6 @@ const Left = styled.div`
   h1 {
     font-size: 2.1rem;
     font-weight: 700;
-    letter-spacing: 1px;
   }
 
   h2 {
@@ -54,7 +53,7 @@ const LineHoverWrap = styled.div`
 const LineHover = styled.a`
   font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: var(--white);
 
   &:after {

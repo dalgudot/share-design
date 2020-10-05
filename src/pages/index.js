@@ -97,7 +97,7 @@ const SubjectList = styled.ul`
   li {
     width: 100%;
     height: 36rem;
-    background-color: var(--white);
+    background-color: #212121;
   }
 
   div {
