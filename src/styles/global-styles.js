@@ -1,3 +1,31 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
+html {
+  /* 드래그 방지 */
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+    background-color: ${({theme}) => theme.darkTheme.backgroundColor};
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  color: ${({theme}) => theme.darkTheme.textPrimary};
+}
+
 * {
   outline: 0;
   margin: 0;
@@ -7,7 +35,7 @@
 }
 
 body {
-  background-color: var(--dark-background-color);
+  /* background-color: var(--dark-background-color); */
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
@@ -42,3 +70,6 @@ li {
 img {
   pointer-events: none;
 }
+`;
+
+export default GlobalStyles;

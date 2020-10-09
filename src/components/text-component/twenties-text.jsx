@@ -7,6 +7,7 @@ import { e } from "../lang/twenties-gallary/en-twenties";
 
 const TwentiesText = ({ textOne }) => {
   const lang = useSelector((state) => state.language);
+  
   return (
     <Container>
       <TextContainer>
@@ -36,7 +37,6 @@ const TextContainer = styled.main`
   transform: translateX(-50%);
 
   p {
-    color: var(--white);
     font-weight: 100;
     width: 100vw;
     text-align: center;

@@ -45,7 +45,6 @@ const TextContainer = styled.main`
   margin-top: 10vh;
 
   p {
-    color: var(--white);
     font-weight: 100;
   }
 

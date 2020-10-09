@@ -8,16 +8,28 @@ let store;
 
 const InitialState = {
   language: "ko",
+  Mode: "dark",
 };
+
+export const actionTypes = {
+  CHANGELANGUAGE: "CHANGELANGUAGE",
+  CHANGEMODE: "CHANGEMODE",
+}
 
 // REDUCERS
 export const reducer = (state = InitialState, action) => {
   switch (action.type) {
-    case "CHANGELANGUAGE":
+    case actionTypes.CHANGELANGUAGE:
       return {
         ...state,
         language: state.language === "ko" ? "en" : "ko",
       };
+
+      case actionTypes.CHANGEMODE:
+        return {
+          ...state,
+          lightMode: state.lightMode === "dark" ? "light" : "dark",
+        }
 
     default:
       return state;
@@ -27,7 +39,7 @@ export const reducer = (state = InitialState, action) => {
 const persistConfig = {
   key: "primary",
   storage,
-  whitelist: ["language"], // place to select which state you want to persist
+  whitelist: ["language", "lightMode"], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

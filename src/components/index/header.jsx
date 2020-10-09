@@ -10,7 +10,7 @@ const Header = () => {
       </Left>
       <LineHoverWrap>
         <Link href="/">
-          <LineHover>About</LineHover>
+          <LineHover>about</LineHover>
         </Link>
       </LineHoverWrap>
     </Container>
@@ -54,7 +54,6 @@ const LineHover = styled.a`
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0px;
-  color: var(--white);
 
   &:after {
     content: "";
@@ -63,7 +62,7 @@ const LineHover = styled.a`
     height: 3px;
     bottom: -10px;
     left: 0;
-    background-color: var(--white);
+    background-color: ${({theme}) => theme.darkTheme.textPrimary};
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s;

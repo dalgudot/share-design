@@ -2,15 +2,22 @@ import HeadInfo from "../components/head-info";
 import { indexInfo } from "../components/lang/head-info/head-info-text";
 import Link from "next/link";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import LangChangeButton from "../components//button/lang-change-button";
 import Header from "../components/index/header";
+import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
+
+import ModeChangeButton from "../components//button/mode-change-button";
 
 const Index = () => {
+
+  // DetectBrowserLang()
+
   return (
     <>
       <HeadInfo info={indexInfo} />
       {/* <LangChangeButton /> */}
+
+      {/* <ModeChangeButton /> */}
 
       <Header />
       <CenterAlign>
@@ -64,7 +71,7 @@ const CenterLine = styled.div`
   width: 0.5px;
   height: 9.6rem;
   margin-top: 3.6rem;
-  background-color: var(--white);
+  background-color: ${({theme}) => theme.darkTheme.textPrimary};
 `;
 
 const SubjectText = styled.h1`
@@ -77,10 +84,9 @@ const SubjectText = styled.h1`
 const SubjectButton = styled.button`
   font-size: 1.7rem;
   font-weight: 300;
-  color: var(--white);
   padding: 14px 24px;
   background-color: transparent;
-  border: solid 1px var(--white);
+  border: solid 1px ${({theme}) => theme.darkTheme.textPrimary};
   margin-top: 2.4rem;
 `;
 

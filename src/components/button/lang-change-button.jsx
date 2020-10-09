@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const LangChangeButton = () => {
   const lang = useSelector((state) => state.language);
@@ -9,6 +10,11 @@ const LangChangeButton = () => {
       type: "CHANGELANGUAGE",
     });
 
+  // html "lang" attribute 변경
+  useEffect(() => {
+    document.documentElement.setAttribute('lang', lang === "ko" ? "ko" : "en");
+    }, [lang])
+  
   return (
     <Button_Language>
       <button onClick={languageChange}>
@@ -28,9 +34,8 @@ const Button_Language = styled.section`
   button {
     font-size: 14px;
     font-weight: 100;
-    color: var(--white);
     padding: 6px 12px;
     background-color: transparent;
-    border: solid 1px var(--white);
+    border: solid 1px ${({theme}) => theme.darkTheme.textPrimary};
   }
 `;

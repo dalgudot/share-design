@@ -1,16 +1,21 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { kAlt } from "../lang/twenties-gallary/ko-twenties";
+import { eAlt } from "../lang/twenties-gallary/en-twenties";
 
-const ArtworkTwenteis = ({ src }) => {
+const ArtworkTwenteis = ({ src, alt }) => {
+  const lang = useSelector((state) => state.language);
+
   return (
     <Container>
-      <Artwork src={src} />
+      <Artwork src={src} alt={`${lang}` === "ko" ? kAlt[alt] : eAlt[alt]} />
     </Container>
   );
 };
 
 export default ArtworkTwenteis;
 
-const Container = styled.section`
+const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;

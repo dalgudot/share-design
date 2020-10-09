@@ -25,23 +25,23 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="twentiesIs" textTwo="different" />
 
-      <ArtworkTwenties src="/images/1.jpg" />
+      <ArtworkTwenties src="/images/1.jpg" alt="alt1" />
 
       <TwentiesParallaxText textOne="likeThis" textTwo="myTwenties" />
 
       <TwentiesParallaxText textOne="over" textTwo="whatIf" />
 
-      <ArtworkTwenties src="/images/2.jpg" />
+      <ArtworkTwenties src="/images/2.jpg" alt="alt2" />
 
       <TwentiesParallaxText textOne="whatwill" textTwo="future" />
 
       <TwentiesParallaxText textOne="anxious" />
 
-      <ArtworkTwenties src="/images/3.jpg" />
+      <ArtworkTwenties src="/images/3.jpg" alt="alt3" />
 
       <TwentiesParallaxText textOne="nothing" textTwo="decide" />
 
-      <ArtworkTwenties src="/images/4.jpg" />
+      <ArtworkTwenties src="/images/4.jpg" alt="alt4" />
 
       <TwentiesParallaxText textOne="choice" textTwo="right" />
 
@@ -51,7 +51,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="lost" />
 
-      <ArtworkTwenties src="/images/5.jpg" />
+      <ArtworkTwenties src="/images/5.jpg" alt="alt5" />
 
       <TwentiesParallaxText textOne="me" />
 
@@ -61,7 +61,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="doing" textTwo="now" />
 
-      <ArtworkTwenties src="/images/6.jpg" />
+      <ArtworkTwenties src="/images/6.jpg" alt="alt6"/>
 
       <TwentiesParallaxText textOne="maybe" textTwo="justRun" />
 
@@ -75,7 +75,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="so" textTwo="sorry" textThree="not" />
 
-      <ArtworkTwenties src="/images/7.jpg" />
+      <ArtworkTwenties src="/images/7.jpg" alt="alt7" />
 
       <TwentiesParallaxText textOne="little" textTwo="beOkay" />
 
@@ -87,13 +87,13 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="notToBeSorry" />
 
-      <ArtworkTwenties src="/images/8.jpg" />
+      <ArtworkTwenties src="/images/8.jpg" alt="alt8"/>
 
       <TwentiesParallaxText textOne="whatIsThat" textTwo="difficult" />
 
       <TwentiesParallaxText textOne="aLittle" textTwo="letItBe" />
 
-      <ArtworkTwenties src="/images/9.jpg" />
+      <ArtworkTwenties src="/images/9.jpg" alt="alt9"/>
 
       <TwentiesParallaxText textOne="twentiesYou" />
     </>

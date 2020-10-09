@@ -2,6 +2,12 @@
 마크다운 markdown 작성법
 https://gist.github.com/ihoneymon/652be052a0727ad59601
 
+[NextJS의 SSR]
+_app.js, _document.js -> 최초로 실행(server only file)
+_app.js부터 실행
+
+https://velog.io/@cyranocoding/Next-js-%EA%B5%AC%EB%8F%99%EB%B0%A9%EC%8B%9D-%EA%B3%BC-getInitialProps
+
 
 [REDUX]
 1. Next.js에서 Redux 사용_Vercel
@@ -34,3 +40,14 @@ scrollbar-width: none; /* Firefox */
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
+
+
+[Language Code]
+https://docs.microsoft.com/en-us/previous-versions/commerce-server/ee825488(v=cs.20)?redirectedfrom=MSDN
+
+
+
+[화면 복사 방지]
+document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function("return false");
+
+http://blog.naver.com/PostView.nhn?blogId=hanna7582&logNo=220738589319&parentCategoryNo=&categoryNo=28&viewDate=&isShowPopularPosts=false&from=postView
