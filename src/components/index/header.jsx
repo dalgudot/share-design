@@ -62,7 +62,7 @@ const LineHover = styled.a`
     height: 3px;
     bottom: -10px;
     left: 0;
-    background-color: ${({theme}) => theme.darkTheme.textPrimary};
+    background-color: ${({ theme }) => theme.textPrimary};
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s;

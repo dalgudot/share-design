@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 html {
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-color: ${({theme}) => theme.darkTheme.backgroundColor};
+    background-color: ${({ theme }) => theme.backgroundColor};
 }
 
 h1,
@@ -23,7 +23,7 @@ h6,
 p,
 a,
 button {
-  color: ${({theme}) => theme.darkTheme.textPrimary};
+  color: ${({ theme }) => theme.textPrimary};
 }
 
 * {

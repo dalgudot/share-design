@@ -6,20 +6,19 @@ import LangChangeButton from "../components//button/lang-change-button";
 import Header from "../components/index/header";
 import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
 
-import ModeChangeButton from "../components//button/mode-change-button";
+import TwentiesText from "../components/text-component/twenties-text";
 
 const Index = () => {
-
-  // DetectBrowserLang()
+  DetectBrowserLang();
 
   return (
     <>
       <HeadInfo info={indexInfo} />
       {/* <LangChangeButton /> */}
 
-      {/* <ModeChangeButton /> */}
-
       <Header />
+      {/* <TwentiesText textOne="twenty" /> */}
+
       <CenterAlign>
         <MainText>
           {/* Gradient Color Github Reference 참고 */}
@@ -33,7 +32,11 @@ const Index = () => {
           <br />
           20대를 남기다
         </SubjectText>
-        <SubjectButton>Comming Soon...</SubjectButton>
+        <Link href="/">
+          <a>
+            <SubjectButton>Comming Soon...</SubjectButton>
+          </a>
+        </Link>
         <SubjectList>
           <li></li>
           <div></div>
@@ -71,7 +74,7 @@ const CenterLine = styled.div`
   width: 0.5px;
   height: 9.6rem;
   margin-top: 3.6rem;
-  background-color: ${({theme}) => theme.darkTheme.textPrimary};
+  background-color: ${({ theme }) => theme.textPrimary};
 `;
 
 const SubjectText = styled.h1`
@@ -86,7 +89,7 @@ const SubjectButton = styled.button`
   font-weight: 300;
   padding: 14px 24px;
   background-color: transparent;
-  border: solid 1px ${({theme}) => theme.darkTheme.textPrimary};
+  border: solid 1px ${({ theme }) => theme.textPrimary};
   margin-top: 2.4rem;
 `;
 

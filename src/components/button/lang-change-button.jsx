@@ -12,9 +12,11 @@ const LangChangeButton = () => {
 
   // html "lang" attribute 변경
   useEffect(() => {
-    document.documentElement.setAttribute('lang', lang === "ko" ? "ko" : "en");
-    }, [lang])
-  
+    document.documentElement.setAttribute("lang", lang === "ko" ? "ko" : "en");
+
+    console.log(`HtmlLang: ${document.documentElement.lang}`);
+  }, [lang]);
+
   return (
     <Button_Language>
       <button onClick={languageChange}>
@@ -36,6 +38,6 @@ const Button_Language = styled.section`
     font-weight: 100;
     padding: 6px 12px;
     background-color: transparent;
-    border: solid 1px ${({theme}) => theme.darkTheme.textPrimary};
+    border: solid 1px ${({ theme }) => theme.textPrimary};
   }
 `;
