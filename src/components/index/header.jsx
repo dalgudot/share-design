@@ -9,7 +9,7 @@ const Header = () => {
         <h2>UX Designer</h2>
       </Left>
       <LineHoverWrap>
-        <Link href="/">
+        <Link href="/canvas">
           <LineHover>about</LineHover>
         </Link>
       </LineHoverWrap>

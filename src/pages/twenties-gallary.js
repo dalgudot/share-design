@@ -61,7 +61,7 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="doing" textTwo="now" />
 
-      <ArtworkTwenties src="/images/6.jpg" alt="alt6"/>
+      <ArtworkTwenties src="/images/6.jpg" alt="alt6" />
 
       <TwentiesParallaxText textOne="maybe" textTwo="justRun" />
 
@@ -87,13 +87,13 @@ const TwentiesGallary = () => {
 
       <TwentiesParallaxText textOne="notToBeSorry" />
 
-      <ArtworkTwenties src="/images/8.jpg" alt="alt8"/>
+      <ArtworkTwenties src="/images/8.jpg" alt="alt8" />
 
       <TwentiesParallaxText textOne="whatIsThat" textTwo="difficult" />
 
       <TwentiesParallaxText textOne="aLittle" textTwo="letItBe" />
 
-      <ArtworkTwenties src="/images/9.jpg" alt="alt9"/>
+      <ArtworkTwenties src="/images/9.jpg" alt="alt9" />
 
       <TwentiesParallaxText textOne="twentiesYou" />
     </>

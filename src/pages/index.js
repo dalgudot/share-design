@@ -2,14 +2,12 @@ import HeadInfo from "../components/head-info";
 import { indexInfo } from "../components/lang/head-info/head-info-text";
 import Link from "next/link";
 import styled from "styled-components";
-import LangChangeButton from "../components//button/lang-change-button";
+import LangChangeButton from "../components/button/lang-change-button";
 import Header from "../components/index/header";
 import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
 
-import TwentiesText from "../components/text-component/twenties-text";
-
 const Index = () => {
-  DetectBrowserLang();
+  // DetectBrowserLang();
 
   return (
     <>
@@ -17,7 +15,6 @@ const Index = () => {
       {/* <LangChangeButton /> */}
 
       <Header />
-      {/* <TwentiesText textOne="twenty" /> */}
 
       <CenterAlign>
         <MainText>
@@ -32,7 +29,7 @@ const Index = () => {
           <br />
           20대를 남기다
         </SubjectText>
-        <Link href="/">
+        <Link href="/twenties-gallary">
           <a>
             <SubjectButton>Comming Soon...</SubjectButton>
           </a>
