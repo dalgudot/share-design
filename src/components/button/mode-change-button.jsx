@@ -11,6 +11,7 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
       type: "MODECHANGE",
     });
 
+  //초기 mode, 새로고침 mode 정의
   useEffect(() => {
     setMode(theme === "darkTheme" ? darkTheme : lightTheme);
   }, []);
@@ -27,17 +28,17 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
   };
 
   return (
-    <Button_Language>
+    <ButtonMode>
       <button style={style} onClick={setTheme}>
         MODE
       </button>
-    </Button_Language>
+    </ButtonMode>
   );
 };
 
 export default ModeChangeButton;
 
-const Button_Language = styled.section`
+const ButtonMode = styled.section`
   position: fixed;
   top: 24px;
   right: 24px;

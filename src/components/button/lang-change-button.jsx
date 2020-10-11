@@ -18,17 +18,17 @@ const LangChangeButton = () => {
   }, [lang]);
 
   return (
-    <Button_Language>
+    <ButtonLanguage>
       <button onClick={languageChange}>
         {`${lang}` === "ko" ? "View in English" : "한글로 보기"}
       </button>
-    </Button_Language>
+    </ButtonLanguage>
   );
 };
 
 export default LangChangeButton;
 
-const Button_Language = styled.section`
+const ButtonLanguage = styled.section`
   position: fixed;
   top: 24px;
   right: 24px;
