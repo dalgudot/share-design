@@ -2,6 +2,7 @@ import { useStore } from "../store/store";
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import "../styles/font.css";
 import { darkTheme, lightTheme } from "../styles/theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global-styles";

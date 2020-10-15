@@ -28,7 +28,7 @@ const LangChangeButton = () => {
 
 export default LangChangeButton;
 
-const ButtonLanguage = styled.section`
+const ButtonLanguage = styled.div`
   position: fixed;
   top: 24px;
   right: 24px;

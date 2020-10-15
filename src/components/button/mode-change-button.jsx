@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { k } from "../lang/index/ko-index";
+import { e } from "../lang/index/en-index";
 
 const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
   const theme = useSelector((state) => state.localMode);
@@ -10,6 +12,8 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
     dispatch({
       type: "MODECHANGE",
     });
+
+  const lang = useSelector((state) => state.language);
 
   //초기 mode, 새로고침 mode 정의
   useEffect(() => {
@@ -28,9 +32,15 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
   };
 
   return (
-    <ButtonMode>
-      <button style={style} onClick={setTheme}>
-        MODE
+    <ButtonMode style={style}>
+      <button onClick={setTheme}>
+        {`${theme}` === "darkTheme"
+          ? `${lang}` === "ko"
+            ? k["DarkMode"]
+            : e["DarkMode"]
+          : `${lang}` === "ko"
+          ? k["LightMode"]
+          : e["LightMode"]}
       </button>
     </ButtonMode>
   );
@@ -38,10 +48,10 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
 
 export default ModeChangeButton;
 
-const ButtonMode = styled.section`
-  position: fixed;
-  top: 24px;
-  right: 24px;
+const ButtonMode = styled.div`
+  position: absolute;
+  top: 300px;
+  left: 24px;
 
   button {
     font-size: 14px;
