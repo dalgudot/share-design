@@ -19,7 +19,6 @@ html {
 
 body {
     background-color: ${({ theme }) => theme.backgroundColor};
-    transition: 0.5s;
 }
 
 h1,
