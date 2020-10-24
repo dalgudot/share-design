@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import { k } from "../../lang/twenties-gallary/ko-twenties";
 import { e } from "../../lang/twenties-gallary/en-twenties";
@@ -14,38 +14,41 @@ const TwentiesStaggerText = ({ text }) => {
   const string = Array.from(`${lang}` === "ko" ? k[text] : e[text]);
 
   return (
-    <Container>
-      <motion.div
-        variants={staggerVariants}
-        initial="hidden"
-        animate="show"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        <TextContainer>
-          {string.map((letter, index) => (
-            <motion.p //
-              key={index}
-              variants={letterVariants}
-            >
-              {letter}
-            </motion.p>
-          ))}
-        </TextContainer>
-      </motion.div>
-    </Container>
+    // AnimatePresence는 각 애니메이션의 구분을 위해 'key'가 필수!
+    // https://www.framer.com/api/motion/animate-presence/#usepresence
+    <AnimatePresence>
+      <Container>
+        <motion.div
+          key={text}
+          variants={staggerVariants}
+          initial="hidden"
+          animate="show"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <TextContainer>
+            {string.map((letter, index) => (
+              <motion.p //
+                key={index}
+                variants={letterVariants}
+              >
+                {letter}
+              </motion.p>
+            ))}
+          </TextContainer>
+        </motion.div>
+      </Container>
+    </AnimatePresence>
   );
 };
 
 export default TwentiesStaggerText;
 
-const Container = styled.div`
-  /* width: 100%;
-  height: 200px; */
+const Container = styled.main`
   width: 100vw;
   height: 66.6667vw;
 `;
 
-const TextContainer = styled.main`
+const TextContainer = styled.div`
   position: absolute;
   top: 10%;
   left: 50%;

@@ -14,21 +14,13 @@ const View = ({ pageNum }) => {
         return <TwentiesStaggerText text="twenty" />;
 
       case 2:
-        return (
-          <figure>
-            <TwentiesStaggerText text="flutter" />
-          </figure>
-        );
+        return <TwentiesStaggerText text="flutter" />;
 
       case 3:
         return <TwentiesStaggerText text="iAmTwenties" />;
 
       case 4:
-        return (
-          <figure>
-            <TwentiesStaggerText text="like" />
-          </figure>
-        );
+        return <TwentiesStaggerText text="like" />;
 
       case 5:
         return <ArtworkTwenties src="/images/1.jpg" alt="alt1" />;
