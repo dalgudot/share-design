@@ -27,7 +27,7 @@ const TwentiesStaggerText = ({ text }) => {
               key={index}
               variants={letterVariants}
             >
-              {letter === "" ? "\u00A0" : letter}
+              {letter}
             </motion.p>
           ))}
         </TextContainer>
@@ -39,8 +39,10 @@ const TwentiesStaggerText = ({ text }) => {
 export default TwentiesStaggerText;
 
 const Container = styled.div`
+  /* width: 100%;
+  height: 200px; */
   width: 100vw;
-  height: 100vh;
+  height: 66.6667vw;
 `;
 
 const TextContainer = styled.main`

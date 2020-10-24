@@ -4,7 +4,6 @@ import LangChangeButton from "../../components/button/lang-change-button";
 import TwentiesText from "../../components/text-component/twenties/twenties-text";
 import TwentiesParallaxText from "../../components/text-component/twenties/twenties-parallax-text";
 import ArtworkTwenties from "../../components/img-component/artwork-twenties";
-import ScrollDown from "../../components/animation/scoll-down";
 
 const TwentiesGallary = () => {
   return (
@@ -14,8 +13,6 @@ const TwentiesGallary = () => {
       <LangChangeButton />
 
       <TwentiesText textOne="twenty" />
-
-      <ScrollDown />
 
       <TwentiesParallaxText textOne="flutter" />
 

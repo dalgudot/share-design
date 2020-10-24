@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import HeadInfo from "../../components/head-info";
+import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
 import { useEffect, useState } from "react";
-import PageMove from "./views/view";
+import View from "./views/view";
 
 const TwentiesPage = () => {
   const [pageNum, setPageNum] = useState(1);
-
   console.log(`TwentiesPageNum: ${pageNum}`);
 
   const forward = () => {
@@ -17,16 +18,17 @@ const TwentiesPage = () => {
 
   return (
     <>
-      <PageMove pageNum={pageNum} />
-      <ForwardButton onClick={back}>back</ForwardButton>
-      <BackButton onClick={forward}>forward</BackButton>
+      <HeadInfo info={twentiesInfo} />
+      <View pageNum={pageNum} />
+      <Button onClick={back}>back</Button>
+      <Button onClick={forward}>forward</Button>
     </>
   );
 };
 
 export default TwentiesPage;
 
-const ForwardButton = styled.button`
+const Button = styled.button`
   font-size: 24px;
   font-weight: 100;
   padding: 6px 6px;
@@ -34,20 +36,4 @@ const ForwardButton = styled.button`
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.textPrimary};
   border-color: ${({ theme }) => theme.textPrimary};
-  position: absolute;
-  left: 5%;
-  bottom: 24px;
-`;
-
-const BackButton = styled.button`
-  font-size: 24px;
-  font-weight: 100;
-  padding: 6px 6px;
-  padding: 24px;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.textPrimary};
-  border-color: ${({ theme }) => theme.textPrimary};
-  position: absolute;
-  right: 5%;
-  bottom: 24px;
 `;

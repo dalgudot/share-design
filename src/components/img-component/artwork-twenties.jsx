@@ -23,8 +23,8 @@ const Container = styled.main`
 
 const Artwork = styled.img`
   pointer-events: none;
-  margin-top: 50vh;
-  margin-bottom: 25vh;
+  /* margin-top: 50vh;
+  margin-bottom: 25vh; */
 
   @media all and (max-width: 1200px) {
     width: 100vw;
