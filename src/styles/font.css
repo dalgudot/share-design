@@ -1,13 +1,3 @@
-html {
-  font-size: 10px; /* rem을 위한 Setting */
-}
-
-@media all and (max-width: 768px) {
-  html {
-    font-size: 8px;
-  }
-}
-
 /* S of Spoqa Han Sans */
 @font-face {
   font-family: "Korean, Number is SpoqaHanSans & English is Roboto";

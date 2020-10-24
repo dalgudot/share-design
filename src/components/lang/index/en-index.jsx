@@ -1,5 +1,5 @@
 export const e = {
   twenty: "TWENTIES",
-  DarkMode: "View in DarkMode",
-  LightMode: "View in LightMode",
+  DarkMode: "DARK MODE ON",
+  LightMode: "LIGHT MODE ON",
 };

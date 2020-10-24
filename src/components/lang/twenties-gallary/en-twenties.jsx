@@ -1,6 +1,6 @@
 export const e = {
   twenty: "20 YEARS OLD",
-  flutter: "I was flutterd",
+  flutter: "I\u00A0was\u00A0flutterd",
   iAmTwenties: "I liked",
   like: "being in my twenties",
   but: "but",
@@ -56,13 +56,13 @@ export const e = {
 };
 
 export const eAlt = {
-  alt1 : "The first photo of artwork 'Twenties'",
-  alt2 : "The second photo of artwork 'Twenties'",
-  alt3 : "The third photo of artwork 'Twenties'",
-  alt4 : "The fourth photo of artwork 'Twenties'",
-  alt5 : "The fifth photo of artwork 'Twenties'",
-  alt6 : "The sixth photo of artwork 'Twenties'",
-  alt7 : "The seventh photo of artwork 'Twenties'",
-  alt8 : "The eighth photo of artwork 'Twenties'",
-  alt9 : "The ninth photo of artwork 'Twenties'",
-}
+  alt1: "The first photo of artwork 'Twenties'",
+  alt2: "The second photo of artwork 'Twenties'",
+  alt3: "The third photo of artwork 'Twenties'",
+  alt4: "The fourth photo of artwork 'Twenties'",
+  alt5: "The fifth photo of artwork 'Twenties'",
+  alt6: "The sixth photo of artwork 'Twenties'",
+  alt7: "The seventh photo of artwork 'Twenties'",
+  alt8: "The eighth photo of artwork 'Twenties'",
+  alt9: "The ninth photo of artwork 'Twenties'",
+};

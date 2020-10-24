@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-const ScrollDownAnimaition = () => {
+const ScrollDown = () => {
   const [showScrollDown, setShowScrollDwon] = useState(true);
 
   const [initialScrollY] = useRef(0);
@@ -12,7 +12,7 @@ const ScrollDownAnimaition = () => {
       if (window.scrollY > 30) {
         setShowScrollDwon(false);
       }
-      console.log(showScrollDown, window.scrollY);
+      // console.log(showScrollDown, window.scrollY);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,7 +34,7 @@ const ScrollDownAnimaition = () => {
   );
 };
 
-export default ScrollDownAnimaition;
+export default ScrollDown;
 
 const Wrap = styled.section`
   position: absolute;

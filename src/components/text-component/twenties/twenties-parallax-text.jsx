@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useSelector } from "react-redux";
-import { k } from "../lang/twenties-gallary/ko-twenties";
-import { e } from "../lang/twenties-gallary/en-twenties";
+import { k } from "../../lang/twenties-gallary/ko-twenties";
+import { e } from "../../lang/twenties-gallary/en-twenties";
 
 const TwentiesParallaxText = ({ textOne, textTwo, textThree }) => {
   const [ref, inView] = useInView({

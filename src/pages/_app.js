@@ -16,7 +16,6 @@ export default function App({ Component, pageProps }) {
     persistor.persist();
   });
 
-  // darkMode & lightMode
   const [mode, setMode] = useState(darkTheme);
 
   PreventIllegalTheft();

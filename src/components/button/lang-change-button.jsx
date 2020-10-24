@@ -14,7 +14,7 @@ const LangChangeButton = () => {
   useEffect(() => {
     document.documentElement.setAttribute("lang", lang === "ko" ? "ko" : "en");
 
-    console.log(`HtmlLang: ${document.documentElement.lang}`);
+    // console.log(`HtmlLang: ${document.documentElement.lang}`);
   }, [lang]);
 
   return (

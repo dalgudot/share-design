@@ -18,7 +18,18 @@ html {
 }
 
 body {
-    background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${({ theme }) => theme.backgroundColor};
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
+  /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 h1,
@@ -33,27 +44,16 @@ button {
   color: ${({ theme }) => theme.textPrimary};
 }
 
+h1 {
+  font-size: 48px;
+}
+
 * {
   outline: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Korean, Number is SpoqaHanSans & English is Roboto", sans-serif;
-}
-
-body {
-  /* background-color: var(--dark-background-color); */
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
-  /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
 }
 
 a {

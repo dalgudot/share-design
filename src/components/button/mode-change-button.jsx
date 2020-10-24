@@ -36,11 +36,11 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme }) => {
       <button onClick={setTheme}>
         {`${theme}` === "darkTheme"
           ? `${lang}` === "ko"
-            ? k["DarkMode"]
-            : e["DarkMode"]
+            ? k["LightMode"]
+            : e["LightMode"]
           : `${lang}` === "ko"
-          ? k["LightMode"]
-          : e["LightMode"]}
+          ? k["DarkMode"]
+          : e["DarkMode"]}
       </button>
     </ButtonMode>
   );

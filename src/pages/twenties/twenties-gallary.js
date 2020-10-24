@@ -1,10 +1,10 @@
-import HeadInfo from "../components/head-info";
-import { twentiesInfo } from "../components/lang/head-info/head-info-text";
-import LangChangeButton from "../components/button/lang-change-button";
-import TwentiesText from "../components/text-component/twenties-text";
-import TwentiesParallaxText from "../components/text-component/twenties-parallax-text";
-import ArtworkTwenties from "../components/img-component/artwork-twenties";
-import ScrollDownAnimaition from "../components/animation/scoll-down";
+import HeadInfo from "../../components/head-info";
+import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
+import LangChangeButton from "../../components/button/lang-change-button";
+import TwentiesText from "../../components/text-component/twenties/twenties-text";
+import TwentiesParallaxText from "../../components/text-component/twenties/twenties-parallax-text";
+import ArtworkTwenties from "../../components/img-component/artwork-twenties";
+import ScrollDown from "../../components/animation/scoll-down";
 
 const TwentiesGallary = () => {
   return (
@@ -15,7 +15,7 @@ const TwentiesGallary = () => {
 
       <TwentiesText textOne="twenty" />
 
-      <ScrollDownAnimaition />
+      <ScrollDown />
 
       <TwentiesParallaxText textOne="flutter" />
 

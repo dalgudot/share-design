@@ -1,0 +1,12 @@
+1. ease
+
+<motion.div
+  animate={{ opacity: 0 }}
+  transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
+/>
+
+"linear"
+"easeIn", "easeOut", "easeInOut"
+"circIn", "circOut", "circInOut"
+"backIn", "backOut", "backInOut"
+"anticipate"
