@@ -63,7 +63,8 @@ a {
 }
 
 button {
-  outline: none;
+  // all: unset -> 모든 속성 한번에 초기화
+  all: unset;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }

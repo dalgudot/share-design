@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import { k } from "../../lang/twenties-gallary/ko-twenties";
 import { e } from "../../lang/twenties-gallary/en-twenties";
+import { kStaggerChildren } from "../../lang/twenties-gallary/ko-twenties";
+import { eStaggerChildren } from "../../lang/twenties-gallary/en-twenties";
 
-const TwentiesStaggerText = ({ text, staggerChildren }) => {
+const TwentiesStaggerText = ({ text, staggerSpeed }) => {
   TwentiesStaggerText.propTypes = {
     text: PropTypes.string.isRequired,
     staggerChildren: PropTypes.number,
@@ -14,11 +16,16 @@ const TwentiesStaggerText = ({ text, staggerChildren }) => {
   const lang = useSelector((state) => state.language);
   const string = Array.from(`${lang}` === "ko" ? k[text] : e[text]);
 
+  const staggerChildren =
+    `${lang}` === "ko"
+      ? kStaggerChildren[staggerSpeed]
+      : eStaggerChildren[staggerSpeed];
+
   return (
     <Container>
       <motion.div
         key={text}
-        variants={staggerVariants(staggerChildren)}
+        variants={staggerVariants(staggerChildren, lang)}
         initial="hidden"
         animate="show"
         style={{ display: "flex", justifyContent: "center" }}
@@ -41,10 +48,18 @@ const TwentiesStaggerText = ({ text, staggerChildren }) => {
 export default TwentiesStaggerText;
 
 // stagger에 종속되는 variants의 initial과 animate의 key는 stagger의 intial과 animate의 key와 같아야 함.
-const staggerVariants = (staggerChildren) => {
+const staggerVariants = (staggerChildren, lang) => {
   return {
     hidden: {},
-    show: { transition: { staggerChildren: staggerChildren || 0.07 } },
+    show: {
+      transition: {
+        staggerChildren:
+          staggerChildren || `${lang}` === "ko"
+            ? kStaggerChildren.medium
+            : eStaggerChildren.medium,
+      },
+      // 길이가 더 긴 영어는 조금 더 빠른 속도 적용 위해 slow, medium, fast 3가지 속도로 나눔. 기본은 medium
+    },
   };
 };
 

@@ -36,6 +36,7 @@ const ButtonLanguage = styled.div`
   button {
     font-size: 14px;
     font-weight: 100;
+    color: ${({ theme }) => theme.textPrimary};
     padding: 6px 12px;
     background-color: transparent;
     border: solid 1px ${({ theme }) => theme.textPrimary};

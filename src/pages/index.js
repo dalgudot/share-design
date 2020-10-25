@@ -29,7 +29,7 @@ const Index = () => {
           <br />
           20대를 남기다
         </SubjectText>
-        <Link href="/twenties/twenties-page">
+        <Link href="/">
           <a>
             <SubjectButton>Comming Soon...</SubjectButton>
           </a>

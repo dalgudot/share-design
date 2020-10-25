@@ -53,18 +53,19 @@ const fadeInOpacityVariants = {
 
 const fadeInScaleVariants = {
   start: {
+    boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
     scale: 0.985,
   },
   end: {
     scale: 1,
-
+    boxShadow: "0 8px 48px rgba(0, 0, 0, 1)",
+    transition: {
+      ease: [0.19, 1.0, 0.22, 1.0],
+      duration: 7,
+    },
     // 후반부는 아주 천천히 확대되면서 이미지가 살아있는 느낌을 줌.
     // 효리네 민박 2에서 본 영상에서 아주아주 천천히 클로즈업 되는 효과 활용.
     // 온라인 관객과의 인터랙션
-    transition: {
-      ease: [0.19, 1.0, 0.22, 1.0],
-      duration: 8,
-    },
   },
 };
 
@@ -76,6 +77,8 @@ const Container = styled.main`
 
 const Artwork = styled.img`
   pointer-events: none;
+  position: relative;
+  top: 24px;
 
   @media all and (max-width: 1199px) {
     width: 93vw;

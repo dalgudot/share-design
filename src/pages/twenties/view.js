@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import PropTypes from "prop-types";
 import { AnimatePresence } from "framer-motion";
 import TwentiesStaggerText from "../../components/text-component/twenties/twenties-stagger-text";
@@ -12,18 +11,18 @@ const View = ({ pageNum }) => {
   const currentPage = () => {
     switch (pageNum) {
       case 1:
-        return <TwentiesStaggerText text="twenty" />;
+        return <TwentiesStaggerText text="twenties1" />;
 
       case 2:
-        return <TwentiesStaggerText text="flutter" />;
+        return <TwentiesStaggerText text="twenties2" />;
 
       case 3:
-        return (
-          <TwentiesStaggerText text="iAmTwenties" staggerChildren={0.05} />
-        );
+        return <TwentiesStaggerText text="twenties3" staggerSpeed="medium" />;
+      // 길이가 긴 글자 조절 위해
+      // 길이가 더 긴 영어는 조금 더 빠른 속도 적용 위해 slow, medium, fast 3가지 속도로 나눔. 기본은 medium
 
       case 4:
-        return <TwentiesStaggerText text="like" />;
+        return <TwentiesStaggerText text="twenties4" />;
 
       case 5:
         return <TwentiesArtwork src="/images/1.jpg" alt="alt1" />;
