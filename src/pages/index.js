@@ -3,7 +3,7 @@ import { indexInfo } from "../components/lang/head-info/head-info-text";
 import Link from "next/link";
 import styled from "styled-components";
 import LangChangeButton from "../components/button/lang-change-button";
-import Header from "../components/index/header";
+import Header from "../components/header";
 import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
 
 const Index = () => {

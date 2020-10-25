@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import HeadInfo from "../../components/head-info";
 import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
-import { useEffect, useState } from "react";
-import View from "./views/view";
+import { useState } from "react";
+import View from "./view";
 
 const TwentiesPage = () => {
   const [pageNum, setPageNum] = useState(1);
@@ -12,7 +12,7 @@ const TwentiesPage = () => {
     setPageNum(pageNum + 1);
   };
 
-  const back = () => {
+  const backward = () => {
     setPageNum(pageNum - 1);
   };
 
@@ -20,7 +20,7 @@ const TwentiesPage = () => {
     <>
       <HeadInfo info={twentiesInfo} />
       <View pageNum={pageNum} />
-      <Button onClick={back}>back</Button>
+      <Button onClick={backward}>backward</Button>
       <Button onClick={forward}>forward</Button>
     </>
   );

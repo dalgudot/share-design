@@ -3,7 +3,7 @@ import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
 import LangChangeButton from "../../components/button/lang-change-button";
 import TwentiesText from "../../components/text-component/twenties/twenties-text";
 import TwentiesParallaxText from "../../components/text-component/twenties/twenties-parallax-text";
-import ArtworkTwenties from "../../components/img-component/artwork-twenties";
+import ArtworkTwenties from "../../components/img-component/twenties/twenties-artwork";
 
 const TwentiesGallary = () => {
   return (

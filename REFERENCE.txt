@@ -1,3 +1,7 @@
+[패키지 최신 버전 업데이트]
+$ ncu -u // package.json 의 버전을 올려준다.
+$ npm install // 올라간 버전으로 다시 설치한다.
+
 [MarkDown - README.md]
 마크다운 markdown 작성법
 https://gist.github.com/ihoneymon/652be052a0727ad59601
