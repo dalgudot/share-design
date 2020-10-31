@@ -13,6 +13,9 @@ _app.js부터 실행
 https://velog.io/@cyranocoding/Next-js-%EA%B5%AC%EB%8F%99%EB%B0%A9%EC%8B%9D-%EA%B3%BC-getInitialProps
 
 
+[Content Security Policy]
+https://vercel.com/docs/next.js/analytics#content-security-policy
+
 [REDUX]
 1. Next.js에서 Redux 사용_Vercel
 https://github.com/vercel/next.js/tree/canary/examples/with-redux
