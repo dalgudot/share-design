@@ -4,6 +4,11 @@ import Head from "next/head";
 const HeadInfo = ({ info }) => {
   return (
     <Head>
+      {/* 모바일 대응 meta tag */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
       <title>{info.title}</title>
       <link rel="icon" href={info.icoImage} />
       <meta name="author" content="KyungHwan Kim" />

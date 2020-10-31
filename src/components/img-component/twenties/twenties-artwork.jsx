@@ -14,24 +14,29 @@ const TwentiesArtwork = ({ src, alt }) => {
   const lang = useSelector((state) => state.language);
 
   return (
-    <Container>
-      {/* AnimatePresence는 각 애니메이션의 구분을 위해 'key'가 필수! */}
-      <motion.div
-        key={alt}
-        variants={fadeInOpacityVariants}
-        initial="hidden"
-        animate="show"
-      >
+    <>
+      <Container>
+        {/* AnimatePresence는 각 애니메이션의 구분을 위해 'key'가 필수! */}
         <motion.div
           key={alt}
-          variants={fadeInScaleVariants}
-          initial="start"
-          animate="end"
+          variants={fadeInOpacityVariants}
+          initial="hidden"
+          animate="show"
         >
-          <Artwork src={src} alt={`${lang}` === "ko" ? kAlt[alt] : eAlt[alt]} />
+          <motion.div
+            key={alt}
+            variants={fadeInScaleVariants}
+            initial="start"
+            animate="end"
+          >
+            <Artwork
+              src={src}
+              alt={`${lang}` === "ko" ? kAlt[alt] : eAlt[alt]}
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </Container>
+      </Container>
+    </>
   );
 };
 
@@ -73,16 +78,33 @@ const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+
+  @media all and (max-width: 639px) {
+    position: relative;
+    top: 12vh;
+  }
+
+  @media all and (min-width: 640px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const Artwork = styled.img`
   pointer-events: none;
   position: relative;
-  top: 24px;
 
-  @media all and (max-width: 1199px) {
+  @media all and (max-width: 639px) {
     width: 93vw;
     height: 62vw;
+  }
+
+  @media all and (min-width: 640px) {
+    width: 81vw;
+    height: 54vw;
   }
 
   @media all and (min-width: 1200px) {

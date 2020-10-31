@@ -22,7 +22,7 @@ const TwentiesStaggerText = ({ text, staggerSpeed }) => {
       : eStaggerChildren[staggerSpeed];
 
   return (
-    <Container>
+    <>
       <motion.div
         key={text}
         variants={staggerVariants(staggerChildren, lang)}
@@ -41,7 +41,7 @@ const TwentiesStaggerText = ({ text, staggerSpeed }) => {
           ))}
         </TextContainer>
       </motion.div>
-    </Container>
+    </>
   );
 };
 
@@ -86,16 +86,11 @@ const letterVariants = {
   },
 };
 
-const Container = styled.main`
-  width: 100vw;
-  height: 66.6667vw;
-`;
-
 const TextContainer = styled.div`
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: flex;
 
   p {
@@ -103,13 +98,15 @@ const TextContainer = styled.div`
     text-align: center;
   }
 
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 639px) {
+    top: 28%;
+
     p {
       font-size: 28px;
     }
   }
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 640px) {
     p {
       font-size: 48px;
     }

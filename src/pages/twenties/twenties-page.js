@@ -11,54 +11,51 @@ import { eAlt } from "../../components/lang/twenties-gallary/en-twenties";
 const TwentiesPage = () => {
   const lang = useSelector((state) => state.language);
 
-  const [pageNum, setPageNum] = useState(1);
+  const [pageNum, setPageNum] = useState(5);
   console.log(`TwentiesPageNum: ${pageNum}`);
 
-  const forward = () => {
+  const next = () => {
     setPageNum(pageNum + 1);
   };
 
-  const backward = () => {
+  const prev = () => {
     setPageNum(pageNum - 1);
   };
 
   return (
     <>
       <HeadInfo info={twentiesInfo} />
-      <LangChangeButton />
+      {/* <LangChangeButton /> */}
+
       <View pageNum={pageNum} lang={lang} />
-      <ButtonPositionWrap>
-        <Button onClick={backward}>
-          <img
-            src="/svg/icn_backward_48.svg"
-            alt={`${lang}` === "ko" ? kAlt.altPrevious : eAlt.altPrevious}
-          />
-        </Button>
-        <Button onClick={forward}>
-          <img
-            src="/svg/icn_forward_48.svg"
-            alt={`${lang}` === "ko" ? kAlt.altNext : eAlt.altNext}
-          />
-        </Button>
-      </ButtonPositionWrap>
+
+      <ButtonPrev onClick={prev}>
+        <img
+          src="/svg/icn_prev_48.svg"
+          alt={`${lang}` === "ko" ? kAlt.altPrevious : eAlt.altPrevious}
+        />
+      </ButtonPrev>
+
+      <ButtonNext onClick={next}>
+        <img
+          src="/svg/icn_next_48.svg"
+          alt={`${lang}` === "ko" ? kAlt.altNext : eAlt.altNext}
+        />
+      </ButtonNext>
     </>
   );
 };
 
 export default TwentiesPage;
 
-const ButtonPositionWrap = styled.div`
-  display: flex;
+const ButtonPrev = styled.button`
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10vh;
-`;
+  opacity: 0.8;
 
-const Button = styled.button`
-  margin: 0 20vw;
+  @media all and (max-width: 650px) {
+    bottom: 72px;
+    left: 72px;
 
-  @media all and (max-width: 480px) {
     img {
       width: 40px;
       height: 40px;
@@ -66,11 +63,65 @@ const Button = styled.button`
     }
   }
 
-  @media all and (min-width: 481px) {
+  @media all and (min-width: 651px) {
+    left: 3vw;
+    top: 49%;
+
     img {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
     }
   }
+
+  /* @media all and (min-width: 700px) {
+    right: 24px;
+    top: 50%;
+    trasform: translateY(-50%);
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+  } */
+`;
+
+const ButtonNext = styled.button`
+  position: absolute;
+  opacity: 0.8;
+
+  @media all and (max-width: 650px) {
+    bottom: 72px;
+    right: 72px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  @media all and (min-width: 651px) {
+    right: 3vw;
+    top: 49%;
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+  }
+
+  /* @media all and (min-width: 700px) {
+    right: 24px;
+    top: 50%;
+    trasform: translateY(-50%);
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    } 
+  }*/
 `;
