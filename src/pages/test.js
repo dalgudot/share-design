@@ -4,7 +4,11 @@ import AuthService from "../service/auth_survice";
 const authService = new AuthService();
 
 const Test = () => {
-  return <Login authService={authService} />;
+  return (
+    <>
+      <Login authService={authService} />
+    </>
+  );
 };
 
 export default Test;
