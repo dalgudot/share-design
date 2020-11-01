@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HeadInfo from "../../components/head-info";
 import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import View from "./view";
 import LangChangeButton from "../../components/button/lang-change-button";
 import { useSelector } from "react-redux";
@@ -11,8 +11,7 @@ import { amplitudeModule } from "../../components/amplitude/amplitude";
 
 const TwentiesPage = () => {
   const lang = useSelector((state) => state.language);
-
-  const [pageNum, setPageNum] = useState(5);
+  const [pageNum, setPageNum] = useState(1);
   console.log(`TwentiesPageNum: ${pageNum}`);
 
   const next = () => {
