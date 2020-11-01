@@ -5,6 +5,7 @@ import styled from "styled-components";
 import LangChangeButton from "../components/button/lang-change-button";
 import Header from "../components/header";
 import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
+import { useEffect } from "react";
 
 const Index = () => {
   // DetectBrowserLang();
