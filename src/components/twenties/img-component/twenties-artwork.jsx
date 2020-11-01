@@ -2,8 +2,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { kAlt } from "../../lang/twenties-gallary/ko-twenties";
-import { eAlt } from "../../lang/twenties-gallary/en-twenties";
+import { kAlt } from "../lang/ko-twenties";
+import { eAlt } from "../lang/en-twenties";
 
 const TwentiesArtwork = ({ src, alt }) => {
   TwentiesArtwork.propTypes = {

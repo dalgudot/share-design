@@ -4,8 +4,8 @@
 // initFirebase();
 
 // class VisitorBook {
-//   saveVisitorBook(userId, inputRef) {
-//     firebase.database().ref(inputRef).set(inputRef);
+//   saveVisitorBook(text) {
+//     firebase.database().ref(twenties).set({ twenties: text });
 //   }
 // }
 

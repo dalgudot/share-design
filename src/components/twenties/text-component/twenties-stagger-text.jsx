@@ -2,10 +2,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
-import { k } from "../../lang/twenties-gallary/ko-twenties";
-import { e } from "../../lang/twenties-gallary/en-twenties";
-import { kStaggerChildren } from "../../lang/twenties-gallary/ko-twenties";
-import { eStaggerChildren } from "../../lang/twenties-gallary/en-twenties";
+import { k } from "../lang/ko-twenties";
+import { e } from "../lang/en-twenties";
+import { kStaggerChildren } from "../lang/ko-twenties";
+import { eStaggerChildren } from "../lang/en-twenties";
 
 const TwentiesStaggerText = ({ text, staggerSpeed }) => {
   TwentiesStaggerText.propTypes = {

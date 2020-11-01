@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { AnimatePresence } from "framer-motion";
-import TwentiesStaggerText from "../../components/text-component/twenties/twenties-stagger-text";
-import TwentiesArtwork from "../../components/img-component/twenties/twenties-artwork";
+import TwentiesStaggerText from "../../components/twenties/text-component/twenties-stagger-text";
+import TwentiesArtwork from "../../components/twenties/img-component/twenties-artwork";
 
 const View = ({ pageNum }) => {
   View.propTypes = {

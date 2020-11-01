@@ -6,7 +6,7 @@ import "../styles/font.css";
 import { darkTheme, lightTheme } from "../styles/theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global-styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModeChangeButton from "../components/button/mode-change-button";
 import { PreventIllegalTheft } from "../components/lang/func/prevent-illegal-theft";
 
@@ -19,6 +19,14 @@ export default function App({ Component, pageProps }) {
   const [mode, setMode] = useState(darkTheme);
 
   PreventIllegalTheft();
+
+  //Amplitude
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const amplitude = require("amplitude-js");
+      amplitude.getInstance().init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY);
+    }
+  }, []);
 
   return (
     <>

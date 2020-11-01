@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import HeadInfo from "../../components/head-info";
 import { twentiesInfo } from "../../components/lang/head-info/head-info-text";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import View from "./view";
 import LangChangeButton from "../../components/button/lang-change-button";
 import { useSelector } from "react-redux";
-import { kAlt } from "../../components/lang/twenties-gallary/ko-twenties";
-import { eAlt } from "../../components/lang/twenties-gallary/en-twenties";
+import { kAlt } from "../../components/twenties/lang/ko-twenties";
+import { eAlt } from "../../components/twenties/lang/en-twenties";
 
 const TwentiesPage = () => {
   const lang = useSelector((state) => state.language);
@@ -21,6 +21,13 @@ const TwentiesPage = () => {
   const prev = () => {
     setPageNum(pageNum - 1);
   };
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const amplitude = require("amplitude-js");
+      amplitude.getInstance().logEvent("arv_twenties_artwork");
+    }
+  }, []);
 
   return (
     <>
