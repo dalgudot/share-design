@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
 
   PreventIllegalTheft();
 
-  //Amplitude
+  // Amplitude initialize
   useEffect(() => {
     if (typeof window !== undefined) {
       const amplitude = require("amplitude-js");

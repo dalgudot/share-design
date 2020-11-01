@@ -7,6 +7,7 @@ import LangChangeButton from "../../components/button/lang-change-button";
 import { useSelector } from "react-redux";
 import { kAlt } from "../../components/twenties/lang/ko-twenties";
 import { eAlt } from "../../components/twenties/lang/en-twenties";
+import { amplitudeModule } from "../../components/amplitude/amplitude";
 
 const TwentiesPage = () => {
   const lang = useSelector((state) => state.language);
@@ -22,13 +23,7 @@ const TwentiesPage = () => {
     setPageNum(pageNum - 1);
   };
 
-  // amplitude
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const amplitude = require("amplitude-js");
-      amplitude.getInstance().logEvent("arv_twenties_artwork");
-    }
-  }, []);
+  amplitudeModule("arv_twenties_artwork");
 
   return (
     <>

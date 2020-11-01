@@ -5,18 +5,11 @@ import styled from "styled-components";
 import LangChangeButton from "../components/button/lang-change-button";
 import Header from "../components/header";
 import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
-import { useEffect } from "react";
+import { amplitudeModule } from "../components/amplitude/amplitude";
 
 const Index = () => {
   // DetectBrowserLang();
-
-  // amplitude
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const amplitude = require("amplitude-js");
-      amplitude.getInstance().logEvent("arv_index");
-    }
-  }, []);
+  amplitudeModule("arv_index");
 
   return (
     <>
