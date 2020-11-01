@@ -9,6 +9,14 @@ import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
 const Index = () => {
   // DetectBrowserLang();
 
+  // amplitude
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const amplitude = require("amplitude-js");
+      amplitude.getInstance().logEvent("arv_index");
+    }
+  }, []);
+
   return (
     <>
       <HeadInfo info={indexInfo} />

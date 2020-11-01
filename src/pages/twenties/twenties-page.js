@@ -22,6 +22,7 @@ const TwentiesPage = () => {
     setPageNum(pageNum - 1);
   };
 
+  // amplitude
   useEffect(() => {
     if (typeof window !== undefined) {
       const amplitude = require("amplitude-js");
