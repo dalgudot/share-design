@@ -99,10 +99,10 @@ const TextContainer = styled.div`
   }
 
   @media all and (max-width: 639px) {
-    top: 28%;
+    top: 29%;
 
     p {
-      font-size: 28px;
+      font-size: 32px;
     }
   }
 

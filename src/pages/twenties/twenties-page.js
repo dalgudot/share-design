@@ -11,7 +11,7 @@ import { amplitudeModule } from "../../components/amplitude/amplitude";
 
 const TwentiesPage = () => {
   const lang = useSelector((state) => state.language);
-  const [pageNum, setPageNum] = useState(1);
+  const [pageNum, setPageNum] = useState(5);
   console.log(`TwentiesPageNum: ${pageNum}`);
 
   const next = () => {
@@ -29,21 +29,13 @@ const TwentiesPage = () => {
       <HeadInfo info={twentiesInfo} />
       {/* <LangChangeButton /> */}
 
-      <View pageNum={pageNum} lang={lang} />
+      <Aligncenter>
+        <View pageNum={pageNum} lang={lang} />
 
-      <ButtonPrev onClick={prev}>
-        <img
-          src="/svg/icn_prev_48.svg"
-          alt={`${lang}` === "ko" ? kAlt.altPrevious : eAlt.altPrevious}
-        />
-      </ButtonPrev>
+        {pageNum !== 1 && <ButtonPrev onClick={prev}>&lt;</ButtonPrev>}
 
-      <ButtonNext onClick={next}>
-        <img
-          src="/svg/icn_next_48.svg"
-          alt={`${lang}` === "ko" ? kAlt.altNext : eAlt.altNext}
-        />
-      </ButtonNext>
+        <ButtonNext onClick={next}>&gt;</ButtonNext>
+      </Aligncenter>
     </>
   );
 };
@@ -53,77 +45,55 @@ export default TwentiesPage;
 const ButtonPrev = styled.button`
   position: absolute;
   opacity: 0.8;
+  color: ${({ theme }) => theme.textPrimary};
+  font-size: 36px;
+  opacity: 0.3;
 
   @media all and (max-width: 650px) {
-    bottom: 72px;
     left: 72px;
-
-    img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
+    bottom: 72px;
   }
 
   @media all and (min-width: 651px) {
     left: 3vw;
-    top: 49%;
-
-    img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
+    top: 47%;
   }
 
   /* @media all and (min-width: 700px) {
     right: 24px;
     top: 50%;
     trasform: translateY(-50%);
-
-    img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
   } */
+`;
+
+const Aligncenter = styled.section`
+  @media all and (min-width: 651px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ButtonNext = styled.button`
   position: absolute;
   opacity: 0.8;
+  color: ${({ theme }) => theme.textPrimary};
+  font-size: 36px;
+  opacity: 0.3;
 
   @media all and (max-width: 650px) {
-    bottom: 72px;
     right: 72px;
-
-    img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
+    bottom: 72px;
   }
 
   @media all and (min-width: 651px) {
     right: 3vw;
-    top: 49%;
-
-    img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
+    top: 47%;
   }
 
   /* @media all and (min-width: 700px) {
     right: 24px;
     top: 50%;
     trasform: translateY(-50%);
-
-    img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    } 
   }*/
 `;
