@@ -5,8 +5,6 @@ import { useState } from "react";
 import View from "./view";
 import LangChangeButton from "../../components/button/lang-change-button";
 import { useSelector } from "react-redux";
-import { kAlt } from "../../components/twenties/lang/ko-twenties";
-import { eAlt } from "../../components/twenties/lang/en-twenties";
 import { amplitudeModule } from "../../components/amplitude/amplitude";
 
 const TwentiesPage = () => {
@@ -27,7 +25,7 @@ const TwentiesPage = () => {
   return (
     <>
       <HeadInfo info={twentiesInfo} />
-      {/* <LangChangeButton /> */}
+      <LangChangeButton />
 
       <Aligncenter>
         <View pageNum={pageNum} lang={lang} />

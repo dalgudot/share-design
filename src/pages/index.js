@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import LangChangeButton from "../components/button/lang-change-button";
 import Header from "../components/header";
-import { DetectBrowserLang } from "../components/lang/func/detect-browser-lang";
+import { DetectBrowserLang } from "../components/func/detect-browser-lang";
 import { amplitudeModule } from "../components/amplitude/amplitude";
 
 const Index = () => {

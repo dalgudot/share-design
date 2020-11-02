@@ -8,7 +8,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global-styles";
 import { useState, useEffect } from "react";
 import ModeChangeButton from "../components/button/mode-change-button";
-import { PreventIllegalTheft } from "../components/lang/func/prevent-illegal-theft";
+import { PreventIllegalTheft } from "../components/func/prevent-illegal-theft";
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
