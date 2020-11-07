@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
 import initFirebase from '../../../utils/auth/initFirebase';
@@ -12,6 +13,7 @@ const WriteGuestBook = () => {
 
   const updateText = (e) => {
     setText(e.target.value);
+    firebase.database().ref(`guestBook/${id}`).set(text);
   };
 
   const createRandomNumber = () => {
@@ -44,32 +46,6 @@ const WriteGuestBook = () => {
     textRef.current.focus();
   }, []);
 
-  // const syncGuestBook = () => {
-  //   const ref = firebase.database().ref('guestBook');
-  //   ref.on('value', (snapshot) => {
-  //     const value = snapshot.val();
-  //     value && updateText(value);
-  //   });
-
-  //   return () => ref.off();
-  // };
-
-  // useEffect(() => {
-  //   if (!id) {
-  //     return;
-  //   }
-  //   syncGuestBook();
-
-  //   // 컴포넌트 unmount됐을 때
-  //   return () => {
-  //     syncGuestBook();
-  //   };
-  // }, [id]);
-
-  useEffect(() => {
-    firebase.database().ref(`guestBook/${id}`).set(text);
-  }, [text]);
-
   return (
     <>
       <MultiLineTextField
@@ -81,9 +57,11 @@ const WriteGuestBook = () => {
         cols="33"
         autoComplete="off"
       />
-      <button onClick={createRandomNumber}>
-        <h1>방명록 쓰기</h1>
-      </button>
+      <h1>
+        <Link href="/twenties/guest-book">
+          <a>돌아가기</a>
+        </Link>
+      </h1>
     </>
   );
 };

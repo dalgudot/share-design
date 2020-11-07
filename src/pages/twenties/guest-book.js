@@ -1,34 +1,60 @@
 import Link from 'next/link';
 import initFirebase from '../../../utils/auth/initFirebase';
 import firebase from 'firebase/app';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import WriteGuestBook from './write-guest-book';
 
 initFirebase();
 
 const Index = () => {
-  let contents = [];
+  const [contents, setContents] = useState([]);
+  const [writeMode, setWriteMode] = useState(false);
 
-  const refFunc = () => {
-    firebase
-      .database()
-      .ref('guestBook')
-      .once('value')
-      .then(function (snapshot) {
-        const data = snapshot.val();
-        console.log(data);
+  const refOnFunc = () => {
+    const ref = firebase.database().ref('guestBook');
 
-        // Object.values() ---> 객체의 value값들만 반환
-        console.log(snapshot.key + ' was ' + Object.values(data));
+    ref.on('value', (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+      // console.log(snapshot.key + ' was ' + Object.values(data));
+      // Object.values() ---> 객체의 value값들만 반환
+      data && setContents(Object.values(data));
+    });
 
-        contents = Object.values(data);
-
-        console.log(contents);
-      });
+    return () => ref.off();
   };
 
+  console.log(contents);
+
   useEffect(() => {
-    refFunc();
+    if (!contents) {
+      return;
+    }
+    refOnFunc();
+    return () => refOnFunc();
   }, []);
+
+  const showContents =
+    writeMode === false &&
+    contents.map((content, index) => <Test key={index}>{content}</Test>);
+
+  const showWriteMode = () => {
+    // writeMode === false ? <WriteGuestBook /> : null;
+    // console.log(writeMode);
+    setWriteMode(writeMode === false ? true : false);
+  };
+
+  console.log(writeMode);
+
+  // const display =
+  //   writeMode === true ? (
+  //     <WriteGuestBook showWriteMode={showWriteMode} />
+  //   ) : (
+  //     <button onClick={showWriteMode}>
+  //       <h1>방명록 쓰기</h1>
+  //     </button>
+  //   );
 
   return (
     <>
@@ -37,13 +63,14 @@ const Index = () => {
           <a>방명록 쓰기</a>
         </Link>
       </h1>
-      <h1>
-        {contents.map((content) => {
-          content;
-        })}
-      </h1>
+      {showContents}
     </>
   );
 };
 
 export default Index;
+
+const Test = styled.h1`
+  font-size: 72px;
+  color: white;
+`;
