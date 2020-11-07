@@ -1,49 +1,49 @@
-import styled from 'styled-components';
-import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import initFirebase from '../../../utils/auth/initFirebase';
 import firebase from 'firebase/app';
+import { useEffect } from 'react';
 
 initFirebase();
 
-const GuestBook = () => {
-  const [text, setText] = useState('');
-  const textRef = useRef();
+const Index = () => {
+  let contents = [];
 
-  // text가 업데이트되면 파이어베이스로 보낼 데이터 객체 or 클래스에 저장
+  const refFunc = () => {
+    firebase
+      .database()
+      .ref('guestBook')
+      .once('value')
+      .then(function (snapshot) {
+        const data = snapshot.val();
+        console.log(data);
 
-  // https://firebase.google.com/docs/rules/rules-and-auth?authuser=0
+        // Object.values() ---> 객체의 value값들만 반환
+        console.log(snapshot.key + ' was ' + Object.values(data));
 
-  const updateText = (e) => {
-    setText(e.target.value);
+        contents = Object.values(data);
+
+        console.log(contents);
+      });
   };
-  console.log(text);
 
   useEffect(() => {
-    firebase.database().ref('name').set(text);
-  }, [text]);
-
-  useEffect(() => {
-    textRef.current.focus();
+    refFunc();
   }, []);
 
   return (
     <>
-      <MultiLineTextField
-        ref={textRef}
-        onChange={updateText}
-        name="Visit Book"
-        placeholder="방명록"
-        rows="5"
-        cols="33"
-        autoComplete="off"
-      />
+      <h1>
+        <Link href="/twenties/write-guest-book">
+          <a>방명록 쓰기</a>
+        </Link>
+      </h1>
+      <h1>
+        {contents.map((content) => {
+          content;
+        })}
+      </h1>
     </>
   );
 };
 
-export default GuestBook;
-
-const MultiLineTextField = styled.textarea`
-  resize: none;
-  padding: 24px;
-`;
+export default Index;
