@@ -47,22 +47,24 @@ const Index = () => {
 
   console.log(writeMode);
 
-  // const display =
-  //   writeMode === true ? (
-  //     <WriteGuestBook showWriteMode={showWriteMode} />
-  //   ) : (
-  //     <button onClick={showWriteMode}>
-  //       <h1>방명록 쓰기</h1>
-  //     </button>
-  //   );
+  const display =
+    writeMode === true ? (
+      <WriteGuestBook showWriteMode={showWriteMode} />
+    ) : (
+      <button onClick={showWriteMode}>
+        <h1>방명록 쓰기</h1>
+      </button>
+    );
 
   return (
     <>
-      <h1>
+      {display}
+      {/* <h1>
+        <button onClick={showWriteMode}>방명록 남기기</button>
         <Link href="/twenties/write-guest-book">
           <a>방명록 쓰기</a>
         </Link>
-      </h1>
+      </h1> */}
       {showContents}
     </>
   );

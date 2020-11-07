@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 
 initFirebase();
 
-const WriteGuestBook = () => {
+const WriteGuestBook = ({ showWriteMode }) => {
   const [text, setText] = useState('');
   const [id, setId] = useState('');
   const textRef = useRef();
@@ -39,7 +39,7 @@ const WriteGuestBook = () => {
     setId(finalId);
   };
 
-  console.log(`id: ${id}`);
+  // console.log(`id: ${id}`);
 
   useEffect(() => {
     createRandomNumber();
@@ -50,7 +50,7 @@ const WriteGuestBook = () => {
     <>
       <MultiLineTextField
         ref={textRef}
-        onChange={updateText}
+        onKeyUp={updateText}
         name="Visit Book"
         placeholder="방명록"
         rows="10"
@@ -58,9 +58,10 @@ const WriteGuestBook = () => {
         autoComplete="off"
       />
       <h1>
-        <Link href="/twenties/guest-book">
-          <a>돌아가기</a>
-        </Link>
+        <button onClick={showWriteMode}>방명록 남기기</button>
+        {/* <Link href="/twenties/guest-book">
+          <a>방명록 남기기</a>
+        </Link> */}
       </h1>
     </>
   );
