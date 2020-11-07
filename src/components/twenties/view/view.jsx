@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
-import { AnimatePresence } from "framer-motion";
-import TwentiesStaggerText from "../../components/twenties/text-component/twenties-stagger-text";
-import TwentiesArtwork from "../../components/twenties/img-component/twenties-artwork";
+import PropTypes from 'prop-types';
+import TwentiesStaggerText from '../text-component/twenties-stagger-text';
+import TwentiesArtwork from '../img-component/twenties-artwork';
 
 const View = ({ pageNum }) => {
   View.propTypes = {
@@ -32,7 +31,8 @@ const View = ({ pageNum }) => {
   return (
     // AnimatePresence는 각 애니메이션의 구분을 위해 'key'가 필수!
     // https://www.framer.com/api/motion/animate-presence/#usepresence
-    <AnimatePresence>{currentPage()}</AnimatePresence>
+    // _app에 있음
+    currentPage()
   );
 };
 

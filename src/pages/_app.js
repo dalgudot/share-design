@@ -9,6 +9,7 @@ import GlobalStyles from "../styles/global-styles";
 import { useState, useEffect } from "react";
 import ModeChangeButton from "../components/button/mode-change-button";
 import { PreventIllegalTheft } from "../components/func/prevent-illegal-theft";
+import { AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
@@ -48,7 +49,9 @@ export default function App({ Component, pageProps }) {
               lightTheme={lightTheme}
             /> */}
             <GlobalStyles />
-            <Component {...pageProps} />
+            <AnimatePresence>
+              <Component {...pageProps} />
+            </AnimatePresence>
           </ThemeProvider>
         </PersistGate>
       </Provider>

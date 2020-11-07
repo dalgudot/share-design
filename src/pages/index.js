@@ -1,15 +1,15 @@
-import HeadInfo from "../components/head-info";
-import { indexInfo } from "../components/lang/head-info/head-info-text";
-import Link from "next/link";
-import styled from "styled-components";
-import LangChangeButton from "../components/button/lang-change-button";
-import Header from "../components/header";
-import { DetectBrowserLang } from "../components/func/detect-browser-lang";
-import { amplitudeModule } from "../components/amplitude/amplitude";
+import HeadInfo from '../components/head-info';
+import { indexInfo } from '../components/lang/head-info/head-info-text';
+import Link from 'next/link';
+import styled from 'styled-components';
+import LangChangeButton from '../components/button/lang-change-button';
+import Header from '../components/header';
+import { DetectBrowserLang } from '../components/func/detect-browser-lang';
+import { amplitudeModule } from '../components/amplitude/amplitude';
 
 const Index = () => {
   // DetectBrowserLang();
-  amplitudeModule("arv_index");
+  amplitudeModule('arv_index');
 
   return (
     <>
