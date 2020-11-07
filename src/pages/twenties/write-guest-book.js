@@ -10,6 +10,7 @@ const WriteGuestBook = ({ showWriteMode }) => {
   const [text, setText] = useState('');
   const [id, setId] = useState('');
   const textRef = useRef();
+  const btnRef = useRef();
 
   const updateText = (e) => {
     setText(e.target.value);
@@ -46,30 +47,51 @@ const WriteGuestBook = ({ showWriteMode }) => {
     textRef.current.focus();
   }, []);
 
+  useEffect(() => {
+    btnRef.current.disabled.true;
+  }, []);
+
   return (
-    <>
+    <Form>
       <MultiLineTextField
         ref={textRef}
         onKeyUp={updateText}
         name="Visit Book"
-        placeholder="방명록"
+        placeholder="10자 이상 부탁드릴게요 🙏"
         rows="10"
         cols="33"
-        autoComplete="off"
+        minlength="10"
+        autoComplete="on"
       />
       <h1>
-        <button onClick={showWriteMode}>방명록 남기기</button>
-        {/* <Link href="/twenties/guest-book">
-          <a>방명록 남기기</a>
-        </Link> */}
+        {/* <button ref="btnRef" onClick={showWriteMode}>
+          방명록 남기기
+        </button> */}
+        <Link href="/twenties/guest-book">
+          <a>
+            <button ref={btnRef}>방명록 남기기</button>
+          </a>
+        </Link>
       </h1>
-    </>
+    </Form>
   );
 };
 
 export default WriteGuestBook;
 
+const Form = styled.form`
+button.disabled = true
+`;
+
 const MultiLineTextField = styled.textarea`
   resize: none;
   padding: 24px;
+
+  :invalid {
+    border: 2px dashed red;
+  }
+
+  :valid {
+    border: 2px solid lime;
+  }
 `;

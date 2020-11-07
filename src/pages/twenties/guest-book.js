@@ -40,8 +40,6 @@ const Index = () => {
     contents.map((content, index) => <Test key={index}>{content}</Test>);
 
   const showWriteMode = () => {
-    // writeMode === false ? <WriteGuestBook /> : null;
-    // console.log(writeMode);
     setWriteMode(writeMode === false ? true : false);
   };
 
@@ -58,13 +56,12 @@ const Index = () => {
 
   return (
     <>
-      {display}
-      {/* <h1>
-        <button onClick={showWriteMode}>방명록 남기기</button>
+      {/* {display} */}
+      <h1>
         <Link href="/twenties/write-guest-book">
           <a>방명록 쓰기</a>
         </Link>
-      </h1> */}
+      </h1>
       {showContents}
     </>
   );
