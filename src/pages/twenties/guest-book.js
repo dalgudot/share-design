@@ -56,12 +56,12 @@ const Index = () => {
 
   return (
     <>
-      {/* {display} */}
-      <h1>
+      {display}
+      {/* <h1>
         <Link href="/twenties/write-guest-book">
           <a>방명록 쓰기</a>
         </Link>
-      </h1>
+      </h1> */}
       {showContents}
     </>
   );
