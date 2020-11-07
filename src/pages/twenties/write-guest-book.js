@@ -40,16 +40,16 @@ const WriteGuestBook = ({ showWriteMode }) => {
     setId(finalId);
   };
 
-  // console.log(`id: ${id}`);
+  console.log(`id: ${id}`);
 
   useEffect(() => {
     createRandomNumber();
     textRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    btnRef.current.disabled.true;
-  }, []);
+  // useEffect(() => {
+  //   btnRef.current.disabled.true;
+  // }, []);
 
   return (
     <Form>
@@ -68,9 +68,7 @@ const WriteGuestBook = ({ showWriteMode }) => {
           방명록 남기기
         </button> */}
         <Link href="/twenties/guest-book">
-          <a>
-            <button ref={btnRef}>방명록 남기기</button>
-          </a>
+          <a>방명록 남기기</a>
         </Link>
       </h1>
     </Form>
@@ -79,9 +77,7 @@ const WriteGuestBook = ({ showWriteMode }) => {
 
 export default WriteGuestBook;
 
-const Form = styled.form`
-button.disabled = true
-`;
+const Form = styled.form``;
 
 const MultiLineTextField = styled.textarea`
   resize: none;
