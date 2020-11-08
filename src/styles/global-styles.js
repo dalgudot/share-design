@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 html {
@@ -45,7 +45,11 @@ button {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 4.8rem;
+}
+
+p {
+  font-size: 1.8rem;
 }
 
 * {

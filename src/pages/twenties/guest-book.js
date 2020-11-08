@@ -4,6 +4,7 @@ import WriteGuestBook from '../../components/twenties/view/write-guest-book';
 import StaggerDots from '../../components/framer/loading/stagger-dots';
 import initFirebase from '../../../utils/auth/initFirebase';
 import firebase from 'firebase/app';
+import GuestBookContent from '../../components/twenties/view/guest-book-content';
 
 initFirebase();
 
@@ -11,7 +12,7 @@ const Index = () => {
   const [contents, setContents] = useState([]);
   const [writeMode, setWriteMode] = useState(false);
   const [loading, setLoading] = useState(true);
-  console.log(`writeMode: ${writeMode}`);
+  // console.log(`writeMode: ${writeMode}`);
   console.log(`loading: ${loading}`);
 
   const refOnFunc = () => {
@@ -22,22 +23,17 @@ const Index = () => {
         const data = snapshot.val();
         // console.log(data);
         // console.log(snapshot.key);
-        // Object.values() --> 배열 --> 객체의 value값들만 반환
-        // 배열.reverse() --> 역순으로 반환
         data && setContents(Object.values(data).reverse());
       });
-
     return () => ref.off();
   };
-
-  console.log(`guestBookDataValue: ${contents}`);
+  // console.log(`guestBookDataValue: ${contents}`);
 
   useEffect(() => {
     if (!contents) {
       return;
     }
     refOnFunc();
-
     return () => refOnFunc();
   }, []);
 
@@ -56,7 +52,9 @@ const Index = () => {
 
   const showContents =
     writeMode === false &&
-    contents.map((content, index) => <Test key={index}>{content}</Test>);
+    contents.map((content, index) => (
+      <GuestBookContent key={index} content={content} />
+    ));
 
   if (loading === true) {
     if (contents.length > 0) {
@@ -79,7 +77,5 @@ const Index = () => {
 
 export default Index;
 
-const Test = styled.p`
-  font-size: 24px;
-  color: white;
-`;
+// Object.values() --> 배열 --> 객체의 value값들만 반환
+// 배열.reverse() --> 역순으로 반환

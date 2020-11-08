@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { motion, AnimatePresence } from "framer-motion";
-import { useSelector } from "react-redux";
-import { k } from "../lang/ko-twenties";
-import { e } from "../lang/en-twenties";
-import { kStaggerChildren } from "../lang/ko-twenties";
-import { eStaggerChildren } from "../lang/en-twenties";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { k } from '../lang/ko-twenties';
+import { e } from '../lang/en-twenties';
+import { kStaggerChildren } from '../lang/ko-twenties';
+import { eStaggerChildren } from '../lang/en-twenties';
 
 const TwentiesStaggerText = ({ text, staggerSpeed }) => {
   TwentiesStaggerText.propTypes = {
@@ -14,10 +14,10 @@ const TwentiesStaggerText = ({ text, staggerSpeed }) => {
   };
 
   const lang = useSelector((state) => state.language);
-  const string = Array.from(`${lang}` === "ko" ? k[text] : e[text]);
+  const string = Array.from(`${lang}` === 'ko' ? k[text] : e[text]);
 
   const staggerChildren =
-    `${lang}` === "ko"
+    `${lang}` === 'ko'
       ? kStaggerChildren[staggerSpeed]
       : eStaggerChildren[staggerSpeed];
 
@@ -28,7 +28,7 @@ const TwentiesStaggerText = ({ text, staggerSpeed }) => {
         variants={staggerVariants(staggerChildren, lang)}
         initial="hidden"
         animate="show"
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{ display: 'flex', justifyContent: 'center' }}
       >
         <TextContainer>
           {string.map((letter, index) => (
@@ -54,7 +54,7 @@ const staggerVariants = (staggerChildren, lang) => {
     show: {
       transition: {
         staggerChildren:
-          staggerChildren || `${lang}` === "ko"
+          staggerChildren || `${lang}` === 'ko'
             ? kStaggerChildren.medium
             : eStaggerChildren.medium,
       },
@@ -78,7 +78,7 @@ const letterVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      ease: "anticipate",
+      ease: 'anticipate',
       // anticipate: 앞질러 가다
       damping: 100,
       stiffness: 80,
