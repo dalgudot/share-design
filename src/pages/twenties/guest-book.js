@@ -11,6 +11,8 @@ const Index = () => {
   const [contents, setContents] = useState([]);
   const [writeMode, setWriteMode] = useState(false);
   const [loading, setLoading] = useState(true);
+  console.log(`writeMode: ${writeMode}`);
+  console.log(`loading: ${loading}`);
 
   const refOnFunc = () => {
     firebase
@@ -30,29 +32,18 @@ const Index = () => {
 
   console.log(`guestBookDataValue: ${contents}`);
 
-  const showData = () => {
-    setLoading(false);
-    refOnFunc();
-  };
-
   useEffect(() => {
     if (!contents) {
       return;
     }
-    // refOnFunc();
-    showData();
+    refOnFunc();
+
     return () => refOnFunc();
   }, []);
-
-  const showContents =
-    writeMode === false &&
-    contents.map((content, index) => <Test key={index}>{content}</Test>);
 
   const showWriteMode = () => {
     setWriteMode(writeMode === false ? true : false);
   };
-
-  // console.log(`VisitorBookWriteMode: ${writeMode}`);
 
   const display =
     writeMode === true ? (
@@ -63,10 +54,17 @@ const Index = () => {
       </button>
     );
 
+  const showContents =
+    writeMode === false &&
+    contents.map((content, index) => <Test key={index}>{content}</Test>);
+
   if (loading === true) {
+    if (contents.length > 0) {
+      setLoading(false);
+    }
     return (
       <>
-        <StaggerDots />
+        <StaggerDots color="white" />
       </>
     );
   } else {
