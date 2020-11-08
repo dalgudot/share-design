@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import TwentiesStaggerText from '../text-component/twenties-stagger-text';
 import TwentiesArtwork from '../img-component/twenties-artwork';
+import Link from 'next/link';
 
 const ArtworkView = ({ pageNum }) => {
-  View.propTypes = {
+  ArtworkView.propTypes = {
     pageNum: PropTypes.number.isRequired,
   };
 
@@ -25,6 +26,18 @@ const ArtworkView = ({ pageNum }) => {
 
       case 5:
         return <TwentiesArtwork src="/images/1.jpg" alt="alt1" />;
+
+      case 6:
+        return <TwentiesArtwork src="/images/2.jpg" alt="alt2" />;
+
+      case 7:
+        return (
+          <h1>
+            <Link href="/twenties">
+              <a>처음으로</a>
+            </Link>
+          </h1>
+        );
     }
   };
 

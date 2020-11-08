@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import HeadInfo from '../../components/head-info';
 import { twentiesInfo } from '../../components/lang/head-info/head-info-text';
 import { useState } from 'react';
-import View from '../../components/twenties/view/artwork-view';
+import ArtworkView from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
 import { useSelector } from 'react-redux';
 import { amplitudeModule } from '../../components/amplitude/amplitude';
 
-const Pages = () => {
+const Artwork = () => {
   const lang = useSelector((state) => state.language);
-  const [pageNum, setPageNum] = useState(5);
+  const [pageNum, setPageNum] = useState(4);
   console.log(`TwentiesPageNum: ${pageNum}`);
 
   const next = () => {
@@ -28,7 +28,7 @@ const Pages = () => {
       <LangChangeButton />
 
       <Aligncenter>
-        <View pageNum={pageNum} lang={lang} />
+        <ArtworkView pageNum={pageNum} lang={lang} />
 
         {pageNum !== 1 && <ButtonPrev onClick={prev}>&lt;</ButtonPrev>}
 
@@ -38,7 +38,7 @@ const Pages = () => {
   );
 };
 
-export default Pages;
+export default Artwork;
 
 const ButtonPrev = styled.button`
   position: absolute;
