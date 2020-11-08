@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import HeadInfo from '../../components/head-info';
 import { twentiesInfo } from '../../components/lang/head-info/head-info-text';
 import { useState } from 'react';
-import View from '../../components/twenties/view/view';
+import View from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
 import { useSelector } from 'react-redux';
 import { amplitudeModule } from '../../components/amplitude/amplitude';

@@ -1,7 +1,15 @@
-import PropTypes from "prop-types";
-import Head from "next/head";
+import PropTypes from 'prop-types';
+import Head from 'next/head';
 
 const HeadInfo = ({ info }) => {
+  HeadInfo.propTypes = {
+    title: PropTypes.string,
+    icoImage: PropTypes.string,
+    description: PropTypes.string,
+    url: PropTypes.string,
+    thumbnail: PropTypes.string,
+  };
+
   return (
     <Head>
       {/* 모바일 대응 meta tag */}
@@ -28,13 +36,5 @@ const HeadInfo = ({ info }) => {
 };
 
 export default HeadInfo;
-
-HeadInfo.propTypes = {
-  title: PropTypes.string,
-  icoImage: PropTypes.string,
-  description: PropTypes.string,
-  url: PropTypes.string,
-  thumbnail: PropTypes.string,
-};
 
 // [Ref] https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js

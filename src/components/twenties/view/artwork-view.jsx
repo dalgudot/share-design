@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import TwentiesStaggerText from '../text-component/twenties-stagger-text';
 import TwentiesArtwork from '../img-component/twenties-artwork';
 
-const View = ({ pageNum }) => {
+const ArtworkView = ({ pageNum }) => {
   View.propTypes = {
     pageNum: PropTypes.number.isRequired,
   };
@@ -36,4 +36,4 @@ const View = ({ pageNum }) => {
   );
 };
 
-export default View;
+export default ArtworkView;
