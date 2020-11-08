@@ -3,7 +3,7 @@ import TwentiesStaggerText from '../text-component/twenties-stagger-text';
 import TwentiesArtwork from '../img-component/twenties-artwork';
 import Link from 'next/link';
 
-const ArtworkView = ({ pageNum }) => {
+const ArtworkView = ({ pageNum, images }) => {
   ArtworkView.propTypes = {
     pageNum: PropTypes.number.isRequired,
   };
@@ -50,3 +50,19 @@ const ArtworkView = ({ pageNum }) => {
 };
 
 export default ArtworkView;
+
+// export async function getStaticProps() {
+//   const images = {
+//     src: '/images/1.jpg',
+//   };
+
+//   return { props: { images } };
+// }
+
+// export async function getServerSideProps() {
+//   const images = {
+//     src: '/images/1.jpg',
+//   };
+
+//   return { props: { images } };
+// }

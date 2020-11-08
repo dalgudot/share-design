@@ -13,7 +13,3 @@ const Index = () => {
 };
 
 export default Index;
-
-export async function getStaticProps({ params }) {
-  return { props: { src1: '/images/1.jpg', src2: '/images/2.jpg' } };
-}
