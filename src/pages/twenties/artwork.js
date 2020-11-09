@@ -5,7 +5,6 @@ import { useState } from 'react';
 import ArtworkView from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
 import { useSelector } from 'react-redux';
-import { amplitudeModule } from '../../components/amplitude/amplitude';
 
 const Artwork = () => {
   const lang = useSelector((state) => state.language);
@@ -19,8 +18,6 @@ const Artwork = () => {
   const prev = () => {
     setPageNum(pageNum - 1);
   };
-
-  amplitudeModule('arv_twenties_artwork');
 
   return (
     <>

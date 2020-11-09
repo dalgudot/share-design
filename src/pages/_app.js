@@ -23,28 +23,6 @@ export default function App({ Component, pageProps }) {
 
   PreventIllegalTheft();
 
-  // Amplitude initialize
-  // 참고: https://developers.amplitude.com/docs/advanced-settings
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const amplitude = require('amplitude-js');
-      amplitude
-        .getInstance()
-        .init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, null, {
-          // optional configuration options
-          // 쿠키 저장하는 도메인 지정
-          // domain: ".khk-design.kr",
-          // saveEvents: false,
-        });
-    }
-  }, []);
-
-  function handleExitComplete() {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0 });
-    }
-  }
-
   return (
     <>
       <Provider store={store}>
@@ -57,7 +35,7 @@ export default function App({ Component, pageProps }) {
               lightTheme={lightTheme}
             /> */}
             <GlobalStyles />
-            <AnimatePresence onExitComplete={handleExitComplete}>
+            <AnimatePresence>
               <Component {...pageProps} />
             </AnimatePresence>
           </ThemeProvider>

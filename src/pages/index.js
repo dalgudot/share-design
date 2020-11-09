@@ -5,11 +5,9 @@ import styled from 'styled-components';
 import LangChangeButton from '../components/button/lang-change-button';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
-import { amplitudeModule } from '../components/amplitude/amplitude';
 
 const Index = () => {
   // DetectBrowserLang();
-  amplitudeModule('arv_index');
 
   return (
     <>
