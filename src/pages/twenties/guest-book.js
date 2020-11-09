@@ -13,7 +13,7 @@ const Index = () => {
   const [writeMode, setWriteMode] = useState(false);
   const [loading, setLoading] = useState(true);
   // console.log(`writeMode: ${writeMode}`);
-  console.log(`loading: ${loading}`);
+  // console.log(`loading: ${loading}`);
 
   const refOnFunc = () => {
     firebase
@@ -27,7 +27,6 @@ const Index = () => {
       });
     return () => ref.off();
   };
-  // console.log(`guestBookDataValue: ${contents}`);
 
   useEffect(() => {
     if (!contents) {
@@ -53,7 +52,11 @@ const Index = () => {
   const showContents =
     writeMode === false &&
     contents.map((content, index) => (
-      <GuestBookContent key={index} content={content} />
+      <GuestBookContent
+        key={index}
+        keyNum={contents.reverse().indexOf(content)}
+        content={content}
+      />
     ));
 
   if (loading === true) {
