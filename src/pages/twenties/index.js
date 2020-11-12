@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import useSwr from 'swr';
+import TwentiesArtwork from '../../components/twenties/img-component/twenties-artwork';
 
 const Index = () => {
   return (
