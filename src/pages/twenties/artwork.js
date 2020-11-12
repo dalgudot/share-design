@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ArtworkView from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
 import { useSelector } from 'react-redux';
+import useSwr from 'swr';
 
 const Artwork = () => {
   const lang = useSelector((state) => state.language);
@@ -19,13 +20,20 @@ const Artwork = () => {
     setPageNum(pageNum - 1);
   };
 
+  const fetcher = (artworks) => fetch(artworks).then((res) => res.json());
+  const { data, error } = useSwr('/api/artworks', fetcher);
+
+  console.log(data);
+  if (error) return <h1>Failed to load users</h1>;
+  if (!data) return <h1>Loading...</h1>;
+
   return (
     <>
       <HeadInfo info={twentiesInfo} />
       <LangChangeButton />
 
       <Aligncenter>
-        <ArtworkView pageNum={pageNum} lang={lang} />
+        <ArtworkView pageNum={pageNum} lang={lang} data={data} />
 
         {pageNum !== 1 && <ButtonPrev onClick={prev}>&lt;</ButtonPrev>}
 

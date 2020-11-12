@@ -2,21 +2,11 @@ import PropTypes from 'prop-types';
 import TwentiesStaggerText from '../text-component/twenties-stagger-text';
 import TwentiesArtwork from '../img-component/twenties-artwork';
 import Link from 'next/link';
-import useSwr from 'swr';
 
-const fetcher = (artworks) => fetch(artworks).then((res) => res.json());
-
-const ArtworkView = ({ pageNum }) => {
+const ArtworkView = ({ pageNum, data }) => {
   ArtworkView.propTypes = {
     pageNum: PropTypes.number.isRequired,
   };
-
-  const { data, error } = useSwr('/api/artworks', fetcher);
-
-  if (error) return <h1>Failed to load users</h1>;
-  if (!data) return <h1>Loading...</h1>;
-
-  console.log(data);
 
   const currentPage = () => {
     switch (pageNum) {
@@ -35,10 +25,10 @@ const ArtworkView = ({ pageNum }) => {
         return <TwentiesStaggerText text="twenties4" />;
 
       case 5:
-        return <TwentiesArtwork src={data.id} alt="alt1" />;
+        return <TwentiesArtwork src={data.artwork1} alt="alt1" />;
 
       case 6:
-        return <TwentiesArtwork src="/images/2.jpg" alt="alt2" />;
+        return <TwentiesArtwork src={data.artwork2} alt="alt2" />;
 
       case 7:
         return (
