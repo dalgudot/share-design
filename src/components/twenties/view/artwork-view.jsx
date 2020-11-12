@@ -6,27 +6,15 @@ import useSwr from 'swr';
 
 const fetcher = (artworks) => fetch(artworks).then((res) => res.json());
 
-// export async function getStaticProps() {
-//   const { data, error } = useSwr('/api/artworks', fetcher);
-
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-//   const data = await res.json();
-
-//   return { props: { data } };
-// }
-
-// export async function getServerSideProps() {
-//   const { data, error } = useSwr('/api/artworks', fetcher);
-
-//   return { props: { data } };
-// }
-
 const ArtworkView = ({ pageNum }) => {
   ArtworkView.propTypes = {
     pageNum: PropTypes.number.isRequired,
   };
 
   const { data, error } = useSwr('/api/artworks', fetcher);
+
+  if (error) return <h1>Failed to load users</h1>;
+  if (!data) return <h1>Loading...</h1>;
 
   console.log(data);
 
