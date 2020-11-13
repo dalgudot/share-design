@@ -1,11 +1,3 @@
-// Fake users data
-// const artworks = [
-
-//   { id: '/images/1.jpg' },
-//   { id: '/images/2.jpg' },
-//   { id: '/images/3.jpg' },
-// ];
-
 const artworks = {
   artwork1: '/images/1.jpg',
   artwork2: '/images/2.jpg',

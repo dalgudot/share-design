@@ -2,7 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 html {
-  font-size: 10px; /* rem을 위한 Setting */
+  font-size: 10px;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: auto;
   /* 드래그 방지 */
   user-select: none;
   -ms-user-select: none;
@@ -11,41 +14,62 @@ html {
   -webkit-user-select: none;
 }
 
-@media all and (max-width: 768px) {
-  html {
-    font-size: 8px;
+@media all and (max-width: 480px) {
+    html {
+      font-size: 8px;
+    }
   }
-}
+
+  @media all and (min-width: 481px) and (max-width: 1439px) {
+    html {
+      font-size: 10px;
+    }
+  }
+
+  @media all and (min-width: 1440px){
+    html {
+      font-size: 12px;
+    }
+  }
 
 body {
   background-color: ${({ theme }) => theme.backgroundColor};
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
+  color: ${({ theme }) => theme.gray1};
+  /* iOS Safari Momentum Scroll, 버벅임 방지 */
+  -webkit-overflow-scrolling: touch; 
   /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+/* Chrome, Safari, Opera*/
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-button {
-  color: ${({ theme }) => theme.textPrimary};
+  display: none; 
 }
 
 h1 {
-  font-size: 4.8rem;
+  font-size: 4.9rem;
+}
+
+h2 {
+  font-size: 3.7rem;
+}
+
+h3 {
+  font-size: 2.9rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2.1rem;
+}
+
+h6 {
+  font-size: 1.7rem;
 }
 
 p {
@@ -77,6 +101,7 @@ ul,
 ol,
 li {
   list-style: none;
+  display: block;
 }
 
 img {

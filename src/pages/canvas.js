@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from 'react';
+import ModeChangeButton from '../components/button/mode-change-button';
 
-const Canvas = () => {
+const Canvas = ({ setMode, darkTheme, lightTheme }) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -12,10 +13,10 @@ const Canvas = () => {
     canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     context.scale(2, 2);
-    context.lineCap = "round";
-    context.strokeStyle = "black";
+    context.lineCap = 'round';
+    context.strokeStyle = 'black';
     context.lineWidth = 5;
     contextRef.current = context;
   }, []);
@@ -42,12 +43,21 @@ const Canvas = () => {
   };
 
   return (
-    <canvas
-      onMouseDown={startDrawing}
-      onMouseUp={finishDrawing}
-      onMouseMove={draw}
-      ref={canvasRef}
-    />
+    <>
+      <ModeChangeButton
+        block="block"
+        setMode={setMode}
+        darkTheme={darkTheme}
+        lightTheme={lightTheme}
+      />
+
+      <canvas
+        onMouseDown={startDrawing}
+        onMouseUp={finishDrawing}
+        onMouseMove={draw}
+        ref={canvasRef}
+      />
+    </>
   );
 };
 

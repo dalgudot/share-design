@@ -29,17 +29,6 @@ const Artwork = () => {
 
   return (
     <>
-      <HideImage>
-        <img src={data.artwork1} />
-        <img src={data.artwork2} />
-        <img src={data.artwork3} />
-        <img src={data.artwork4} />
-        <img src={data.artwork5} />
-        <img src={data.artwork6} />
-        <img src={data.artwork7} />
-        <img src={data.artwork8} />
-        <img src={data.artwork9} />
-      </HideImage>
       <HeadInfo info={twentiesInfo} />
       <LangChangeButton />
 
@@ -56,14 +45,10 @@ const Artwork = () => {
 
 export default Artwork;
 
-const HideImage = styled.div`
-  opacity: 0;
-`;
-
 const ButtonPrev = styled.button`
   position: absolute;
   opacity: 0.8;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.gray1};
   font-size: 36px;
   opacity: 0.3;
 
@@ -95,7 +80,7 @@ const Aligncenter = styled.section`
 const ButtonNext = styled.button`
   position: absolute;
   opacity: 0.8;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => theme.gray1};
   font-size: 36px;
   opacity: 0.3;
 

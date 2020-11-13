@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
 
 const ScrollDown = () => {
   const [showScrollDown, setShowScrollDwon] = useState(true);
@@ -14,8 +14,8 @@ const ScrollDown = () => {
       }
       // console.log(showScrollDown, window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [showScrollDown]);
 
   return (
@@ -46,7 +46,7 @@ const Wrap = styled.section`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--gray1);
   }
 `;
 
@@ -59,7 +59,7 @@ const loaderVariants = {
       y: {
         yoyo: Infinity,
         duration: 0.8,
-        ease: "easeInOut",
+        ease: 'easeInOut',
       },
     },
   },

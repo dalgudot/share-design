@@ -1,19 +1,19 @@
-import { useMemo } from "react";
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { useMemo } from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 let store;
 
 const InitialState = {
-  language: "ko",
-  localMode: "darkTheme",
+  language: 'ko',
+  localMode: 'darkTheme',
 };
 
 export const actionTypes = {
-  CHANGELANGUAGE: "CHANGELANGUAGE",
-  MODECHANGE: "MODECHANGE",
+  CHANGELANGUAGE: 'CHANGELANGUAGE',
+  MODECHANGE: 'MODECHANGE',
 };
 
 // REDUCERS
@@ -22,13 +22,13 @@ export const reducer = (state = InitialState, action) => {
     case actionTypes.CHANGELANGUAGE:
       return {
         ...state,
-        language: state.language === "ko" ? "en" : "ko",
+        language: state.language === 'ko' ? 'en' : 'ko',
       };
 
     case actionTypes.MODECHANGE:
       return {
         ...state,
-        localMode: state.localMode === "darkTheme" ? "lightTheme" : "darkTheme",
+        localMode: state.localMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
       };
 
     default:
@@ -37,9 +37,9 @@ export const reducer = (state = InitialState, action) => {
 };
 
 const persistConfig = {
-  key: "primary",
+  key: 'primary',
   storage,
-  whitelist: ["language", "localMode"], // place to select which state you want to persist
+  gray1list: ['language', 'localMode'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -67,7 +67,7 @@ export const initializeStore = (preloadedState) => {
   }
 
   // For SSG and SSR always create a new store
-  if (typeof window === "undefined") return _store;
+  if (typeof window === 'undefined') return _store;
   // Create the store once in the client
   if (!store) store = _store;
 

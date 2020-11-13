@@ -1,8 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+// getInitialProps getStaticProps, getServerSideProps로 2군데 변경
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getServerSideProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -13,7 +14,7 @@ export default class MyDocument extends Document {
             sheet.collectStyles(<App {...props} />),
         });
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getServerSideProps(ctx);
       return {
         ...initialProps,
         styles: (

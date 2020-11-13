@@ -1,77 +1,108 @@
-import styled from "styled-components";
-import Link from "next/link";
+import styled from 'styled-components';
+import Link from 'next/link';
 
 const Header = () => {
   return (
-    <Container>
-      <Left>
-        <h1>KyungHwan Kim</h1>
-        <h2>UX Designer</h2>
-      </Left>
-      <LineHoverWrap>
-        <Link href="/canvas">
-          <LineHover>about</LineHover>
-        </Link>
-      </LineHoverWrap>
-    </Container>
+    <HeaderContainer>
+      <Link href="/">
+        <Left>
+          <h5>KyungHwan Kim</h5>
+          <h6>UI/UX Designer</h6>
+        </Left>
+      </Link>
+      <HamburgerMenuLine>
+        <span></span>
+        <span></span>
+        <span></span>
+      </HamburgerMenuLine>
+      {/* <LineHoverWrap>
+        <LineHover>about</LineHover>
+        <LineHover>contact</LineHover>
+      </LineHoverWrap> */}
+    </HeaderContainer>
   );
 };
 
 export default Header;
 
-const Container = styled.header`
-  padding: 3.5rem 16.66667% 0;
+const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-
-  @media all and (max-width: 768px) {
-    padding: 3.5rem 6% 0;
-  }
 `;
 
-const Left = styled.div`
-  h1 {
-    font-size: 2.1rem;
+const Left = styled.a`
+  h5 {
     font-weight: 700;
   }
 
-  h2 {
-    font-size: 1.7rem;
+  h6 {
     font-weight: 100;
     letter-spacing: 1px;
-    margin-top: -1px;
+    margin-top: -2px;
   }
 `;
 
-const LineHoverWrap = styled.div`
-  position: relative;
-  display: block;
+const LineHoverWrap = styled.a`
+  display: flex;
   padding-bottom: 3px;
-  height: 2.4rem;
 `;
 
-const LineHover = styled.a`
+const LineHover = styled.p`
   font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0px;
+  margin-left: 2vw;
+`;
 
-  &:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: -10px;
-    left: 0;
-    background-color: ${({ theme }) => theme.textPrimary};
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s;
+const HamburgerMenuLine = styled.div`
+  width: 20px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 8px;
+  /* border: solid 2px ${({ theme }) => theme.gray1};
+  padding: 12px; */
+
+  @media all and (min-width: 1440px) {
+    width: 26px;
+    height: 18px;
   }
 
-  &:hover {
-    &:after {
-      transform-origin: bottom left;
-      transform: scaleX(1);
-    }
+  span {
+    height: 2px;
+    background-color: ${({ theme }) => theme.gray1};
   }
 `;
+
+// const LineHoverWrap = styled.div`
+//   position: relative;
+//   display: block;
+//   padding-bottom: 3px;
+//   height: 2.4rem;
+// `;
+
+// const LineHover = styled.a`
+//   font-size: 2rem;
+//   font-weight: 700;
+//   margin-left: 36px;
+
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 3px;
+//     bottom: -10px;
+//     left: 0;
+//     background-color: ${({ theme }) => theme.gray1};
+//     transform: scaleX(0);
+//     transform-origin: bottom right;
+//     transition: transform 0.3s;
+//   }
+
+//   &:hover {
+//     &:after {
+//       transform-origin: bottom left;
+//       transform: scaleX(1);
+//     }
+//   }
+// `;

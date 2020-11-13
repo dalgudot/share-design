@@ -65,7 +65,7 @@ const Index = () => {
     }
     return (
       <>
-        <StaggerDots color="white" />
+        <StaggerDots color="gray1" />
       </>
     );
   } else {

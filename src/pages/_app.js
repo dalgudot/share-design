@@ -10,16 +10,14 @@ import { useState, useEffect } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const persistor = persistStore(store, {}, function () {
     persistor.persist();
   });
-  const router = useRouter();
-
   const [mode, setMode] = useState(darkTheme);
+  console.log(mode);
 
   PreventIllegalTheft();
 
@@ -28,15 +26,19 @@ export default function App({ Component, pageProps }) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
-            {/* <ModeChangeButton
-              mode={mode}
+            <ModeChangeButton
               setMode={setMode}
               darkTheme={darkTheme}
               lightTheme={lightTheme}
-            /> */}
+            />
             <GlobalStyles />
             <AnimatePresence>
-              <Component {...pageProps} />
+              <Component
+                {...pageProps}
+                setMode={setMode}
+                darkTheme={darkTheme}
+                lightTheme={lightTheme}
+              />
             </AnimatePresence>
           </ThemeProvider>
         </PersistGate>
