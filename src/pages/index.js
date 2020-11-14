@@ -23,25 +23,39 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 
         <SubjectHeader>
           <SubjectHeaderOrder>첫 번째</SubjectHeaderOrder>
-          <SubjectHeaderLine></SubjectHeaderLine>
+          <SubjectHeaderLine />
           <SubjectHeaderName>20대를 남기다</SubjectHeaderName>
         </SubjectHeader>
 
         <SubjectContents>
-          <div className="content"></div>
-          <div className="content"></div>
-          <div className="content"></div>
+          <Content />
+          <Content className="middle__content" />
+          <Content />
         </SubjectContents>
 
+        <ContactKHK>
+          <ContactLine />
+          <ContactText>Contact</ContactText>
+          <ContactEmail>dalgudot@gmail.com</ContactEmail>
+          <ContactLine />
+        </ContactKHK>
+
         <Footer>
-          <div>
-            <a>Brunch</a>
-            <a className="social">Facebook</a>
-            <a className="social">LinkedIn</a>
-          </div>
-          <div>
-            <p className="copyright">ⓒ KyungHwan Kim. All rights reserved.</p>
-          </div>
+          <FooterSocialWrap>
+            <FooterSocial>
+              <u>Brunch</u>
+            </FooterSocial>
+            <FooterSocial>
+              <u>Facebook</u>
+            </FooterSocial>
+            <FooterSocial>
+              <u>LinkedIn</u>
+            </FooterSocial>
+          </FooterSocialWrap>
+
+          <FooterCopyright>
+            ⓒ KyungHwan Kim. All rights reserved.
+          </FooterCopyright>
         </Footer>
       </Container>
     </>
@@ -61,7 +75,7 @@ export default Index;
               lightTheme={lightTheme}
             />
           </BtnFunc>
-        </WrapBtnFunc> */
+        </WrapBtnFunc>  */
 }
 
 const Container = styled.main`
@@ -89,7 +103,7 @@ const KHKText = styled.h1`
 
 // S of SubjectHeader
 const SubjectHeader = styled.header`
-  margin-top: 22vh;
+  margin-top: 17vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +121,7 @@ const SubjectHeaderOrder = styled.h1`
     font-size: 2.9rem;
   }
 `;
-// flex-grow가 0이면 flex container의 크기가 커져도 flex item의 크기가 커지지 않고 원래 크기로 유지
+// flex-grow가 0이면 flex container의 크기가 커져도 flex item의 크기가 커지지 않고 원래 크기 유지. 여기서는 3가지 요소 중 양쪽 글씨에만 적용함.
 
 const SubjectHeaderLine = styled.div`
   height: 1px;
@@ -118,7 +132,7 @@ const SubjectHeaderLine = styled.div`
 
   @media all and (max-width: 767px) {
     width: 0.1rem;
-    height: 4.8rem;
+    height: 5.9rem;
     margin: 4vw 0;
     flex-grow: 0;
   }
@@ -136,41 +150,100 @@ const SubjectHeaderName = styled.h1`
 
 // S of SubjectContents
 const SubjectContents = styled.section`
+  margin-top: 6vh;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .middle__content {
+    margin: 0 1.5vw;
+  }
 
   @media all and (max-width: 767px) {
     flex-direction: column;
+
+    .middle__content {
+      margin: 1.5vh 0;
+    }
   }
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 36vh;
+  background-color: ${({ theme }) => theme.gray1};
+  opacity: 0.2;
 `;
 // E of SubjectContents
 
+// S of Contact
+const ContactKHK = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 24vh;
+`;
+
+const ContactLine = styled.div`
+  width: 100%;
+  height: 0.1rem;
+  background-color: ${({ theme }) => theme.gray1};
+  opacity: 0.8;
+`;
+
+const ContactText = styled.h1`
+  font-weight: 700;
+  margin-top: 8vh;
+  margin-bottom: 0.1vh;
+
+  @media all and (max-width: 767px) {
+    font-size: 2.9rem;
+  }
+`;
+
+const ContactEmail = styled.h1`
+  font-weight: 300;
+  margin-bottom: 8vh;
+
+  @media all and (max-width: 767px) {
+    font-size: 2.9rem;
+  }
+`;
+
+// E of Contact
+
 // S of Footer
 const Footer = styled.footer`
-  /* margin: 16vh auto 0; */
-  /* width: 100%; */
-  margin: auto auto 8vh;
-  /* margin-top: auto; */
-
-  div {
-    /* margin-top: auto; */
-    /* display: flex; */
-  }
+  margin: 5vh auto 8vh;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
 
   a {
     font-size: 1.7rem;
   }
 
-  p {
-    font-size: 1.4rem;
-  }
-
   .social {
     margin-left: 2vw;
   }
+`;
 
-  .copyright {
-    letter-spacing: 0px;
-    margin-top: 1vh;
-  }
+const FooterSocialWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const FooterSocial = styled.a`
+  font-size: 2.1rem;
+`;
+
+const FooterCopyright = styled.p`
+  min-width: 480px;
+  margin-top: 12vh;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 `;
 // E of Footer

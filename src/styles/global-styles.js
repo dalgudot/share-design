@@ -88,6 +88,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+u {
+
+}
+
 button {
   // all: unset -> 모든 속성 한번에 초기화
   all: unset;
