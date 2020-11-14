@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 html {
+  width: 100%; 
+  height: 100%;
   font-size: 10px;
   /* overflow: hidden; */
   overflow-x: hidden;
@@ -13,26 +15,22 @@ html {
   -khtml-user-select: none;
   -webkit-user-select: none;
 }
-
+/* 
 @media all and (max-width: 480px) {
     html {
       font-size: 8px;
     }
   }
 
-  @media all and (min-width: 481px) and (max-width: 1439px) {
+  @media all and (min-width: 481px) {
     html {
       font-size: 10px;
     }
-  }
-
-  @media all and (min-width: 1440px){
-    html {
-      font-size: 12px;
-    }
-  }
+  } */
 
 body {
+  width: 100%; 
+  height: 100%;
   background-color: ${({ theme }) => theme.backgroundColor};
   color: ${({ theme }) => theme.gray1};
   /* iOS Safari Momentum Scroll, 버벅임 방지 */
@@ -49,7 +47,7 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-  font-size: 4.9rem;
+  font-size: 5.9rem;
 }
 
 h2 {
