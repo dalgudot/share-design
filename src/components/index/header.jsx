@@ -1,15 +1,32 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import H3Text from '../typo/h3';
+import { fontSize, fontWeight } from '../typo/font';
 
-const IndexHeader = () => {
+const Header = () => {
   return (
     <HeaderContainer>
       <Link href="/">
         <Left>
-          <h4>KyungHwan Kim</h4>
-          <h5>UI/UX Designer</h5>
+          <H3Text
+            text="KyungHwan Kim"
+            mobileSize={fontSize.font18}
+            tabletSize={fontSize.font21}
+            desktopSize={fontSize.font24}
+            weight={fontWeight.bold}
+          ></H3Text>
+          <H3Text
+            text="UI/UX Designer"
+            mobileSize={fontSize.font14}
+            tabletSize={fontSize.font18}
+            desktopSize={fontSize.font21}
+            weight={fontWeight.thin}
+            letterSpacing="0.5px"
+            marginTop="-2px"
+          ></H3Text>
         </Left>
       </Link>
+
       <HamburgerMenuLine>
         <span></span>
         <span></span>
@@ -19,34 +36,15 @@ const IndexHeader = () => {
   );
 };
 
-export default IndexHeader;
+export default Header;
 
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
+  margin: 3vh 0;
 `;
 
-const Left = styled.a`
-  h4 {
-    font-weight: 700;
-  }
-
-  h5 {
-    font-weight: 100;
-    letter-spacing: 1px;
-    margin-top: -2px;
-  }
-
-  @media all and (max-width: 767px) {
-    h4 {
-      font-size: 1.7rem;
-    }
-
-    h5 {
-      font-size: 1.4rem;
-    }
-  }
-`;
+const Left = styled.a``;
 
 const HamburgerMenuLine = styled.div`
   width: 20px;

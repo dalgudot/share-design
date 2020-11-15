@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import '../styles/font.css';
+import '../styles/global.css';
 import { darkTheme, lightTheme } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from '../styles/global-styles';
+import GlobalColors from '../styles/theme';
 import { useState, useEffect } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
@@ -31,7 +32,7 @@ export default function App({ Component, pageProps }) {
               darkTheme={darkTheme}
               lightTheme={lightTheme}
             />
-            <GlobalStyles />
+            <GlobalColors />
             <AnimatePresence>
               <Component
                 {...pageProps}
