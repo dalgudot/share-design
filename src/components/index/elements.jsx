@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LeftRightContainer = styled.main`
+export const LeftRightMargin = styled.main`
   padding: 0 6vw;
 
   @media all and (min-width: 960px) {

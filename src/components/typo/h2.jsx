@@ -45,7 +45,7 @@ export default H2Text;
 const H2 = styled.h2`
   font-weight: ${({ weight }) => weight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  color: ${({ color }) => color};
+  color: ${({ theme, color }) => theme[color]};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 

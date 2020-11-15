@@ -12,18 +12,19 @@ const Header = () => {
             text="KyungHwan Kim"
             mobileSize={fontSize.font18}
             tabletSize={fontSize.font21}
-            desktopSize={fontSize.font24}
+            desktopSize={fontSize.font25}
             weight={fontWeight.bold}
-          ></H3Text>
+          />
           <H3Text
             text="UI/UX Designer"
             mobileSize={fontSize.font14}
             tabletSize={fontSize.font18}
             desktopSize={fontSize.font21}
-            weight={fontWeight.thin}
+            weight={fontWeight.light}
             letterSpacing="0.5px"
             marginTop="-2px"
-          ></H3Text>
+            opacity={0.8}
+          />
         </Left>
       </Link>
 
@@ -41,7 +42,7 @@ export default Header;
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  margin: 3vh 0;
+  margin: 4vh 0;
 `;
 
 const Left = styled.a``;

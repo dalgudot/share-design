@@ -6,6 +6,7 @@ export const fontSize = {
   font39: '39px',
   font34: '34px',
   font29: '29px',
+  font25: '25px',
   font24: '24px',
   font21: '21px',
   font18: '18px',

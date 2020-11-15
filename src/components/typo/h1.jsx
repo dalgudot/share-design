@@ -45,7 +45,7 @@ export default H1Text;
 const H1 = styled.h1`
   font-weight: ${({ weight }) => weight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  color: ${({ color }) => color};
+  color: ${({ theme, color }) => theme[color]};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 

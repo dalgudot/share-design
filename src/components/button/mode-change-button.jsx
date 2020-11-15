@@ -4,14 +4,10 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { k } from '../lang/index/ko-index';
 import { e } from '../lang/index/en-index';
+import PText from '../typo/p';
+import { fontSize, fontWeight } from '../typo/font';
 
-const ModeChangeButton = ({
-  setMode,
-  darkTheme,
-  lightTheme,
-  block,
-  margin__left,
-}) => {
+const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
   const theme = useSelector((state) => state.localMode);
   const dispatch = useDispatch();
   const themeChange = () =>
@@ -39,20 +35,37 @@ const ModeChangeButton = ({
   };
 
   return (
-    <button
-      style={style}
-      className="btn__common margin__left"
-      onClick={setTheme}
-    >
-      {`${theme}` === 'darkTheme'
-        ? `${lang}` === 'ko'
-          ? k['LightMode']
-          : e['LightMode']
-        : `${lang}` === 'ko'
-        ? k['DarkMode']
-        : e['DarkMode']}
-    </button>
+    <BtnStyle style={style} onClick={setTheme}>
+      <PText
+        text={
+          `${theme}` === 'darkTheme'
+            ? `${lang}` === 'ko'
+              ? k['LightMode']
+              : e['LightMode']
+            : `${lang}` === 'ko'
+            ? k['DarkMode']
+            : e['DarkMode']
+        }
+        mobileSize={fontSize.font18}
+        tabletSize={fontSize.font21}
+        desktopSize={fontSize.font25}
+        weight={fontWeight.bold}
+        color="backgroundColor"
+      />
+    </BtnStyle>
   );
 };
 
 export default ModeChangeButton;
+
+const BtnStyle = styled.button`
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  padding: 24px;
+  background-color: ${({ theme }) => theme.gray1};
+  opacity: 1;
+  border-radius: 18px;
+`;

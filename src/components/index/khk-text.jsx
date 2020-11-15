@@ -9,15 +9,15 @@ const KHKText = () => {
         text="UI/UX 디자인 경험을"
         mobileSize={fontSize.font29}
         tabletSize={fontSize.font49}
-        desktopSize={fontSize.font67}
-        weight={fontWeight.regular}
+        desktopSize={fontSize.font59}
+        weight={fontWeight.bold}
       ></H1Text>
       <H1Text
         text="공유합니다."
         mobileSize={fontSize.font29}
         tabletSize={fontSize.font49}
-        desktopSize={fontSize.font67}
-        weight={fontWeight.regular}
+        desktopSize={fontSize.font59}
+        weight={fontWeight.bold}
       ></H1Text>
     </KHKTextContainer>
   );

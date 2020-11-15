@@ -11,7 +11,8 @@ import Subject from '../components/index/subject';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 import Nav from '../components/index/nav';
-import { LeftRightContainer } from '../components/index/elements';
+import { LeftRightMargin } from '../components/index/elements';
+import LottieDownScroll from '../components/lottie/lottie-down-scroll';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
   DetectBrowserLang();
@@ -20,13 +21,29 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
     <>
       <HeadInfo info={indexInfo} />
 
-      <LeftRightContainer>
-        <Header />
+      <FirstView100vh>
+        <LeftRightMargin>
+          <Header />
+          <KHKText />
 
-        <KHKText />
+          <BtnLayout>
+            <LangChangeButton />
+            <ModeChangeButton
+              block="flex"
+              setMode={setMode}
+              darkTheme={darkTheme}
+              lightTheme={lightTheme}
+            />
+          </BtnLayout>
+        </LeftRightMargin>
+        <LottieDownScroll />
 
-        <Nav />
-      </LeftRightContainer>
+        {/* 스크롤 모션 */}
+      </FirstView100vh>
+
+      <Rect />
+
+      <Nav />
 
       <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" />
 
@@ -38,6 +55,27 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 };
 
 export default Index;
+
+const FirstView100vh = styled.div`
+  min-height: 100vh;
+  /* align-items: center; */
+  /* min-height: -webkit-fill-available; */
+`;
+
+const Rect = styled.div`
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background-color: rebeccapurple;
+`;
+
+const BtnLayout = styled.section`
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 480px;
+`;
 
 // Hamburger Modal
 {
