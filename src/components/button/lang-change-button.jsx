@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
+import { BtnStyle } from '../index/elements';
 
 const LangChangeButton = () => {
   const lang = useSelector((state) => state.language);
@@ -23,26 +24,14 @@ const LangChangeButton = () => {
     <BtnStyle onClick={languageChange}>
       <PText
         text={`${lang}` === 'ko' ? 'View in English' : '한글로 보기'}
-        mobileSize={fontSize.font18}
-        tabletSize={fontSize.font21}
-        desktopSize={fontSize.font25}
+        mobileSize={fontSize.font14}
+        tabletSize={fontSize.font18}
+        desktopSize={fontSize.font21}
         weight={fontWeight.bold}
-        color="backgroundColor"
+        color="gray2"
       />
     </BtnStyle>
   );
 };
 
 export default LangChangeButton;
-
-const BtnStyle = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 60px;
-  padding: 24px;
-  background-color: ${({ theme }) => theme.gray1};
-  opacity: 1;
-  border-radius: 18px;
-`;

@@ -6,6 +6,7 @@ import { k } from '../lang/index/ko-index';
 import { e } from '../lang/index/en-index';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
+import { BtnStyle } from '../index/elements';
 
 const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
   const theme = useSelector((state) => state.localMode);
@@ -35,7 +36,7 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
   };
 
   return (
-    <BtnStyle style={style} onClick={setTheme}>
+    <BtnStyle style={style} className="right__button" onClick={setTheme}>
       <PText
         text={
           `${theme}` === 'darkTheme'
@@ -46,26 +47,14 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
             ? k['DarkMode']
             : e['DarkMode']
         }
-        mobileSize={fontSize.font18}
-        tabletSize={fontSize.font21}
-        desktopSize={fontSize.font25}
+        mobileSize={fontSize.font14}
+        tabletSize={fontSize.font18}
+        desktopSize={fontSize.font21}
         weight={fontWeight.bold}
-        color="backgroundColor"
+        color="gray2"
       />
     </BtnStyle>
   );
 };
 
 export default ModeChangeButton;
-
-const BtnStyle = styled.button`
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 60px;
-  padding: 24px;
-  background-color: ${({ theme }) => theme.gray1};
-  opacity: 1;
-  border-radius: 18px;
-`;

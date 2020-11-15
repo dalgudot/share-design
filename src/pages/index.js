@@ -10,22 +10,22 @@ import KHKText from '../components/index/khk-text';
 import Subject from '../components/index/subject';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
-import Nav from '../components/index/nav';
+
 import { LeftRightMargin } from '../components/index/elements';
-import LottieDownScroll from '../components/lottie/lottie-down-scroll';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
-  DetectBrowserLang();
+  // DetectBrowserLang();
 
   return (
     <>
-      <HeadInfo info={indexInfo} />
+      <LeftRightMargin>
+        <HeadInfo info={indexInfo} />
 
-      <FirstView100vh>
-        <LeftRightMargin>
+        <FirstView100vh>
           <Header />
           <KHKText />
 
+          {/* 토글 버튼으로 교체 */}
           <BtnLayout>
             <LangChangeButton />
             <ModeChangeButton
@@ -35,21 +35,16 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
               lightTheme={lightTheme}
             />
           </BtnLayout>
-        </LeftRightMargin>
-        <LottieDownScroll />
+          {/* 스크롤 모션 */}
+        </FirstView100vh>
 
-        {/* 스크롤 모션 */}
-      </FirstView100vh>
+        {/* Subject 내부의 Nav는 sticky! */}
+        <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" />
 
-      <Rect />
+        <Contact />
 
-      <Nav />
-
-      <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" />
-
-      <Contact />
-
-      <Footer />
+        <Footer />
+      </LeftRightMargin>
     </>
   );
 };
@@ -57,37 +52,16 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 export default Index;
 
 const FirstView100vh = styled.div`
-  min-height: 100vh;
-  /* align-items: center; */
-  /* min-height: -webkit-fill-available; */
-`;
-
-const Rect = styled.div`
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  background-color: rebeccapurple;
+  min-height: 97vh;
 `;
 
 const BtnLayout = styled.section`
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto 48px;
   max-width: 480px;
-`;
 
-// Hamburger Modal
-{
-  /* <WrapBtnFunc>
-          <BtnFunc>
-            <LangChangeButton />
-            <ModeChangeButton
-              block="block"
-              setMode={setMode}
-              darkTheme={darkTheme}
-              lightTheme={lightTheme}
-            />
-          </BtnFunc>
-        </WrapBtnFunc>  */
-}
+  .right__button {
+    margin-left: 4vw;
+  }
+`;

@@ -1,32 +1,37 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { HorizontalLine, VerticalLine } from './elements';
 import H2Text from '../typo/h2';
 import { fontSize, fontWeight } from '../typo/font';
 
-const Nav = () => {
+const Nav = ({ order, name }) => {
+  Nav.propTypes = {
+    order: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  };
+
   return (
     <>
       <HorizontalLine />
       <NavContainer>
         <H2Text
-          text="첫 번째"
-          mobileSize={fontSize.font14}
-          tabletSize={fontSize.font49}
-          desktopSize={fontSize.font24}
-          weight={fontWeight.regular}
-          opacity={0.7}
-          letterSpacing="2.5px"
+          text={order}
+          mobileSize={fontSize.font21}
+          tabletSize={fontSize.font29}
+          desktopSize={fontSize.font34}
+          weight={fontWeight.bold}
+          letterSpacing="2px"
+          opacity={0.8}
         ></H2Text>
 
         <H2Text
-          text="20대를 남기다"
+          text={name}
           mobileSize={fontSize.font29}
           tabletSize={fontSize.font49}
-          desktopSize={fontSize.font24}
+          desktopSize={fontSize.font59}
           weight={fontWeight.bold}
-          opacity={1}
           marginTop="1vh"
-          letterSpacing="6px"
+          letterSpacing="2px"
         ></H2Text>
       </NavContainer>
       <HorizontalLine />
@@ -39,5 +44,4 @@ export default Nav;
 const NavContainer = styled.nav`
   margin: 8vh auto 9vh;
   text-align: center;
-  position: relative;
 `;

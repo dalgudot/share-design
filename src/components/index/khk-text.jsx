@@ -11,14 +11,14 @@ const KHKText = () => {
         tabletSize={fontSize.font49}
         desktopSize={fontSize.font59}
         weight={fontWeight.bold}
-      ></H1Text>
+      />
       <H1Text
         text="공유합니다."
         mobileSize={fontSize.font29}
         tabletSize={fontSize.font49}
         desktopSize={fontSize.font59}
         weight={fontWeight.bold}
-      ></H1Text>
+      />
     </KHKTextContainer>
   );
 };

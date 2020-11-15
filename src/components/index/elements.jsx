@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
 export const LeftRightMargin = styled.main`
-  padding: 0 6vw;
+  @media screen and (max-width: 812px) {
+    padding: 0 4vw;
+  }
 
-  @media all and (min-width: 960px) {
-    padding: 0 16vw;
+  @media screen and (min-width: 813px) and (max-width: 1200px) {
+    padding: 0 12vw;
+  }
+
+  @media screen and (min-width: 1201px) {
+    padding: 0 16.6667%;
   }
 `;
 
@@ -21,4 +27,16 @@ export const VerticalLine = styled.div`
   background-color: ${({ theme }) => theme.gray1};
   opacity: 0.7;
   margin: 16px auto;
+`;
+
+export const BtnStyle = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 60px; */
+  padding: 36px 16px;
+  background-color: ${({ theme }) => theme.gray3};
+  opacity: 1;
+  border-radius: 8px;
 `;
