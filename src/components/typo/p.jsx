@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { mediaBreakPoint } from '../../styles/common';
 
 const PText = ({
   text,
@@ -49,15 +50,15 @@ const P = styled.p`
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 
-  @media screen and (max-width: 812px) {
+  @media screen and (max-width: ${mediaBreakPoint.first}) {
     font-size: ${({ mobileSize }) => mobileSize};
   }
 
-  @media screen and (min-width: 813px) and (max-width: 1200px) {
+  @media screen and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
     font-size: ${({ tabletSize }) => tabletSize};
   }
 
-  @media screen and (min-width: 1201px) {
+  @media screen and (min-width: ${mediaBreakPoint.fourth}) {
     font-size: ${({ desktopSize }) => desktopSize};
   }
 `;

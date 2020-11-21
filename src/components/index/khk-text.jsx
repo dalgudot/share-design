@@ -29,16 +29,4 @@ const KHKTextContainer = styled.section`
   text-align: center;
   margin-top: 16vh;
   margin-bottom: 16vh;
-
-  /* @media screen and (max-width: 812px) {
-    text-align: center;
-  }
-
-  @media screen and (min-width: 813px) and (max-width: 1200px) {
-    text-align: center;
-  }
-
-  @media screen and (min-width: 1201px) {
-    text-align: left;
-  } */
 `;

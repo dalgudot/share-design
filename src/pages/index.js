@@ -17,7 +17,10 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
   // DetectBrowserLang();
 
   useEffect(() => {
-    console.log(screen.availHeight);
+    // console.log(screen.availWidth);
+    // console.log(screen.availHeight);
+    console.log(`innerWidth: ${window.innerWidth}`);
+    console.log(`innerHeight: ${window.innerHeight}`);
   }, []);
 
   return (
@@ -25,25 +28,23 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
       <LeftRightMargin>
         <HeadInfo info={indexInfo} />
 
-        <FirstView100vh>
-          <Header />
-          <KHKText />
+        <Header />
+        <KHKText />
 
-          {/* 토글 버튼으로 교체 */}
-          <BtnLayout>
-            <LangChangeButton />
-            <ModeChangeButton
+        {/* 토글 버튼으로 교체 */}
+        <BtnLayout>
+          <LangChangeButton />
+          {/* <ModeChangeButton
               block="flex"
               setMode={setMode}
               darkTheme={darkTheme}
               lightTheme={lightTheme}
-            />
-          </BtnLayout>
-          {/* 스크롤 모션 */}
-        </FirstView100vh>
+            /> */}
+        </BtnLayout>
+        {/* 스크롤 모션 */}
 
         {/* Subject 내부의 Nav는 sticky! */}
-        <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" />
+        {/* <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" /> */}
 
         <Contact />
 

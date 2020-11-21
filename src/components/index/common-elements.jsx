@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import { mediaBreakPoint } from '../../styles/common';
 
 export const LeftRightMargin = styled.main`
-  @media screen and (max-width: 812px) {
+  @media screen and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4vw;
   }
 
-  @media screen and (min-width: 813px) and (max-width: 1200px) {
+  @media screen and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
     padding: 0 12vw;
   }
 
-  @media screen and (min-width: 1201px) {
+  @media screen and (min-width: ${mediaBreakPoint.fourth}) {
     padding: 0 16.6667%;
   }
 `;
