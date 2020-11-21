@@ -15,8 +15,83 @@ const HeadInfo = ({ info }) => {
       {/* 모바일 대응 meta tag */}
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
       />
+
+      {/* S of fonts preload */}
+      <link
+        rel="preload"
+        href="/fonts/Spoqa Han Sans Bold.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/Spoqa Han Sans Regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/Spoqa Han Sans Regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/Spoqa Han Sans Thin.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/Spoqa Han Sans light.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/roboto-v20-latin-100.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/roboto-v20-latin-300.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/roboto-v20-latin-regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href="/fonts/roboto-v20-latin-700.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+      {/* E of fonts preload */}
+
       <title>{info.title}</title>
       <link rel="icon" href={info.icoImage} />
       <meta name="author" content="KyungHwan Kim" />

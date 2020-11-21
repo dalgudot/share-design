@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { HorizontalLine, VerticalLine } from './elements';
+import { HorizontalLine, VerticalLine } from './common-elements';
 import H2Text from '../typo/h2';
 import { fontSize, fontWeight } from '../typo/font';
 

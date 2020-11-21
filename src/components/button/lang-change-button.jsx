@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
-import { BtnStyle } from '../index/elements';
+import { BtnStyle } from '../index/common-elements';
 
 const LangChangeButton = () => {
   const lang = useSelector((state) => state.language);

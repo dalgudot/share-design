@@ -10,8 +10,7 @@ import KHKText from '../components/index/khk-text';
 import Subject from '../components/index/subject';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
-
-import { LeftRightMargin } from '../components/index/elements';
+import { LeftRightMargin } from '../components/index/common-elements';
 import { useEffect } from 'react';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
-import { HorizontalLine } from './elements';
+import { HorizontalLine } from './common-elements';
 
 const Contact = () => {
   return (

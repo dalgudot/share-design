@@ -6,7 +6,7 @@ import { k } from '../lang/index/ko-index';
 import { e } from '../lang/index/en-index';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
-import { BtnStyle } from '../index/elements';
+import { BtnStyle } from '../index/common-elements';
 
 const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
   const theme = useSelector((state) => state.localMode);
