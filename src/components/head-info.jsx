@@ -19,7 +19,8 @@ const HeadInfo = ({ info }) => {
       />
 
       {/* S of fonts preload */}
-      <link
+      <link rel="stylesheet" href="../styles/font.css" />
+      {/* <link
         rel="preload"
         href="/fonts/Spoqa Han Sans Bold.woff2"
         as="font"
@@ -89,7 +90,7 @@ const HeadInfo = ({ info }) => {
         as="font"
         type="font/woff2"
         crossorigin="anonymous"
-      />
+      /> */}
       {/* E of fonts preload */}
 
       <title>{info.title}</title>
