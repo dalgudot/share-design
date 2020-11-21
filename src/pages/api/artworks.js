@@ -1,5 +1,5 @@
 const artworks = {
-  artwork1: '/images/1.jpg',
+  artwork1: '/images/a.jpg',
   artwork2: '/images/2.jpg',
   artwork3: '/images/3.jpg',
   artwork4: '/images/4.jpg',

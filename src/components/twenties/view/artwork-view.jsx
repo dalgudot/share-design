@@ -28,7 +28,7 @@ const ArtworkView = ({ pageNum, data }) => {
         return <TwentiesArtwork src={data.artwork1} alt="alt1" />;
 
       case 6:
-        return <TwentiesArtwork src={data.artwork2} alt="alt2" />;
+        return <TwentiesArtwork src={data.artwork1} alt="alt2" />;
 
       case 7:
         return (

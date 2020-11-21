@@ -12,9 +12,14 @@ import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 
 import { LeftRightMargin } from '../components/index/elements';
+import { useEffect } from 'react';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
   // DetectBrowserLang();
+
+  useEffect(() => {
+    console.log(screen.availHeight);
+  }, []);
 
   return (
     <>
