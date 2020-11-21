@@ -18,9 +18,24 @@ const HeadInfo = ({ info }) => {
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
       />
 
+      <title>{info.title}</title>
+      <link rel="icon" href={info.icoImage} />
+      <meta name="author" content="KyungHwan Kim" />
+      <meta name="description" content={info.description} />
+      <meta
+        name="keywords"
+        content="김경환, 디자인, 디자이너, kyunghwan kim, khk,  design, designer, UI, UX, product design, 20대를 남기다"
+      />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={info.title} />
+      <meta property="og:description" content={info.description} />
+      <meta property="og:url" content={info.url} />
+      <meta property="og:image" content={info.thumbnail} />
+
       {/* S of fonts preload */}
-      <link rel="stylesheet" href="../styles/font.css" />
-      {/* <link
+      {/* <link rel="stylesheet" href="../styles/font.css" /> */}
+      <link
         rel="preload"
         href="/fonts/Spoqa Han Sans Bold.woff2"
         as="font"
@@ -90,23 +105,8 @@ const HeadInfo = ({ info }) => {
         as="font"
         type="font/woff2"
         crossorigin="anonymous"
-      /> */}
-      {/* E of fonts preload */}
-
-      <title>{info.title}</title>
-      <link rel="icon" href={info.icoImage} />
-      <meta name="author" content="KyungHwan Kim" />
-      <meta name="description" content={info.description} />
-      <meta
-        name="keywords"
-        content="김경환, 디자인, 디자이너, kyunghwan kim, khk,  design, designer, UI, UX, product design, 20대를 남기다"
       />
-
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={info.title} />
-      <meta property="og:description" content={info.description} />
-      <meta property="og:url" content={info.url} />
-      <meta property="og:image" content={info.thumbnail} />
+      {/* E of fonts preload */}
     </Head>
   );
 };
