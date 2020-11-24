@@ -13,24 +13,24 @@ const LangChangeButton = () => {
       type: 'CHANGELANGUAGE',
     });
 
-  // html "lang" attribute 변경
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
-
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
   }, [lang]);
 
   return (
-    <BtnStyle onClick={languageChange}>
-      <PText
-        text={`${lang}` === 'ko' ? 'View in English' : '한글로 보기'}
-        mobileSize={fontSize.font14}
-        tabletSize={fontSize.font18}
-        desktopSize={fontSize.font21}
-        weight={fontWeight.bold}
-        color="gray2"
-      />
-    </BtnStyle>
+    <>
+      <BtnStyle onClick={languageChange}>
+        <PText
+          text={`${lang}` === 'ko' ? 'View in English' : '한글로 보기'}
+          mobileSize={fontSize[14]}
+          tabletSize={fontSize[14]}
+          desktopSize={fontSize[14]}
+          weight={fontWeight[700]}
+          color="gray1"
+        />
+      </BtnStyle>
+    </>
   );
 };
 

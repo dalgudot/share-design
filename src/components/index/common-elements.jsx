@@ -34,10 +34,8 @@ export const BtnStyle = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  /* height: 60px; */
-  padding: 36px 16px;
-  background-color: ${({ theme }) => theme.gray3};
-  opacity: 1;
-  border-radius: 8px;
+  width: 142px;
+  height: 40px;
+  border-radius: 13px;
+  background-color: ${({ theme }) => theme.gray5};
 `;

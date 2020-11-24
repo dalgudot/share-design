@@ -25,31 +25,31 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 
   return (
     <>
-      <LeftRightMargin>
-        <HeadInfo info={indexInfo} />
+      {/* <LeftRightMargin> */}
+      <HeadInfo info={indexInfo} />
 
-        <Header />
-        <KHKText />
+      <Header />
+      {/* <KHKText /> */}
 
-        {/* 토글 버튼으로 교체 */}
-        <BtnLayout>
-          <LangChangeButton />
-          {/* <ModeChangeButton
+      {/* 토글 버튼으로 교체 */}
+      {/* <BtnLayout> */}
+      {/* <LangChangeButton /> */}
+      {/* <ModeChangeButton
               block="flex"
               setMode={setMode}
               darkTheme={darkTheme}
               lightTheme={lightTheme}
             /> */}
-        </BtnLayout>
-        {/* 스크롤 모션 */}
+      {/* </BtnLayout> */}
+      {/* 스크롤 모션 */}
 
-        {/* Subject 내부의 Nav는 sticky! */}
-        {/* <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" /> */}
-
+      {/* Subject 내부의 Nav는 sticky! */}
+      {/* <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" /> */}
+      {/* 
         <Contact />
 
-        <Footer />
-      </LeftRightMargin>
+        <Footer /> */}
+      {/* </LeftRightMargin> */}
     </>
   );
 };

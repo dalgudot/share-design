@@ -2,66 +2,53 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import H3Text from '../typo/h3';
 import { fontSize, fontWeight } from '../typo/font';
+import LangChangeButton from '../button/lang-change-button';
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <Link href="/">
-        <Left>
-          <H3Text
-            text="KyungHwan Kim"
-            mobileSize={fontSize.font18}
-            tabletSize={fontSize.font21}
-            desktopSize={fontSize.font25}
-            weight={fontWeight.bold}
-          />
-          <H3Text
-            text="UI/UX Designer"
-            mobileSize={fontSize.font14}
-            tabletSize={fontSize.font18}
-            desktopSize={fontSize.font21}
-            weight={fontWeight.light}
-            letterSpacing="0.5px"
-            marginTop="-2px"
-            opacity={0.8}
-          />
-        </Left>
-      </Link>
+    <>
+      <HeaderContainer>
+        <Link href="/">
+          <Left>
+            <H3Text
+              text="KyungHwan Kim"
+              mobileSize={fontSize[18]}
+              tabletSize={fontSize[20]}
+              desktopSize={fontSize[20]}
+              weight={fontWeight[700]}
+            />
+            <H3Text
+              text="UI/UX Designer"
+              mobileSize={fontSize[15]}
+              tabletSize={fontSize[17]}
+              desktopSize={fontSize[17]}
+              weight={fontWeight[300]}
+              letterSpacing="0.5px"
+              marginTop="-2px"
+              opacity={0.8}
+            />
+          </Left>
+        </Link>
 
-      <HamburgerMenuLine>
-        <span></span>
-        <span></span>
-        <span></span>
-      </HamburgerMenuLine>
-    </HeaderContainer>
+        <LangChangeButton />
+      </HeaderContainer>
+    </>
   );
 };
 
 export default Header;
 
 const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  margin: 4vh 0;
+  align-items: center;
+  padding: 3vh 4vw;
+  width: 100%;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  border-bottom: solid 1px ${({ theme }) => theme.gray5};
 `;
 
 const Left = styled.a``;
-
-const HamburgerMenuLine = styled.div`
-  width: 20px;
-  height: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 8px;
-
-  @media all and (min-width: 1440px) {
-    width: 26px;
-    height: 18px;
-  }
-
-  span {
-    height: 2px;
-    background-color: ${({ theme }) => theme.gray1};
-  }
-`;

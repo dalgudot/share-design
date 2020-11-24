@@ -7,17 +7,18 @@ const KHKText = () => {
     <KHKTextContainer>
       <H1Text
         text="UI/UX 디자인 경험을"
-        mobileSize={fontSize.font29}
-        tabletSize={fontSize.font49}
-        desktopSize={fontSize.font59}
-        weight={fontWeight.bold}
+        mobileSize={fontSize[29]}
+        tabletSize={fontSize[39]}
+        desktopSize={fontSize[49]}
+        weight={fontWeight[100]}
       />
       <H1Text
         text="공유합니다."
-        mobileSize={fontSize.font29}
-        tabletSize={fontSize.font49}
-        desktopSize={fontSize.font59}
-        weight={fontWeight.bold}
+        mobileSize={fontSize[29]}
+        tabletSize={fontSize[39]}
+        desktopSize={fontSize[49]}
+        weight={fontWeight[100]}
+        marginTop="-0.1vh"
       />
     </KHKTextContainer>
   );
@@ -28,5 +29,5 @@ export default KHKText;
 const KHKTextContainer = styled.section`
   text-align: center;
   margin-top: 16vh;
-  margin-bottom: 16vh;
+  margin-bottom: 36px;
 `;
