@@ -53,14 +53,6 @@ const HeadInfo = ({ info }) => {
 
       <link
         rel="preload"
-        href="/fonts/Spoqa Han Sans Regular.woff2"
-        as="font"
-        type="font/woff2"
-        crossorigin="anonymous"
-      />
-
-      <link
-        rel="preload"
         href="/fonts/Spoqa Han Sans Thin.woff2"
         as="font"
         type="font/woff2"
@@ -69,7 +61,7 @@ const HeadInfo = ({ info }) => {
 
       <link
         rel="preload"
-        href="/fonts/Spoqa Han Sans light.woff2"
+        href="/fonts/Spoqa Han Sans Light.woff2"
         as="font"
         type="font/woff2"
         crossorigin="anonymous"

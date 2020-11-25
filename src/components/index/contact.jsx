@@ -10,10 +10,10 @@ const Contact = () => {
       <ContactText>
         <PText
           text="Contact"
-          mobileSize={fontSize.font29}
-          tabletSize={fontSize.font39}
-          desktopSize={fontSize.font49}
-          weight={fontWeight.bold}
+          mobileSize={fontSize[29]}
+          tabletSize={fontSize[39]}
+          desktopSize={fontSize[49]}
+          weight={fontWeight[700]}
           opacity={0.8}
         />
       </ContactText>
@@ -21,10 +21,10 @@ const Contact = () => {
       <Email>
         <PText
           text="Comming Soon..."
-          mobileSize={fontSize.font29}
-          tabletSize={fontSize.font39}
-          desktopSize={fontSize.font49}
-          weight={fontWeight.bold}
+          mobileSize={fontSize[29]}
+          tabletSize={fontSize[39]}
+          desktopSize={fontSize[49]}
+          weight={fontWeight[700]}
         />
       </Email>
       <HorizontalLine />

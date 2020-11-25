@@ -47,10 +47,10 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
             ? k['DarkMode']
             : e['DarkMode']
         }
-        mobileSize={fontSize.font14}
-        tabletSize={fontSize.font18}
-        desktopSize={fontSize.font21}
-        weight={fontWeight.bold}
+        mobileSize={fontSize[14]}
+        tabletSize={fontSize[18]}
+        desktopSize={fontSize[21]}
+        weight={fontWeight[700]}
         color="gray2"
       />
     </BtnStyle>

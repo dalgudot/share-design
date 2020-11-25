@@ -10,10 +10,10 @@ const Footer = () => {
         <u>
           <PText
             text="Brunch"
-            mobileSize={fontSize.font18}
-            tabletSize={fontSize.font18}
-            desktopSize={fontSize.font18}
-            weight={fontWeight.regular}
+            mobileSize={fontSize[18]}
+            tabletSize={fontSize[18]}
+            desktopSize={fontSize[18]}
+            weight={fontWeight[400]}
           />
         </u>
         {/* </a> */}
@@ -22,10 +22,10 @@ const Footer = () => {
         <u>
           <PText
             text="Facebook"
-            mobileSize={fontSize.font18}
-            tabletSize={fontSize.font18}
-            desktopSize={fontSize.font18}
-            weight={fontWeight.regular}
+            mobileSize={fontSize[18]}
+            tabletSize={fontSize[18]}
+            desktopSize={fontSize[18]}
+            weight={fontWeight[400]}
           />
         </u>
         {/* </a> */}
@@ -34,10 +34,10 @@ const Footer = () => {
         <u>
           <PText
             text="LinkedIn"
-            mobileSize={fontSize.font18}
-            tabletSize={fontSize.font18}
-            desktopSize={fontSize.font18}
-            weight={fontWeight.regular}
+            mobileSize={fontSize[18]}
+            tabletSize={fontSize[18]}
+            desktopSize={fontSize[18]}
+            weight={fontWeight[400]}
           />
         </u>
         {/* </a> */}
@@ -46,10 +46,10 @@ const Footer = () => {
       <Copyright>
         <PText
           text="ⓒ KyungHwan Kim. All rights reserved."
-          mobileSize={fontSize.font14}
-          tabletSize={fontSize.font14}
-          desktopSize={fontSize.font14}
-          weight={fontWeight.regular}
+          mobileSize={fontSize[14]}
+          tabletSize={fontSize[14]}
+          desktopSize={fontSize[14]}
+          weight={fontWeight[400]}
           opacity={0.8}
         />
       </Copyright>
