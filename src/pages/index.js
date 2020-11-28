@@ -12,9 +12,10 @@ import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 import { LeftRightMargin } from '../components/index/common-elements';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
-  // DetectBrowserLang();
+  DetectBrowserLang();
 
   useEffect(() => {
     console.log(`innerWidth: ${window.innerWidth}`);
@@ -27,17 +28,18 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
       <HeadInfo info={indexInfo} />
 
       <Header />
+
+      {/* <ModeChangeButton
+        visible="flex"
+        setMode={setMode}
+        darkTheme={darkTheme}
+        lightTheme={lightTheme}
+      /> */}
       {/* <KHKText /> */}
 
       {/* 토글 버튼으로 교체 */}
       {/* <BtnLayout> */}
       {/* <LangChangeButton /> */}
-      {/* <ModeChangeButton
-              block="flex"
-              setMode={setMode}
-              darkTheme={darkTheme}
-              lightTheme={lightTheme}
-            /> */}
       {/* </BtnLayout> */}
       {/* 스크롤 모션 */}
 

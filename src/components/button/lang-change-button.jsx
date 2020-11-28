@@ -8,10 +8,21 @@ import { BtnStyle } from '../index/common-elements';
 const LangChangeButton = () => {
   const lang = useSelector((state) => state.language);
   const dispatch = useDispatch();
+
   const languageChange = () =>
     dispatch({
       type: 'CHANGELANGUAGE',
     });
+
+  const detectUserLanguageChange = () =>
+    dispatch({
+      type: 'CHANGEUSERLANGUAGE',
+    });
+
+  const setLanguageChange = () => {
+    languageChange();
+    detectUserLanguageChange();
+  };
 
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
@@ -20,7 +31,7 @@ const LangChangeButton = () => {
 
   return (
     <>
-      <BtnStyle onClick={languageChange}>
+      <BtnStyle onClick={setLanguageChange}>
         <PText
           text={`${lang}` === 'ko' ? 'View in English' : '한글로 보기'}
           mobileSize={fontSize[14]}

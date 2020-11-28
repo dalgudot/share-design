@@ -9,11 +9,13 @@ let store;
 const InitialState = {
   language: 'ko',
   localMode: 'darkTheme',
+  userLanguageChange: 'no',
 };
 
 export const actionTypes = {
   CHANGELANGUAGE: 'CHANGELANGUAGE',
   MODECHANGE: 'MODECHANGE',
+  CHANGEUSERLANGUAGE: 'CHANGEUSERLANGUAGE',
 };
 
 // REDUCERS
@@ -31,6 +33,12 @@ export const reducer = (state = InitialState, action) => {
         localMode: state.localMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
       };
 
+    case actionTypes.CHANGEUSERLANGUAGE:
+      return {
+        ...state,
+        userLanguageChange: state.userLanguageChange === 'no' ? 'yes' : 'no',
+      };
+
     default:
       return state;
   }
@@ -39,7 +47,7 @@ export const reducer = (state = InitialState, action) => {
 const persistConfig = {
   key: 'primary',
   storage,
-  gray1list: ['language', 'localMode'], // place to select which state you want to persist
+  whitelist: ['language', 'localMode', 'userLanguageChange'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

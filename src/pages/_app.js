@@ -27,18 +27,18 @@ export default function App({ Component, pageProps }) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
-            <ModeChangeButton
+            {/* <ModeChangeButton
               setMode={setMode}
               darkTheme={darkTheme}
               lightTheme={lightTheme}
-            />
+            /> */}
             <GlobalColors />
             <AnimatePresence>
               <Component
                 {...pageProps}
-                setMode={setMode}
-                darkTheme={darkTheme}
-                lightTheme={lightTheme}
+                // setMode={setMode}
+                // darkTheme={darkTheme}
+                // lightTheme={lightTheme}
               />
             </AnimatePresence>
           </ThemeProvider>
