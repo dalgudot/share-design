@@ -26,12 +26,11 @@ const Header = () => {
               desktopSize={fontSize[17]}
               weight={fontWeight[300]}
               letterSpacing="0.5px"
-              marginTop="-2px"
+              marginTop="-4px"
               opacity={0.8}
             />
           </Left>
         </Link>
-
         <LangChangeButton />
       </HeaderContainer>
     </>

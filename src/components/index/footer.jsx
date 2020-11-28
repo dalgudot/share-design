@@ -5,42 +5,42 @@ import { fontSize, fontWeight } from '../typo/font';
 const Footer = () => {
   return (
     <FooterContainer>
-      <SocialWrap>
-        {/* <a href="https://brunch.co.kr/@dalgudot" target="_blank"> */}
-        <u>
-          <PText
-            text="Brunch"
-            mobileSize={fontSize[18]}
-            tabletSize={fontSize[18]}
-            desktopSize={fontSize[18]}
-            weight={fontWeight[400]}
-          />
-        </u>
-        {/* </a> */}
+      {/* <SocialWrap>
+        <a href="https://brunch.co.kr/@dalgudot" target="_blank">
+          <u>
+            <PText
+              text="Brunch"
+              mobileSize={fontSize[18]}
+              tabletSize={fontSize[18]}
+              desktopSize={fontSize[18]}
+              weight={fontWeight[400]}
+            />
+          </u>
+        </a>
 
-        {/* <a href="https://www.facebook.com/dalgudot" target="_blank"> */}
-        <u>
-          <PText
-            text="Facebook"
-            mobileSize={fontSize[18]}
-            tabletSize={fontSize[18]}
-            desktopSize={fontSize[18]}
-            weight={fontWeight[400]}
-          />
-        </u>
-        {/* </a> */}
+        <a href="https://www.facebook.com/dalgudot" target="_blank">
+          <u>
+            <PText
+              text="Facebook"
+              mobileSize={fontSize[18]}
+              tabletSize={fontSize[18]}
+              desktopSize={fontSize[18]}
+              weight={fontWeight[400]}
+            />
+          </u>
+        </a>
 
-        {/* <a href="https://www.linkedin.com/in/khk-design/" target="_blank"> */}
-        <u>
-          <PText
-            text="LinkedIn"
-            mobileSize={fontSize[18]}
-            tabletSize={fontSize[18]}
-            desktopSize={fontSize[18]}
-            weight={fontWeight[400]}
-          />
-        </u>
-        {/* </a> */}
+        <a href="https://www.linkedin.com/in/khk-design/" target="_blank">
+          <u>
+            <PText
+              text="LinkedIn"
+              mobileSize={fontSize[18]}
+              tabletSize={fontSize[18]}
+              desktopSize={fontSize[18]}
+              weight={fontWeight[400]}
+            />
+          </u>
+        </a>
       </SocialWrap>
 
       <Copyright>
@@ -52,7 +52,7 @@ const Footer = () => {
           weight={fontWeight[400]}
           opacity={0.8}
         />
-      </Copyright>
+      </Copyright> */}
     </FooterContainer>
   );
 };

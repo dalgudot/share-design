@@ -13,9 +13,9 @@ export const DetectBrowserLang = () => {
   const userBrowserLanguage = navigator.language;
 
   useEffect(() => {
-    console.log(`userBrowserLang: ${userBrowserLanguage}`);
+    // console.log(`userBrowserLang: ${userBrowserLanguage}`);
     const userLanguage =
-      userBrowserLanguage === 'ko' || // 크롬
+      userBrowserLanguage === 'ko' || // 크롬, edge
       userBrowserLanguage === 'ko-kr' || // 사파리
       userBrowserLanguage === 'ko-KR' || // 파이어폭스, 웨일
       userBrowserLanguage === 'KOR' // 기타 가능성
@@ -35,5 +35,5 @@ export const DetectBrowserLang = () => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
 
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
-  }, [lang]);
+  }, []);
 };

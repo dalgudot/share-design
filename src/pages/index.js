@@ -1,5 +1,5 @@
-import HeadInfo from '../components/head-info';
-import { indexInfo } from '../components/lang/head-info/head-info-text';
+import HeadInfo from '../components/head-info/head-info';
+import { indexInfo } from '../components/head-info/head-info-text';
 import Link from 'next/link';
 import styled from 'styled-components';
 import LangChangeButton from '../components/button/lang-change-button';
@@ -12,15 +12,14 @@ import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 import { LeftRightMargin } from '../components/index/common-elements';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
   DetectBrowserLang();
 
-  useEffect(() => {
-    console.log(`innerWidth: ${window.innerWidth}`);
-    console.log(`innerHeight: ${window.innerHeight}`);
-  }, []);
+  // useEffect(() => {
+  //   console.log(`innerWidth: ${window.innerWidth}`);
+  //   console.log(`innerHeight: ${window.innerHeight}`);
+  // }, []);
 
   return (
     <>
@@ -29,26 +28,27 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 
       <Header />
 
+      <nav>{/* 왼쪽 내비게이션 */}</nav>
+
+      <Main>
+        {/* <KHKText /> */}
+        {/* Subject 내부의 Nav는 sticky! */}
+        {/* <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" /> */}
+      </Main>
+
+      <nav>{/* 오른쪽 내비게이션 */}</nav>
+
+      <Footer />
+
       {/* <ModeChangeButton
         visible="flex"
         setMode={setMode}
         darkTheme={darkTheme}
         lightTheme={lightTheme}
       /> */}
-      {/* <KHKText /> */}
 
-      {/* 토글 버튼으로 교체 */}
-      {/* <BtnLayout> */}
-      {/* <LangChangeButton /> */}
-      {/* </BtnLayout> */}
-      {/* 스크롤 모션 */}
+      {/* <Contact /> */}
 
-      {/* Subject 내부의 Nav는 sticky! */}
-      {/* <Subject order="첫 번째" name="20대를 남기다" backgroundColor="" /> */}
-      {/* 
-        <Contact />
-
-        <Footer /> */}
       {/* </LeftRightMargin> */}
     </>
   );
@@ -56,17 +56,4 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
 
 export default Index;
 
-const FirstView100vh = styled.div`
-  min-height: 97vh;
-`;
-
-const BtnLayout = styled.section`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 48px;
-  max-width: 480px;
-
-  .right__button {
-    margin-left: 4vw;
-  }
-`;
+const Main = styled.main``;
