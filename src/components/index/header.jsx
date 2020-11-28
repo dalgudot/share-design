@@ -3,6 +3,8 @@ import Link from 'next/link';
 import H3Text from '../typo/h3';
 import { fontSize, fontWeight } from '../typo/font';
 import LangChangeButton from '../button/lang-change-button';
+import { t } from './lang/t';
+import languageFunc from '../func/language-func';
 
 const Header = () => {
   return (
@@ -11,14 +13,14 @@ const Header = () => {
         <Link href="/">
           <Left>
             <H3Text
-              text="KyungHwan Kim"
+              text={languageFunc(t.myname)}
               mobileSize={fontSize[18]}
               tabletSize={fontSize[20]}
               desktopSize={fontSize[20]}
               weight={fontWeight[700]}
             />
             <H3Text
-              text="UI/UX Designer"
+              text={languageFunc(t.myjob)}
               mobileSize={fontSize[15]}
               tabletSize={fontSize[17]}
               desktopSize={fontSize[17]}

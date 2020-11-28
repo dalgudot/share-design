@@ -12,11 +12,9 @@ export const DetectBrowserLang = () => {
 
   const userBrowserLanguage = navigator.language;
 
-  // Browser Language Detect
   // ko-KR, ko, KOR
   useEffect(() => {
     // console.log(`userBrowserLang: ${userBrowserLanguage}`);
-
     const userLanguage =
       userBrowserLanguage === 'ko' || userBrowserLanguage === 'ko-KR'
         ? 'ko'

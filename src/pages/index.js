@@ -17,8 +17,6 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
   // DetectBrowserLang();
 
   useEffect(() => {
-    // console.log(screen.availWidth);
-    // console.log(screen.availHeight);
     console.log(`innerWidth: ${window.innerWidth}`);
     console.log(`innerHeight: ${window.innerHeight}`);
   }, []);
