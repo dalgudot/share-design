@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import HeadInfo from '../../components/head-info';
-import { twentiesInfo } from '../../components/lang/head-info/head-info-text';
+import { twentiesInfo } from '../../components/head-info/head-info-text';
 import { useState } from 'react';
 import ArtworkView from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
