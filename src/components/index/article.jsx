@@ -67,6 +67,11 @@ export default Article;
 const ContainerArticle = styled.article`
   max-width: 540px;
   margin: 0 auto;
+  padding-top: 168px;
+
+  @media all and (max-width: 768px) {
+    padding-top: 144px;
+  }
 `;
 
 const CategoryDate = styled.section`

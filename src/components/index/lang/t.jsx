@@ -29,7 +29,7 @@ export const t = {
       k:
         'UX 디자인 경험을 한국과 전 세계에 공유하기 위해 한글과 영어로 웹 포트폴리오를 디자인한 경험을 공유합니다.',
       e:
-        'I share my experiences designing my web portfolio in Korean and English to share my UX Design eXperiences in Korea and around the world.',
+        'I share my experiences designing my web portfolio in Korean and English to share my UX Design experiences in Korea and around the world.',
     },
   },
 };

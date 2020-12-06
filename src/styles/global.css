@@ -16,18 +16,11 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-top: 168px;
   /* iOS Safari Momentum Scroll, 버벅임 방지 */
   -webkit-overflow-scrolling: touch;
   /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-@media all and (max-width: 768px) {
-  body {
-    padding-top: 144px;
-  }
 }
 
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
