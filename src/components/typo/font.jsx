@@ -1,3 +1,5 @@
+// fontSizeSet -> 각 set를 객체 혹은 배열로
+
 export const fontSize = {
   67: '67px',
   59: '59px',

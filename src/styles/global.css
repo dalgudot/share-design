@@ -16,6 +16,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-top: 168px;
   /* iOS Safari Momentum Scroll, 버벅임 방지 */
   -webkit-overflow-scrolling: touch;
   /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
@@ -34,7 +35,16 @@ body::-webkit-scrollbar {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Korean, Number is SpoqaHanSans & English is Roboto', sans-serif;
+  font-family: 'Korean, Number is SpoqaHanSans & English is Roboto',
+    -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans Korean,
+    sans-serif;
+
+  /* flex 코드 */
+  /* word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; */
 }
 
 a {

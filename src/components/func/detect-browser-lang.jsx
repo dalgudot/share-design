@@ -18,22 +18,20 @@ export const DetectBrowserLang = () => {
       userBrowserLanguage === 'ko' || // 크롬, edge
       userBrowserLanguage === 'ko-kr' || // 사파리
       userBrowserLanguage === 'ko-KR' || // 파이어폭스, 웨일
-      userBrowserLanguage === 'KOR' // 기타 가능성
+      userBrowserLanguage === 'KOR' // 기타
         ? 'ko'
         : 'en';
 
-    // 사용자가 언어를 브라우저 언어를 다른 언어로 바꾼 경우에는 바꾼 언어로 유지.
+    // 사용자가 브라우저 언어가 아닌 다른 언어로 바꾼 경우에는 바꾼 언어로 유지.
+    // console.log('No Language Change');
     {
       userLanguageChange === 'no' &&
-        (userLanguage === lang
-          ? console.log('No Language Change')
-          : languageChange());
+        (userLanguage === lang ? null : languageChange());
     }
   }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
-
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
   }, []);
 };

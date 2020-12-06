@@ -1,20 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-export const LeftRightMargin = styled.main`
-  @media screen and (max-width: ${mediaBreakPoint.first}) {
-    padding: 0 4vw;
-  }
-
-  @media screen and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: 0 12vw;
-  }
-
-  @media screen and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: 0 16.6667%;
-  }
-`;
-
 export const HorizontalLine = styled.div`
   width: 100%;
   height: 1px;

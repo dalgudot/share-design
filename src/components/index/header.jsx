@@ -33,6 +33,7 @@ const Header = () => {
         </Link>
         <LangChangeButton />
       </HeaderContainer>
+      <GlassMorphismBackground />
     </>
   );
 };
@@ -43,13 +44,30 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  /* height 반응형으로 조절 필요 */
+  height: 96px;
+  /* padding: 3vh 4vw; */
+  padding: 0 4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3vh 4vw;
-  width: 100%;
-  background-color: ${({ theme }) => theme.backgroundColor};
   border-bottom: solid 1px ${({ theme }) => theme.gray5};
+  z-index: 100;
 `;
 
 const Left = styled.a``;
+
+const GlassMorphismBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height 반응형으로 조절 필요 */
+  height: 96px;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99;
+`;

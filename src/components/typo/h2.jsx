@@ -8,6 +8,7 @@ const H2Text = ({
   tabletSize,
   desktopSize,
   weight,
+  lineHeight,
   letterSpacing,
   color,
   opacity,
@@ -19,6 +20,7 @@ const H2Text = ({
     tabletSize: PropTypes.string.isRequired,
     desktopSize: PropTypes.string.isRequired,
     weight: PropTypes.number.isRequired,
+    lineHeight: PropTypes.number,
     letterSpacing: PropTypes.string,
     color: PropTypes.string,
     opacity: PropTypes.number,
@@ -31,6 +33,7 @@ const H2Text = ({
       tabletSize={tabletSize}
       desktopSize={desktopSize}
       weight={weight}
+      lineHeight={lineHeight}
       letterSpacing={letterSpacing}
       color={color}
       opacity={opacity}
@@ -45,6 +48,7 @@ export default H2Text;
 
 const H2 = styled.h2`
   font-weight: ${({ weight }) => weight};
+  line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
   color: ${({ theme, color }) => theme[color]};
   opacity: ${({ opacity }) => opacity};
