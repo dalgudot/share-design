@@ -24,6 +24,12 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+@media all and (max-width: 768px) {
+  body {
+    padding-top: 144px;
+  }
+}
+
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
 /* Chrome, Safari, Opera*/
 body::-webkit-scrollbar {

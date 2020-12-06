@@ -42,8 +42,8 @@ const Article = ({ category, date, title, description }) => {
         tabletSize={fontSize[39]}
         desktopSize={fontSize[39]}
         weight={fontWeight[700]}
-        lineHeight={1.4}
-        marginTop="4px"
+        lineHeight={1.2}
+        marginTop="6px"
       />
 
       <PText
