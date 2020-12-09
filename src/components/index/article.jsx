@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import H1Text from '../typo/h1';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
+import { motion } from 'framer-motion';
 
 const Article = ({ category, date, title, description }) => {
   Article.propTypes = {
@@ -13,64 +14,72 @@ const Article = ({ category, date, title, description }) => {
   };
 
   return (
-    <ContainerArticle>
-      <CategoryDate>
-        <PText
-          text={category}
-          mobileSize={fontSize[14]}
-          tabletSize={fontSize[14]}
-          desktopSize={fontSize[14]}
-          weight={fontWeight[400]}
+    <LiArticle>
+      <motion.article
+        whileHover="hover"
+        whileTap={{ scale: 0.995 }}
+        variants={articleVariants}
+      >
+        <CategoryDate>
+          <PText
+            text={category}
+            mobileSize={fontSize[14]}
+            tabletSize={fontSize[14]}
+            desktopSize={fontSize[14]}
+            weight={fontWeight[400]}
+            lineHeight={1.2}
+            color="gray4"
+          />
+          <DividerTinyVertical />
+          <PText
+            text={date}
+            mobileSize={fontSize[14]}
+            tabletSize={fontSize[14]}
+            desktopSize={fontSize[14]}
+            weight={fontWeight[400]}
+            lineHeight={1.2}
+            color="gray4"
+          />
+        </CategoryDate>
+
+        <H1Text
+          text={title}
+          mobileSize={fontSize[34]}
+          tabletSize={fontSize[39]}
+          desktopSize={fontSize[39]}
+          weight={fontWeight[700]}
           lineHeight={1.2}
-          color="gray4"
+          marginTop="6px"
         />
-        <DividerTinyVertical />
+
         <PText
-          text={date}
-          mobileSize={fontSize[14]}
-          tabletSize={fontSize[14]}
-          desktopSize={fontSize[14]}
+          text={description}
+          mobileSize={fontSize[17]}
+          tabletSize={fontSize[17]}
+          desktopSize={fontSize[17]}
           weight={fontWeight[400]}
-          lineHeight={1.2}
-          color="gray4"
+          lineHeight={1.55}
+          color="gray2"
+          marginTop="16px"
         />
-      </CategoryDate>
 
-      <H1Text
-        text={title}
-        mobileSize={fontSize[34]}
-        tabletSize={fontSize[39]}
-        desktopSize={fontSize[39]}
-        weight={fontWeight[700]}
-        lineHeight={1.2}
-        marginTop="6px"
-      />
-
-      <PText
-        text={description}
-        mobileSize={fontSize[17]}
-        tabletSize={fontSize[17]}
-        desktopSize={fontSize[17]}
-        weight={fontWeight[400]}
-        lineHeight={1.55}
-        color="gray2"
-        marginTop="16px"
-      />
-
-      <Artwork />
-    </ContainerArticle>
+        <Artwork />
+      </motion.article>
+    </LiArticle>
   );
 };
 
 export default Article;
 
-const ContainerArticle = styled.article`
+const LiArticle = styled.li`
   max-width: 540px;
-  margin: 0 auto;
-  padding-top: 168px;
+  margin: 168px auto 0;
+  /* padding: 64px; */
+  /* border-radius: 24px; */
+  /* box-shadow: 33px 33px 50px #0f0f0f, -33px -33px 50px #151515; */
 
   @media all and (max-width: 768px) {
-    padding-top: 144px;
+    margin-top: 144px;
   }
 `;
 
@@ -92,7 +101,16 @@ const DividerTinyVertical = styled.div`
 const Artwork = styled.figure`
   min-width: 300px;
   max-width: 540px;
-  min-height: 540px;
+  min-height: 500px;
   background-color: ${({ theme }) => theme.gray5};
   margin-top: 36px;
 `;
+
+// Framer Motion
+const articleVariants = {
+  hover: {
+    // borderRadius: '24px',
+    // padding: '8px',
+    boxShadow: '33px 33px 50px #0f0f0f, -33px -33px 50px #151515',
+  },
+};

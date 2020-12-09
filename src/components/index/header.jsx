@@ -48,7 +48,7 @@ const HeaderContainer = styled.header`
   /* height 반응형으로 조절 필요 */
   height: 96px;
   /* padding: 3vh 4vw; */
-  padding: 0 4vw;
+  padding: 0 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;

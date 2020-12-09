@@ -9,6 +9,18 @@ export const t = {
     e: 'UX Designer',
   },
 
+  themeMode: {
+    k: {
+      DarkMode: '다크 모드',
+      LightMode: '라이트 모드',
+    },
+
+    e: {
+      DarkMode: 'DARK MODE ON',
+      LightMode: 'LIGHT MODE ON',
+    },
+  },
+
   article1: {
     category: {
       k: 'UX 디자인',
@@ -32,17 +44,4 @@ export const t = {
         'I share my experiences designing my web portfolio in Korean and English to share my UX Design experiences in Korea and around the world.',
     },
   },
-};
-
-// 기존 i18n 고치기 전까지 남겨두기
-export const k = {
-  twenty: '20대를 남기다',
-  DarkMode: '다크 모드',
-  LightMode: '라이트 모드',
-};
-
-export const e = {
-  twenty: 'TWENTIES',
-  DarkMode: 'DARK MODE ON',
-  LightMode: 'LIGHT MODE ON',
 };

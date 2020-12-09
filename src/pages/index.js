@@ -30,12 +30,15 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
         <nav>{/* 왼쪽 내비게이션 */}</nav>
 
         <Main>
-          <Article
-            category={languageFunc(t.article1.category)}
-            date={languageFunc(t.article1.date)}
-            title={languageFunc(t.article1.title)}
-            description={languageFunc(t.article1.description)}
-          />
+          {/* 두 가지 언어로 디자인하기 */}
+          <ul>
+            <Article
+              category={languageFunc(t.article1.category)}
+              date={languageFunc(t.article1.date)}
+              title={languageFunc(t.article1.title)}
+              description={languageFunc(t.article1.description)}
+            />
+          </ul>
         </Main>
 
         <nav>{/* 오른쪽 내비게이션 */}</nav>
@@ -59,7 +62,7 @@ export default Index;
 
 const ContainerIndex = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: 0 4vw;
+    padding: 0 5vw;
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {

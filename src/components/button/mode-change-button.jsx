@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { k } from '../index/lang/t';
-import { e } from '../index/lang/en';
+import { t } from '../index/lang/t';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { BtnStyle } from '../index/common-elements';
@@ -41,11 +40,11 @@ const ModeChangeButton = ({ setMode, darkTheme, lightTheme, block }) => {
         text={
           `${theme}` === 'darkTheme'
             ? `${lang}` === 'ko'
-              ? k['LightMode']
-              : e['LightMode']
+              ? t[themeMode[k]]
+              : t[themeMode[e]]
             : `${lang}` === 'ko'
-            ? k['DarkMode']
-            : e['DarkMode']
+            ? t[themeMode[k]]
+            : t[themeMode[e]]
         }
         mobileSize={fontSize[14]}
         tabletSize={fontSize[18]}
