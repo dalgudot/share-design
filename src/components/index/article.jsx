@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Link from 'next/link';
 import H1Text from '../typo/h1';
 import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 const Article = ({ category, date, title, description }) => {
   Article.propTypes = {
@@ -15,56 +17,62 @@ const Article = ({ category, date, title, description }) => {
 
   return (
     <LiArticle>
-      <motion.article
-        whileHover="hover"
-        whileTap={{ scale: 0.995 }}
-        variants={articleVariants}
-      >
-        <CategoryDate>
-          <PText
-            text={category}
-            mobileSize={fontSize[14]}
-            tabletSize={fontSize[14]}
-            desktopSize={fontSize[14]}
-            weight={fontWeight[400]}
-            lineHeight={1.2}
-            color="gray4"
-          />
-          <DividerTinyVertical />
-          <PText
-            text={date}
-            mobileSize={fontSize[14]}
-            tabletSize={fontSize[14]}
-            desktopSize={fontSize[14]}
-            weight={fontWeight[400]}
-            lineHeight={1.2}
-            color="gray4"
-          />
-        </CategoryDate>
+      <Tilt>
+        <Link href="/">
+          <a>
+            <motion.article
+              // whileHover="hover"
+              whileTap={{ scale: 0.995 }}
+              variants={articleVariants}
+            >
+              <CategoryDate>
+                <PText
+                  text={category}
+                  mobileSize={fontSize[14]}
+                  tabletSize={fontSize[14]}
+                  desktopSize={fontSize[14]}
+                  weight={fontWeight[400]}
+                  lineHeight={1.2}
+                  color="gray4"
+                />
+                <DividerTinyVertical />
+                <PText
+                  text={date}
+                  mobileSize={fontSize[14]}
+                  tabletSize={fontSize[14]}
+                  desktopSize={fontSize[14]}
+                  weight={fontWeight[400]}
+                  lineHeight={1.2}
+                  color="gray4"
+                />
+              </CategoryDate>
 
-        <H1Text
-          text={title}
-          mobileSize={fontSize[34]}
-          tabletSize={fontSize[39]}
-          desktopSize={fontSize[39]}
-          weight={fontWeight[700]}
-          lineHeight={1.2}
-          marginTop="6px"
-        />
+              <H1Text
+                text={title}
+                mobileSize={fontSize[34]}
+                tabletSize={fontSize[39]}
+                desktopSize={fontSize[39]}
+                weight={fontWeight[700]}
+                lineHeight={1.2}
+                marginTop="6px"
+              />
 
-        <PText
-          text={description}
-          mobileSize={fontSize[17]}
-          tabletSize={fontSize[17]}
-          desktopSize={fontSize[17]}
-          weight={fontWeight[400]}
-          lineHeight={1.55}
-          color="gray2"
-          marginTop="16px"
-        />
+              <PText
+                text={description}
+                mobileSize={fontSize[17]}
+                tabletSize={fontSize[17]}
+                desktopSize={fontSize[17]}
+                weight={fontWeight[400]}
+                lineHeight={1.55}
+                color="gray2"
+                marginTop="16px"
+              />
 
-        <Artwork />
-      </motion.article>
+              <Artwork />
+            </motion.article>
+          </a>
+        </Link>
+      </Tilt>
     </LiArticle>
   );
 };
@@ -73,13 +81,13 @@ export default Article;
 
 const LiArticle = styled.li`
   max-width: 540px;
-  margin: 168px auto 0;
+  margin: 144px auto 0;
   /* padding: 64px; */
   /* border-radius: 24px; */
   /* box-shadow: 33px 33px 50px #0f0f0f, -33px -33px 50px #151515; */
 
   @media all and (max-width: 768px) {
-    margin-top: 144px;
+    margin-top: 120px;
   }
 `;
 

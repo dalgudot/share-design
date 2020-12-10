@@ -1,4 +1,9 @@
 export const t = {
+  shareDesign: {
+    k: '디자인 공유하기',
+    e: 'Share Design',
+  },
+
   myname: {
     k: '김\u00A0\u00A0경\u00A0\u00A0환',
     e: 'KyungHwan Kim',

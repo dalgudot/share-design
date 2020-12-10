@@ -1,4 +1,5 @@
 // fontSizeSet -> 각 set를 객체 혹은 배열로
+// X-large 등 이름으로 해야 의미가 생김!
 
 export const fontSize = {
   67: '67px',

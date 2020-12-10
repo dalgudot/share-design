@@ -13,6 +13,14 @@ const Header = () => {
         <Link href="/">
           <Left>
             <H3Text
+              text={languageFunc(t.shareDesign)}
+              mobileSize={fontSize[20]}
+              tabletSize={fontSize[20]}
+              desktopSize={fontSize[20]}
+              weight={fontWeight[700]}
+            />
+
+            {/* <H3Text
               text={languageFunc(t.myname)}
               mobileSize={fontSize[18]}
               tabletSize={fontSize[20]}
@@ -28,7 +36,7 @@ const Header = () => {
               letterSpacing="0.5px"
               marginTop="-4px"
               opacity={0.8}
-            />
+            /> */}
           </Left>
         </Link>
         <LangChangeButton />
@@ -46,9 +54,9 @@ const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   /* height 반응형으로 조절 필요 */
-  height: 96px;
+  height: 72px;
   /* padding: 3vh 4vw; */
-  padding: 0 5vw;
+  padding: 0 4.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,7 +72,7 @@ const GlassMorphismBackground = styled.div`
   left: 0;
   width: 100%;
   /* height 반응형으로 조절 필요 */
-  height: 96px;
+  height: 72px;
   background-color: ${({ theme }) => theme.backgroundColor};
   opacity: 0.9;
   backdrop-filter: blur(10px);

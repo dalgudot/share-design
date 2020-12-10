@@ -62,7 +62,7 @@ export default Index;
 
 const ContainerIndex = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: 0 5vw;
+    padding: 0 4.5vw;
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {

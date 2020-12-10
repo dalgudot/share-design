@@ -5,6 +5,14 @@ body {
   background-color: ${({ theme }) => theme.backgroundColor};
   color: ${({ theme }) => theme.gray1};
 }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: ${({ theme }) => theme.gray1};
+}
 `;
 
 export default GlobalColors;
