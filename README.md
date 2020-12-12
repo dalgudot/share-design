@@ -35,6 +35,8 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
 
+- [React-Use-Ripple](https://www.npmjs.com/package/react-use-ripple)
+
 - [Lottie Web](https://github.com/airbnb/lottie-web)
 
 #### Lecture

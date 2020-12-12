@@ -15,14 +15,12 @@ https://velog.io/@cyranocoding/Next-js-%EA%B5%AC%EB%8F%99%EB%B0%A9%EC%8B%9D-%EA%
 [Firebase Realtime Database]
 https://stackoverflow.com/questions/37403747/firebase-permission-denied/37404116
 
-
 [Content Security Policy]
 https://vercel.com/docs/next.js/analytics#content-security-policy
 
 [REDUX]
 1. Next.js에서 Redux 사용_Vercel
 https://github.com/vercel/next.js/tree/canary/examples/with-redux
-
 https://github.com/vercel/next.js/issues/9285
 
 2. SSG vs SSR
@@ -37,25 +35,8 @@ getServerSideProps (SSR): 무조건 서버를 통해 데이터를 fetch함.
 [react-intersection-observer]
 https://www.npmjs.com/package/react-intersection-observer
 
-
-
-[Scroll]
--webkit-overflow-scrolling: touch; /* iOS Safari Momentum Scroll, 버벅임 방지 */
-/* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 https://gofnrk.tistory.com/48 */
--ms-overflow-style: none; /* IE and Edge */
-scrollbar-width: none; /* Firefox */
-}
-
-/* 스크롤바 숨기기 */
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
-}
-
-
 [Language Code]
 https://docs.microsoft.com/en-us/previous-versions/commerce-server/ee825488(v=cs.20)?redirectedfrom=MSDN
-
-
 
 [화면 복사 방지]
 document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function("return false");

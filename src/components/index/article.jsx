@@ -6,7 +6,7 @@ import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { motion } from 'framer-motion';
 
-const Article = ({ category, date, title, description }) => {
+const Article = ({ href, category, date, title, description }) => {
   Article.propTypes = {
     category: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
@@ -16,7 +16,7 @@ const Article = ({ category, date, title, description }) => {
 
   return (
     <LiArticle>
-      <Link href="/">
+      <Link href={href}>
         <a>
           <motion.article
             // whileHover="hover"
