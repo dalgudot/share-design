@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
               lightTheme={lightTheme}
             /> */}
             <GlobalColors />
-            <AnimatePresence>
+            <AnimatePresence exitBeforeEnter>
               <Component
                 {...pageProps}
                 // setMode={setMode}

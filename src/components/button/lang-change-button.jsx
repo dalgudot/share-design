@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import PText from '../typo/p';

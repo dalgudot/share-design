@@ -2,7 +2,6 @@ import HeadInfo from '../components/head-info/head-info';
 import { indexInfo } from '../components/head-info/head-info-text';
 import Link from 'next/link';
 import styled from 'styled-components';
-import LangChangeButton from '../components/button/lang-change-button';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
 import ModeChangeButton from '../components/button/mode-change-button';
@@ -13,6 +12,7 @@ import { useEffect } from 'react';
 import languageFunc from '../components/func/language-func';
 import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
+import { motion } from 'framer-motion';
 
 //   console.log(`innerWidth: ${window.innerWidth}`);
 //   console.log(`innerHeight: ${window.innerHeight}`);
@@ -42,18 +42,12 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
           </ul>
         </Main>
 
-        <nav>{/* 오른쪽 내비게이션 */}</nav>
+        <nav>
+          {/* 오른쪽 내비게이션 */}
+          {/* <Contact /> */}
+        </nav>
 
         <Footer />
-
-        {/* <ModeChangeButton
-        visible="flex"
-        setMode={setMode}
-        darkTheme={darkTheme}
-        lightTheme={lightTheme}
-      /> */}
-
-        {/* <Contact /> */}
       </ContainerIndex>
     </>
   );
@@ -76,3 +70,12 @@ const ContainerIndex = styled.div`
 `;
 
 const Main = styled.main``;
+
+{
+  /* <ModeChangeButton
+        visible="flex"
+        setMode={setMode}
+        darkTheme={darkTheme}
+        lightTheme={lightTheme}
+      /> */
+}
