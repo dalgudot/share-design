@@ -7,20 +7,14 @@ initFirebase();
 const Count = () => {
   const countVisit = sessionStorage.getItem('count');
   console.log(`countVisit: ${countVisit}`);
+  const firebaseDatabaseRef = firebase.database().ref('article/two-language');
 
   useEffect(() => {
-    firebase
-      .database()
-      .ref('article/two-language')
-      .once('value', (snapshot) => {
-        const data = snapshot.val();
-        console.log(`data: ${data}`);
-        countVisit ||
-          firebase
-            .database()
-            .ref('article/two-language')
-            .set(Number(data) + 1);
-      });
+    firebaseDatabaseRef.once('value', (snapshot) => {
+      const data = snapshot.val();
+      console.log(`data: ${data}`);
+      countVisit || firebaseDatabaseRef.set(Number(data) + 1);
+    });
   }, []);
 
   sessionStorage.setItem('count', 'visit');
