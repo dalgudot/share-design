@@ -1,4 +1,4 @@
-This is the UI/UX Design Portfolio Website of **KyungHwan Kim**.
+The Share Design is for sharing my UI/UX Design Experiences with people around the world.
 
 **Share Design URL:**
 [https://share-design.kr/](https://share-design.kr/)
