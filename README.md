@@ -1,7 +1,7 @@
 This is the UI/UX Design Portfolio Website of **KyungHwan Kim**.
 
-**Portfolio Website URL:**
-[https://khk-design.kr/](https://khk-design.kr/)
+**Share Design URL:**
+[https://share-design.kr/](https://share-design.kr/)
 
 ## I share my UI/UX Design Experiences 🙌
 
