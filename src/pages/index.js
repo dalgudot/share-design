@@ -20,7 +20,9 @@ import { VisitAndViewsDuringSession } from '../components/func/visit-and-views';
 
 const Index = ({ setMode, darkTheme, lightTheme }) => {
   DetectBrowserLang();
-  VisitAndViewsDuringSession('Index');
+  useEffect(() => {
+    VisitAndViewsDuringSession('Index');
+  }, []);
 
   return (
     <>
