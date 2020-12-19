@@ -7,7 +7,9 @@ initFirebase();
 const Count = () => {
   const countVisit = sessionStorage.getItem('count');
   console.log(`countVisit: ${countVisit}`);
-  const firebaseDatabaseRef = firebase.database().ref('article/two-language');
+  const firebaseDatabaseRef = firebase
+    .database()
+    .ref('Article/001 Design in two languages');
 
   useEffect(() => {
     firebaseDatabaseRef.once('value', (snapshot) => {
