@@ -13,7 +13,7 @@ import languageFunc from '../components/func/language-func';
 import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
 import { motion } from 'framer-motion';
-import { VisitAndViewsDuringSession } from '../components/func/visit-during-session';
+import { VisitAndViewsDuringSession } from '../components/func/visit-and-views';
 
 //   console.log(`innerWidth: ${window.innerWidth}`);
 //   console.log(`innerHeight: ${window.innerHeight}`);

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import H1Text from '../../components/typo/h1';
 import { fontSize, fontWeight } from '../../components/typo/font';
 import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
-import { VisitAndViewsDuringSession } from '../../components/func/visit-during-session';
+import { VisitAndViewsDuringSession } from '../../components/func/visit-and-views';
 
 const TwoLanguage = () => {
   DetectBrowserLang();

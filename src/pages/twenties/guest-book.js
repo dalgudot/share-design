@@ -2,11 +2,8 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import WriteGuestBook from '../../components/twenties/view/write-guest-book';
 import StaggerDots from '../../components/framer/loading/stagger-dots';
-import initFirebase from '../../../utils/initFirebase';
 import firebase from 'firebase/app';
 import GuestBookContent from '../../components/twenties/view/guest-book-content';
-
-initFirebase();
 
 const Index = () => {
   const [contents, setContents] = useState([]);

@@ -1,7 +1,4 @@
 import firebase from 'firebase';
-import initFirebase from '../../utils/initFirebase';
-
-initFirebase();
 
 class AuthService {
   login(providerName) {
