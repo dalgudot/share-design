@@ -1,5 +1,5 @@
-import firebase from "firebase";
-import initFirebase from "../../utils/auth/initFirebase";
+import firebase from 'firebase';
+import initFirebase from '../../utils/initFirebase';
 
 initFirebase();
 
