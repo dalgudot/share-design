@@ -1,6 +1,6 @@
 import initFirebase from '../../utils/auth/initFirebase';
 import firebase from 'firebase/app';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 initFirebase();
 
