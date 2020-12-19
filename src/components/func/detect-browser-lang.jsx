@@ -13,6 +13,12 @@ export const DetectBrowserLang = () => {
   const userBrowserLanguage = navigator.language;
 
   useEffect(() => {
+    userLanguageChangeFunc();
+    setAttributeHtmlLang();
+    // console.log('Only once');
+  }, []);
+
+  const userLanguageChangeFunc = () => {
     // console.log(`userBrowserLang: ${userBrowserLanguage}`);
     const userLanguage =
       userBrowserLanguage === 'ko' || // 크롬, edge
@@ -23,15 +29,13 @@ export const DetectBrowserLang = () => {
         : 'en';
 
     // 사용자가 브라우저 언어가 아닌 다른 언어로 바꾼 경우에는 바꾼 언어로 유지.
-    // console.log('No Language Change');
     {
       userLanguageChange === 'no' &&
         (userLanguage === lang ? null : languageChange());
     }
-  }, []);
+  };
 
-  useEffect(() => {
+  const setAttributeHtmlLang = () => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
-    // console.log(`HtmlLang: ${document.documentElement.lang}`);
-  }, []);
+  };
 };

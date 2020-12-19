@@ -13,7 +13,7 @@ import languageFunc from '../components/func/language-func';
 import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
 import { motion } from 'framer-motion';
-import { VisitAndViewsDuringSession } from '../components/func/visit-and-views';
+import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
 
 //   console.log(`innerWidth: ${window.innerWidth}`);
 //   console.log(`innerHeight: ${window.innerHeight}`);
@@ -21,7 +21,7 @@ import { VisitAndViewsDuringSession } from '../components/func/visit-and-views';
 const Index = ({ setMode, darkTheme, lightTheme }) => {
   DetectBrowserLang();
   useEffect(() => {
-    VisitAndViewsDuringSession('Index');
+    VisitsAndViewsDuringSession('Index');
   }, []);
 
   return (

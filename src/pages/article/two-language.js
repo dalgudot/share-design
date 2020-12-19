@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import H1Text from '../../components/typo/h1';
 import { fontSize, fontWeight } from '../../components/typo/font';
 import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
-import { VisitAndViewsDuringSession } from '../../components/func/visit-and-views';
+import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
 
 const TwoLanguage = () => {
   DetectBrowserLang();
   useEffect(() => {
-    VisitAndViewsDuringSession('001 Design in two languages');
+    VisitsAndViewsDuringSession('001 Design in two languages');
   }, []);
 
   return (
