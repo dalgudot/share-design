@@ -1,15 +1,15 @@
-The Share Design is for sharing my UI/UX Design Experiences with people around the world.
+The Share Design is a space to share my UI/UX design experience with people around the world.
 
 **Share Design URL:**
 [https://share-design.kr/](https://share-design.kr/)
 
-## I share my UI/UX Design Experiences 🙌
+## I share my UI/UX Design Experience 🙌
 
-Hi. My name is KyungHwan Kim. I am a UI/UX Designer based in South Korea. This Portfolio Website is for sharing my UI/UX Design Experiences with people around the world.
+Hi. My name is KyungHwan Kim. I am a UI/UX Designer based in South Korea. This Portfolio Website is for sharing my UI/UX Design Experience with people around the world.
 
-I am inspired and learning a lot thanks to the experiences shared by so many people around the world. As a UI/UX Designer, I also wanted to share my experiences and thoughts around the world.
+I am inspired and learning a lot thanks to the experience shared by so many people around the world. As a UI/UX Designer, I also wanted to share my experience and thoughts around the world.
 
-This portfolio website is the result. I plan to continue to share my UI/UX Design Experiences through this website.
+This portfolio website is the result. I plan to continue to share my UI/UX Design Experience through this website.
 
 ## Thanks to 🙏
 
@@ -38,6 +38,8 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 - [React-Share](https://github.com/nygardk/react-share)
 
 - [React-Copy-to-Clipboard](https://github.com/nkbt/react-copy-to-clipboard)
+
+- [React-Toastify](https://github.com/fkhadra/react-toastify)
 
 #### Interaction
 

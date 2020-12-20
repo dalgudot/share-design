@@ -1,3 +1,5 @@
+import HeadInfo from '../components/head-info/head-info';
+import { indexInfo } from '../components/head-info/head-info-text';
 import { useStore } from '../store/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
@@ -12,9 +14,6 @@ import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../../utils/initFirebase';
-
-import HeadInfo from '../components/head-info/head-info';
-import { indexInfo } from '../components/head-info/head-info-text';
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);

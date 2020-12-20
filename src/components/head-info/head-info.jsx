@@ -20,18 +20,16 @@ const HeadInfo = ({ info }) => {
 
       <title>{info.title}</title>
       <link rel="icon" href={info.icoImage} />
-      <meta name="author" content="KyungHwan Kim" />
+      <meta name="author" content={info.author} />
       <meta name="description" content={info.description} />
-      <meta
-        name="keywords"
-        content="김경환, 디자인, 디자이너, kyunghwan kim, khk,  design, designer, UI, UX, product design, 20대를 남기다"
-      />
+      <meta name="keywords" content={info.keywords} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:url" content={info.url} />
       <meta property="og:title" content={info.title} />
       <meta property="og:description" content={info.description} />
-      <meta property="og:url" content={info.url} />
       <meta property="og:image" content={info.thumbnail} />
+      <meta property="og:type" content={info.type} />
+      {/* <meta property="og:locale" content={info.locale} /> */}
 
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}
