@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import HeadInfo from '../../components/head-info/head-info';
-import { twentiesInfo } from '../../components/head-info/head-info-text';
 import { useState } from 'react';
 import ArtworkView from '../../components/twenties/view/artwork-view';
 import LangChangeButton from '../../components/button/lang-change-button';
@@ -29,7 +28,6 @@ const Artwork = () => {
 
   return (
     <>
-      <HeadInfo info={twentiesInfo} />
       <LangChangeButton />
 
       <Aligncenter>
