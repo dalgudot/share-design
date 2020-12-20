@@ -46,6 +46,7 @@ const TwoLanguage = () => {
       <br />
 
       <CopyToClipboard text={url} onCopy={() => console.log('Copy it!')}>
+        {/* <CopyToClipboard text={url} onCopy={() => Toast('호출!')}> */}
         <section>
           <Toast />
         </section>

@@ -33,7 +33,7 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
           {/* 두 가지 언어로 디자인하기 */}
           <ul>
             <Article
-              href="/article/two-language"
+              href="/"
               // href="/"
               category={languageFunc(t.article1.category)}
               date={languageFunc(t.article1.date)}
