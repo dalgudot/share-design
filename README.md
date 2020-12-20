@@ -27,7 +27,7 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [React-Redux](https://github.com/reduxjs/react-redux)
 
-- [Redux-Persist](https://www.npmjs.com/package/redux-persist)
+- [Redux-Persist](https://github.com/rt2zz/redux-persist)
 
 #### Interaction
 
@@ -38,6 +38,10 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 - [React-Use-Ripple](https://www.npmjs.com/package/react-use-ripple)
 
 - [Lottie Web](https://github.com/airbnb/lottie-web)
+
+#### Library
+
+- [React-Share](https://github.com/nygardk/react-share)
 
 #### Lecture
 
