@@ -1,28 +1,123 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { ToastContainer, toast, Slide, cssTransition } from 'react-toastify';
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  cssTransition,
+  Bounce,
+  Flip,
+} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
-import H1Text from '../typo/h1';
-import { fontSize, fontWeight } from '../typo/font';
 
+const Zoom = cssTransition({
+  enter: 'zoomIn',
+  exit: 'zoomOut',
+  // duration: [210, 450],
+});
+
+export const toastify = () => {
+  console.log('Show Toast');
+  toast('Wow so easy !', {
+    transition: Flip,
+    toastId: 'CopyToClipboard',
+    // onClose: debounceToast(),
+  });
+};
+
+// Toast 미리 Mount
 const Toast = () => {
   console.log('Toast Component Mount');
-  const toastify = () => toast('Wow so easy !');
-
   return (
     <>
-      <button onClick={toastify}>
-        <H1Text
-          text="링크 복사"
-          mobileSize={fontSize[18]}
-          tabletSize={fontSize[20]}
-          desktopSize={fontSize[20]}
-          weight={fontWeight[700]}
-        />
-      </button>
-      <ToastContainer />
+      <ToastBox
+        draggablePercent={65}
+        autoClose={1850}
+        hideProgressBar={true}
+        newestOnTop={true}
+        pauseOnHover={false}
+        closeOnClick={false}
+      />
     </>
   );
 };
 
 export default Toast;
+
+const In = keyframes`
+  from {
+    opacity: 0;
+  }
+  
+  to {    
+    opacity: 1;
+  }
+`;
+const Out = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+const ToastBox = styled(ToastContainer)`
+  top: 56px;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .zoomIn {
+    animation: ${In};
+  }
+
+  .zoomOut {
+    animation: ${Out};
+    animation-delay: 0.6s;
+  }
+
+  .Toastify__toast {
+    min-height: unset;
+    height: unset !important;
+  }
+
+  .Toastify__toast--rtl,
+  .Toastify__toast--dark,
+  .Toastify__toast--default,
+  .Toastify__toast--info,
+  .Toastify__toast--success,
+  .Toastify__toast--warning,
+  .Toastify__toast--error {
+    padding: 12px 16px !important;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: rgba(54, 54, 54, 0.9);
+    color: ${({ theme }) => theme.gray1};
+
+    * {
+      font-size: 16px;
+      color: ${({ theme }) => theme.gray1};
+    }
+  }
+
+  .Toastify__toast-body {
+    margin: 0;
+  }
+
+  .Toastify__close-button,
+  .Toastify__close-button--default,
+  .Toastify__close-button > svg,
+  .Toastify__close-button:hover,
+  .Toastify__close-button:focus {
+    display: none;
+  }
+`;

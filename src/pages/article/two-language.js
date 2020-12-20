@@ -6,7 +6,7 @@ import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Toast from '../../components/toast/toast-func';
+import { toastify } from '../../components/toast/toast-func';
 import { useState } from 'react';
 
 const TwoLanguage = () => {
@@ -28,10 +28,8 @@ const TwoLanguage = () => {
           weight={fontWeight[700]}
         />
       </FacebookShareButton>
-
       <br />
       <br />
-
       <LinkedinShareButton url={url}>
         <H1Text
           text="링크드인"
@@ -41,15 +39,19 @@ const TwoLanguage = () => {
           weight={fontWeight[700]}
         />
       </LinkedinShareButton>
-
       <br />
       <br />
 
-      <CopyToClipboard text={url} onCopy={() => console.log('Copy it!')}>
-        {/* <CopyToClipboard text={url} onCopy={() => Toast('호출!')}> */}
-        <section>
-          <Toast />
-        </section>
+      <CopyToClipboard text={url} onCopy={() => toastify()}>
+        <button>
+          <H1Text
+            text="함수로 링크 복사"
+            mobileSize={fontSize[18]}
+            tabletSize={fontSize[20]}
+            desktopSize={fontSize[20]}
+            weight={fontWeight[700]}
+          />
+        </button>
       </CopyToClipboard>
     </>
   );

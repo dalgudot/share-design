@@ -14,6 +14,7 @@ import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../../utils/initFirebase';
+import Toast from '../components/toast/toast-func';
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }) {
               lightTheme={lightTheme}
             /> */}
             <GlobalColors />
+            <Toast />
             <AnimatePresence exitBeforeEnter>
               <Component
                 {...pageProps}
