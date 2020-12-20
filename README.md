@@ -47,6 +47,6 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0)
 
-## Artwork Copyrights 👨‍⚖️
+<!-- ## Artwork Copyrights 👨‍⚖️
 
-This portfolio website displays my photographic artworks 'TWENTIES'. All copyrights belong to KyungHwan Kim.
+This portfolio website displays my photographic artworks 'TWENTIES'. All copyrights belong to KyungHwan Kim. -->

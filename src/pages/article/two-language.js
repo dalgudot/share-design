@@ -17,13 +17,15 @@ const TwoLanguage = () => {
     <>
       <HeadInfo info={indexInfo} />
 
-      <H1Text
-        text="제목이 들어갑니다."
-        mobileSize={fontSize[18]}
-        tabletSize={fontSize[20]}
-        desktopSize={fontSize[20]}
-        weight={fontWeight[700]}
-      />
+      <a href="#" target="_blank">
+        <H1Text
+          text="페이스북"
+          mobileSize={fontSize[18]}
+          tabletSize={fontSize[20]}
+          desktopSize={fontSize[20]}
+          weight={fontWeight[700]}
+        />
+      </a>
       <H1Text
         text="본문이 들어갑니다."
         mobileSize={fontSize[18]}
