@@ -1,5 +1,3 @@
-import HeadInfo from '../components/head-info/head-info';
-import { indexInfo } from '../components/head-info/head-info-text';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Header from '../components/index/header';
@@ -27,8 +25,6 @@ const Index = ({ setMode, darkTheme, lightTheme }) => {
   return (
     <>
       <ContainerIndex>
-        <HeadInfo info={indexInfo} />
-
         <Header />
 
         <nav>{/* 왼쪽 내비게이션 */}</nav>

@@ -13,6 +13,9 @@ import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../../utils/initFirebase';
 
+import HeadInfo from '../components/head-info/head-info';
+import { indexInfo } from '../components/head-info/head-info-text';
+
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const persistor = persistStore(store, {}, function () {
@@ -26,6 +29,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <HeadInfo info={indexInfo} />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
