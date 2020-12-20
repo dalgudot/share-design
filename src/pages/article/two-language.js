@@ -6,11 +6,9 @@ import H1Text from '../../components/typo/h1';
 import { fontSize, fontWeight } from '../../components/typo/font';
 import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  LinkedinShareButton,
-} from 'react-share';
+import { FacebookShareButton, LinkedinShareButton } from 'react-share';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Toast } from '../../components/toast/toast';
 
 const TwoLanguage = () => {
   DetectBrowserLang();
@@ -18,11 +16,13 @@ const TwoLanguage = () => {
     VisitsAndViewsDuringSession('001 Design in two languages');
   }, []);
 
+  const url = 'https://share-design.kr/article/two-language';
+
   return (
     <>
       <HeadInfo info={indexInfo} />
 
-      <FacebookShareButton url="https://share-design.kr/">
+      <FacebookShareButton url={url}>
         <H1Text
           text="페이스북"
           mobileSize={fontSize[18]}
@@ -32,7 +32,10 @@ const TwoLanguage = () => {
         />
       </FacebookShareButton>
 
-      <LinkedinShareButton url="https://share-design.kr/">
+      <br />
+      <br />
+
+      <LinkedinShareButton url={url}>
         <H1Text
           text="링크드인"
           mobileSize={fontSize[18]}
@@ -42,23 +45,21 @@ const TwoLanguage = () => {
         />
       </LinkedinShareButton>
 
-      <EmailShareButton url="https://share-design.kr/">
-        <H1Text
-          text="이메일"
-          mobileSize={fontSize[18]}
-          tabletSize={fontSize[20]}
-          desktopSize={fontSize[20]}
-          weight={fontWeight[700]}
-        />
-      </EmailShareButton>
+      <br />
+      <br />
 
-      <H1Text
-        text="본문이 들어갑니다."
-        mobileSize={fontSize[18]}
-        tabletSize={fontSize[20]}
-        desktopSize={fontSize[20]}
-        weight={fontWeight[400]}
-      />
+      {/* onCopy={toastify('복사')} */}
+      <CopyToClipboard onCopy={Toast} text={url}>
+        <button>
+          <H1Text
+            text="링크 복사"
+            mobileSize={fontSize[18]}
+            tabletSize={fontSize[20]}
+            desktopSize={fontSize[20]}
+            weight={fontWeight[700]}
+          />
+        </button>
+      </CopyToClipboard>
     </>
   );
 };

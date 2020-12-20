@@ -19,9 +19,9 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [NextJS](https://github.com/vercel/next.js/)
 
-- [Styled-Components](https://github.com/styled-components/styled-components)
-
 - [NextJS Examples](https://github.com/vercel/next.js/tree/canary/examples)
+
+- [Styled-Components](https://github.com/styled-components/styled-components)
 
 - [Redux](https://github.com/reduxjs/redux)
 
@@ -36,6 +36,8 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 - [React-FirebaseUI](https://github.com/firebase/firebaseui-web)
 
 - [React-Share](https://github.com/nygardk/react-share)
+
+- [React-Copy-to-Clipboard](https://github.com/nkbt/react-copy-to-clipboard)
 
 #### Interaction
 
