@@ -16,6 +16,7 @@ const Zoom = cssTransition({
   // duration: [210, 450],
 });
 
+// 커스텀 토스트 애니메이션 만들기
 export const toastify = () => {
   console.log('Show Toast');
   toast('Wow so easy !', {
@@ -43,6 +44,7 @@ const Toast = () => {
 };
 
 export default Toast;
+// export default React.memo(Toast);
 
 const In = keyframes`
   from {
