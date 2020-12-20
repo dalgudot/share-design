@@ -29,19 +29,33 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [Redux-Persist](https://github.com/rt2zz/redux-persist)
 
+- [Prop-Types](https://github.com/facebook/prop-types)
+
+- [SWR](https://github.com/vercel/swr)
+
+- [React-FirebaseUI](https://github.com/firebase/firebaseui-web)
+
+- [React-Share](https://github.com/nygardk/react-share)
+
 #### Interaction
 
 - [Framer Motion](https://github.com/framer/motion)
 
-- [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
+- [React-Intersection-Observer](https://github.com/thebuilder/react-intersection-observer)
+
+- [React-Scroll-Parallax](https://github.com/jscottsmith/react-scroll-parallax)
 
 - [React-Use-Ripple](https://www.npmjs.com/package/react-use-ripple)
 
+- [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
+
 - [Lottie Web](https://github.com/airbnb/lottie-web)
 
-#### Library
+#### Back-End
 
-- [React-Share](https://github.com/nygardk/react-share)
+- [Firebase](https://github.com/firebase/firebase-js-sdk)
+
+- [Firebase-admin](https://github.com/firebase/firebase-admin-node)
 
 #### Lecture
 
