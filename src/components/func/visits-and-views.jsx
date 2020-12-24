@@ -43,12 +43,13 @@ const VisitsDuringSession = () => {
 
 // 조회수
 const ViewsDuringSession = (where) => {
+  // index + ariticle로 전체 조회수 쉽게 계산 가능하므로 생략. 오히려 데이터 복잡도를 높임.
   // S of 전체 조회수
-  firebaseFetchSet('Number of Views/All Views/Total All');
+  // firebaseFetchSet('Number of Views/All Views/Total All');
   // E of 전체 조회수
 
   // S of 날짜별 전체 조회수
-  firebaseFetchSet(`Number of Views/All Views/Total on ${when}`);
+  // firebaseFetchSet(`Number of Views/All Views/Total on ${when}`);
   // E of 날짜별 전체 조회수
 
   // Index

@@ -6,7 +6,6 @@ import {
   Slide,
   cssTransition,
   Bounce,
-  Flip,
 } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,7 +19,7 @@ const Zoom = cssTransition({
 export const toastify = () => {
   console.log('Show Toast');
   toast('Wow so easy !', {
-    transition: Flip,
+    transition: Zoom,
     toastId: 'CopyToClipboard',
     // onClose: debounceToast(),
   });
