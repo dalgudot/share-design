@@ -53,8 +53,6 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
 
-- [Lottie Web](https://github.com/airbnb/lottie-web)
-
 #### Back-End
 
 - [Firebase](https://github.com/firebase/firebase-js-sdk)

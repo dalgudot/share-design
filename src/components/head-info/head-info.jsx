@@ -38,7 +38,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/Spoqa Han Sans Bold.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -46,7 +46,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/Spoqa Han Sans Regular.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -54,7 +54,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/Spoqa Han Sans Thin.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -62,7 +62,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/Spoqa Han Sans Light.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -70,7 +70,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/roboto-v20-latin-100.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -78,7 +78,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/roboto-v20-latin-300.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -86,7 +86,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/roboto-v20-latin-regular.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
 
       <link
@@ -94,7 +94,7 @@ const HeadInfo = ({ info }) => {
         href="/fonts/roboto-v20-latin-700.woff2"
         as="font"
         type="font/woff2"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
       {/* E of fonts preload */}
     </Head>

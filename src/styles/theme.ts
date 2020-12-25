@@ -1,4 +1,14 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    backgroundColor: string;
+    gray1: string; // APPLE
+    gray2: string; // 95% of gray1
+    gray4: string; // 60% of gray1
+    gray5: string; // 8%
+  }
+}
 
 const GlobalColors = createGlobalStyle`
 body {
@@ -17,7 +27,7 @@ a:active {
 
 export default GlobalColors;
 
-export const darkTheme = {
+export const darkTheme: DefaultTheme = {
   backgroundColor: '#121212',
   gray1: '#EBEBF5', // APPLE
   gray2: '#E0E0EA', // 95% of gray1
@@ -25,7 +35,7 @@ export const darkTheme = {
   gray5: '#232324', // 8%
 };
 
-export const lightTheme = {
+export const lightTheme: DefaultTheme = {
   backgroundColor: '#eeeeee',
   gray1: '#191919',
   gray2: '#E0E0EA', // 추후 추가
