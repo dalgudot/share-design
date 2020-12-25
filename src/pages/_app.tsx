@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
-import initFirebase from '../../utils/initFirebase';
+import initFirebase from '../utils/initFirebase';
 import Toast from '../components/toast/toast-func';
 import type { AppProps /*, AppContext */ } from 'next/app';
 

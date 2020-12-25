@@ -1,15 +1,5 @@
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    backgroundColor: string;
-    gray1: string; // APPLE
-    gray2: string; // 95% of gray1
-    gray4: string; // 60% of gray1
-    gray5: string; // 8%
-  }
-}
-
 const GlobalColors = createGlobalStyle`
 body {
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -26,6 +16,16 @@ a:active {
 `;
 
 export default GlobalColors;
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    backgroundColor: string;
+    gray1: string; // APPLE
+    gray2: string; // 95% of gray1
+    gray4: string; // 60% of gray1
+    gray5: string; // 8%
+  }
+}
 
 export const darkTheme: DefaultTheme = {
   backgroundColor: '#121212',

@@ -66,11 +66,13 @@ const ViewsDuringSession = (where) => {
   // Article
   const viewsArticle = () => {
     // S of Article 전체 조회수
-    firebaseFetchSet('Number of Views/Article/All Articles/Total All');
+    firebaseFetchSet('Number of Views/Article/000 All Articles/Total All');
     // E of Article 전체 조회수
 
     // S of Article 날짜별 전체 조회수
-    firebaseFetchSet(`Number of Views/Article/All Articles/Total on ${when}`);
+    firebaseFetchSet(
+      `Number of Views/Article/000 All Articles/Total on ${when}`
+    );
     // E of Article 날짜별 전체 조회수
 
     // S of [각] Article 전체 조회수

@@ -37,13 +37,6 @@ body::-webkit-scrollbar {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto',
     -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans Korean,
     sans-serif;
-
-  /* flex 코드 */
-  /* word-break: keep-all;
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; */
 }
 
 a {
