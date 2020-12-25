@@ -16,7 +16,7 @@ import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views
 //   console.log(`innerWidth: ${window.innerWidth}`);
 //   console.log(`innerHeight: ${window.innerHeight}`);
 
-const Index = ({ setMode, darkTheme, lightTheme }) => {
+const Index = () => {
   DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('Index');
