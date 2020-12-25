@@ -26,7 +26,12 @@ export const fontSize = {
   10: '10px',
 };
 
-export const fontWeight = {
+export const fontWeight: {
+  700: number;
+  400: number;
+  300: number;
+  100: number;
+} = {
   700: 700, // bold
   400: 400, // regular
   300: 300, // light

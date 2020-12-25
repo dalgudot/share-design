@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export function PreventIllegalTheft() {
   useEffect(() => {
     //마우스 오른쪽 클릭만 막기
-    document.oncontextmenu = new Function("return false");
+    document.oncontextmenu = new Function('return false');
 
     // document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function(
     //   "return false"

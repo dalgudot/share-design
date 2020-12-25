@@ -16,7 +16,7 @@ import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views
 //   console.log(`innerWidth: ${window.innerWidth}`);
 //   console.log(`innerHeight: ${window.innerHeight}`);
 
-const Index = () => {
+const Index = ({ theme }: any) => {
   DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('Index');
@@ -34,6 +34,7 @@ const Index = () => {
           <ul>
             <Article
               // href="/article/two-language"
+              theme={theme}
               href="/"
               category={languageFunc(t.article1.category)}
               date={languageFunc(t.article1.date)}

@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const SkeletonRect = ({ width, height, duration }) => {
-  SkeletonRect.propTypes = {
-    width: PropTypes.string,
-    height: PropTypes.string,
-    duration: PropTypes.string, // type: number -> string
-  };
+interface SkeletonRectDate {
+  width: string;
+  height: string;
+  duration: string;
+}
 
+const SkeletonRect = ({ width, height, duration }: SkeletonRectDate) => {
   return (
     <List width={width} height={height}>
       <motion.div
@@ -23,7 +23,12 @@ const SkeletonRect = ({ width, height, duration }) => {
 
 export default SkeletonRect;
 
-const List = styled.div`
+interface SkeletonRectList {
+  width: string;
+  height: string;
+}
+
+const List = styled.div<SkeletonRectList>`
   .rect {
     width: ${({ width }) => width};
     height: ${({ height }) => height};
@@ -32,7 +37,7 @@ const List = styled.div`
   }
 `;
 
-const skeletonVariants = (duration) => {
+const skeletonVariants = (duration: string) => {
   return {
     start: {
       opacity: 0.64,
@@ -42,7 +47,7 @@ const skeletonVariants = (duration) => {
       transition: {
         duration: +duration, // type: number -> string
         yoyo: Infinity,
-        ease: "easeInOut",
+        ease: 'easeInOut',
       },
     },
   };

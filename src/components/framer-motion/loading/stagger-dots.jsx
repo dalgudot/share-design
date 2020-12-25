@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 // Big Button 로딩 컬러 => #d2c6cb
 const StaggerDots = ({ color, count }) => {
@@ -53,14 +53,14 @@ const loadingStaggerVariants = {
 
 const loadingCircleVariants = {
   start: {
-    y: "50%",
+    y: '50%',
   },
   end: {
-    y: "-50%",
+    y: '-50%',
     transition: {
       duration: 0.4,
       yoyo: Infinity,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };

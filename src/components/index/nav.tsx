@@ -1,35 +1,34 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { HorizontalLine, VerticalLine } from './common-elements';
 import H2Text from '../typo/h2';
 import { fontSize, fontWeight } from '../typo/font';
 
-const Nav = ({ order, name }) => {
-  Nav.propTypes = {
-    order: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  };
+interface NavPropsType {
+  order: string;
+  name: string;
+}
 
+const Nav = ({ order, name }: NavPropsType) => {
   return (
     <>
       <HorizontalLine />
       <NavContainer>
         <H2Text
           text={order}
-          mobileSize={fontSize.font21}
-          tabletSize={fontSize.font29}
-          desktopSize={fontSize.font34}
-          weight={fontWeight.bold}
+          mobileSize={fontSize[21]}
+          tabletSize={fontSize[29]}
+          desktopSize={fontSize[34]}
+          weight={fontWeight[700]}
           letterSpacing="2px"
           opacity={0.8}
         ></H2Text>
 
         <H2Text
           text={name}
-          mobileSize={fontSize.font29}
-          tabletSize={fontSize.font49}
-          desktopSize={fontSize.font59}
-          weight={fontWeight.bold}
+          mobileSize={fontSize[21]}
+          tabletSize={fontSize[29]}
+          desktopSize={fontSize[34]}
+          weight={fontWeight[700]}
           marginTop="1vh"
           letterSpacing="2px"
         ></H2Text>

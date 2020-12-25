@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'next/link';
 import H1Text from '../typo/h1';
@@ -6,14 +5,23 @@ import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { motion } from 'framer-motion';
 
-const Article = ({ href, category, date, title, description }) => {
-  Article.propTypes = {
-    category: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-  };
+interface ArticlePropsType {
+  theme: any;
+  href: string;
+  category: string;
+  date: string;
+  title: string;
+  description: string;
+}
 
+const Article = ({
+  theme,
+  href,
+  category,
+  date,
+  title,
+  description,
+}: ArticlePropsType) => {
   return (
     <LiArticle>
       <Link href={href}>
@@ -31,7 +39,7 @@ const Article = ({ href, category, date, title, description }) => {
                 desktopSize={fontSize[14]}
                 weight={fontWeight[400]}
                 lineHeight={1.2}
-                color="gray4"
+                color={theme.gray4}
               />
               <DividerTinyVertical />
               <PText
@@ -41,7 +49,7 @@ const Article = ({ href, category, date, title, description }) => {
                 desktopSize={fontSize[14]}
                 weight={fontWeight[400]}
                 lineHeight={1.2}
-                color="gray4"
+                color={theme.gray4}
               />
             </CategoryDate>
 
@@ -62,7 +70,7 @@ const Article = ({ href, category, date, title, description }) => {
               desktopSize={fontSize[17]}
               weight={fontWeight[400]}
               lineHeight={1.55}
-              color="gray2"
+              color={theme.gray2}
               marginTop="16px"
             />
 

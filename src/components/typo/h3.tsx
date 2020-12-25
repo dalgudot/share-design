@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const PText = ({
+const H3Text = ({
   text,
   mobileSize,
   tabletSize,
@@ -13,22 +12,20 @@ const PText = ({
   color,
   opacity,
   marginTop,
+}: {
+  text: string;
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color?: any;
+  opacity?: number;
+  marginTop?: string;
 }) => {
-  PText.propTypes = {
-    text: PropTypes.string.isRequired,
-    mobileSize: PropTypes.string.isRequired,
-    tabletSize: PropTypes.string.isRequired,
-    desktopSize: PropTypes.string.isRequired,
-    weight: PropTypes.number.isRequired,
-    lineHeight: PropTypes.number,
-    letterSpacing: PropTypes.string,
-    color: PropTypes.string,
-    opacity: PropTypes.number,
-    marginTop: PropTypes.string,
-  };
-
   return (
-    <P
+    <H3
       mobileSize={mobileSize}
       tabletSize={tabletSize}
       desktopSize={desktopSize}
@@ -40,17 +37,27 @@ const PText = ({
       marginTop={marginTop}
     >
       {text}
-    </P>
+    </H3>
   );
 };
 
-export default PText;
+export default H3Text;
 
-const P = styled.p`
+const H3 = styled.h3<{
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color?: any;
+  opacity?: number;
+  marginTop?: string;
+}>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  color: ${({ theme, color }) => theme[color]};
+  color: ${({ color }) => color};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 

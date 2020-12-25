@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
@@ -25,19 +24,6 @@ const H1Text = ({
   opacity?: number;
   marginTop?: string;
 }) => {
-  // H1Text.propTypes = {
-  //   text: PropTypes.string.isRequired,
-  //   mobileSize: PropTypes.string.isRequired,
-  //   tabletSize: PropTypes.string.isRequired,
-  //   desktopSize: PropTypes.string.isRequired,
-  //   weight: PropTypes.number.isRequired,
-  //   lineHeight: PropTypes.number,
-  //   letterSpacing: PropTypes.string,
-  //   color: PropTypes.string,
-  //   opacity: PropTypes.number,
-  //   marginTop: PropTypes.string,
-  // };
-
   return (
     <H1
       mobileSize={mobileSize}
@@ -87,3 +73,16 @@ const H1 = styled.h1<{
     font-size: ${({ desktopSize }) => desktopSize};
   }
 `;
+
+// H1Text.propTypes = {
+//   text: PropTypes.string.isRequired,
+//   mobileSize: PropTypes.string.isRequired,
+//   tabletSize: PropTypes.string.isRequired,
+//   desktopSize: PropTypes.string.isRequired,
+//   weight: PropTypes.number.isRequired,
+//   lineHeight: PropTypes.number,
+//   letterSpacing: PropTypes.string,
+//   color: PropTypes.string,
+//   opacity: PropTypes.number,
+//   marginTop: PropTypes.string,
+// };

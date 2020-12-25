@@ -1,4 +1,13 @@
-export const indexInfo = {
+export const indexInfo: {
+  title: string;
+  icoImage: string;
+  author: string;
+  description: string;
+  keywords: string;
+  url: string;
+  thumbnail: string;
+  type: string;
+} = {
   title: 'Share Design',
 
   icoImage: '/kh.ico',

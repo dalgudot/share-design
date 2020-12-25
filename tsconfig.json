@@ -14,12 +14,10 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": [
-    "src/pages/articles/1.js",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/components/func/detect-browser-lang.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
+
+// "src/pages/articles/1.js",
+// "src/components/func/detect-browser-lang.jsx"
+// , "src/components/func/prevent-illegal-theft.jsx"

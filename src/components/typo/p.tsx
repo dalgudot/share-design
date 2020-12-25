@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const H2Text = ({
+const PText = ({
   text,
   mobileSize,
   tabletSize,
@@ -13,24 +12,20 @@ const H2Text = ({
   color,
   opacity,
   marginTop,
+}: {
+  text: string;
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color?: any;
+  opacity?: number;
+  marginTop?: string;
 }) => {
-  H2Text.propTypes = {
-    text: PropTypes.string.isRequired,
-    mobileSize: PropTypes.string.isRequired,
-    tabletSize: PropTypes.string.isRequired,
-    desktopSize: PropTypes.string.isRequired,
-    weight: PropTypes.number.isRequired,
-    lineHeight: PropTypes.number,
-    letterSpacing: PropTypes.string,
-    color: PropTypes.string,
-    opacity: PropTypes.number,
-    marginTop: PropTypes.string,
-  };
-
-  console.log(color);
-
   return (
-    <H2
+    <P
       mobileSize={mobileSize}
       tabletSize={tabletSize}
       desktopSize={desktopSize}
@@ -42,18 +37,27 @@ const H2Text = ({
       marginTop={marginTop}
     >
       {text}
-    </H2>
+    </P>
   );
 };
 
-export default H2Text;
+export default PText;
 
-const H2 = styled.h2`
+const P = styled.p<{
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color?: any;
+  opacity?: number;
+  marginTop?: string;
+}>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  /* color: ${({ theme, color }) => theme[color]}; */
-  color: ${({ theme, color }) => theme[color]};
+  color: ${({ color }) => color};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 
