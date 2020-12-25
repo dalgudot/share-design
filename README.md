@@ -15,9 +15,11 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 #### Front-End
 
-- [ReactJS](https://github.com/facebook/react)
+- [Typescript](https://www.typescriptlang.org/)
 
-- [NextJS](https://github.com/vercel/next.js/)
+- [ReactJS](https://reactjs.org/)
+
+- [NextJS](https://nextjs.org/)
 
 - [NextJS Examples](https://github.com/vercel/next.js/tree/canary/examples)
 
@@ -59,13 +61,13 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [Firebase-admin](https://github.com/firebase/firebase-admin-node)
 
-#### Lecture
+<!-- #### Lecture
 
 - [Ellie's Dream Coding](https://www.youtube.com/channel/UC_4u-bXaba7yrRz_6x6kb_w)
 
 - [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
 
-- [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0)
+- [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0) -->
 
 <!-- ## Artwork Copyrights 👨‍⚖️
 
