@@ -21,7 +21,7 @@ const H1Text = ({
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color: string;
+  color?: any;
   opacity?: number;
   marginTop?: string;
 }) => {
@@ -64,14 +64,14 @@ const H1 = styled.h1<{
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color: string;
+  color?: any;
   opacity?: number;
   marginTop?: string;
 }>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  color: ${({ theme, color }) => theme[color]};
+  color: ${({ color }) => color};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 

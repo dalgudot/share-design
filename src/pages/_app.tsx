@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <AnimatePresence exitBeforeEnter>
               <Component
                 {...pageProps}
+                theme={mode}
                 // setMode={setMode}
                 // darkTheme={darkTheme}
                 // lightTheme={lightTheme}

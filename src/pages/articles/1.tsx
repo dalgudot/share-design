@@ -8,7 +8,7 @@ import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../components/toast/toast-func';
 
-const TwoLanguage = () => {
+const TwoLanguage = ({ theme }: any) => {
   DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('001 Design in two languages');
@@ -25,7 +25,7 @@ const TwoLanguage = () => {
           tabletSize={fontSize[20]}
           desktopSize={fontSize[20]}
           weight={fontWeight[700]}
-          color="gray4"
+          color={theme.gray4}
         />
       </FacebookShareButton>
       <br />
@@ -37,7 +37,6 @@ const TwoLanguage = () => {
           tabletSize={fontSize[20]}
           desktopSize={fontSize[20]}
           weight={fontWeight[700]}
-          color="gray4"
         />
       </LinkedinShareButton>
       <br />
@@ -51,7 +50,6 @@ const TwoLanguage = () => {
             tabletSize={fontSize[20]}
             desktopSize={fontSize[20]}
             weight={fontWeight[700]}
-            color="gray4"
           />
         </button>
       </CopyToClipboard>

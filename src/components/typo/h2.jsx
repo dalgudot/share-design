@@ -27,6 +27,8 @@ const H2Text = ({
     marginTop: PropTypes.string,
   };
 
+  console.log(color);
+
   return (
     <H2
       mobileSize={mobileSize}
@@ -50,6 +52,7 @@ const H2 = styled.h2`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
+  /* color: ${({ theme, color }) => theme[color]}; */
   color: ${({ theme, color }) => theme[color]};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
