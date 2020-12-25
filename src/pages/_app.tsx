@@ -15,8 +15,9 @@ import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../../utils/initFirebase';
 import Toast from '../components/toast/toast-func';
+import type { AppProps /*, AppContext */ } from 'next/app';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
   const persistor = persistStore(store, {}, function () {
     persistor.persist();
