@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 
-export const VisitsAndViewsDuringSession = (where) => {
+export const VisitsAndViewsDuringSession = (where: string) => {
   const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
   // console.log('visitsDuringSession');
   // visitsDuringSession가 null이거나 undefined면
@@ -13,7 +13,7 @@ export const VisitsAndViewsDuringSession = (where) => {
   viewsDuringSession ?? ViewsDuringSession(where);
 };
 
-const firebaseFetchSet = (route) => {
+const firebaseFetchSet = (route: string) => {
   const firebaseDatabaseRef = firebase.database().ref(route);
 
   firebaseDatabaseRef.once('value', (snapshot) => {
@@ -30,8 +30,13 @@ const when = `${year}${month}${date}`;
 
 // 방문자
 const VisitsDuringSession = () => {
+  const userBrowserLanguage = navigator.language;
+
   // S of 전체 방문자 수
-  firebaseFetchSet('Number of Visitors/Total Visitors');
+  firebaseFetchSet('Number of Visitors/Total Visitors/Total All');
+
+  // 브라우저 언어별 방문자 수
+  firebaseFetchSet(`Number of Visitors/Total Visitors/${userBrowserLanguage}`);
   // E of 전체 방문자 수
 
   // S of 날짜별 전체 방문자 수
@@ -42,7 +47,7 @@ const VisitsDuringSession = () => {
 };
 
 // 조회수
-const ViewsDuringSession = (where) => {
+const ViewsDuringSession = (where: string) => {
   // index + ariticle로 전체 조회수 쉽게 계산 가능하므로 생략. 오히려 데이터 복잡도를 높임.
   // S of 전체 조회수
   // firebaseFetchSet('Number of Views/All Views/Total All');

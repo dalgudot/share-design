@@ -20,10 +20,10 @@ export default GlobalColors;
 declare module 'styled-components' {
   export interface DefaultTheme {
     backgroundColor: string;
-    gray1: string; // APPLE
-    gray2: string; // 95% of gray1
-    gray4: string; // 60% of gray1
-    gray5: string; // 8%
+    gray1: string;
+    gray2: string;
+    gray4: string;
+    gray5: string;
   }
 }
 

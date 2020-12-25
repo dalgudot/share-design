@@ -7,7 +7,6 @@ import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-vi
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../components/toast/toast-func';
-import { useState } from 'react';
 
 const TwoLanguage = () => {
   DetectBrowserLang();
@@ -15,7 +14,7 @@ const TwoLanguage = () => {
     VisitsAndViewsDuringSession('001 Design in two languages');
   }, []);
 
-  const url = 'https://share-design.kr/article/two-language';
+  const url: string = 'https://share-design.kr/article/two-language';
 
   return (
     <>
@@ -26,6 +25,7 @@ const TwoLanguage = () => {
           tabletSize={fontSize[20]}
           desktopSize={fontSize[20]}
           weight={fontWeight[700]}
+          color="gray4"
         />
       </FacebookShareButton>
       <br />
@@ -37,6 +37,7 @@ const TwoLanguage = () => {
           tabletSize={fontSize[20]}
           desktopSize={fontSize[20]}
           weight={fontWeight[700]}
+          color="gray4"
         />
       </LinkedinShareButton>
       <br />
@@ -50,6 +51,7 @@ const TwoLanguage = () => {
             tabletSize={fontSize[20]}
             desktopSize={fontSize[20]}
             weight={fontWeight[700]}
+            color="gray4"
           />
         </button>
       </CopyToClipboard>

@@ -13,19 +13,30 @@ const H1Text = ({
   color,
   opacity,
   marginTop,
+}: {
+  text: string;
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color: string;
+  opacity?: number;
+  marginTop?: string;
 }) => {
-  H1Text.propTypes = {
-    text: PropTypes.string.isRequired,
-    mobileSize: PropTypes.string.isRequired,
-    tabletSize: PropTypes.string.isRequired,
-    desktopSize: PropTypes.string.isRequired,
-    weight: PropTypes.number.isRequired,
-    lineHeight: PropTypes.number,
-    letterSpacing: PropTypes.string,
-    color: PropTypes.string,
-    opacity: PropTypes.number,
-    marginTop: PropTypes.string,
-  };
+  // H1Text.propTypes = {
+  //   text: PropTypes.string.isRequired,
+  //   mobileSize: PropTypes.string.isRequired,
+  //   tabletSize: PropTypes.string.isRequired,
+  //   desktopSize: PropTypes.string.isRequired,
+  //   weight: PropTypes.number.isRequired,
+  //   lineHeight: PropTypes.number,
+  //   letterSpacing: PropTypes.string,
+  //   color: PropTypes.string,
+  //   opacity: PropTypes.number,
+  //   marginTop: PropTypes.string,
+  // };
 
   return (
     <H1
@@ -46,7 +57,17 @@ const H1Text = ({
 
 export default H1Text;
 
-const H1 = styled.h1`
+const H1 = styled.h1<{
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color: string;
+  opacity?: number;
+  marginTop?: string;
+}>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
