@@ -5,7 +5,7 @@ import PText from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { motion } from 'framer-motion';
 
-interface ArticlePropsType {
+interface ArticlePropTypes {
   theme: any;
   href: string;
   category: string;
@@ -21,7 +21,7 @@ const Article = ({
   date,
   title,
   description,
-}: ArticlePropsType) => {
+}: ArticlePropTypes) => {
   return (
     <LiArticle>
       <Link href={href}>

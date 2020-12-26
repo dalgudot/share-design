@@ -1,15 +1,6 @@
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-const HeadInfo = ({ info }) => {
-  HeadInfo.propTypes = {
-    title: PropTypes.string,
-    icoImage: PropTypes.string,
-    description: PropTypes.string,
-    url: PropTypes.string,
-    thumbnail: PropTypes.string,
-  };
-
+const HeadInfo = ({ info }: any) => {
   return (
     <Head>
       {/* 모바일 대응 meta tag */}

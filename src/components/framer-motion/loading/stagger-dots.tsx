@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
+interface StaggerDotsPropTypes {
+  color?: string;
+  count?: number;
+}
 
 // Big Button 로딩 컬러 => #d2c6cb
-const StaggerDots = ({ color, count }) => {
-  StaggerDots.propTypes = {
-    color: PropTypes.string,
-    count: PropTypes.number,
-  };
-
+const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
   // ind = index
   const countNum = count || 3;
   const dots = Array(countNum)
-    .fill()
+    .fill(null)
     .map((_, idx) => (
       <motion.span key={idx} variants={loadingCircleVariants}></motion.span>
     ));

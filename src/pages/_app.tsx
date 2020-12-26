@@ -17,7 +17,7 @@ import initFirebase from '../utils/initFirebase';
 import Toast from '../components/toast/toast-func';
 import type { AppProps /*, AppContext */ } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
   const persistor = persistStore(store, {}, function () {
     persistor.persist();
