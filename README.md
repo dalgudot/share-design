@@ -31,8 +31,6 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [Redux-Persist](https://github.com/rt2zz/redux-persist)
 
-- [Prop-Types](https://github.com/facebook/prop-types)
-
 - [SWR](https://github.com/vercel/swr)
 
 - [React-FirebaseUI](https://github.com/firebase/firebaseui-web)
