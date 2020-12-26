@@ -4,7 +4,6 @@ The Share Design is a space to share my UI/UX design experience with people arou
 [https://share-design.kr/](https://share-design.kr/)
 
 <br/>
-<br/>
 
 ## I share my UI/UX Design Experience 🙌
 
@@ -14,7 +13,6 @@ I am inspired and learning a lot thanks to the experience shared by so many peop
 
 This portfolio website is the result. I plan to continue to share my UI/UX Design Experience through this website.
 
-<br/>
 <br/>
 
 ## Thanks to 🙏
@@ -47,6 +45,8 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 
 - [React-Toastify](https://github.com/fkhadra/react-toastify)
 
+<br/>
+
 #### Interaction
 
 - [Framer Motion](https://github.com/framer/motion)
@@ -58,6 +58,8 @@ This portfolio website is the result. I plan to continue to share my UI/UX Desig
 - [React-Use-Ripple](https://www.npmjs.com/package/react-use-ripple)
 
 - [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
+
+<br/>
 
 #### Back-End
 
