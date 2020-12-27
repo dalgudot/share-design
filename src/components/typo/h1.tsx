@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const H1Text = ({
+const H1 = ({
   text,
   mobileSize,
   tabletSize,
@@ -25,7 +25,7 @@ const H1Text = ({
   marginTop?: string;
 }) => {
   return (
-    <H1
+    <H1Text
       mobileSize={mobileSize}
       tabletSize={tabletSize}
       desktopSize={desktopSize}
@@ -37,13 +37,13 @@ const H1Text = ({
       marginTop={marginTop}
     >
       {text}
-    </H1>
+    </H1Text>
   );
 };
 
-export default H1Text;
+export default H1;
 
-const H1 = styled.h1<{
+const H1Text = styled.h1<{
   mobileSize: string;
   tabletSize: string;
   desktopSize: string;

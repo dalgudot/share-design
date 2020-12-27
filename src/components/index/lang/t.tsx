@@ -5,13 +5,8 @@ export const t = {
   },
 
   myname: {
-    k: '김\u00A0\u00A0경\u00A0\u00A0환',
+    k: '김\u00A0경\u00A0환',
     e: 'KyungHwan Kim',
-  },
-
-  myjob: {
-    k: 'UX 디자이너',
-    e: 'UX Designer',
   },
 
   themeMode: {

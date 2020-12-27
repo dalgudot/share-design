@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
-import H1Text from '../../components/typo/h1';
+import H1 from '../../components/typo/h1';
 import { fontSize, fontWeight } from '../../components/typo/font';
 import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
@@ -20,7 +20,7 @@ const TwoLanguage = ({ theme }: any) => {
   return (
     <>
       <FacebookShareButton url={url}>
-        <H1Text
+        <H1
           text="페이스북"
           mobileSize={fontSize[18]}
           tabletSize={fontSize[20]}
@@ -32,7 +32,7 @@ const TwoLanguage = ({ theme }: any) => {
       <br />
       <br />
       <LinkedinShareButton url={url}>
-        <H1Text
+        <H1
           text="링크드인"
           mobileSize={fontSize[18]}
           tabletSize={fontSize[20]}
@@ -46,7 +46,7 @@ const TwoLanguage = ({ theme }: any) => {
 
       <CopyToClipboard text={url} onCopy={() => toastify()}>
         <button>
-          <H1Text
+          <H1
             text="함수로 링크 복사"
             mobileSize={fontSize[18]}
             tabletSize={fontSize[20]}

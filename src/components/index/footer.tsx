@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PText from '../typo/p';
+import P from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
       {/* <SocialWrap>
         <a href="https://brunch.co.kr/@dalgudot" target="_blank">
           <u>
-            <PText
+            <P
               text="Brunch"
               mobileSize={fontSize[18]}
               tabletSize={fontSize[18]}
@@ -20,7 +20,7 @@ const Footer = () => {
 
         <a href="https://www.facebook.com/dalgudot" target="_blank">
           <u>
-            <PText
+            <P
               text="Facebook"
               mobileSize={fontSize[18]}
               tabletSize={fontSize[18]}
@@ -32,7 +32,7 @@ const Footer = () => {
 
         <a href="https://www.linkedin.com/in/khk-design/" target="_blank">
           <u>
-            <PText
+            <P
               text="LinkedIn"
               mobileSize={fontSize[18]}
               tabletSize={fontSize[18]}
@@ -44,7 +44,7 @@ const Footer = () => {
       </SocialWrap>
 
       <Copyright>
-        <PText
+        <P
           text="ⓒ KyungHwan Kim. All rights reserved."
           mobileSize={fontSize[14]}
           tabletSize={fontSize[14]}

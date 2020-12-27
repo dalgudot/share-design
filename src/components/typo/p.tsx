@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const PText = ({
+const P = ({
   text,
   mobileSize,
   tabletSize,
@@ -25,7 +25,7 @@ const PText = ({
   marginTop?: string;
 }) => {
   return (
-    <P
+    <PText
       mobileSize={mobileSize}
       tabletSize={tabletSize}
       desktopSize={desktopSize}
@@ -37,13 +37,13 @@ const PText = ({
       marginTop={marginTop}
     >
       {text}
-    </P>
+    </PText>
   );
 };
 
-export default PText;
+export default P;
 
-const P = styled.p<{
+const PText = styled.p<{
   mobileSize: string;
   tabletSize: string;
   desktopSize: string;

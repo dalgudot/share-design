@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PText from '../typo/p';
+import P from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { HorizontalLine } from './common-elements';
 
@@ -8,7 +8,7 @@ const Contact = () => {
     <ContactContainer>
       <HorizontalLine />
       <ContactText>
-        <PText
+        <P
           text="Contact"
           mobileSize={fontSize[29]}
           tabletSize={fontSize[39]}
@@ -19,7 +19,7 @@ const Contact = () => {
       </ContactText>
 
       <Email>
-        <PText
+        <P
           text="Comming Soon..."
           mobileSize={fontSize[29]}
           tabletSize={fontSize[39]}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import H1Text from '../typo/h1';
-import PText from '../typo/p';
+import H1 from '../typo/h1';
+import P from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { motion } from 'framer-motion';
 
@@ -32,7 +32,7 @@ const Article = ({
             variants={articleVariants}
           >
             <CategoryDate>
-              <PText
+              <P
                 text={category}
                 mobileSize={fontSize[14]}
                 tabletSize={fontSize[14]}
@@ -42,7 +42,7 @@ const Article = ({
                 color={theme.gray4}
               />
               <DividerTinyVertical />
-              <PText
+              <P
                 text={date}
                 mobileSize={fontSize[14]}
                 tabletSize={fontSize[14]}
@@ -53,7 +53,7 @@ const Article = ({
               />
             </CategoryDate>
 
-            <H1Text
+            <H1
               text={title}
               mobileSize={fontSize[34]}
               tabletSize={fontSize[39]}
@@ -63,7 +63,7 @@ const Article = ({
               marginTop="6px"
             />
 
-            <PText
+            <P
               text={description}
               mobileSize={fontSize[17]}
               tabletSize={fontSize[17]}

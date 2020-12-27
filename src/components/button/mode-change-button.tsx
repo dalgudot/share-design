@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { t } from '../index/lang/t';
-import PText from '../typo/p';
+import P from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
 import { BtnStyle } from '../index/common-elements';
 
@@ -46,7 +46,7 @@ const ModeChangeButton = ({
 
   return (
     <BtnStyle style={style} className="right__button" onClick={setTheme}>
-      <PText
+      <P
         text="나중에 아래 타입 정하기"
         // text={
         //   `${theme}` === 'darkTheme'

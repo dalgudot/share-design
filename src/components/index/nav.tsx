@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { HorizontalLine, VerticalLine } from './common-elements';
-import H2Text from '../typo/h2';
+import H2 from '../typo/h2';
 import { fontSize, fontWeight } from '../typo/font';
 
 interface NavPropsType {
@@ -13,7 +13,7 @@ const Nav = ({ order, name }: NavPropsType) => {
     <>
       <HorizontalLine />
       <NavContainer>
-        <H2Text
+        <H2
           text={order}
           mobileSize={fontSize[21]}
           tabletSize={fontSize[29]}
@@ -21,9 +21,9 @@ const Nav = ({ order, name }: NavPropsType) => {
           weight={fontWeight[700]}
           letterSpacing="2px"
           opacity={0.8}
-        ></H2Text>
+        ></H2>
 
-        <H2Text
+        <H2
           text={name}
           mobileSize={fontSize[21]}
           tabletSize={fontSize[29]}
@@ -31,7 +31,7 @@ const Nav = ({ order, name }: NavPropsType) => {
           weight={fontWeight[700]}
           marginTop="1vh"
           letterSpacing="2px"
-        ></H2Text>
+        ></H2>
       </NavContainer>
       <HorizontalLine />
     </>
