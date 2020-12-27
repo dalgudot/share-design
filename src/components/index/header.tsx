@@ -5,6 +5,7 @@ import { fontSize, fontWeight } from '../typo/font';
 import LangChangeButton from '../button/lang-change-button';
 import { t } from './lang/t';
 import languageFunc from '../func/language-func';
+import { mediaBreakPoint } from '../../styles/common';
 
 const Header = () => {
   return (
@@ -19,24 +20,6 @@ const Header = () => {
               desktopSize={fontSize[20]}
               weight={fontWeight[700]}
             />
-
-            {/* <H3
-              text={languageFunc(t.myname)}
-              mobileSize={fontSize[18]}
-              tabletSize={fontSize[20]}
-              desktopSize={fontSize[20]}
-              weight={fontWeight[700]}
-            />
-            <H3
-              text={languageFunc(t.myjob)}
-              mobileSize={fontSize[15]}
-              tabletSize={fontSize[17]}
-              desktopSize={fontSize[17]}
-              weight={fontWeight[300]}
-              letterSpacing="0.5px"
-              marginTop="-4px"
-              opacity={0.8}
-            /> */}
           </Left>
         </Link>
         <LangChangeButton />
@@ -55,13 +38,23 @@ const HeaderContainer = styled.header`
   width: 100%;
   /* height 반응형으로 조절 필요 */
   height: 72px;
-  /* padding: 3vh 4vw; */
-  padding: 0 4.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray5};
   z-index: 100;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    padding: 0 4.5vw;
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
+    padding: 0 12vw;
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.fourth}) {
+    padding: 0 16.6667%;
+  }
 `;
 
 const Left = styled.a``;

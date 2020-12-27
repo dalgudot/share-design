@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
-import Article from '../components/index/article';
+import ArticleList from '../components/index/article-list';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 import { useEffect } from 'react';
@@ -11,6 +11,7 @@ import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
 import { motion } from 'framer-motion';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
+import NavRight from '../components/index/nav-right';
 
 const Index = ({ theme }: any) => {
   DetectBrowserLang();
@@ -23,12 +24,12 @@ const Index = ({ theme }: any) => {
       <ContainerIndex>
         <Header />
 
-        <nav>{/* 왼쪽 내비게이션 */}</nav>
+        {/* <nav>왼쪽 내비게이션</nav> */}
 
         <Main>
-          {/* 두 가지 언어로 디자인하기 */}
+          {/* 두 언어로 디자인하기 */}
           <ul>
-            <Article
+            <ArticleList
               // href="/article/two-language"
               theme={theme}
               href="/"
@@ -40,10 +41,7 @@ const Index = ({ theme }: any) => {
           </ul>
         </Main>
 
-        <nav>
-          {/* 인삿말 */}
-          {/* <Contact /> */}
-        </nav>
+        {/* <NavRight theme={theme} /> */}
 
         <Footer />
       </ContainerIndex>
@@ -67,4 +65,10 @@ const ContainerIndex = styled.div`
   }
 `;
 
-const Main = styled.main``;
+const Main = styled.main`
+  margin-top: 144px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 120px;
+  }
+`;

@@ -3,40 +3,32 @@ import Link from 'next/link';
 import H1 from '../typo/h1';
 import P from '../typo/p';
 import { fontSize, fontWeight } from '../typo/font';
+import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
 
-interface ArticlePropTypes {
-  theme: any;
-  href: string;
-  category: string;
-  date: string;
-  title: string;
-  description: string;
-}
-
-const Article = ({
+const ArticleList = ({
   theme,
   href,
   category,
   date,
   title,
   description,
-}: ArticlePropTypes) => {
+}: ArticleListPropTypes) => {
   return (
-    <LiArticle>
+    <Li>
       <Link href={href}>
         <a>
           <motion.article
             // whileHover="hover"
-            whileTap={{ scale: 0.995 }}
+            // whileTap={{ scale: 0.995 }}
             variants={articleVariants}
           >
             <CategoryDate>
               <P
                 text={category}
-                mobileSize={fontSize[14]}
-                tabletSize={fontSize[14]}
-                desktopSize={fontSize[14]}
+                mobileSize={fontSize.small.mobile}
+                tabletSize={fontSize.small.tablet}
+                desktopSize={fontSize.small.desktop}
                 weight={fontWeight[400]}
                 lineHeight={1.2}
                 color={theme.gray4}
@@ -44,9 +36,9 @@ const Article = ({
               <DividerTinyVertical />
               <P
                 text={date}
-                mobileSize={fontSize[14]}
-                tabletSize={fontSize[14]}
-                desktopSize={fontSize[14]}
+                mobileSize={fontSize.small.mobile}
+                tabletSize={fontSize.small.tablet}
+                desktopSize={fontSize.small.desktop}
                 weight={fontWeight[400]}
                 lineHeight={1.2}
                 color={theme.gray4}
@@ -55,45 +47,39 @@ const Article = ({
 
             <H1
               text={title}
-              mobileSize={fontSize[34]}
-              tabletSize={fontSize[39]}
-              desktopSize={fontSize[39]}
+              mobileSize={fontSize.headline.mobile}
+              tabletSize={fontSize.headline.tablet}
+              desktopSize={fontSize.headline.desktop}
               weight={fontWeight[700]}
               lineHeight={1.2}
-              marginTop="6px"
+              marginTop="8px"
+              letterSpacing="-0.3px"
             />
 
             <P
               text={description}
-              mobileSize={fontSize[17]}
-              tabletSize={fontSize[17]}
-              desktopSize={fontSize[17]}
+              mobileSize={fontSize.body.mobile}
+              tabletSize={fontSize.body.tablet}
+              desktopSize={fontSize.body.desktop}
               weight={fontWeight[400]}
               lineHeight={1.55}
-              color={theme.gray2}
               marginTop="16px"
+              color={theme.gray2}
             />
 
             <Artwork />
           </motion.article>
         </a>
       </Link>
-    </LiArticle>
+    </Li>
   );
 };
 
-export default Article;
+export default ArticleList;
 
-const LiArticle = styled.li`
-  max-width: 540px;
-  margin: 144px auto 0;
-  /* padding: 64px; */
-  /* border-radius: 24px; */
-  /* box-shadow: 33px 33px 50px #0f0f0f, -33px -33px 50px #151515; */
-
-  @media all and (max-width: 768px) {
-    margin-top: 120px;
-  }
+const Li = styled.li`
+  max-width: 580px;
+  margin: 0 auto;
 `;
 
 const CategoryDate = styled.section`
@@ -109,14 +95,19 @@ const DividerTinyVertical = styled.div`
   opacity: 0.5;
   margin: 0 8px;
   margin-top: 2px;
+
+  @media all and (min-width: ${mediaBreakPoint.second}) {
+    height: 14px;
+    margin-top: 1px;
+  }
 `;
 
 const Artwork = styled.figure`
-  min-width: 300px;
-  max-width: 540px;
-  min-height: 500px;
+  max-width: 100%;
+  min-height: 300px;
   background-color: ${({ theme }) => theme.gray5};
   margin-top: 36px;
+  margin-bottom: 96px;
 `;
 
 // Framer Motion
@@ -127,3 +118,13 @@ const articleVariants = {
     boxShadow: '33px 33px 50px #0f0f0f, -33px -33px 50px #151515',
   },
 };
+
+// type
+interface ArticleListPropTypes {
+  theme: any;
+  href: string;
+  category: string;
+  date: string;
+  title: string;
+  description: string;
+}

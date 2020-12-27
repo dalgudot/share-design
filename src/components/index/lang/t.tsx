@@ -4,9 +4,16 @@ export const t = {
     e: 'Share Design',
   },
 
-  myname: {
-    k: '김\u00A0경\u00A0환',
-    e: 'KyungHwan Kim',
+  navRight: {
+    greetings: {
+      k: '인사말',
+      e: 'Greetings',
+    },
+
+    contact: {
+      k: '연락처',
+      e: 'Contact',
+    },
   },
 
   themeMode: {
@@ -24,12 +31,12 @@ export const t = {
   article1: {
     category: {
       k: 'UX 디자인',
-      e: 'UX Design',
+      e: 'UX DESIGN',
     },
 
     date: {
-      k: '2020년 12월 6일',
-      e: '06 DEC 2020',
+      k: '2021년 1월 3일',
+      e: '01 JAN 2021',
     },
 
     title: {
@@ -45,3 +52,8 @@ export const t = {
     },
   },
 };
+
+// myname: {
+//   k: '김\u00A0경\u00A0환',
+//   e: 'KyungHwan Kim',
+// },
