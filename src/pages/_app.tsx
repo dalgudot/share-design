@@ -4,11 +4,9 @@ import { useStore } from '../store/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import '../styles/font.css';
-import '../styles/global.css';
-import { darkTheme, lightTheme } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
-import GlobalColors from '../styles/theme';
+import GlobalStyle from '../styles/globals';
+import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import { useState, useEffect } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
@@ -39,6 +37,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               darkTheme={darkTheme}
               lightTheme={lightTheme}
             /> */}
+            <GlobalStyle />
             <GlobalColors />
             <Toast />
             <AnimatePresence exitBeforeEnter>

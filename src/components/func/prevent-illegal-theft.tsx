@@ -3,7 +3,10 @@ import { useEffect } from 'react';
 export function PreventIllegalTheft() {
   useEffect(() => {
     //마우스 오른쪽 클릭만 막기
-    document.oncontextmenu = new Function('return false');
+    //https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
 
     // document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function(
     //   "return false"

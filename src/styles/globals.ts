@@ -1,3 +1,71 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* 드래그 방지 */
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* iOS Safari Momentum Scroll, 버벅임 방지 */
+  -webkit-overflow-scrolling: touch;
+  /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
+/* Chrome, Safari, Opera*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Korean, Number is SpoqaHanSans & English is Roboto',
+    -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans Korean,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  /* all: unset -> 모든 속성 한번에 초기화 */
+  all: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  display: block;
+}
+
+img {
+  pointer-events: none;
+}
+
 /* S of Spoqa Han Sans */
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
@@ -74,3 +142,6 @@
   unicode-range: U+0041-005A, U+0061-007A;
 }
 /* E of Roboto */
+`;
+
+export default GlobalStyle;

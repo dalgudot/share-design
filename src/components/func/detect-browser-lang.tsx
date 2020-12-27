@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 export const DetectBrowserLang = () => {
-  const lang = useSelector((state) => state.language);
-  const userLanguageChange = useSelector((state) => state.userLanguageChange);
+  const lang = useSelector((state: any) => state.language);
+  const userLanguageChange = useSelector(
+    (state: any) => state.userLanguageChange
+  );
   const dispatch = useDispatch();
   const languageChange = () =>
     dispatch({

@@ -12,13 +12,13 @@ import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 
 const createNoopStorage = () => {
   return {
-    getItem(_key) {
+    getItem(_key: any) {
       return Promise.resolve(null);
     },
-    setItem(_key, value) {
+    setItem(_key: any, value: any) {
       return Promise.resolve(value);
     },
-    removeItem(_key) {
+    removeItem(_key: any) {
       return Promise.resolve();
     },
   };
@@ -30,7 +30,7 @@ const storage =
     : createNoopStorage();
 // E of 리덕스 오류 해결
 
-let store;
+let store: any;
 
 const InitialState = {
   language: 'ko',
@@ -45,7 +45,7 @@ export const actionTypes = {
 };
 
 // REDUCERS
-export const reducer = (state = InitialState, action) => {
+export const reducer = (state = InitialState, action: any) => {
   switch (action.type) {
     case actionTypes.CHANGELANGUAGE:
       return {
@@ -78,7 +78,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
-function makeStore(initialState = InitialState) {
+function makeStore(initialState: any = InitialState) {
   return createStore(
     persistedReducer,
     initialState,
@@ -86,7 +86,7 @@ function makeStore(initialState = InitialState) {
   );
 }
 
-export const initializeStore = (preloadedState) => {
+export const initializeStore = (preloadedState: any) => {
   let _store = store ?? makeStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -108,7 +108,7 @@ export const initializeStore = (preloadedState) => {
   return _store;
 };
 
-export function useStore(initialState) {
+export function useStore(initialState: any) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
 }
