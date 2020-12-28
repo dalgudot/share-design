@@ -42,7 +42,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray5};
-  z-index: 100;
+  z-index: 10000;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
@@ -66,9 +66,31 @@ const GlassMorphismBackground = styled.div`
   width: 100%;
   /* height 반응형으로 조절 필요 */
   height: 72px;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  opacity: 0.9;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 99;
+  z-index: 9999;
+
+  /* Glassmorphism */
+  opacity: 0.999;
+  /* position: fixed;
+  display: flex; */
+  /* flex-flow: column nowrap; */
+  /* width: 100vw; */
+
+  /* -------------------------------------------------- */
+  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
+  /* -------------------------------------------------- */
+  /* background-color: ${({ theme }) => theme.backgroundColor}; */
+  color: ${({ theme }) => theme.backgroundColor};
+  /* -------------------------------------------------- */
+  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
+  /* -------------------------------------------------- */
+
+  /* contain: layout; */
+  /* transition: color 0.12s, -webkit-backdrop-filter 0.12s;
+  transition: color 0.12s, backdrop-filter 0.12s;
+  transition: color 0.12s, backdrop-filter 0.12s, -webkit-backdrop-filter 0.12s; */
+  backdrop-filter: blur(100px) saturate(120%);
+  /* -webkit-backdrop-filter: blur(42px) saturate(120%); */
+
+  /* word-break: break-word;
+  text-rendering: optimizeLegibility; */
 `;

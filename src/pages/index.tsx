@@ -23,9 +23,7 @@ const Index = ({ theme }: any) => {
     <>
       <ContainerIndex>
         <Header />
-
         {/* <nav>왼쪽 내비게이션</nav> */}
-
         <Main>
           {/* 두 언어로 디자인하기 */}
           <ul>
@@ -40,9 +38,7 @@ const Index = ({ theme }: any) => {
             />
           </ul>
         </Main>
-
         {/* <NavRight theme={theme} /> */}
-
         <Footer />
       </ContainerIndex>
     </>
@@ -67,6 +63,9 @@ const ContainerIndex = styled.div`
 
 const Main = styled.main`
   margin-top: 144px;
+
+  // 콘텐츠 없어도 footer 아래로
+  min-height: 100vh;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 120px;

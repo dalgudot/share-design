@@ -104,7 +104,7 @@ const DividerTinyVertical = styled.div`
 
 const Artwork = styled.figure`
   max-width: 100%;
-  min-height: 300px;
+  min-height: 800px;
   background-color: ${({ theme }) => theme.gray5};
   margin-top: 36px;
   margin-bottom: 96px;

@@ -47,16 +47,16 @@ const Footer = () => {
         </a>
       </SocialWrap> */}
 
-      <Copyright>
-        <P
-          text="ⓒ KyungHwan Kim. All rights reserved."
-          mobileSize={fontSize.small.mobile}
-          tabletSize={fontSize.small.tablet}
-          desktopSize={fontSize.small.desktop}
-          weight={fontWeight[300]}
-          opacity={0.8}
-        />
-      </Copyright>
+      {/* <Copyright> */}
+      <P
+        text="ⓒ KyungHwan Kim. All rights reserved."
+        mobileSize={fontSize.small.mobile}
+        tabletSize={fontSize.small.tablet}
+        desktopSize={fontSize.small.desktop}
+        weight={fontWeight[300]}
+        opacity={0.8}
+      />
+      {/* </Copyright> */}
     </FooterContainer>
   );
 };
@@ -65,11 +65,12 @@ export default Footer;
 
 const FooterContainer = styled.footer`
   width: 100%;
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; */
+  /* transform: translateX(-50%); */
   margin-bottom: 36px;
+  text-align: center;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-bottom: 24px;
