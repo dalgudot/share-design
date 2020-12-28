@@ -9,7 +9,7 @@ import { useRef } from 'react';
 const LangChangeButton = () => {
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
-  const ref: any = useRef();
+  const ref = useRef(null);
   useRipple(ref, {
     rippleColor: 'rgba(0, 0, 0, 0.23)',
     animationLength: 500,

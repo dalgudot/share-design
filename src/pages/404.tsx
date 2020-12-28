@@ -8,10 +8,7 @@ import languageFunc from '../components/func/language-func';
 
 // NextJS Custom Error Page
 // https://nextjs.org/docs/advanced-features/custom-error-page
-// 500 Error
-const Error = ({ theme, statusCode }: any) => {
-  statusCode && console.log(statusCode);
-
+const Error404Page = ({ theme }: any) => {
   return (
     <Container>
       <H1
@@ -41,12 +38,7 @@ const Error = ({ theme, statusCode }: any) => {
   );
 };
 
-export default Error;
-
-Error.getInitialProps = ({ res, err }: any) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
-};
+export default Error404Page;
 
 const Container = styled.main`
   width: 100%;

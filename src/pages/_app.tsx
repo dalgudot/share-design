@@ -7,7 +7,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
-// import GlobalStyle from '../styles/globals';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import { useState, useEffect } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
