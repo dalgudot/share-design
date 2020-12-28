@@ -15,7 +15,7 @@ export const fontSize = {
   },
 
   headline: {
-    mobile: '29px',
+    mobile: '32px',
     tablet: '39px',
     desktop: '39px',
   },

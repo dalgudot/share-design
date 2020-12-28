@@ -16,61 +16,61 @@ const ArticleList = ({
 }: ArticleListPropTypes) => {
   return (
     <Li>
-      <Link href={href}>
-        <a>
-          <motion.article
-            // whileHover="hover"
-            // whileTap={{ scale: 0.995 }}
-            variants={articleVariants}
-          >
-            <CategoryDate>
-              <P
-                text={category}
-                mobileSize={fontSize.small.mobile}
-                tabletSize={fontSize.small.tablet}
-                desktopSize={fontSize.small.desktop}
-                weight={fontWeight[400]}
-                lineHeight={1.2}
-                color={theme.gray4}
-              />
-              <DividerTinyVertical />
-              <P
-                text={date}
-                mobileSize={fontSize.small.mobile}
-                tabletSize={fontSize.small.tablet}
-                desktopSize={fontSize.small.desktop}
-                weight={fontWeight[400]}
-                lineHeight={1.2}
-                color={theme.gray4}
-              />
-            </CategoryDate>
+      {/* <Link href={href}>
+        <a> */}
+      <motion.article
+        // whileHover="hover"
+        // whileTap={{ scale: 0.995 }}
+        variants={articleVariants}
+      >
+        <CategoryDate>
+          <P
+            text={category}
+            mobileSize={fontSize.small.mobile}
+            tabletSize={fontSize.small.tablet}
+            desktopSize={fontSize.small.desktop}
+            weight={fontWeight[400]}
+            lineHeight={1.2}
+            color={theme.gray4}
+          />
+          <DividerTinyVertical />
+          <P
+            text={date}
+            mobileSize={fontSize.small.mobile}
+            tabletSize={fontSize.small.tablet}
+            desktopSize={fontSize.small.desktop}
+            weight={fontWeight[400]}
+            lineHeight={1.2}
+            color={theme.gray4}
+          />
+        </CategoryDate>
 
-            <H1
-              text={title}
-              mobileSize={fontSize.headline.mobile}
-              tabletSize={fontSize.headline.tablet}
-              desktopSize={fontSize.headline.desktop}
-              weight={fontWeight[700]}
-              lineHeight={1.2}
-              marginTop="8px"
-              letterSpacing="-0.3px"
-            />
+        <H1
+          text={title}
+          mobileSize={fontSize.headline.mobile}
+          tabletSize={fontSize.headline.tablet}
+          desktopSize={fontSize.headline.desktop}
+          weight={fontWeight[700]}
+          lineHeight={1.3}
+          marginTop="5px"
+          letterSpacing="-0.3px"
+        />
 
-            <P
-              text={description}
-              mobileSize={fontSize.body.mobile}
-              tabletSize={fontSize.body.tablet}
-              desktopSize={fontSize.body.desktop}
-              weight={fontWeight[400]}
-              lineHeight={1.55}
-              marginTop="16px"
-              color={theme.gray2}
-            />
+        <P
+          text={description}
+          mobileSize={fontSize.body.mobile}
+          tabletSize={fontSize.body.tablet}
+          desktopSize={fontSize.body.desktop}
+          weight={fontWeight[400]}
+          lineHeight={1.5}
+          marginTop="16px"
+          color={theme.gray2}
+        />
 
-            <Artwork />
-          </motion.article>
-        </a>
-      </Link>
+        {/* <Artwork /> */}
+      </motion.article>
+      {/* </a>
+      </Link> */}
     </Li>
   );
 };
@@ -122,7 +122,7 @@ const articleVariants = {
 // type
 interface ArticleListPropTypes {
   theme: any;
-  href: string;
+  href?: string;
   category: string;
   date: string;
   title: string;

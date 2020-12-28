@@ -1,7 +1,7 @@
 export const t = {
   shareDesign: {
     k: '디자인 공유하기',
-    e: 'Share Design',
+    e: 'SHARE DESIGN',
   },
 
   navRight: {
@@ -41,7 +41,8 @@ export const t = {
 
     title: {
       k: '두 언어로 디자인하기',
-      e: 'Design in two languages',
+      e: 'DESIGN IN TWO LANGUAGES',
+      // e: 'Design in two languages',
     },
 
     description: {
@@ -50,6 +51,15 @@ export const t = {
       e:
         'I share my experiences designing my web portfolio in Korean and English to share my UX Design experiences in Korea and around the world.',
     },
+  },
+
+  errorMessage: {
+    message: {
+      k: '디자인 공유하기에 없는 페이지입니다.',
+      e: 'This page is not in the DESIGN SHARE.',
+    },
+
+    btn: { k: '홈으로', e: 'Go to Home' },
   },
 };
 

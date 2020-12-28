@@ -1,6 +1,6 @@
-The Share Design is a space to share my UI/UX design experience with people around the world.
+The SHARE DESIGN is a space to share my UI/UX design experience with people around the world.
 
-**Share Design URL:**
+**SHARE DESIGN URL:**
 [https://share-design.kr/](https://share-design.kr/)
 
 <br/>

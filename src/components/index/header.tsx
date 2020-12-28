@@ -63,34 +63,36 @@ const GlassMorphismBackground = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   /* height 반응형으로 조절 필요 */
   height: 72px;
   z-index: 9999;
-
-  /* Glassmorphism */
   opacity: 0.999;
-  /* position: fixed;
-  display: flex; */
-  /* flex-flow: column nowrap; */
-  /* width: 100vw; */
 
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
-  /* background-color: ${({ theme }) => theme.backgroundColor}; */
   color: ${({ theme }) => theme.backgroundColor};
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
 
-  /* contain: layout; */
-  /* transition: color 0.12s, -webkit-backdrop-filter 0.12s;
-  transition: color 0.12s, backdrop-filter 0.12s;
-  transition: color 0.12s, backdrop-filter 0.12s, -webkit-backdrop-filter 0.12s; */
-  backdrop-filter: blur(100px) saturate(120%);
-  /* -webkit-backdrop-filter: blur(42px) saturate(120%); */
+  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+    hue-rotate(10deg);
+  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
 
-  /* word-break: break-word;
-  text-rendering: optimizeLegibility; */
+  -webkit-transition: color 0.11s ease-in-out,
+    -webkit-backdrop-filter 0.11s ease-in-out;
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+
+  /* backdrop-filter: blur(2px);
+  backdrop-filter: brightness(60%);
+  backdrop-filter: contrast(40%);
+  backdrop-filter: drop-shadow(4px 4px 10px blue);
+  backdrop-filter: grayscale(30%);
+  backdrop-filter: hue-rotate(120deg);
+  backdrop-filter: invert(70%);
+  backdrop-filter: opacity(20%);
+  backdrop-filter: sepia(90%);
+  backdrop-filter: saturate(80%); */
 `;

@@ -21,6 +21,7 @@ const Index = ({ theme }: any) => {
 
   return (
     <>
+      {/* <BackgroundGradient /> */}
       <ContainerIndex>
         <Header />
         {/* <nav>왼쪽 내비게이션</nav> */}
@@ -30,7 +31,7 @@ const Index = ({ theme }: any) => {
             <ArticleList
               // href="/article/two-language"
               theme={theme}
-              href="/"
+              // href="/"
               category={languageFunc(t.article1.category)}
               date={languageFunc(t.article1.date)}
               title={languageFunc(t.article1.title)}
@@ -46,6 +47,26 @@ const Index = ({ theme }: any) => {
 };
 
 export default Index;
+
+const BackgroundGradient = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+  /* background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  ); */
+  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+`;
 
 const ContainerIndex = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
