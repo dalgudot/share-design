@@ -7,11 +7,11 @@ The SHARE DESIGN is a space to share my UI/UX design experience with people arou
 
 ## I share my UI/UX Design Experience 🙌
 
-Hi. My name is KyungHwan Kim. I am a UI/UX Designer based in South Korea. This Portfolio Website is for sharing my UI/UX Design Experience with people around the world.
+Hi. My name is KyungHwan Kim. I am a UI/UX Designer based in South Korea. The SHARE DESIGN is for sharing my UI/UX Design Experience with people around the world.
 
 I am inspired and learning a lot thanks to the experience shared by so many people around the world. As a UI/UX Designer, I also wanted to share my experience and thoughts around the world.
 
-This portfolio website is the result. I plan to continue to share my UI/UX Design Experience through this website.
+The SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experience through this website.
 
 <br/>
 

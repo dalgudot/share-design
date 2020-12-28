@@ -55,6 +55,7 @@ const Footer = () => {
           desktopSize={fontSize.small.desktop}
           weight={fontWeight[300]}
           opacity={0.8}
+          lineHeight={1.2}
         />
       </Copyright>
     </FooterContainer>

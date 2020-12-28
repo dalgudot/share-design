@@ -58,7 +58,7 @@ const BtnStyle = styled.button`
   align-items: center;
   width: 142px;
   height: 40px;
-  border-radius: 13px;
+  border-radius: 16px;
   background-color: ${({ theme }) => theme.gray5};
   /* background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
     linear-gradient(

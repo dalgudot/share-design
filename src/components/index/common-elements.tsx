@@ -24,11 +24,30 @@ export const BtnStyle = styled.button`
   height: 40px;
   border-radius: 13px;
   /* background-color: ${({ theme }) => theme.gray5}; */
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+  margin-top: 24px;
+  padding: 12px 18px;
+
+  /* -------------------------------------------------- */
+  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
+  /* -------------------------------------------------- */
+  color: ${({ theme }) => theme.backgroundColor};
+  /* -------------------------------------------------- */
+  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
+  /* -------------------------------------------------- */
+
+  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+    hue-rotate(10deg);
+  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
+
+  -webkit-transition: color 0.11s ease-in-out,
+    -webkit-backdrop-filter 0.11s ease-in-out;
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+
+  /* background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
     linear-gradient(
       to top,
       rgba(255, 255, 255, 0.4) 0%,
       rgba(0, 0, 0, 0.25) 200%
-    );
-  background-blend-mode: multiply;
+    ); */
+  /* background-blend-mode: multiply; */
 `;

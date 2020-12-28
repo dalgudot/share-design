@@ -67,7 +67,6 @@ const BtnStyle = styled.button`
   justify-content: center;
   align-items: center;
   padding: 18px 32px;
-
   border-radius: 24px;
   background-color: ${({ theme }) => theme.gray5};
   color: ${({ theme }) => theme.gray1};

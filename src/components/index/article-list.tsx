@@ -121,7 +121,7 @@ const articleVariants = {
 
 // type
 interface ArticleListPropTypes {
-  theme: any;
+  theme?: any;
   href?: string;
   category: string;
   date: string;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
 import ArticleList from '../components/index/article-list';
+import ArticleListSimple from '../components/index/article-list-simple';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
 import { useEffect } from 'react';
@@ -28,7 +29,14 @@ const Index = ({ theme }: any) => {
         <Main>
           {/* 두 언어로 디자인하기 */}
           <ul>
-            <ArticleList
+            <ArticleListSimple
+              href="/"
+              theme={theme}
+              order={languageFunc(t.article1.titleSimpleOrder)}
+              title={languageFunc(t.article1.titleSimple)}
+            />
+
+            {/* <ArticleList
               // href="/article/two-language"
               theme={theme}
               // href="/"
@@ -36,7 +44,7 @@ const Index = ({ theme }: any) => {
               date={languageFunc(t.article1.date)}
               title={languageFunc(t.article1.title)}
               description={languageFunc(t.article1.description)}
-            />
+            /> */}
           </ul>
         </Main>
         {/* <NavRight theme={theme} /> */}
@@ -55,6 +63,7 @@ const BackgroundGradient = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
   /* background-image: linear-gradient(
     to right,

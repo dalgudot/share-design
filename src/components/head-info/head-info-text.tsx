@@ -10,7 +10,7 @@ export const indexInfo: {
 } = {
   title: 'SHARE DESIGN',
 
-  icoImage: '/kh.ico',
+  icoImage: '/share-design.ico',
 
   author: 'KyungHwan Kim',
 
@@ -33,7 +33,7 @@ export const indexInfo: {
 //     e: 'SHARE DESIGN',
 //   },
 
-//   icoImage: '/kh.ico',
+//   icoImage: '/share-design.ico',
 
 //   author: {
 //     k: '김경환',

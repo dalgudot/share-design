@@ -42,7 +42,21 @@ export const t = {
     title: {
       k: '두 언어로 디자인하기',
       e: 'DESIGN IN TWO LANGUAGES',
-      // e: 'Design in two languages',
+    },
+
+    titleSimpleOrder: {
+      k: '첫 번째,',
+      e: 'FIRST,',
+    },
+
+    titleSimple: {
+      k: '두 언어로 디자인하기',
+      e: 'DESIGN IN TWO LANGUAGES',
+    },
+
+    titleSimpleBtn: {
+      k: '지금 보기',
+      e: 'Watch Now',
     },
 
     description: {
