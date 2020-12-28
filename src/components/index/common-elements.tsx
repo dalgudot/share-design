@@ -23,7 +23,6 @@ export const BtnStyle = styled.button`
   width: 142px;
   height: 40px;
   border-radius: 13px;
-  /* background-color: ${({ theme }) => theme.gray5}; */
   margin-top: 24px;
   padding: 12px 18px;
 
@@ -31,13 +30,14 @@ export const BtnStyle = styled.button`
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
   color: ${({ theme }) => theme.backgroundColor};
+
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
 
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+  -webkit-backdrop-filter: blur(10px) saturate(120%) brightness(85%)
     hue-rotate(10deg);
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
+  backdrop-filter: blur(10px) saturate(120%) brightness(85%) hue-rotate(10deg);
 
   -webkit-transition: color 0.11s ease-in-out,
     -webkit-backdrop-filter 0.11s ease-in-out;

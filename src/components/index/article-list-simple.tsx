@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import { BtnStyle } from '../index/common-elements';
 import { t } from '../index/lang/t';
 import languageFunc from '../func/language-func';
+import SVGShareDesignEn from '../svg/share-design-en';
+import SVGShareDesignKo from '../svg/share-design-ko';
 
 const ArticleListSimple = ({
   href,
@@ -17,9 +19,7 @@ const ArticleListSimple = ({
 }: ArticleListPropTypes) => {
   return (
     <Li>
-      {/* <Link href={href}>
-        <a> */}
-      <motion.article>
+      <motion.section>
         <H1
           text={order}
           mobileSize={fontSize.headline.mobile}
@@ -39,6 +39,33 @@ const ArticleListSimple = ({
           marginTop="12px"
           letterSpacing="-0.3px"
         />
+        <TextDecoration>
+          <SVGShareDesignEn color="#232324" />
+          <SVGShareDesignKo color="#232324" />
+          {/* <H1
+            text="디자인 공유하기"
+            mobileSize="160px"
+            tabletSize="160px"
+            desktopSize="160px"
+            weight={fontWeight[900]}
+            lineHeight={1}
+            letterSpacing="-0.3px"
+            color={theme.gray5}
+            opacity={0.5}
+          />
+          <H1
+            text="SHARE DESIGN"
+            mobileSize="160px"
+            tabletSize="160px"
+            desktopSize="160px"
+            weight={fontWeight[900]}
+            lineHeight={1}
+            marginTop="12px"
+            letterSpacing="-0.3px"
+            color={theme.gray5}
+            opacity={0.5}
+          /> */}
+        </TextDecoration>
         <BtnStyle>
           <Link href={href}>
             <a>
@@ -53,9 +80,7 @@ const ArticleListSimple = ({
             </a>
           </Link>
         </BtnStyle>
-      </motion.article>
-      {/* </a>
-      </Link> */}
+      </motion.section>
     </Li>
   );
 };
@@ -66,10 +91,25 @@ const Li = styled.li`
   max-width: 580px;
   margin: 0 auto;
 
-  article {
+  section {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+`;
+
+const TextDecoration = styled.figure`
+  position: absolute;
+  min-width: 85vw;
+  height: 100%;
+  z-index: -1;
+  text-align: center;
+
+  svg {
+    mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
+    -webkit-mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
   }
 `;
 
