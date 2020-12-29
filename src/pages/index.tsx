@@ -6,7 +6,7 @@ import ArticleList from '../components/index/article-list';
 import ArticleListSimple from '../components/index/article-list-simple';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import languageFunc from '../components/func/language-func';
 import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
@@ -20,6 +20,8 @@ const Index = ({ theme }: any) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Index');
   }, []);
+
+  const [menuModal, setMenuModal] = useState(false);
 
   return (
     <>
@@ -42,7 +44,14 @@ const Index = ({ theme }: any) => {
       </ContainerIndex>
       {/* 모바일에서만 생김 */}
       <TabBar />
-      {/* <BackgroundGlassmorphism /> */}
+      {menuModal && <BackgroundGlassmorphism />}
+      <ButtonOn onClick={() => setMenuModal(true)}>
+        <h1>켜기</h1>
+      </ButtonOn>
+
+      <ButtonOff onClick={() => setMenuModal(false)}>
+        <h1>끄기</h1>
+      </ButtonOff>
     </>
   );
 };
@@ -55,7 +64,7 @@ const BackgroundGlassmorphism = styled.div`
   z-index: 10000;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
 
@@ -64,12 +73,58 @@ const BackgroundGlassmorphism = styled.div`
   color: ${({ theme }) => theme.backgroundColor};
 
   backdrop-filter: blur(120px) saturate(120%) brightness(95%) hue-rotate(10deg);
+
+  /* -webkit-animation: 0.2s ease-in showModal;
+  animation: 0.2s ease-in showModal; */
+
+  /* @-webkit-keyframes showModal {
+    from {
+      transform: translateY(1000px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes showModal {
+    from {
+      transform: translateY(1000px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  } */
   /* -webkit-backdrop-filter: blur(1000px) saturate(120%) brightness(100%)
     hue-rotate(10deg); */
-
+  /* 
   transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
   -webkit-transition: color 0.11s ease-in-out,
-    -webkit-backdrop-filter 0.11s ease-in-out;
+    -webkit-backdrop-filter 0.11s ease-in-out; */
+`;
+
+const ModalVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+
+  show: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const ButtonOn = styled.button`
+  position: absolute;
+  bottom: 300px;
+  right: 300px;
+  z-index: 200000;
+`;
+
+const ButtonOff = styled.button`
+  position: absolute;
+  bottom: 200px;
+  right: 300px;
+  z-index: 200000;
 `;
 
 const ContainerIndex = styled.div`

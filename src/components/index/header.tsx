@@ -42,7 +42,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray5};
-  z-index: 9999;
+  z-index: 10002;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
@@ -66,7 +66,7 @@ const GlassMorphismBackground = styled.div`
   width: 100vw;
   /* height 반응형으로 조절 필요 */
   height: 72px;
-  z-index: 9998;
+  z-index: 10001;
 
   /* Grassmorphism */
   opacity: 0.999;
