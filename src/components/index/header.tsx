@@ -7,7 +7,7 @@ import { t } from './lang/t';
 import languageFunc from '../func/language-func';
 import { mediaBreakPoint } from '../../styles/common';
 
-const Header = () => {
+const Header = ({ theme }: any) => {
   return (
     <>
       <HeaderContainer>
@@ -22,7 +22,7 @@ const Header = () => {
             />
           </Left>
         </Link>
-        <LangChangeButton />
+        <LangChangeButton theme={theme} />
       </HeaderContainer>
       <GlassMorphismBackground />
     </>

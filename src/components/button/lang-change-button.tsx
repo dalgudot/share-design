@@ -6,7 +6,7 @@ import { fontSize, fontWeight } from '../typo/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 
-const LangChangeButton = () => {
+const LangChangeButton = ({ theme }: any) => {
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
   const ref = useRef(null);
@@ -44,7 +44,7 @@ const LangChangeButton = () => {
         tabletSize={fontSize[14]}
         desktopSize={fontSize[14]}
         weight={fontWeight[700]}
-        color="gray1"
+        color={theme.backgroundColor}
       />
     </BtnStyle>
   );
@@ -60,6 +60,7 @@ const BtnStyle = styled.button`
   height: 40px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.gray5};
+  background-color: var(--color-white);
   /* background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
     linear-gradient(
       to top,

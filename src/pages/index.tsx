@@ -26,7 +26,7 @@ const Index = ({ theme }: any) => {
   return (
     <>
       <ContainerIndex>
-        <Header />
+        <Header theme={theme} />
         {/* <nav>왼쪽 내비게이션</nav> */}
         <Main>
           {/* 두 언어로 디자인하기 */}
@@ -44,14 +44,14 @@ const Index = ({ theme }: any) => {
       </ContainerIndex>
       {/* 모바일에서만 생김 */}
       <TabBar />
-      {menuModal && <BackgroundGlassmorphism />}
+      {/* {menuModal && <BackgroundGlassmorphism />}
       <ButtonOn onClick={() => setMenuModal(true)}>
         <h1>켜기</h1>
       </ButtonOn>
 
       <ButtonOff onClick={() => setMenuModal(false)}>
         <h1>끄기</h1>
-      </ButtonOff>
+      </ButtonOff> */}
     </>
   );
 };
