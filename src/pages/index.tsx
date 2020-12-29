@@ -13,6 +13,7 @@ import { mediaBreakPoint } from '../styles/common';
 import { motion } from 'framer-motion';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
 import NavRight from '../components/index/nav-right';
+import TabBar from '../components/index/tab-bar';
 
 const Index = ({ theme }: any) => {
   DetectBrowserLang();
@@ -22,7 +23,6 @@ const Index = ({ theme }: any) => {
 
   return (
     <>
-      {/* <BackgroundGradient /> */}
       <ContainerIndex>
         <Header />
         {/* <nav>왼쪽 내비게이션</nav> */}
@@ -35,49 +35,47 @@ const Index = ({ theme }: any) => {
               order={languageFunc(t.article1.titleSimpleOrder)}
               title={languageFunc(t.article1.titleSimple)}
             />
-
-            {/* <ArticleList
-              // href="/article/two-language"
-              theme={theme}
-              // href="/"
-              category={languageFunc(t.article1.category)}
-              date={languageFunc(t.article1.date)}
-              title={languageFunc(t.article1.title)}
-              description={languageFunc(t.article1.description)}
-            /> */}
           </ul>
         </Main>
         {/* <NavRight theme={theme} /> */}
         <Footer />
       </ContainerIndex>
+      {/* 모바일에서만 생김 */}
+      <TabBar />
+      {/* <BackgroundGlassmorphism /> */}
     </>
   );
 };
 
 export default Index;
 
-const BackgroundGradient = styled.div`
-  position: absolute;
+const BackgroundGlassmorphism = styled.div`
+  // Modal만 z-index: 10000;
+  // 나머지 fixed 요소는 z-index: 9999;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
-  /* background-image: linear-gradient(
-    to right,
-    #b8cbb8 0%,
-    #b8cbb8 0%,
-    #b465da 0%,
-    #cf6cc9 33%,
-    #ee609c 66%,
-    #ee609c 100%
-  ); */
-  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+
+  /* Grassmorphism */
+  opacity: 0.999;
+  color: ${({ theme }) => theme.backgroundColor};
+
+  backdrop-filter: blur(120px) saturate(120%) brightness(95%) hue-rotate(10deg);
+  /* -webkit-backdrop-filter: blur(1000px) saturate(120%) brightness(100%)
+    hue-rotate(10deg); */
+
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+  -webkit-transition: color 0.11s ease-in-out,
+    -webkit-backdrop-filter 0.11s ease-in-out;
 `;
 
 const ContainerIndex = styled.div`
+  /* 처음 배포 때만 임시로 */
+  /* overflow-y: hidden; */
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
   }
@@ -101,3 +99,15 @@ const Main = styled.main`
     margin-top: 120px;
   }
 `;
+
+{
+  /* <ArticleList
+              // href="/article/two-language"
+              theme={theme}
+              // href="/"
+              category={languageFunc(t.article1.category)}
+              date={languageFunc(t.article1.date)}
+              title={languageFunc(t.article1.title)}
+              description={languageFunc(t.article1.description)}
+            /> */
+}

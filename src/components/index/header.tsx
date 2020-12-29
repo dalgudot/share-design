@@ -42,7 +42,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray5};
-  z-index: 10000;
+  z-index: 9999;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
@@ -66,17 +66,11 @@ const GlassMorphismBackground = styled.div`
   width: 100vw;
   /* height 반응형으로 조절 필요 */
   height: 72px;
-  z-index: 9999;
+  z-index: 9998;
+
+  /* Grassmorphism */
   opacity: 0.999;
-
-  /* -------------------------------------------------- */
-  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
-  /* -------------------------------------------------- */
   color: ${({ theme }) => theme.backgroundColor};
-  /* -------------------------------------------------- */
-  /* background-color 아닌 color로 해야 글씨까지 표현됨 */
-  /* -------------------------------------------------- */
-
   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
     hue-rotate(10deg);
   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
@@ -84,15 +78,4 @@ const GlassMorphismBackground = styled.div`
   -webkit-transition: color 0.11s ease-in-out,
     -webkit-backdrop-filter 0.11s ease-in-out;
   transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
-
-  /* backdrop-filter: blur(2px);
-  backdrop-filter: brightness(60%);
-  backdrop-filter: contrast(40%);
-  backdrop-filter: drop-shadow(4px 4px 10px blue);
-  backdrop-filter: grayscale(30%);
-  backdrop-filter: hue-rotate(120deg);
-  backdrop-filter: invert(70%);
-  backdrop-filter: opacity(20%);
-  backdrop-filter: sepia(90%);
-  backdrop-filter: saturate(80%); */
 `;

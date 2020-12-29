@@ -36,21 +36,11 @@
 /* S of Roboto */
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
-  font-weight: 100;
+  font-weight: 700;
   font-style: normal;
-  src: url('/fonts/roboto-v20-latin-100.woff2') format('woff2'),
-    url('/fonts/roboto-v20-latin-100.woff') format('woff'),
-    url('/fonts/roboto-v20-latin-100.ttf') format('truetype');
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
-  font-weight: 300;
-  font-style: normal;
-  src: url('/fonts/roboto-v20-latin-300.woff2') format('woff2'),
-    url('/fonts/roboto-v20-latin-300.woff') format('woff'),
-    url('/fonts/roboto-v20-latin-300.ttf') format('truetype');
+  src: url('/fonts/roboto-v20-latin-700.woff2') format('woff2'),
+    url('/fonts/roboto-v20-latin-700.woff') format('woff'),
+    url('/fonts/roboto-v20-latin-700.ttf') format('truetype');
   unicode-range: U+0041-005A, U+0061-007A;
 }
 
@@ -66,21 +56,21 @@
 
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
-  font-weight: 700;
+  font-weight: 300;
   font-style: normal;
-  src: url('/fonts/roboto-v20-latin-700.woff2') format('woff2'),
-    url('/fonts/roboto-v20-latin-700.woff') format('woff'),
-    url('/fonts/roboto-v20-latin-700.ttf') format('truetype');
+  src: url('/fonts/roboto-v20-latin-300.woff2') format('woff2'),
+    url('/fonts/roboto-v20-latin-300.woff') format('woff'),
+    url('/fonts/roboto-v20-latin-300.ttf') format('truetype');
   unicode-range: U+0041-005A, U+0061-007A;
 }
 
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
-  font-weight: 900;
+  font-weight: 100;
   font-style: normal;
-  src: url('/fonts/roboto-v20-latin-900.woff2') format('woff2'),
-    url('/fonts/roboto-v20-latin-900.woff') format('woff'),
-    url('/fonts/roboto-v20-latin-900.ttf') format('truetype');
+  src: url('/fonts/roboto-v20-latin-100.woff2') format('woff2'),
+    url('/fonts/roboto-v20-latin-100.woff') format('woff'),
+    url('/fonts/roboto-v20-latin-100.ttf') format('truetype');
   unicode-range: U+0041-005A, U+0061-007A;
 }
 /* E of Roboto */

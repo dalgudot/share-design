@@ -14,17 +14,13 @@ import SVGShareDesignKo from '../svg/share-design-ko';
 const ArticleListSimple = ({
   href,
   theme,
-  title,
   order,
+  title,
 }: ArticleListPropTypes) => {
   return (
     <Li>
-      <TextDecoration>
-        <SVGShareDesignKo color="#232324" />
-        <SVGShareDesignEn color="#232324" />
-      </TextDecoration>
-
-      <section>
+      {/* <WrapRelative> */}
+      <ListSection>
         <H1
           text={order}
           mobileSize={fontSize.headline.mobile}
@@ -59,7 +55,13 @@ const ArticleListSimple = ({
             </a>
           </Link>
         </BtnStyle>
-      </section>
+      </ListSection>
+
+      <TextDecoration>
+        <SVGShareDesignKo color="#232324" />
+        <SVGShareDesignEn color="#232324" />
+      </TextDecoration>
+      {/* </WrapRelative> */}
     </Li>
   );
 };
@@ -67,20 +69,32 @@ const ArticleListSimple = ({
 export default ArticleListSimple;
 
 const Li = styled.li`
-  max-width: 580px;
+  /* max-width: 580px; */
   margin: 0 auto;
   position: absolute;
-  top: 36%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
+  min-width: 100vw;
+  max-width: 100vw;
+`;
 
-  section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+const WrapRelative = styled.div`
+  position: static;
+  width: 100%;
+  height: 100%;
+`;
+
+const ListSection = styled.section`
+  position: absolute;
+  transform: translateY(20%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 100%;
+  overflow-x: hidden;
 `;
 
 const TextDecoration = styled.figure`
@@ -88,29 +102,19 @@ const TextDecoration = styled.figure`
   top: -25%;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  height: 100%;
   z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
 
   svg {
-    mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
-    -webkit-mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
+    mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
+    -webkit-mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
   }
 `;
-
-const ListSection = styled.section`
-  position: absolute;
-  top: 30%;
-`;
-
-// Framer Motion
-const articleVariants = {
-  hover: {
-    // borderRadius: '24px',
-    // padding: '8px',
-    boxShadow: '33px 33px 50px #0f0f0f, -33px -33px 50px #151515',
-  },
-};
 
 // type
 interface ArticleListPropTypes {

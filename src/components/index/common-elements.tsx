@@ -30,7 +30,7 @@ export const BtnStyle = styled.button`
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
   color: ${({ theme }) => theme.backgroundColor};
-
+  /* color: #fd0f0f; */
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
