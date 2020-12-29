@@ -19,7 +19,12 @@ const ArticleListSimple = ({
 }: ArticleListPropTypes) => {
   return (
     <Li>
-      <motion.section>
+      <TextDecoration>
+        <SVGShareDesignKo color="#232324" />
+        <SVGShareDesignEn color="#232324" />
+      </TextDecoration>
+
+      <section>
         <H1
           text={order}
           mobileSize={fontSize.headline.mobile}
@@ -39,33 +44,7 @@ const ArticleListSimple = ({
           marginTop="12px"
           letterSpacing="-0.3px"
         />
-        <TextDecoration>
-          <SVGShareDesignEn color="#232324" />
-          <SVGShareDesignKo color="#232324" />
-          {/* <H1
-            text="디자인 공유하기"
-            mobileSize="160px"
-            tabletSize="160px"
-            desktopSize="160px"
-            weight={fontWeight[900]}
-            lineHeight={1}
-            letterSpacing="-0.3px"
-            color={theme.gray5}
-            opacity={0.5}
-          />
-          <H1
-            text="SHARE DESIGN"
-            mobileSize="160px"
-            tabletSize="160px"
-            desktopSize="160px"
-            weight={fontWeight[900]}
-            lineHeight={1}
-            marginTop="12px"
-            letterSpacing="-0.3px"
-            color={theme.gray5}
-            opacity={0.5}
-          /> */}
-        </TextDecoration>
+
         <BtnStyle>
           <Link href={href}>
             <a>
@@ -80,7 +59,7 @@ const ArticleListSimple = ({
             </a>
           </Link>
         </BtnStyle>
-      </motion.section>
+      </section>
     </Li>
   );
 };
@@ -90,6 +69,10 @@ export default ArticleListSimple;
 const Li = styled.li`
   max-width: 580px;
   margin: 0 auto;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%);
 
   section {
     position: relative;
@@ -102,15 +85,22 @@ const Li = styled.li`
 
 const TextDecoration = styled.figure`
   position: absolute;
-  min-width: 85vw;
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
   height: 100%;
   z-index: -1;
-  text-align: center;
 
   svg {
     mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
     -webkit-mask-image: linear-gradient(0deg, transparent 2%, #000 90%);
   }
+`;
+
+const ListSection = styled.section`
+  position: absolute;
+  top: 30%;
 `;
 
 // Framer Motion
