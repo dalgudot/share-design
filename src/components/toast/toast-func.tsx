@@ -102,11 +102,11 @@ const ToastBox = styled(ToastContainer)`
     font-size: 16px;
     line-height: 24px;
     background-color: rgba(54, 54, 54, 0.9);
-    color: ${({ theme }) => theme.gray1};
+    color: ${({ theme }) => theme.whitePrimary};
 
     * {
       font-size: 16px;
-      color: ${({ theme }) => theme.gray1};
+      color: ${({ theme }) => theme.whitePrimary};
     }
   }
 

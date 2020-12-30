@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import H1 from '../typo/h1';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
-import { BtnStyle } from '../index/common-elements';
-import { t } from '../index/lang/t';
+import { BtnStyle } from './common-elements';
+import { t } from './lang/t';
 import languageFunc from '../func/language-func';
 import SVGShareDesignEn from '../svg/share-design-en';
 import SVGShareDesignKo from '../svg/share-design-ko';
@@ -21,36 +20,36 @@ const ArticleListSimple = ({
     <Li>
       {/* <WrapRelative> */}
       <ListSection>
-        <H1
+        <TextStyle
+          type="h1"
           text={order}
-          mobileSize={fontSize.headline.mobile}
-          tabletSize={fontSize.headline.tablet}
-          desktopSize={fontSize.headline.desktop}
+          textSize="headline"
           weight={fontWeight[700]}
           lineHeight={1.2}
           letterSpacing="-0.3px"
+          color={theme.whitePrimary}
         />
-        <H1
+        <TextStyle
+          type="h1"
           text={title}
-          mobileSize={fontSize.headline.mobile}
-          tabletSize={fontSize.headline.tablet}
-          desktopSize={fontSize.headline.desktop}
+          textSize="headline"
           weight={fontWeight[700]}
           lineHeight={1.2}
           marginTop="12px"
           letterSpacing="-0.3px"
+          color={theme.whitePrimary}
         />
 
         <BtnStyle>
           <Link href={href}>
             <a>
-              <P
+              <TextStyle
+                type="p"
                 text={languageFunc(t.article1.titleSimpleBtn)}
-                mobileSize={fontSize.body.mobile}
-                tabletSize={fontSize.body.tablet}
-                desktopSize={fontSize.body.desktop}
+                textSize="body"
                 weight={fontWeight[400]}
                 lineHeight={1.2}
+                color={theme.whitePrimary}
               />
             </a>
           </Link>

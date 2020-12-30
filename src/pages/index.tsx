@@ -14,6 +14,7 @@ import { motion } from 'framer-motion';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
 import NavRight from '../components/index/nav-right';
 import TabBar from '../components/index/tab-bar';
+import ShareSocial from '../components/index/share-social';
 
 const Index = ({ theme }: any) => {
   DetectBrowserLang();
@@ -40,8 +41,9 @@ const Index = ({ theme }: any) => {
           </ul>
         </Main>
         {/* <NavRight theme={theme} /> */}
-        <Footer />
+        <Footer theme={theme} />
       </ContainerIndex>
+
       {/* 모바일에서만 생김 */}
       <TabBar />
       {/* {menuModal && <BackgroundGlassmorphism />}
@@ -70,7 +72,7 @@ const BackgroundGlassmorphism = styled.div`
 
   /* Grassmorphism */
   opacity: 0.999;
-  color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.blackPrimary};
 
   backdrop-filter: blur(120px) saturate(120%) brightness(95%) hue-rotate(10deg);
 

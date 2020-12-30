@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
-import H1 from '../../components/typo/h1';
-import { fontSize, fontWeight } from '../../components/typo/font';
+import TextStyle from '../../components/typography/text-style';
+import { fontWeight } from '../../components/typography/font';
 import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
@@ -20,25 +20,23 @@ const TwoLanguage = ({ theme }: any) => {
   return (
     <>
       <FacebookShareButton url={url}>
-        <H1
+        <TextStyle
+          type="h1"
           text="페이스북"
-          mobileSize={fontSize[18]}
-          tabletSize={fontSize[20]}
-          desktopSize={fontSize[20]}
+          textSize="body"
           weight={fontWeight[700]}
-          color={theme.gray4}
+          color={theme.gray3}
         />
       </FacebookShareButton>
       <br />
       <br />
       <LinkedinShareButton url={url}>
-        <H1
+        <TextStyle
+          type="h1"
           text="링크드인"
-          mobileSize={fontSize[18]}
-          tabletSize={fontSize[20]}
-          desktopSize={fontSize[20]}
+          textSize="body"
           weight={fontWeight[700]}
-          color={theme.gray4}
+          color={theme.gray3}
         />
       </LinkedinShareButton>
       <br />
@@ -46,13 +44,12 @@ const TwoLanguage = ({ theme }: any) => {
 
       <CopyToClipboard text={url} onCopy={() => toastify()}>
         <button>
-          <H1
+          <TextStyle
+            type="h1"
             text="함수로 링크 복사"
-            mobileSize={fontSize[18]}
-            tabletSize={fontSize[20]}
-            desktopSize={fontSize[20]}
+            textSize="body"
             weight={fontWeight[700]}
-            color={theme.gray4}
+            color={theme.gray3}
           />
         </button>
       </CopyToClipboard>

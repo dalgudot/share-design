@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
+import { fontSize } from '../typography/font';
 
-const P = ({
+const TextStyle = ({
+  type, // 기본값은 Styled-components에서 p
   text,
-  mobileSize,
-  tabletSize,
-  desktopSize,
+  textSize,
   weight,
   lineHeight,
   letterSpacing,
@@ -13,22 +13,22 @@ const P = ({
   opacity,
   marginTop,
 }: {
+  type: any;
   text: string;
-  mobileSize: string;
-  tabletSize: string;
-  desktopSize: string;
+  textSize: string;
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color?: any;
+  color: any;
   opacity?: number;
   marginTop?: string;
 }) => {
   return (
-    <PText
-      mobileSize={mobileSize}
-      tabletSize={tabletSize}
-      desktopSize={desktopSize}
+    <Text
+      as={type} // 태그 결정
+      mobileSize={fontSize.mobile[textSize]}
+      tabletSize={fontSize.tablet[textSize]}
+      desktopSize={fontSize.desktop[textSize]}
       weight={weight}
       lineHeight={lineHeight}
       letterSpacing={letterSpacing}
@@ -37,20 +37,20 @@ const P = ({
       marginTop={marginTop}
     >
       {text}
-    </PText>
+    </Text>
   );
 };
 
-export default P;
+export default TextStyle;
 
-const PText = styled.p<{
+const Text = styled.p<{
   mobileSize: string;
   tabletSize: string;
   desktopSize: string;
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color?: any;
+  color: any;
   opacity?: number;
   marginTop?: string;
 }>`

@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { t } from '../index/lang/t';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { BtnStyle } from '../index/common-elements';
 
 const ModeChangeButton = ({
@@ -46,7 +46,8 @@ const ModeChangeButton = ({
 
   return (
     <BtnStyle style={style} className="right__button" onClick={setTheme}>
-      <P
+      <TextStyle
+        type="p"
         text="나중에 아래 타입 정하기"
         // text={
         //   `${theme}` === 'darkTheme'
@@ -57,11 +58,9 @@ const ModeChangeButton = ({
         //     ? t[themeMode[k]]
         //     : t[themeMode[e]]
         // }
-        mobileSize={fontSize[14]}
-        tabletSize={fontSize[18]}
-        desktopSize={fontSize[21]}
+        textSize="body"
         weight={fontWeight[700]}
-        color="gray2"
+        color="gray1"
       />
     </BtnStyle>
   );

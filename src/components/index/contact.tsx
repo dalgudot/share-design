@@ -1,30 +1,30 @@
-import styled from 'styled-components';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import styled, { ThemeConsumer } from 'styled-components';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { HorizontalLine } from './common-elements';
 
-const Contact = () => {
+const Contact = ({ theme }: any) => {
   return (
     <ContactContainer>
       <HorizontalLine />
       <ContactText>
-        <P
+        <TextStyle
+          type="p"
           text="Contact"
-          mobileSize={fontSize[29]}
-          tabletSize={fontSize[39]}
-          desktopSize={fontSize[49]}
+          textSize="body"
           weight={fontWeight[700]}
           opacity={0.8}
+          color={theme.gray1}
         />
       </ContactText>
 
       <Email>
-        <P
+        <TextStyle
+          type="p"
           text="Comming Soon..."
-          mobileSize={fontSize[29]}
-          tabletSize={fontSize[39]}
-          desktopSize={fontSize[49]}
+          textSize="body"
           weight={fontWeight[700]}
+          color={theme.gray1}
         />
       </Email>
       <HorizontalLine />

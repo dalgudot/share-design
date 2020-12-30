@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 
-const Footer = () => {
+const Footer = ({ theme }: any) => {
   return (
     <FooterContainer>
       <Copyright>
-        <P
+        <TextStyle
+          type="p"
           text="ⓒ KyungHwan Kim. All rights reserved."
-          mobileSize={fontSize.small.mobile}
-          tabletSize={fontSize.small.tablet}
-          desktopSize={fontSize.small.desktop}
+          textSize="small"
           weight={fontWeight[300]}
           opacity={0.8}
           lineHeight={1.2}
+          color={theme.gray1}
         />
       </Copyright>
     </FooterContainer>

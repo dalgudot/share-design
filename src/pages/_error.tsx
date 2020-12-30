@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import H1 from '../components/typo/h1';
-import P from '../components/typo/p';
+import TextStyle from '../components/typography/text-style';
 import { t } from '../components/index/lang/t';
-import { fontSize, fontWeight } from '../components/typo/font';
+import { fontWeight } from '../components/typography/font';
 import languageFunc from '../components/func/language-func';
 
 // NextJS Custom Error Page
@@ -14,25 +13,23 @@ const Error = ({ theme, statusCode }: any) => {
 
   return (
     <Container>
-      <H1
+      <TextStyle
+        type="h1"
         text={languageFunc(t.errorMessage.message)}
-        mobileSize={fontSize.body.mobile}
-        tabletSize={fontSize.body.tablet}
-        desktopSize={fontSize.body.desktop}
+        textSize="body"
         weight={fontWeight[400]}
         lineHeight={1.55}
-        color={theme.gray2}
+        color={theme.gray1}
       />
       <Link href="/">
         <a>
           <BtnStyle>
-            <P
+            <TextStyle
+              type="p"
               text={languageFunc(t.errorMessage.btn)}
-              mobileSize={fontSize.body.mobile}
-              tabletSize={fontSize.body.tablet}
-              desktopSize={fontSize.body.desktop}
+              textSize="body"
               weight={fontWeight[400]}
-              color={theme.gray1}
+              color={theme.whitePrimary}
             />
           </BtnStyle>
         </a>
@@ -68,6 +65,6 @@ const BtnStyle = styled.button`
   align-items: center;
   padding: 18px 32px;
   border-radius: 24px;
-  background-color: ${({ theme }) => theme.gray5};
-  color: ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.gray4};
+  color: ${({ theme }) => theme.whitePrimary};
 `;

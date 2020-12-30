@@ -75,6 +75,11 @@ export const t = {
 
     btn: { k: '홈으로', e: 'Go to Home' },
   },
+
+  langChagneButton: {
+    k: 'View in English',
+    e: '한글로 보기',
+  },
 };
 
 // myname: {

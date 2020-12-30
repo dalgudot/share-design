@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import H3 from '../typo/h3';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import LangChangeButton from '../button/lang-change-button';
 import { t } from './lang/t';
 import languageFunc from '../func/language-func';
@@ -13,12 +13,12 @@ const Header = ({ theme }: any) => {
       <HeaderContainer>
         <Link href="/">
           <Left>
-            <H3
+            <TextStyle
+              type="h3"
               text={languageFunc(t.shareDesign)}
-              mobileSize={fontSize[20]}
-              tabletSize={fontSize[20]}
-              desktopSize={fontSize[20]}
+              textSize="body"
               weight={fontWeight[700]}
+              color={theme.whitePrimary}
             />
           </Left>
         </Link>
@@ -41,7 +41,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px ${({ theme }) => theme.gray5};
+  border-bottom: solid 1px ${({ theme }) => theme.gray4};
   z-index: 10002;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
@@ -70,7 +70,7 @@ const GlassMorphismBackground = styled.div`
 
   /* Grassmorphism */
   opacity: 0.999;
-  color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.blackPrimary};
   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
     hue-rotate(10deg);
   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);

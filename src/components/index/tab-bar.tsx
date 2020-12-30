@@ -25,11 +25,11 @@ const Container = styled.section`
   bottom: 0;
 
   z-index: 9999;
-  background-color: ${({ theme }) => theme.gray4};
+  background-color: ${({ theme }) => theme.gray3};
 
   /* Grassmorphism */
   /* opacity: 0.999;
-  color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.blackPrimary};
   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
     hue-rotate(10deg);
   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);

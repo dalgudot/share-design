@@ -1,41 +1,41 @@
 import styled from 'styled-components';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 
-const ShareSocial = () => {
+const ShareSocial = ({ theme }: any) => {
   return (
     <SocialWrap>
       <a href="/" target="_blank">
         <u>
-          <P
+          <TextStyle
+            type="p"
             text="Brunch"
-            mobileSize={fontSize.body.mobile}
-            tabletSize={fontSize.body.tablet}
-            desktopSize={fontSize.body.desktop}
+            textSize="body"
             weight={fontWeight[400]}
+            color={theme.gray1}
           />
         </u>
       </a>
       <a href="/" target="_blank">
         <u>
-          <P
+          <TextStyle
+            type="p"
             text="Facebook"
-            mobileSize={fontSize.body.mobile}
-            tabletSize={fontSize.body.tablet}
-            desktopSize={fontSize.body.desktop}
+            textSize="body"
             weight={fontWeight[400]}
+            color={theme.gray1}
           />
         </u>
       </a>
       <a href="/" target="_blank">
         <u>
-          <P
+          <TextStyle
+            type="p"
             text="LinkedIn"
-            mobileSize={fontSize.body.mobile}
-            tabletSize={fontSize.body.tablet}
-            desktopSize={fontSize.body.desktop}
+            textSize="body"
             weight={fontWeight[400]}
+            color={theme.gray1}
           />
         </u>
       </a>

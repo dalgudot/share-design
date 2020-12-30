@@ -4,14 +4,14 @@ import { mediaBreakPoint } from '../../styles/common';
 export const HorizontalLine = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.whitePrimary};
   opacity: 0.7;
 `;
 
 export const VerticalLine = styled.div`
   width: 1px;
   height: 49px;
-  background-color: ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.whitePrimary};
   opacity: 0.7;
   margin: 16px auto;
 `;
@@ -29,7 +29,7 @@ export const BtnStyle = styled.button`
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */
   /* -------------------------------------------------- */
-  color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.blackPrimary};
   /* color: #fd0f0f; */
   /* -------------------------------------------------- */
   /* background-color 아닌 color로 해야 글씨까지 표현됨 */

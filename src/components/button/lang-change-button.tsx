@@ -1,21 +1,17 @@
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
+import { t } from '../index/lang/t';
+import languageFunc from '../func/language-func';
 
 const LangChangeButton = ({ theme }: any) => {
+  // Redux, Language Change
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
-  const ref = useRef(null);
-  useRipple(ref, {
-    rippleColor: 'rgba(0, 0, 0, 0.23)',
-    animationLength: 500,
-    rippleSize: 2000,
-  });
-
   const languageChange = () =>
     dispatch({
       type: 'CHANGELANGUAGE',
@@ -31,6 +27,15 @@ const LangChangeButton = ({ theme }: any) => {
     detectUserLanguageChange();
   };
 
+  // useRipple
+  const ref = useRef(null);
+  useRipple(ref, {
+    rippleColor: 'rgba(0, 0, 0, 0.3)',
+    animationLength: 700,
+    rippleSize: 2000,
+  });
+
+  // setAttribute HTML Attribute
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
@@ -38,13 +43,12 @@ const LangChangeButton = ({ theme }: any) => {
 
   return (
     <BtnStyle onClick={setLanguageChange} ref={ref}>
-      <P
-        text={`${lang}` === 'ko' ? 'View in English' : '한글로 보기'}
-        mobileSize={fontSize[14]}
-        tabletSize={fontSize[14]}
-        desktopSize={fontSize[14]}
+      <TextStyle
+        type="p"
+        text={languageFunc(t.langChagneButton)}
+        textSize="body"
         weight={fontWeight[700]}
-        color={theme.backgroundColor}
+        color={theme.blackPrimary}
       />
     </BtnStyle>
   );
@@ -59,13 +63,5 @@ const BtnStyle = styled.button`
   width: 142px;
   height: 40px;
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.gray5};
-  background-color: var(--color-white);
-  /* background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%
-    );
-  background-blend-mode: multiply; */
+  background-color: ${({ theme }) => theme.whitePrimary};
 `;

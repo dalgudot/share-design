@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import H1 from '../typo/h1';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
 
@@ -24,47 +23,44 @@ const ArticleList = ({
         variants={articleVariants}
       >
         <CategoryDate>
-          <P
+          <TextStyle
+            type="p"
             text={category}
-            mobileSize={fontSize.small.mobile}
-            tabletSize={fontSize.small.tablet}
-            desktopSize={fontSize.small.desktop}
+            textSize="small"
             weight={fontWeight[400]}
             lineHeight={1.2}
-            color={theme.gray4}
+            color={theme.gray3}
           />
           <DividerTinyVertical />
-          <P
+          <TextStyle
+            type="p"
             text={date}
-            mobileSize={fontSize.small.mobile}
-            tabletSize={fontSize.small.tablet}
-            desktopSize={fontSize.small.desktop}
+            textSize="small"
             weight={fontWeight[400]}
             lineHeight={1.2}
-            color={theme.gray4}
+            color={theme.gray3}
           />
         </CategoryDate>
 
-        <H1
+        <TextStyle
+          type="h1"
           text={title}
-          mobileSize={fontSize.headline.mobile}
-          tabletSize={fontSize.headline.tablet}
-          desktopSize={fontSize.headline.desktop}
+          textSize="headline"
           weight={fontWeight[700]}
           lineHeight={1.3}
           marginTop="5px"
           letterSpacing="-0.3px"
+          color={theme.gray1}
         />
 
-        <P
+        <TextStyle
+          type="h1"
           text={description}
-          mobileSize={fontSize.body.mobile}
-          tabletSize={fontSize.body.tablet}
-          desktopSize={fontSize.body.desktop}
+          textSize="body"
           weight={fontWeight[400]}
           lineHeight={1.5}
           marginTop="16px"
-          color={theme.gray2}
+          color={theme.gray1}
         />
 
         {/* <Artwork /> */}
@@ -91,7 +87,7 @@ const CategoryDate = styled.section`
 const DividerTinyVertical = styled.div`
   width: 1px;
   height: 12px;
-  background-color: ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.whitePrimary};
   opacity: 0.5;
   margin: 0 8px;
   margin-top: 2px;
@@ -105,7 +101,7 @@ const DividerTinyVertical = styled.div`
 const Artwork = styled.figure`
   max-width: 100%;
   min-height: 800px;
-  background-color: ${({ theme }) => theme.gray5};
+  background-color: ${({ theme }) => theme.gray4};
   margin-top: 36px;
   margin-bottom: 96px;
 `;

@@ -1,33 +1,31 @@
 import styled from 'styled-components';
-import P from '../typo/p';
-import { fontSize, fontWeight } from '../typo/font';
+import TextStyle from '../typography/text-style';
+import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import languageFunc from '../func/language-func';
 import { t } from '../index/lang/t';
 
-const NavRight = ({ theme }: { theme: any }) => {
+const NavRight = ({ theme }: any) => {
   return (
     <Nav>
-      <P
+      <TextStyle
+        type="p"
         text={languageFunc(t.navRight.greetings)}
-        mobileSize={fontSize.small.mobile}
-        tabletSize={fontSize.small.tablet}
-        desktopSize={fontSize.small.desktop}
+        textSize="small"
         weight={fontWeight[400]}
         lineHeight={1.2}
         marginTop="2px"
-        color={theme.gray2}
+        color={theme.gray1}
       />
 
-      <P
+      <TextStyle
+        type="p"
         text={languageFunc(t.navRight.contact)}
-        mobileSize={fontSize.small.mobile}
-        tabletSize={fontSize.small.tablet}
-        desktopSize={fontSize.small.desktop}
+        textSize="small"
         weight={fontWeight[400]}
         lineHeight={1.2}
         marginTop="24px"
-        color={theme.gray2}
+        color={theme.gray1}
       />
     </Nav>
   );
