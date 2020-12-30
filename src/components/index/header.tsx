@@ -45,6 +45,7 @@ const HeaderContainer = styled.header`
   z-index: 10002;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: 57px;
     padding: 0 4.5vw;
   }
 

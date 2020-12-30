@@ -4,11 +4,11 @@ import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
-import { BtnStyle } from './common-elements';
 import { t } from './lang/t';
 import languageFunc from '../func/language-func';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
 import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
+import IcnArrowRight24 from '../svg/icn_arrow_right_24';
 
 const ArticleListSimple = ({
   href,
@@ -47,14 +47,7 @@ const ArticleListSimple = ({
           <Link href={href}>
             <a>
               <BtnStyle>
-                <TextStyle
-                  type="p"
-                  text={languageFunc(t.article1.titleSimpleBtn)}
-                  textSize="body"
-                  weight={fontWeight[400]}
-                  lineHeight={1.2}
-                  color={theme.whitePrimary}
-                />
+                <IcnArrowRight24 color={theme.whitePrimary} />
               </BtnStyle>
             </a>
           </Link>
@@ -89,19 +82,22 @@ const ListTextAnimationVariants = {
 };
 
 const Li = styled.li`
-  /* max-width: 580px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: absolute;
-  top: 30%;
+  top: 32%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 100vw;
   max-width: 100vw;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    top: 28%;
+  }
 `;
 
 const ListSection = styled.section`
   position: absolute;
-  transform: translateY(20%);
+  transform: translateY(18%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,11 +107,22 @@ const ListSection = styled.section`
   overflow-x: hidden;
 `;
 
+const BtnStyle = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #7c62ed, #4633d7);
+  margin-top: 24px;
+`;
+
 const TextDecoration = styled.figure`
   position: absolute;
-  top: -25%;
+  /* transform: translateY(20%); */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -4%);
   z-index: -1;
   display: flex;
   flex-direction: column;
@@ -123,12 +130,17 @@ const TextDecoration = styled.figure`
   align-items: center;
   max-width: 100%;
   overflow: hidden;
-  text-align: center;
+
+  /* text-align: center; */
 
   svg {
     mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
     -webkit-mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
   }
+
+  /* @media all and (max-width: ${mediaBreakPoint.first}) {
+    top: 100%;
+  } */
 `;
 
 // type

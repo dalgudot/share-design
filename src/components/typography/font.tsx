@@ -2,18 +2,21 @@
 
 export const fontSize: any = {
   mobile: {
+    single14: '14px',
     small: '14px',
     body: '18px',
     headline: '32px',
   },
 
   tablet: {
+    single14: '14px',
     small: '16px',
     body: '20px',
     headline: '39px',
   },
 
   desktop: {
+    single14: '14px',
     small: '16px',
     body: '20px',
     headline: '39px',

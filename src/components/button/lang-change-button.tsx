@@ -7,6 +7,7 @@ import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 import { t } from '../index/lang/t';
 import languageFunc from '../func/language-func';
+import { motion } from 'framer-motion';
 
 const LangChangeButton = ({ theme }: any) => {
   // Redux, Language Change
@@ -42,26 +43,36 @@ const LangChangeButton = ({ theme }: any) => {
   }, [lang]);
 
   return (
-    <BtnStyle onClick={setLanguageChange} ref={ref}>
-      <TextStyle
-        type="p"
-        text={languageFunc(t.langChagneButton)}
-        textSize="small"
-        weight={fontWeight[700]}
-        color={theme.blackPrimary}
-      />
-    </BtnStyle>
+    <motion.button
+      onClick={setLanguageChange}
+      ref={ref}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.1 },
+      }}
+    >
+      <BtnStyle>
+        <TextStyle
+          type="p"
+          text={languageFunc(t.langChagneButton)}
+          textSize="single14"
+          weight={fontWeight[700]}
+          color={theme.blackPrimary}
+        />
+      </BtnStyle>
+    </motion.button>
   );
 };
 
 export default LangChangeButton;
 
-const BtnStyle = styled.button`
+const BtnStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 142px;
-  height: 40px;
-  border-radius: 16px;
-  background-color: ${({ theme }) => theme.whitePrimary};
+  width: 126px;
+  height: 38px;
+  border-radius: 13px;
+  background-color: ${({ theme }) => theme.gray1};
+  border: solid 1px ${({ theme }) => theme.gray5};
 `;

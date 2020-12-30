@@ -46,12 +46,12 @@ export const t = {
 
     titleSimpleOrder: {
       k: '첫 번째,',
-      e: 'FIRST,',
+      e: 'FIRST, DESIGN',
     },
 
     titleSimple: {
       k: '두 언어로 디자인하기',
-      e: 'DESIGN IN TWO LANGUAGES',
+      e: 'IN TWO LANGUAGES',
     },
 
     titleSimpleBtn: {

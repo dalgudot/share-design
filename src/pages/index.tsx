@@ -41,11 +41,11 @@ const Index = ({ theme }: any) => {
           </ul>
         </Main>
         {/* <NavRight theme={theme} /> */}
-        <Footer theme={theme} />
+        {/* <Footer theme={theme} /> */}
       </ContainerIndex>
 
       {/* 모바일에서만 생김 */}
-      <TabBar />
+      <TabBar theme={theme} />
       {/* {menuModal && <BackgroundGlassmorphism />}
       <ButtonOn onClick={() => setMenuModal(true)}>
         <h1>켜기</h1>
