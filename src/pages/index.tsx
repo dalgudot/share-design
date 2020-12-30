@@ -33,7 +33,7 @@ const Index = ({ theme }: any) => {
           {/* 두 언어로 디자인하기 */}
           <ul>
             <ArticleListSimple
-              href="/articles/1"
+              href="/"
               theme={theme}
               order={languageFunc(t.article1.titleSimpleOrder)}
               title={languageFunc(t.article1.titleSimple)}
