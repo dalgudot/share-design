@@ -23,7 +23,6 @@ const Container = styled.section`
   position: fixed;
   left: 0;
   bottom: 0;
-
   z-index: 9999;
   background-color: ${({ theme }) => theme.gray3};
 

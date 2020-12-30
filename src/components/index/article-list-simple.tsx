@@ -18,54 +18,75 @@ const ArticleListSimple = ({
 }: ArticleListPropTypes) => {
   return (
     <Li>
-      {/* <WrapRelative> */}
-      <ListSection>
-        <TextStyle
-          type="h1"
-          text={order}
-          textSize="headline"
-          weight={fontWeight[700]}
-          lineHeight={1.2}
-          letterSpacing="-0.3px"
-          color={theme.whitePrimary}
-        />
-        <TextStyle
-          type="h1"
-          text={title}
-          textSize="headline"
-          weight={fontWeight[700]}
-          lineHeight={1.2}
-          marginTop="12px"
-          letterSpacing="-0.3px"
-          color={theme.whitePrimary}
-        />
+      <motion.div
+        variants={ListTextAnimationVariants}
+        initial="start"
+        animate="end"
+      >
+        <ListSection>
+          <TextStyle
+            type="h1"
+            text={order}
+            textSize="headline"
+            weight={fontWeight[700]}
+            lineHeight={1.2}
+            letterSpacing="-0.3px"
+            color={theme.whitePrimary}
+          />
+          <TextStyle
+            type="h1"
+            text={title}
+            textSize="headline"
+            weight={fontWeight[700]}
+            lineHeight={1.2}
+            marginTop="12px"
+            letterSpacing="-0.3px"
+            color={theme.whitePrimary}
+          />
 
-        <BtnStyle>
           <Link href={href}>
             <a>
-              <TextStyle
-                type="p"
-                text={languageFunc(t.article1.titleSimpleBtn)}
-                textSize="body"
-                weight={fontWeight[400]}
-                lineHeight={1.2}
-                color={theme.whitePrimary}
-              />
+              <BtnStyle>
+                <TextStyle
+                  type="p"
+                  text={languageFunc(t.article1.titleSimpleBtn)}
+                  textSize="body"
+                  weight={fontWeight[400]}
+                  lineHeight={1.2}
+                  color={theme.whitePrimary}
+                />
+              </BtnStyle>
             </a>
           </Link>
-        </BtnStyle>
-      </ListSection>
+        </ListSection>
+      </motion.div>
 
       <TextDecoration>
         <SVGShareDesignKo color="#232324" />
         <SVGShareDesignEn color="#232324" />
       </TextDecoration>
+
       {/* </WrapRelative> */}
     </Li>
   );
 };
 
 export default ArticleListSimple;
+
+// framer motion
+const ListTextAnimationVariants = {
+  start: {
+    opacity: 0,
+  },
+
+  end: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const Li = styled.li`
   /* max-width: 580px; */
@@ -76,12 +97,6 @@ const Li = styled.li`
   transform: translateX(-50%);
   min-width: 100vw;
   max-width: 100vw;
-`;
-
-const WrapRelative = styled.div`
-  position: static;
-  width: 100%;
-  height: 100%;
 `;
 
 const ListSection = styled.section`
@@ -107,7 +122,8 @@ const TextDecoration = styled.figure`
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  text-align: center;
 
   svg {
     mask-image: linear-gradient(0deg, transparent 3%, #000 90%);

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import { fontSize } from '../typography/font';
 
+// 코드로 디자인을 하기 위한 Text Component
+// 나중에 Design System이 만들어지더라도 코드로 디자인을 위해 계속 쓰면 좋을 Component
 const TextStyle = ({
   type, // 기본값은 Styled-components에서 p
   text,

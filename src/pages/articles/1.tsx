@@ -8,7 +8,6 @@ import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../components/toast/toast-func';
 
-// 텍스트 컴포넌트로 theme의 타입을 넘겨주기 위해 prop으로 가져옴
 const TwoLanguage = ({ theme }: any) => {
   DetectBrowserLang();
   useEffect(() => {

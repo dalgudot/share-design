@@ -31,7 +31,7 @@ const LangChangeButton = ({ theme }: any) => {
   const ref = useRef(null);
   useRipple(ref, {
     rippleColor: 'rgba(0, 0, 0, 0.3)',
-    animationLength: 700,
+    animationLength: 600,
     rippleSize: 2000,
   });
 
@@ -46,7 +46,7 @@ const LangChangeButton = ({ theme }: any) => {
       <TextStyle
         type="p"
         text={languageFunc(t.langChagneButton)}
-        textSize="body"
+        textSize="small"
         weight={fontWeight[700]}
         color={theme.blackPrimary}
       />
