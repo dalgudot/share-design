@@ -4,7 +4,7 @@ export const t = {
     e: 'SHARE DESIGN',
   },
 
-  navRight: {
+  footerDesktop: {
     greetings: {
       k: '인사말',
       e: 'Greetings',

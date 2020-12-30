@@ -1,6 +1,6 @@
-/* :root {
-  --blackPrimary-color: #121212;
-} */
+:root {
+  --purple-linear-gradient: linear-gradient(to bottom, #7c62ed, #4633d7);
+}
 
 html {
   width: 100%;

@@ -8,7 +8,7 @@ import { t } from './lang/t';
 import languageFunc from '../func/language-func';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
 import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
-import IcnArrowRight24 from '../svg/icn_arrow_right_24';
+import IconArrowRight24 from '../svg/icon_arrow_right_24';
 
 const ArticleListSimple = ({
   href,
@@ -47,7 +47,7 @@ const ArticleListSimple = ({
           <Link href={href}>
             <a>
               <BtnStyle>
-                <IcnArrowRight24 color={theme.whitePrimary} />
+                <IconArrowRight24 color={theme.whitePrimary} />
               </BtnStyle>
             </a>
           </Link>
@@ -114,7 +114,7 @@ const BtnStyle = styled.button`
   width: 63px;
   height: 63px;
   border-radius: 50%;
-  background-image: linear-gradient(to bottom, #7c62ed, #4633d7);
+  background-image: var(--purple-linear-gradient);
   margin-top: 24px;
 `;
 
@@ -130,7 +130,6 @@ const TextDecoration = styled.figure`
   align-items: center;
   max-width: 100%;
   overflow: hidden;
-
   /* text-align: center; */
 
   svg {

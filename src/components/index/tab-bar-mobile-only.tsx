@@ -2,14 +2,17 @@ import { useRef, useState } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
-import IcnHome24 from '../svg/icn_home_24';
-import IcnMenu24 from '../svg/icn_menu_24';
+import IconHome24 from '../svg/icon_home_24';
+import IconMenu24 from '../svg/icon_menu_24';
 
-const TabBar = ({ theme }: any) => {
+const TabBarMobileOnly = ({
+  theme,
+  homeToggle,
+  setHomeToggle,
+  menuToggle,
+  setMenuToggle,
+}: any) => {
   // Toggle
-  const [homeToggle, setHomeToggle] = useState(true);
-  const [menuToggle, setMenuToggle] = useState(false);
-
   const setHome = () => {
     setHomeToggle(true);
     setMenuToggle(false);
@@ -35,20 +38,24 @@ const TabBar = ({ theme }: any) => {
   });
 
   return (
-    <Container>
-      <Tab onClick={() => setHome()} ref={homeRef}>
-        <IcnHome24 toggle={homeToggle} theme={theme} />
-      </Tab>
-      <Tab onClick={() => setMenu()} ref={menuRef}>
-        <IcnMenu24 toggle={menuToggle} theme={theme} />
-      </Tab>
-    </Container>
+    <>
+      {/* <Home theme={theme} />
+      <MenuMobileOnly theme={theme} /> */}
+      <Container>
+        <Tab onClick={() => setHome()} ref={homeRef}>
+          <IconHome24 toggle={homeToggle} theme={theme} />
+        </Tab>
+        <Tab onClick={() => setMenu()} ref={menuRef}>
+          <IconMenu24 toggle={menuToggle} theme={theme} />
+        </Tab>
+      </Container>
+    </>
   );
 };
 
-export default TabBar;
+export default TabBarMobileOnly;
 
-const Container = styled.section`
+const Container = styled.footer`
   display: none;
   width: 100vw;
   height: 48px;
@@ -84,14 +91,3 @@ const Tab = styled.button`
   text-align: center;
   border-radius: 13px;
 `;
-
-/* Grassmorphism */
-/* opacity: 0.999;
-  color: ${({ theme }) => theme.blackPrimary};
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-    hue-rotate(10deg);
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-
-  -webkit-transition: color 0.11s ease-in-out,
-    -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */

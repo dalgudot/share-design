@@ -1,33 +1,25 @@
 import styled from 'styled-components';
 
-const IcnHome24 = ({ toggle, theme }: any) => {
+const IconMenu24 = ({ toggle, theme }: any) => {
   const color: string = toggle === true ? theme.whitePrimary : theme.gray4;
 
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
       <g
-        id="icn_home_24"
+        id="icn_menu_24"
         stroke="none"
         strokeWidth="1"
         fill="none"
         fillRule="evenodd"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
-        <polyline
-          id="Path-1"
-          stroke={color}
-          points="3 11 12 4 21 11"
-        ></polyline>
-        <path
-          d="M6,11 C6,11 6,20 6,20 C6,20 10,20 18,20 L18,11"
-          id="Path-2"
-          stroke={color}
-        ></path>
+        <line x1="5" y1="6" x2="19" y2="6" id="Path-1" stroke={color}></line>
+        <line x1="5" y1="12" x2="19" y2="12" id="Path-2" stroke={color}></line>
+        <line x1="5" y1="18" x2="19" y2="18" id="Path-3" stroke={color}></line>
       </g>
     </SVG>
   );
 };
-export default IcnHome24;
+export default IconMenu24;
 
 const SVG = styled.svg``;
