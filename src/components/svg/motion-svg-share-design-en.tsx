@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const SVGShareDesignEn = ({ color }: any) => {
+const MotionSVGShareDesignEn = ({ color }: any) => {
   return (
     <motion.svg
       variants={BgTextAnimationChildrenVariants}
@@ -25,7 +25,7 @@ const SVGShareDesignEn = ({ color }: any) => {
   );
 };
 
-export default SVGShareDesignEn;
+export default MotionSVGShareDesignEn;
 
 const BgTextAnimationChildrenVariants = {
   start: {

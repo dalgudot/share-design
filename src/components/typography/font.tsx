@@ -1,4 +1,3 @@
-// fontSizeSet -> 각 set를 객체 혹은 배열로, fontSizePairing
 // X-large 등 이름으로 해야 의미가 생김!
 
 export const fontSize: any = {
@@ -20,24 +19,7 @@ export const fontSize: any = {
     headline: '39px',
   },
 
-  small: {
-    mobile: '14px',
-    tablet: '16px',
-    desktop: '16px',
-  },
-
-  body: {
-    mobile: '18px',
-    tablet: '20px',
-    desktop: '20px',
-  },
-
-  headline: {
-    mobile: '32px',
-    tablet: '39px',
-    desktop: '39px',
-  },
-
+  // Test Size
   140: '140px',
   67: '67px',
   59: '59px',

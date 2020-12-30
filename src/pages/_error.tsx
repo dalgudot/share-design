@@ -65,6 +65,6 @@ const BtnStyle = styled.button`
   align-items: center;
   padding: 18px 32px;
   border-radius: 24px;
-  background-color: ${({ theme }) => theme.gray4};
+  background-color: ${({ theme }) => theme.gray6};
   color: ${({ theme }) => theme.whitePrimary};
 `;

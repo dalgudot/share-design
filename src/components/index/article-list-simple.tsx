@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 import { BtnStyle } from './common-elements';
 import { t } from './lang/t';
 import languageFunc from '../func/language-func';
-import SVGShareDesignEn from '../svg/share-design-en';
-import SVGShareDesignKo from '../svg/share-design-ko';
+import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
+import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
 
 const ArticleListSimple = ({
   href,
@@ -62,8 +62,8 @@ const ArticleListSimple = ({
       </motion.div>
 
       <TextDecoration>
-        <SVGShareDesignKo color="#232324" />
-        <SVGShareDesignEn color="#232324" />
+        <MotionSVGShareDesignKo color="#232324" />
+        <MotionSVGShareDesignEn color="#232324" />
       </TextDecoration>
 
       {/* </WrapRelative> */}

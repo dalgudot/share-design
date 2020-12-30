@@ -41,7 +41,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px ${({ theme }) => theme.gray4};
+  border-bottom: solid 1px ${({ theme }) => theme.gray6};
   z-index: 10002;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

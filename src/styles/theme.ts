@@ -3,18 +3,22 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 export const darkTheme: DefaultTheme = {
   whitePrimary: '#EBEBF5', // APPLE
   gray1: '#E0E0EA', // 95% of whitePrimary
-  gray2: '#E0E0EA', // 미정
+  gray2: '#BFBFC7', // 80% of whitePrimary
   gray3: '#94949B', // 60% of whitePrimary
-  gray4: '#232324', // 8%
+  gray4: '#68686C', // 40% of whitePrimary
+  gray5: '#3D3D3F', // 20% of whitePrimary
+  gray6: '#232324', // 8%
   blackPrimary: '#121212',
 };
 
 export const lightTheme: DefaultTheme = {
-  whitePrimary: '#EBEBF5',
-  gray1: '#E0E0EA',
-  gray2: '#E0E0EA',
-  gray3: '#94949B',
-  gray4: '#232324',
+  whitePrimary: '#EBEBF5', // APPLE
+  gray1: '#E0E0EA', // 95% of whitePrimary
+  gray2: '#BFBFC7', // 80% of whitePrimary
+  gray3: '#94949B', // 60% of whitePrimary
+  gray4: '#68686C', // 40% of whitePrimary
+  gray5: '#3D3D3F', // 20% of whitePrimary
+  gray6: '#232324', // 8%
   blackPrimary: '#121212',
 };
 
@@ -42,6 +46,8 @@ declare module 'styled-components' {
     gray2: string;
     gray3: string;
     gray4: string;
+    gray5: string;
+    gray6: string;
     blackPrimary: string;
   }
 }
