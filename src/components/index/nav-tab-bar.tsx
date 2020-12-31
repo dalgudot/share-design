@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
@@ -58,25 +58,30 @@ const NavTabBar = ({ tabToggle }: any) => {
 export default NavTabBar;
 
 const Nav = styled.nav`
+  // 공통 속성
   display: flex;
+  z-index: 10001;
+  position: fixed;
+  // 공통 속성
+
   justify-content: space-between;
   width: 124px;
   height: 44px;
-  z-index: 10001;
-  position: fixed;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  top: 14px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    display: flex;
     justify-content: space-evenly;
-    align-items: center;
     width: 100vw;
     height: 48px;
-    position: fixed;
+    top: unset; // 초기화
     left: 0;
+    transform: translateX(0);
+
+    // 추가 속성
     bottom: 0;
+    align-items: center;
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     border-top: solid 1px ${({ theme }) => theme.gray6};
@@ -95,18 +100,23 @@ const Nav = styled.nav`
 `;
 
 const Tab = styled.button`
-  margin-bottom: 24px;
-  width: 44px;
-  height: 44px;
+  // 공통 속성
   display: flex;
   justify-content: center;
   align-items: center;
+  // 공통 속성
+
+  margin-bottom: 24px;
   border-radius: 13px;
+  width: 44px;
+  height: 44px;
   background-color: ${({ theme }) => theme.gray6};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-bottom: 0;
+    border-radius: 0;
     width: 100%;
     height: 100%;
-    text-align: center;
+    background-color: unset;
   }
 `;
