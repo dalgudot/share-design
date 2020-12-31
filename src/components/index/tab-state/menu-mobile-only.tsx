@@ -4,8 +4,13 @@ import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
 import languageFunc from '../../func/language-func';
 import { t } from '../../index/lang/t';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const MenuMobileOnly = ({ theme }: any) => {
+const MenuMobileOnly = () => {
+  // theme Context
+  const themeContext = useContext(ThemeContext);
+
   return (
     <Container>
       <Link href="/index/greetings">
@@ -16,7 +21,7 @@ const MenuMobileOnly = ({ theme }: any) => {
               text={languageFunc(t.footerDesktop.greetings)}
               textSize="headline"
               weight={fontWeight[700]}
-              color={theme.whitePrimary}
+              color={themeContext.whitePrimary}
             />
           </li>
         </a>
@@ -30,7 +35,7 @@ const MenuMobileOnly = ({ theme }: any) => {
               text={languageFunc(t.footerDesktop.contact)}
               textSize="headline"
               weight={fontWeight[700]}
-              color={theme.whitePrimary}
+              color={themeContext.whitePrimary}
             />
           </li>
         </a>

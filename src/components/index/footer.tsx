@@ -2,8 +2,13 @@ import styled from 'styled-components';
 import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const Footer = ({ theme }: any) => {
+const Footer = () => {
+  // theme Context
+  const themeContext = useContext(ThemeContext);
+
   return (
     <FooterContainer>
       <Copyright>
@@ -14,7 +19,7 @@ const Footer = ({ theme }: any) => {
           weight={fontWeight[300]}
           opacity={0.8}
           lineHeight={1.2}
-          color={theme.gray1}
+          color={themeContext.gray1}
         />
       </Copyright>
     </FooterContainer>

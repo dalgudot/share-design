@@ -9,13 +9,13 @@ import languageFunc from '../func/language-func';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
 import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
 import IconArrowRight24 from '../svg/icon_arrow_right_24';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const ArticleListSimple = ({
-  href,
-  theme,
-  order,
-  title,
-}: ArticleListPropTypes) => {
+const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
+  // theme Context
+  const themeContext = useContext(ThemeContext);
+
   return (
     <Li>
       <motion.div
@@ -31,7 +31,7 @@ const ArticleListSimple = ({
             weight={fontWeight[700]}
             lineHeight={1.2}
             letterSpacing="-0.3px"
-            color={theme.whitePrimary}
+            color={themeContext.whitePrimary}
           />
           <TextStyle
             type="h1"
@@ -41,13 +41,13 @@ const ArticleListSimple = ({
             lineHeight={1.2}
             marginTop="12px"
             letterSpacing="-0.3px"
-            color={theme.whitePrimary}
+            color={themeContext.whitePrimary}
           />
 
           <Link href={href}>
             <a>
               <BtnStyle>
-                <IconArrowRight24 color={theme.whitePrimary} />
+                <IconArrowRight24 color={themeContext.whitePrimary} />
               </BtnStyle>
             </a>
           </Link>
@@ -144,7 +144,6 @@ const TextDecoration = styled.figure`
 
 // type
 interface ArticleListPropTypes {
-  theme?: any;
   href: string;
   order: string;
   title: string;

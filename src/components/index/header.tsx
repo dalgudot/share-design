@@ -6,8 +6,13 @@ import LangChangeButton from '../button/lang-change-button';
 import { t } from './lang/t';
 import languageFunc from '../func/language-func';
 import { mediaBreakPoint } from '../../styles/common';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const Header = ({ theme }: any) => {
+const Header = () => {
+  // theme Context
+  const themeContext = useContext(ThemeContext);
+
   return (
     <>
       <HeaderContainer>
@@ -18,11 +23,11 @@ const Header = ({ theme }: any) => {
               text={languageFunc(t.shareDesign)}
               textSize="body"
               weight={fontWeight[700]}
-              color={theme.whitePrimary}
+              color={themeContext.whitePrimary}
             />
           </Left>
         </Link>
-        <LangChangeButton theme={theme} />
+        <LangChangeButton />
       </HeaderContainer>
       <GlassMorphismBackground />
     </>

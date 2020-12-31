@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ModeChangeButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
@@ -22,7 +22,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     persistor.persist();
   });
   const [mode, setMode] = useState(darkTheme);
-  // console.log(mode);
 
   initFirebase();
   PreventIllegalTheft();
@@ -33,22 +32,10 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
-            {/* <ModeChangeButton
-              setMode={setMode}
-              darkTheme={darkTheme}
-              lightTheme={lightTheme}
-            /> */}
-            {/* <GlobalStyle /> */}
             <GlobalColors />
             <Toast />
             <AnimatePresence exitBeforeEnter>
-              <Component
-                {...pageProps}
-                theme={mode}
-                // setMode={setMode}
-                // darkTheme={darkTheme}
-                // lightTheme={lightTheme}
-              />
+              <Component {...pageProps} theme={mode} />
             </AnimatePresence>
           </ThemeProvider>
         </PersistGate>

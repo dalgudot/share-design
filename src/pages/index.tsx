@@ -16,8 +16,9 @@ import TabBarMobileOnly from '../components/index/tab-bar-mobile-only';
 import Home from '../components/index/tab-state/home';
 import MenuMobileOnly from '../components/index/tab-state/menu-mobile-only';
 import { useSelector } from 'react-redux';
+import React from 'react';
 
-const Index = ({ theme }: any) => {
+const Index = () => {
   DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('Index');
@@ -25,25 +26,20 @@ const Index = ({ theme }: any) => {
 
   // TabBarMobileOnly Toggle State
   const tabToggle = useSelector((state: any) => state.tabBar);
-  const tabDisplay =
-    tabToggle === 'home' ? (
-      <Home theme={theme} />
-    ) : (
-      <MenuMobileOnly theme={theme} />
-    );
+  const tabDisplay = tabToggle === 'home' ? <Home /> : <MenuMobileOnly />;
 
   return (
     <>
       <ContainerIndex>
-        <Header theme={theme} />
+        <Header />
         {/* <nav>왼쪽 내비게이션</nav> */}
         <Main>
           <ul>{tabDisplay}</ul>
         </Main>
-        {/* <Footer theme={theme} /> */}
+        {/* <Footer  /> */}
       </ContainerIndex>
 
-      <TabBarMobileOnly theme={theme} tabToggle={tabToggle} />
+      <TabBarMobileOnly tabToggle={tabToggle} />
     </>
   );
 };

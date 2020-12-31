@@ -6,7 +6,7 @@ import IconHome24 from '../svg/icon_home_24';
 import IconMenu24 from '../svg/icon_menu_24';
 import { useDispatch } from 'react-redux';
 
-const TabBarMobileOnly = ({ theme, tabToggle }: any) => {
+const TabBarMobileOnly = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
   const tabChange = () =>
     dispatch({
@@ -37,10 +37,10 @@ const TabBarMobileOnly = ({ theme, tabToggle }: any) => {
     <>
       <Container>
         <Tab onClick={() => tabChange()} ref={homeRef}>
-          <IconHome24 toggle={homeToggle} theme={theme} />
+          <IconHome24 toggle={homeToggle} />
         </Tab>
         <Tab onClick={() => tabChange()} ref={menuRef}>
-          <IconMenu24 toggle={menuToggle} theme={theme} />
+          <IconMenu24 toggle={menuToggle} />
         </Tab>
       </Container>
     </>

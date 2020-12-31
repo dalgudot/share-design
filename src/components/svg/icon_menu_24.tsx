@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const IconMenu24 = ({ toggle, theme }: any) => {
-  const color: string = toggle === true ? theme.whitePrimary : theme.gray4;
+const IconMenu24 = ({ toggle }: any) => {
+  // theme Context
+  const themeContext = useContext(ThemeContext);
+  const color: string =
+    toggle === true ? themeContext.whitePrimary : themeContext.gray4;
 
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

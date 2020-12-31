@@ -8,8 +8,10 @@ import { useRef } from 'react';
 import { t } from '../index/lang/t';
 import languageFunc from '../func/language-func';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const LangChangeButton = ({ theme }: any) => {
+const LangChangeButton = () => {
   // Redux, Language Change
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
@@ -27,6 +29,9 @@ const LangChangeButton = ({ theme }: any) => {
     languageChange();
     detectUserLanguageChange();
   };
+
+  // theme Context
+  const themeContext = useContext(ThemeContext);
 
   // useRipple
   const ref = useRef(null);
@@ -57,7 +62,7 @@ const LangChangeButton = ({ theme }: any) => {
           text={languageFunc(t.langChagneButton)}
           textSize="single14"
           weight={fontWeight[700]}
-          color={theme.blackPrimary}
+          color={themeContext.blackPrimary}
         />
       </BtnStyle>
     </motion.button>
