@@ -5,7 +5,6 @@ import { mediaBreakPoint } from '../../styles/common';
 import IconHome24 from '../svg/icon_home_24';
 import IconMenu24 from '../svg/icon_menu_24';
 import { useDispatch } from 'react-redux';
-import React from 'react';
 
 const TabBarMobileOnly = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
@@ -17,6 +16,14 @@ const TabBarMobileOnly = ({ tabToggle }: any) => {
   // Toggle Graphic on off
   const homeToggle = tabToggle === 'home' ? true : false;
   const menuToggle = tabToggle === 'menu' ? true : false;
+
+  const setHomeToggle = () => {
+    tabToggle === 'menu' && TAB_CHANGE();
+  };
+
+  const setMenuToggle = () => {
+    tabToggle === 'home' && TAB_CHANGE();
+  };
 
   // useRipple
   const homeRef = useRef(null);
@@ -37,10 +44,10 @@ const TabBarMobileOnly = ({ tabToggle }: any) => {
   return (
     <>
       <Container>
-        <Tab onClick={() => TAB_CHANGE()} ref={homeRef}>
+        <Tab onClick={() => setHomeToggle()} ref={homeRef}>
           <IconHome24 toggle={homeToggle} />
         </Tab>
-        <Tab onClick={() => TAB_CHANGE()} ref={menuRef}>
+        <Tab onClick={() => setMenuToggle()} ref={menuRef}>
           <IconMenu24 toggle={menuToggle} />
         </Tab>
       </Container>
@@ -48,7 +55,7 @@ const TabBarMobileOnly = ({ tabToggle }: any) => {
   );
 };
 
-export default React.memo(TabBarMobileOnly);
+export default TabBarMobileOnly;
 
 const Container = styled.footer`
   display: none;
@@ -58,7 +65,8 @@ const Container = styled.footer`
   left: 0;
   bottom: 0;
   z-index: 9999;
-  border-radius: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
   border-top: solid 1px ${({ theme }) => theme.gray6};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
@@ -83,5 +91,5 @@ const Tab = styled.button`
   width: 100%;
   height: 100%;
   text-align: center;
-  border-radius: 13px;
+  /* border-radius: 13px; */
 `;

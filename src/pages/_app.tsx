@@ -9,7 +9,6 @@ import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import { useState } from 'react';
-import MODE_CHANGEButton from '../components/button/mode-change-button';
 import { PreventIllegalTheft } from '../components/func/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';

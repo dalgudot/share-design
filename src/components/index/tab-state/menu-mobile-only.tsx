@@ -11,7 +11,7 @@ const MenuMobileOnly = () => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Container>
+    <Ul>
       <Link href="/index/greetings">
         <a>
           <li>
@@ -39,21 +39,21 @@ const MenuMobileOnly = () => {
           </li>
         </a>
       </Link>
-    </Container>
+    </Ul>
   );
 };
 
 export default MenuMobileOnly;
 
-const Container = styled.section`
+const Ul = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 100%;
-  height: 48vh;
+  height: 47vh;
 
   a:nth-child(2) {
-    margin-top: 72px;
+    margin-top: 48px;
   }
 `;

@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
-import Footer from '../components/index/footer';
+import FooterTabletDesktopOnly from '../components/index/footer-tablet-desktop-only';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
@@ -10,7 +9,6 @@ import TabBarMobileOnly from '../components/index/tab-bar-mobile-only';
 import Home from '../components/index/tab-state/home';
 import MenuMobileOnly from '../components/index/tab-state/menu-mobile-only';
 import { useSelector } from 'react-redux';
-import React from 'react';
 
 const Index = () => {
   DetectBrowserLang();
@@ -27,13 +25,10 @@ const Index = () => {
       <Header />
 
       <ContainerIndex>
-        {/* <nav>왼쪽 내비게이션</nav> */}
-        <Main>
-          <ul>{tabDisplay}</ul>
-        </Main>
+        <Main>{tabDisplay}</Main>
       </ContainerIndex>
 
-      {/* <Footer  /> */}
+      <FooterTabletDesktopOnly />
       <TabBarMobileOnly tabToggle={tabToggle} />
     </>
   );

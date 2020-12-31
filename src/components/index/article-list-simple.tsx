@@ -16,8 +16,8 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Li>
-      <motion.div
+    <Ul>
+      <motion.li
         variants={ListTextAnimationVariants}
         initial="start"
         animate="end"
@@ -29,7 +29,7 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
             textSize="headline"
             weight={fontWeight[700]}
             lineHeight={1.2}
-            letterSpacing="-0.3px"
+            letterSpacing="-0.8px"
             color={themeContext.whitePrimary}
           />
           <TextStyle
@@ -38,8 +38,8 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
             textSize="headline"
             weight={fontWeight[700]}
             lineHeight={1.2}
-            marginTop="12px"
-            letterSpacing="-0.3px"
+            marginTop="8px"
+            letterSpacing="-0.8px"
             color={themeContext.whitePrimary}
           />
 
@@ -51,15 +51,13 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
             </a>
           </Link>
         </ListSection>
-      </motion.div>
+      </motion.li>
 
       <TextDecoration>
-        <MotionSVGShareDesignKo color="#232324" />
-        <MotionSVGShareDesignEn color="#232324" />
+        <MotionSVGShareDesignKo />
+        <MotionSVGShareDesignEn />
       </TextDecoration>
-
-      {/* </WrapRelative> */}
-    </Li>
+    </Ul>
   );
 };
 
@@ -80,8 +78,7 @@ const ListTextAnimationVariants = {
   },
 };
 
-const Li = styled.li`
-  /* margin: 0 auto; */
+const Ul = styled.ul`
   position: absolute;
   top: 32%;
   left: 50%;
@@ -129,7 +126,6 @@ const TextDecoration = styled.figure`
   align-items: center;
   max-width: 100%;
   overflow: hidden;
-  /* text-align: center; */
 
   svg {
     mask-image: linear-gradient(0deg, transparent 3%, #000 90%);

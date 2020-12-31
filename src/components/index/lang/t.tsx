@@ -70,7 +70,7 @@ export const t = {
   errorMessage: {
     message: {
       k: '디자인 공유하기에 없는 페이지입니다.',
-      e: 'This page is not in the SHARE DESIGN.',
+      e: 'This page is not in SHARE DESIGN.',
     },
 
     btn: { k: '홈으로', e: 'Go to Home' },
