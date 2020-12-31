@@ -5,7 +5,7 @@ import Footer from '../components/index/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
-import NavTabBar from '../components/index/tab-bar-mobile-only';
+import NavTabBar from '../components/index/nav-tab-bar';
 import Home from '../components/index/tab-state/home';
 import Menu from '../components/index/tab-state/menu';
 import { useSelector } from 'react-redux';

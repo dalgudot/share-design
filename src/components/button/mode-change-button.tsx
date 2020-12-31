@@ -5,9 +5,8 @@ import { useEffect } from 'react';
 import { t } from '../index/lang/t';
 import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
-import { BtnStyle } from '../index/common-elements';
 
-const MODE_CHANGEButton = ({
+const ModeChangeButton = ({
   setMode,
   darkTheme,
   lightTheme,
@@ -45,7 +44,7 @@ const MODE_CHANGEButton = ({
   };
 
   return (
-    <BtnStyle style={style} className="right__button" onClick={setTheme}>
+    <BtnStyle onClick={setTheme}>
       <TextStyle
         type="p"
         text="나중에 아래 타입 정하기"
@@ -66,4 +65,6 @@ const MODE_CHANGEButton = ({
   );
 };
 
-export default MODE_CHANGEButton;
+export default ModeChangeButton;
+
+const BtnStyle = styled.button``;
