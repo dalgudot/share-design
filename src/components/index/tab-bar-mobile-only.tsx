@@ -1,36 +1,32 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import IconHome24 from '../svg/icon_home_24';
 import IconMenu24 from '../svg/icon_menu_24';
+import { useDispatch } from 'react-redux';
 
-const TabBarMobileOnly = ({
-  theme,
-  homeToggle,
-  setHomeToggle,
-  menuToggle,
-  setMenuToggle,
-}: any) => {
-  // Toggle
-  const setHome = () => {
-    setHomeToggle(true);
-    setMenuToggle(false);
-  };
+const TabBarMobileOnly = ({ theme, tabToggle }: any) => {
+  const dispatch = useDispatch();
+  const tabChange = () =>
+    dispatch({
+      type: 'TABCHANGE',
+    });
 
-  const setMenu = () => {
-    setHomeToggle(false);
-    setMenuToggle(true);
-  };
+  // Toggle Graphic on off
+  const homeToggle = tabToggle === 'home' ? true : false;
+  const menuToggle = tabToggle === 'menu' ? true : false;
 
   // useRipple
   const homeRef = useRef(null);
   const menuRef = useRef(null);
+
   useRipple(homeRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
     animationLength: 500,
     rippleSize: 2000,
   });
+
   useRipple(menuRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
     animationLength: 500,
@@ -39,13 +35,11 @@ const TabBarMobileOnly = ({
 
   return (
     <>
-      {/* <Home theme={theme} />
-      <MenuMobileOnly theme={theme} /> */}
       <Container>
-        <Tab onClick={() => setHome()} ref={homeRef}>
+        <Tab onClick={() => tabChange()} ref={homeRef}>
           <IconHome24 toggle={homeToggle} theme={theme} />
         </Tab>
-        <Tab onClick={() => setMenu()} ref={menuRef}>
+        <Tab onClick={() => tabChange()} ref={menuRef}>
           <IconMenu24 toggle={menuToggle} theme={theme} />
         </Tab>
       </Container>
@@ -63,7 +57,6 @@ const Container = styled.footer`
   left: 0;
   bottom: 0;
   z-index: 9999;
-  /* background-color: ${({ theme }) => theme.blackPrimary}; */
   border-radius: 13px;
   border-top: solid 1px ${({ theme }) => theme.gray6};
 

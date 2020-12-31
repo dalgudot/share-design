@@ -6,7 +6,7 @@ import ArticleList from '../components/index/article-list';
 import ArticleListSimple from '../components/index/article-list-simple';
 import Contact from '../components/index/contact';
 import Footer from '../components/index/footer';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import languageFunc from '../components/func/language-func';
 import { t } from '../components/index/lang/t';
 import { mediaBreakPoint } from '../styles/common';
@@ -15,6 +15,7 @@ import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views
 import TabBarMobileOnly from '../components/index/tab-bar-mobile-only';
 import Home from '../components/index/tab-state/home';
 import MenuMobileOnly from '../components/index/tab-state/menu-mobile-only';
+import { useSelector } from 'react-redux';
 
 const Index = ({ theme }: any) => {
   DetectBrowserLang();
@@ -23,14 +24,13 @@ const Index = ({ theme }: any) => {
   }, []);
 
   // TabBarMobileOnly Toggle State
-  const [homeToggle, setHomeToggle] = useState(true);
-  const [menuToggle, setMenuToggle] = useState(false);
-
-  const selectedTabDisplay = homeToggle ? (
-    <Home theme={theme} />
-  ) : (
-    <MenuMobileOnly theme={theme} />
-  );
+  const tabToggle = useSelector((state: any) => state.tabBar);
+  const tabDisplay =
+    tabToggle === 'home' ? (
+      <Home theme={theme} />
+    ) : (
+      <MenuMobileOnly theme={theme} />
+    );
 
   return (
     <>
@@ -38,18 +38,12 @@ const Index = ({ theme }: any) => {
         <Header theme={theme} />
         {/* <nav>왼쪽 내비게이션</nav> */}
         <Main>
-          <ul>{selectedTabDisplay}</ul>
+          <ul>{tabDisplay}</ul>
         </Main>
         {/* <Footer theme={theme} /> */}
       </ContainerIndex>
 
-      <TabBarMobileOnly
-        theme={theme}
-        homeToggle={homeToggle}
-        setHomeToggle={setHomeToggle}
-        menuToggle={menuToggle}
-        setMenuToggle={setMenuToggle}
-      />
+      <TabBarMobileOnly theme={theme} tabToggle={tabToggle} />
     </>
   );
 };

@@ -36,12 +36,14 @@ const InitialState = {
   language: 'ko',
   localMode: 'darkTheme',
   userLanguageChange: 'no',
+  tabBar: 'home',
 };
 
 export const actionTypes = {
   CHANGELANGUAGE: 'CHANGELANGUAGE',
   MODECHANGE: 'MODECHANGE',
   CHANGEUSERLANGUAGE: 'CHANGEUSERLANGUAGE',
+  TABCHANGE: 'TABCHANGE',
 };
 
 // REDUCERS
@@ -63,6 +65,12 @@ export const reducer = (state = InitialState, action: any) => {
       return {
         ...state,
         userLanguageChange: state.userLanguageChange === 'no' ? 'yes' : 'no',
+      };
+
+    case actionTypes.TABCHANGE:
+      return {
+        ...state,
+        tabBar: state.tabBar === 'home' ? 'menu' : 'home',
       };
 
     default:
