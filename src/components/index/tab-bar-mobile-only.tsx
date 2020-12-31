@@ -91,5 +91,4 @@ const Tab = styled.button`
   width: 100%;
   height: 100%;
   text-align: center;
-  /* border-radius: 13px; */
 `;

@@ -12,7 +12,7 @@ const MenuMobileOnly = () => {
 
   return (
     <Ul>
-      <Link href="/index/greetings">
+      <Link href="/index/welcome-contact">
         <a>
           <li>
             <TextStyle

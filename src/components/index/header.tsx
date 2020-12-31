@@ -28,7 +28,7 @@ const Header = () => {
         </Link>
         <LangChangeButton />
       </HeaderContainer>
-      <GlassMorphismBackground />
+      {/* <GlassMorphismBackground /> */}
     </>
   );
 };
