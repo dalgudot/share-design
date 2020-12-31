@@ -76,7 +76,7 @@ const BtnStyle = styled.div`
   align-items: center;
   width: 128px;
   height: 40px;
-  border-radius: 13px;
+  border-radius: var(--border-radius-primary);
   background-color: ${({ theme }) => theme.gray6};
   /* border: solid 1px ${({ theme }) => theme.gray5}; */
 `;

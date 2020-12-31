@@ -1,5 +1,6 @@
 :root {
   --purple-linear-gradient: linear-gradient(to bottom, #7c62ed, #4633d7);
+  --border-radius-primary: 13px;
 }
 
 html {

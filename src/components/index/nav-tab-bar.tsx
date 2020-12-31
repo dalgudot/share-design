@@ -82,8 +82,8 @@ const Nav = styled.nav`
     // 추가 속성
     bottom: 0;
     align-items: center;
-    border-top-left-radius: 13px;
-    border-top-right-radius: 13px;
+    border-top-left-radius: var(--border-radius-primary);
+    border-top-right-radius: var(--border-radius-primary);
     border-top: solid 1px ${({ theme }) => theme.gray6};
 
     /* Grassmorphism */
@@ -107,7 +107,7 @@ const Tab = styled.button`
   // 공통 속성
 
   margin-bottom: 24px;
-  border-radius: 13px;
+  border-radius: var(--border-radius-primary);
   width: 44px;
   height: 44px;
   background-color: ${({ theme }) => theme.gray6};
