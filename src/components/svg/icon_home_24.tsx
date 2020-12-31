@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const IconHome24 = ({ toggle }: any) => {
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   const color: string =

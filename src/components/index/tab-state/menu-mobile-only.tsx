@@ -8,7 +8,6 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const MenuMobileOnly = () => {
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   return (

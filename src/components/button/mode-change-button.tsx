@@ -7,7 +7,7 @@ import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import { BtnStyle } from '../index/common-elements';
 
-const ModeChangeButton = ({
+const MODE_CHANGEButton = ({
   setMode,
   darkTheme,
   lightTheme,
@@ -18,11 +18,11 @@ const ModeChangeButton = ({
   lightTheme: any;
   block?: string;
 }) => {
-  const theme = useSelector((state: any) => state.localMode);
+  const theme = useSelector((state: any) => state.themeMode);
   const dispatch = useDispatch();
   const themeChange = () =>
     dispatch({
-      type: 'MODECHANGE',
+      type: 'MODE_CHANGE',
     });
 
   const lang = useSelector((state: any) => state.language);
@@ -37,7 +37,7 @@ const ModeChangeButton = ({
     setMode(theme === 'darkTheme' ? lightTheme : darkTheme);
   };
 
-  // index에서만 ModeChangeButton 보여줌.
+  // index에서만 MODE_CHANGEButton 보여줌.
   // const router = useRouter();
   const style = {
     // display: router.pathname === '/' ? 'block' : 'none',
@@ -66,4 +66,4 @@ const ModeChangeButton = ({
   );
 };
 
-export default ModeChangeButton;
+export default MODE_CHANGEButton;

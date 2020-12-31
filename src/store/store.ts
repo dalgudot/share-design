@@ -32,42 +32,52 @@ const storage =
 
 let store: any;
 
-const InitialState = {
+const InitialState: {
+  language: string;
+  themeMode: string;
+  userLanguageChange: string;
+  tabBar: string;
+} = {
   language: 'ko',
-  localMode: 'darkTheme',
+  themeMode: 'darkTheme',
   userLanguageChange: 'no',
   tabBar: 'home',
 };
 
-export const actionTypes = {
-  CHANGELANGUAGE: 'CHANGELANGUAGE',
-  MODECHANGE: 'MODECHANGE',
-  CHANGEUSERLANGUAGE: 'CHANGEUSERLANGUAGE',
-  TABCHANGE: 'TABCHANGE',
+export const actionTypes: {
+  LANGUAGE_CHANGE: string;
+  MODE_CHANGE: string;
+  USER_LANGUAGE_CHANGE_CHANGE: string;
+  TAB_CHANGE: string;
+} = {
+  LANGUAGE_CHANGE: 'LANGUAGE_CHANGE',
+  MODE_CHANGE: 'MODE_CHANGE',
+  USER_LANGUAGE_CHANGE_CHANGE: 'USER_LANGUAGE_CHANGE_CHANGE',
+  TAB_CHANGE: 'TAB_CHANGE',
 };
 
 // REDUCERS
 export const reducer = (state = InitialState, action: any) => {
   switch (action.type) {
-    case actionTypes.CHANGELANGUAGE:
+    case actionTypes.LANGUAGE_CHANGE:
       return {
         ...state,
         language: state.language === 'ko' ? 'en' : 'ko',
       };
 
-    case actionTypes.MODECHANGE:
+    case actionTypes.MODE_CHANGE:
       return {
         ...state,
-        localMode: state.localMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
+        themeMode: state.themeMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
       };
 
-    case actionTypes.CHANGEUSERLANGUAGE:
+    case actionTypes.USER_LANGUAGE_CHANGE_CHANGE:
       return {
         ...state,
         userLanguageChange: state.userLanguageChange === 'no' ? 'yes' : 'no',
       };
 
-    case actionTypes.TABCHANGE:
+    case actionTypes.TAB_CHANGE:
       return {
         ...state,
         tabBar: state.tabBar === 'home' ? 'menu' : 'home',
@@ -81,7 +91,7 @@ export const reducer = (state = InitialState, action: any) => {
 const persistConfig = {
   key: 'primary',
   storage,
-  whitelist: ['language', 'localMode', 'userLanguageChange'], // place to select which state you want to persist
+  whitelist: ['language', 'themeMode', 'userLanguageChange'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

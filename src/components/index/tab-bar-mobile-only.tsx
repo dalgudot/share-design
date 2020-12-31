@@ -5,12 +5,13 @@ import { mediaBreakPoint } from '../../styles/common';
 import IconHome24 from '../svg/icon_home_24';
 import IconMenu24 from '../svg/icon_menu_24';
 import { useDispatch } from 'react-redux';
+import React from 'react';
 
 const TabBarMobileOnly = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
-  const tabChange = () =>
+  const TAB_CHANGE = () =>
     dispatch({
-      type: 'TABCHANGE',
+      type: 'TAB_CHANGE',
     });
 
   // Toggle Graphic on off
@@ -36,10 +37,10 @@ const TabBarMobileOnly = ({ tabToggle }: any) => {
   return (
     <>
       <Container>
-        <Tab onClick={() => tabChange()} ref={homeRef}>
+        <Tab onClick={() => TAB_CHANGE()} ref={homeRef}>
           <IconHome24 toggle={homeToggle} />
         </Tab>
-        <Tab onClick={() => tabChange()} ref={menuRef}>
+        <Tab onClick={() => TAB_CHANGE()} ref={menuRef}>
           <IconMenu24 toggle={menuToggle} />
         </Tab>
       </Container>
@@ -47,7 +48,7 @@ const TabBarMobileOnly = ({ tabToggle }: any) => {
   );
 };
 
-export default TabBarMobileOnly;
+export default React.memo(TabBarMobileOnly);
 
 const Container = styled.footer`
   display: none;

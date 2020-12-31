@@ -13,7 +13,6 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   return (

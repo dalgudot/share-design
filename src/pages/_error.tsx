@@ -4,12 +4,17 @@ import TextStyle from '../components/typography/text-style';
 import { t } from '../components/index/lang/t';
 import { fontWeight } from '../components/typography/font';
 import languageFunc from '../components/func/language-func';
+import React from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 // NextJS Custom Error Page
 // https://nextjs.org/docs/advanced-features/custom-error-page
 // 500 Error
-const Error = ({ theme, statusCode }: any) => {
+const Error = ({ statusCode }: any) => {
   statusCode && console.log(statusCode);
+
+  const themeContext = useContext(ThemeContext);
 
   return (
     <Container>
@@ -19,7 +24,7 @@ const Error = ({ theme, statusCode }: any) => {
         textSize="body"
         weight={fontWeight[400]}
         lineHeight={1.55}
-        color={theme.gray1}
+        color={themeContext.gray1}
       />
       <Link href="/">
         <a>
@@ -29,7 +34,7 @@ const Error = ({ theme, statusCode }: any) => {
               text={languageFunc(t.errorMessage.btn)}
               textSize="body"
               weight={fontWeight[400]}
-              color={theme.whitePrimary}
+              color={themeContext.whitePrimary}
             />
           </BtnStyle>
         </a>
@@ -38,7 +43,7 @@ const Error = ({ theme, statusCode }: any) => {
   );
 };
 
-export default Error;
+export default React.memo(Error);
 
 Error.getInitialProps = ({ res, err }: any) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;

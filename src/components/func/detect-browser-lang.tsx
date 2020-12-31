@@ -9,7 +9,7 @@ export const DetectBrowserLang = () => {
   const dispatch = useDispatch();
   const languageChange = () =>
     dispatch({
-      type: 'CHANGELANGUAGE',
+      type: 'LANGUAGE_CHANGE',
     });
   // console.log(`ReduxLang: ${lang}`);
   const userBrowserLanguage = navigator.language;

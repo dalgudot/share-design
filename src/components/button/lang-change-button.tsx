@@ -17,12 +17,12 @@ const LangChangeButton = () => {
   const dispatch = useDispatch();
   const languageChange = () =>
     dispatch({
-      type: 'CHANGELANGUAGE',
+      type: 'LANGUAGE_CHANGE',
     });
 
   const detectUserLanguageChange = () =>
     dispatch({
-      type: 'CHANGEUSERLANGUAGE',
+      type: 'USER_LANGUAGE_CHANGE_CHANGE',
     });
 
   const setLanguageChange = () => {
@@ -30,12 +30,11 @@ const LangChangeButton = () => {
     detectUserLanguageChange();
   };
 
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   // useRipple
-  const ref = useRef(null);
-  useRipple(ref, {
+  const btnRef = useRef(null);
+  useRipple(btnRef, {
     rippleColor: 'rgba(0, 0, 0, 0.3)',
     animationLength: 600,
     rippleSize: 2000,
@@ -50,7 +49,7 @@ const LangChangeButton = () => {
   return (
     <motion.button
       onClick={setLanguageChange}
-      ref={ref}
+      ref={btnRef}
       whileHover={{
         scale: 1.05,
         transition: { duration: 0.1 },

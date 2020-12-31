@@ -10,7 +10,6 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const Header = () => {
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   return (

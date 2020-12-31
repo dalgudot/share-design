@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const Footer = () => {
-  // theme Context
   const themeContext = useContext(ThemeContext);
 
   return (
