@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { t } from '../../components/index/lang/t';
 import Header from '../../components/index/header';
-import SwipeableViews from 'react-swipeable-views';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const WelcomeContact = () => {
   const themeContext = useContext(ThemeContext);
@@ -16,7 +16,7 @@ const WelcomeContact = () => {
     <>
       <Header />
       <Container>
-        <SwipeableViews>
+        <SwiperSlide>
           <TextStyle
             type="p"
             text={languageFunc(t.welcome1)}
@@ -38,7 +38,7 @@ const WelcomeContact = () => {
             weight={fontWeight[400]}
             color={themeContext.whitePrimary}
           />
-        </SwipeableViews>
+        </SwiperSlide>
       </Container>
     </>
   );
@@ -46,6 +46,6 @@ const WelcomeContact = () => {
 
 export default WelcomeContact;
 
-const Container = styled.div`
+const Container = styled(Swiper)`
   margin-top: 100px;
 `;

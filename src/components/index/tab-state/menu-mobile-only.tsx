@@ -12,7 +12,8 @@ const MenuMobileOnly = () => {
 
   return (
     <Ul>
-      <Link href="/index/welcome-contact">
+      {/* <Link href="/index/welcome-contact"> */}
+      <Link href="/contact">
         <a>
           <li>
             <TextStyle
