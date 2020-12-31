@@ -28,7 +28,7 @@ const Header = () => {
         </Link>
         <LangChangeButton />
       </HeaderContainer>
-      {/* <GlassMorphismBackground /> */}
+      <GlassMorphismBackground />
     </>
   );
 };
@@ -40,13 +40,12 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  /* height 반응형으로 조절 필요 */
   height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
-  z-index: 10002;
+  z-index: 10000;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 57px;
@@ -69,9 +68,12 @@ const GlassMorphismBackground = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  /* height 반응형으로 조절 필요 */
   height: 72px;
-  z-index: 10001;
+  z-index: 9999;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: 57px;
+  }
 
   /* Grassmorphism */
   opacity: 0.999;

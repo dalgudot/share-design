@@ -5,7 +5,7 @@ export const darkTheme: DefaultTheme = {
   gray1: '#E0E0EA', // 95% of whitePrimary
   gray2: '#BFBFC7', // 80% of whitePrimary
   gray3: '#94949B', // 60% of whitePrimary
-  gray4: '#68686C', // 40% of whitePrimary
+  gray4: '#68686C', // 40% of whitePrimary // 비활성화
   gray5: '#3D3D3F', // 20% of whitePrimary
   gray6: '#232324', // 8%
   blackPrimary: '#121212',

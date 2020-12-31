@@ -61,7 +61,7 @@ const LangChangeButton = () => {
           text={languageFunc(t.langChagneButton)}
           textSize="single14"
           weight={fontWeight[700]}
-          color={themeContext.blackPrimary}
+          color={themeContext.whitePrimary}
         />
       </BtnStyle>
     </motion.button>
@@ -74,9 +74,9 @@ const BtnStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 126px;
-  height: 38px;
+  width: 128px;
+  height: 40px;
   border-radius: 13px;
-  background-color: ${({ theme }) => theme.gray1};
-  border: solid 1px ${({ theme }) => theme.gray5};
+  background-color: ${({ theme }) => theme.gray6};
+  /* border: solid 1px ${({ theme }) => theme.gray5}; */
 `;

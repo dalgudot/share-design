@@ -3,23 +3,22 @@ import styled from 'styled-components';
 import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
 import languageFunc from '../../func/language-func';
-import { t } from '../../index/lang/t';
+import { t } from '../lang/t';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const MenuMobileOnly = () => {
+const Menu = () => {
   const themeContext = useContext(ThemeContext);
 
   return (
     <Ul>
-      {/* <Link href="/index/welcome-contact"> */}
-      <Link href="/contact">
+      <Link href="/index/welcome-contact">
         <a>
           <li>
             <TextStyle
               type="p"
               text={languageFunc(t.footerDesktop.greetings)}
-              textSize="headline"
+              textSize="headlineBig"
               weight={fontWeight[700]}
               color={themeContext.whitePrimary}
             />
@@ -27,13 +26,13 @@ const MenuMobileOnly = () => {
         </a>
       </Link>
 
-      <Link href="/index/contact">
+      <Link href="/index/welcome-contact">
         <a>
           <li>
             <TextStyle
               type="p"
               text={languageFunc(t.footerDesktop.contact)}
-              textSize="headline"
+              textSize="headlineBig"
               weight={fontWeight[700]}
               color={themeContext.whitePrimary}
             />
@@ -44,7 +43,7 @@ const MenuMobileOnly = () => {
   );
 };
 
-export default MenuMobileOnly;
+export default Menu;
 
 const Ul = styled.ul`
   display: flex;

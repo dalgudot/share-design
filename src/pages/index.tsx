@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Header from '../components/index/header';
 import { DetectBrowserLang } from '../components/func/detect-browser-lang';
-import FooterTabletDesktopOnly from '../components/index/footer-tablet-desktop-only';
+import Footer from '../components/index/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
-import TabBarMobileOnly from '../components/index/tab-bar-mobile-only';
+import NavTabBar from '../components/index/tab-bar-mobile-only';
 import Home from '../components/index/tab-state/home';
-import MenuMobileOnly from '../components/index/tab-state/menu-mobile-only';
+import Menu from '../components/index/tab-state/menu';
 import { useSelector } from 'react-redux';
 
 const Index = () => {
@@ -16,9 +16,9 @@ const Index = () => {
     VisitsAndViewsDuringSession('Index');
   }, []);
 
-  // TabBarMobileOnly Toggle State
+  // NavTabBar Toggle State
   const tabToggle = useSelector((state: any) => state.tabBar);
-  const tabDisplay = tabToggle === 'home' ? <Home /> : <MenuMobileOnly />;
+  const tabDisplay = tabToggle === 'home' ? <Home /> : <Menu />;
 
   return (
     <>
@@ -28,8 +28,8 @@ const Index = () => {
         <Main>{tabDisplay}</Main>
       </ContainerIndex>
 
-      <FooterTabletDesktopOnly />
-      <TabBarMobileOnly tabToggle={tabToggle} />
+      <Footer />
+      <NavTabBar tabToggle={tabToggle} />
     </>
   );
 };

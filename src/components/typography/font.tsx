@@ -4,22 +4,28 @@ export const fontSize: any = {
   mobile: {
     single14: '14px',
     small: '14px',
-    body: '18px',
-    headline: '32px',
+    body: '17px',
+    headlineSmall: '21px',
+    headlineMedium: '27px',
+    headlineBig: '32px',
   },
 
   tablet: {
     single14: '14px',
     small: '16px',
     body: '20px',
-    headline: '39px',
+    headlineSmall: '28px',
+    headlineMedium: '34px',
+    headlineBig: '39px',
   },
 
   desktop: {
     single14: '14px',
     small: '16px',
     body: '20px',
-    headline: '39px',
+    headlineSmall: '28px',
+    headlineMedium: '34px',
+    headlineBig: '39px',
   },
 
   // Test Size

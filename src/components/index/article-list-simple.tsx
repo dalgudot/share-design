@@ -26,7 +26,7 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
           <TextStyle
             type="h1"
             text={order}
-            textSize="headline"
+            textSize="headlineBig"
             weight={fontWeight[700]}
             lineHeight={1.2}
             letterSpacing="-0.8px"
@@ -35,7 +35,7 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
           <TextStyle
             type="h1"
             text={title}
-            textSize="headline"
+            textSize="headlineBig"
             weight={fontWeight[700]}
             lineHeight={1.2}
             marginTop="8px"
@@ -112,6 +112,10 @@ const BtnStyle = styled.button`
   border-radius: 50%;
   background-image: var(--purple-linear-gradient);
   margin-top: 24px;
+
+  &:hover {
+    opacity: 0.95;
+  }
 `;
 
 const TextDecoration = styled.figure`

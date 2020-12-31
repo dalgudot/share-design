@@ -45,7 +45,7 @@ const ArticleList = ({
         <TextStyle
           type="h1"
           text={title}
-          textSize="headline"
+          textSize="headlineBig"
           weight={fontWeight[700]}
           lineHeight={1.3}
           marginTop="5px"

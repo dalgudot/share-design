@@ -7,9 +7,9 @@ SHARE DESIGN is a space to share my UI/UX Design Experience with people around t
 
 ## I share my UI/UX Design Experience 🙌
 
-Hi. I am KyungHwan Kim, UI/UX Designer based in South Korea. SHARE DESIGN is a space to share my UI/UX Design Experience with people around the world.
+Hi. I am KyungHwan Kim, UI/UX Designer based in South Korea. 'SHARE DESIGN' is a space to share my UI/UX Design Experience with people around the world.
 
-I am inspired and learning a lot thanks to the experience shared by so many people around the world. As a UI/UX Designer, I also wanted to share my experience and thoughts around the world.
+I'm learning and inspiring by a lot thanks to the experience shared by designers around the world. As a UI/UX Designer, I also wanted to share my experience around the world.
 
 SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experience through SHARE DESIGN.
 

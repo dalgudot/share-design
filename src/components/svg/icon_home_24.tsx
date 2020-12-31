@@ -4,7 +4,6 @@ import { ThemeContext } from 'styled-components';
 
 const IconHome24 = ({ toggle }: any) => {
   const themeContext = useContext(ThemeContext);
-
   const color: string =
     toggle === true ? themeContext.whitePrimary : themeContext.gray4;
 
