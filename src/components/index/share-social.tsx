@@ -2,8 +2,12 @@ import styled from 'styled-components';
 import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const ShareSocial = ({ theme }: any) => {
+const ShareSocial = () => {
+  const themeContext = useContext(ThemeContext);
+
   return (
     <SocialWrap>
       <a href="/" target="_blank">
@@ -13,7 +17,7 @@ const ShareSocial = ({ theme }: any) => {
             text="Brunch"
             textSize="body"
             weight={fontWeight[400]}
-            color={theme.gray1}
+            color={themeContext.gray1}
           />
         </u>
       </a>
@@ -24,7 +28,7 @@ const ShareSocial = ({ theme }: any) => {
             text="Facebook"
             textSize="body"
             weight={fontWeight[400]}
-            color={theme.gray1}
+            color={themeContext.gray1}
           />
         </u>
       </a>
@@ -35,7 +39,7 @@ const ShareSocial = ({ theme }: any) => {
             text="LinkedIn"
             textSize="body"
             weight={fontWeight[400]}
-            color={theme.gray1}
+            color={themeContext.gray1}
           />
         </u>
       </a>

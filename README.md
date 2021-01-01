@@ -45,6 +45,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Toastify](https://github.com/fkhadra/react-toastify)
 
+- [React-Query](https://github.com/tannerlinsley/react-query)
+
 <br/>
 
 #### Interaction

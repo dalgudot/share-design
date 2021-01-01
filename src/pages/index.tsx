@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Header from '../components/index/header';
-import { DetectBrowserLang } from '../components/func/detect-browser-lang';
+import { DetectBrowserLang } from '../lib/func/detect-browser-lang';
 import Footer from '../components/index/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
-import { VisitsAndViewsDuringSession } from '../components/func/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../lib/func/visits-and-views';
 import NavTabBar from '../components/index/nav-tab-bar/nav-tab-bar';
 import Home from '../components/index/nav-tab-bar/home';
 import Menu from '../components/index/nav-tab-bar/menu';
@@ -16,19 +16,14 @@ const Index = () => {
     VisitsAndViewsDuringSession('Index');
   }, []);
 
-  // NavTabBar Toggle State
   const tabToggle = useSelector((state: any) => state.tabBar);
   const tabDisplay = tabToggle === 'home' ? <Home /> : <Menu />;
 
   return (
     <>
       <Header />
-
-      <ContainerIndex>
-        <Main>{tabDisplay}</Main>
-      </ContainerIndex>
-
-      <Footer />
+      <Main>{tabDisplay}</Main>
+      <Footer tabToggle={tabToggle} />
       <NavTabBar tabToggle={tabToggle} />
     </>
   );
@@ -36,9 +31,12 @@ const Index = () => {
 
 export default Index;
 
-const ContainerIndex = styled.div`
+const Main = styled.main`
+  /* margin-top: 144px; */
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
+    /* margin-top: 120px; */
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
@@ -47,13 +45,5 @@ const ContainerIndex = styled.div`
 
   @media all and (min-width: ${mediaBreakPoint.fourth}) {
     padding: 0 16.6667%;
-  }
-`;
-
-const Main = styled.main`
-  margin-top: 144px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 120px;
   }
 `;

@@ -2,18 +2,21 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import TextStyle from '../../components/typography/text-style';
 import { fontWeight } from '../../components/typography/font';
-import { DetectBrowserLang } from '../../components/func/detect-browser-lang';
-import { VisitsAndViewsDuringSession } from '../../components/func/visits-and-views';
+import { DetectBrowserLang } from '../../lib/func/detect-browser-lang';
+import { VisitsAndViewsDuringSession } from '../../lib/func/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../components/toast/toast-func';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-const TwoLanguage = ({ theme }: any) => {
+const TwoLanguage = () => {
   DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('001 Design in two languages');
   }, []);
 
+  const themeContext = useContext(ThemeContext);
   const url: string = 'https://share-design.kr/article/two-language';
 
   return (
@@ -24,7 +27,7 @@ const TwoLanguage = ({ theme }: any) => {
           text="페이스북"
           textSize="body"
           weight={fontWeight[700]}
-          color={theme.gray3}
+          color={themeContext.gray3}
         />
       </FacebookShareButton>
       <br />
@@ -35,7 +38,7 @@ const TwoLanguage = ({ theme }: any) => {
           text="링크드인"
           textSize="body"
           weight={fontWeight[700]}
-          color={theme.gray3}
+          color={themeContext.gray3}
         />
       </LinkedinShareButton>
       <br />
@@ -48,7 +51,7 @@ const TwoLanguage = ({ theme }: any) => {
             text="함수로 링크 복사"
             textSize="body"
             weight={fontWeight[700]}
-            color={theme.gray3}
+            color={themeContext.gray3}
           />
         </button>
       </CopyToClipboard>

@@ -5,24 +5,24 @@ import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const Footer = () => {
+const Footer = ({ tabToggle }: any) => {
   const themeContext = useContext(ThemeContext);
 
-  return (
-    <>
-      <FooterCopyright>
-        <TextStyle
-          type="p"
-          text="ⓒ KyungHwan Kim. All rights reserved."
-          textSize="small"
-          weight={fontWeight[300]}
-          opacity={0.8}
-          lineHeight={1.2}
-          color={themeContext.gray2}
-        />
-      </FooterCopyright>
-    </>
+  const footerDisplay = tabToggle === 'home' && (
+    <FooterCopyright>
+      <TextStyle
+        type="p"
+        text="ⓒ KyungHwan Kim. All rights reserved."
+        textSize="small"
+        weight={fontWeight[300]}
+        opacity={0.8}
+        lineHeight={1.2}
+        color={themeContext.gray2}
+      />
+    </FooterCopyright>
   );
+
+  return <>{footerDisplay}</>;
 };
 
 export default Footer;

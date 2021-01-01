@@ -45,17 +45,7 @@ const TextStyle = ({
 
 export default TextStyle;
 
-const Text = styled.p<{
-  mobileSize: string;
-  tabletSize: string;
-  desktopSize: string;
-  weight: number;
-  lineHeight?: number;
-  letterSpacing?: string;
-  color: any;
-  opacity?: number;
-  marginTop?: string;
-}>`
+const Text = styled.p<TextStyleComponetType>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
@@ -75,3 +65,15 @@ const Text = styled.p<{
     font-size: ${({ desktopSize }) => desktopSize};
   }
 `;
+
+interface TextStyleComponetType {
+  mobileSize: string;
+  tabletSize: string;
+  desktopSize: string;
+  weight: number;
+  lineHeight?: number;
+  letterSpacing?: string;
+  color: any;
+  opacity?: number;
+  marginTop?: string;
+}

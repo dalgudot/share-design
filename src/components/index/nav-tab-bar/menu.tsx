@@ -2,19 +2,21 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
-import languageFunc from '../../func/language-func';
+import languageFunc from '../../../lib/func/language-func';
 import { t } from '../lang/t';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useWindowHeight } from '../../../lib/custom-hook/useWindowHeight';
 
 const Menu = () => {
   const themeContext = useContext(ThemeContext);
+  const height = useWindowHeight();
 
   return (
-    <Ul>
-      <Link href="/b">
-        <a>
-          <li>
+    <Ul height={height}>
+      <li>
+        <Link href="/b">
+          <a>
             <TextStyle
               type="p"
               text={languageFunc(t.footerDesktop.greetings)}
@@ -22,13 +24,13 @@ const Menu = () => {
               weight={fontWeight[700]}
               color={themeContext.whitePrimary}
             />
-          </li>
-        </a>
-      </Link>
+          </a>
+        </Link>
+      </li>
 
-      <Link href="/b">
-        <a>
-          <li>
+      <li>
+        <Link href="/b">
+          <a>
             <TextStyle
               type="p"
               text={languageFunc(t.footerDesktop.contact)}
@@ -36,24 +38,34 @@ const Menu = () => {
               weight={fontWeight[700]}
               color={themeContext.whitePrimary}
             />
-          </li>
-        </a>
-      </Link>
+          </a>
+        </Link>
+      </li>
     </Ul>
   );
 };
 
 export default Menu;
 
-const Ul = styled.ul`
-  display: flex;
+const Ul = styled.ul<UlTypes>`
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 47vh;
+  text-align: center; */
 
-  a:nth-child(2) {
+  /* position: relative; */
+  /* top: 50%;
+  transform: translateY(-50%);
+  left: 0; */
+  width: 100%;
+  height: ${({ height }) => height}px;
+  text-align: center;
+
+  /* li:nth-child(2) {
     margin-top: 48px;
-  }
+  } */
 `;
+
+interface UlTypes {
+  height: number;
+}

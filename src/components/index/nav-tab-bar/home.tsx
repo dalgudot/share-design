@@ -1,4 +1,4 @@
-import languageFunc from '../../func/language-func';
+import languageFunc from '../../../lib/func/language-func';
 import { t } from '../lang/t';
 import ArticleListSimple from '../article-list-simple';
 
