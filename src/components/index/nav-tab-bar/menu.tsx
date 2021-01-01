@@ -12,7 +12,7 @@ const Menu = () => {
 
   return (
     <Ul>
-      <Link href="/welcome">
+      <Link href="/b">
         <a>
           <li>
             <TextStyle
@@ -26,7 +26,7 @@ const Menu = () => {
         </a>
       </Link>
 
-      <Link href="/welcome">
+      <Link href="/b">
         <a>
           <li>
             <TextStyle
