@@ -16,7 +16,7 @@ const Menu = () => {
   return (
     <Ul height={height}>
       <li>
-        <button onClick={() => Router.push('/b')}>
+        <Button onClick={() => Router.push('/b')}>
           <TextStyle
             type="p"
             text={useSetLanguage(t.footerDesktop.greetings)}
@@ -24,11 +24,11 @@ const Menu = () => {
             weight={fontWeight[700]}
             color={themeContext.whitePrimary}
           />
-        </button>
+        </Button>
       </li>
 
       <li>
-        <button onClick={() => Router.push('/b')}>
+        <Button onClick={() => Router.push('/b')}>
           <TextStyle
             type="p"
             text={useSetLanguage(t.footerDesktop.contact)}
@@ -36,7 +36,7 @@ const Menu = () => {
             weight={fontWeight[700]}
             color={themeContext.whitePrimary}
           />
-        </button>
+        </Button>
       </li>
     </Ul>
   );
@@ -45,23 +45,20 @@ const Menu = () => {
 export default Menu;
 
 const Ul = styled.ul<UlTypes>`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center; */
-
-  /* position: relative; */
-  /* top: 50%;
-  transform: translateY(-50%);
-  left: 0; */
   width: 100%;
   height: ${({ height }) => height}px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 12px;
 
-  /* li:nth-child(2) {
-    margin-top: 48px;
-  } */
+  li:nth-child(2) {
+    margin-top: 72px;
+  }
 `;
+
+const Button = styled.button``;
 
 interface UlTypes {
   height: number;
