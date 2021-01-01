@@ -4,7 +4,7 @@ import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import LangChangeButton from '../button/lang-change-button';
 import { t } from './lang/t';
-import { useSetLanguage } from '../../lib/custom-hook/useSetLanguage';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';

@@ -2,16 +2,16 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
-import { useSetLanguage } from '../../../lib/custom-hook/useSetLanguage';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../lang/t';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useWindowHeight } from '../../../lib/custom-hook/useWindowHeight';
+import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import Router from 'next/router';
 
 const Menu = () => {
   const themeContext = useContext(ThemeContext);
-  const height = useWindowHeight();
+  const height: number = useWindowHeight();
 
   return (
     <Ul height={height}>

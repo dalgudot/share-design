@@ -1,17 +1,14 @@
-import Link from 'next/link';
 import styled from 'styled-components';
-import { useSetLanguage } from '../lib/custom-hook/useSetLanguage';
+import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import { fontWeight } from '../components/typography/font';
 import TextStyle from '../components/typography/text-style';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { t } from '../components/index/lang/t';
 import Header from '../components/index/header';
-import { useQuery } from 'react-query';
 
 const Welcome = () => {
   const themeContext = useContext(ThemeContext);
-  console.log(useQuery);
 
   return (
     <>

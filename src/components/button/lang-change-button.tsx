@@ -6,7 +6,7 @@ import { fontWeight } from '../typography/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 import { t } from '../index/lang/t';
-import { useSetLanguage } from '../../lib/custom-hook/useSetLanguage';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';

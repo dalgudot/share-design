@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Header from '../components/index/header';
-import { DetectBrowserLang } from '../lib/func/detect-browser-lang';
+import { DetectBrowserLang } from '../lib/funtions/detect-browser-lang';
 import Footer from '../components/index/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
-import { VisitsAndViewsDuringSession } from '../lib/func/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../lib/funtions/visits-and-views';
 import NavTabBar from '../components/index/nav-tab-bar/nav-tab-bar';
 import Home from '../components/index/nav-tab-bar/home';
 import Menu from '../components/index/nav-tab-bar/menu';

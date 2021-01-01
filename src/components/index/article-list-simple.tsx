@@ -1,28 +1,28 @@
-import styled from 'styled-components';
-import Link from 'next/link';
+import styled, { DefaultTheme } from 'styled-components';
 import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
-import { t } from './lang/t';
-import { useSetLanguage } from '../../lib/custom-hook/useSetLanguage';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
 import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
 import IconArrowRight24 from '../svg/icon_arrow_right_24';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useWindowHeight } from '../../lib/hooks/useWindowHeight';
+import Router from 'next/router';
 
 const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext: DefaultTheme = useContext(ThemeContext);
+  const height: number = useWindowHeight();
 
   return (
-    <Ul>
+    <Ul height={height}>
       <motion.li
         variants={ListTextAnimationVariants}
         initial="start"
         animate="end"
       >
-        <ListSection>
+        <ListSection height={height}>
           <TextStyle
             type="h1"
             text={order}
@@ -43,17 +43,13 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
             color={themeContext.whitePrimary}
           />
 
-          <Link href={href}>
-            <a>
-              <BtnStyle>
-                <IconArrowRight24 color={themeContext.whitePrimary} />
-              </BtnStyle>
-            </a>
-          </Link>
+          <BtnStyle onClick={() => Router.push({ href })}>
+            <IconArrowRight24 color={themeContext.whitePrimary} />
+          </BtnStyle>
         </ListSection>
       </motion.li>
 
-      <TextDecoration>
+      <TextDecoration height={height}>
         <MotionSVGShareDesignKo />
         <MotionSVGShareDesignEn />
       </TextDecoration>
@@ -63,23 +59,15 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
 
 export default ArticleListSimple;
 
-// framer motion
-const ListTextAnimationVariants = {
-  start: {
-    opacity: 0,
-  },
-
-  end: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-};
-
-const Ul = styled.ul`
-  position: absolute;
+const Ul = styled.ul<StyleTypes>`
+  width: 100%;
+  height: ${({ height }) => height}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 12px;
+  /* position: absolute;
   top: 32%;
   left: 50%;
   transform: translateX(-50%);
@@ -88,11 +76,18 @@ const Ul = styled.ul`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     top: 28%;
-  }
+  } */
 `;
 
-const ListSection = styled.section`
-  position: absolute;
+const ListSection = styled.section<StyleTypes>`
+  width: 100%;
+  height: ${({ height }) => height}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 12px;
+  /* position: absolute;
   transform: translateY(18%);
   display: flex;
   flex-direction: column;
@@ -100,7 +95,7 @@ const ListSection = styled.section`
   align-items: center;
   text-align: center;
   min-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; */
 `;
 
 const BtnStyle = styled.button`
@@ -118,9 +113,8 @@ const BtnStyle = styled.button`
   }
 `;
 
-const TextDecoration = styled.figure`
+const TextDecoration = styled.figure<StyleTypes>`
   position: absolute;
-  /* transform: translateY(20%); */
   left: 50%;
   transform: translate(-50%, -4%);
   z-index: -1;
@@ -135,15 +129,30 @@ const TextDecoration = styled.figure`
     mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
     -webkit-mask-image: linear-gradient(0deg, transparent 3%, #000 90%);
   }
-
-  /* @media all and (max-width: ${mediaBreakPoint.first}) {
-    top: 100%;
-  } */
 `;
+
+// framer motion
+const ListTextAnimationVariants = {
+  start: {
+    opacity: 0,
+  },
+
+  end: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+};
 
 // type
 interface ArticleListPropTypes {
   href: string;
   order: string;
   title: string;
+}
+
+interface StyleTypes {
+  height: number;
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TextStyle from '../components/typography/text-style';
 import { t } from '../components/index/lang/t';
 import { fontWeight } from '../components/typography/font';
-import { useSetLanguage } from '../lib/custom-hook/useSetLanguage';
+import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';

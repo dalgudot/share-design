@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import TextStyle from '../../components/typography/text-style';
 import { fontWeight } from '../../components/typography/font';
-import { DetectBrowserLang } from '../../lib/func/detect-browser-lang';
-import { VisitsAndViewsDuringSession } from '../../lib/func/visits-and-views';
+import { DetectBrowserLang } from '../../lib/funtions/detect-browser-lang';
+import { VisitsAndViewsDuringSession } from '../../lib/funtions/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../components/toast/toast-func';
+import { toastify } from '../../components/toast/toastify';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
