@@ -67,6 +67,12 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [Firebase-admin](https://github.com/firebase/firebase-admin-node)
 
+<br/>
+
+## Contents Copyrights 👨‍⚖️
+
+All copyrights of the contents of 'SHARE DESIGN' belong to KyungHwan Kim.
+
 <!-- #### Lecture
 
 - [Ellie's Dream Coding](https://www.youtube.com/channel/UC_4u-bXaba7yrRz_6x6kb_w)
@@ -74,7 +80,3 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 - [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
 
 - [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0) -->
-
-<!-- ## Artwork Copyrights 👨‍⚖️
-
-This portfolio website displays my photographic artworks 'TWENTIES'. All copyrights belong to KyungHwan Kim. -->

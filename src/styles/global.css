@@ -1,9 +1,6 @@
 :root {
   --purple-linear-gradient: linear-gradient(to bottom, #7c62ed, #4633d7);
   --border-radius-primary: 13px;
-  --font-family-interface: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol;
 }
 
 html {
@@ -43,7 +40,9 @@ body::-webkit-scrollbar {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto',
-    Apple SD Gothic Neo, Noto Sans KR, var(--font-family-interface), sans-serif;
+    Apple SD Gothic Neo, Noto Sans KR, Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, sans-serif;
 }
 
 a {
