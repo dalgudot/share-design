@@ -5,7 +5,7 @@ import { fontWeight } from '../typography/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
 import { t } from './lang/t';
-import languageFunc from '../../lib/func/language-func';
+import { useSetLanguage } from '../../lib/custom-hook/useSetLanguage';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';
 import MotionSVGShareDesignKo from '../svg/motion-svg-share-design-ko';
 import IconArrowRight24 from '../svg/icon_arrow_right_24';

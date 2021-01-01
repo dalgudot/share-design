@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import languageFunc from '../lib/func/language-func';
+import { useSetLanguage } from '../lib/custom-hook/useSetLanguage';
 import { fontWeight } from '../components/typography/font';
 import TextStyle from '../components/typography/text-style';
 import { useContext } from 'react';
@@ -19,21 +19,21 @@ const Welcome = () => {
       <Container>
         <TextStyle
           type="p"
-          text={languageFunc(t.welcome1)}
+          text={useSetLanguage(t.welcome1)}
           textSize="body"
           weight={fontWeight[400]}
           color={themeContext.whitePrimary}
         />
         <TextStyle
           type="p"
-          text={languageFunc(t.welcome2)}
+          text={useSetLanguage(t.welcome2)}
           textSize="body"
           weight={fontWeight[400]}
           color={themeContext.whitePrimary}
         />
         <TextStyle
           type="p"
-          text={languageFunc(t.welcome3)}
+          text={useSetLanguage(t.welcome3)}
           textSize="body"
           weight={fontWeight[400]}
           color={themeContext.whitePrimary}

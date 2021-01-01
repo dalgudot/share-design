@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TextStyle from '../components/typography/text-style';
 import { t } from '../components/index/lang/t';
 import { fontWeight } from '../components/typography/font';
-import languageFunc from '../lib/func/language-func';
+import { useSetLanguage } from '../lib/custom-hook/useSetLanguage';
 import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -17,7 +17,7 @@ const Error404Page = () => {
     <Container>
       <TextStyle
         type="h1"
-        text={languageFunc(t.errorMessage.message)}
+        text={useSetLanguage(t.errorMessage.message)}
         textSize="body"
         weight={fontWeight[400]}
         lineHeight={1.55}
@@ -28,7 +28,7 @@ const Error404Page = () => {
           <BtnStyle>
             <TextStyle
               type="p"
-              text={languageFunc(t.errorMessage.btn)}
+              text={useSetLanguage(t.errorMessage.btn)}
               textSize="body"
               weight={fontWeight[400]}
               color={themeContext.whitePrimary}

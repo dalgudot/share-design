@@ -2,11 +2,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
-import languageFunc from '../../../lib/func/language-func';
+import { useSetLanguage } from '../../../lib/custom-hook/useSetLanguage';
 import { t } from '../lang/t';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useWindowHeight } from '../../../lib/custom-hook/useWindowHeight';
+import Router from 'next/router';
 
 const Menu = () => {
   const themeContext = useContext(ThemeContext);
@@ -15,31 +16,27 @@ const Menu = () => {
   return (
     <Ul height={height}>
       <li>
-        <Link href="/b">
-          <a>
-            <TextStyle
-              type="p"
-              text={languageFunc(t.footerDesktop.greetings)}
-              textSize="headlineBig"
-              weight={fontWeight[700]}
-              color={themeContext.whitePrimary}
-            />
-          </a>
-        </Link>
+        <button onClick={() => Router.push('/b')}>
+          <TextStyle
+            type="p"
+            text={useSetLanguage(t.footerDesktop.greetings)}
+            textSize="headlineBig"
+            weight={fontWeight[700]}
+            color={themeContext.whitePrimary}
+          />
+        </button>
       </li>
 
       <li>
-        <Link href="/b">
-          <a>
-            <TextStyle
-              type="p"
-              text={languageFunc(t.footerDesktop.contact)}
-              textSize="headlineBig"
-              weight={fontWeight[700]}
-              color={themeContext.whitePrimary}
-            />
-          </a>
-        </Link>
+        <button onClick={() => Router.push('/b')}>
+          <TextStyle
+            type="p"
+            text={useSetLanguage(t.footerDesktop.contact)}
+            textSize="headlineBig"
+            weight={fontWeight[700]}
+            color={themeContext.whitePrimary}
+          />
+        </button>
       </li>
     </Ul>
   );

@@ -6,7 +6,7 @@ import { fontWeight } from '../typography/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 import { t } from '../index/lang/t';
-import languageFunc from '../func/language-func';
+import { useSetLanguage } from '../../lib/custom-hook/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -58,7 +58,7 @@ const LangChangeButton = () => {
       <BtnStyle>
         <TextStyle
           type="p"
-          text={languageFunc(t.langChagneButton)}
+          text={useSetLanguage(t.langChagneButton)}
           textSize="single14"
           weight={fontWeight[700]}
           color={themeContext.whitePrimary}
