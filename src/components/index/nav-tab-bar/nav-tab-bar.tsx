@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../styles/common';
-import IconHome24 from '../svg/icon_home_24';
-import IconMenu24 from '../svg/icon_menu_24';
+import { mediaBreakPoint } from '../../../styles/common';
+import IconHome24 from '../../svg/icon_home_24';
+import IconMenu24 from '../../svg/icon_menu_24';
 import { useDispatch } from 'react-redux';
 
 const NavTabBar = ({ tabToggle }: any) => {
