@@ -22,31 +22,29 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
         initial="start"
         animate="end"
       >
-        <ListSection height={height}>
-          <TextStyle
-            type="h1"
-            text={order}
-            textSize="headlineBig"
-            weight={fontWeight[700]}
-            lineHeight={1.2}
-            letterSpacing="-0.8px"
-            color={themeContext.whitePrimary}
-          />
-          <TextStyle
-            type="h1"
-            text={title}
-            textSize="headlineBig"
-            weight={fontWeight[700]}
-            lineHeight={1.2}
-            marginTop="8px"
-            letterSpacing="-0.8px"
-            color={themeContext.whitePrimary}
-          />
+        <TextStyle
+          type="h1"
+          text={order}
+          textSize="headlineBig"
+          weight={fontWeight[700]}
+          lineHeight={1.2}
+          letterSpacing="-0.8px"
+          color={themeContext.whitePrimary}
+        />
+        <TextStyle
+          type="h1"
+          text={title}
+          textSize="headlineBig"
+          weight={fontWeight[700]}
+          lineHeight={1.2}
+          marginTop="8px"
+          letterSpacing="-0.8px"
+          color={themeContext.whitePrimary}
+        />
 
-          <BtnStyle onClick={() => Router.push({ href })}>
-            <IconArrowRight24 color={themeContext.whitePrimary} />
-          </BtnStyle>
-        </ListSection>
+        <BtnStyle onClick={() => Router.push({ href })}>
+          <IconArrowRight24 color={themeContext.whitePrimary} />
+        </BtnStyle>
       </motion.li>
 
       <TextDecoration height={height}>
@@ -67,35 +65,16 @@ const Ul = styled.ul<StyleTypes>`
   justify-content: center;
   align-items: center;
   padding-bottom: 12px;
-  /* position: absolute;
-  top: 32%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 100vw;
-  max-width: 100vw;
 
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    top: 28%;
-  } */
-`;
-
-const ListSection = styled.section<StyleTypes>`
-  width: 100%;
-  height: ${({ height }) => height}px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 12px;
-  /* position: absolute;
-  transform: translateY(18%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-width: 100%;
-  overflow-x: hidden; */
+  li {
+    width: 100%;
+    height: ${({ height }) => height}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
+  }
 `;
 
 const BtnStyle = styled.button`

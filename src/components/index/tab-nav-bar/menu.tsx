@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 import TextStyle from '../../typography/text-style';
 import { fontWeight } from '../../typography/font';
@@ -19,7 +18,7 @@ const Menu = () => {
         <Button onClick={() => Router.push('/b')}>
           <TextStyle
             type="p"
-            text={useSetLanguage(t.footerDesktop.greetings)}
+            text={useSetLanguage(t.subNavBar.welcome)}
             textSize="headlineBig"
             weight={fontWeight[700]}
             color={themeContext.whitePrimary}
@@ -31,7 +30,7 @@ const Menu = () => {
         <Button onClick={() => Router.push('/b')}>
           <TextStyle
             type="p"
-            text={useSetLanguage(t.footerDesktop.contact)}
+            text={useSetLanguage(t.subNavBar.contact)}
             textSize="headlineBig"
             weight={fontWeight[700]}
             color={themeContext.whitePrimary}

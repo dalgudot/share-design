@@ -5,9 +5,9 @@ import Footer from '../components/index/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../lib/funtions/visits-and-views';
-import NavTabBar from '../components/index/nav-tab-bar/nav-tab-bar';
-import Home from '../components/index/nav-tab-bar/home';
-import Menu from '../components/index/nav-tab-bar/menu';
+import TabNavBar from '../components/index/tab-nav-bar/tab-nav-bar';
+import Home from '../components/index/tab-nav-bar/home';
+import Menu from '../components/index/tab-nav-bar/menu';
 import { useSelector } from 'react-redux';
 
 const Index = () => {
@@ -24,7 +24,7 @@ const Index = () => {
       <Header />
       <Main>{tabDisplay}</Main>
       <Footer tabToggle={tabToggle} />
-      <NavTabBar tabToggle={tabToggle} />
+      <TabNavBar tabToggle={tabToggle} />
     </>
   );
 };

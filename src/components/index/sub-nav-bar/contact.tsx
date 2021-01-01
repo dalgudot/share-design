@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import TextStyle from '../typography/text-style';
-import { fontWeight } from '../typography/font';
-import { mediaBreakPoint } from '../../styles/common';
+import TextStyle from '../../typography/text-style';
+import { fontWeight } from '../../typography/font';
+import { mediaBreakPoint } from '../../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const ShareSocial = () => {
+const ContactState = () => {
   const themeContext = useContext(ThemeContext);
-
   return (
     <SocialWrap>
       <a href="/" target="_blank">
@@ -47,7 +46,7 @@ const ShareSocial = () => {
   );
 };
 
-export default ShareSocial;
+export default ContactState;
 
 const SocialWrap = styled.section`
   display: flex;

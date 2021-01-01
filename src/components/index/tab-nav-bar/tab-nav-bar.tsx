@@ -6,7 +6,7 @@ import IconHome24 from '../../svg/icon_home_24';
 import IconMenu24 from '../../svg/icon_menu_24';
 import { useDispatch } from 'react-redux';
 
-const NavTabBar = ({ tabToggle }: any) => {
+const TabNavBar = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
   const TAB_CHANGE = () =>
     dispatch({
@@ -55,7 +55,7 @@ const NavTabBar = ({ tabToggle }: any) => {
   );
 };
 
-export default NavTabBar;
+export default TabNavBar;
 
 const Nav = styled.nav`
   // 공통 속성

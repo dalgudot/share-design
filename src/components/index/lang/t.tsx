@@ -1,3 +1,5 @@
+import Welcome from '../../../pages/welcome';
+
 export const t = {
   shareDesign: {
     k: '디자인 공유하기',
@@ -48,12 +50,11 @@ export const t = {
     e: '한글로 보기',
   },
 
-  footerDesktop: {
-    greetings: {
+  subNavBar: {
+    welcome: {
       k: '인사말',
       e: 'Welcome',
     },
-
     contact: {
       k: '연락처',
       e: 'Contact',
