@@ -44,7 +44,10 @@ const TwoLanguage = () => {
       <br />
       <br />
 
-      <CopyToClipboard text={url} onCopy={() => toastify()}>
+      <CopyToClipboard
+        text={url}
+        // onCopy={() => toastify()}
+      >
         <button>
           <TextStyle
             type="h1"
