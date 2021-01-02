@@ -3,13 +3,19 @@ import styled from 'styled-components';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { fontWeight } from '../../../components/typography/font';
 import { t } from '../../../components/index/lang/t';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useRipple } from 'react-use-ripple';
+import { useDispatch } from 'react-redux';
 
-const SubNavBar = ({ subNavToggle, setSubNavToggle }: any) => {
+const SubNavBar = ({ subNavToggle }: any) => {
   const themeContext = useContext(ThemeContext);
+  const dispatch = useDispatch();
+  const SUB_NAV_CHANGE = () =>
+    dispatch({
+      type: 'SUB_NAV_CHANGE',
+    });
 
   // Toggle State
   const welcomeToggle = subNavToggle === 'welcome' ? true : false;
@@ -23,12 +29,24 @@ const SubNavBar = ({ subNavToggle, setSubNavToggle }: any) => {
     ? themeContext.whitePrimary
     : themeContext.gray4;
 
+  const welcomeToggleBottomBarColor: string = welcomeToggle
+    ? themeContext.whitePrimary
+    : themeContext.gray6;
+
+  const contactToggleBottomBarColor: string = contactToggle
+    ? themeContext.whitePrimary
+    : themeContext.gray6;
+
+  const welcomeToggleBottomBarBorder: string = welcomeToggle ? '4px' : '1px';
+
+  const contactToggleBottomBarBorder: string = contactToggle ? '4px' : '1px';
+
   const setWelcomeToggle = () => {
-    subNavToggle === 'contact' && setSubNavToggle('welcome');
+    subNavToggle === 'contact' && SUB_NAV_CHANGE();
   };
 
   const setContactToggle = () => {
-    subNavToggle === 'welcome' && setSubNavToggle('contact');
+    subNavToggle === 'welcome' && SUB_NAV_CHANGE();
   };
 
   // useRipple
@@ -48,7 +66,12 @@ const SubNavBar = ({ subNavToggle, setSubNavToggle }: any) => {
 
   return (
     <Nav>
-      <Tab onClick={() => setWelcomeToggle()} ref={welcomeRef}>
+      <LeftTab
+        onClick={() => setWelcomeToggle()}
+        welcomeToggleBottomBarColor={welcomeToggleBottomBarColor}
+        welcomeToggleBottomBarBorder={welcomeToggleBottomBarBorder}
+        ref={welcomeRef}
+      >
         <TextStyle
           type="p"
           text={useSetLanguage(t.subNavBar.welcome)}
@@ -56,8 +79,13 @@ const SubNavBar = ({ subNavToggle, setSubNavToggle }: any) => {
           weight={fontWeight[700]}
           color={welcomeToggleColor}
         />
-      </Tab>
-      <Tab onClick={() => setContactToggle()} ref={contactRef}>
+      </LeftTab>
+      <RightTab
+        onClick={() => setContactToggle()}
+        contactToggleBottomBarColor={contactToggleBottomBarColor}
+        contactToggleBottomBarBorder={contactToggleBottomBarBorder}
+        ref={contactRef}
+      >
         <TextStyle
           type="p"
           text={useSetLanguage(t.subNavBar.contact)}
@@ -65,7 +93,7 @@ const SubNavBar = ({ subNavToggle, setSubNavToggle }: any) => {
           weight={fontWeight[700]}
           color={contactToggleColor}
         />
-      </Tab>
+      </RightTab>
     </Nav>
   );
 };
@@ -74,31 +102,25 @@ export default SubNavBar;
 
 const Nav = styled.nav`
   position: fixed;
-  top: 72px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 740px;
-  border-bottom: solid 1px ${({ theme }) => theme.gray6};
   z-index: 10000;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
   // 변경 요소
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 740px;
   height: 53px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    top: 60px;
+    left: 0;
+    transform: unset;
+    width: 100%;
     height: 49px;
-    padding: 0 4.5vw;
   }
-`;
-
-const Tab = styled.button`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   /* Grassmorphism */
   opacity: 0.999;
@@ -111,3 +133,39 @@ const Tab = styled.button`
     -webkit-backdrop-filter 0.11s ease-in-out;
   transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
 `;
+
+const Tab = styled.button`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+`;
+
+const LeftTab = styled(Tab)<LeftTabDataTypes>`
+  border-bottom: solid
+    ${({ welcomeToggleBottomBarBorder }) => welcomeToggleBottomBarBorder};
+  border-bottom-color: ${({ welcomeToggleBottomBarColor }) =>
+    welcomeToggleBottomBarColor};
+  z-index: 10001;
+`;
+
+const RightTab = styled(Tab)<RightTabDataTypes>`
+  border-bottom: solid
+    ${({ contactToggleBottomBarBorder }) => contactToggleBottomBarBorder};
+  border-bottom-color: ${({ contactToggleBottomBarColor }) =>
+    contactToggleBottomBarColor};
+  z-index: 10001;
+`;
+
+// type
+interface LeftTabDataTypes {
+  welcomeToggleBottomBarColor: string;
+  welcomeToggleBottomBarBorder: string;
+}
+
+interface RightTabDataTypes {
+  contactToggleBottomBarColor: string;
+  contactToggleBottomBarBorder: string;
+}

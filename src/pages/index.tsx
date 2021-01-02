@@ -16,7 +16,7 @@ const Index = () => {
     VisitsAndViewsDuringSession('Index');
   }, []);
 
-  const tabToggle = useSelector((state: any) => state.tabBar);
+  const tabToggle = useSelector((state: any) => state.tabNavBar);
   const tabDisplay = tabToggle === 'home' ? <Home /> : <Menu />;
 
   return (

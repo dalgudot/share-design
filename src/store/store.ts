@@ -32,31 +32,22 @@ const storage =
 
 let store: any;
 
-const InitialState: {
-  language: string;
-  themeMode: string;
-  userLanguageChange: string;
-  tabBar: string;
-} = {
+const InitialState: InitialStateTypes = {
   language: 'ko',
   themeMode: 'darkTheme',
   userLanguageChange: 'no',
-  tabBar: 'home',
+  tabNavBar: 'home',
+  subNavBar: 'contact',
 };
 
-export const actionTypes: {
-  LANGUAGE_CHANGE: string;
-  MODE_CHANGE: string;
-  USER_LANGUAGE_CHANGE_CHANGE: string;
-  TAB_CHANGE: string;
-} = {
+export const actionTypes: actionTypesTypes = {
   LANGUAGE_CHANGE: 'LANGUAGE_CHANGE',
   MODE_CHANGE: 'MODE_CHANGE',
   USER_LANGUAGE_CHANGE_CHANGE: 'USER_LANGUAGE_CHANGE_CHANGE',
-  TAB_CHANGE: 'TAB_CHANGE',
+  TAB_NAV_CHANGE: 'TAB_NAV_CHANGE',
+  SUB_NAV_CHANGE: 'SUB_NAV_CHANGE',
 };
 
-// REDUCERS
 export const reducer = (state = InitialState, action: any) => {
   switch (action.type) {
     case actionTypes.LANGUAGE_CHANGE:
@@ -77,10 +68,16 @@ export const reducer = (state = InitialState, action: any) => {
         userLanguageChange: state.userLanguageChange === 'no' ? 'yes' : 'no',
       };
 
-    case actionTypes.TAB_CHANGE:
+    case actionTypes.TAB_NAV_CHANGE:
       return {
         ...state,
-        tabBar: state.tabBar === 'home' ? 'menu' : 'home',
+        tabNavBar: state.tabNavBar === 'home' ? 'menu' : 'home',
+      };
+
+    case actionTypes.SUB_NAV_CHANGE:
+      return {
+        ...state,
+        subNavBar: state.subNavBar === 'welcome' ? 'contact' : 'welcome',
       };
 
     default:
@@ -129,4 +126,21 @@ export const initializeStore = (preloadedState: any) => {
 export function useStore(initialState: any) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
+}
+
+// type
+interface InitialStateTypes {
+  language: string;
+  themeMode: string;
+  userLanguageChange: string;
+  tabNavBar: string;
+  subNavBar: string;
+}
+
+interface actionTypesTypes {
+  LANGUAGE_CHANGE: string;
+  MODE_CHANGE: string;
+  USER_LANGUAGE_CHANGE_CHANGE: string;
+  TAB_NAV_CHANGE: string;
+  SUB_NAV_CHANGE: string;
 }

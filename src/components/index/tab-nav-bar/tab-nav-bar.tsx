@@ -8,9 +8,9 @@ import { useDispatch } from 'react-redux';
 
 const TabNavBar = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
-  const TAB_CHANGE = () =>
+  const TAB_NAV_CHANGE = () =>
     dispatch({
-      type: 'TAB_CHANGE',
+      type: 'TAB_NAV_CHANGE',
     });
 
   // Toggle Graphic on off
@@ -18,11 +18,11 @@ const TabNavBar = ({ tabToggle }: any) => {
   const menuToggle = tabToggle === 'menu' ? true : false;
 
   const setHomeToggle = () => {
-    tabToggle === 'menu' && TAB_CHANGE();
+    tabToggle === 'menu' && TAB_NAV_CHANGE();
   };
 
   const setMenuToggle = () => {
-    tabToggle === 'home' && TAB_CHANGE();
+    tabToggle === 'home' && TAB_NAV_CHANGE();
   };
 
   // useRipple

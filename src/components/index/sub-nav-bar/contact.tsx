@@ -7,8 +7,9 @@ import { ThemeContext } from 'styled-components';
 
 const ContactState = () => {
   const themeContext = useContext(ThemeContext);
+
   return (
-    <SocialWrap>
+    <Container>
       <a href="/" target="_blank">
         <u>
           <TextStyle
@@ -42,15 +43,19 @@ const ContactState = () => {
           />
         </u>
       </a>
-    </SocialWrap>
+    </Container>
   );
 };
 
 export default ContactState;
 
-const SocialWrap = styled.section`
+const Container = styled.section`
   display: flex;
-  justify-content: space-between;
-  max-width: 960px;
-  min-width: 100%;
+
+  // 변경 요소
+  margin-top: 176px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 155px;
+  }
 `;

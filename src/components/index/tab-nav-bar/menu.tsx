@@ -50,7 +50,7 @@ const Ul = styled.ul<UlTypes>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
 
   li:nth-child(2) {
     margin-top: 72px;
