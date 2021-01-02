@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import TextStyle from '../typography/text-style';
 import { fontWeight } from '../typography/font';
 import LangChangeButton from '../button/lang-change-button';
@@ -8,24 +7,35 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import Router from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
+  const tabToggle = useSelector((state: any) => state.tabNavBar);
+  const dispatch = useDispatch();
+  const TAB_NAV_CHANGE = () =>
+    dispatch({
+      type: 'TAB_NAV_CHANGE',
+    });
+
+  const goHome = () => {
+    tabToggle !== 'home' && TAB_NAV_CHANGE();
+    Router.push('/');
+  };
 
   return (
     <>
       <HeaderContainer>
-        <Link href="/">
-          <Left>
-            <TextStyle
-              type="h3"
-              text={useSetLanguage(t.shareDesign)}
-              textSize="body"
-              weight={fontWeight[700]}
-              color={themeContext.whitePrimary}
-            />
-          </Left>
-        </Link>
+        <Left onClick={goHome}>
+          <TextStyle
+            type="h3"
+            text={useSetLanguage(t.shareDesign)}
+            textSize="body"
+            weight={fontWeight[700]}
+            color={themeContext.whitePrimary}
+          />
+        </Left>
         <LangChangeButton />
       </HeaderContainer>
       <GlassMorphismBackground />
@@ -61,7 +71,7 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const Left = styled.a``;
+const Left = styled.button``;
 
 const GlassMorphismBackground = styled.div`
   position: fixed;

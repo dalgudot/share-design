@@ -23,12 +23,12 @@ const Menu = () => {
 
   const goWelcome = () => {
     subNavToggle === 'contact' && SUB_NAV_CHANGE();
-    Router.push('/welcome');
+    Router.push('/b');
   };
 
   const goContact = () => {
     subNavToggle === 'welcome' && SUB_NAV_CHANGE();
-    Router.push('/welcome');
+    Router.push('/b');
   };
 
   return (

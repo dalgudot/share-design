@@ -12,7 +12,6 @@ import { useState } from 'react';
 import { PreventIllegalTheft } from '../lib/funtions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
-import Toast from '../components/toast/toastify';
 import type { AppProps /*, AppContext */ } from 'next/app';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
@@ -32,7 +31,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
             <GlobalColors />
-            <Toast />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} theme={mode} />
             </AnimatePresence>

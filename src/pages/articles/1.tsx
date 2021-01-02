@@ -6,7 +6,6 @@ import { DetectBrowserLang } from '../../lib/funtions/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../lib/funtions/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../components/toast/toastify';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -46,7 +45,7 @@ const TwoLanguage = () => {
 
       <CopyToClipboard
         text={url}
-        // onCopy={() => toastify()}
+        // onCopy={() => func()}
       >
         <button>
           <TextStyle
