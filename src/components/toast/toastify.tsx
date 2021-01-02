@@ -16,12 +16,15 @@ const Zoom = cssTransition({
 });
 
 // 커스텀 토스트 애니메이션 만들기
-export const toastify = () => {
-  toast('Wow so easy !', {
-    transition: Zoom,
-    toastId: 'CopyToClipboard',
-    // onClose: debounceToast(),
-  });
+export const toastify = (message: string) => {
+  toast(
+    { message },
+    {
+      transition: Zoom,
+      toastId: 'CopyToClipboard',
+      // onClose: debounceToast(),
+    }
+  );
 };
 
 // Toast 미리 Mount
@@ -69,6 +72,7 @@ const ToastBox = styled(ToastContainer)`
   max-width: 480px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 20000;
 
   .zoomIn {
     animation: ${In};

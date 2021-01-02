@@ -108,14 +108,14 @@ const Nav = styled.nav`
   align-items: center;
 
   // 변경 요소
-  top: 74px;
+  top: 72px;
   left: 50%;
   transform: translateX(-50%);
   width: 740px;
   height: 53px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    top: 60px;
+    top: 57px;
     left: 0;
     transform: unset;
     width: 100%;

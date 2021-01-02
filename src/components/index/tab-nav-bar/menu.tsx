@@ -7,15 +7,34 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import Router from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Menu = () => {
   const themeContext = useContext(ThemeContext);
   const height: number = useWindowHeight();
 
+  // welcome / contact 어떤 버튼을 눌렀느냐에 따라 상태 다르게 바꾸기
+  const subNavToggle = useSelector((state: any) => state.subNavBar);
+  const dispatch = useDispatch();
+  const SUB_NAV_CHANGE = () =>
+    dispatch({
+      type: 'SUB_NAV_CHANGE',
+    });
+
+  const goWelcome = () => {
+    subNavToggle === 'contact' && SUB_NAV_CHANGE();
+    Router.push('/welcome');
+  };
+
+  const goContact = () => {
+    subNavToggle === 'welcome' && SUB_NAV_CHANGE();
+    Router.push('/welcome');
+  };
+
   return (
     <Ul height={height}>
       <li>
-        <Button onClick={() => Router.push('/b')}>
+        <Button onClick={() => goWelcome()}>
           <TextStyle
             type="p"
             text={useSetLanguage(t.subNavBar.welcome)}
@@ -27,7 +46,7 @@ const Menu = () => {
       </li>
 
       <li>
-        <Button onClick={() => Router.push('/b')}>
+        <Button onClick={() => goContact()}>
           <TextStyle
             type="p"
             text={useSetLanguage(t.subNavBar.contact)}

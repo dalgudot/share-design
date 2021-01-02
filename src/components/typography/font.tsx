@@ -3,6 +3,9 @@
 export const fontSize: any = {
   mobile: {
     single14: '14px',
+    single17: '17px',
+    single21: '21px',
+    single32: '32px',
     small: '14px',
     body: '17px',
     headlineSmall: '21px',
@@ -12,6 +15,9 @@ export const fontSize: any = {
 
   tablet: {
     single14: '14px',
+    single17: '17px',
+    single21: '21px',
+    single32: '32px',
     small: '16px',
     body: '20px',
     headlineSmall: '28px',
@@ -21,6 +27,9 @@ export const fontSize: any = {
 
   desktop: {
     single14: '14px',
+    single17: '17px',
+    single21: '21px',
+    single32: '32px',
     small: '16px',
     body: '20px',
     headlineSmall: '28px',

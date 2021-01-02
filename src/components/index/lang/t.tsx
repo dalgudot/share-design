@@ -6,6 +6,16 @@ export const t = {
     e: 'SHARE DESIGN',
   },
 
+  myName: {
+    k: '김경환',
+    e: 'KyungHwan Kim',
+  },
+
+  myJob: {
+    k: 'UI/UX 디자이너',
+    e: 'UI/UX Designer',
+  },
+
   article1: {
     category: {
       k: 'UX 디자인',
@@ -80,6 +90,23 @@ export const t = {
       '디자인 공유하기는 그 결과물입니다. 디자인 공유하기를 통해 제 UI/UX 디자인 경험을 꾸준히 공유할 계획입니다.',
     e:
       'SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experience through SHARE DESIGN.',
+  },
+
+  contactState: {
+    profileAlt: {
+      k: 'UI/UX 디자이너 김경환의 프로필 사진',
+      e: 'Profile photo of UI/UX designer KyungHwan Kim',
+    },
+
+    copyButton: {
+      k: '주소 복사',
+      e: 'Copy it',
+    },
+
+    sendButton: {
+      k: '메일 보내기',
+      e: 'Send a Email',
+    },
   },
 
   errorMessage: {
