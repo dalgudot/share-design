@@ -53,7 +53,10 @@ const ContactState = () => {
         />
 
         <EmailButtonContainer>
-          <CopyToClipboard text="dalgudot@gmail.com" onCopy={() => toastify()}>
+          <CopyToClipboard
+            text="dalgudot@gmail.com"
+            onCopy={() => toastify(toastMessage)}
+          >
             <CopyButton>
               <TextStyle
                 type="p"
