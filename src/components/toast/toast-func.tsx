@@ -16,10 +16,10 @@ const Zoom = cssTransition({
 });
 
 // 커스텀 토스트 애니메이션 만들기
-export const toastify = (toastMessage: string) => {
+export const toastify = (toastMessage: string, toastId: string) => {
   toast(toastMessage, {
     transition: Zoom,
-    toastId: 'CopyToClipboard',
+    toastId: toastId,
     // onClose: debounceToast(),
   });
 };

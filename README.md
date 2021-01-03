@@ -41,6 +41,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Share](https://github.com/nygardk/react-share)
 
+- [React-Toastify](https://github.com/fkhadra/react-toastify)
+
 - [React-Copy-to-Clipboard](https://github.com/nkbt/react-copy-to-clipboard)
 
 - [React-Query](https://github.com/tannerlinsley/react-query)

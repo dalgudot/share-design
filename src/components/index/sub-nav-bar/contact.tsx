@@ -13,6 +13,7 @@ import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 const ContactState = () => {
   const themeContext = useContext(ThemeContext);
   const toastMessage: string = '이메일 주소를 복사했습니다 🙌';
+  const toastId: string = 'Copy Email';
 
   return (
     <Container>
@@ -55,7 +56,7 @@ const ContactState = () => {
         <EmailButtonContainer>
           <CopyToClipboard
             text="dalgudot@gmail.com"
-            onCopy={() => toastify(toastMessage)}
+            onCopy={() => toastify(toastMessage, toastId)}
           >
             <CopyButton>
               <TextStyle
