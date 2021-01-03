@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../styles/common';
-import { fontSize } from '../typography/font';
+import { mediaBreakPoint } from '../../../styles/common';
+import { fontSize } from './font';
 
 // 코드로 디자인을 하기 위한 Text Component
 // 나중에 Design System이 만들어지더라도 코드로 디자인을 위해 계속 쓰면 좋을 Component

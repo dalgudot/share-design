@@ -1,6 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components';
-import TextStyle from '../typography/text-style';
-import { fontWeight } from '../typography/font';
+import TextStyle from '../typography/atoms/text-style';
+import { fontWeight } from '../typography/atoms/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
 import MotionSVGShareDesignEn from '../svg/motion-svg-share-design-en';

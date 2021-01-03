@@ -1,7 +1,7 @@
-import TextStyle from '../../typography/text-style';
+import TextStyle from '../../typography/atoms/text-style';
 import styled from 'styled-components';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import { fontWeight } from '../../../components/typography/font';
+import { fontWeight } from '../../typography/atoms/font';
 import { t } from '../../../components/index/lang/t';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -106,6 +106,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: ${({ theme }) => theme.blackPrimary};
 
   // 변경 요소
   top: 72px;
@@ -121,17 +122,6 @@ const Nav = styled.nav`
     width: 100%;
     height: 49px;
   }
-
-  /* Grassmorphism */
-  opacity: 0.999;
-  color: ${({ theme }) => theme.blackPrimary};
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-    hue-rotate(10deg);
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-
-  -webkit-transition: color 0.11s ease-in-out,
-    -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
 `;
 
 const Tab = styled.button`

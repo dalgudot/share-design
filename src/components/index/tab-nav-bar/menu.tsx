@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import TextStyle from '../../typography/text-style';
-import { fontWeight } from '../../typography/font';
+import TextStyle from '../../typography/atoms/text-style';
+import { fontWeight } from '../../typography/atoms/font';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../lang/t';
 import { useContext } from 'react';
@@ -23,12 +23,12 @@ const Menu = () => {
 
   const goWelcome = () => {
     subNavToggle === 'contact' && SUB_NAV_CHANGE();
-    Router.push('/b');
+    Router.push('/welcome');
   };
 
   const goContact = () => {
     subNavToggle === 'welcome' && SUB_NAV_CHANGE();
-    Router.push('/b');
+    Router.push('/welcome');
   };
 
   return (

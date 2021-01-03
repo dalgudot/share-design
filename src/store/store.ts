@@ -37,7 +37,7 @@ const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   userLanguageChange: 'no',
   tabNavBar: 'home',
-  subNavBar: 'contact',
+  subNavBar: 'welcome',
 };
 
 export const actionTypes: actionTypesTypes = {

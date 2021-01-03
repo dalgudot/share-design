@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import TextStyle from '../typography/text-style';
-import { fontWeight } from '../typography/font';
+import TextStyle from '../typography/atoms/text-style';
+import { fontWeight } from '../typography/atoms/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
 

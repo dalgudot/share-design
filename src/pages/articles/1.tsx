@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
-import TextStyle from '../../components/typography/text-style';
-import { fontWeight } from '../../components/typography/font';
+import TextStyle from '../../components/typography/atoms/text-style';
+import { fontWeight } from '../../components/typography/atoms/font';
 import { DetectBrowserLang } from '../../lib/funtions/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../lib/funtions/visits-and-views';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';

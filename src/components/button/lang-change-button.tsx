@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import TextStyle from '../typography/text-style';
-import { fontWeight } from '../typography/font';
+import TextStyle from '../typography/atoms/text-style';
+import { fontWeight } from '../typography/atoms/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 import { t } from '../index/lang/t';

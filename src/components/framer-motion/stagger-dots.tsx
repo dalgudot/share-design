@@ -8,7 +8,7 @@ interface StaggerDotsPropTypes {
 
 // Big Button 로딩 컬러 => #d2c6cb
 const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
-  // ind = index
+  // idx = index
   const countNum = count || 3;
   const dots = Array(countNum)
     .fill(null)
