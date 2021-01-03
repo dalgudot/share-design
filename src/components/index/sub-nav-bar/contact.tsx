@@ -6,24 +6,16 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { toastify } from '../../../components/toast/toast-func';
 import { t } from '../../../components/index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import MyToast, { useToast } from '../../../lib/hooks/useToast';
 
 const ContactState = () => {
   const themeContext = useContext(ThemeContext);
-
-  // Toast
   const toastMessage: string = '이메일 주소를 복사했습니다 🙌';
-  const showToast = useToast();
 
   return (
     <Container>
-      <MyToast
-        message={toastMessage}
-        toast={showToast.toast}
-        setToast={showToast.setToast}
-      />
       <Image
         alt={useSetLanguage(t.contactState.profileAlt)}
         src="/images/profile.jpg"
@@ -61,10 +53,7 @@ const ContactState = () => {
         />
 
         <EmailButtonContainer>
-          <CopyToClipboard
-            text="dalgudot@gmail.com"
-            onCopy={() => showToast.setToast(true)}
-          >
+          <CopyToClipboard text="dalgudot@gmail.com" onCopy={() => toastify()}>
             <CopyButton>
               <TextStyle
                 type="p"
@@ -128,17 +117,13 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   // 모바일에서 스크롤 생겼을 때 하단 여백
   margin-bottom: 36px;
-
   // 변경 요소
   margin-top: 176px;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 155px;
   }
-
   img {
     border-radius: 50%;
     border: solid 1px ${({ theme }) => theme.gray6};
@@ -187,7 +172,6 @@ const SocialContainer = styled.section`
   margin-top: 24px;
   max-width: 740px;
   position: relative;
-
   a {
     border-bottom: solid 3px ${({ theme }) => theme.gray2};
     /* content: '';
