@@ -138,12 +138,17 @@ export const t = {
 
     copyButton: {
       k: '주소 복사',
-      e: 'Copy it',
+      e: 'Copy It',
     },
 
     sendButton: {
       k: '메일 보내기',
       e: 'Send a Email',
+    },
+
+    toastMessage: {
+      k: '이메일 주소를 복사했습니다\u00A0\u00A0🙌',
+      e: 'You copied my email address\u00A0\u00A0🙌',
     },
   },
 
