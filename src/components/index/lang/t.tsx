@@ -119,15 +119,15 @@ export const t = {
 
     {
       k:
-        "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0그렇게 제 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했습니다. 쉬는 날에만 작업했고 기획부터 콘텐츠 제작, 번역, 디자인, 개발까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하는 데까지 시간이 참 오래 걸렸습니다. 그 시간을 지나 드디어 오늘, 2021년 2월 14일 첫 콘텐츠를 전 세계에 배포했습니다.",
+        "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0그렇게 제 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했습니다. 쉬는 날에만 작업했고 기획부터 콘텐츠 제작, 번역, 디자인, 개발까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하는 데까지 시간이 참 오래 걸렸습니다. 2월 중 첫 콘텐츠로 찾아뵐 예정입니다. 기대해주세요 :)",
       e:
-        'So, I started the SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experiences. I worked only on days off, and since I was doing everything from planning to content creation, translation, design and development by myself, it took a long time to distribute the first content. After that time, today, on February 14, 2021, the first content has been distributed worldwide.',
+        'So, I started the SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experiences. I worked only on days off, and since I was doing everything from planning to content creation, translation, design and development by myself, it took a long time to distribute the first content. I plan to see you for the first content in February. Please look forward to :)',
     },
 
-    {
-      k: '2월 중 첫 콘텐츠로 찾아뵙겠습니다 :)',
-      e: 'See you with the first content in February :)',
-    },
+    // {
+    //   k: '그 시간을 지나 드디어 오늘, 2021년 2월 14일 첫 콘텐츠를 전 세계에 배포했습니다.'
+    //   e: ' After that time, today, on February 14, 2021, the first content has been distributed worldwide.'
+    // },
   ],
 
   contactState: {
