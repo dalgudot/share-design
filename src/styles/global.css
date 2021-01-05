@@ -47,6 +47,12 @@ body::-webkit-scrollbar {
   /* iOS에서 a tag long touch 시 나오는 모달 막기 */
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+
+  /* 텍스트 관련 속성들 */
+  /* word-break: keep-all;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; */
 }
 
 a {
