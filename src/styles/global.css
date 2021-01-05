@@ -43,6 +43,10 @@ body::-webkit-scrollbar {
     Apple SD Gothic Neo, Noto Sans KR, Inter, system-ui, -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+
+  /* iOS에서 a tag long touch 시 나오는 모달 막기 */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -56,6 +60,14 @@ button {
   all: unset;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-style: none;
 }
 
 ul,
