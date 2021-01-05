@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../../components/toast/toast-func';
+import { toastify } from '../../toast/toastify';
 import { t } from '../../../components/index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 

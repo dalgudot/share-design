@@ -68,6 +68,7 @@ const ToastBox = styled(ToastContainer)`
   left: 50%;
   transform: translateX(-50%);
   z-index: 30000;
+  -webkit-tap-highlight-color: transparent;
 
   .zoomIn {
     animation: ${In};
