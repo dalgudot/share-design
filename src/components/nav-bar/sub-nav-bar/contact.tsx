@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../toast/toastify';
-import { t } from '../../../components/index/lang/t';
+import { t } from '../../index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
 const ContactState = () => {

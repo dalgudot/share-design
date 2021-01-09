@@ -12,14 +12,14 @@ export const darkTheme: DefaultTheme = {
 };
 
 export const lightTheme: DefaultTheme = {
-  whitePrimary: '#EBEBF5', // APPLE
-  gray1: '#E0E0EA', // 95% of whitePrimary
-  gray2: '#BFBFC7', // 80% of whitePrimary
-  gray3: '#94949B', // 60% of whitePrimary
-  gray4: '#68686C', // 40% of whitePrimary
-  gray5: '#3D3D3F', // 20% of whitePrimary
-  gray6: '#232324', // 8%
-  blackPrimary: '#121212',
+  whitePrimary: '#121212', // APPLE
+  gray1: '#232324', // 95% of whitePrimary
+  gray2: '#3D3D3F', // 80% of whitePrimary
+  gray3: '#68686C', // 60% of whitePrimary
+  gray4: '#94949B', // 40% of whitePrimary
+  gray5: '#BFBFC7', // 20% of whitePrimary
+  gray6: '#E0E0EA', // 8%
+  blackPrimary: '#EBEBF5',
 };
 
 // 색과 관련된 GlobalStyle

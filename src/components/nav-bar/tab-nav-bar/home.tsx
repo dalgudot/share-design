@@ -1,6 +1,6 @@
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import { t } from '../lang/t';
-import ArticleListSimple from '../article-list-simple';
+import { t } from '../../index/lang/t';
+import ArticleListSimple from '../../index/article-list-simple';
 
 const Home = () => {
   return (

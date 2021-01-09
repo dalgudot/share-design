@@ -2,7 +2,7 @@ import TextStyle from '../../typography/atoms/text-style';
 import styled from 'styled-components';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { fontWeight } from '../../typography/atoms/font';
-import { t } from '../../../components/index/lang/t';
+import { t } from '../../index/lang/t';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';

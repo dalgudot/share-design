@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import Header from '../components/index/header';
+import Header from '../components/header/header';
 import { DetectBrowserLang } from '../lib/funtions/detect-browser-lang';
-import Footer from '../components/index/footer';
+import Footer from '../components/footer/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../lib/funtions/visits-and-views';
-import TabNavBar from '../components/index/tab-nav-bar/tab-nav-bar';
-import Home from '../components/index/tab-nav-bar/home';
-import Menu from '../components/index/tab-nav-bar/menu';
+import TabNavBar from '../components/nav-bar/tab-nav-bar/tab-nav-bar';
+import Home from '../components/nav-bar/tab-nav-bar/home';
+import Menu from '../components/nav-bar/tab-nav-bar/menu';
 import { useSelector } from 'react-redux';
 
 const Index = () => {

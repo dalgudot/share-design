@@ -1,5 +1,6 @@
 import H2HeadlineMedium from '../components/typography/headline-medium';
 import { t } from '../components/index/lang/t';
+import ThemeChangeButton from '../components/button/theme-change-button';
 
 const Subscribe = () => {
   return (

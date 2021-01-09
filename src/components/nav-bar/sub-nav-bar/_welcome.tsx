@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { t } from '../lang/t';
+import { t } from '../../index/lang/t';
 import H2HeadlineMedium from '../../typography/headline-medium';
 import PBody from '../../typography/body';
 

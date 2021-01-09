@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import TextStyle from '../typography/atoms/text-style';
 import { fontWeight } from '../typography/atoms/font';
-import LangChangeButton from '../button/lang-change-button';
-import { t } from './lang/t';
+import LangChangeButton from './lang-change-button';
+import { t } from '../index/lang/t';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
