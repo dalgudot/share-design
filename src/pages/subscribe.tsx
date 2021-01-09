@@ -5,6 +5,7 @@ const Subscribe = () => {
   return (
     <>
       {/* 유튜브 알림을 설정해 놓으셨다면 유튜브 구독을 */}
+      {/* 로그인 및 구독을 하게 하려면 상당히 많은 시간과 서버 비용 들 듯 */}
       <a
         href="https://www.youtube.com/channel/UCp0yRLYV6wl33i2-XBgGa2g?sub_confirmation=1"
         target="_blank"
