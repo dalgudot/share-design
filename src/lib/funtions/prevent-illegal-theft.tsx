@@ -2,36 +2,15 @@ import { useEffect } from 'react';
 
 export function PreventIllegalTheft() {
   useEffect(() => {
-    //마우스 오른쪽 클릭만 막기
-    //https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
-
-    // 마우스 오른쪽 클릭(oncontextmenu)
-    let contextmenu: Function = () => {
-      return document.oncontextmenu;
+    // 마우스 오른쪽 클릭(oncontextmenu), 왼쪽 마우스 이미지 드래그(ondragstart), 왼쪽 마우스 문자 드래그(onselectstart), 키보드 단축키 복사(onkeydown) 막기
+    // document.onkeydown은 확대 축소를 못하므로 제외
+    document.oncontextmenu = document.ondragstart = document.onselectstart = () => {
+      return false;
     };
-
-    // 왼쪽 마우스 이미지 드래그(ondragstart)
-    let dragstart: Function = () => {
-      return document.ondragstart;
-    };
-
-    // 왼쪽 마우스 문자 드래그(onselectstart)
-    let selectstart: Function = () => {
-      return document.onselectstart;
-    };
-
-    // 키보드 단축키 복사(onkeydown) 막기
-    // let keydown: Function = () => {
-    //   return document.onkeydown;
-    // };
-
-    contextmenu = dragstart = selectstart = new Function('return false');
-
-    // contextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function(
-    //   'return false'
-    // );
   }, []);
 }
+
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
 
 // document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function(
 //   "return false"
@@ -52,5 +31,3 @@ export function PreventIllegalTheft() {
 // document.addEventListener('keydown', (e) => {
 //   e.preventDefault();
 // });
-
-// 마우스 오른쪽 클릭(oncontextmenu), 왼쪽 마우스 이미지 드래그(ondragstart), 왼쪽 마우스 문자 드래그(onselectstart), 키보드 단축키 복사(onkeydown) 막기

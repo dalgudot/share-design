@@ -85,6 +85,7 @@ li {
   padding: 0;
 }
 
-img {
+/* 작품 이미지에만 넣을 것. pointer-events: none;일 때 핀터레스트 이용 불가 */
+/* img {
   pointer-events: none;
-}
+} */
