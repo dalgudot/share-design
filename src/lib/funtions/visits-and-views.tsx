@@ -68,6 +68,17 @@ const ViewsDuringSession = (where: string) => {
     // E of Index 날짜별 전체 조회수
   };
 
+  // welcome
+  const viewsWelcome = () => {
+    // S of welcome 전체 조회수
+    firebaseFetchSet('Number of Views/Welcome/Total All');
+    // E of welcome 전체 조회수
+
+    // S of welcome 날짜별 전체 조회수
+    firebaseFetchSet(`Number of Views/Welcome/Total on ${when}`);
+    // E of welcome 날짜별 전체 조회수
+  };
+
   // Article
   const viewsArticle = () => {
     // S of Article 전체 조회수
@@ -89,7 +100,13 @@ const ViewsDuringSession = (where: string) => {
     // E of [각] Article 날짜별 조회수
   };
 
-  where === 'Index' ? viewsIndex() : viewsArticle();
+  if (where === 'Index') {
+    viewsIndex();
+  } else if (where == 'Welcome') {
+    viewsWelcome();
+  } else {
+    viewsArticle();
+  }
 
   sessionStorage.setItem(`viewsDuringSession of ${where}`, `${where}`);
 };

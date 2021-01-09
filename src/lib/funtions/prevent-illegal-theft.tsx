@@ -11,23 +11,3 @@ export function PreventIllegalTheft() {
 }
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
-
-// document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function(
-//   "return false"
-// );
-
-// document.addEventListener('contextmenu', (e) => {
-//   e.preventDefault();
-// });
-
-// document.addEventListener('dragstart', (e) => {
-//   e.preventDefault();
-// });
-
-// document.addEventListener('selectstart', (e) => {
-//   e.preventDefault();
-// });
-
-// document.addEventListener('keydown', (e) => {
-//   e.preventDefault();
-// });

@@ -177,6 +177,7 @@ const SocialContainer = styled.section`
   max-width: 740px;
   position: relative;
   a {
+    // 밑줄 디자인
     border-bottom: solid 3px ${({ theme }) => theme.gray2};
     /* content: '';
     position: absolute;

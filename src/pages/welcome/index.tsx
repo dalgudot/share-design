@@ -5,8 +5,16 @@ import WelcomeState from '../../components/index/sub-nav-bar/_welcome';
 import ContactState from '../../components/index/sub-nav-bar/contact';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
+import { DetectBrowserLang } from '../../lib/funtions/detect-browser-lang';
+import { useEffect } from 'react';
+import { VisitsAndViewsDuringSession } from '../../lib/funtions/visits-and-views';
 
 const Welcome = () => {
+  DetectBrowserLang();
+  useEffect(() => {
+    VisitsAndViewsDuringSession('Welcome');
+  }, []);
+
   const subNavToggle = useSelector((state: any) => state.subNavBar);
 
   const subNavDisplay =
