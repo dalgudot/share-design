@@ -173,8 +173,3 @@ export const t = {
     },
   },
 };
-
-// myname: {
-//   k: '김\u00A0경\u00A0환',
-//   e: 'KyungHwan Kim',
-// },
