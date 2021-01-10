@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { PreventIllegalTheft } from '../lib/funtions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
@@ -34,11 +34,11 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={mode}>
             <GlobalColors />
             <Toast />
-            <ThemeChangeButton
+            {/* <ThemeChangeButton
               setTheme={setMode}
               lightTheme={lightTheme}
               darkTheme={darkTheme}
-            />
+            /> */}
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
             </AnimatePresence>
