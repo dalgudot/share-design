@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components';
 
 const Share = () => {
   const themeContext = useContext(ThemeContext);
-  const url: string = 'https://share-design.kr/article/two-language';
+  const url: string = 'https://share-design.kr/articles/1';
 
   return (
     <>
