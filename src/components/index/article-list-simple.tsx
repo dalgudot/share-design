@@ -42,7 +42,7 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
           color={themeContext.whitePrimary}
         />
 
-        <BtnStyle onClick={() => Router.push({ href })}>
+        <BtnStyle onClick={() => Router.push(href)}>
           <IconArrowRight24 color={themeContext.whitePrimary} />
         </BtnStyle>
       </motion.li>
