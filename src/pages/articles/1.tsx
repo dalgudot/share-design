@@ -14,9 +14,9 @@ const TwoLanguage = () => {
 
   return (
     <>
-      <Header />
-      <Comment />
-      {/* <Share /> */}
+      {/* <Header /> */}
+      {/* <Comment /> */}
+      <Share />
     </>
   );
 };

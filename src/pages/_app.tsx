@@ -15,6 +15,7 @@ import initFirebase from '../utils/initFirebase';
 import Toast from '../components/toast/toastify';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import ThemeChangeButton from '../components/button/theme-change-button';
+import Header from '../components/header/header';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
@@ -40,6 +41,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               darkTheme={darkTheme}
             /> */}
             <AnimatePresence exitBeforeEnter>
+              {/* <Header /> */}
               <Component {...pageProps} />
             </AnimatePresence>
           </ThemeProvider>

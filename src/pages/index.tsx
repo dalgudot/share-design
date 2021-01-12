@@ -21,7 +21,7 @@ const Index = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Main>{tabDisplay}</Main>
       <Footer tabToggle={tabToggle} />
       <TabNavBar tabToggle={tabToggle} />

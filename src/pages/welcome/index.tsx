@@ -22,7 +22,7 @@ const Welcome = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <SubNavBar subNavToggle={subNavToggle} />
       <Main>{subNavDisplay}</Main>
     </>
