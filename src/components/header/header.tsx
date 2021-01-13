@@ -85,8 +85,10 @@ const GlassMorphismBackground = styled.div`
     height: 57px;
   }
 
+  background-color: ${({ theme }) => theme.blackPrimary};
+
   /* Grassmorphism */
-  opacity: 0.999;
+  /* opacity: 0.999;
   color: ${({ theme }) => theme.blackPrimary};
   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
     hue-rotate(10deg);
@@ -94,5 +96,5 @@ const GlassMorphismBackground = styled.div`
 
   -webkit-transition: color 0.11s ease-in-out,
     -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */
 `;

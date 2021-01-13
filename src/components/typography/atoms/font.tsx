@@ -65,11 +65,13 @@ export const fontSize: any = {
 };
 
 export const fontWeight: {
+  900: number;
   700: number;
   400: number;
   300: number;
   100: number;
 } = {
+  900: 900, // black
   700: 700, // bold
   400: 400, // regular
   300: 300, // light
