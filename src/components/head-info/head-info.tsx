@@ -25,6 +25,12 @@ const HeadInfo = ({ info }: any) => {
       <meta property="og:type" content={info.type} />
       {/* <meta property="og:locale" content={info.locale} /> */}
 
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content={info.url} />
+      <meta name="twitter:title" content={info.title} />
+      <meta name="twitter:description" content={info.description} />
+      <meta name="twitter:image" content={info.thumbnail} />
+
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}
       <link
