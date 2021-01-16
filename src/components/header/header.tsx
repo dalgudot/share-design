@@ -7,7 +7,7 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
@@ -24,6 +24,11 @@ const Header = () => {
     Router.push('/');
   };
 
+  // const router = useRouter();
+  // const style = {
+  //   display: router.pathname === '/subscribe' ? 'block' : 'none',
+  // };
+
   return (
     <>
       <HeaderContainer>
@@ -38,7 +43,7 @@ const Header = () => {
         </Left>
         <LangChangeButton />
       </HeaderContainer>
-      <GlassMorphismBackground />
+      {/* <GlassMorphismBackground /> */}
     </>
   );
 };
@@ -56,6 +61,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
   z-index: 10000;
+  background-color: ${({ theme }) => theme.blackPrimary};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 57px;
@@ -88,7 +94,7 @@ const GlassMorphismBackground = styled.div`
   background-color: ${({ theme }) => theme.blackPrimary};
 
   /* Grassmorphism */
-  /* opacity: 0.999;
+  opacity: 0.999;
   color: ${({ theme }) => theme.blackPrimary};
   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
     hue-rotate(10deg);
@@ -96,5 +102,5 @@ const GlassMorphismBackground = styled.div`
 
   -webkit-transition: color 0.11s ease-in-out,
     -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
 `;
