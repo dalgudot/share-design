@@ -43,6 +43,7 @@ const Header = () => {
         </Left>
         <LangChangeButton />
       </HeaderContainer>
+      <FillEmptySpace />
       {/* <GlassMorphismBackground /> */}
     </>
   );
@@ -79,28 +80,38 @@ const HeaderContainer = styled.header`
 
 const Left = styled.button``;
 
-const GlassMorphismBackground = styled.div`
+const FillEmptySpace = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 72px;
   z-index: 9999;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 57px;
-  }
-
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 80px;
   background-color: ${({ theme }) => theme.blackPrimary};
-
-  /* Grassmorphism */
-  opacity: 0.999;
-  color: ${({ theme }) => theme.blackPrimary};
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-    hue-rotate(10deg);
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-
-  -webkit-transition: color 0.11s ease-in-out,
-    -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
 `;
+
+// const GlassMorphismBackground = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 72px;
+//   z-index: 9999;
+
+//   @media all and (max-width: ${mediaBreakPoint.first}) {
+//     height: 57px;
+//   }
+
+//   background-color: ${({ theme }) => theme.blackPrimary};
+
+//   /* Grassmorphism */
+//   opacity: 0.999;
+//   color: ${({ theme }) => theme.blackPrimary};
+//   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+//     hue-rotate(10deg);
+//   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
+
+//   -webkit-transition: color 0.11s ease-in-out,
+//     -webkit-backdrop-filter 0.11s ease-in-out;
+//   transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+// `;
