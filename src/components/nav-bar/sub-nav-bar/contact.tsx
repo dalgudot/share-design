@@ -9,6 +9,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toastify } from '../../toast/toastify';
 import { t } from '../../index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const ContactState = () => {
   const themeContext = useContext(ThemeContext);
@@ -17,14 +18,16 @@ const ContactState = () => {
 
   return (
     <Container>
-      <Image
-        alt={useSetLanguage(t.contactState.profileAlt)}
-        src="/images/profile.jpg"
-        width={72}
-        height={72}
-        // quality={100}
-        priority={true} // preload
-      />
+      {(
+        <Image
+          alt={useSetLanguage(t.contactState.profileAlt)}
+          src="/images/profile.jpg"
+          width={72}
+          height={72}
+          quality={100}
+          priority={true} // preload
+        />
+      ) ?? <Skeleton />}
 
       <TextStyle
         type="h3"
