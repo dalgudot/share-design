@@ -30,7 +30,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  color: ${({ theme }) => theme.whitePrimary};
+  color: ${({ theme }) => theme.gray0};
   max-width: 740px;
 
   // 변경 요소

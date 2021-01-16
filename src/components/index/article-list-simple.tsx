@@ -29,7 +29,7 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
           weight={fontWeight[700]}
           lineHeight={1.2}
           letterSpacing="-0.8px"
-          color={themeContext.whitePrimary}
+          color={themeContext.gray0}
         />
         <TextStyle
           type="h1"
@@ -39,11 +39,11 @@ const ArticleListSimple = ({ href, order, title }: ArticleListPropTypes) => {
           lineHeight={1.2}
           marginTop="8px"
           letterSpacing="-0.8px"
-          color={themeContext.whitePrimary}
+          color={themeContext.gray0}
         />
 
         <BtnStyle onClick={() => Router.push(href)}>
-          <IconArrowRight24 color={themeContext.whitePrimary} />
+          <IconArrowRight24 color={themeContext.gray0} />
         </BtnStyle>
       </motion.li>
 

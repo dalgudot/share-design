@@ -19,7 +19,7 @@ const H2HeadlineMedium = ({
       text={useSetLanguage(text)}
       textSize="headlineMedium"
       weight={fontWeight[700]}
-      color={themeContext.whitePrimary}
+      color={themeContext.gray0}
       lineHeight={1.4}
       marginTop={marginTop}
     />

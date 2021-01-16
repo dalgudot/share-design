@@ -88,7 +88,7 @@ const Nav = styled.nav`
 
     /* Grassmorphism */
     opacity: 0.999;
-    color: ${({ theme }) => theme.blackPrimary};
+    color: ${({ theme }) => theme.gray7};
     -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
       hue-rotate(10deg);
     backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);

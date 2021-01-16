@@ -87,7 +87,7 @@ const CategoryDate = styled.section`
 const DividerTinyVertical = styled.div`
   width: 1px;
   height: 12px;
-  background-color: ${({ theme }) => theme.whitePrimary};
+  background-color: ${({ theme }) => theme.gray0};
   opacity: 0.5;
   margin: 0 8px;
   margin-top: 2px;

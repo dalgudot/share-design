@@ -5,7 +5,7 @@ import { ThemeContext } from 'styled-components';
 const IconHome24 = ({ toggle }: any) => {
   const themeContext = useContext(ThemeContext);
   const color: string =
-    toggle === true ? themeContext.whitePrimary : themeContext.gray4;
+    toggle === true ? themeContext.gray0 : themeContext.gray4;
 
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

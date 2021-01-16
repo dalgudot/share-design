@@ -31,7 +31,7 @@ const ContactState = () => {
         text={useSetLanguage(t.myName)}
         textSize="single21"
         weight={fontWeight[700]}
-        color={themeContext.whitePrimary}
+        color={themeContext.gray0}
         marginTop="8px"
       />
 
@@ -49,7 +49,7 @@ const ContactState = () => {
           text="dalgudot@gmail.com"
           textSize="single32"
           weight={fontWeight[700]}
-          color={themeContext.whitePrimary}
+          color={themeContext.gray0}
           marginTop="42px"
         />
 
@@ -64,7 +64,7 @@ const ContactState = () => {
                 text={useSetLanguage(t.contactState.copyButton)}
                 textSize="single17"
                 weight={fontWeight[700]}
-                color={themeContext.blackPrimary}
+                color={themeContext.gray7}
               />
             </CopyButton>
           </CopyToClipboard>
@@ -75,7 +75,7 @@ const ContactState = () => {
                 text={useSetLanguage(t.contactState.sendButton)}
                 textSize="single17"
                 weight={fontWeight[700]}
-                color={themeContext.blackPrimary}
+                color={themeContext.gray7}
               />
             </a>
           </SendButton>
@@ -157,7 +157,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.whitePrimary};
+  background-color: ${({ theme }) => theme.gray0};
   width: 100%;
   height: 49px;
   border-radius: var(--border-radius-primary);

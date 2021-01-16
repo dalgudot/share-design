@@ -40,7 +40,7 @@ const Menu = () => {
             text={useSetLanguage(t.subNavBar.welcome)}
             textSize="headlineBig"
             weight={fontWeight[700]}
-            color={themeContext.whitePrimary}
+            color={themeContext.gray0}
           />
         </Button>
       </li>
@@ -52,7 +52,7 @@ const Menu = () => {
             text={useSetLanguage(t.subNavBar.contact)}
             textSize="headlineBig"
             weight={fontWeight[700]}
-            color={themeContext.whitePrimary}
+            color={themeContext.gray0}
           />
         </Button>
       </li>

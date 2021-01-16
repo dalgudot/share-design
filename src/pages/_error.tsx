@@ -34,7 +34,7 @@ const Error = ({ statusCode }: any) => {
               text={useSetLanguage(t.errorMessage.btn)}
               textSize="body"
               weight={fontWeight[400]}
-              color={themeContext.whitePrimary}
+              color={themeContext.gray0}
             />
           </BtnStyle>
         </a>
@@ -71,5 +71,5 @@ const BtnStyle = styled.button`
   padding: 18px 32px;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.gray6};
-  color: ${({ theme }) => theme.whitePrimary};
+  color: ${({ theme }) => theme.gray0};
 `;

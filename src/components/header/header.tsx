@@ -38,11 +38,12 @@ const Header = () => {
             text={useSetLanguage(t.shareDesign)}
             textSize="body"
             weight={fontWeight[700]}
-            color={themeContext.whitePrimary}
+            color={themeContext.gray0}
           />
         </Left>
         <LangChangeButton />
       </HeaderContainer>
+      {/* 아이콘 상단에 나타나는 빈 공간 채워주는 div */}
       <FillEmptySpace />
       {/* <GlassMorphismBackground /> */}
     </>
@@ -62,7 +63,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
   z-index: 10000;
-  background-color: ${({ theme }) => theme.blackPrimary};
+  background-color: ${({ theme }) => theme.gray7};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 57px;
@@ -80,6 +81,7 @@ const HeaderContainer = styled.header`
 
 const Left = styled.button``;
 
+// 아이콘 상단에 나타나는 빈 공간 채워주는 div
 const FillEmptySpace = styled.div`
   position: fixed;
   z-index: 9999;
@@ -87,7 +89,7 @@ const FillEmptySpace = styled.div`
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: ${({ theme }) => theme.blackPrimary};
+  background-color: ${({ theme }) => theme.gray7};
 `;
 
 // const GlassMorphismBackground = styled.div`
@@ -102,11 +104,11 @@ const FillEmptySpace = styled.div`
 //     height: 57px;
 //   }
 
-//   background-color: ${({ theme }) => theme.blackPrimary};
+//   background-color: ${({ theme }) => theme.gray7};
 
 //   /* Grassmorphism */
 //   opacity: 0.999;
-//   color: ${({ theme }) => theme.blackPrimary};
+//   color: ${({ theme }) => theme.gray7};
 //   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
 //     hue-rotate(10deg);
 //   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);

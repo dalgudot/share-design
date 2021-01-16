@@ -61,7 +61,7 @@ const LangChangeButton = () => {
           text={useSetLanguage(t.langChagneButton)}
           textSize="single14"
           weight={fontWeight[700]}
-          color={themeContext.whitePrimary}
+          color={themeContext.gray0}
         />
       </BtnStyle>
     </motion.button>

@@ -67,7 +67,7 @@ const Container = styled.main`
 const MultiLineTextField = styled.textarea`
   padding: 72px;
   font-size: 24px;
-  background-color: ${({ theme }) => theme.blackPrimary};
+  background-color: ${({ theme }) => theme.gray7};
   border-radius: 16px;
   margin-top: 120px;
   caret-color: ${({ theme }) => theme.gray1};
@@ -76,10 +76,10 @@ const MultiLineTextField = styled.textarea`
   line-height: 1.9;
 
   :invalid {
-    border: 1px solid ${({ theme }) => theme.blackPrimary};
+    border: 1px solid ${({ theme }) => theme.gray7};
   }
 
   :valid {
-    border: 1px solid ${({ theme }) => theme.blackPrimary};
+    border: 1px solid ${({ theme }) => theme.gray7};
   }
 `;

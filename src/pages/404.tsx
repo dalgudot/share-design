@@ -31,7 +31,7 @@ const Error404Page = () => {
               text={useSetLanguage(t.errorMessage.btn)}
               textSize="body"
               weight={fontWeight[400]}
-              color={themeContext.whitePrimary}
+              color={themeContext.gray0}
             />
           </BtnStyle>
         </a>
@@ -64,5 +64,5 @@ const BtnStyle = styled.button`
 
   border-radius: 24px;
   background-color: ${({ theme }) => theme.gray6};
-  color: ${({ theme }) => theme.whitePrimary};
+  color: ${({ theme }) => theme.gray0};
 `;
