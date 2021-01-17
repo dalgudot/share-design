@@ -30,7 +30,7 @@ body {
 
 a:link,
 a:visited,
-a:hover,
+a:hover,                  
 a:active {
   color: transparent;
 }

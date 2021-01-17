@@ -22,10 +22,16 @@ const firebaseFetchSet = (route: string) => {
   });
 };
 
-const today = new Date();
+const today = new Date(); // today는 Date의 Instance
 const year = String(today.getFullYear());
-const month = String(today.getMonth() + 1);
-const date = String(today.getDate());
+const month =
+  String(today.getMonth() + 1).length === 1
+    ? '0' + String(today.getMonth() + 1)
+    : String(today.getMonth() + 1);
+const date =
+  String(today.getDate()).length === 1
+    ? '0' + String(today.getDate())
+    : String(today.getDate());
 const when = `${year}${month}${date}`;
 
 // 방문자
