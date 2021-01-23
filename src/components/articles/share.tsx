@@ -17,7 +17,7 @@ const Share = () => {
           text="페이스북"
           textSize="body"
           weight={fontWeight[700]}
-          color={themeContext.gray3}
+          color={themeContext.gray4}
         />
       </FacebookShareButton>
       <br />
@@ -28,7 +28,7 @@ const Share = () => {
           text="링크드인"
           textSize="body"
           weight={fontWeight[700]}
-          color={themeContext.gray3}
+          color={themeContext.gray4}
         />
       </LinkedinShareButton>
       <br />
@@ -44,7 +44,7 @@ const Share = () => {
             text="함수로 링크 복사"
             textSize="body"
             weight={fontWeight[700]}
-            color={themeContext.gray3}
+            color={themeContext.gray4}
           />
         </button>
       </CopyToClipboard>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const IconMenu24 = ({ toggle }: any) => {
+const IconContact24 = ({ toggle }: any) => {
   const themeContext = useContext(ThemeContext);
   const color: string =
     toggle === true ? themeContext.gray1 : themeContext.gray5;
@@ -10,20 +10,22 @@ const IconMenu24 = ({ toggle }: any) => {
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
       <g
-        id="icn_menu_24"
         stroke="none"
         strokeWidth="1"
         fill="none"
         fillRule="evenodd"
-        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <line x1="5" y1="6" x2="19" y2="6" id="Path-1" stroke={color}></line>
-        <line x1="5" y1="12" x2="19" y2="12" id="Path-2" stroke={color}></line>
-        <line x1="5" y1="18" x2="19" y2="18" id="Path-3" stroke={color}></line>
+        <polygon stroke={color} points="3 7 21 7 21 19 3 19"></polygon>
+        <path
+          d="M3,7 C9,11.6666667 12,14 12,14 C12,14 15,11.6666667 21,7"
+          stroke={color}
+          strokeLinecap="round"
+        ></path>
       </g>
     </SVG>
   );
 };
-export default IconMenu24;
+export default IconContact24;
 
 const SVG = styled.svg``;

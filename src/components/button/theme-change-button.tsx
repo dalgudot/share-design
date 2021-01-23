@@ -47,7 +47,7 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
         // }
         textSize="body"
         weight={fontWeight[700]}
-        color="gray1"
+        color="gray2"
       />
     </BtnStyle>
   );
@@ -110,7 +110,7 @@ const BtnStyle = styled.button``;
 //         // }
 //         textSize="body"
 //         weight={fontWeight[700]}
-//         color="gray1"
+//         color="gray2"
 //       />
 //     </BtnStyle>
 //   );

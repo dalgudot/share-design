@@ -4,6 +4,18 @@ export const t = {
     e: 'SHARE DESIGN',
   },
 
+  header: {
+    langChangeToggleKo: {
+      k: 'ko',
+      e: 'ko',
+    },
+
+    langChangeToggleEn: {
+      k: 'en',
+      e: 'en',
+    },
+  },
+
   myName: {
     k: '김경환',
     e: 'KyungHwan Kim',
@@ -138,7 +150,7 @@ export const t = {
 
     copyButton: {
       k: '주소 복사',
-      e: 'Copy It',
+      e: 'Copy it',
     },
 
     sendButton: {

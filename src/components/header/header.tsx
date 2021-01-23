@@ -9,6 +9,8 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Router, { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
+import LangChangeToggle from './lang-change-toggle';
+import PBody700 from '../typography/p-body-700';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
@@ -33,17 +35,11 @@ const Header = () => {
     <>
       <HeaderContainer>
         <Left onClick={goHome}>
-          <TextStyle
-            type="h3"
-            text={useSetLanguage(t.shareDesign)}
-            textSize="body"
-            weight={fontWeight[700]}
-            color={themeContext.gray0}
-          />
+          <PBody700 text={t.shareDesign} color={themeContext.gray1} />
         </Left>
-        <LangChangeButton />
+        <LangChangeToggle />
       </HeaderContainer>
-      {/* 아이콘 상단에 나타나는 빈 공간 채워주는 div */}
+      {/* 상단에 나타나는 빈 공간 채워주는 div */}
       <FillEmptySpace />
       {/* <GlassMorphismBackground /> */}
     </>
@@ -61,9 +57,9 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px ${({ theme }) => theme.gray6};
+  border-bottom: solid 1px ${({ theme }) => theme.gray7};
   z-index: 10000;
-  background-color: ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray8};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 57px;
@@ -89,7 +85,7 @@ const FillEmptySpace = styled.div`
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray8};
 `;
 
 // const GlassMorphismBackground = styled.div`
@@ -104,11 +100,11 @@ const FillEmptySpace = styled.div`
 //     height: 57px;
 //   }
 
-//   background-color: ${({ theme }) => theme.gray7};
+//   background-color: ${({ theme }) => theme.gray8};
 
 //   /* Grassmorphism */
 //   opacity: 0.999;
-//   color: ${({ theme }) => theme.gray7};
+//   color: ${({ theme }) => theme.gray8};
 //   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
 //     hue-rotate(10deg);
 //   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);

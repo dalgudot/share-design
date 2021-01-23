@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import TextStyle from '../typography/atoms/text-style';
-import { fontWeight } from '../typography/atoms/font';
-import { useRipple } from 'react-use-ripple';
-import { useRef } from 'react';
 import { t } from '../index/lang/t';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import IconLanguage24 from '../svg/icon_language_24';
+import PBody700 from '../typography/p-body-700';
 
-const LangChangeButton = () => {
+const LangChangeToggle = () => {
   // Redux, Language Change
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
@@ -32,50 +29,50 @@ const LangChangeButton = () => {
 
   const themeContext = useContext(ThemeContext);
 
-  // useRipple
-  const btnRef = useRef(null);
-  useRipple(btnRef, {
-    rippleColor: 'rgba(0, 0, 0, 0.3)',
-    animationLength: 600,
-    rippleSize: 2000,
-  });
-
-  // setAttribute HTML Attribute
+  // setAttribute lang
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
   }, [lang]);
 
   return (
-    <motion.button
-      onClick={setLanguageChange}
-      ref={btnRef}
-      whileHover={{
-        scale: 1.05,
-        transition: { duration: 0.1 },
-      }}
-    >
-      <BtnStyle>
-        <TextStyle
-          type="p"
-          text={useSetLanguage(t.langChagneButton)}
-          textSize="single14"
-          weight={fontWeight[700]}
-          color={themeContext.gray1}
+    <Container onClick={setLanguageChange}>
+      <IconLanguage24 color={themeContext.gray2} />
+      <motion.div>
+        <PBody700
+          text={t.header.langChangeToggleKo}
+          color={themeContext.gray2}
         />
-      </BtnStyle>
-    </motion.button>
+      </motion.div>
+      <Divider />
+      <motion.div>
+        <PBody700
+          text={t.header.langChangeToggleEn}
+          color={themeContext.gray5}
+        />
+      </motion.div>
+    </Container>
   );
 };
 
-export default LangChangeButton;
+export default LangChangeToggle;
 
-const BtnStyle = styled.div`
+const Container = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 128px;
-  height: 40px;
+  padding: 12px 0 12px 12px;
   border-radius: var(--border-radius-primary);
-  background-color: ${({ theme }) => theme.gray7};
+
+  div {
+    margin-left: 6px;
+    padding-bottom: 2px;
+  }
+`;
+
+const Divider = styled.div`
+  height: 12px;
+  width: 1px;
+  margin-top: 2px;
+  background-color: ${({ theme }) => theme.gray6};
 `;

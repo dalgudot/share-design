@@ -4,7 +4,7 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const H2HeadlineMedium = ({
+const H1TitleLarge = ({
   text,
   marginTop,
 }: {
@@ -15,15 +15,15 @@ const H2HeadlineMedium = ({
 
   return (
     <TextStyle
-      type="h2"
+      type="h1"
       text={useSetLanguage(text)}
-      textSize="headlineMedium"
+      textSize="h1TitleLarge"
       weight={fontWeight[700]}
-      color={themeContext.gray0}
+      color={themeContext.gray1}
       lineHeight={1.4}
       marginTop={marginTop}
     />
   );
 };
 
-export default H2HeadlineMedium;
+export default H1TitleLarge;

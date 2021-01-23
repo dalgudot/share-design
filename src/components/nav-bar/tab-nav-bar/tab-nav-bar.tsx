@@ -3,7 +3,7 @@ import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import IconHome24 from '../../svg/icon_home_24';
-import IconMenu24 from '../../svg/icon_menu_24';
+import IconContact24 from '../../svg/icon_contact_24';
 import { useDispatch } from 'react-redux';
 
 const TabNavBar = ({ tabToggle }: any) => {
@@ -14,20 +14,20 @@ const TabNavBar = ({ tabToggle }: any) => {
     });
 
   // Toggle Graphic on off
-  const homeToggle = tabToggle === 'home' ? true : false;
-  const menuToggle = tabToggle === 'menu' ? true : false;
+  const homeToggle: boolean = tabToggle === 'home' ? true : false;
+  const contactToggle: boolean = tabToggle === 'contact' ? true : false;
 
   const setHomeToggle = () => {
-    tabToggle === 'menu' && TAB_NAV_CHANGE();
+    tabToggle === 'contact' && TAB_NAV_CHANGE();
   };
 
-  const setMenuToggle = () => {
+  const setContactToggle = () => {
     tabToggle === 'home' && TAB_NAV_CHANGE();
   };
 
   // useRipple
   const homeRef = useRef(null);
-  const menuRef = useRef(null);
+  const contactRef = useRef(null);
 
   useRipple(homeRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
@@ -35,7 +35,7 @@ const TabNavBar = ({ tabToggle }: any) => {
     rippleSize: 2000,
   });
 
-  useRipple(menuRef, {
+  useRipple(contactRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
     animationLength: 500,
     rippleSize: 2000,
@@ -47,8 +47,8 @@ const TabNavBar = ({ tabToggle }: any) => {
         <Tab onClick={() => setHomeToggle()} ref={homeRef}>
           <IconHome24 toggle={homeToggle} />
         </Tab>
-        <Tab onClick={() => setMenuToggle()} ref={menuRef}>
-          <IconMenu24 toggle={menuToggle} />
+        <Tab onClick={() => setContactToggle()} ref={contactRef}>
+          <IconContact24 toggle={contactToggle} />
         </Tab>
       </Nav>
     </>
@@ -84,11 +84,11 @@ const Nav = styled.nav`
     align-items: center;
     border-top-left-radius: var(--border-radius-primary);
     border-top-right-radius: var(--border-radius-primary);
-    border-top: solid 1px ${({ theme }) => theme.gray6};
+    border-top: solid 1px ${({ theme }) => theme.gray7};
 
     /* Grassmorphism */
     opacity: 0.999;
-    color: ${({ theme }) => theme.gray7};
+    color: ${({ theme }) => theme.gray8};
     -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
       hue-rotate(10deg);
     backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
@@ -110,7 +110,7 @@ const Tab = styled.button`
   border-radius: var(--border-radius-primary);
   width: 44px;
   height: 44px;
-  background-color: ${({ theme }) => theme.gray6};
+  background-color: ${({ theme }) => theme.gray7};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-bottom: 0;

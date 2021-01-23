@@ -8,9 +8,9 @@ export const fontSize: any = {
     single32: '32px',
     small: '14px',
     body: '17px',
-    headlineSmall: '21px',
-    headlineMedium: '27px',
-    headlineBig: '32px',
+    h3TitleSmall: '21px',
+    h2TitleMedium: '27px',
+    h1TitleLarge: '32px',
   },
 
   tablet: {
@@ -20,9 +20,9 @@ export const fontSize: any = {
     single32: '32px',
     small: '16px',
     body: '20px',
-    headlineSmall: '28px',
-    headlineMedium: '34px',
-    headlineBig: '39px',
+    h3TitleSmall: '28px',
+    h2TitleMedium: '34px',
+    h1TitleLarge: '39px',
   },
 
   desktop: {
@@ -32,9 +32,9 @@ export const fontSize: any = {
     single32: '32px',
     small: '16px',
     body: '20px',
-    headlineSmall: '28px',
-    headlineMedium: '34px',
-    headlineBig: '39px',
+    h3TitleSmall: '28px',
+    h2TitleMedium: '34px',
+    h1TitleLarge: '39px',
   },
 
   // Test Size

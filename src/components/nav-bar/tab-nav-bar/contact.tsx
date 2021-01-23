@@ -10,7 +10,7 @@ import { toastify } from '../../toast/toastify';
 import { t } from '../../index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
-const Contact = () => {
+const ContactState = () => {
   const themeContext = useContext(ThemeContext);
   const toastMessage: string = useSetLanguage(t.contactState.toastMessage);
   const toastId: string = 'Copy Email';
@@ -115,7 +115,7 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactState;
 
 const Container = styled.main`
   display: flex;

@@ -24,7 +24,7 @@ const Error = ({ statusCode }: any) => {
         textSize="body"
         weight={fontWeight[400]}
         lineHeight={1.55}
-        color={themeContext.gray1}
+        color={themeContext.gray2}
       />
       <Link href="/">
         <a>
@@ -34,7 +34,7 @@ const Error = ({ statusCode }: any) => {
               text={useSetLanguage(t.errorMessage.btn)}
               textSize="body"
               weight={fontWeight[400]}
-              color={themeContext.gray0}
+              color={themeContext.gray1}
             />
           </BtnStyle>
         </a>
@@ -70,6 +70,6 @@ const BtnStyle = styled.button`
   align-items: center;
   padding: 18px 32px;
   border-radius: 24px;
-  background-color: ${({ theme }) => theme.gray6};
-  color: ${({ theme }) => theme.gray0};
+  background-color: ${({ theme }) => theme.gray7};
+  color: ${({ theme }) => theme.gray1};
 `;

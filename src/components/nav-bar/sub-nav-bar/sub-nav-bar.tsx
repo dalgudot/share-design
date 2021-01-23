@@ -22,20 +22,20 @@ const SubNavBar = ({ subNavToggle }: any) => {
   const contactToggle = subNavToggle === 'contact' ? true : false;
 
   const welcomeToggleColor = welcomeToggle
-    ? themeContext.gray0
-    : themeContext.gray4;
+    ? themeContext.gray1
+    : themeContext.gray5;
 
   const contactToggleColor = contactToggle
-    ? themeContext.gray0
-    : themeContext.gray4;
+    ? themeContext.gray1
+    : themeContext.gray5;
 
   const welcomeToggleBottomBarColor: string = welcomeToggle
-    ? themeContext.gray0
-    : themeContext.gray6;
+    ? themeContext.gray1
+    : themeContext.gray7;
 
   const contactToggleBottomBarColor: string = contactToggle
-    ? themeContext.gray0
-    : themeContext.gray6;
+    ? themeContext.gray1
+    : themeContext.gray7;
 
   const welcomeToggleBottomBarBorder: string = welcomeToggle ? '4px' : '1px';
 
@@ -106,7 +106,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray8};
 
   // 변경 요소
   top: 72px;

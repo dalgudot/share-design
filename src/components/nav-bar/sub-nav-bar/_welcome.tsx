@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { t } from '../../index/lang/t';
-import H2HeadlineMedium from '../../typography/headline-medium';
-import PBody from '../../typography/body';
+import H2HeadlineMedium from '../../typography/h2-title-medium';
+import PBody400 from '../../typography/p-body-400';
 
 const WelcomeState = () => {
   const welcomeHeadlineTextArray = t.welcomeHeadlineText;
@@ -12,8 +13,15 @@ const WelcomeState = () => {
 
   const welcomeTextArray = t.welcomeText;
   const welcomeText = welcomeTextArray.map((text, index) => (
-    <PBody key={index} text={text} marginTop="24px" />
+    <PBody400
+      key={index}
+      text={text}
+      marginTop="24px"
+      color={themeContext.gray1}
+    />
   ));
+
+  const themeContext = useContext(ThemeContext);
 
   return (
     <Container>
@@ -30,7 +38,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  color: ${({ theme }) => theme.gray0};
+  color: ${({ theme }) => theme.gray1};
   max-width: 740px;
 
   // 변경 요소

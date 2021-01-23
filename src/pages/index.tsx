@@ -9,6 +9,7 @@ import TabNavBar from '../components/nav-bar/tab-nav-bar/tab-nav-bar';
 import Home from '../components/nav-bar/tab-nav-bar/home';
 import Menu from '../components/nav-bar/tab-nav-bar/menu';
 import { useSelector } from 'react-redux';
+import Contact from '../components/nav-bar/sub-nav-bar/contact';
 
 const Index = () => {
   DetectBrowserLang();
@@ -17,7 +18,7 @@ const Index = () => {
   }, []);
 
   const tabToggle = useSelector((state: any) => state.tabNavBar);
-  const tabDisplay = tabToggle === 'home' ? <Home /> : <Menu />;
+  const tabDisplay = tabToggle === 'home' ? <Home /> : <Contact />;
 
   return (
     <>

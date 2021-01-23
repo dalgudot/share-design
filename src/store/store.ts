@@ -71,7 +71,7 @@ export const reducer = (state = InitialState, action: any) => {
     case actionTypes.TAB_NAV_CHANGE:
       return {
         ...state,
-        tabNavBar: state.tabNavBar === 'home' ? 'menu' : 'home',
+        tabNavBar: state.tabNavBar === 'home' ? 'contact' : 'home',
       };
 
     case actionTypes.SUB_NAV_CHANGE:

@@ -56,8 +56,8 @@ const Container = styled.main`
     top: 120px;
     right: 20%;
     font-size: 24px;
-    color: ${({ theme }) => theme.gray1};
-    border: solid ${({ theme }) => theme.gray1} 1px;
+    color: ${({ theme }) => theme.gray2};
+    border: solid ${({ theme }) => theme.gray2} 1px;
     border-radius: 20px;
     background-color: transparent;
     padding: 16px 28px;
@@ -67,19 +67,19 @@ const Container = styled.main`
 const MultiLineTextField = styled.textarea`
   padding: 72px;
   font-size: 24px;
-  background-color: ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray8};
   border-radius: 16px;
   margin-top: 120px;
-  caret-color: ${({ theme }) => theme.gray1};
-  color: ${({ theme }) => theme.gray1};
+  caret-color: ${({ theme }) => theme.gray2};
+  color: ${({ theme }) => theme.gray2};
   font-weight: 300;
   line-height: 1.9;
 
   :invalid {
-    border: 1px solid ${({ theme }) => theme.gray7};
+    border: 1px solid ${({ theme }) => theme.gray8};
   }
 
   :valid {
-    border: 1px solid ${({ theme }) => theme.gray7};
+    border: 1px solid ${({ theme }) => theme.gray8};
   }
 `;
