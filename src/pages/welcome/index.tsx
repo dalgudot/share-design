@@ -2,7 +2,7 @@ import Header from '../../components/header/header';
 import SubNavBar from '../../components/nav-bar/sub-nav-bar/sub-nav-bar';
 import { useSelector } from 'react-redux';
 import WelcomeState from '../../components/nav-bar/sub-nav-bar/_welcome';
-import ContactState from '../../components/nav-bar/sub-nav-bar/contact';
+import Contact from '../../components/nav-bar/sub-nav-bar/contact';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import { DetectBrowserLang } from '../../lib/funtions/detect-browser-lang';
@@ -18,7 +18,7 @@ const Welcome = () => {
   const subNavToggle = useSelector((state: any) => state.subNavBar);
 
   const subNavDisplay =
-    subNavToggle === 'welcome' ? <WelcomeState /> : <ContactState />;
+    subNavToggle === 'welcome' ? <WelcomeState /> : <Contact />;
 
   return (
     <>

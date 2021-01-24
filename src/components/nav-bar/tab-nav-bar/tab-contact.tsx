@@ -10,15 +10,15 @@ import { toastify } from '../../toast/toastify';
 import { t } from '../../index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
-const ContactState = () => {
+const Contact = () => {
   const themeContext = useContext(ThemeContext);
-  const toastMessage: string = useSetLanguage(t.contactState.toastMessage);
+  const toastMessage: string = useSetLanguage(t.contact.toastMessage);
   const toastId: string = 'Copy Email';
 
   return (
     <Container>
       <Image
-        alt={useSetLanguage(t.contactState.profileAlt)}
+        alt={useSetLanguage(t.contact.profileAlt)}
         src="/images/profile.jpg"
         width={72}
         height={72}
@@ -61,7 +61,7 @@ const ContactState = () => {
             <CopyButton>
               <TextStyle
                 type="p"
-                text={useSetLanguage(t.contactState.copyButton)}
+                text={useSetLanguage(t.contact.copyButton)}
                 textSize="single17"
                 weight={fontWeight[700]}
                 color={themeContext.gray8}
@@ -72,7 +72,7 @@ const ContactState = () => {
             <a href="mailto:dalgudot@gmail.com" target="_blank">
               <TextStyle
                 type="p"
-                text={useSetLanguage(t.contactState.sendButton)}
+                text={useSetLanguage(t.contact.sendButton)}
                 textSize="single17"
                 weight={fontWeight[700]}
                 color={themeContext.gray8}
@@ -115,7 +115,7 @@ const ContactState = () => {
   );
 };
 
-export default ContactState;
+export default Contact;
 
 const Container = styled.main`
   display: flex;
