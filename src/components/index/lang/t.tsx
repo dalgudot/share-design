@@ -48,8 +48,8 @@ export const t = {
     },
 
     title2: {
-      k: '디자인 이야기 🔥',
-      e: 'Design Story 🔥',
+      k: '디자인 이야기🔥',
+      e: 'Design Story🔥',
     },
 
     article1: {
@@ -207,7 +207,7 @@ export const t = {
     // },
   ],
 
-  contactState: {
+  contact: {
     profileAlt: {
       k: 'UI/UX 디자이너 김경환의 프로필 사진',
       e: 'Profile photo of UI/UX designer KyungHwan Kim',

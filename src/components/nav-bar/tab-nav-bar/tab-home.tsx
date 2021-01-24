@@ -27,7 +27,7 @@ const Home = () => {
 export default Home;
 
 const Ul = styled.ul`
-  margin-top: 96px;
+  margin: 128px 0 72px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 79px;

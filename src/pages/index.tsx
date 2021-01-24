@@ -22,7 +22,7 @@ const Index = () => {
     <>
       <Main>{tabDisplay}</Main>
       <TabNavBar tabToggle={tabToggle} />
-      <Footer tabToggle={tabToggle} />
+      {/* <Footer tabToggle={tabToggle} /> */}
     </>
   );
 };
@@ -30,9 +30,6 @@ const Index = () => {
 export default Index;
 
 const Main = styled.main`
-  /* display: flex; */
-  /* justify-content: center; */
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
   }

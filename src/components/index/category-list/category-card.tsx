@@ -46,13 +46,13 @@ export default CategoryCard;
 const Li = styled.li<{ backgroundGradient: string }>`
   width: 100%;
   max-width: 480px;
-  height: 335px;
+  height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   background-image: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
   margin: 24px auto 0;
-  padding: 16px 24px 30px;
+  padding: 24px 24px 36px;
 
   display: flex;
   flex-direction: column;

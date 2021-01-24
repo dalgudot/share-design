@@ -30,15 +30,9 @@ export default Footer;
 const FooterContainer = styled.footer`
   text-align: center;
   width: 100%;
-  margin: 48px auto 48px;
-  /* position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%); */
-  /* margin-top: 48px;
-  margin-bottom: 72px; */
+  margin: 72px auto 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-bottom: 72px;
+    margin: 48px auto 72px;
   }
 `;

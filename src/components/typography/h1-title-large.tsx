@@ -20,7 +20,7 @@ const H1TitleLarge = ({
       textSize="h1TitleLarge"
       weight={fontWeight[700]}
       color={themeContext.gray1}
-      lineHeight={1.4}
+      lineHeight={1.3}
       marginTop={marginTop}
     />
   );

@@ -4,6 +4,7 @@ import { ThemeContext } from 'styled-components';
 import PBody300 from '../../typography/p-body-300';
 import PBody700 from '../../typography/p-body-700';
 import { t } from '../lang/t';
+import { mediaBreakPoint } from '../../../styles/common';
 
 const PortfolioDesignStoryList = ({
   themeContext,
@@ -16,7 +17,7 @@ const PortfolioDesignStoryList = ({
 }) => {
   return (
     <>
-      <PBody300 text={t.number01} color={themeContext.gray1} />
+      {/* <PBody300 text={t.number01} color={themeContext.gray1} /> */}
       <PBody700 text={title1} color={themeContext.gray1} />
       <PBody700 text={title2} color={themeContext.gray1} />
     </>
@@ -59,7 +60,13 @@ const ContentsList = ({ list }: { list: string }) => {
 
 export default ContentsList;
 
-const Li = styled.li``;
+const Li = styled.li`
+  margin-top: 144px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 96px;
+  }
+`;
 
 const Line = styled.div`
   width: 100%;
