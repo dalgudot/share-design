@@ -2,7 +2,7 @@ import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
-const PBody700 = ({
+const PSmall700 = ({
   text,
   color,
   marginTop,
@@ -15,7 +15,7 @@ const PBody700 = ({
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize="body"
+      textSize="small"
       weight={fontWeight[700]}
       color={color}
       lineHeight={1.55}
@@ -24,4 +24,4 @@ const PBody700 = ({
   );
 };
 
-export default PBody700;
+export default PSmall700;

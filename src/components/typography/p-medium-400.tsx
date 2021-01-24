@@ -2,7 +2,7 @@ import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
-const PBody300 = ({
+const PMedium400 = ({
   text,
   color,
   marginTop,
@@ -15,8 +15,8 @@ const PBody300 = ({
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize="body"
-      weight={fontWeight[300]}
+      textSize="medium"
+      weight={fontWeight[400]}
       color={color}
       lineHeight={1.55}
       marginTop={marginTop}
@@ -24,4 +24,4 @@ const PBody300 = ({
   );
 };
 
-export default PBody300;
+export default PMedium400;

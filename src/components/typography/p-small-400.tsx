@@ -1,29 +1,27 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
-const H2TitleMedium = ({
+const PSmall400 = ({
   text,
+  color,
   marginTop,
 }: {
   text: any;
+  color: string;
   marginTop?: string;
 }) => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <TextStyle
-      type="h2"
+      type="p"
       text={useSetLanguage(text)}
-      textSize="h2TitleMedium"
-      weight={fontWeight[700]}
-      color={themeContext.gray1}
-      lineHeight={1.4}
+      textSize="small"
+      weight={fontWeight[400]}
+      color={color}
+      lineHeight={1.55}
       marginTop={marginTop}
     />
   );
 };
 
-export default H2TitleMedium;
+export default PSmall400;

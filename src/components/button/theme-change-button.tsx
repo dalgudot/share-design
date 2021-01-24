@@ -45,7 +45,7 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
         //     ? t[themeMode[k]]
         //     : t[themeMode[e]]
         // }
-        textSize="body"
+        textSize="medium"
         weight={fontWeight[700]}
         color="gray2"
       />
@@ -108,7 +108,7 @@ const BtnStyle = styled.button``;
 //         //     ? t[themeMode[k]]
 //         //     : t[themeMode[e]]
 //         // }
-//         textSize="body"
+//         textSize="medium"
 //         weight={fontWeight[700]}
 //         color="gray2"
 //       />

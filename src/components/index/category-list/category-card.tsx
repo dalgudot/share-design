@@ -1,10 +1,9 @@
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import Router from 'next/router';
-import H1TitleLarge from '../../typography/h1-title-large';
+import H1Title700 from '../../typography/h1-title-700';
 import { t } from '../lang/t';
 import ContentsList from './contents-list';
 
@@ -30,8 +29,8 @@ const CategoryCard = ({
   return (
     <Li backgroundGradient={backgroundGradient}>
       <TitleSection>
-        <H1TitleLarge text={title1} />
-        <H1TitleLarge text={title2} />
+        <H1Title700 text={title1} color={themeContext.gray1} />
+        <H1Title700 text={title2} color={themeContext.gray1} />
       </TitleSection>
 
       <Ul>

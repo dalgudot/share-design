@@ -1,4 +1,4 @@
-import H2HeadlineMedium from '../components/typography/h2-title-medium';
+import H2HeadlineMedium from '../components/typography/h2-title-700';
 import { t } from '../components/index/lang/t';
 import ThemeChangeButton from '../components/button/theme-change-button';
 

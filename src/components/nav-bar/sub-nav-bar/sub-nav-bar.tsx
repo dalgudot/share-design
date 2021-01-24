@@ -75,7 +75,7 @@ const SubNavBar = ({ subNavToggle }: any) => {
         <TextStyle
           type="p"
           text={useSetLanguage(t.subNavBar.welcome)}
-          textSize="body"
+          textSize="medium"
           weight={fontWeight[700]}
           color={welcomeToggleColor}
         />
@@ -89,7 +89,7 @@ const SubNavBar = ({ subNavToggle }: any) => {
         <TextStyle
           type="p"
           text={useSetLanguage(t.subNavBar.contact)}
-          textSize="body"
+          textSize="medium"
           weight={fontWeight[700]}
           color={contactToggleColor}
         />

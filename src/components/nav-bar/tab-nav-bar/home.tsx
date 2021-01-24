@@ -1,4 +1,4 @@
-import { t } from '../../index/lang/t';
+import { articleT } from '../../article/lang/article-t';
 import CategoryCard from '../../index/category-list/category-card';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -14,15 +14,15 @@ const Home = () => {
     <Ul>
       <CategoryCard
         href="/"
-        title1={t.portfolioDesignStory.title1}
-        title2={t.portfolioDesignStory.title2}
+        title1={articleT.portfolioDesignStory.title1}
+        title2={articleT.portfolioDesignStory.title2}
         background="gradientPurple"
         list="portfolioDesignStory"
       />
       <CategoryCard
         href="/"
-        title1={t.koodonDesignStory.title1}
-        title2={t.koodonDesignStory.title2}
+        title1={articleT.portfolioDesignStory.title1}
+        title2={articleT.portfolioDesignStory.title2}
         background="gradientBurgundy"
         list="koodonDesignStory"
       />

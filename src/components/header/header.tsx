@@ -10,7 +10,7 @@ import { ThemeContext } from 'styled-components';
 import Router, { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
-import PBody700 from '../typography/p-body-700';
+import PMedium700 from '../typography/p-medium-700';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
@@ -35,7 +35,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <Left onClick={goHome}>
-          <PBody700 text={t.shareDesign} color={themeContext.gray1} />
+          <PMedium700 text={t.shareDesign} color={themeContext.gray1} />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>

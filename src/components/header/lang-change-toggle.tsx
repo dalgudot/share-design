@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../svg/icon_language_24';
-import PBody700 from '../typography/p-body-700';
+import PMedium700 from '../typography/p-medium-700';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 
 const LangChangeToggle = () => {
@@ -47,7 +47,7 @@ const LangChangeToggle = () => {
         variants={koVariants(width)}
         animate={lang === 'ko' ? 'on' : 'off'}
       >
-        <PBody700
+        <PMedium700
           text={t.header.langChangeToggleKo}
           color={lang === 'ko' ? themeContext.gray2 : themeContext.gray5}
         />
@@ -57,7 +57,7 @@ const LangChangeToggle = () => {
         variants={enVariants(width)}
         animate={lang === 'ko' ? 'off' : 'on'}
       >
-        <PBody700
+        <PMedium700
           text={t.header.langChangeToggleEn}
           color={lang === 'ko' ? themeContext.gray5 : themeContext.gray2}
         />

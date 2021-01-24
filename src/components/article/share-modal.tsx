@@ -15,7 +15,7 @@ const ShareModal = () => {
         <TextStyle
           type="h1"
           text="페이스북"
-          textSize="body"
+          textSize="medium"
           weight={fontWeight[700]}
           color={themeContext.gray4}
         />
@@ -26,7 +26,7 @@ const ShareModal = () => {
         <TextStyle
           type="h1"
           text="링크드인"
-          textSize="body"
+          textSize="medium"
           weight={fontWeight[700]}
           color={themeContext.gray4}
         />
@@ -42,7 +42,7 @@ const ShareModal = () => {
           <TextStyle
             type="h1"
             text="함수로 링크 복사"
-            textSize="body"
+            textSize="medium"
             weight={fontWeight[700]}
             color={themeContext.gray4}
           />

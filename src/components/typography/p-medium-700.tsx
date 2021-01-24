@@ -1,29 +1,27 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
-const H1TitleLarge = ({
+const PMedium700 = ({
   text,
+  color,
   marginTop,
 }: {
   text: any;
+  color: string;
   marginTop?: string;
 }) => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <TextStyle
-      type="h1"
+      type="p"
       text={useSetLanguage(text)}
-      textSize="h1TitleLarge"
+      textSize="medium"
       weight={fontWeight[700]}
-      color={themeContext.gray1}
-      lineHeight={1.3}
+      color={color}
+      lineHeight={1.55}
       marginTop={marginTop}
     />
   );
 };
 
-export default H1TitleLarge;
+export default PMedium700;

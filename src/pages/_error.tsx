@@ -20,7 +20,7 @@ const Error = ({ statusCode }: any) => {
       <TextStyle
         type="h1"
         text={useSetLanguage(t.errorMessage.message)}
-        textSize="body"
+        textSize="medium"
         weight={fontWeight[400]}
         lineHeight={1.55}
         color={themeContext.gray2}
@@ -31,7 +31,7 @@ const Error = ({ statusCode }: any) => {
             <TextStyle
               type="p"
               text={useSetLanguage(t.errorMessage.btn)}
-              textSize="body"
+              textSize="medium"
               weight={fontWeight[400]}
               color={themeContext.gray1}
             />

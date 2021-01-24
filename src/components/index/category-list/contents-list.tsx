@@ -1,8 +1,9 @@
 import styled, { DefaultTheme } from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import PBody300 from '../../typography/p-body-300';
-import PBody700 from '../../typography/p-body-700';
+import PMedium300 from '../../typography/p-medium-300';
+import PMedium700 from '../../typography/p-medium-700';
+import { articleT } from '../../article/lang/article-t';
 import { t } from '../lang/t';
 import { mediaBreakPoint } from '../../../styles/common';
 
@@ -17,9 +18,9 @@ const PortfolioDesignStoryList = ({
 }) => {
   return (
     <>
-      {/* <PBody300 text={t.number01} color={themeContext.gray1} /> */}
-      <PBody700 text={title1} color={themeContext.gray1} />
-      <PBody700 text={title2} color={themeContext.gray1} />
+      {/* <PMedium300 text={t.number01} color={themeContext.gray1} /> */}
+      <PMedium700 text={title1} color={themeContext.gray1} />
+      <PMedium700 text={title2} color={themeContext.gray1} />
     </>
   );
 };
@@ -30,10 +31,10 @@ const ContentsList = ({ list }: { list: string }) => {
   let title2;
 
   list === 'portfolioDesignStory'
-    ? ((title1 = t.portfolioDesignStory.article1.listTitle.title1),
-      (title2 = t.portfolioDesignStory.article1.listTitle.title2))
-    : ((title1 = t.koodonDesignStory.article1.listTitle.title1),
-      (title2 = t.koodonDesignStory.article1.listTitle.title2));
+    ? ((title1 = articleT.portfolioDesignStory.article1.title[0]),
+      (title2 = articleT.portfolioDesignStory.article1.title[1]))
+    : ((title1 = articleT.koodonDesignStory.article1.title[0]),
+      (title2 = articleT.koodonDesignStory.article1.title[1]));
 
   return (
     <Li>
@@ -49,7 +50,7 @@ const ContentsList = ({ list }: { list: string }) => {
         </Left>
 
         <Right>
-          <PBody700 text={t.chevronRight} color={themeContext.gray1} />
+          <PMedium700 text={t.chevronRight} color={themeContext.gray1} />
         </Right>
       </Container>
 
@@ -75,7 +76,7 @@ const Line = styled.div`
 `;
 
 const Container = styled.section`
-  padding: 16px 2px;
+  padding: 16px 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
