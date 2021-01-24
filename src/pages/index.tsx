@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../lib/funtions/visits-and-views';
 import TabNavBar from '../components/nav-bar/tab-nav-bar/tab-nav-bar';
-import Home from '../components/nav-bar/tab-nav-bar/tab-home';
-import Contact from '../components/nav-bar/tab-nav-bar/tab-contact';
+import Home from '../components/nav-bar/tab-nav-bar/home';
+import Contact from '../components/nav-bar/tab-nav-bar/contact';
 import { useSelector } from 'react-redux';
 
 const Index = () => {

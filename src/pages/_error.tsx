@@ -13,7 +13,6 @@ import { ThemeContext } from 'styled-components';
 // 500 Error
 const Error = ({ statusCode }: any) => {
   statusCode && console.log(statusCode);
-
   const themeContext = useContext(ThemeContext);
 
   return (
