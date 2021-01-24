@@ -82,12 +82,11 @@ const Nav = styled.nav`
     // 추가 속성
     bottom: 0;
     align-items: center;
-    border-top-left-radius: var(--border-radius-primary);
-    border-top-right-radius: var(--border-radius-primary);
     border-top: solid 1px ${({ theme }) => theme.gray7};
+    background-color: ${({ theme }) => theme.gray8};
 
     /* Grassmorphism */
-    opacity: 0.999;
+    /* opacity: 0.999;
     color: ${({ theme }) => theme.gray8};
     -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
       hue-rotate(10deg);
@@ -95,7 +94,7 @@ const Nav = styled.nav`
 
     -webkit-transition: color 0.11s ease-in-out,
       -webkit-backdrop-filter 0.11s ease-in-out;
-    transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
+    transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */
   }
 `;
 
@@ -107,7 +106,7 @@ const Tab = styled.button`
   // 공통 속성
 
   margin-bottom: 24px;
-  border-radius: var(--border-radius-primary);
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   width: 44px;
   height: 44px;
   background-color: ${({ theme }) => theme.gray7};

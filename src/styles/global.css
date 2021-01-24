@@ -1,8 +1,3 @@
-:root {
-  --purple-linear-gradient: linear-gradient(to bottom, #7c62ed, #4633d7);
-  --border-radius-primary: 13px;
-}
-
 html {
   width: 100%;
   height: 100%;
@@ -64,6 +59,13 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: transparent;
+}
+
 button {
   /* all: unset -> 모든 속성 한번에 초기화 */
   all: unset;
@@ -83,7 +85,7 @@ ul,
 ol,
 li {
   list-style: none;
-  display: block;
+  /* display: block; */
   margin: 0;
   padding: 0;
 }

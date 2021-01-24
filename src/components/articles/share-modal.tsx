@@ -1,11 +1,11 @@
-import TextStyle from '../../components/typography/atoms/text-style';
-import { fontWeight } from '../../components/typography/atoms/font';
+import TextStyle from '../typography/atoms/text-style';
+import { fontWeight } from '../typography/atoms/font';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const Share = () => {
+const ShareModal = () => {
   const themeContext = useContext(ThemeContext);
   const url: string = 'https://share-design.kr/articles/1';
 
@@ -52,4 +52,4 @@ const Share = () => {
   );
 };
 
-export default Share;
+export default ShareModal;

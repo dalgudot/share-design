@@ -1,6 +1,12 @@
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import 'styled-components';
+
+const borderRadius = {
+  PrimaryBorderRadius: '13px',
+};
 
 export const darkTheme: DefaultTheme = {
+  // Color
   gray1: '#E6E6F5',
   gray2: '#E0E0EA',
   gray3: '#BFBFC7',
@@ -9,9 +15,15 @@ export const darkTheme: DefaultTheme = {
   gray6: '#3D3D3F',
   gray7: '#1C1C1E',
   gray8: '#121212',
+  // Gradient
+  gradientPurple: '354deg, #4633d7, #7c62ed',
+  gradientBurgundy: '170deg, #743657, #40192c',
+  // BorderRadius
+  borderRadius,
 };
 
 export const lightTheme: DefaultTheme = {
+  // Color
   gray1: '#121212',
   gray2: '#232324',
   gray3: '#3D3D3F',
@@ -20,19 +32,17 @@ export const lightTheme: DefaultTheme = {
   gray6: '#BFBFC7',
   gray7: '#E0E0EA',
   gray8: '#EBEBF5',
+  // Gradient
+  gradientPurple: '354deg, #4633d7, #7c62ed',
+  gradientBurgundy: '170deg, #743657, #40192c',
+  // BorderRadius
+  borderRadius,
 };
 
 // 색과 관련된 GlobalStyle
 const GlobalColors = createGlobalStyle`
 body {
   background-color: ${({ theme }) => theme.gray8};
-}
-
-a:link,
-a:visited,
-a:hover,                  
-a:active {
-  color: transparent;
 }
 `;
 
@@ -48,5 +58,12 @@ declare module 'styled-components' {
     gray6: string;
     gray7: string;
     gray8: string;
+    // Gradient
+    gradientPurple: string;
+    gradientBurgundy: string;
+    // BorderRadius
+    borderRadius: {
+      PrimaryBorderRadius: string;
+    };
   }
 }

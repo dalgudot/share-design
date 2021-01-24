@@ -1,15 +1,13 @@
 import styled from 'styled-components';
-import Header from '../components/header/header';
 import { DetectBrowserLang } from '../lib/funtions/detect-browser-lang';
 import Footer from '../components/footer/footer';
 import { useEffect } from 'react';
 import { mediaBreakPoint } from '../styles/common';
 import { VisitsAndViewsDuringSession } from '../lib/funtions/visits-and-views';
 import TabNavBar from '../components/nav-bar/tab-nav-bar/tab-nav-bar';
-import Home from '../components/nav-bar/tab-nav-bar/home';
-import Menu from '../components/nav-bar/tab-nav-bar/menu';
-import { useSelector } from 'react-redux';
+import Home from '../components/nav-bar/tab-nav-bar/tab-home';
 import Contact from '../components/nav-bar/sub-nav-bar/contact';
+import { useSelector } from 'react-redux';
 
 const Index = () => {
   DetectBrowserLang();
@@ -22,10 +20,9 @@ const Index = () => {
 
   return (
     <>
-      {/* <Header /> */}
       <Main>{tabDisplay}</Main>
-      <Footer tabToggle={tabToggle} />
       <TabNavBar tabToggle={tabToggle} />
+      <Footer tabToggle={tabToggle} />
     </>
   );
 };
@@ -33,11 +30,11 @@ const Index = () => {
 export default Index;
 
 const Main = styled.main`
-  /* margin-top: 144px; */
+  /* display: flex; */
+  /* justify-content: center; */
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
-    /* margin-top: 120px; */
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {

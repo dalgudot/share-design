@@ -160,7 +160,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.gray1};
   width: 100%;
   height: 49px;
-  border-radius: var(--border-radius-primary);
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
 `;
 
 const CopyButton = styled(Button)``;

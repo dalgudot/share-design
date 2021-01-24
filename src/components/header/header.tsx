@@ -84,8 +84,12 @@ const FillEmptySpace = styled.div`
   top: -8px;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 80px; // 72 + 8px
   background-color: ${({ theme }) => theme.gray8};
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: 65px; // 57 + 8px
+  }
 `;
 
 // const GlassMorphismBackground = styled.div`

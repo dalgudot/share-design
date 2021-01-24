@@ -26,42 +26,107 @@ export const t = {
     e: 'UI/UX Designer',
   },
 
-  article1: {
-    category: {
-      k: 'UX 디자인',
-      e: 'UX DESIGN',
+  number01: {
+    k: '01',
+    e: '01',
+  },
+
+  number02: {
+    k: '02',
+    e: '02',
+  },
+
+  chevronRight: {
+    k: '>',
+    e: '>',
+  },
+
+  portfolioDesignStory: {
+    title1: {
+      k: '포트폴리오',
+      e: 'Portfolio',
     },
 
-    date: {
-      k: '2021년 1월 3일',
-      e: '01 JAN 2021',
+    title2: {
+      k: '디자인 이야기 🔥',
+      e: 'Design Story 🔥',
     },
 
-    title: {
-      k: '두 언어로 디자인하기',
-      e: 'DESIGN IN TWO LANGUAGES',
+    article1: {
+      listTitle: {
+        title1: {
+          k: '디자인 공유하기',
+          e: 'SHARE DESIGN',
+        },
+
+        title2: {
+          k: '프로젝트',
+          e: 'Project',
+        },
+      },
+
+      category: {
+        k: 'UX 디자인',
+        e: 'UX DESIGN',
+      },
+
+      date: {
+        k: '2021년 1월 3일',
+        e: '01 JAN 2021',
+      },
+
+      title: {
+        k: '두 언어로 디자인하기',
+        e: 'DESIGN IN TWO LANGUAGES',
+      },
+
+      titleSimpleOrder: {
+        k: '첫 번째,',
+        e: 'FIRST, DESIGN',
+      },
+
+      titleSimple: {
+        k: '두 언어로 디자인하기',
+        e: 'IN TWO LANGUAGES',
+      },
+
+      titleSimpleBtn: {
+        k: '지금 보기',
+        e: 'Watch Now',
+      },
+
+      description: {
+        k:
+          'UI/UX 디자인 경험을 한국과 전 세계에 공유하기 위해 한글과 영어로 "디자인 공유하기"를 디자인한 경험을 공유합니다.',
+        e:
+          'I share my experience designing "SHARE DESIGN" in Korean and English to share my UI/UX Design Experience in Korea and around the world.',
+      },
+    },
+  },
+
+  koodonDesignStory: {
+    title1: {
+      k: '쿠돈',
+      e: 'KOODON',
     },
 
-    titleSimpleOrder: {
-      k: '첫 번째,',
-      e: 'FIRST, DESIGN',
+    title2: {
+      k: '디자인 이야기 🙌',
+      e: 'Design Story 🙌',
     },
 
-    titleSimple: {
-      k: '두 언어로 디자인하기',
-      e: 'IN TWO LANGUAGES',
-    },
+    article1: {
+      listTitle: {
+        title1: {
+          k: 'Coming',
+          e: 'Coming',
+        },
 
-    titleSimpleBtn: {
-      k: '지금 보기',
-      e: 'Watch Now',
-    },
-
-    description: {
-      k:
-        'UI/UX 디자인 경험을 한국과 전 세계에 공유하기 위해 한글과 영어로 "디자인 공유하기"를 디자인한 경험을 공유합니다.',
-      e:
-        'I share my experience designing "SHARE DESIGN" in Korean and English to share my UI/UX Design Experience in Korea and around the world.',
+        title2: {
+          k: 'Soon...',
+          e: 'Soon...',
+        },
+      },
     },
   },
 

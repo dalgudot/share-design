@@ -62,7 +62,7 @@ const Container = styled.button`
   justify-content: center;
   align-items: center;
   padding: 12px 0 12px 12px;
-  border-radius: var(--border-radius-primary);
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
 
   div {
     margin-left: 6px;

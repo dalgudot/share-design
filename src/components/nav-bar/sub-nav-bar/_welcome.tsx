@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { t } from '../../index/lang/t';
 import H2HeadlineMedium from '../../typography/h2-title-medium';
-import PBody400 from '../../typography/p-body-400';
+import PBody400 from '../../typography/p-body-300';
 
 const WelcomeState = () => {
   const welcomeHeadlineTextArray = t.welcomeHeadlineText;
