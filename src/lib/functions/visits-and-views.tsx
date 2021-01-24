@@ -55,35 +55,15 @@ const VisitsDuringSession = () => {
 
 // 조회수
 const ViewsDuringSession = (where: string) => {
-  // index + ariticle로 전체 조회수 쉽게 계산 가능하므로 생략. 오히려 데이터 복잡도를 높임.
-  // S of 전체 조회수
-  // firebaseFetchSet('Number of Views/All Views/Total All');
-  // E of 전체 조회수
-
-  // S of 날짜별 전체 조회수
-  // firebaseFetchSet(`Number of Views/All Views/Total on ${when}`);
-  // E of 날짜별 전체 조회수
-
-  // Index
-  const viewsIndex = () => {
+  // Index - Home & Contact
+  const viewsHome = () => {
     // S of Index 전체 조회수
-    firebaseFetchSet('Number of Views/Index/Total All');
+    firebaseFetchSet(`Number of Views/${where}/Total All`);
     // E of Index 전체 조회수
 
     // S of Index 날짜별 전체 조회수
-    firebaseFetchSet(`Number of Views/Index/Total on ${when}`);
+    firebaseFetchSet(`Number of Views/${where}/Total on ${when}`);
     // E of Index 날짜별 전체 조회수
-  };
-
-  // welcome
-  const viewsWelcome = () => {
-    // S of welcome 전체 조회수
-    firebaseFetchSet('Number of Views/Welcome/Total All');
-    // E of welcome 전체 조회수
-
-    // S of welcome 날짜별 전체 조회수
-    firebaseFetchSet(`Number of Views/Welcome/Total on ${when}`);
-    // E of welcome 날짜별 전체 조회수
   };
 
   // Article
@@ -107,10 +87,8 @@ const ViewsDuringSession = (where: string) => {
     // E of [각] Article 날짜별 조회수
   };
 
-  if (where === 'Index') {
-    viewsIndex();
-  } else if (where == 'Welcome') {
-    viewsWelcome();
+  if (where === 'Home' || where == 'Contact') {
+    viewsHome();
   } else {
     viewsArticle();
   }

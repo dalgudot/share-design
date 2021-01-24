@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import TextStyle from '../../typography/atoms/text-style';
 import { fontWeight } from '../../typography/atoms/font';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -10,8 +10,13 @@ import { toastify } from '../../toast/toastify';
 import { t } from '../../index/lang/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
+import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
 const Contact = () => {
+  useEffect(() => {
+    VisitsAndViewsDuringSession('Contact');
+  }, []);
+
   const themeContext = useContext(ThemeContext);
   const toastMessage: string = useSetLanguage(t.contact.toastMessage);
   const toastId: string = 'Copy Email';

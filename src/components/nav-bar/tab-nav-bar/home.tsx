@@ -2,8 +2,14 @@ import { t } from '../../index/lang/t';
 import CategoryCard from '../../index/category-list/category-card';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
+import { useEffect } from 'react';
+import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
 const Home = () => {
+  useEffect(() => {
+    VisitsAndViewsDuringSession('Home');
+  }, []);
+
   return (
     <Ul>
       <CategoryCard

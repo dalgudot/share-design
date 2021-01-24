@@ -4,10 +4,17 @@ import styled from 'styled-components';
 import firebase from 'firebase/app';
 
 const Comment = () => {
-  const today = new Date();
+  const today = new Date(); // today는 Date의 Instance
   const year = String(today.getFullYear());
-  const month = String(today.getMonth() + 1);
-  const date = String(today.getDate());
+  // 한 자리 숫자일 경우 앞에 0을 붙여줘 순서대로 데이터가 나올 수 있도록
+  const month =
+    String(today.getMonth() + 1).length === 1
+      ? '0' + String(today.getMonth() + 1)
+      : String(today.getMonth() + 1);
+  const date =
+    String(today.getDate()).length === 1
+      ? '0' + String(today.getDate())
+      : String(today.getDate());
   const when = `${year}${month}${date}`;
 
   const firebaseDatabaseRef: any = firebase.database().ref(`Draft/${when}`);
