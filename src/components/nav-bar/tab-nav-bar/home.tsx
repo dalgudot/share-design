@@ -21,8 +21,8 @@ const Home = () => {
       />
       <CategoryCard
         href="/"
-        title1={articleT.portfolioDesignStory.title1}
-        title2={articleT.portfolioDesignStory.title2}
+        title1={articleT.koodonDesignStory.title1}
+        title2={articleT.koodonDesignStory.title2}
         background="gradientBurgundy"
         list="koodonDesignStory"
       />
