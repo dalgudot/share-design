@@ -7,11 +7,13 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../svg/icon_language_24';
 import PBody700 from '../typography/p-body-700';
+import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 
 const LangChangeToggle = () => {
   // Redux, Language Change
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
+
   const languageChange = () =>
     dispatch({
       type: 'LANGUAGE_CHANGE',
@@ -35,20 +37,29 @@ const LangChangeToggle = () => {
     // console.log(`HtmlLang: ${document.documentElement.lang}`);
   }, [lang]);
 
+  // 768을 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
+  const width: number = useWindowWidth();
+
   return (
     <Container onClick={setLanguageChange}>
       <IconLanguage24 color={themeContext.gray2} />
-      <motion.div>
+      <motion.div //
+        variants={koVariants(width)}
+        animate={lang === 'ko' ? 'on' : 'off'}
+      >
         <PBody700
           text={t.header.langChangeToggleKo}
-          color={themeContext.gray2}
+          color={lang === 'ko' ? themeContext.gray2 : themeContext.gray5}
         />
       </motion.div>
       <Divider />
-      <motion.div>
+      <motion.div //
+        variants={enVariants(width)}
+        animate={lang === 'ko' ? 'off' : 'on'}
+      >
         <PBody700
           text={t.header.langChangeToggleEn}
-          color={themeContext.gray5}
+          color={lang === 'ko' ? themeContext.gray5 : themeContext.gray2}
         />
       </motion.div>
     </Container>
@@ -56,6 +67,35 @@ const LangChangeToggle = () => {
 };
 
 export default LangChangeToggle;
+
+// Framer Motion
+const koVariants = (width: number) => {
+  if (width < 768) {
+    return {
+      on: { x: 0 },
+      off: { x: 32 },
+    };
+  } else {
+    return {
+      on: { x: 0 },
+      off: { x: 35 },
+    };
+  }
+};
+
+const enVariants = (width: number) => {
+  if (width < 768) {
+    return {
+      on: { x: -32 },
+      off: { x: 0 },
+    };
+  } else {
+    return {
+      on: { x: -35 },
+      off: { x: 0 },
+    };
+  }
+};
 
 const Container = styled.button`
   display: flex;
@@ -66,13 +106,14 @@ const Container = styled.button`
 
   div {
     margin-left: 6px;
-    padding-bottom: 2px;
+    margin-bottom: 2px;
   }
 `;
 
-const Divider = styled.div`
+const Divider = styled.span`
   height: 12px;
   width: 1px;
   margin-top: 2px;
+  margin-left: 6px;
   background-color: ${({ theme }) => theme.gray6};
 `;

@@ -200,11 +200,6 @@ export const t = {
       e:
         'So, I started SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experiences. I worked only on days off, and since I was doing everything from planning to content creation, translation, design and development by myself, it took a long time to distribute the first content. After that time, the first content distribution is scheduled for February 2021. I hope my design experience is well conveyed to people all over the world.',
     },
-
-    // {
-    //   k: '그 시간을 지나 드디어 오늘, 2021년 2월 14일 첫 콘텐츠를 전 세계에 배포했다.'
-    //   e: ' After that time, today, on February 14, 2021, the first content has been distributed worldwide.'
-    // },
   ],
 
   contact: {
