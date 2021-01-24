@@ -51,6 +51,7 @@ const TabNavBar = ({ tabToggle }: any) => {
           <IconContact24 toggle={contactToggle} />
         </Tab>
       </Nav>
+      <FillEmptySpace />
     </>
   );
 };
@@ -117,5 +118,18 @@ const Tab = styled.button`
     width: 100%;
     height: 100%;
     background-color: unset;
+  }
+`;
+
+// 아이폰 하단에 나타나는 빈 공간 채워주는 div
+const FillEmptySpace = styled.div`
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    position: fixed;
+    z-index: 9999;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 56px; // 48 + 8px
+    background-color: ${({ theme }) => theme.gray8};
   }
 `;

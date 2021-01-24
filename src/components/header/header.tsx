@@ -77,7 +77,7 @@ const HeaderContainer = styled.header`
 
 const Left = styled.button``;
 
-// 아이콘 상단에 나타나는 빈 공간 채워주는 div
+// 아이폰 상단에 나타나는 빈 공간 채워주는 div
 const FillEmptySpace = styled.div`
   position: fixed;
   z-index: 9999;
