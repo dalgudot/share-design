@@ -7,24 +7,6 @@ import { articleT } from '../../article/lang/article-t';
 import { t } from '../lang/t';
 import { mediaBreakPoint } from '../../../styles/common';
 
-const PortfolioDesignStoryList = ({
-  themeContext,
-  title1,
-  title2,
-}: {
-  themeContext: DefaultTheme;
-  title1: object;
-  title2: object;
-}) => {
-  return (
-    <>
-      {/* <PMedium300 text={t.number01} color={themeContext.gray1} /> */}
-      <PMedium700 text={title1} color={themeContext.gray1} />
-      <PMedium700 text={title2} color={themeContext.gray1} />
-    </>
-  );
-};
-
 const ContentsList = ({ list }: { list: string }) => {
   const themeContext: DefaultTheme = useContext(ThemeContext);
   let title1;
@@ -60,6 +42,24 @@ const ContentsList = ({ list }: { list: string }) => {
 };
 
 export default ContentsList;
+
+const PortfolioDesignStoryList = ({
+  themeContext,
+  title1,
+  title2,
+}: {
+  themeContext: DefaultTheme;
+  title1: object;
+  title2: object;
+}) => {
+  return (
+    <>
+      {/* <PMedium300 text={t.number01} color={themeContext.gray1} /> */}
+      <PMedium700 text={title1} color={themeContext.gray1} />
+      <PMedium700 text={title2} color={themeContext.gray1} />
+    </>
+  );
+};
 
 const Li = styled.li`
   margin-top: 144px;

@@ -75,20 +75,20 @@ export default TwoLanguage;
 
 const Main = styled.main`
   width: 100%;
-  max-width: 740px;
+  max-width: 680px;
   margin: 0 auto;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
   }
 
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
+  /* @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
     padding: 0 12vw;
   }
 
   @media all and (min-width: ${mediaBreakPoint.fourth}) {
     padding: 0 16.6667%;
-  }
+  } */
 `;
 
 const AuthorData = styled.section`
