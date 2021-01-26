@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <Ul>
       <CategoryCard
-        href="/"
+        href="/article/portfolio/1"
         title1={articleT.portfolioDesignStory.title1}
         title2={articleT.portfolioDesignStory.title2}
         background="gradientPurple"

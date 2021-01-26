@@ -6,6 +6,7 @@ import Router from 'next/router';
 import H1Title700 from '../../typography/h1-title-700';
 import { t } from '../lang/t';
 import ContentsList from './contents-list';
+import Link from 'next/link';
 
 const CategoryCard = ({
   href,
@@ -33,9 +34,13 @@ const CategoryCard = ({
         <H1Title700 text={title2} color={themeContext.gray1} />
       </TitleSection>
 
-      <Ul>
-        <ContentsList list={list} />
-      </Ul>
+      <Link href={href}>
+        <a>
+          <Ul>
+            <ContentsList list={list} />
+          </Ul>
+        </a>
+      </Link>
     </Li>
   );
 };
