@@ -13,12 +13,12 @@ export const articleT = {
 
   portfolioDesignStory: {
     title1: {
-      k: 'test',
+      k: '포트폴리오',
       e: 'Portfolio',
     },
 
     title2: {
-      k: 'test🔥',
+      k: '디자인 이야기🔥',
       e: 'Design Story🔥',
     },
 
