@@ -8,11 +8,17 @@ import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../svg/icon_language_24';
 import PMedium700 from '../typography/p-medium-700';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
+import Router, { useRouter } from 'next/router';
 
 const LangChangeToggle = () => {
   // Redux, Language Change
   const lang = useSelector((state: any) => state.language);
   const dispatch = useDispatch();
+
+  const router = useRouter();
+
+  // const pathString = path.replace('/', '');
+  // console.log(pathString);
 
   const languageChange = () =>
     dispatch({
@@ -27,6 +33,29 @@ const LangChangeToggle = () => {
   const setLanguageChange = () => {
     languageChange();
     detectUserLanguageChange();
+
+    const path = router.pathname;
+    console.log(path);
+
+    if (path === '/') {
+      lang === 'ko' ? Router.push('/en') : Router.push('/');
+    }
+
+    if (path === '/en') {
+      lang === 'ko' ? Router.push('/en') : Router.push('/');
+    }
+
+    if (path === '/article/portfolio/1') {
+      lang === 'ko'
+        ? Router.push('/en/article/portfolio/1')
+        : Router.push('/article/portfolio/1');
+    }
+
+    if (path === '/en/article/portfolio/1') {
+      lang === 'ko'
+        ? Router.push('/en/article/portfolio/1')
+        : Router.push('/article/portfolio/1');
+    }
   };
 
   const themeContext = useContext(ThemeContext);
@@ -55,11 +84,11 @@ const LangChangeToggle = () => {
       <Divider />
       <motion.div //
         variants={enVariants(width)}
-        animate={lang === 'ko' ? 'off' : 'on'}
+        animate={lang === 'en' ? 'on' : 'off'}
       >
         <PMedium700
           text={t.header.langChangeToggleEn}
-          color={lang === 'ko' ? themeContext.gray5 : themeContext.gray2}
+          color={lang === 'en' ? themeContext.gray2 : themeContext.gray5}
         />
       </motion.div>
     </Container>

@@ -18,11 +18,11 @@ const TabNavBar = ({ tabToggle }: any) => {
   const contactToggle: boolean = tabToggle === 'contact' ? true : false;
 
   const setHomeToggle = () => {
-    tabToggle === 'contact' && TAB_NAV_CHANGE();
+    tabToggle !== 'home' && TAB_NAV_CHANGE();
   };
 
   const setContactToggle = () => {
-    tabToggle === 'home' && TAB_NAV_CHANGE();
+    tabToggle !== 'contact' && TAB_NAV_CHANGE();
   };
 
   // useRipple

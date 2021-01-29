@@ -3,14 +3,14 @@ import TextStyle from '../typography/atoms/text-style';
 import { fontWeight } from '../typography/atoms/font';
 import LangChangeButton from './lang-change-button';
 import { t } from '../index/lang/t';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
 import PMedium700 from '../typography/p-medium-700';
+import useSWR from 'swr';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
@@ -25,11 +25,6 @@ const Header = () => {
     tabToggle !== 'home' && TAB_NAV_CHANGE();
     Router.push('/');
   };
-
-  // const router = useRouter();
-  // const style = {
-  //   display: router.pathname === '/subscribe' ? 'block' : 'none',
-  // };
 
   return (
     <>

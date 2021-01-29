@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Router, { useRouter } from 'next/router';
 
 export const DetectBrowserLang = () => {
   const lang = useSelector((state: any) => state.language);
@@ -18,6 +19,7 @@ export const DetectBrowserLang = () => {
     userLanguageChangeFunc();
     setAttributeHtmlLang();
     // console.log('Only once');
+    // lang === 'ko' ? Router.push(`/`) : Router.push(`/en`);
   }, []);
 
   const userLanguageChangeFunc = () => {

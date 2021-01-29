@@ -1,7 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import PMedium300 from '../../typography/p-medium-300';
 import PMedium700 from '../../typography/p-medium-700';
 import { articleT } from '../../article/lang/article-t';
 import { t } from '../lang/t';
