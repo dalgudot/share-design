@@ -7,40 +7,22 @@ export const fontSize: any = {
     h3Title: '21px',
     medium: '17px',
     small: '14px',
-
-    single32: '32px',
-    single27: '27px',
-    single21: '21px',
-    single17: '17px',
-    single14: '14px',
   },
 
   tablet: {
     h1Title: '39px',
     h2Title: '34px',
-    h3Title: '28px',
+    h3Title: '26px',
     medium: '20px',
-    small: '16px',
-
-    single32: '32px',
-    single27: '27px',
-    single21: '21px',
-    single17: '17px',
-    single14: '14px',
+    small: '17px',
   },
 
   desktop: {
     h1Title: '39px',
     h2Title: '34px',
-    h3Title: '28px',
+    h3Title: '26px',
     medium: '20px',
-    small: '16px',
-
-    single32: '32px',
-    single27: '27px',
-    single21: '21px',
-    single17: '17px',
-    single14: '14px',
+    small: '17px',
   },
 };
 

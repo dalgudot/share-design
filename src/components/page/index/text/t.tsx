@@ -26,6 +26,11 @@ export const t = {
     e: 'UI/UX Designer',
   },
 
+  myEmail: {
+    k: 'dalgudot@gmail.com',
+    e: 'dalgudot@gmail.com',
+  },
+
   number01: {
     k: '01',
     e: '01',

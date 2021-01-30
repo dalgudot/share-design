@@ -15,7 +15,7 @@ const H3Title700 = ({
     <TextStyle
       type="h3"
       text={useSetLanguage(text)}
-      textSize="h2Title"
+      textSize="h3Title"
       weight={fontWeight[700]}
       color={color}
       lineHeight={1.4}
