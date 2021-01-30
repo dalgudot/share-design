@@ -7,6 +7,7 @@ import Home from '../components/nav-bar/tab-nav-bar/home';
 import Contact from '../components/nav-bar/tab-nav-bar/contact';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Index = () => {
   DetectBrowserLang();
@@ -16,6 +17,9 @@ const Index = () => {
 
   return (
     <>
+      {/* <Link href="/" locale="en">
+        <a>To /fr/another</a>
+      </Link> */}
       <Main>{tabDisplay}</Main>
       <TabNavBar tabToggle={tabToggle} />
       {/* <Footer tabToggle={tabToggle} /> */}

@@ -34,16 +34,16 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
             <GlobalColors />
-            <Toast />
             {/* <ThemeChangeButton
               setTheme={setMode}
               lightTheme={lightTheme}
               darkTheme={darkTheme}
             /> */}
-            <Header />
+            {/* <Header /> */}
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
             </AnimatePresence>
+            <Toast />
           </ThemeProvider>
         </PersistGate>
       </Provider>
