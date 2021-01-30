@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { DetectBrowserLang } from '../lib/functions/detect-browser-lang';
 import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
 import TabNavBar from '../components/nav-bar/tab-nav-bar/tab-nav-bar';
@@ -8,8 +7,6 @@ import Contact from '../components/nav-bar/tab-nav-bar/contact';
 import { useSelector } from 'react-redux';
 
 const Index = () => {
-  // DetectBrowserLang();
-
   const tabToggle = useSelector((state: any) => state.tabNavBar);
   const tabDisplay = tabToggle === 'home' ? <Home /> : <Contact />;
 

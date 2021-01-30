@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 
 export const VisitsAndViewsDuringSession = (where: string) => {
-  const statisticsOnOff: boolean = false;
+  const statisticsOnOff: boolean = true;
 
   const statisticsFunction = () => {
     const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');

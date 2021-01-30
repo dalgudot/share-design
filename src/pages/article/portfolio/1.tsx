@@ -1,6 +1,5 @@
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext, useEffect } from 'react';
-import { DetectBrowserLang } from '../../../lib/functions/detect-browser-lang';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import Share from '../../../components/article/share-modal';
 import Comment from '../../../components/article/comment';
@@ -13,8 +12,7 @@ import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import PSmall400 from '../../../components/typography/p-small-400';
 import PMedium400 from '../../../components/typography/p-medium-400';
 
-const TwoLanguage = () => {
-  // DetectBrowserLang();
+const ArticlePortfolioOne = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('portfolio/001 SHARE DESIGN Project');
   }, []);
@@ -71,7 +69,7 @@ const TwoLanguage = () => {
   );
 };
 
-export default TwoLanguage;
+export default ArticlePortfolioOne;
 
 const Main = styled.main`
   width: 100%;

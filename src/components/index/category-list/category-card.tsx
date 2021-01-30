@@ -1,10 +1,6 @@
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
-import { mediaBreakPoint } from '../../../styles/common';
-import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import Router from 'next/router';
 import H1Title700 from '../../typography/h1-title-700';
-import { t } from '../lang/t';
 import ContentsList from './contents-list';
 import Link from 'next/link';
 
@@ -21,7 +17,7 @@ const CategoryCard = ({
   background: string;
   list: string;
 }) => {
-  const themeContext: DefaultTheme = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext);
   const backgroundGradient: string =
     background === 'gradientPurple'
       ? themeContext.gradientPurple

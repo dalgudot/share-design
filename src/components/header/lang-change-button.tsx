@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import TextStyle from '../typography/atoms/text-style';
 import { fontWeight } from '../typography/atoms/font';
 import { useRipple } from 'react-use-ripple';
@@ -10,27 +8,18 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useRouter } from 'next/router';
 
 const LangChangeButton = () => {
-  // Redux, Language Change
-  const lang = useSelector((state: any) => state.language);
-  const dispatch = useDispatch();
-  const languageChange = () =>
-    dispatch({
-      type: 'LANGUAGE_CHANGE',
-    });
-
-  const detectUserLanguageChange = () =>
-    dispatch({
-      type: 'USER_LANGUAGE_CHANGE_CHANGE',
-    });
-
-  const setLanguageChange = () => {
-    languageChange();
-    detectUserLanguageChange();
-  };
-
   const themeContext = useContext(ThemeContext);
+
+  const router = useRouter();
+  const locale = router.locale;
+  const setLanguageChange = () => {
+    locale === 'ko'
+      ? router.push(router.pathname, router.pathname, { locale: 'en' })
+      : router.push(router.pathname, router.pathname, { locale: 'ko' });
+  };
 
   // useRipple
   const btnRef = useRef(null);
@@ -39,12 +28,6 @@ const LangChangeButton = () => {
     animationLength: 600,
     rippleSize: 2000,
   });
-
-  // setAttribute HTML Attribute
-  useEffect(() => {
-    document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
-    // console.log(`HtmlLang: ${document.documentElement.lang}`);
-  }, [lang]);
 
   return (
     <motion.button
