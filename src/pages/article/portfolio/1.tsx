@@ -14,7 +14,7 @@ import PSmall400 from '../../../components/typography/p-small-400';
 import PMedium400 from '../../../components/typography/p-medium-400';
 
 const TwoLanguage = () => {
-  DetectBrowserLang();
+  // DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('portfolio/001 SHARE DESIGN Project');
   }, []);

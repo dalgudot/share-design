@@ -1,7 +1,8 @@
-import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 export const useSetLanguage = (t: any): string => {
-  const lang = useSelector((state: any) => state.language);
+  const router = useRouter();
+  const locale = router.locale;
 
-  return `${lang}` === 'ko' ? t.k : t.e;
+  return locale === 'ko' ? t.k : t.e;
 };

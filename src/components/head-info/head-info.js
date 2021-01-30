@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const HeadInfo = ({ info }: any) => {
+const HeadInfo = ({ info }) => {
   return (
     <Head>
       {/* 모바일 대응 meta tag */}
@@ -11,6 +11,13 @@ const HeadInfo = ({ info }: any) => {
       {/* <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
+
+      <link rel="alternate" hreflang="en" href="https://share-design.kr/en" />
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://share-design.kr"
+      />
 
       <title>{info.title}</title>
       <link rel="icon" href={info.icoImage} />

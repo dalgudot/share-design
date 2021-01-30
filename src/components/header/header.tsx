@@ -10,7 +10,6 @@ import Router from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
 import PMedium700 from '../typography/p-medium-700';
-import useSWR from 'swr';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);

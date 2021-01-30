@@ -39,7 +39,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               lightTheme={lightTheme}
               darkTheme={darkTheme}
             /> */}
-            {/* <Header /> */}
+            <Header />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
             </AnimatePresence>

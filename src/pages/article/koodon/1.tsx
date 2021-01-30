@@ -5,7 +5,7 @@ import Share from '../../../components/article/share-modal';
 import Comment from '../../../components/article/comment';
 
 const TwoLanguage = () => {
-  DetectBrowserLang();
+  // DetectBrowserLang();
   useEffect(() => {
     VisitsAndViewsDuringSession('koodon/001');
   }, []);
