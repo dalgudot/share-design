@@ -1,16 +1,22 @@
 import firebase from 'firebase/app';
 
 export const VisitsAndViewsDuringSession = (where: string) => {
-  const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
-  // console.log('visitsDuringSession');
-  // visitsDuringSession가 null이거나 undefined면
-  // 세션 동안 모든 페이지에서 1번만 기록됨 -> 방문자 수
-  visitsDuringSession ?? VisitsDuringSession();
+  const statisticsOnOff: boolean = false;
 
-  const viewsDuringSession = sessionStorage.getItem(
-    `viewsDuringSession of ${where}`
-  );
-  viewsDuringSession ?? ViewsDuringSession(where);
+  const statisticsFunction = () => {
+    const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
+    // console.log('visitsDuringSession');
+    // visitsDuringSession가 null이거나 undefined면
+    // 세션 동안 모든 페이지에서 1번만 기록됨 -> 방문자 수
+    visitsDuringSession ?? VisitsDuringSession();
+
+    const viewsDuringSession = sessionStorage.getItem(
+      `viewsDuringSession of ${where}`
+    );
+    viewsDuringSession ?? ViewsDuringSession(where);
+  };
+
+  statisticsOnOff && statisticsFunction();
 };
 
 const firebaseFetchSet = (route: string) => {

@@ -34,28 +34,28 @@ const LangChangeToggle = () => {
     languageChange();
     detectUserLanguageChange();
 
-    const path = router.pathname;
-    console.log(path);
+    // const path = router.pathname;
+    // console.log(path);
 
-    if (path === '/') {
-      lang === 'ko' ? Router.push('/en') : Router.push('/');
-    }
+    // if (path === '/') {
+    //   lang === 'ko' ? Router.push('/en') : Router.push('/');
+    // }
 
-    if (path === '/en') {
-      lang === 'ko' ? Router.push('/en') : Router.push('/');
-    }
+    // if (path === '/en') {
+    //   lang === 'ko' ? Router.push('/en') : Router.push('/');
+    // }
 
-    if (path === '/article/portfolio/1') {
-      lang === 'ko'
-        ? Router.push('/en/article/portfolio/1')
-        : Router.push('/article/portfolio/1');
-    }
+    // if (path === '/article/portfolio/1') {
+    //   lang === 'ko'
+    //     ? Router.push('/en/article/portfolio/1')
+    //     : Router.push('/article/portfolio/1');
+    // }
 
-    if (path === '/en/article/portfolio/1') {
-      lang === 'ko'
-        ? Router.push('/en/article/portfolio/1')
-        : Router.push('/article/portfolio/1');
-    }
+    // if (path === '/en/article/portfolio/1') {
+    //   lang === 'ko'
+    //     ? Router.push('/en/article/portfolio/1')
+    //     : Router.push('/article/portfolio/1');
+    // }
   };
 
   const themeContext = useContext(ThemeContext);
