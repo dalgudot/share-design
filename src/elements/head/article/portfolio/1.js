@@ -1,7 +1,7 @@
 export const articlePortfolioOneInfo = {
   title: {
-    k: '디자인 공유하기',
-    e: 'SHARE DESIGN',
+    k: '디자인 공유하기 프로젝트',
+    e: 'SHARE DESIGN Project',
   },
 
   url: {

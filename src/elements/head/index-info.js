@@ -1,7 +1,7 @@
 export const indexInfo = {
   title: {
-    k: '디자인 공유하기 프로젝트',
-    e: 'SHARE DESIGN Project',
+    k: '디자인 공유하기',
+    e: 'SHARE DESIGN',
   },
 
   url: {
