@@ -1,3 +1,5 @@
+import HeadSEO from '../elements/head/head';
+import { indexInfo } from '../elements/head/index-info';
 import styled from 'styled-components';
 import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
@@ -12,6 +14,7 @@ const Index = () => {
 
   return (
     <>
+      <HeadSEO info={indexInfo} />
       <Main>{tabDisplay}</Main>
       <TabNavBar tabToggle={tabToggle} />
       {/* <Footer tabToggle={tabToggle} /> */}

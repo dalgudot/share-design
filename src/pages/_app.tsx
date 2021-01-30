@@ -1,5 +1,3 @@
-import HeadInfo from '../elements/head-info/head-info';
-import { indexInfo } from '../elements/head-info/head-info-text';
 import { useStore } from '../store/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
@@ -29,7 +27,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <HeadInfo info={indexInfo} />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>

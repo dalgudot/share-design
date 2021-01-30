@@ -1,3 +1,5 @@
+import HeadSEO from '../../../elements/head/head';
+import { articlePortfolioOneInfo } from '../../../elements/head/article/portfolio/1';
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext, useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
@@ -39,33 +41,36 @@ const ArticlePortfolioOne = () => {
   ));
 
   return (
-    <Main>
-      <BackgroundColor />
-      <PSmall700
-        text={tArticle.portfolioDesignStory.article1.category}
-        color={themeContext.gray4}
-        marginTop="91px"
-      />
-      {titleText}
-
-      <AuthorData>
-        <img
-          src="/images/profile.jpg"
-          alt={useSetLanguage(t.contact.profileAlt)}
-        />
-        <PSmall400 text={t.myName} color={themeContext.gray1} />
-        <span></span>
-        <PSmall400
-          text={tArticle.portfolioDesignStory.article1.date}
+    <>
+      <HeadSEO info={articlePortfolioOneInfo} />
+      <Main>
+        <BackgroundColor />
+        <PSmall700
+          text={tArticle.portfolioDesignStory.article1.category}
           color={themeContext.gray4}
+          marginTop="91px"
         />
-      </AuthorData>
+        {titleText}
 
-      <ContentsContainer>{contentsText}</ContentsContainer>
+        <AuthorData>
+          <img
+            src="/images/profile.jpg"
+            alt={useSetLanguage(t.contact.profileAlt)}
+          />
+          <PSmall400 text={t.myName} color={themeContext.gray1} />
+          <span></span>
+          <PSmall400
+            text={tArticle.portfolioDesignStory.article1.date}
+            color={themeContext.gray4}
+          />
+        </AuthorData>
 
-      {/* <Comment /> */}
-      {/* <Share /> */}
-    </Main>
+        <ContentsContainer>{contentsText}</ContentsContainer>
+
+        {/* <Comment /> */}
+        {/* <Share /> */}
+      </Main>
+    </>
   );
 };
 

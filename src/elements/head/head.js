@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
-const HeadInfo = ({ info }) => {
+const HeadSEO = ({ info }) => {
   return (
     <Head>
       {/* 모바일 대응 meta tag */}
@@ -19,24 +20,30 @@ const HeadInfo = ({ info }) => {
         href="https://share-design.kr"
       />
 
-      <title>{info.title}</title>
-      <link rel="icon" href={info.icoImage} />
-      <meta name="author" content={info.author} />
-      <meta name="description" content={info.description} />
-      <meta name="keywords" content={info.keywords} />
+      <title>{useSetLanguage(info.title)}</title>
+      <link rel="icon" href={useSetLanguage(info.icoImage)} />
+      <meta name="author" content={useSetLanguage(info.author)} />
+      <meta name="description" content={useSetLanguage(info.description)} />
+      <meta name="keywords" content={useSetLanguage(info.keywords)} />
 
-      <meta property="og:url" content={info.url} />
-      <meta property="og:title" content={info.title} />
-      <meta property="og:description" content={info.description} />
-      <meta property="og:image" content={info.thumbnail} />
-      <meta property="og:type" content={info.type} />
+      <meta property="og:url" content={useSetLanguage(info.url)} />
+      <meta property="og:title" content={useSetLanguage(info.title)} />
+      <meta
+        property="og:description"
+        content={useSetLanguage(info.description)}
+      />
+      <meta property="og:image" content={useSetLanguage(info.thumbnail)} />
+      <meta property="og:type" content={useSetLanguage(info.type)} />
       {/* <meta property="og:locale" content={info.locale} /> */}
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content={info.url} />
-      <meta name="twitter:title" content={info.title} />
-      <meta name="twitter:description" content={info.description} />
-      <meta name="twitter:image" content={info.thumbnail} />
+      <meta name="twitter:url" content={useSetLanguage(info.url)} />
+      <meta name="twitter:title" content={useSetLanguage(info.title)} />
+      <meta
+        name="twitter:description"
+        content={useSetLanguage(info.description)}
+      />
+      <meta name="twitter:image" content={useSetLanguage(info.thumbnail)} />
 
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}
@@ -108,6 +115,6 @@ const HeadInfo = ({ info }) => {
   );
 };
 
-export default HeadInfo;
+export default HeadSEO;
 
 // [Ref] https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js
