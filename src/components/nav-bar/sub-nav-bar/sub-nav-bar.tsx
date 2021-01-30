@@ -1,8 +1,8 @@
-import TextStyle from '../../typography/atoms/text-style';
+import TextStyle from '../../../elements/typography/atoms/text-style';
 import styled from 'styled-components';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import { fontWeight } from '../../typography/atoms/font';
-import { t } from '../../index/lang/t';
+import { fontWeight } from '../../../elements/typography/atoms/font';
+import { t } from '../../page/index/text/t';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';

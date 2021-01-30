@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import TextStyle from '../typography/atoms/text-style';
-import { fontWeight } from '../typography/atoms/font';
+import TextStyle from '../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../elements/typography/atoms/font';
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
-import { t } from '../index/lang/t';
+import { t } from '../page/index/text/t';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';

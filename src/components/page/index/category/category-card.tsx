@@ -1,6 +1,6 @@
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext } from 'react';
-import H1Title700 from '../../typography/h1-title-700';
+import H1Title700 from '../../../../elements/typography/h1-title-700';
 import ContentsList from './contents-list';
 import Link from 'next/link';
 

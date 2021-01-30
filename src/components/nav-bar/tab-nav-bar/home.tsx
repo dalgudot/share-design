@@ -1,5 +1,5 @@
-import { articleT } from '../../article/lang/article-t';
-import CategoryCard from '../../index/category-list/category-card';
+import { tArticle } from '../../page/article/text/t-article';
+import CategoryCard from '../../page/index/category/category-card';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect } from 'react';
@@ -14,15 +14,15 @@ const Home = () => {
     <Ul>
       <CategoryCard
         href="/article/portfolio/1"
-        title1={articleT.portfolioDesignStory.title1}
-        title2={articleT.portfolioDesignStory.title2}
+        title1={tArticle.portfolioDesignStory.title1}
+        title2={tArticle.portfolioDesignStory.title2}
         background="gradientPurple"
         list="portfolioDesignStory"
       />
       <CategoryCard
         href="/"
-        title1={articleT.koodonDesignStory.title1}
-        title2={articleT.koodonDesignStory.title2}
+        title1={tArticle.koodonDesignStory.title1}
+        title2={tArticle.koodonDesignStory.title2}
         background="gradientBurgundy"
         list="koodonDesignStory"
       />

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import TextStyle from '../../typography/atoms/text-style';
-import { fontWeight } from '../../typography/atoms/font';
+import TextStyle from '../../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../../elements/typography/atoms/font';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import { t } from '../../index/lang/t';
+import { t } from '../../page/index/text/t';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';

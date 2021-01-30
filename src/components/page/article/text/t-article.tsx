@@ -1,4 +1,4 @@
-export const articleT = {
+export const tArticle = {
   welcomeText: [
     {
       k: '디자인 경험을',

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { t } from '../index/lang/t';
+import { t } from '../page/index/text/t';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import IconLanguage24 from '../svg/icon_language_24';
-import PMedium700 from '../typography/p-medium-700';
+import IconLanguage24 from '../../elements/svg/icon_language_24';
+import PMedium700 from '../../elements/typography/p-medium-700';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
 

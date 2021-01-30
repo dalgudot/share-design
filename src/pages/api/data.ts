@@ -2,12 +2,11 @@
 // https://vercel.com/docs/serverless-functions/supported-languages
 
 import { NowRequest, NowResponse } from '@vercel/node';
-import data from '../../data/writing/index/ko.json';
 
 export default (req: NowRequest, res: NowResponse) => {
   // const { name = 'World' } = req.query;
   // res.status(200).send(`Hello ${name}!`);
-  return res.status(200).json({ data });
+  // return res.status(200).json({ data });
 };
 
 // import type { NextApiRequest, NextApiResponse } from 'next';

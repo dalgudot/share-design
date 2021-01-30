@@ -1,10 +1,10 @@
 import styled, { DefaultTheme } from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import PMedium700 from '../../typography/p-medium-700';
-import { articleT } from '../../article/lang/article-t';
-import { t } from '../lang/t';
-import { mediaBreakPoint } from '../../../styles/common';
+import PMedium700 from '../../../../elements/typography/p-medium-700';
+import { tArticle } from '../../article/text/t-article';
+import { t } from '../text/t';
+import { mediaBreakPoint } from '../../../../styles/common';
 
 const ContentsList = ({ list }: { list: string }) => {
   const themeContext: DefaultTheme = useContext(ThemeContext);
@@ -12,10 +12,10 @@ const ContentsList = ({ list }: { list: string }) => {
   let title2;
 
   list === 'portfolioDesignStory'
-    ? ((title1 = articleT.portfolioDesignStory.article1.title[0]),
-      (title2 = articleT.portfolioDesignStory.article1.title[1]))
-    : ((title1 = articleT.koodonDesignStory.article1.title[0]),
-      (title2 = articleT.koodonDesignStory.article1.title[1]));
+    ? ((title1 = tArticle.portfolioDesignStory.article1.title[0]),
+      (title2 = tArticle.portfolioDesignStory.article1.title[1]))
+    : ((title1 = tArticle.koodonDesignStory.article1.title[0]),
+      (title2 = tArticle.koodonDesignStory.article1.title[1]));
 
   return (
     <Li>

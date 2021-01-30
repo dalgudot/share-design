@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { t } from '../index/lang/t';
+import { t } from '../../components/page/index/text/t';
 import TextStyle from '../typography/atoms/text-style';
 import { fontWeight } from '../typography/atoms/font';
 

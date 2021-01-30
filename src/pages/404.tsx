@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import TextStyle from '../components/typography/atoms/text-style';
-import { t } from '../components/index/lang/t';
-import { fontWeight } from '../components/typography/atoms/font';
+import TextStyle from '../elements/typography/atoms/text-style';
+import { t } from '../components/page/index/text/t';
+import { fontWeight } from '../elements/typography/atoms/font';
 import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import React from 'react';
 import { useContext } from 'react';

@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import IconHome24 from '../../svg/icon_home_24';
-import IconContact24 from '../../svg/icon_contact_24';
+import IconHome24 from '../../../elements/svg/icon_home_24';
+import IconContact24 from '../../../elements/svg/icon_contact_24';
 import { useDispatch } from 'react-redux';
 
 const TabNavBar = ({ tabToggle }: any) => {

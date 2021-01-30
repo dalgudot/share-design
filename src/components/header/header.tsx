@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { t } from '../index/lang/t';
+import { t } from '../page/index/text/t';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Router from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
-import PMedium700 from '../typography/p-medium-700';
+import PMedium700 from '../../elements/typography/p-medium-700';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);

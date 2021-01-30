@@ -1,5 +1,5 @@
-import HeadInfo from '../components/head-info/head-info';
-import { indexInfo } from '../components/head-info/head-info-text';
+import HeadInfo from '../elements/head-info/head-info';
+import { indexInfo } from '../elements/head-info/head-info-text';
 import { useStore } from '../store/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
@@ -12,9 +12,9 @@ import { useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
-import Toast from '../components/toast/toastify';
+import Toast from '../elements/toast/toastify';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import ThemeChangeButton from '../components/button/theme-change-button';
+import ThemeChangeButton from '../elements/button/theme-change-button';
 import Header from '../components/header/header';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {

@@ -33,39 +33,23 @@ const storage =
 let store: any;
 
 const InitialState: InitialStateTypes = {
-  language: 'ko',
   themeMode: 'darkTheme',
-  userLanguageChange: 'no',
   tabNavBar: 'home',
   subNavBar: 'welcome',
 };
 
 export const actionTypes: actionTypesTypes = {
-  LANGUAGE_CHANGE: 'LANGUAGE_CHANGE',
   MODE_CHANGE: 'MODE_CHANGE',
-  USER_LANGUAGE_CHANGE_CHANGE: 'USER_LANGUAGE_CHANGE_CHANGE',
   TAB_NAV_CHANGE: 'TAB_NAV_CHANGE',
   SUB_NAV_CHANGE: 'SUB_NAV_CHANGE',
 };
 
 export const reducer = (state = InitialState, action: any) => {
   switch (action.type) {
-    case actionTypes.LANGUAGE_CHANGE:
-      return {
-        ...state,
-        language: state.language === 'ko' ? 'en' : 'ko',
-      };
-
     case actionTypes.MODE_CHANGE:
       return {
         ...state,
         themeMode: state.themeMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
-      };
-
-    case actionTypes.USER_LANGUAGE_CHANGE_CHANGE:
-      return {
-        ...state,
-        userLanguageChange: state.userLanguageChange === 'no' ? 'yes' : 'no',
       };
 
     case actionTypes.TAB_NAV_CHANGE:
@@ -88,7 +72,7 @@ export const reducer = (state = InitialState, action: any) => {
 const persistConfig = {
   key: 'primary',
   storage,
-  whitelist: ['language', 'themeMode', 'userLanguageChange'], // place to select which state you want to persist
+  whitelist: ['themeMode'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -130,17 +114,13 @@ export function useStore(initialState: any) {
 
 // type
 interface InitialStateTypes {
-  language: string;
   themeMode: string;
-  userLanguageChange: string;
   tabNavBar: string;
   subNavBar: string;
 }
 
 interface actionTypesTypes {
-  LANGUAGE_CHANGE: string;
   MODE_CHANGE: string;
-  USER_LANGUAGE_CHANGE_CHANGE: string;
   TAB_NAV_CHANGE: string;
   SUB_NAV_CHANGE: string;
 }

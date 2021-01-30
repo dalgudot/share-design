@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import TextStyle from '../typography/atoms/text-style';
-import { fontWeight } from '../typography/atoms/font';
+import TextStyle from '../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../elements/typography/atoms/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';

@@ -1,16 +1,16 @@
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext, useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import Share from '../../../components/article/share-modal';
-import Comment from '../../../components/article/comment';
-import PSmall700 from '../../../components/typography/p-small-700';
+import Share from '../../../components/page/article/share-modal';
+import Comment from '../../../components/page/article/comment';
+import PSmall700 from '../../../elements/typography/p-small-700';
 import { mediaBreakPoint } from '../../../styles/common';
-import { t } from '../../../components/index/lang/t';
-import { articleT } from '../../../components/article/lang/article-t';
-import H1Title700 from '../../../components/typography/h1-title-700';
+import { t } from '../../../components/page/index/text/t';
+import { tArticle } from '../../../components/page/article/text/t-article';
+import H1Title700 from '../../../elements/typography/h1-title-700';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import PSmall400 from '../../../components/typography/p-small-400';
-import PMedium400 from '../../../components/typography/p-medium-400';
+import PSmall400 from '../../../elements/typography/p-small-400';
+import PMedium400 from '../../../elements/typography/p-medium-400';
 
 const ArticlePortfolioOne = () => {
   useEffect(() => {
@@ -18,7 +18,7 @@ const ArticlePortfolioOne = () => {
   }, []);
   const themeContext: DefaultTheme = useContext(ThemeContext);
 
-  const TitleTextArray = articleT.portfolioDesignStory.article1.title;
+  const TitleTextArray = tArticle.portfolioDesignStory.article1.title;
   const titleText = TitleTextArray.map((text, index) => (
     <H1Title700
       key={index}
@@ -28,7 +28,7 @@ const ArticlePortfolioOne = () => {
     />
   ));
 
-  const contentsTextArray = articleT.portfolioDesignStory.article1.contentsText;
+  const contentsTextArray = tArticle.portfolioDesignStory.article1.contentsText;
   const contentsText = contentsTextArray.map((text, index) => (
     <PMedium400
       key={index}
@@ -42,7 +42,7 @@ const ArticlePortfolioOne = () => {
     <Main>
       <BackgroundColor />
       <PSmall700
-        text={articleT.portfolioDesignStory.article1.category}
+        text={tArticle.portfolioDesignStory.article1.category}
         color={themeContext.gray4}
         marginTop="91px"
       />
@@ -56,7 +56,7 @@ const ArticlePortfolioOne = () => {
         <PSmall400 text={t.myName} color={themeContext.gray1} />
         <span></span>
         <PSmall400
-          text={articleT.portfolioDesignStory.article1.date}
+          text={tArticle.portfolioDesignStory.article1.date}
           color={themeContext.gray4}
         />
       </AuthorData>

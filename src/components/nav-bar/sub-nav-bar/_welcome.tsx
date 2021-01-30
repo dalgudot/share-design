@@ -1,18 +1,18 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { t } from '../../index/lang/t';
-import H2Title700 from '../../typography/h2-title-700';
-import PMedium400 from '../../typography/p-medium-400';
-import { articleT } from '../../article/lang/article-t';
+import { t } from '../../page/index/text/t';
+import H2Title700 from '../../../elements/typography/h2-title-700';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import { tArticle } from '../../page/article/text/t-article';
 
 const WelcomeState = () => {
-  const welcomeHeadlineTextArray = articleT.welcomeText;
+  const welcomeHeadlineTextArray = tArticle.welcomeText;
   const welcomeHeadlineText = welcomeHeadlineTextArray.map((text, index) => (
     <H2Title700 key={index} text={text} color={themeContext.gray1} />
   ));
 
-  const welcomeTextArray = articleT.welcomeText;
+  const welcomeTextArray = tArticle.welcomeText;
   const welcomeText = welcomeTextArray.map((text, index) => (
     <PMedium400
       key={index}

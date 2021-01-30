@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import TextStyle from '../../typography/atoms/text-style';
-import { fontWeight } from '../../typography/atoms/font';
+import TextStyle from '../../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../../elements/typography/atoms/font';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../toast/toastify';
-import { t } from '../../index/lang/t';
+import { toastify } from '../../../elements/toast/toastify';
+import { t } from '../../page/index/text/t';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
