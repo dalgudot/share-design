@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
-const HeadSEO = ({ info }) => {
+const HeadSEO = ({ info }: any) => {
   return (
     <Head>
       {/* 모바일 대응 meta tag */}
@@ -13,10 +13,10 @@ const HeadSEO = ({ info }) => {
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
 
-      <link rel="alternate" hreflang="en" href="https://share-design.kr/en" />
+      <link rel="alternate" hrefLang="en" href="https://share-design.kr/en" />
       <link
         rel="alternate"
-        hreflang="x-default"
+        hrefLang="x-default"
         href="https://share-design.kr"
       />
 
