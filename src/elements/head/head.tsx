@@ -4,6 +4,9 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 const HeadSEO = ({ info }: any) => {
   return (
     <Head>
+      <link rel="alternate" hrefLang="x-default" href={info.url.e} />
+      <link rel="alternate" hrefLang="ko" href={info.url.k} />
+
       {/* 모바일 대응 meta tag */}
       <meta
         name="viewport"
@@ -12,13 +15,6 @@ const HeadSEO = ({ info }: any) => {
       {/* <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
-
-      <link rel="alternate" hrefLang="en" href="https://share-design.kr/en" />
-      <link
-        rel="alternate"
-        hrefLang="x-default"
-        href="https://share-design.kr"
-      />
 
       <title>{useSetLanguage(info.title)}</title>
       <link rel="icon" href={useSetLanguage(info.icoImage)} />
