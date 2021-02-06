@@ -65,19 +65,32 @@ export default CategoryCard;
 const showArticleListVariants = {
   hide: {
     scale: 1,
+    transition: {
+      ease: 'easeOut',
+    },
   },
   show: {
-    scale: 5,
-    y: 0,
+    scale: 8,
+    transition: {
+      ease: 'easeInOut',
+    },
   },
 };
 
 const hideTextVariants = {
   show: {
     opacity: 1,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5,
+    },
   },
   hide: {
     opacity: 0,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0,
+    },
   },
 };
 
