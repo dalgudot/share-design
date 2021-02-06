@@ -27,6 +27,7 @@ const LangChangeToggle = () => {
       <IconLanguage24 color={themeContext.gray2} />
       <motion.div //
         variants={koVariants(width)}
+        initial={locale === 'ko' ? 'on' : 'off'} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'ko' ? 'on' : 'off'}
       >
         <PMedium700
@@ -37,6 +38,7 @@ const LangChangeToggle = () => {
       <Divider />
       <motion.div //
         variants={enVariants(width)}
+        initial={locale === 'en' ? 'on' : 'off'} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'en' ? 'on' : 'off'}
       >
         <PMedium700

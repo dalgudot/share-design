@@ -41,11 +41,6 @@ export const t = {
     e: '02',
   },
 
-  chevronRight: {
-    k: '>',
-    e: '>',
-  },
-
   langChagneButton: {
     k: 'View in English',
     e: '한글로 보기',

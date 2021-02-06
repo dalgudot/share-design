@@ -2,7 +2,7 @@ import { tArticle } from '../../page/article/text/t-article';
 import CategoryCard from '../../page/index/category/category-card';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
 const Home = () => {
@@ -10,23 +10,41 @@ const Home = () => {
     VisitsAndViewsDuringSession('Home');
   }, []);
 
+  // List Modal
+  const showArticleList1 = () => {
+    setShowModal1(true);
+  };
+  const showArticleList2 = () => {
+    setShowModal2(true);
+  };
+  const hideArticleList = () => {
+    setShowModal1(false);
+    setShowModal2(false);
+  };
+  const [showModal1, setShowModal1] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const modal = (showModal1 || showModal2) && (
+    <GlassMorphismBackground onClick={hideArticleList} />
+  );
+
   return (
-    <Ul>
-      <CategoryCard
-        href="/article/portfolio/1"
-        title1={tArticle.portfolioDesignStory.title1}
-        title2={tArticle.portfolioDesignStory.title2}
-        background="gradientPurple"
-        list="portfolioDesignStory"
-      />
-      <CategoryCard
-        href="/"
-        title1={tArticle.koodonDesignStory.title1}
-        title2={tArticle.koodonDesignStory.title2}
-        background="gradientBurgundy"
-        list="koodonDesignStory"
-      />
-    </Ul>
+    <>
+      <Ul>
+        <CategoryCard
+          title={tArticle.interactionDesignGuide.title}
+          background="gradientPurple"
+          showModalArticleList={showModal1}
+          showArticleList={showArticleList1}
+        />
+        <CategoryCard
+          title={tArticle.koodonDesignStory.title}
+          background="gradientBurgundy"
+          showModalArticleList={showModal2}
+          showArticleList={showArticleList2}
+        />
+      </Ul>
+      {modal}
+    </>
   );
 };
 
@@ -38,4 +56,24 @@ const Ul = styled.ul`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 79px;
   }
+`;
+
+const GlassMorphismBackground = styled.div`
+  position: fixed;
+  top: -10vh;
+  left: 0;
+  width: 100vw;
+  height: 120vh;
+  z-index: 20000;
+
+  /* Grassmorphism */
+  opacity: 0.999;
+  color: ${({ theme }) => theme.gray8};
+  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+    hue-rotate(10deg);
+  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
+
+  -webkit-transition: color 0.11s ease-in-out,
+    -webkit-backdrop-filter 0.11s ease-in-out;
+  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
 `;

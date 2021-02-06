@@ -1,21 +1,21 @@
-import styled, { ThemeContext, DefaultTheme } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
 import H1Title700 from '../../../../elements/typography/h1-title-700';
-import ContentsList from './contents-list';
-import Link from 'next/link';
+import PMedium400 from '../../../../elements/typography/p-medium-400';
+import { tArticle } from '../../article/text/t-article';
+import { mediaBreakPoint } from '../../../../styles/common';
+import { motion } from 'framer-motion';
 
 const CategoryCard = ({
-  href,
-  title1,
-  title2,
+  title,
   background,
-  list,
+  showArticleList,
+  showModalArticleList,
 }: {
-  href: string;
-  title1: object;
-  title2: object;
+  title: object[];
   background: string;
-  list: string;
+  showArticleList: any;
+  showModalArticleList: any;
 }) => {
   const themeContext = useContext(ThemeContext);
   const backgroundGradient: string =
@@ -23,27 +23,66 @@ const CategoryCard = ({
       ? themeContext.gradientPurple
       : themeContext.gradientBurgundy;
 
-  return (
-    <Li backgroundGradient={backgroundGradient}>
-      <TitleSection>
-        <H1Title700 text={title1} color={themeContext.gray1} />
-        <H1Title700 text={title2} color={themeContext.gray1} />
-      </TitleSection>
+  const categoryTitle = title.map((title, idx) => (
+    <H1Title700 key={idx} text={title} color={themeContext.gray1} />
+  ));
 
-      <Link href={href}>
-        <a>
-          <Ul>
-            <ContentsList list={list} />
-          </Ul>
-        </a>
-      </Link>
-    </Li>
+  return (
+    <>
+      <motion.li
+        variants={showArticleListVariants}
+        animate={showModalArticleList ? 'show' : 'hide'}
+      >
+        <Container //
+          backgroundGradient={backgroundGradient}
+          onClick={showArticleList}
+        >
+          <motion.div //
+            variants={hideTextVariants}
+            initial="show"
+            animate={showModalArticleList ? 'hide' : 'show'}
+          >
+            {categoryTitle}
+            <ListViewSection>
+              <PMedium400 //
+                text={tArticle.goToList}
+                color={themeContext.gray1}
+              />
+              <PMedium400 //
+                text={tArticle.chevronRight}
+                color={themeContext.gray1}
+              />
+            </ListViewSection>
+          </motion.div>
+        </Container>
+      </motion.li>
+    </>
   );
 };
 
 export default CategoryCard;
 
-const Li = styled.li<{ backgroundGradient: string }>`
+const showArticleListVariants = {
+  hide: {
+    scale: 1,
+  },
+  show: {
+    scale: 5,
+    y: 0,
+  },
+};
+
+const hideTextVariants = {
+  show: {
+    opacity: 1,
+  },
+  hide: {
+    opacity: 0,
+  },
+};
+
+const Container = styled.div<{ backgroundGradient: string }>`
+  cursor: pointer;
   width: 100%;
   max-width: 480px;
   height: 100%;
@@ -52,28 +91,25 @@ const Li = styled.li<{ backgroundGradient: string }>`
     ${({ backgroundGradient }) => backgroundGradient}
   );
   margin: 24px auto 0;
-  padding: 24px 24px 36px;
+  padding: 32px 24px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-const TitleSection = styled.section``;
+const ListViewSection = styled.section`
+  padding: 16px 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 1px ${({ theme }) => theme.gray1};
+  border-bottom: solid 1px ${({ theme }) => theme.gray1};
 
-const Ul = styled.ul``;
+  // 바뀌는 부분
+  margin-top: 144px;
 
-// framer motion
-const ListTextAnimationVariants = {
-  start: {
-    opacity: 0,
-  },
-
-  end: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-};
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 96px;
+  }
+`;

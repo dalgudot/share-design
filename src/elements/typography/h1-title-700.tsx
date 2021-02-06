@@ -18,6 +18,7 @@ const H1Title700 = ({
       textSize="h1Title"
       weight={fontWeight[700]}
       color={color}
+      letterSpacing="-1px"
       lineHeight={1.3}
       marginTop={marginTop}
     />

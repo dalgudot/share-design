@@ -9,16 +9,15 @@ import {
 } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Zoom = cssTransition({
-  enter: 'zoomIn',
-  exit: 'zoomOut',
-  // duration: [210, 450],
-});
+// const Zoom = cssTransition({
+//   enter: 'zoomIn',
+//   exit: 'zoomOut',
+// });
 
 // 커스텀 토스트 애니메이션 만들기
 export const toastify = (toastMessage: string, toastId: string) => {
   toast(toastMessage, {
-    transition: Zoom,
+    // transition: Zoom,
     toastId: toastId,
     // onClose: debounceToast(),
   });
@@ -29,7 +28,7 @@ const Toast = () => {
   return (
     <>
       <ToastBox
-        draggablePercent={65}
+        draggablePercent={50}
         autoClose={1850}
         hideProgressBar={true}
         newestOnTop={true}

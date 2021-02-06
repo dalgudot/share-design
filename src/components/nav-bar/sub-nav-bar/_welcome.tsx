@@ -13,9 +13,9 @@ const WelcomeState = () => {
   ));
 
   const welcomeTextArray = tArticle.welcomeText;
-  const welcomeText = welcomeTextArray.map((text, index) => (
+  const welcomeText = welcomeTextArray.map((text, idx) => (
     <PMedium400
-      key={index}
+      key={idx}
       text={text}
       marginTop="24px"
       color={themeContext.gray1}

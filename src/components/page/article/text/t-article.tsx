@@ -11,16 +11,40 @@ export const tArticle = {
     },
   ],
 
-  portfolioDesignStory: {
-    title1: {
-      k: '포트폴리오',
-      e: 'Portfolio',
-    },
+  goToList: {
+    k: '목록 보기',
+    e: 'List View',
+  },
 
-    title2: {
-      k: '디자인 이야기🔥',
-      e: 'Design Story🔥',
-    },
+  chevronRight: {
+    k: '>',
+    e: '>',
+  },
+
+  interactionDesignGuide: {
+    title: [
+      {
+        k: '인터랙션 디자인',
+        e: 'Interaction Design',
+      },
+      {
+        k: '가이드 ⚡️',
+        e: 'Guide ⚡️',
+      },
+    ],
+  },
+
+  portfolioDesignStory: {
+    title: [
+      {
+        k: '포트폴리오',
+        e: 'Portfolio',
+      },
+      {
+        k: '디자인 이야기🔥',
+        e: 'Design Story🔥',
+      },
+    ],
 
     article1: {
       title: [
@@ -92,15 +116,16 @@ export const tArticle = {
   },
 
   koodonDesignStory: {
-    title1: {
-      k: '쿠돈',
-      e: 'KOODON',
-    },
-
-    title2: {
-      k: '디자인 이야기 🙌',
-      e: 'Design Story 🙌',
-    },
+    title: [
+      {
+        k: '쿠돈',
+        e: 'KOODON',
+      },
+      {
+        k: '디자인 이야기 🙌',
+        e: 'Design Story 🙌',
+      },
+    ],
 
     article1: {
       title: [
