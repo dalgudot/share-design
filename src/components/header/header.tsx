@@ -7,6 +7,7 @@ import Router from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
 import PMedium700 from '../../elements/typography/p-medium-700';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
@@ -17,6 +18,8 @@ const Header = () => {
       type: 'TAB_NAV_CHANGE',
     });
 
+  const modalActive = useSelector((state: any) => state.modalActive);
+
   const goHome = () => {
     tabToggle !== 'home' && TAB_NAV_CHANGE();
     Router.push('/');
@@ -24,22 +27,49 @@ const Header = () => {
 
   return (
     <>
-      <HeaderContainer>
+      <HeaderContainer
+        variants={hideVariants}
+        initial={false}
+        animate={modalActive === true ? 'hide' : 'show'}
+      >
         <Left onClick={goHome}>
           <PMedium700 text={t.shareDesign} color={themeContext.gray1} />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>
       {/* 상단에 나타나는 빈 공간 채워주는 div */}
-      <FillEmptySpace />
-      {/* <GlassMorphismBackground /> */}
+      <FillEmptySpace
+        variants={hideVariants}
+        initial={false}
+        animate={modalActive === true ? 'hide' : 'show'}
+      />
     </>
   );
 };
 
 export default Header;
 
-const HeaderContainer = styled.header`
+const hideVariants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeInOut',
+      // duration: 0.3,
+    },
+  },
+
+  hide: {
+    y: -500,
+    opacity: 0,
+    transition: {
+      ease: 'easeInOut',
+      // duration: 0.3,
+    },
+  },
+};
+
+const HeaderContainer = styled(motion.header)`
   position: fixed;
   top: 0;
   left: 0;
@@ -69,7 +99,7 @@ const HeaderContainer = styled.header`
 const Left = styled.button``;
 
 // 아이폰 상단에 나타나는 빈 공간 채워주는 div
-const FillEmptySpace = styled.div`
+const FillEmptySpace = styled(motion.div)`
   position: fixed;
   z-index: 9999;
   top: -8px;

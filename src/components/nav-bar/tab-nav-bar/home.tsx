@@ -5,6 +5,7 @@ import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import ModalArticleList from '../../page/index/modal/modal-article-list';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Home = () => {
   useEffect(() => {
@@ -13,20 +14,29 @@ const Home = () => {
 
   // List Modal
   const [showModal, setShowModal] = useState([false, false]);
+  const glassMorphismBackground = useSelector(
+    (state: any) => state.modalActive
+  );
+  const dispatch = useDispatch();
+  const MODAL_ACTIVE_CHANGE = () =>
+    dispatch({
+      type: 'MODAL_ACTIVE_CHANGE',
+    });
+
+  // const [glassMorphismBackground, setGlassMorphismBackground] = useState(false);
 
   const showArticleList1 = () => {
     setShowModal([true, false]);
+    MODAL_ACTIVE_CHANGE();
   };
   const showArticleList2 = () => {
     setShowModal([false, true]);
+    MODAL_ACTIVE_CHANGE();
   };
   const hideArticleList = () => {
     setShowModal([false, false]);
+    MODAL_ACTIVE_CHANGE();
   };
-
-  const modal = (showModal[0] || showModal[1]) && (
-    <ModalArticleList onClick={hideArticleList} />
-  );
 
   return (
     <>
@@ -44,7 +54,10 @@ const Home = () => {
           showArticleList={showArticleList2}
         />
       </Ul>
-      {modal}
+      <ModalArticleList
+        glassMorphismBackground={glassMorphismBackground}
+        hideArticleList={hideArticleList}
+      />
     </>
   );
 };

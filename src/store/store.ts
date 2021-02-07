@@ -35,11 +35,13 @@ let store: any;
 const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   tabNavBar: 'home',
+  modalActive: false,
 };
 
 export const actionTypes: actionTypesTypes = {
   MODE_CHANGE: 'MODE_CHANGE',
   TAB_NAV_CHANGE: 'TAB_NAV_CHANGE',
+  MODAL_ACTIVE_CHANGE: 'MODAL_ACTIVE_CHANGE',
 };
 
 export const reducer = (state = InitialState, action: any) => {
@@ -51,6 +53,17 @@ export const reducer = (state = InitialState, action: any) => {
       };
 
     case actionTypes.TAB_NAV_CHANGE:
+      return {
+        ...state,
+        tabNavBar: state.tabNavBar === 'home' ? 'contact' : 'home',
+      };
+
+    case actionTypes.MODAL_ACTIVE_CHANGE:
+      return {
+        ...state,
+        modalActive: !state.modalActive,
+      };
+
       return {
         ...state,
         tabNavBar: state.tabNavBar === 'home' ? 'contact' : 'home',
@@ -108,9 +121,11 @@ export function useStore(initialState: any) {
 interface InitialStateTypes {
   themeMode: string;
   tabNavBar: string;
+  modalActive: boolean;
 }
 
 interface actionTypesTypes {
   MODE_CHANGE: string;
   TAB_NAV_CHANGE: string;
+  MODAL_ACTIVE_CHANGE: string;
 }

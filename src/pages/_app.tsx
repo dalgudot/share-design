@@ -38,9 +38,9 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             /> */}
             <Header />
             <Toast />
-            {/* <AnimatePresence exitBeforeEnter> */}
-            <Component {...pageProps} />
-            {/* </AnimatePresence> */}
+            <AnimatePresence exitBeforeEnter>
+              <Component {...pageProps} />
+            </AnimatePresence>
           </ThemeProvider>
         </PersistGate>
       </Provider>

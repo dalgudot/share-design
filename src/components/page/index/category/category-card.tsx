@@ -29,72 +29,79 @@ const CategoryCard = ({
 
   return (
     <>
-      <motion.li
-        variants={showArticleListVariants}
-        animate={showModalArticleList ? 'show' : 'hide'}
+      <MotionLi //
+        variants={ArticleListVariants}
+        initial="rest"
+        whileHover="hover"
+        whileTap="pressed"
+        animate={showModalArticleList ? 'scaleUp' : 'scaleOriginal'}
+        backgroundGradient={backgroundGradient}
+        onClick={showArticleList}
       >
-        <Container //
-          backgroundGradient={backgroundGradient}
-          onClick={showArticleList}
+        <motion.div //
+          variants={TextVariants}
+          initial={false}
+          animate={showModalArticleList ? 'hide' : 'show'}
         >
-          <motion.div //
-            variants={hideTextVariants}
-            initial="show"
-            animate={showModalArticleList ? 'hide' : 'show'}
-          >
-            {categoryTitle}
-            <ListViewSection>
-              <PMedium400 //
-                text={tArticle.goToList}
-                color={themeContext.gray1}
-              />
-              <PMedium400 //
-                text={tArticle.chevronRight}
-                color={themeContext.gray1}
-              />
-            </ListViewSection>
-          </motion.div>
-        </Container>
-      </motion.li>
+          {categoryTitle}
+          <ListViewSection>
+            <PMedium400 //
+              text={tArticle.goToList}
+              color={themeContext.gray1}
+            />
+            <PMedium400 //
+              text={tArticle.chevronRight}
+              color={themeContext.gray1}
+            />
+          </ListViewSection>
+        </motion.div>
+      </MotionLi>
     </>
   );
 };
 
 export default CategoryCard;
 
-const showArticleListVariants = {
-  hide: {
-    scale: 1,
+const ArticleListVariants = {
+  scaleUp: {
+    scale: [0.9, 30],
     transition: {
-      ease: 'easeOut',
+      time: [0.01, 0.1],
+      ease: 'easeInOut',
     },
   },
-  show: {
-    scale: 8,
+
+  scaleOriginal: {
+    scale: 1,
+    y: 0,
     transition: {
       ease: 'easeInOut',
     },
   },
+  rest: { scale: 1 },
+  hover: { opacity: 0.9 },
+  pressed: { scale: 0.97 },
 };
 
-const hideTextVariants = {
+const TextVariants = {
   show: {
     opacity: 1,
     transition: {
       ease: 'easeInOut',
-      duration: 0.5,
+      duration: 0.55,
     },
   },
+
   hide: {
     opacity: 0,
     transition: {
       ease: 'easeInOut',
-      duration: 0,
+      duration: 0.1,
     },
   },
 };
 
-const Container = styled.div<{ backgroundGradient: string }>`
+const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   cursor: pointer;
   width: 100%;
   max-width: 480px;

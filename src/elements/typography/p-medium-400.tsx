@@ -8,7 +8,7 @@ const PMedium400 = ({
   marginTop,
 }: {
   text: any;
-  color: string;
+  color: any;
   marginTop?: string;
 }) => {
   return (

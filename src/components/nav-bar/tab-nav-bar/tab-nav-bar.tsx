@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import IconHome24 from '../../../elements/svg/icon_home_24';
 import IconContact24 from '../../../elements/svg/icon_contact_24';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 
 const TabNavBar = ({ tabToggle }: any) => {
   const dispatch = useDispatch();
@@ -12,6 +14,8 @@ const TabNavBar = ({ tabToggle }: any) => {
     dispatch({
       type: 'TAB_NAV_CHANGE',
     });
+
+  const modalActive = useSelector((state: any) => state.modalActive);
 
   // Toggle Graphic on off
   const homeToggle: boolean = tabToggle === 'home' ? true : false;
@@ -41,24 +45,77 @@ const TabNavBar = ({ tabToggle }: any) => {
     rippleSize: 2000,
   });
 
+  const width: number = useWindowWidth();
+
   return (
     <>
-      <Nav>
+      <MotionNav
+        variants={hideVariants(width)}
+        initial={false}
+        animate={modalActive === true ? 'hide' : 'show'}
+      >
         <Tab onClick={() => setHomeToggle()} ref={homeRef}>
           <IconHome24 toggle={homeToggle} />
         </Tab>
         <Tab onClick={() => setContactToggle()} ref={contactRef}>
           <IconContact24 toggle={contactToggle} />
         </Tab>
-      </Nav>
-      <FillEmptySpace />
+      </MotionNav>
+      <MotionFillEmptySpace
+        variants={hideVariants(width)}
+        initial={false}
+        animate={modalActive === true ? 'hide' : 'show'}
+      />
     </>
   );
 };
 
 export default TabNavBar;
 
-const Nav = styled.nav`
+const hideVariants = (width: number) => {
+  if (width < 768) {
+    return {
+      show: {
+        x: '-50%', // 초기화되는 transform 원래 자리로
+        opacity: 1,
+        transition: {
+          ease: 'easeInOut',
+          // duration: 0.3,
+        },
+      },
+
+      hide: {
+        y: 500,
+        opacity: 0,
+        transition: {
+          ease: 'easeInOut',
+          // duration: 0.3,
+        },
+      },
+    };
+  } else {
+    return {
+      show: {
+        x: '-50%', // 초기화되는 transform 원래 자리로
+        opacity: 1,
+        transition: {
+          ease: 'easeInOut',
+          // duration: 0.3,
+        },
+      },
+      hide: {
+        y: -500,
+        opacity: 0,
+        transition: {
+          ease: 'easeInOut',
+          // duration: 0.3,
+        },
+      },
+    };
+  }
+};
+
+const MotionNav = styled(motion.nav)`
   // 공통 속성
   display: flex;
   z-index: 10001;
@@ -71,6 +128,7 @@ const Nav = styled.nav`
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
+  /* align-items: center; */
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     justify-content: space-evenly;
@@ -83,19 +141,8 @@ const Nav = styled.nav`
     // 추가 속성
     bottom: 0;
     align-items: center;
-    border-top: solid 1px ${({ theme }) => theme.gray7};
+    /* border-top: solid 1px ${({ theme }) => theme.gray7}; */
     background-color: ${({ theme }) => theme.gray8};
-
-    /* Grassmorphism */
-    /* opacity: 0.999;
-    color: ${({ theme }) => theme.gray8};
-    -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-      hue-rotate(10deg);
-    backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-
-    -webkit-transition: color 0.11s ease-in-out,
-      -webkit-backdrop-filter 0.11s ease-in-out;
-    transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */
   }
 `;
 
@@ -122,7 +169,7 @@ const Tab = styled.button`
 `;
 
 // 아이폰 하단에 나타나는 빈 공간 채워주는 div
-const FillEmptySpace = styled.div`
+const MotionFillEmptySpace = styled(motion.div)`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     position: fixed;
     z-index: 9999;
