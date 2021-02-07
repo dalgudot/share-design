@@ -51,7 +51,7 @@ const TabNavBar = ({ tabToggle }: any) => {
     <>
       <MotionNav
         variants={hideVariants(width)}
-        initial={false}
+        initial="show"
         animate={modalActive === true ? 'hide' : 'show'}
       >
         <Tab onClick={() => setHomeToggle()} ref={homeRef}>
@@ -63,7 +63,7 @@ const TabNavBar = ({ tabToggle }: any) => {
       </MotionNav>
       <MotionFillEmptySpace
         variants={hideVariants(width)}
-        initial={false}
+        initial="show"
         animate={modalActive === true ? 'hide' : 'show'}
       />
     </>
@@ -73,43 +73,44 @@ const TabNavBar = ({ tabToggle }: any) => {
 export default TabNavBar;
 
 const hideVariants = (width: number) => {
+  const showFixedProp = {
+    opacity: 1,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.55,
+    },
+  };
+
+  const hideFixedProp = {
+    opacity: 0,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.55,
+    },
+  };
+
   if (width < 768) {
     return {
       show: {
-        x: '-50%', // 초기화되는 transform 원래 자리로
-        opacity: 1,
-        transition: {
-          ease: 'easeInOut',
-          // duration: 0.3,
-        },
+        showFixedProp,
       },
 
       hide: {
         y: 500,
-        opacity: 0,
-        transition: {
-          ease: 'easeInOut',
-          // duration: 0.3,
-        },
+        hideFixedProp,
       },
     };
   } else {
     return {
       show: {
-        x: '-50%', // 초기화되는 transform 원래 자리로
-        opacity: 1,
-        transition: {
-          ease: 'easeInOut',
-          // duration: 0.3,
-        },
+        // 초기화되는 transform 원래 자리로
+        x: '-50%',
+        showFixedProp,
       },
       hide: {
+        x: '-50%',
         y: -500,
-        opacity: 0,
-        transition: {
-          ease: 'easeInOut',
-          // duration: 0.3,
-        },
+        hideFixedProp,
       },
     };
   }
@@ -141,7 +142,7 @@ const MotionNav = styled(motion.nav)`
     // 추가 속성
     bottom: 0;
     align-items: center;
-    /* border-top: solid 1px ${({ theme }) => theme.gray7}; */
+    border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray8};
   }
 `;

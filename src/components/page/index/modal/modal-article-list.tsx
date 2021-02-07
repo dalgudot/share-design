@@ -80,12 +80,8 @@ const GlassMorphismBackground = styled.div`
   /* opacity: 0.999; */
   /* color: ${({ theme }) => theme.gray8}; */
 
-  /* backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-    hue-rotate(10deg); */
-
-  backdrop-filter: blur(80px) saturate(120%);
-  -webkit-backdrop-filter: blur(80px) saturate(120%);
+  backdrop-filter: blur(80px) saturate(120%) brightness(95%);
+  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%);
 
   /* -webkit-transition: color 0.11s ease-in-out,
     -webkit-backdrop-filter 0.11s ease-in-out;

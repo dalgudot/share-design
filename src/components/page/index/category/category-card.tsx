@@ -32,7 +32,7 @@ const CategoryCard = ({
       <MotionLi //
         variants={ArticleListVariants}
         initial="rest"
-        whileHover="hover"
+        // whileHover="hover"
         whileTap="pressed"
         animate={showModalArticleList ? 'scaleUp' : 'scaleOriginal'}
         backgroundGradient={backgroundGradient}
@@ -86,6 +86,7 @@ const ArticleListVariants = {
 const TextVariants = {
   show: {
     opacity: 1,
+    scale: 1,
     transition: {
       ease: 'easeInOut',
       duration: 0.55,
@@ -94,6 +95,7 @@ const TextVariants = {
 
   hide: {
     opacity: 0,
+    scale: 1,
     transition: {
       ease: 'easeInOut',
       duration: 0.1,
