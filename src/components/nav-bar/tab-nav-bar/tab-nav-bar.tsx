@@ -76,6 +76,7 @@ const hideVariants = (width: number) => {
   if (width < 768) {
     return {
       show: {
+        x: 0,
         y: 0,
         opacity: 1,
         transition: {
@@ -84,6 +85,7 @@ const hideVariants = (width: number) => {
       },
 
       hide: {
+        x: 0,
         y: 500,
         opacity: 0,
         transition: {

@@ -15,18 +15,15 @@ const ModalArticleList = ({
 }) => {
   const themeContext = useContext(ThemeContext);
   const height: number = useWindowHeight();
-
   const itemIds = [0, 1, 2, 3, 4];
 
   return (
     <>
-      {/* {modalActive && ( */}
       <MotionUl
         height={height}
         variants={opacityVariants}
-        initial="hide"
+        initial={false}
         animate={modalActive === true ? 'show' : 'hide'}
-        exit="hide"
       >
         <motion.ul variants={staggerVariants}>
           {itemIds.map((i) => (
@@ -34,14 +31,17 @@ const ModalArticleList = ({
           ))}
         </motion.ul>
 
-        <div onClick={() => hideArticleList()}>
+        <motion.button //
+          onClick={() => hideArticleList()}
+          variants={buttonHide}
+          animate={modalActive === true ? 'show' : 'hide'}
+        >
           <PMedium400 //
-            text={tArticle.goToList}
+            text={tArticle.close}
             color={themeContext.gray1}
           />
-        </div>
+        </motion.button>
       </MotionUl>
-      {/* )} */}
     </>
   );
 };
@@ -63,7 +63,7 @@ const MotionUl = styled(motion.ul)<{ height: number }>`
   flex-direction: column;
 
   p {
-    position: fixed;
+    margin-top: 36px;
   }
 `;
 
@@ -85,6 +85,27 @@ const opacityVariants = {
       when: 'afterChildren',
       ease: 'easeInOut',
       time: [0, 0.1],
+    },
+  },
+};
+
+const buttonHide = {
+  show: {
+    opacity: [0, 1],
+    zIndex: 30000,
+    y: 0,
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+
+  hide: {
+    opacity: 0,
+    zIndex: -1,
+    y: 10000,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0,
     },
   },
 };

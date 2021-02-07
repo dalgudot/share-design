@@ -2,7 +2,7 @@ import { tArticle } from '../../page/article/text/t-article';
 import CategoryCard from '../../page/index/category/category-card';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import ModalArticleList from '../../page/index/modal/modal-article-list';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +29,7 @@ const Home = () => {
     setShowModal([false, true]);
     MODAL_ACTIVE_CHANGE();
   };
+
   const hideArticleList = () => {
     setShowModal([false, false]);
     MODAL_ACTIVE_CHANGE();

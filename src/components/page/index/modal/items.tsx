@@ -1,6 +1,21 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+const Items = () => {
+  return (
+    <MotionLi
+      variants={variants}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <div className="icon-placeholder" />
+      <div className="text-placeholder" />
+    </MotionLi>
+  );
+};
+
+export default Items;
+
 // 부모와 자식 variants의 이름 통일해야 함.
 const variants = {
   show: {
@@ -19,22 +34,6 @@ const variants = {
   },
 };
 
-const Items = () => {
-  const style = { border: '1px solid white' };
-  return (
-    <MotionLi
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
-    </MotionLi>
-  );
-};
-
-export default Items;
-
 const MotionLi = styled(motion.li)`
   display: flex;
   align-items: center;
@@ -46,6 +45,7 @@ const MotionLi = styled(motion.li)`
     border-radius: 50%;
     flex: 40px 0;
     margin-right: 20px;
+    border: 1px solid white;
   }
 
   .text-placeholder {
@@ -53,5 +53,6 @@ const MotionLi = styled(motion.li)`
     width: 200px;
     height: 20px;
     flex: 1;
+    border: 1px solid white;
   }
 `;

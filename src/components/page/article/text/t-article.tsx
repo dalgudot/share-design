@@ -21,6 +21,11 @@ export const tArticle = {
     e: '>',
   },
 
+  close: {
+    k: '닫기',
+    e: 'cloes',
+  },
+
   interactionDesignGuide: {
     title: [
       {
