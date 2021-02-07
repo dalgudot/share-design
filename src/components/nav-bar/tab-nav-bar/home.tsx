@@ -14,16 +14,12 @@ const Home = () => {
 
   // List Modal
   const [showModal, setShowModal] = useState([false, false]);
-  const glassMorphismBackground = useSelector(
-    (state: any) => state.modalActive
-  );
+  const modalActive = useSelector((state: any) => state.modalActive);
   const dispatch = useDispatch();
   const MODAL_ACTIVE_CHANGE = () =>
     dispatch({
       type: 'MODAL_ACTIVE_CHANGE',
     });
-
-  // const [glassMorphismBackground, setGlassMorphismBackground] = useState(false);
 
   const showArticleList1 = () => {
     setShowModal([true, false]);
@@ -55,7 +51,7 @@ const Home = () => {
         />
       </Ul>
       <ModalArticleList
-        glassMorphismBackground={glassMorphismBackground}
+        modalActive={modalActive}
         hideArticleList={hideArticleList}
       />
     </>

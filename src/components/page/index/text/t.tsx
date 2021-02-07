@@ -74,8 +74,8 @@ export const t = {
     },
 
     toastMessage: {
-      k: '이메일 주소를 복사했습니다\u00A0\u00A0🙌',
-      e: 'You copied my email address\u00A0\u00A0🙌',
+      k: '이메일 주소를 복사했습니다 📮',
+      e: 'You copied my email address 📮',
     },
   },
 
