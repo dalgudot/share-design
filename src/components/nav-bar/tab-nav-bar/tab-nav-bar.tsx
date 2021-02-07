@@ -73,31 +73,22 @@ const TabNavBar = ({ tabToggle }: any) => {
 export default TabNavBar;
 
 const hideVariants = (width: number) => {
-  const showFixedProp = {
-    opacity: 1,
-    transition: {
-      ease: 'easeIn',
-      duration: 0.55,
-    },
-  };
-
-  const hideFixedProp = {
-    opacity: 0,
-    transition: {
-      ease: 'easeIn',
-      duration: 0.55,
-    },
-  };
-
   if (width < 768) {
     return {
       show: {
-        showFixedProp,
+        y: 0,
+        opacity: 1,
+        transition: {
+          ease: 'easeInOut',
+        },
       },
 
       hide: {
         y: 500,
-        hideFixedProp,
+        opacity: 0,
+        transition: {
+          ease: 'easeInOut',
+        },
       },
     };
   } else {
@@ -105,12 +96,19 @@ const hideVariants = (width: number) => {
       show: {
         // 초기화되는 transform 원래 자리로
         x: '-50%',
-        showFixedProp,
+        y: 0,
+        opacity: 1,
+        transition: {
+          ease: 'easeInOut',
+        },
       },
       hide: {
         x: '-50%',
         y: -500,
-        hideFixedProp,
+        opacity: 0,
+        transition: {
+          ease: 'easeInOut',
+        },
       },
     };
   }

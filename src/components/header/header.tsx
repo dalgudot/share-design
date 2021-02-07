@@ -55,7 +55,6 @@ const hideVariants = {
     opacity: 1,
     transition: {
       ease: 'easeInOut',
-      // duration: 0.3,
     },
   },
 
@@ -64,7 +63,6 @@ const hideVariants = {
     opacity: 0,
     transition: {
       ease: 'easeInOut',
-      // duration: 0.3,
     },
   },
 };
