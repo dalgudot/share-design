@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const IconLanguage24 = ({ color }: any) => {
   return (
@@ -40,4 +41,4 @@ const IconLanguage24 = ({ color }: any) => {
 
 export default IconLanguage24;
 
-const SVG = styled.svg``;
+const SVG = styled(motion.svg)``;

@@ -68,6 +68,7 @@ const ArticleListVariants = {
     transition: {
       time: [0.01, 0.1],
       ease: 'easeInOut',
+      stiffness: 20,
     },
   },
 
@@ -76,10 +77,20 @@ const ArticleListVariants = {
     y: 0,
     transition: {
       ease: 'easeInOut',
+      duration: 0.3,
+      stiffness: 120,
+      damping: 40,
     },
   },
   rest: { scale: 1 },
-  hover: { opacity: 0.9 },
+  // hover: {
+  //   scale: 1.01,
+  //   filter: 'saturate(110%)',
+  //   transition: {
+  //     ease: 'easeInOut',
+  //     duration: 0.1,
+  //   },
+  // },
   pressed: { scale: 0.97 },
 };
 
@@ -113,11 +124,16 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
     ${({ backgroundGradient }) => backgroundGradient}
   );
   margin: 24px auto 0;
-  padding: 32px 24px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  // 바뀌는 속성
+  padding: 32px 24px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    padding: 24px;
+  }
 `;
 
 const ListViewSection = styled.section`
@@ -129,9 +145,9 @@ const ListViewSection = styled.section`
   border-bottom: solid 1px ${({ theme }) => theme.gray1};
 
   // 바뀌는 부분
-  margin-top: 144px;
+  margin-top: 158px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px;
+    margin-top: 108px;
   }
 `;

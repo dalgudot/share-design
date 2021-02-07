@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
@@ -28,7 +28,6 @@ const ModalArticleList = ({
               color={themeContext.gray1}
             />
           </div>
-          <GlassMorphismBackground />
         </Container>
       )}
     </>
@@ -39,7 +38,7 @@ export default ModalArticleList;
 
 const opacityVariants = {
   show: {
-    opacity: [0, 0.999],
+    opacity: [0, 1],
     zIndex: 30000,
     transition: {
       ease: 'easeInOut',
@@ -48,12 +47,20 @@ const opacityVariants = {
   },
 
   hide: {
-    opacity: [0.999, 0],
+    opacity: [1, 0],
     zIndex: [30000, -1],
     transition: {
       ease: 'easeInOut',
-      //   duration: 0.3,
     },
+  },
+};
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
 
@@ -61,29 +68,11 @@ const Container = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  /* z-index: 20000; */
+  width: 100vw;
+  height: 100vh;
 
   p {
     position: fixed;
     z-index: 20001;
   }
-`;
-
-const CloseButton = styled.button``;
-
-const GlassMorphismBackground = styled.div`
-  width: 100vw;
-  height: 100vh;
-  /* z-index: 30000; */
-
-  /* Grassmorphism */
-  /* opacity: 0.999; */
-  /* color: ${({ theme }) => theme.gray8}; */
-
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%);
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%);
-
-  /* -webkit-transition: color 0.11s ease-in-out,
-    -webkit-backdrop-filter 0.11s ease-in-out;
-  transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out; */
 `;
