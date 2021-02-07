@@ -63,11 +63,11 @@ export default CategoryCard;
 
 const ArticleListVariants = {
   scaleUp: {
-    scale: [0.9, 30],
+    scale: [0.9, 20, 10],
     transition: {
-      time: [0.01, 0.1],
+      time: [0.01, 0.1, 1],
       ease: 'easeInOut',
-      stiffness: 20,
+      stiffness: 10,
     },
   },
 
@@ -76,11 +76,12 @@ const ArticleListVariants = {
     y: 0,
     transition: {
       ease: 'easeInOut',
-      duration: 0.7,
+      duration: 0.4,
       stiffness: 120,
       damping: 5,
     },
   },
+
   rest: { scale: 1 },
   pressed: { scale: 0.97 },
 };
@@ -88,7 +89,6 @@ const ArticleListVariants = {
 const TextVariants = {
   show: {
     opacity: 1,
-    scale: 1,
     transition: {
       ease: 'easeInOut',
       duration: 1.35,
@@ -97,7 +97,6 @@ const TextVariants = {
 
   hide: {
     opacity: 0,
-    scale: 1,
     transition: {
       ease: 'easeInOut',
       duration: 0.05,

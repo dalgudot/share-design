@@ -23,7 +23,7 @@ export const tArticle = {
 
   close: {
     k: '닫기',
-    e: 'cloes',
+    e: 'close',
   },
 
   interactionDesignGuide: {

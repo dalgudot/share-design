@@ -29,18 +29,17 @@ const ModalArticleList = ({
           {itemIds.map((i) => (
             <Items key={i} />
           ))}
+          <motion.button //
+            onClick={() => hideArticleList()}
+            variants={buttonHide}
+            animate={modalActive === true ? 'show' : 'hide'}
+          >
+            <PMedium400 //
+              text={tArticle.close}
+              color={themeContext.gray2}
+            />
+          </motion.button>
         </motion.ul>
-
-        <motion.button //
-          onClick={() => hideArticleList()}
-          variants={buttonHide}
-          animate={modalActive === true ? 'show' : 'hide'}
-        >
-          <PMedium400 //
-            text={tArticle.close}
-            color={themeContext.gray1}
-          />
-        </motion.button>
       </MotionUl>
     </>
   );
@@ -91,21 +90,23 @@ const opacityVariants = {
 
 const buttonHide = {
   show: {
-    opacity: [0, 1],
-    zIndex: 30000,
+    opacity: 1,
+    // zIndex: 30000,
     y: 0,
     transition: {
-      ease: 'easeInOut',
+      // ease: 'easeInOut',
+      y: { stiffness: 1000, velocity: -100 },
     },
   },
 
   hide: {
     opacity: 0,
-    zIndex: -1,
+    // zIndex: -1,
     y: 10000,
     transition: {
-      ease: 'easeInOut',
+      // ease: 'easeInOut',
       duration: 0,
+      y: { stiffness: 1000 },
     },
   },
 };
