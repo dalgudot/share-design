@@ -19,6 +19,8 @@ const LangChangeToggle = () => {
       : router.push(router.pathname, router.pathname, { locale: 'ko' });
   };
 
+  // console.log(router);
+
   // 768을 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
   const width: number = useWindowWidth();
 

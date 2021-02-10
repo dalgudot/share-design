@@ -32,6 +32,18 @@ const storage =
 
 let store: any;
 
+interface InitialStateTypes {
+  themeMode: string;
+  tabNavBar: string;
+  modalActive: boolean;
+}
+
+interface actionTypesTypes {
+  MODE_CHANGE: string;
+  TAB_NAV_CHANGE: string;
+  MODAL_ACTIVE_CHANGE: string;
+}
+
 const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   tabNavBar: 'home',
@@ -64,11 +76,6 @@ export const reducer = (state = InitialState, action: any) => {
         modalActive: !state.modalActive,
       };
 
-      return {
-        ...state,
-        tabNavBar: state.tabNavBar === 'home' ? 'contact' : 'home',
-      };
-
     default:
       return state;
   }
@@ -77,7 +84,7 @@ export const reducer = (state = InitialState, action: any) => {
 const persistConfig = {
   key: 'primary',
   storage,
-  whitelist: ['themeMode'], // place to select which state you want to persist
+  whitelist: ['languageChange', 'themeMode'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -115,17 +122,4 @@ export const initializeStore = (preloadedState: any) => {
 export function useStore(initialState: any) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
-}
-
-// type
-interface InitialStateTypes {
-  themeMode: string;
-  tabNavBar: string;
-  modalActive: boolean;
-}
-
-interface actionTypesTypes {
-  MODE_CHANGE: string;
-  TAB_NAV_CHANGE: string;
-  MODAL_ACTIVE_CHANGE: string;
 }

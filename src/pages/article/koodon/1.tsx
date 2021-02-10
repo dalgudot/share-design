@@ -18,7 +18,7 @@ const ArticlePortfolioOne = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('portfolio/001 SHARE DESIGN Project');
   }, []);
-  const themeContext: DefaultTheme = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext);
 
   const TitleTextArray = tArticle.portfolioDesignStory.article1.title;
   const titleText = TitleTextArray.map((text, index) => (

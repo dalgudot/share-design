@@ -91,20 +91,16 @@ const opacityVariants = {
 const buttonHide = {
   show: {
     opacity: 1,
-    // zIndex: 30000,
     y: 0,
     transition: {
-      // ease: 'easeInOut',
       y: { stiffness: 1000, velocity: -100 },
     },
   },
 
   hide: {
     opacity: 0,
-    // zIndex: -1,
     y: 10000,
     transition: {
-      // ease: 'easeInOut',
       duration: 0,
       y: { stiffness: 1000 },
     },

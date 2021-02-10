@@ -5,6 +5,8 @@ import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { tArticle } from '../../article/text/t-article';
 import { mediaBreakPoint } from '../../../../styles/common';
 import { motion } from 'framer-motion';
+import { useWindowWidth } from '../../../../lib/hooks/useWindowWidth';
+import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
 
 const CategoryCard = ({
   title,
