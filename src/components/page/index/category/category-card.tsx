@@ -5,47 +5,39 @@ import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { tArticle } from '../../article/text/t-article';
 import { mediaBreakPoint } from '../../../../styles/common';
 import { motion } from 'framer-motion';
-import { useWindowWidth } from '../../../../lib/hooks/useWindowWidth';
-import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
+import Link from 'next/link';
+import { smoothUp } from '../../../../elements/framer-motion/variants/variants';
 
 const CategoryCard = ({
+  url,
   title,
   background,
-  showArticleList,
-  showModalArticleList,
 }: {
+  url: string;
   title: object[];
   background: string;
-  showArticleList: any;
-  showModalArticleList: any;
 }) => {
   const themeContext = useContext(ThemeContext);
-  const backgroundGradient: string =
-    background === 'gradientPurple'
-      ? themeContext.gradientPurple
-      : themeContext.gradientBurgundy;
 
   const categoryTitle = title.map((title, idx) => (
     <H1Title700 key={idx} text={title} color={themeContext.gray1} />
   ));
 
   return (
-    <>
-      <MotionLi //
-        variants={ArticleListVariants}
-        initial="rest"
-        whileTap="pressed"
-        animate={showModalArticleList ? 'scaleUp' : 'scaleOriginal'}
-        backgroundGradient={backgroundGradient}
-        onClick={showArticleList}
-      >
-        <motion.div //
-          variants={TextVariants}
-          initial={false}
-          animate={showModalArticleList ? 'hide' : 'show'}
-        >
-          {categoryTitle}
-          <ListViewSection>
+    <MotionLi //
+      variants={smoothUp}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      whileHover="whileHover"
+      whileTap="whileTap"
+      backgroundGradient={background}
+    >
+      <Link href="/">
+        {/* <Link href="/list/[index]" as={`/list/${url}`}> */}
+        <a>
+          <MotionTitleSection>{categoryTitle}</MotionTitleSection>
+          <MotionListViewSection>
             <PMedium400 //
               text={tArticle.goToList}
               color={themeContext.gray1}
@@ -54,67 +46,26 @@ const CategoryCard = ({
               text={tArticle.chevronRight}
               color={themeContext.gray1}
             />
-          </ListViewSection>
-        </motion.div>
-      </MotionLi>
-    </>
+          </MotionListViewSection>
+        </a>
+      </Link>
+    </MotionLi>
   );
 };
 
 export default CategoryCard;
 
-const ArticleListVariants = {
-  scaleUp: {
-    scale: [0.9, 20, 10],
-    transition: {
-      time: [0.01, 0.1, 1],
-      ease: 'easeInOut',
-      stiffness: 10,
-    },
-  },
-
-  scaleOriginal: {
-    scale: 1,
-    y: 0,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.4,
-      stiffness: 120,
-      damping: 5,
-    },
-  },
-
-  rest: { scale: 1 },
-  pressed: { scale: 0.97 },
-};
-
-const TextVariants = {
-  show: {
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 1.35,
-    },
-  },
-
-  hide: {
-    opacity: 0,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.05,
-    },
-  },
-};
-
 const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   cursor: pointer;
   width: 100%;
   max-width: 480px;
-  height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   background-image: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
+  z-index: 1;
+  overflow-y: auto;
+
   margin: 24px auto 0;
   display: flex;
   flex-direction: column;
@@ -128,7 +79,9 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   }
 `;
 
-const ListViewSection = styled.section`
+const MotionTitleSection = styled(motion.section)``;
+
+const MotionListViewSection = styled(motion.section)`
   padding: 16px 3px;
   display: flex;
   justify-content: space-between;

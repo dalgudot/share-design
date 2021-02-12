@@ -3,14 +3,14 @@ import { indexInfo } from '../elements/head/index-info';
 import styled from 'styled-components';
 import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
-import Home from '../components/nav-bar/tab-nav-bar/home';
+import Contact from '../components/nav-bar/tab-nav-bar/contact';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { useDispatch, useSelector } from 'react-redux';
 
-const Index = () => {
+const IndexContact = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('Home');
+    VisitsAndViewsDuringSession('Contact');
     modalActive === true && MODAL_ACTIVE_CHANGE();
   }, []);
 
@@ -25,14 +25,14 @@ const Index = () => {
     <>
       <HeadSEO info={indexInfo} />
       <Main>
-        <Home />
+        <Contact />
       </Main>
       {/* <Footer tabToggle={tabToggle} /> */}
     </>
   );
 };
 
-export default Index;
+export default IndexContact;
 
 const Main = styled.main`
   @media all and (max-width: ${mediaBreakPoint.first}) {

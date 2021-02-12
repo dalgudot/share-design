@@ -31,21 +31,6 @@ export const t = {
     e: 'dalgudot@gmail.com',
   },
 
-  number01: {
-    k: '01',
-    e: '01',
-  },
-
-  number02: {
-    k: '02',
-    e: '02',
-  },
-
-  langChagneButton: {
-    k: 'View in English',
-    e: '한글로 보기',
-  },
-
   subNavBar: {
     welcome: {
       k: '소개',

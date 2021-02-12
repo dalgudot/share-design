@@ -12,18 +12,22 @@ import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import PSmall400 from '../../../elements/typography/p-small-400';
 import H2Title700 from '../../../elements/typography/h2-title-700';
+import { motion } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import { smoothUp } from '../../../elements/framer-motion/variants/variants';
 
 const Contact = () => {
-  useEffect(() => {
-    VisitsAndViewsDuringSession('Contact');
-  }, []);
-
   const themeContext = useContext(ThemeContext);
   const toastMessage: string = useSetLanguage(t.contact.toastMessage);
   const toastId: string = 'Copy Email';
 
   return (
-    <Container>
+    <MotionContainer
+      variants={smoothUp}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <img
         src="/images/profile.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
@@ -97,13 +101,36 @@ const Contact = () => {
           /> 
         </a> */}
       </SocialContainer>
-    </Container>
+    </MotionContainer>
   );
 };
 
 export default Contact;
 
-const Container = styled.main`
+const variants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    display: 'flex',
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  hide: {
+    y: 50,
+    opacity: 0,
+    display: 'none',
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, ease: [0.43, 0.13, 0.23, 0.96] },
+  },
+};
+
+const MotionContainer = styled(motion.main)`
   display: flex;
   flex-direction: column;
   align-items: center;

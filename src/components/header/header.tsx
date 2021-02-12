@@ -3,31 +3,29 @@ import { t } from '../page/index/text/t';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import Router from 'next/router';
-import { useDispatch, useSelector } from 'react-redux';
+import Router, { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
 import PMedium700 from '../../elements/typography/p-medium-700';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
-  const tabToggle = useSelector((state: any) => state.tabNavBar);
-  const dispatch = useDispatch();
-  const TAB_NAV_CHANGE = () =>
-    dispatch({
-      type: 'TAB_NAV_CHANGE',
-    });
-
   const modalActive = useSelector((state: any) => state.modalActive);
 
+  const router = useRouter();
   const goHome = () => {
-    tabToggle !== 'home' && TAB_NAV_CHANGE();
-    Router.push('/');
+    router.pathname !== '/' && Router.push('/');
+  };
+
+  const headerDisplay = {
+    display: router.pathname === '/list/[index]' ? 'none' : 'flex',
   };
 
   return (
     <>
       <HeaderContainer
+        style={headerDisplay}
         variants={hideVariants}
         initial={false}
         animate={modalActive === true ? 'hide' : 'show'}
@@ -37,8 +35,8 @@ const Header = () => {
         </Left>
         <LangChangeToggle />
       </HeaderContainer>
-      {/* 상단에 나타나는 빈 공간 채워주는 div */}
       <FillEmptySpace
+        style={headerDisplay}
         variants={hideVariants}
         initial={false}
         animate={modalActive === true ? 'hide' : 'show'}
@@ -110,29 +108,3 @@ const FillEmptySpace = styled(motion.div)`
     height: 65px; // 57 + 8px
   }
 `;
-
-// const GlassMorphismBackground = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 72px;
-//   z-index: 9999;
-
-//   @media all and (max-width: ${mediaBreakPoint.first}) {
-//     height: 57px;
-//   }
-
-//   background-color: ${({ theme }) => theme.gray8};
-
-//   /* Grassmorphism */
-//   opacity: 0.999;
-//   color: ${({ theme }) => theme.gray8};
-//   -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
-//     hue-rotate(10deg);
-//   backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
-
-//   -webkit-transition: color 0.11s ease-in-out,
-//     -webkit-backdrop-filter 0.11s ease-in-out;
-//   transition: color 0.11s ease-in-out, backdrop-filter 0.11s ease-in-out;
-// `;

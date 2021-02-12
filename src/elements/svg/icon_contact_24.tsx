@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const IconContact24 = ({ toggle }: any) => {
+const IconContact24 = ({ tab }: any) => {
   const themeContext = useContext(ThemeContext);
-  const color: string =
-    toggle === true ? themeContext.gray1 : themeContext.gray5;
+  const color: string = tab === true ? themeContext.gray1 : themeContext.gray5;
 
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

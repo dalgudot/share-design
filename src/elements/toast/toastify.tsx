@@ -66,7 +66,7 @@ const ToastBox = styled(ToastContainer)`
   max-width: 480px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 30000;
+  z-index: 10002;
 
   // 추가
   -webkit-tap-highlight-color: transparent;

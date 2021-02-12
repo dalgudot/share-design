@@ -5,19 +5,29 @@ import { useContext, useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import Share from '../../../components/page/article/share-modal';
 import Comment from '../../../components/page/article/comment';
-import PSmall700 from '../../../elements/typography/p-small-700';
 import { mediaBreakPoint } from '../../../styles/common';
-import { t } from '../../../components/page/index/text/t';
 import { tArticle } from '../../../components/page/article/text/t-article';
 import H1Title700 from '../../../elements/typography/h1-title-700';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import PSmall400 from '../../../elements/typography/p-small-400';
 import PMedium400 from '../../../elements/typography/p-medium-400';
+import { motion } from 'framer-motion';
+import Profile from '../../../components/page/profile';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 const ArticlePortfolioOne = () => {
+  const router = useRouter();
   useEffect(() => {
-    VisitsAndViewsDuringSession('portfolio/001 SHARE DESIGN Project');
+    VisitsAndViewsDuringSession(router.pathname);
+    modalActive === true && MODAL_ACTIVE_CHANGE();
   }, []);
+
+  const modalActive = useSelector((state: any) => state.modalActive);
+  const dispatch = useDispatch();
+  const MODAL_ACTIVE_CHANGE = () =>
+    dispatch({
+      type: 'MODAL_ACTIVE_CHANGE',
+    });
+
   const themeContext: DefaultTheme = useContext(ThemeContext);
 
   const TitleTextArray = tArticle.portfolioDesignStory.article1.title;
@@ -43,56 +53,54 @@ const ArticlePortfolioOne = () => {
   return (
     <>
       <HeadSEO info={articlePortfolioOneInfo} />
-      <Main>
-        <BackgroundColor />
-        <PSmall700
-          text={tArticle.portfolioDesignStory.article1.category}
-          color={themeContext.gray4}
-          marginTop="91px"
-        />
-        {titleText}
-
-        <AuthorData>
-          <img
-            src="/images/profile.jpg"
-            alt={useSetLanguage(t.contact.profileAlt)}
-          />
-          <PSmall400 text={t.myName} color={themeContext.gray1} />
-          <span></span>
-          <PSmall400
-            text={tArticle.portfolioDesignStory.article1.date}
-            color={themeContext.gray4}
-          />
-        </AuthorData>
-
-        <ContentsContainer>{contentsText}</ContentsContainer>
-
-        {/* <Comment /> */}
-        {/* <Share /> */}
-      </Main>
+      <MotionMain
+        key="article"
+        variants={variants}
+        initial={false}
+        animate="show"
+        exit="exit"
+      >
+        <Profile />
+      </MotionMain>
     </>
   );
 };
 
 export default ArticlePortfolioOne;
 
-const Main = styled.main`
+const MotionMain = styled(motion.main)`
   width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
+  max-width: ${({ theme }) => theme.maxWidth.maxWidth};
+  margin: 140px auto;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
   }
-
-  /* @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: 0 12vw;
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: 0 16.6667%;
-  } */
 `;
+
+const variants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    display: 'flex',
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  hide: {
+    y: 50,
+    opacity: 0,
+    display: 'none',
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+  exit: {
+    scale: 0.5,
+    opacity: 0,
+    transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
+  },
+};
 
 const AuthorData = styled.section`
   margin-top: 8px;

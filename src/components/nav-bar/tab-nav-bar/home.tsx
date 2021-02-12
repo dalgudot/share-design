@@ -1,68 +1,55 @@
 import { tArticle } from '../../page/article/text/t-article';
 import CategoryCard from '../../page/index/category/category-card';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useEffect, useState } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import ModalArticleList from '../../page/index/modal/modal-article-list';
-import { useDispatch, useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { motion } from 'framer-motion';
+import { staggerAnimation } from '../../../elements/framer-motion/variants/variants';
 
 const Home = () => {
-  useEffect(() => {
-    VisitsAndViewsDuringSession('Home');
-  }, []);
-
-  // List Modal
-  const [showModal, setShowModal] = useState([false, false]);
-  const modalActive = useSelector((state: any) => state.modalActive);
-  const dispatch = useDispatch();
-  const MODAL_ACTIVE_CHANGE = () =>
-    dispatch({
-      type: 'MODAL_ACTIVE_CHANGE',
-    });
-
-  const showArticleList1 = () => {
-    setShowModal([true, false]);
-    MODAL_ACTIVE_CHANGE();
-  };
-  const showArticleList2 = () => {
-    setShowModal([false, true]);
-    MODAL_ACTIVE_CHANGE();
-  };
-
-  const hideArticleList = () => {
-    setShowModal([false, false]);
-    MODAL_ACTIVE_CHANGE();
-  };
+  const themeContext = useContext(ThemeContext);
+  const categoryCardData = [
+    {
+      // 인터랙션 디자인 가이드
+      url: 'interaction-design-guide',
+      title: tArticle.interactionDesignGuide.title,
+      background: themeContext.gradientPurple,
+    },
+    {
+      // 쿠돈 디자인 가이드
+      url: 'koodon',
+      title: tArticle.koodonDesignStory.title,
+      background: themeContext.gradientBurgundy,
+    },
+  ];
 
   return (
     <>
-      <Ul>
+      <MotionUl
+      // variants={staggerAnimation}
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
+      >
         <CategoryCard
-          title={tArticle.interactionDesignGuide.title}
-          background="gradientPurple"
-          showModalArticleList={showModal[0]}
-          showArticleList={showArticleList1}
+          url={categoryCardData[0].url}
+          title={categoryCardData[0].title}
+          background={categoryCardData[0].background}
         />
         <CategoryCard
-          title={tArticle.koodonDesignStory.title}
-          background="gradientBurgundy"
-          showModalArticleList={showModal[1]}
-          showArticleList={showArticleList2}
+          url={categoryCardData[1].url}
+          title={categoryCardData[1].title}
+          background={categoryCardData[1].background}
         />
-      </Ul>
-      <ModalArticleList
-        modalActive={modalActive}
-        hideArticleList={hideArticleList}
-      />
+      </MotionUl>
     </>
   );
 };
 
 export default Home;
 
-const Ul = styled.ul`
-  margin: 128px 0 72px;
+const MotionUl = styled(motion.ul)`
+  margin: 108px 0 72px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 79px;

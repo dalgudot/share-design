@@ -39,6 +39,32 @@ export const tArticle = {
     ],
   },
 
+  koodonDesignStory: {
+    title: [
+      {
+        k: '쿠돈',
+        e: 'KOODON',
+      },
+      {
+        k: '디자인 이야기 🙌',
+        e: 'Design Story 🙌',
+      },
+    ],
+
+    article1: {
+      title: [
+        {
+          k: 'Coming',
+          e: 'Coming',
+        },
+        {
+          k: 'Soon...',
+          e: 'Soon...',
+        },
+      ],
+    },
+  },
+
   portfolioDesignStory: {
     title: [
       {
@@ -115,32 +141,6 @@ export const tArticle = {
             "\u00A0\u00A0\u00A0그렇게 내 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했다. 쉬는 날에만 작업했고 기획부터 콘텐츠 제작, 번역, 디자인, 웹 개발, 앱 개발까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하기까지 시간이 참 오래 걸렸다. 그 시간을 지나 2021년 2월 첫 콘텐츠 배포를 앞두고 있다. 전 세계 사람들에게 내 디자인 경험이 잘 전달되기를 바란다.",
           e:
             'So, I started SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experiences. I worked only on days off, and since I was doing everything from planning to content creation, translation, design and development by myself, it took a long time to distribute the first content. After that time, the first content distribution is scheduled for February 2021. I hope my design experience is well conveyed to people all over the world.',
-        },
-      ],
-    },
-  },
-
-  koodonDesignStory: {
-    title: [
-      {
-        k: '쿠돈',
-        e: 'KOODON',
-      },
-      {
-        k: '디자인 이야기 🙌',
-        e: 'Design Story 🙌',
-      },
-    ],
-
-    article1: {
-      title: [
-        {
-          k: 'Coming',
-          e: 'Coming',
-        },
-        {
-          k: 'Soon...',
-          e: 'Soon...',
         },
       ],
     },

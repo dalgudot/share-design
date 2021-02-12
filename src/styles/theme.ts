@@ -5,6 +5,10 @@ const borderRadius = {
   PrimaryBorderRadius: '13px',
 };
 
+const maxWidth = {
+  maxWidth: '680px',
+};
+
 export const darkTheme: DefaultTheme = {
   // Color
   gray1: '#E6E6F5',
@@ -20,6 +24,8 @@ export const darkTheme: DefaultTheme = {
   gradientBurgundy: '170deg, #743657, #40192c',
   // BorderRadius
   borderRadius,
+  // maxWidth
+  maxWidth,
 };
 
 export const lightTheme: DefaultTheme = {
@@ -37,6 +43,7 @@ export const lightTheme: DefaultTheme = {
   gradientBurgundy: '170deg, #743657, #40192c',
   // BorderRadius
   borderRadius,
+  maxWidth,
 };
 
 // 색과 관련된 GlobalStyle
@@ -64,6 +71,9 @@ declare module 'styled-components' {
     // BorderRadius
     borderRadius: {
       PrimaryBorderRadius: string;
+    };
+    maxWidth: {
+      maxWidth: string;
     };
   }
 }

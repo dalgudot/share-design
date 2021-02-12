@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -7,38 +7,41 @@ import IconContact24 from '../../../elements/svg/icon_contact_24';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import Router, { useRouter } from 'next/router';
 
-const TabNavBar = ({ tabToggle }: any) => {
-  const dispatch = useDispatch();
-  const TAB_NAV_CHANGE = () =>
-    dispatch({
-      type: 'TAB_NAV_CHANGE',
-    });
-
+const TabNavBar = () => {
   const modalActive = useSelector((state: any) => state.modalActive);
 
-  // Toggle Graphic on off
-  const homeToggle: boolean = tabToggle === 'home' ? true : false;
-  const contactToggle: boolean = tabToggle === 'contact' ? true : false;
+  const router = useRouter();
+  const homeTab: boolean = router.pathname === '/' ? true : false;
+  const contactTab: boolean = router.pathname === '/contact' ? true : false;
 
-  const setHomeToggle = () => {
-    tabToggle !== 'home' && TAB_NAV_CHANGE();
+  const TabNavBarDisplay = () => {
+    if (router.pathname === '/') {
+      return { display: 'flex' };
+    } else if (router.pathname === '/contact') {
+      return { display: 'flex' };
+    } else {
+      return { display: 'none' };
+    }
   };
 
-  const setContactToggle = () => {
-    tabToggle !== 'contact' && TAB_NAV_CHANGE();
+  const setHomeTab = () => {
+    router.pathname !== '/' && Router.push('/');
+  };
+
+  const setContactTab = () => {
+    router.pathname !== '/contact' && Router.push('/contact');
   };
 
   // useRipple
   const homeRef = useRef(null);
   const contactRef = useRef(null);
-
   useRipple(homeRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
     animationLength: 500,
     rippleSize: 2000,
   });
-
   useRipple(contactRef, {
     rippleColor: 'rgba(0, 0, 0, 0.6)',
     animationLength: 500,
@@ -50,20 +53,24 @@ const TabNavBar = ({ tabToggle }: any) => {
   return (
     <>
       <MotionNav
+        key="TabNavBarContainer"
+        style={TabNavBarDisplay()}
         variants={hideVariants(width)}
-        initial="show"
+        initial={false}
         animate={modalActive === true ? 'hide' : 'show'}
       >
-        <Tab onClick={() => setHomeToggle()} ref={homeRef}>
-          <IconHome24 toggle={homeToggle} />
+        <Tab onClick={() => setHomeTab()} ref={homeRef}>
+          <IconHome24 tab={homeTab} />
         </Tab>
-        <Tab onClick={() => setContactToggle()} ref={contactRef}>
-          <IconContact24 toggle={contactToggle} />
+        <Tab onClick={() => setContactTab()} ref={contactRef}>
+          <IconContact24 tab={contactTab} />
         </Tab>
       </MotionNav>
       <MotionFillEmptySpace
+        key="TabNavBarFillEmptySpace"
+        style={TabNavBarDisplay()}
         variants={hideVariants(width)}
-        initial="show"
+        initial={false}
         animate={modalActive === true ? 'hide' : 'show'}
       />
     </>
