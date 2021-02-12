@@ -22,7 +22,7 @@ export const smoothUp = {
     scale: 0.99,
     opacity: 0,
     transition: {
-      duration: 0.2,
+      duration: 0.4,
       smoothTransition,
     },
   },

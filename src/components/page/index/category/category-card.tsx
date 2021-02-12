@@ -33,8 +33,8 @@ const CategoryCard = ({
       whileTap="whileTap"
       backgroundGradient={background}
     >
-      <Link href="/">
-        {/* <Link href="/list/[index]" as={`/list/${url}`}> */}
+      {/* <Link href="/"> */}
+      <Link href="/list/[index]" as={`/list/${url}`}>
         <a>
           <MotionTitleSection>{categoryTitle}</MotionTitleSection>
           <MotionListViewSection>
