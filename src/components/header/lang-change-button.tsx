@@ -41,7 +41,7 @@ const LangChangeButton = () => {
       <BtnStyle>
         <TextStyle
           type="p"
-          text={useSetLanguage(t.langChagneButton)}
+          text={useSetLanguage(t.shareDesign)}
           textSize="small"
           weight={fontWeight[700]}
           color={themeContext.gray1}

@@ -184,7 +184,7 @@ const MotionCloseButton = styled(motion.button)<{ height: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 20000 !important;
+  z-index: 20000;
   /* height: ${({ height }) => height}px; */
 
   position: fixed;
