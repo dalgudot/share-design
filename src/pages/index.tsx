@@ -18,7 +18,7 @@ const Index = () => {
       <Main>
         <Home />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
@@ -26,8 +26,11 @@ const Index = () => {
 export default Index;
 
 const Main = styled.main`
+  margin-bottom: 48px;
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
+    margin-bottom: 72px;
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
