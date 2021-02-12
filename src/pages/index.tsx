@@ -6,20 +6,11 @@ import { mediaBreakPoint } from '../styles/common';
 import Home from '../components/nav-bar/tab-nav-bar/home';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import { useDispatch, useSelector } from 'react-redux';
 
 const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
-    modalActive === true && MODAL_ACTIVE_CHANGE();
   }, []);
-
-  const modalActive = useSelector((state: any) => state.modalActive);
-  const dispatch = useDispatch();
-  const MODAL_ACTIVE_CHANGE = () =>
-    dispatch({
-      type: 'MODAL_ACTIVE_CHANGE',
-    });
 
   return (
     <>
@@ -27,7 +18,7 @@ const Index = () => {
       <Main>
         <Home />
       </Main>
-      {/* <Footer tabToggle={tabToggle} /> */}
+      <Footer />
     </>
   );
 };

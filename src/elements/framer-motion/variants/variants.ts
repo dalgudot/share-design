@@ -34,14 +34,25 @@ export const smoothUp = {
   whileTap: { scale: 0.97 },
 };
 
-export const staggerAnimation = {
+export const stagger = {
   initial: {
-    staggerChildren: 0.07,
-    // delayChildren: 0.2,
+    transition: {
+      staggerChildren: 0.07,
+      staggerDirection: -1,
+    },
   },
 
   animate: {
-    staggerChildren: 0.07,
-    // delayChildren: 0.2,
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.2,
+    },
+  },
+
+  exit: {
+    transition: {
+      staggerChildren: 0.04,
+      staggerDirection: -1,
+    },
   },
 };

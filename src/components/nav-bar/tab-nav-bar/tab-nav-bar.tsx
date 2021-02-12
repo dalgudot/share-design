@@ -1,28 +1,25 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import IconHome24 from '../../../elements/svg/icon_home_24';
 import IconContact24 from '../../../elements/svg/icon_contact_24';
-import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import Router, { useRouter } from 'next/router';
 
 const TabNavBar = () => {
-  const modalActive = useSelector((state: any) => state.modalActive);
-
   const router = useRouter();
   const homeTab: boolean = router.pathname === '/' ? true : false;
   const contactTab: boolean = router.pathname === '/contact' ? true : false;
 
   const TabNavBarDisplay = () => {
     if (router.pathname === '/') {
-      return { display: 'flex' };
+      return true;
     } else if (router.pathname === '/contact') {
-      return { display: 'flex' };
+      return true;
     } else {
-      return { display: 'none' };
+      return false;
     }
   };
 
@@ -54,10 +51,9 @@ const TabNavBar = () => {
     <>
       <MotionNav
         key="TabNavBarContainer"
-        style={TabNavBarDisplay()}
         variants={hideVariants(width)}
         initial={false}
-        animate={modalActive === true ? 'hide' : 'show'}
+        animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
       >
         <Tab onClick={() => setHomeTab()} ref={homeRef}>
           <IconHome24 tab={homeTab} />
@@ -68,10 +64,9 @@ const TabNavBar = () => {
       </MotionNav>
       <MotionFillEmptySpace
         key="TabNavBarFillEmptySpace"
-        style={TabNavBarDisplay()}
         variants={hideVariants(width)}
         initial={false}
-        animate={modalActive === true ? 'hide' : 'show'}
+        animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
       />
     </>
   );
@@ -87,7 +82,8 @@ const hideVariants = (width: number) => {
         y: 0,
         opacity: 1,
         transition: {
-          ease: 'easeInOut',
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.5,
         },
       },
 
@@ -96,7 +92,7 @@ const hideVariants = (width: number) => {
         y: 500,
         opacity: 0,
         transition: {
-          ease: 'easeInOut',
+          ease: [0.43, 0.13, 0.23, 0.96],
         },
       },
     };
@@ -108,7 +104,8 @@ const hideVariants = (width: number) => {
         y: 0,
         opacity: 1,
         transition: {
-          ease: 'easeInOut',
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.5,
         },
       },
       hide: {
@@ -116,7 +113,7 @@ const hideVariants = (width: number) => {
         y: -500,
         opacity: 0,
         transition: {
-          ease: 'easeInOut',
+          ease: [0.43, 0.13, 0.23, 0.96],
         },
       },
     };

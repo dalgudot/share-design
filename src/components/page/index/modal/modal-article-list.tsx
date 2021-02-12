@@ -6,7 +6,7 @@ import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
 import Items from './items';
 import { mediaBreakPoint } from '../../../../styles/common';
-import Profile from '../../profile';
+import Profile from '../../../../elements/profile';
 
 const ModalArticleList = ({
   showModal,
@@ -37,7 +37,10 @@ const ModalArticleList = ({
       showModal[0] === false &&
       showModal[1] === true
     ) {
-      return { title: tArticle.koodonDesignStory.title, close: tArticle.close };
+      return {
+        title: tArticle.eCommerceDesignGuide.title,
+        close: tArticle.close,
+      };
     }
   };
   const tArticleObject: any = tArticleFunction();

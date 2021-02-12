@@ -39,15 +39,15 @@ export const tArticle = {
     ],
   },
 
-  koodonDesignStory: {
+  eCommerceDesignGuide: {
     title: [
       {
-        k: '쿠돈',
-        e: 'KOODON',
+        k: '이커머스 디자인',
+        e: 'E-commerce Design',
       },
       {
-        k: '디자인 이야기 🙌',
-        e: 'Design Story 🙌',
+        k: `가이드 🚀`,
+        e: `Guide 🚀`,
       },
     ],
 

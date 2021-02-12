@@ -25,17 +25,15 @@ const CategoryCard = ({
 
   return (
     <MotionLi //
-      variants={smoothUp}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      whileHover="whileHover"
-      whileTap="whileTap"
+      variants={smoothUp} // stagger animation은 부모에서 같은 이름의 initial, animate, exit 적용
       backgroundGradient={background}
     >
-      {/* <Link href="/"> */}
-      <Link href="/list/[index]" as={`/list/${url}`}>
-        <a>
+      <Link href={`/list/${url}`}>
+        <motion.a
+          variants={smoothUp}
+          whileHover="whileHover"
+          whileTap="whileTap"
+        >
           <MotionTitleSection>{categoryTitle}</MotionTitleSection>
           <MotionListViewSection>
             <PMedium400 //
@@ -47,7 +45,7 @@ const CategoryCard = ({
               color={themeContext.gray1}
             />
           </MotionListViewSection>
-        </a>
+        </motion.a>
       </Link>
     </MotionLi>
   );
@@ -56,26 +54,28 @@ const CategoryCard = ({
 export default CategoryCard;
 
 const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
-  cursor: pointer;
-  width: 100%;
-  max-width: 480px;
-  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
-  background-image: linear-gradient(
-    ${({ backgroundGradient }) => backgroundGradient}
-  );
-  z-index: 1;
-  overflow-y: auto;
+  a {
+    cursor: pointer;
+    width: 100%;
+    max-width: 480px;
+    border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+    background-image: linear-gradient(
+      ${({ backgroundGradient }) => backgroundGradient}
+    );
+    z-index: 1;
+    overflow-y: auto;
 
-  margin: 24px auto 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  // 바뀌는 속성
-  padding: 32px 24px;
+    // 바뀌는 속성
+    padding: 32px 24px;
 
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: 24px;
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      padding: 24px;
+    }
   }
 `;
 

@@ -1,25 +1,13 @@
-import Link from 'next/link';
 import Router from 'next/router';
 import { useContext } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styled, { ThemeContext } from 'styled-components';
-import PSmall400 from '../../elements/typography/p-small-400';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import { tArticle } from './article/text/t-article';
-import { t } from './index/text/t';
+import PSmall400 from './typography/p-small-400';
+import { useSetLanguage } from '../lib/hooks/useSetLanguage';
+import { t } from '../components/page/index/text/t';
 
 const Profile = () => {
   const themeContext = useContext(ThemeContext);
-  const dispatch = useDispatch();
-
-  const modalActive = useSelector((state: any) => state.modalActive);
-  const MODAL_ACTIVE_CHANGE = () =>
-    dispatch({
-      type: 'MODAL_ACTIVE_CHANGE',
-    });
-
   const goToContact = () => {
-    modalActive === true && MODAL_ACTIVE_CHANGE();
     Router.push('/contact');
   };
 
@@ -30,7 +18,7 @@ const Profile = () => {
         alt={useSetLanguage(t.contact.profileAlt)}
       />
       <PSmall400 text={t.myName} color={themeContext.gray1} />
-      <Dot></Dot>
+      <Dot />
       <PSmall400 text={t.myJob} color={themeContext.gray1} />
     </Author>
   );

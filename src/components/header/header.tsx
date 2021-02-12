@@ -4,31 +4,33 @@ import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Router, { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
 import LangChangeToggle from './lang-change-toggle';
 import PMedium700 from '../../elements/typography/p-medium-700';
 import { motion } from 'framer-motion';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
-  const modalActive = useSelector((state: any) => state.modalActive);
-
   const router = useRouter();
   const goHome = () => {
     router.pathname !== '/' && Router.push('/');
   };
 
-  const headerDisplay = {
-    display: router.pathname === '/list/[index]' ? 'none' : 'flex',
+  const modalActiveValidator = () => {
+    if (router.pathname === '/list/interactionDesignGuide') {
+      return true;
+    } else if (router.pathname === '/list/eCommerceDesignGuide') {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   return (
     <>
       <HeaderContainer
-        style={headerDisplay}
         variants={hideVariants}
         initial={false}
-        animate={modalActive === true ? 'hide' : 'show'}
+        animate={modalActiveValidator() === true ? 'hide' : 'show'}
       >
         <Left onClick={goHome}>
           <PMedium700 text={t.shareDesign} color={themeContext.gray1} />
@@ -36,10 +38,9 @@ const Header = () => {
         <LangChangeToggle />
       </HeaderContainer>
       <FillEmptySpace
-        style={headerDisplay}
         variants={hideVariants}
         initial={false}
-        animate={modalActive === true ? 'hide' : 'show'}
+        animate={modalActiveValidator() === true ? 'hide' : 'show'}
       />
     </>
   );
@@ -52,7 +53,8 @@ const hideVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      ease: 'easeInOut',
+      ease: [0.43, 0.13, 0.23, 0.96],
+      delay: 0.5,
     },
   },
 
@@ -60,7 +62,7 @@ const hideVariants = {
     y: -500,
     opacity: 0,
     transition: {
-      ease: 'easeInOut',
+      ease: [0.43, 0.13, 0.23, 0.96],
     },
   },
 };

@@ -4,11 +4,13 @@ import { fontWeight } from '../../elements/typography/atoms/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useRouter } from 'next/router';
 
-const Footer = ({ tabToggle }: any) => {
+const Footer = () => {
   const themeContext = useContext(ThemeContext);
+  const router = useRouter();
 
-  const footerDisplay = tabToggle === 'home' && (
+  const footerDisplay = router.pathname === '/' && (
     <FooterContainer>
       <TextStyle
         type="p"
@@ -30,9 +32,9 @@ export default Footer;
 const FooterContainer = styled.footer`
   text-align: center;
   width: 100%;
-  margin: 72px auto 48px;
+  margin: 48px auto 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 48px auto 72px;
+    margin: 36px auto 72px;
   }
 `;

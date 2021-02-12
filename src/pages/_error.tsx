@@ -7,6 +7,8 @@ import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { smoothUp } from '../elements/framer-motion/variants/variants';
+import { motion } from 'framer-motion';
 
 // NextJS Custom Error Page
 // https://nextjs.org/docs/advanced-features/custom-error-page
@@ -14,9 +16,13 @@ import { ThemeContext } from 'styled-components';
 const Error = ({ statusCode }: any) => {
   statusCode && console.log(statusCode);
   const themeContext = useContext(ThemeContext);
-
   return (
-    <Container>
+    <MotionContainer
+      variants={smoothUp}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <TextStyle
         type="h1"
         text={useSetLanguage(t.errorMessage.message)}
@@ -38,7 +44,7 @@ const Error = ({ statusCode }: any) => {
           </BtnStyle>
         </a>
       </Link>
-    </Container>
+    </MotionContainer>
   );
 };
 
@@ -49,17 +55,13 @@ Error.getInitialProps = ({ res, err }: any) => {
   return { statusCode };
 };
 
-const Container = styled.main`
-  width: 100%;
-  position: absolute;
-  top: 36%;
-  left: 50%;
-  transform: translateX(-50%);
+const MotionContainer = styled(motion.main)`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-top: 36vh;
 `;
 
 const BtnStyle = styled.button`

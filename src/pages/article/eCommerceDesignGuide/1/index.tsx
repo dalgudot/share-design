@@ -1,32 +1,23 @@
-import HeadSEO from '../../../elements/head/head';
-import { articlePortfolioOneInfo } from '../../../elements/head/article/portfolio/1';
+import HeadSEO from '../../../../elements/head/head';
+import { articlePortfolioOneInfo } from '../../../../elements/head/article/portfolio/1';
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext, useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import Share from '../../../components/page/article/share-modal';
-import Comment from '../../../components/page/article/comment';
-import { mediaBreakPoint } from '../../../styles/common';
-import { tArticle } from '../../../components/page/article/text/t-article';
-import H1Title700 from '../../../elements/typography/h1-title-700';
-import PMedium400 from '../../../elements/typography/p-medium-400';
+import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
+import Share from '../../../../components/page/article/share-modal';
+import Comment from '../../../../components/page/article/comment';
+import { mediaBreakPoint } from '../../../../styles/common';
+import { tArticle } from '../../../../components/page/article/text/t-article';
+import H1Title700 from '../../../../elements/typography/h1-title-700';
+import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { motion } from 'framer-motion';
-import Profile from '../../../components/page/profile';
-import { useDispatch, useSelector } from 'react-redux';
+import Profile from '../../../../elements/profile';
 import { useRouter } from 'next/router';
 
 const ArticlePortfolioOne = () => {
   const router = useRouter();
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
-    modalActive === true && MODAL_ACTIVE_CHANGE();
   }, []);
-
-  const modalActive = useSelector((state: any) => state.modalActive);
-  const dispatch = useDispatch();
-  const MODAL_ACTIVE_CHANGE = () =>
-    dispatch({
-      type: 'MODAL_ACTIVE_CHANGE',
-    });
 
   const themeContext: DefaultTheme = useContext(ThemeContext);
 
