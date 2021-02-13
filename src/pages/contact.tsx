@@ -1,9 +1,9 @@
-import HeadSEO from '../elements/head/head';
-import { indexInfo } from '../elements/head/index-info';
+import HeadSEO from '../elements/head-info/head-seo';
+import { indexInfo } from '../elements/head-info/index/index-info';
 import styled from 'styled-components';
 import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
-import Contact from '../components/nav-bar/tab-nav-bar/contact';
+import Contact from '../components/tab-nav-bar/contact';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 

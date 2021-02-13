@@ -1,9 +1,9 @@
-import CategoryCard from '../../page/index/category/category-card';
+import CategoryCard from '../page/index/category-card';
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../../styles/common';
+import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
-import { stagger } from '../../../elements/framer-motion/variants/variants';
-import { categoryData } from '../../../data/data';
+import { stagger } from '../../elements/framer-motion/variants';
+import { categoryData } from '../../data/data';
 
 const Home = () => {
   const data = categoryData();

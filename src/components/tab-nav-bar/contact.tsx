@@ -1,20 +1,18 @@
 import styled from 'styled-components';
-import TextStyle from '../../../elements/typography/atoms/text-style';
-import H3Title700 from '../../../elements/typography/h3-title-700';
-import { fontWeight } from '../../../elements/typography/atoms/font';
-import { mediaBreakPoint } from '../../../styles/common';
-import { useContext, useEffect } from 'react';
+import TextStyle from '../../elements/typography/atoms/text-style';
+import H3Title700 from '../../elements/typography/h3-title-700';
+import { fontWeight } from '../../elements/typography/atoms/font';
+import { mediaBreakPoint } from '../../styles/common';
+import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../../elements/toast/toastify';
-import { t } from '../../page/index/text/t';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import PSmall400 from '../../../elements/typography/p-small-400';
-import H2Title700 from '../../../elements/typography/h2-title-700';
+import { toastify } from '../../elements/toast/toastify';
+import { t } from '../../data/index/t';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import PSmall400 from '../../elements/typography/p-small-400';
+import H2Title700 from '../../elements/typography/h2-title-700';
 import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import { smoothUp } from '../../../elements/framer-motion/variants/variants';
+import { smoothUp } from '../../elements/framer-motion/variants';
 
 const Contact = () => {
   const themeContext = useContext(ThemeContext);

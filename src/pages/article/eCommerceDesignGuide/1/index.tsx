@@ -1,12 +1,12 @@
-import HeadSEO from '../../../../elements/head/head';
-import { articlePortfolioOneInfo } from '../../../../elements/head/article/portfolio/1';
+import HeadSEO from '../../../../elements/head-info/head-seo';
+import { interactionDesignGuideOneInfo } from '../../../../elements/head-info/article/interactionDesignGuide/1-info';
 import styled, { ThemeContext, DefaultTheme } from 'styled-components';
 import { useContext, useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
 import Share from '../../../../components/page/article/share-modal';
 import Comment from '../../../../components/page/article/comment';
 import { mediaBreakPoint } from '../../../../styles/common';
-import { tArticle } from '../../../../components/page/article/text/t-article';
+import { tArticle } from '../../../../data/article/t-article';
 import H1Title700 from '../../../../elements/typography/h1-title-700';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ const ArticlePortfolioOne = () => {
 
   const themeContext: DefaultTheme = useContext(ThemeContext);
 
-  const TitleTextArray = tArticle.portfolioDesignStory.article1.title;
+  const TitleTextArray = tArticle.interactionDesignGuide.title;
   const titleText = TitleTextArray.map((text, index) => (
     <H1Title700
       key={index}
@@ -31,7 +31,7 @@ const ArticlePortfolioOne = () => {
     />
   ));
 
-  const contentsTextArray = tArticle.portfolioDesignStory.article1.contentsText;
+  const contentsTextArray = tArticle.interactionDesignGuide.title;
   const contentsText = contentsTextArray.map((text, index) => (
     <PMedium400
       key={index}
@@ -43,7 +43,7 @@ const ArticlePortfolioOne = () => {
 
   return (
     <>
-      <HeadSEO info={articlePortfolioOneInfo} />
+      <HeadSEO info={interactionDesignGuideOneInfo} />
       <MotionMain
         key="article"
         variants={variants}

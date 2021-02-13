@@ -1,12 +1,12 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
-import H1Title700 from '../../../../elements/typography/h1-title-700';
-import PMedium400 from '../../../../elements/typography/p-medium-400';
-import { tArticle } from '../../article/text/t-article';
-import { mediaBreakPoint } from '../../../../styles/common';
+import H1Title700 from '../../../elements/typography/h1-title-700';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import { tArticle } from '../../../data/article/t-article';
+import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { smoothUp } from '../../../../elements/framer-motion/variants/variants';
+import { smoothUp } from '../../../elements/framer-motion/variants';
 
 const CategoryCard = ({
   url,

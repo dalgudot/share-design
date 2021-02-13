@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import TextStyle from '../elements/typography/atoms/text-style';
-import { t } from '../components/page/index/text/t';
+import { t } from '../data/index/t';
 import { fontWeight } from '../elements/typography/atoms/font';
 import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { smoothUp } from '../elements/framer-motion/variants/variants';
+import { smoothUp } from '../elements/framer-motion/variants';
 import { motion } from 'framer-motion';
 
 // NextJS Custom Error Page

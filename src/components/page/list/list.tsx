@@ -1,37 +1,46 @@
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
-import { useContext, useEffect } from 'react';
-import Items from '../../page/index/modal/items';
+import { useContext } from 'react';
+import Items from '../index/items';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
-import HeadSEO from '../../../elements/head/head';
-import { indexInfo } from '../../../elements/head/index-info';
-import Router, { useRouter } from 'next/router';
+import HeadSEO from '../../../elements/head-info/head-seo';
+import { indexInfo } from '../../../elements/head-info/index/index-info';
+import Router from 'next/router';
 import Profile from '../../../elements/profile';
-import { tArticle } from '../article/text/t-article';
-import PMedium400 from '../../../elements/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
-import { stagger } from '../../../elements/framer-motion/variants/variants';
+import { stagger } from '../../../elements/framer-motion/variants';
 import H1Title700 from '../../../elements/typography/h1-title-700';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import IconHome24 from '../../../elements/svg/icon_home_24';
 
 const List = ({
   title,
   background,
-  articleUrl,
+  articleList,
 }: {
   title: object[];
   background: string;
-  articleUrl: string[];
+  articleList: any;
 }) => {
   const themeContext = useContext(ThemeContext);
   const backgroundGradient = background;
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
-  const itemIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const categoryTitle = title.map((title: any, idx: number) => (
+  const categoryTitle = title.map((title, idx) => (
     <H1Title700 key={idx} text={title} color={themeContext.gray1} />
   ));
+  const categoryArticleItems = articleList.map(
+    (articleList: any, idx: number) => (
+      <Items
+        key={idx}
+        date={articleList.articleDate}
+        title={articleList.articleTitle}
+        summary={articleList.articleSummary}
+        url={articleList.articleUrl}
+      />
+    )
+  );
 
   return (
     <>
@@ -47,24 +56,17 @@ const List = ({
         {categoryTitle}
         {/* </div> */}
         <Profile />
-        <ListArea>
-          {itemIds.map((i) => (
-            <Items key={i} />
-          ))}
-        </ListArea>
-        <MotionCloseButton //
+        <ListArea>{categoryArticleItems}</ListArea>
+        <MotionGoToHomeButton //
           onClick={() => Router.push('/')}
           backgroundGradient={backgroundGradient}
-          variants={stagger}
-          initial="initial"
-          animate="animate"
-          exit="exit"
+          // variants={stagger}
+          // initial="initial"
+          // animate="animate"
+          // exit="exit"
         >
-          <PMedium400 //
-            text={tArticle.close}
-            color={themeContext.gray2}
-          />
-        </MotionCloseButton>
+          <IconHome24 />
+        </MotionGoToHomeButton>
         <FillBottomSpace />
         <MotionBackground
           backgroundGradient={backgroundGradient}
@@ -116,7 +118,9 @@ const ListArea = styled(motion.div)`
   margin-top: 24px;
 `;
 
-const MotionCloseButton = styled(motion.button)<{ backgroundGradient: string }>`
+const MotionGoToHomeButton = styled(motion.button)<{
+  backgroundGradient: string;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;

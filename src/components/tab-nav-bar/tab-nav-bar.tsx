@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../../styles/common';
-import IconHome24 from '../../../elements/svg/icon_home_24';
-import IconContact24 from '../../../elements/svg/icon_contact_24';
+import { mediaBreakPoint } from '../../styles/common';
+import TabHome24 from '../../elements/svg/tab_home_24';
+import TabContact24 from '../../elements/svg/tab_contact_24';
 import { motion } from 'framer-motion';
-import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 import Router, { useRouter } from 'next/router';
 
 const TabNavBar = () => {
@@ -56,10 +56,10 @@ const TabNavBar = () => {
         animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
       >
         <Tab onClick={() => setHomeTab()} ref={homeRef}>
-          <IconHome24 tab={homeTab} />
+          <TabHome24 tab={homeTab} />
         </Tab>
         <Tab onClick={() => setContactTab()} ref={contactRef}>
-          <IconContact24 tab={contactTab} />
+          <TabContact24 tab={contactTab} />
         </Tab>
       </MotionNav>
       <MotionFillEmptySpace

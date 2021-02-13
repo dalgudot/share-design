@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const IconHome24 = () => {
+const TabContact24 = ({ tab }: any) => {
   const themeContext = useContext(ThemeContext);
-  const color: string = themeContext.gray1;
+  const color: string = tab === true ? themeContext.gray1 : themeContext.gray5;
 
   return (
     <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -13,18 +13,18 @@ const IconHome24 = () => {
         strokeWidth="1"
         fill="none"
         fillRule="evenodd"
-        strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <polyline stroke={color} points="3 11 12 4 21 11"></polyline>
+        <polygon stroke={color} points="3 7 21 7 21 19 3 19"></polygon>
         <path
-          d="M6,11 C6,11 6,20 6,20 C6,20 10,20 18,20 L18,11"
+          d="M3,7 C9,11.6666667 12,14 12,14 C12,14 15,11.6666667 21,7"
           stroke={color}
+          strokeLinecap="round"
         ></path>
       </g>
     </SVG>
   );
 };
-export default IconHome24;
+export default TabContact24;
 
 const SVG = styled.svg``;

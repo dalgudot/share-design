@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { t } from '../page/index/text/t';
+import { t } from '../../data/index/t';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';

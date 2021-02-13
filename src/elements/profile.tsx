@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import PSmall400 from './typography/p-small-400';
 import { useSetLanguage } from '../lib/hooks/useSetLanguage';
-import { t } from '../components/page/index/text/t';
+import { t } from '../data/index/t';
 
 const Profile = () => {
   const themeContext = useContext(ThemeContext);
@@ -12,21 +12,26 @@ const Profile = () => {
   };
 
   return (
-    <Author onClick={goToContact}>
-      <img
-        src="/images/profile.jpg"
-        alt={useSetLanguage(t.contact.profileAlt)}
-      />
-      <PSmall400 text={t.myName} color={themeContext.gray1} />
-      <Dot />
-      <PSmall400 text={t.myJob} color={themeContext.gray1} />
-    </Author>
+    // 버튼 inline-block으로 만들기 위해 wrap 필요
+    <AuthorWrap>
+      <Author onClick={goToContact}>
+        <img
+          src="/images/profile.jpg"
+          alt={useSetLanguage(t.contact.profileAlt)}
+        />
+        <PSmall400 text={t.myName} color={themeContext.gray1} />
+        <Dot />
+        <PSmall400 text={t.myJob} color={themeContext.gray1} />
+      </Author>
+    </AuthorWrap>
   );
 };
 
 export default Profile;
 
-const Author = styled.a`
+const AuthorWrap = styled.span``;
+
+const Author = styled.button`
   margin-top: 16px;
   display: flex;
   align-items: center;

@@ -31,17 +31,6 @@ export const t = {
     e: 'dalgudot@gmail.com',
   },
 
-  subNavBar: {
-    welcome: {
-      k: '소개',
-      e: 'Welcome',
-    },
-    contact: {
-      k: '연락처',
-      e: 'Contact',
-    },
-  },
-
   contact: {
     profileAlt: {
       k: 'UI/UX 디자이너 김경환의 프로필 사진',

@@ -19,7 +19,6 @@ export const smoothUp = {
 
   exit: {
     y: 4,
-    scale: 0.99,
     opacity: 0,
     transition: {
       duration: 0.4,
