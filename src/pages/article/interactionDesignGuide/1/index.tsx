@@ -12,122 +12,98 @@ import PMedium400 from '../../../../elements/typography/p-medium-400';
 import { motion } from 'framer-motion';
 import Profile from '../../../../elements/profile';
 import { useRouter } from 'next/router';
+import {
+  fadeInOut,
+  smoothUp,
+  stagger,
+} from '../../../../elements/framer-motion/variants';
+import { useWindowWidth } from '../../../../lib/hooks/useWindowWidth';
+import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
+import H6Title700 from '../../../../elements/typography/h6-title-700';
 
-const ArticlePortfolioOne = () => {
+const InteractionDesignGuideOne = () => {
   const router = useRouter();
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
 
   const themeContext: DefaultTheme = useContext(ThemeContext);
+  const width: number = useWindowWidth();
+  const height: number = useWindowHeight();
 
-  const TitleTextArray = tArticle.interactionDesignGuide.title;
-  const titleText = TitleTextArray.map((text, index) => (
-    <H1Title700
-      key={index}
-      text={text}
-      color={themeContext.gray1}
-      marginTop="4px"
-    />
-  ));
-
+  const categoryTitle = tArticle.interactionDesignGuide.smallTitle;
+  const title = tArticle.interactionDesignGuide.articleList[0].articleTitle;
   const contentsTextArray = tArticle.interactionDesignGuide.title;
-  const contentsText = contentsTextArray.map((text, index) => (
-    <PMedium400
-      key={index}
-      text={text}
-      color={themeContext.gray3}
-      marginTop="36px"
-    />
-  ));
-
   return (
     <>
       <HeadSEO info={interactionDesignGuideOneInfo} />
-      <MotionMain
-        key="article"
-        variants={variants}
-        initial={false}
-        animate="show"
+      <MotionArticle
+        variants={stagger}
+        initial="initial"
+        animate="animate"
         exit="exit"
       >
-        <Profile />
-      </MotionMain>
+        <MotionBackground width={width} height={height} variants={fadeInOut} />
+
+        <MotionTitleDiv variants={fadeInOut}>
+          <H6Title700 text={categoryTitle} color={themeContext.gray4} />
+          <H1Title700 text={title} color={themeContext.gray1} marginTop="8px" />
+          <Profile marginTop="24px" />
+        </MotionTitleDiv>
+
+        <MotionContentsDiv variants={smoothUp}>
+          {contentsTextArray.map((text, index) => (
+            <PMedium400
+              key={index}
+              text={text}
+              color={themeContext.gray3}
+              marginTop="24px"
+            />
+          ))}
+        </MotionContentsDiv>
+      </MotionArticle>
     </>
   );
 };
 
-export default ArticlePortfolioOne;
+export default InteractionDesignGuideOne;
 
-const MotionMain = styled(motion.main)`
-  width: 100%;
+type MotionBackgroundType = {
+  height: number;
+  width: number;
+};
+
+const MotionArticle = styled(motion.article)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: ${({ theme }) => theme.maxWidth.maxWidth};
-  margin: 140px auto;
+
+  // 바뀌는 속성
+  margin: 108px auto 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
+    margin: 79px auto 72px;
   }
 `;
 
-const variants = {
-  show: {
-    y: 0,
-    opacity: 1,
-    display: 'flex',
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  hide: {
-    y: 50,
-    opacity: 0,
-    display: 'none',
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-  exit: {
-    scale: 0.5,
-    opacity: 0,
-    transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
-  },
-};
-
-const AuthorData = styled.section`
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 28px;
-    height: 28px;
-    border: solid 2px ${({ theme }) => theme.gray7};
-    border-radius: 50%;
-    margin-right: 6px;
-  }
-
-  span {
-    height: 2px;
-    width: 2px;
-    background-color: ${({ theme }) => theme.gray4};
-    border-radius: 50%;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-top: 3px;
-  }
-`;
-
-const ContentsContainer = styled.section`
-  padding-top: 12px; // 12px + {contentsText}의 36px = 48px
-  padding-bottom: 85px; // 하단 fixed 공유하기 탭 바 고려
-`;
-
-const BackgroundColor = styled.div`
-  position: absolute;
+const MotionBackground = styled(motion.div)<MotionBackgroundType>`
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: ${({ width }) => width}px;
+  min-height: ${({ height }) => height}px;
   background-color: ${({ theme }) => theme.gray7};
   z-index: -1;
+`;
+
+const MotionTitleDiv = styled(motion.div)``;
+
+const MotionContentsDiv = styled(motion.div)`
+  margin-top: 36px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 24px;
+  }
 `;

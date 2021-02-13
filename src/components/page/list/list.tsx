@@ -26,26 +26,11 @@ const List = ({
 }: {
   title: object[];
   backgroundGradient: string;
-  articleList: any;
+  articleList: object[];
 }) => {
   const themeContext = useContext(ThemeContext);
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
-
-  const categoryTitle = title.map((title, idx) => (
-    <H1Title700 key={idx} text={title} color={themeContext.gray1} />
-  ));
-  const categoryArticleItems = articleList.map(
-    (articleList: any, idx: number) => (
-      <Items
-        key={idx}
-        date={articleList.articleDate}
-        title={articleList.articleTitle}
-        summary={articleList.articleSummary}
-        url={articleList.articleUrl}
-      />
-    )
-  );
 
   return (
     <>
@@ -65,25 +50,43 @@ const List = ({
         <FillTopSpace />
 
         <motion.div variants={fadeInOut}>
-          <CategoryTitle width={width}>{categoryTitle}</CategoryTitle>
-          <Profile />
+          <CategoryTitle width={width}>
+            {title.map((title, idx) => (
+              <H1Title700 key={idx} text={title} color={themeContext.gray1} />
+            ))}
+          </CategoryTitle>
+          <Profile marginTop="16px" />
         </motion.div>
 
-        <MotionLi variants={fadeInOut}>
+        <MotionUl variants={fadeInOut}>
           <motion.div variants={stagger}>
-            {categoryArticleItems}
-            <ComingSoonSection>
-              <MotionComingSoonLine variants={smoothUp} height={height} />
-              <motion.div variants={smoothUp}>
-                <H3Title700 //
-                  text={tArticle.comingSoon}
-                  color={themeContext.gray1}
-                  marginTop="16px"
+            {articleList.map((articleList: any, idx: number) => (
+              <Items
+                key={idx}
+                date={articleList.articleDate}
+                title={articleList.articleTitle}
+                summary={articleList.articleSummary}
+                url={articleList.articleUrl}
+              />
+            ))}
+            {articleList.length < 7 && ( // 리스트 7개가 될 때까지 coming soon 표시
+              <ComingSoonSection>
+                <MotionComingSoonLine
+                  variants={smoothUp}
+                  backgroundGradient={backgroundGradient}
+                  height={height}
                 />
-              </motion.div>
-            </ComingSoonSection>
+                <motion.div variants={smoothUp}>
+                  <H3Title700 //
+                    text={tArticle.comingSoon}
+                    color={themeContext.gray1}
+                    marginTop="16px"
+                  />
+                </motion.div>
+              </ComingSoonSection>
+            )}
           </motion.div>
-        </MotionLi>
+        </MotionUl>
 
         <MotionCloseButton //
           onClick={() => Router.push('/')}
@@ -134,7 +137,7 @@ const MotionBackground = styled(motion.div)<MotionBackgroundType>`
   z-index: -1;
 `;
 
-const MotionLi = styled(motion.li)`
+const MotionUl = styled(motion.ul)`
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   background-color: rgba(230, 230, 245, 0.08);
   border: 1px solid rgba(230, 230, 245, 0.2);
@@ -153,7 +156,7 @@ const ComingSoonSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 36px 0 12px;
+  margin: 48px 0 12px;
   text-align: center;
 
   h3 {
@@ -162,7 +165,10 @@ const ComingSoonSection = styled.section`
 `;
 
 // 배열 길이에 따라 길이가 달라지는 선분
-const MotionComingSoonLine = styled(motion.span)<{ height: number }>`
+const MotionComingSoonLine = styled(motion.span)<{
+  backgroundGradient: string;
+  height: number;
+}>`
   width: 1px;
   height: ${({ height }) => height * 0.45}px;
   background-color: rgba(230, 230, 245, 0.2);

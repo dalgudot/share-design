@@ -123,19 +123,17 @@ const hideVariants = (width: number) => {
 };
 
 const MotionNav = styled(motion.nav)`
-  // 공통 속성
   display: flex;
   z-index: 10001;
   position: fixed;
-  // 공통 속성
 
+  // 바뀌는 속성
   justify-content: space-between;
   width: 124px;
   height: 44px;
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  /* align-items: center; */
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     justify-content: space-evenly;
@@ -154,12 +152,11 @@ const MotionNav = styled(motion.nav)`
 `;
 
 const Tab = styled.button`
-  // 공통 속성
   display: flex;
   justify-content: center;
   align-items: center;
-  // 공통 속성
 
+  // 바뀌는 속성
   margin-bottom: 24px;
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   width: 44px;

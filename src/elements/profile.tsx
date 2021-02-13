@@ -4,8 +4,9 @@ import styled, { ThemeContext } from 'styled-components';
 import PSmall400 from './typography/p-small-400';
 import { useSetLanguage } from '../lib/hooks/useSetLanguage';
 import { t } from '../data/index/t';
+import { mediaBreakPoint } from '../styles/common';
 
-const Profile = () => {
+const Profile = ({ marginTop }: { marginTop: string }) => {
   const themeContext = useContext(ThemeContext);
   const goToContact = () => {
     Router.push('/contact');
@@ -14,7 +15,7 @@ const Profile = () => {
   return (
     // 버튼 inline-block으로 만들기 위해 wrap 필요
     <AuthorWrap>
-      <Author onClick={goToContact}>
+      <Author onClick={goToContact} marginTop={marginTop}>
         <img
           src="/images/profile.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
@@ -31,17 +32,25 @@ export default Profile;
 
 const AuthorWrap = styled.span``;
 
-const Author = styled.button`
-  margin-top: 16px;
+const Author = styled.button<{ marginTop: string }>`
   display: flex;
   align-items: center;
+  margin-top: ${({ marginTop }) => marginTop};
 
   img {
-    width: 28px;
-    height: 28px;
     border: solid 2px ${({ theme }) => theme.gray1};
     border-radius: 50%;
-    margin-right: 6px;
+
+    // 바뀌는 속성
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      width: 28px;
+      height: 28px;
+      margin-right: 6px;
+    }
   }
 
   p {

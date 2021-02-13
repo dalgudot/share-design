@@ -5,6 +5,7 @@ import styled, { ThemeContext } from 'styled-components';
 import H3Title700 from '../../../elements/typography/h3-title-700';
 import PSmall400 from '../../../elements/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
+import { listUp, smoothUp } from '../../../elements/framer-motion/variants';
 
 const Items = ({
   date,
@@ -20,33 +21,29 @@ const Items = ({
   const themeContext = useContext(ThemeContext);
 
   return (
-    <MotionDiv
-      variants={variants}
-      // whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.97 }}
-    >
+    <MotionLi variants={listUp}>
       <Link href={url}>
         <a>
           <PSmall400 text={date} color={themeContext.gray3} />
           <H3Title700 //
             text={title}
             color={themeContext.gray1}
-            marginTop="2px"
+            marginTop="3px"
           />
           <PSmall400
             text={summary}
             color={themeContext.gray1}
-            marginTop="12px"
+            marginTop="16px"
           />
         </a>
       </Link>
-    </MotionDiv>
+    </MotionLi>
   );
 };
 
 export default Items;
 
-const MotionDiv = styled(motion.div)`
+const MotionLi = styled(motion.li)`
   border-bottom: solid 1px rgba(230, 230, 245, 0.2);
 
   // 바뀌는 속성
@@ -56,27 +53,3 @@ const MotionDiv = styled(motion.div)`
     padding: 36px 0;
   }
 `;
-
-// 부모와 자식 variants의 이름 통일해야 함.
-const variants = {
-  initial: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-
-  exit: {
-    opacity: 0,
-    transition: { ease: [0.43, 0.13, 0.23, 0.96] },
-  },
-};
