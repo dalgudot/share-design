@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const Items = () => {
+const Items = ({ url }: { url?: string }) => {
   return (
     <MotionLi
       variants={variants}
@@ -10,9 +10,7 @@ const Items = () => {
       whileTap={{ scale: 0.95 }}
     >
       <Link href="/article/interactionDesignGuide/1">
-        <a>
-          <div className="text-placeholder" />
-        </a>
+        <a />
       </Link>
     </MotionLi>
   );
@@ -50,9 +48,9 @@ const MotionLi = styled(motion.li)`
   justify-content: center;
   margin: 24px auto 0;
 
-  .text-placeholder {
+  a {
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
     height: 30px;
     border: 1px solid white;
   }

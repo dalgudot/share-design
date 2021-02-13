@@ -1,4 +1,3 @@
-import { tArticle } from '../../components/page/article/text/t-article';
 import List from '../../components/page/list/list';
 import { categoryData } from '../../data/data';
 

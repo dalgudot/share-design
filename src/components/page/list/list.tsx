@@ -1,6 +1,6 @@
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Items from '../../page/index/modal/items';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import HeadSEO from '../../../elements/head/head';
@@ -12,18 +12,20 @@ import PMedium400 from '../../../elements/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import { stagger } from '../../../elements/framer-motion/variants/variants';
 import H1Title700 from '../../../elements/typography/h1-title-700';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 
 const List = ({
   title,
   background,
-  article1Url,
+  articleUrl,
 }: {
   title: object[];
   background: string;
-  article1Url: string;
+  articleUrl: string[];
 }) => {
   const themeContext = useContext(ThemeContext);
   const backgroundGradient = background;
+  const width: number = useWindowWidth();
   const height: number = useWindowHeight();
   const itemIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -34,16 +36,16 @@ const List = ({
   return (
     <>
       <HeadSEO info={indexInfo} />
-      <MotionBackground
+      <MotionMain
         variants={stagger}
         initial="initial"
         animate="animate"
         exit="exit"
-        backgroundGradient={backgroundGradient}
-        height={height}
       >
         <FillTopSpace />
+        {/* <div style={{ display: 'flex' }}> */}
         {categoryTitle}
+        {/* </div> */}
         <Profile />
         <ListArea>
           {itemIds.map((i) => (
@@ -64,7 +66,12 @@ const List = ({
           />
         </MotionCloseButton>
         <FillBottomSpace />
-      </MotionBackground>
+        <MotionBackground
+          backgroundGradient={backgroundGradient}
+          width={width}
+          height={height}
+        />
+      </MotionMain>
     </>
   );
 };
@@ -74,34 +81,31 @@ export default List;
 type MotionBackgroundType = {
   backgroundGradient: string;
   height: number;
+  width: number;
 };
 
-const MotionBackground = styled(motion.main)<MotionBackgroundType>`
-  min-width: 100vw;
-  min-height: ${({ height }) => height}px;
-  background: linear-gradient(
-    ${({ backgroundGradient }) => backgroundGradient}
-  );
-  /* padding-top: 24px; */
+const MotionMain = styled(motion.main)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* position: absolute;
-  left: 50%;
-  transform: translateX(-50%); */
-  /* max-width: ${({ theme }) => theme.maxWidth.maxWidth}; */
+  margin: 0 auto;
+  max-width: ${({ theme }) => theme.maxWidth.maxWidth};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
   }
+`;
 
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: 0 12vw;
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: 0 16.6667%;
-  }
+const MotionBackground = styled(motion.div)<MotionBackgroundType>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: ${({ width }) => width}px;
+  min-height: ${({ height }) => height}px;
+  background: linear-gradient(
+    ${({ backgroundGradient }) => backgroundGradient}
+  );
+  z-index: -1;
 `;
 
 const ListArea = styled(motion.div)`
@@ -110,7 +114,6 @@ const ListArea = styled(motion.div)`
   border: 1px solid rgba(230, 230, 245, 0.2);
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
   margin-top: 24px;
-  /* max-width: ${({ theme }) => theme.maxWidth.maxWidth}; */
 `;
 
 const MotionCloseButton = styled(motion.button)<{ backgroundGradient: string }>`
@@ -142,10 +145,10 @@ const MotionCloseButton = styled(motion.button)<{ backgroundGradient: string }>`
 `;
 
 const FillTopSpace = styled.div`
-  height: 24px;
+  height: 36px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 36px;
+    height: 24px;
   }
 `;
 

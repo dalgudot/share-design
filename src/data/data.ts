@@ -13,7 +13,7 @@ export const categoryData = () => {
       //   article1Date:
       //   article1Title:
       //   article1Summary:
-      article1Url: '/article/interactionDesignGuide/1',
+      articleUrl: ['/article/interactionDesignGuide/1'],
     },
     {
       // 이커머스 디자인 가이드
@@ -23,7 +23,7 @@ export const categoryData = () => {
       //   article1Date:
       //   article1Title:
       //   article1Summary:
-      article1Url: '/article/eCommerceDesignGuide/1',
+      articleUrl: ['/article/eCommerceDesignGuide/1'],
     },
   ];
 };

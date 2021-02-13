@@ -82,8 +82,9 @@ const hideVariants = (width: number) => {
         y: 0,
         opacity: 1,
         transition: {
-          ease: [0.43, 0.13, 0.23, 0.96],
-          delay: 0.5,
+          ease: 'easeInOut',
+          duration: 0.6,
+          delay: 0.6,
         },
       },
 
@@ -92,7 +93,7 @@ const hideVariants = (width: number) => {
         y: 500,
         opacity: 0,
         transition: {
-          ease: [0.43, 0.13, 0.23, 0.96],
+          ease: 'easeInOut',
         },
       },
     };
@@ -104,8 +105,9 @@ const hideVariants = (width: number) => {
         y: 0,
         opacity: 1,
         transition: {
-          ease: [0.43, 0.13, 0.23, 0.96],
-          delay: 0.5,
+          ease: 'easeInOut',
+          duration: 0.6,
+          delay: 0.6,
         },
       },
       hide: {
@@ -113,7 +115,7 @@ const hideVariants = (width: number) => {
         y: -500,
         opacity: 0,
         transition: {
-          ease: [0.43, 0.13, 0.23, 0.96],
+          ease: 'easeInOut',
         },
       },
     };

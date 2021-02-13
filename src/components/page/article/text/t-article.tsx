@@ -29,8 +29,8 @@ export const tArticle = {
   interactionDesignGuide: {
     title: [
       {
-        k: '인터랙션 디자인',
-        e: 'Interaction Design',
+        k: '인터랙션 디자인\u00A0',
+        e: 'Interaction Design\u00A0',
       },
       {
         k: '가이드 ⚡️',
@@ -42,8 +42,8 @@ export const tArticle = {
   eCommerceDesignGuide: {
     title: [
       {
-        k: '이커머스 디자인',
-        e: 'E-commerce Design',
+        k: '이커머스 디자인\u00A0',
+        e: 'E-commerce Design\u00A0',
       },
       {
         k: `가이드 🚀`,
