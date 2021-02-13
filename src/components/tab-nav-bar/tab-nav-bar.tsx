@@ -84,7 +84,7 @@ const hideVariants = (width: number) => {
         transition: {
           ease: 'easeInOut',
           duration: 0.6,
-          delay: 0.6,
+          delay: 0.2,
         },
       },
 
@@ -107,7 +107,7 @@ const hideVariants = (width: number) => {
         transition: {
           ease: 'easeInOut',
           duration: 0.6,
-          delay: 0.6,
+          delay: 0.2,
         },
       },
       hide: {

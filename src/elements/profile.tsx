@@ -43,6 +43,10 @@ const Author = styled.button`
     border-radius: 50%;
     margin-right: 6px;
   }
+
+  p {
+    padding-bottom: 1px; // 시각 보정
+  }
 `;
 
 const Dot = styled.span`
@@ -53,4 +57,6 @@ const Dot = styled.span`
   margin-left: 4px;
   margin-right: 4px;
   margin-top: 3px;
+
+  margin-bottom: 2px; // 시각 보정
 `;

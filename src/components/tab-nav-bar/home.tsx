@@ -19,12 +19,12 @@ const Home = () => {
         <CategoryCard
           url={data[0].url}
           title={data[0].title}
-          background={data[0].background}
+          backgroundGradient={data[0].backgroundGradient}
         />
         <CategoryCard
           url={data[1].url}
           title={data[1].title}
-          background={data[1].background}
+          backgroundGradient={data[1].backgroundGradient}
         />
       </MotionUl>
     </>

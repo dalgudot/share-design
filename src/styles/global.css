@@ -9,8 +9,10 @@ html {
   -ms-user-select: none;
   user-select: none;
   /* 판독성 최적화 */
+  word-break: keep-all;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

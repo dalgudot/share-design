@@ -11,7 +11,7 @@ const eCommerceDesignGuideList = () => {
     <>
       <List
         title={data[1].title}
-        background={data[1].background}
+        backgroundGradient={data[1].backgroundGradient}
         articleList={data[1].articleList}
       />
     </>

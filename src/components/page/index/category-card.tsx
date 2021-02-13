@@ -11,11 +11,11 @@ import { smoothUp } from '../../../elements/framer-motion/variants';
 const CategoryCard = ({
   url,
   title,
-  background,
+  backgroundGradient,
 }: {
   url: string;
   title: object[];
-  background: string;
+  backgroundGradient: string;
 }) => {
   const themeContext = useContext(ThemeContext);
 
@@ -26,14 +26,10 @@ const CategoryCard = ({
   return (
     <MotionLi //
       variants={smoothUp} // stagger animation은 부모에서 같은 이름의 initial, animate, exit 적용
-      backgroundGradient={background}
+      backgroundGradient={backgroundGradient}
     >
       <Link href={`/list/${url}`}>
-        <motion.a
-          variants={smoothUp}
-          whileHover="whileHover"
-          whileTap="whileTap"
-        >
+        <motion.a variants={smoothUp} whileTap="whileTap">
           <MotionTitleSection>{categoryTitle}</MotionTitleSection>
           <MotionListViewSection>
             <PMedium400 //

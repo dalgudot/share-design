@@ -5,7 +5,7 @@ export const fontSize: any = {
     h1Title: '32px',
     h2Title: '27px',
     h3Title: '24px',
-    medium: '17px',
+    medium: '18px',
     small: '14px',
   },
 
@@ -14,7 +14,7 @@ export const fontSize: any = {
     h2Title: '34px',
     h3Title: '27px',
     medium: '21px',
-    small: '17px',
+    small: '18px',
   },
 
   desktop: {
@@ -22,7 +22,7 @@ export const fontSize: any = {
     h2Title: '34px',
     h3Title: '27px',
     medium: '21px',
-    small: '17px',
+    small: '18px',
   },
 };
 

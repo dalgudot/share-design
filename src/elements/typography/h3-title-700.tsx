@@ -18,7 +18,8 @@ const H3Title700 = ({
       textSize="h3Title"
       weight={fontWeight[700]}
       color={color}
-      lineHeight={1.4}
+      letterSpacing="-0.8px"
+      lineHeight={1.3}
       marginTop={marginTop}
     />
   );

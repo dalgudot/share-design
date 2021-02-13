@@ -11,7 +11,7 @@ const interactionDesignGuideList = () => {
     <>
       <List
         title={data[0].title}
-        background={data[0].background}
+        backgroundGradient={data[0].backgroundGradient}
         articleList={data[0].articleList}
       />
     </>

@@ -55,7 +55,7 @@ const hideVariants = {
     transition: {
       ease: 'easeInOut',
       duration: 0.6,
-      delay: 0.6,
+      delay: 0.2,
     },
   },
 
