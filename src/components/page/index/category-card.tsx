@@ -67,16 +67,13 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   background: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
+  max-width: 480px;
+  margin: 24px auto 0;
 
   a {
     cursor: pointer;
     width: 100%;
-    max-width: 480px;
-
     z-index: 1;
-    overflow-y: auto;
-
-    margin: 24px auto 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
