@@ -107,6 +107,44 @@ const HeadSEO = ({ info }: any) => {
         crossOrigin="anonymous"
       />
       {/* E of fonts preload */}
+      {/* S of Image preload */}
+      <link
+        rel="preload"
+        href="/images/profile-photo.jpg"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/images/profile-photo@2x.jpg"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/images/profile-photo@3x.jpg"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/images/icon-contact-brunch.png"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/images/icon-contact-brunch@2x.png"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/images/icon-contact-brunch@3x.png"
+        as="image"
+        crossOrigin="anonymous"
+      />
+      {/* E of Image preload */}
     </Head>
   );
 };
