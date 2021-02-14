@@ -42,13 +42,14 @@ const Contact = () => {
   const contentsArray = aboutData.career.contentsArray;
 
   return (
-    <MotionMain
-      variants={smoothUp}
-      initial="initial"
-      animate="animate"
-      // exit="exit"
+    <MotionDiv
+    // variants={smoothUp}
+    // initial="initial"
+    // animate="animate"
+    // exit="exit"
     >
       <img
+        className="profile__photo"
         src="/images/profile-photo.jpg"
         srcSet="/images/profile-photo@2x.jpg 2x,
                 /images/profile-photo@3x.jpg 3x"
@@ -56,6 +57,7 @@ const Contact = () => {
       />
       <H3Title700 text={t.myName} color={themeContext.gray1} marginTop="8px" />
       <PSmall400 text={t.myJob} color={themeContext.gray3} />
+
       <EmailDiv>
         <H2Title700 text={t.myEmail} color={themeContext.gray1} />
         <EmailButtonDiv>
@@ -81,7 +83,7 @@ const Contact = () => {
         </EmailButtonDiv>
       </EmailDiv>
 
-      <CareerDiv>
+      <AboutDiv>
         {/* 인생 목표 */}
         <PMedium400
           text={aboutData.lifeGoal.title}
@@ -99,7 +101,7 @@ const Contact = () => {
         <PMedium400
           text={aboutData.career.title}
           color={themeContext.gray4}
-          marginTop="48px"
+          marginTop="72px"
         />
         <PMedium700
           text={aboutData.career.contentsArray[0].term}
@@ -133,7 +135,7 @@ const Contact = () => {
         <PMedium400
           text={aboutData.personalProject.title}
           color={themeContext.gray4}
-          marginTop="48px"
+          marginTop="72px"
         />
         <PMedium700
           text={aboutData.personalProject.contentsArray[0].term}
@@ -158,7 +160,7 @@ const Contact = () => {
         <PMedium400
           text={aboutData.lecture.title}
           color={themeContext.gray4}
-          marginTop="48px"
+          marginTop="72px"
         />
         <PMedium700
           text={aboutData.lecture.contentsArray[0].term}
@@ -169,7 +171,7 @@ const Contact = () => {
           text={aboutData.lecture.contentsArray[0].contents}
           color={themeContext.gray1}
         />
-      </CareerDiv>
+      </AboutDiv>
 
       <SocialDiv>
         <SocialLinkA href="https://brunch.co.kr/@dalgudot" target="_blank">
@@ -190,27 +192,18 @@ const Contact = () => {
           <IconContactLinkedIn24 />
         </SocialLinkA>
       </SocialDiv>
-    </MotionMain>
+    </MotionDiv>
   );
 };
 
 export default Contact;
 
-const MotionMain = styled(motion.main)`
+const MotionDiv = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  // 변경 요소
-  margin-top: 176px;
-  margin-bottom: 48px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 100px;
-    margin-bottom: 90px;
-  }
-
-  img {
+  .profile__photo {
     width: 96px;
     height: 96px;
     border: solid 2px ${({ theme }) => theme.gray7};
@@ -230,9 +223,6 @@ const EmailDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 36px;
-  /* border-top: solid 1px ${({ theme }) => theme.gray7};
-  border-bottom: solid 1px ${({ theme }) => theme.gray7}; */
-  /* background-color: ${({ theme }) => theme.gray7}; */
   background-color: rgba(28, 28, 30, 0.4);
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
 
@@ -281,7 +271,7 @@ const SendButton = styled(Button)`
   margin-left: 9px;
 `;
 
-const CareerDiv = styled.div`
+const AboutDiv = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth.maxWidth};
   background-color: rgba(28, 28, 30, 0.4);

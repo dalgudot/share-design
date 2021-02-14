@@ -6,11 +6,13 @@ import { mediaBreakPoint } from '../styles/common';
 import Home from '../components/tab-nav-bar/home';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 
 const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
+  bodyScrollTop();
 
   return (
     <>
@@ -26,11 +28,13 @@ const Index = () => {
 export default Index;
 
 const Main = styled.main`
+  margin-top: 108px;
   margin-bottom: 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: 0 4.5vw;
+    margin-top: 79px;
     margin-bottom: 90px;
+    padding: 0 4.5vw;
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {

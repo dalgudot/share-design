@@ -16,9 +16,9 @@ export const darkTheme: DefaultTheme = {
   gray3: '#BFBFC7',
   gray4: '#97979E',
   gray5: '#68686C', // 비활성화
-  gray6: '#3D3D3F',
+  gray6: 'rgba(61, 61, 63)', // '#3D3D3F'
   gray7: '#1C1C1E',
-  gray8: '#121212',
+  gray8: 'rgba(18, 18, 18)', //'#121212'
   // Gradient
   gradientPurple: '354deg, #4633d7, #7c62ed',
   gradientBurgundy: '170deg, #743657, #40192c',

@@ -17,20 +17,22 @@ const Header = () => {
 
   const modalActiveValidator = () => {
     if (router.pathname === '/list/interactionDesignGuide') {
-      return true;
-    } else if (router.pathname === '/list/eCommerceDesignGuide') {
-      return true;
-    } else {
       return false;
+    } else if (router.pathname === '/list/eCommerceDesignGuide') {
+      return false;
+    } else {
+      return true;
     }
   };
+  const isShow = modalActiveValidator();
 
   return (
     <>
       <HeaderContainer
-        variants={hideVariants}
-        initial={false}
-        animate={modalActiveValidator() === true ? 'hide' : 'show'}
+        isShow={isShow}
+        // variants={hideVariants}
+        // initial={false}
+        // animate={modalActiveValidator() === true ? 'hide' : 'show'}
       >
         <Left onClick={goHome}>
           <H5Title700 text={t.shareDesign} color={themeContext.gray1} />
@@ -38,9 +40,10 @@ const Header = () => {
         <LangChangeToggle />
       </HeaderContainer>
       <FillEmptySpace
-        variants={hideVariants}
-        initial={false}
-        animate={modalActiveValidator() === true ? 'hide' : 'show'}
+        isShow={isShow}
+        // variants={hideVariants}
+        // initial={false}
+        // animate={modalActiveValidator() === true ? 'hide' : 'show'}
       />
     </>
   );
@@ -48,33 +51,13 @@ const Header = () => {
 
 export default Header;
 
-const hideVariants = {
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.3,
-      delay: 0.1,
-    },
-  },
-
-  hide: {
-    y: -500,
-    opacity: 0,
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-};
-
-const HeaderContainer = styled(motion.header)`
+const HeaderContainer = styled(motion.header)<isShowtype>`
+  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 72px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
@@ -95,10 +78,15 @@ const HeaderContainer = styled(motion.header)`
   }
 `;
 
+type isShowtype = {
+  isShow: boolean;
+};
+
 const Left = styled.button``;
 
 // 아이폰 상단에 나타나는 빈 공간 채워주는 div
-const FillEmptySpace = styled(motion.div)`
+const FillEmptySpace = styled(motion.div)<isShowtype>`
+  display: ${({ isShow }) => (isShow ? 'block' : 'none')};
   position: fixed;
   z-index: 9999;
   top: -8px;
@@ -111,3 +99,23 @@ const FillEmptySpace = styled(motion.div)`
     height: 65px; // 57 + 8px
   }
 `;
+
+const hideVariants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.3,
+      delay: 0.1,
+    },
+  },
+
+  hide: {
+    y: -500,
+    opacity: 0,
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+};

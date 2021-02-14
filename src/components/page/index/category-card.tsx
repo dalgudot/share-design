@@ -6,7 +6,11 @@ import { tArticle } from '../../../data/article/t-article';
 import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { smoothUp } from '../../../elements/framer-motion/variants';
+import {
+  colorVariants,
+  smoothUp,
+} from '../../../elements/framer-motion/variants';
+import React from 'react';
 
 const CategoryCard = ({
   url,
@@ -25,11 +29,20 @@ const CategoryCard = ({
 
   return (
     <MotionLi //
-      variants={smoothUp} // stagger animation은 부모에서 같은 이름의 initial, animate, exit 적용
+      // variants={smoothUp}
+      // variants={colorVariants(backgroundGradient)}
+      // initial="initial"
+      // animate="animate"
       backgroundGradient={backgroundGradient}
     >
       <Link href={`/list/${url}`}>
-        <motion.a variants={smoothUp} whileTap="whileTap">
+        <motion.a
+        // variants={smoothUp}
+        // variants={colorVariants(backgroundGradient)}
+        // initial="initial"
+        // animate="animate"
+        // whileTap="whileTap"
+        >
           <MotionTitleDiv>{categoryTitle}</MotionTitleDiv>
           <MotionListViewDiv>
             <PMedium400 //
@@ -47,17 +60,19 @@ const CategoryCard = ({
   );
 };
 
-export default CategoryCard;
+export default React.memo(CategoryCard);
 
 const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+  background: linear-gradient(
+    ${({ backgroundGradient }) => backgroundGradient}
+  );
+
   a {
     cursor: pointer;
     width: 100%;
     max-width: 480px;
-    border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
-    background-image: linear-gradient(
-      ${({ backgroundGradient }) => backgroundGradient}
-    );
+
     z-index: 1;
     overflow-y: auto;
 

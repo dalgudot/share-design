@@ -22,10 +22,10 @@ const Home = () => {
   return (
     <>
       <MotionUl
-        variants={stagger}
-        initial="initial"
-        animate="animate"
-        // exit="exit"
+      // variants={stagger}
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
       >
         <CategoryCard
           url={data[0].url}
@@ -37,36 +37,29 @@ const Home = () => {
           title={data[1].title}
           backgroundGradient={data[1].backgroundGradient}
         />
+        {/* 디자인 공유하기 프로젝트 > */}
+        <MotionLi
+          variants={fadeInOut}
+          whileHover="whileHover"
+          whileTap="whileTap"
+        >
+          <Link href="/introduction">
+            <a>
+              <PMedium400
+                text={goToIntroductionText}
+                color={themeContext.gray2}
+              />
+            </a>
+          </Link>
+        </MotionLi>
       </MotionUl>
-
-      {/* 디자인 공유하기 프로젝트 > */}
-      <MotionLi
-        variants={fadeInOut}
-        whileHover="whileHover"
-        whileTap="whileTap"
-      >
-        <Link href="/introduction">
-          <a>
-            <PMedium400
-              text={goToIntroductionText}
-              color={themeContext.gray2}
-            />
-          </a>
-        </Link>
-      </MotionLi>
     </>
   );
 };
 
 export default Home;
 
-const MotionUl = styled(motion.ul)`
-  margin-top: 108px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 79px;
-  }
-`;
+const MotionUl = styled(motion.ul)``;
 
 const MotionLi = styled(motion.li)`
   margin-top: 48px;

@@ -22,6 +22,7 @@ const TabNavBar = () => {
       return false;
     }
   };
+  const isShow = TabNavBarDisplay();
 
   const setHomeTab = () => {
     router.pathname !== '/' && Router.push('/');
@@ -50,10 +51,10 @@ const TabNavBar = () => {
   return (
     <>
       <MotionNav
-        key="TabNavBarContainer"
-        variants={hideVariants(width)}
-        initial={false}
-        animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
+        isShow={isShow}
+        // variants={hideVariants(width)}
+        // initial={false}
+        // animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
       >
         <Tab onClick={() => setHomeTab()} ref={homeRef}>
           <TabHome24 tab={homeTab} />
@@ -63,10 +64,10 @@ const TabNavBar = () => {
         </Tab>
       </MotionNav>
       <MotionFillEmptySpace
-        key="TabNavBarFillEmptySpace"
-        variants={hideVariants(width)}
-        initial={false}
-        animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
+        isShow={isShow}
+        // variants={hideVariants(width)}
+        // initial={false}
+        // animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
       />
     </>
   );
@@ -122,8 +123,8 @@ const hideVariants = (width: number) => {
   }
 };
 
-const MotionNav = styled(motion.nav)`
-  display: flex;
+const MotionNav = styled(motion.nav)<isShowtype>`
+  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
   z-index: 10001;
   position: fixed;
 
@@ -173,8 +174,9 @@ const Tab = styled.button`
 `;
 
 // 아이폰 하단에 나타나는 빈 공간 채워주는 div
-const MotionFillEmptySpace = styled(motion.div)`
+const MotionFillEmptySpace = styled(motion.div)<isShowtype>`
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    display: ${({ isShow }) => (isShow ? 'block' : 'none')};
     position: fixed;
     z-index: 9999;
     bottom: -8px;
@@ -184,3 +186,7 @@ const MotionFillEmptySpace = styled(motion.div)`
     background-color: ${({ theme }) => theme.gray8};
   }
 `;
+
+type isShowtype = {
+  isShow: boolean;
+};

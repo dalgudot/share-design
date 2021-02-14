@@ -93,21 +93,16 @@ const ToastBox = styled(ToastContainer)`
   .Toastify__toast--warning,
   .Toastify__toast--error {
     padding: 12px 16px !important;
-    border-radius: 2px;
+    border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
     margin-bottom: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
-    background-color: rgba(54, 54, 54, 0.9);
+    background-color: rgba(61, 61, 63, 0.9);
     color: ${({ theme }) => theme.gray1};
-
-    * {
-      font-size: 16px;
-      color: ${({ theme }) => theme.gray1};
-    }
   }
 
   .Toastify__toast-body {

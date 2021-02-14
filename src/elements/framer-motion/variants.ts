@@ -23,6 +23,47 @@ export const stagger = {
   },
 };
 
+export const colorVariants = (color: string) => {
+  return {
+    initial: {
+      // background: `linear-gradient(${color})`,
+    },
+
+    animate: {
+      // scale: [1, 0.9, 1],
+      // opacity: [1, 0.9, 1],
+      x: [0, -1, 1, -0.5, 0.5, 0],
+      // background: [
+      //   `linear-gradient(${color})`,
+      //   'linear-gradient(24deg, #e66465, #9198e5)',
+      //   `linear-gradient(${color})`,
+      // ],
+      transition: {
+        duration: 0.4,
+        ease: 'easeInOut',
+      },
+    },
+
+    exit: {
+      y: 4,
+      scale: 1.03,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+        smoothTransition,
+      },
+    },
+
+    whileHover: {
+      scale: 1.05,
+    },
+
+    whileTap: {
+      scale: 0.97,
+    },
+  };
+};
+
 export const smoothUp = {
   initial: {
     y: 12,

@@ -6,11 +6,13 @@ import { mediaBreakPoint } from '../styles/common';
 import Contact from '../components/tab-nav-bar/contact';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 
 const IndexContact = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
+  bodyScrollTop();
 
   return (
     <>
@@ -25,7 +27,13 @@ const IndexContact = () => {
 export default IndexContact;
 
 const Main = styled.main`
+  // 변경 속성
+  margin-top: 176px;
+  margin-bottom: 72px;
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 100px;
+    margin-bottom: 96px;
     padding: 0 4.5vw;
   }
 

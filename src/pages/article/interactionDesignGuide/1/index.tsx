@@ -38,10 +38,10 @@ const InteractionDesignGuideOne = () => {
     <>
       <HeadSEO info={interactionDesignGuideOneInfo} />
       <MotionArticle
-        variants={stagger}
-        initial="initial"
-        animate="animate"
-        // exit="exit"
+      // variants={stagger}
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
       >
         <MotionBackground width={width} height={height} variants={fadeInOut} />
 
