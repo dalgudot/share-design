@@ -7,6 +7,7 @@ import IconLanguage24 from '../../elements/svg/icon_language_24';
 import PMedium700 from '../../elements/typography/p-medium-700';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
+import { mediaBreakPoint } from '../../styles/common';
 
 const LangChangeToggle = () => {
   const themeContext = useContext(ThemeContext);
@@ -91,8 +92,8 @@ const Container = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
 
   div {
-    margin-left: 6px;
     margin-bottom: 2px;
+    margin-left: 6px;
   }
 `;
 
@@ -100,6 +101,6 @@ const Divider = styled.span`
   height: 12px;
   width: 1px;
   margin-top: 2px;
-  margin-left: 6px;
   background-color: ${({ theme }) => theme.gray6};
+  margin-left: 6px;
 `;

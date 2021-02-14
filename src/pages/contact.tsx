@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 
-const IndexContact = () => {
+const IndexContact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
@@ -18,7 +18,7 @@ const IndexContact = () => {
     <>
       <HeadSEO info={indexInfo} />
       <Main>
-        <Contact />
+        <Contact showToast={showToast} />
       </Main>
     </>
   );

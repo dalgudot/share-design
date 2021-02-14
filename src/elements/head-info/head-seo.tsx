@@ -114,7 +114,7 @@ const HeadSEO = ({ info }: any) => {
         as="image"
         type="image/jpg"
         crossOrigin="anonymous"
-      /> */}
+      />
       <link
         rel="preload"
         href="/images/profile-photo@2x.jpg"
@@ -129,13 +129,13 @@ const HeadSEO = ({ info }: any) => {
         type="image/jpg"
         crossOrigin="anonymous"
       />
-      {/* <link
+      <link
         rel="preload"
         href="/images/icon-contact-brunch.png"
         as="image"
         type="image/png"
         crossOrigin="anonymous"
-      /> */}
+      />
       <link
         rel="preload"
         href="/images/icon-contact-brunch@2x.png"
@@ -149,7 +149,7 @@ const HeadSEO = ({ info }: any) => {
         as="image"
         type="image/png"
         crossOrigin="anonymous"
-      />
+      /> */}
       {/* E of Image preload */}
     </Head>
   );

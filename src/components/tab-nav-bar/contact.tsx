@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import TextStyle from '../../elements/typography/atoms/text-style';
 import H3Title700 from '../../elements/typography/h3-title-700';
-import { fontWeight } from '../../elements/typography/atoms/font';
 import { mediaBreakPoint } from '../../styles/common';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -19,10 +17,9 @@ import IconContactLinkedIn24 from '../../elements/svg/icon_contact_linkedin_24';
 import PMedium400 from '../../elements/typography/p-medium-400';
 import PMedium700 from '../../elements/typography/p-medium-700';
 
-const Contact = () => {
+const Contact = ({ showToast }: { showToast: Function }) => {
   const themeContext = useContext(ThemeContext);
-  const toastMessage: string = useSetLanguage(t.contact.toastMessage);
-  const toastId: string = 'Copy Email';
+  const toastMessage = t.contact.toastMessage;
 
   // useRipple
   const copyItRef = useRef(null);
@@ -39,7 +36,6 @@ const Contact = () => {
   });
 
   const aboutData = t.contact.about;
-  const contentsArray = aboutData.career.contentsArray;
 
   return (
     <MotionDiv
@@ -63,7 +59,8 @@ const Contact = () => {
         <EmailButtonDiv>
           <CopyToClipboard
             text="dalgudot@gmail.com"
-            onCopy={() => toastify(toastMessage, toastId)}
+            // onCopy={() => toastify(toastMessage, toastId)}
+            onCopy={() => showToast(toastMessage)}
           >
             <CopyButton ref={copyItRef}>
               <PSmall400

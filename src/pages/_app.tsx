@@ -10,12 +10,13 @@ import { useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
-import Toast from '../elements/toastify';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import ThemeChangeButton from '../elements/button/theme-change-button';
 import Header from '../components/header/header';
 import { useRouter } from 'next/router';
 import TabNavBar from '../components/tab-nav-bar/tab-nav-bar';
+import MyToast from '../components/toast/toast';
+import React from 'react';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
@@ -29,6 +30,20 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
+  // Toast
+  const [toastOn, setToastOn] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const showToast = (toastMessage: string) => {
+    // 연속 클릭 방지
+    if (toastOn === true) return console.log('Toast still exists');
+    else if (toastOn === false) {
+      setToastOn(true);
+      setToastMessage(toastMessage);
+      setTimeout(() => setToastOn(false), 1850);
+    }
+  };
+  // Toast
+
   return (
     <>
       <Provider store={store}>
@@ -39,7 +54,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               darkTheme={darkTheme}
             /> */}
           <ThemeProvider theme={mode}>
-            <Toast />
+            <MyToast toastOn={toastOn} toastMessage={toastMessage} />
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
             <Header />
@@ -48,6 +63,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
             <Component //
               {...pageProps}
+              showToast={showToast}
               // key={router.pathname}
               // exit Animation 위해 필요한 key
             />
@@ -60,11 +76,3 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
-// <AnimatePresence onExitComplete={handleExitComplete}>
-// const handleExitComplete = () => {
-//   const bodyId = document.querySelector('body');
-//   if (typeof window !== 'undefined') {
-//     bodyId?.scrollTo({ top: 0 });
-//   }
-// };
