@@ -16,6 +16,8 @@ import { smoothUp } from '../../elements/framer-motion/variants';
 import { useRipple } from 'react-use-ripple';
 import IconContactFacebook24 from '../../elements/svg/icon_contact_facebook_24';
 import IconContactLinkedIn24 from '../../elements/svg/icon_contact_linkedin_24';
+import PMedium400 from '../../elements/typography/p-medium-400';
+import PMedium700 from '../../elements/typography/p-medium-700';
 
 const Contact = () => {
   const themeContext = useContext(ThemeContext);
@@ -36,6 +38,9 @@ const Contact = () => {
     rippleSize: 2000,
   });
 
+  const aboutData = t.contact.about;
+  const contentsArray = aboutData.career.contentsArray;
+
   return (
     <MotionMain
       variants={smoothUp}
@@ -49,39 +54,26 @@ const Contact = () => {
                 /images/profile-photo@3x.jpg 3x"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
-
       <H3Title700 text={t.myName} color={themeContext.gray1} marginTop="8px" />
       <PSmall400 text={t.myJob} color={themeContext.gray3} />
-
       <EmailDiv>
-        <H2Title700
-          text={t.myEmail}
-          color={themeContext.gray1}
-          marginTop="24px"
-        />
-
+        <H2Title700 text={t.myEmail} color={themeContext.gray1} />
         <EmailButtonDiv>
           <CopyToClipboard
             text="dalgudot@gmail.com"
             onCopy={() => toastify(toastMessage, toastId)}
           >
             <CopyButton ref={copyItRef}>
-              <TextStyle
-                type="p"
-                text={useSetLanguage(t.contact.copyButton)}
-                textSize="small"
-                weight={fontWeight[400]}
+              <PSmall400
+                text={t.contact.copyButton}
                 color={themeContext.gray1}
               />
             </CopyButton>
           </CopyToClipboard>
           <SendButton ref={sendEmailRef}>
             <a href="mailto:dalgudot@gmail.com" target="_blank">
-              <TextStyle
-                type="p"
-                text={useSetLanguage(t.contact.sendButton)}
-                textSize="small"
-                weight={fontWeight[400]}
+              <PSmall400
+                text={t.contact.sendButton}
                 color={themeContext.gray1}
               />
             </a>
@@ -89,13 +81,103 @@ const Contact = () => {
         </EmailButtonDiv>
       </EmailDiv>
 
+      <CareerDiv>
+        {/* 인생 목표 */}
+        <PMedium400
+          text={aboutData.lifeGoal.title}
+          color={themeContext.gray4}
+          marginTop="24px"
+        />
+        {/* term 없음 */}
+        <PMedium400
+          text={aboutData.lifeGoal.contents}
+          color={themeContext.gray1}
+          marginTop="8px"
+        />
+
+        {/* 경력 */}
+        <PMedium400
+          text={aboutData.career.title}
+          color={themeContext.gray4}
+          marginTop="48px"
+        />
+        <PMedium700
+          text={aboutData.career.contentsArray[0].term}
+          color={themeContext.gray2}
+          marginTop="8px"
+        />
+        <PMedium400
+          text={aboutData.career.contentsArray[0].contents}
+          color={themeContext.gray1}
+        />
+        <PMedium700
+          text={aboutData.career.contentsArray[1].term}
+          color={themeContext.gray2}
+          marginTop="24px"
+        />
+        <PMedium400
+          text={aboutData.career.contentsArray[1].contents}
+          color={themeContext.gray1}
+        />
+        <PMedium700
+          text={aboutData.career.contentsArray[2].term}
+          color={themeContext.gray2}
+          marginTop="24px"
+        />
+        <PMedium400
+          text={aboutData.career.contentsArray[2].contents}
+          color={themeContext.gray1}
+        />
+
+        {/* 개인 프로젝트 */}
+        <PMedium400
+          text={aboutData.personalProject.title}
+          color={themeContext.gray4}
+          marginTop="48px"
+        />
+        <PMedium700
+          text={aboutData.personalProject.contentsArray[0].term}
+          color={themeContext.gray2}
+          marginTop="8px"
+        />
+        <PMedium400
+          text={aboutData.personalProject.contentsArray[0].contents}
+          color={themeContext.gray1}
+        />
+        <PMedium700
+          text={aboutData.personalProject.contentsArray[1].term}
+          color={themeContext.gray2}
+          marginTop="24px"
+        />
+        <PMedium400
+          text={aboutData.personalProject.contentsArray[1].contents}
+          color={themeContext.gray1}
+        />
+
+        {/* 강연 */}
+        <PMedium400
+          text={aboutData.lecture.title}
+          color={themeContext.gray4}
+          marginTop="48px"
+        />
+        <PMedium700
+          text={aboutData.lecture.contentsArray[0].term}
+          color={themeContext.gray2}
+          marginTop="8px"
+        />
+        <PMedium400
+          text={aboutData.lecture.contentsArray[0].contents}
+          color={themeContext.gray1}
+        />
+      </CareerDiv>
+
       <SocialDiv>
         <SocialLinkA href="https://brunch.co.kr/@dalgudot" target="_blank">
           <img
             src="/images/icon-contact-brunch.png"
             srcSet="/images/icon-contact-brunch@2x.png 2x,
                 /images/icon-contact-brunch@3x.png 3x"
-            alt={useSetLanguage(t.contact.profileAlt)}
+            alt={useSetLanguage(t.contact.brunchAlt)}
           />
         </SocialLinkA>
         <SocialLinkA href="https://www.facebook.com/dalgudot" target="_blank">
@@ -142,15 +224,24 @@ const MotionMain = styled(motion.main)`
 `;
 
 const EmailDiv = styled.div`
+  width: 100%;
+  max-width: ${({ theme }) => theme.maxWidth.maxWidth};
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 36px;
-  padding-bottom: 24px;
-  border-top: solid 1px ${({ theme }) => theme.gray7};
-  border-bottom: solid 1px ${({ theme }) => theme.gray7};
-  width: 100%;
-  max-width: 640px;
+  /* border-top: solid 1px ${({ theme }) => theme.gray7};
+  border-bottom: solid 1px ${({ theme }) => theme.gray7}; */
+  /* background-color: ${({ theme }) => theme.gray7}; */
+  background-color: rgba(28, 28, 30, 0.4);
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+
+  // 바뀌는 속성
+  padding: 48px 0;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    padding: 36px 0;
+  }
 `;
 
 const EmailButtonDiv = styled.div`
@@ -190,12 +281,28 @@ const SendButton = styled(Button)`
   margin-left: 9px;
 `;
 
+const CareerDiv = styled.div`
+  width: 100%;
+  max-width: ${({ theme }) => theme.maxWidth.maxWidth};
+  background-color: rgba(28, 28, 30, 0.4);
+  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+
+  // 바뀌는 속성
+  margin-top: 24px;
+  padding: 24px 48px 48px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 16px;
+    padding: 12px 20px 24px;
+  }
+`;
+
 const SocialDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin-top: 48px;
-  max-width: 310px;
+  max-width: 320px;
   position: relative;
 
   img {

@@ -35,12 +35,7 @@ const List = ({
   return (
     <>
       <HeadSEO info={indexInfo} />
-      <MotionMain
-        variants={stagger}
-        initial="initial"
-        animate="animate"
-        // exit="exit"
-      >
+      <MotionMain variants={stagger} initial="initial" animate="animate">
         <MotionBackground
           backgroundGradient={backgroundGradient}
           width={width}

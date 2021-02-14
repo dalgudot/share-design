@@ -1,7 +1,7 @@
 import CategoryCard from '../page/index/category-card';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   fadeInOut,
   smoothUp,
