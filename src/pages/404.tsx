@@ -20,7 +20,7 @@ const Error404Page = () => {
       variants={smoothUp}
       initial="initial"
       animate="animate"
-      exit="exit"
+      // exit="exit"
     >
       <TextStyle
         type="h1"

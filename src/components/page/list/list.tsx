@@ -39,7 +39,7 @@ const List = ({
         variants={stagger}
         initial="initial"
         animate="animate"
-        exit="exit"
+        // exit="exit"
       >
         <MotionBackground
           backgroundGradient={backgroundGradient}

@@ -41,7 +41,7 @@ const InteractionDesignGuideOne = () => {
         variants={fadeInOut}
         initial="initial"
         animate="animate"
-        exit="exit"
+        // exit="exit"
       >
         <MotionBackground width={width} height={height} />
 

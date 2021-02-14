@@ -41,7 +41,7 @@ const Contact = () => {
       variants={smoothUp}
       initial="initial"
       animate="animate"
-      exit="exit"
+      // exit="exit"
     >
       <img
         src="/images/profile-photo.jpg"
@@ -118,13 +118,14 @@ const MotionMain = styled(motion.main)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  // 모바일에서 스크롤 생겼을 때 하단 여백
-  margin-bottom: 36px;
+
   // 변경 요소
   margin-top: 176px;
+  margin-bottom: 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 100px;
+    margin-bottom: 90px;
   }
 
   img {

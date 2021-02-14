@@ -25,7 +25,7 @@ const Home = () => {
         variants={stagger}
         initial="initial"
         animate="animate"
-        exit="exit"
+        // exit="exit"
       >
         <CategoryCard
           url={data[0].url}
