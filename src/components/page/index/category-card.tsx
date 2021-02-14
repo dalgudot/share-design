@@ -30,8 +30,8 @@ const CategoryCard = ({
     >
       <Link href={`/list/${url}`}>
         <motion.a variants={smoothUp} whileTap="whileTap">
-          <MotionTitleSection>{categoryTitle}</MotionTitleSection>
-          <MotionListViewSection>
+          <MotionTitleDiv>{categoryTitle}</MotionTitleDiv>
+          <MotionListViewDiv>
             <PMedium400 //
               text={tArticle.goToList}
               color={themeContext.gray1}
@@ -40,7 +40,7 @@ const CategoryCard = ({
               text={tArticle.chevronRight}
               color={themeContext.gray1}
             />
-          </MotionListViewSection>
+          </MotionListViewDiv>
         </motion.a>
       </Link>
     </MotionLi>
@@ -75,9 +75,9 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   }
 `;
 
-const MotionTitleSection = styled(motion.section)``;
+const MotionTitleDiv = styled(motion.div)``;
 
-const MotionListViewSection = styled(motion.section)`
+const MotionListViewDiv = styled(motion.div)`
   padding: 16px 3px;
   display: flex;
   justify-content: space-between;

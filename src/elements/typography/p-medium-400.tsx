@@ -18,7 +18,7 @@ const PMedium400 = ({
       textSize="medium"
       weight={fontWeight[400]}
       color={color}
-      lineHeight={1.55}
+      lineHeight={1.618}
       marginTop={marginTop}
     />
   );

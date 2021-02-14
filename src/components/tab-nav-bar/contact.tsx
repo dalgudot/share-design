@@ -14,6 +14,8 @@ import H2Title700 from '../../elements/typography/h2-title-700';
 import { motion } from 'framer-motion';
 import { smoothUp } from '../../elements/framer-motion/variants';
 import { useRipple } from 'react-use-ripple';
+import IconContactFacebook24 from '../../elements/svg/icon_contact_facebook_24';
+import IconContactLinkedIn24 from '../../elements/svg/icon_contact_linkedin_24';
 
 const Contact = () => {
   const themeContext = useContext(ThemeContext);
@@ -35,28 +37,30 @@ const Contact = () => {
   });
 
   return (
-    <MotionContainer
+    <MotionMain
       variants={smoothUp}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <img
-        src="/images/profile.jpg"
+        src="/images/profile-photo.jpg"
+        srcSet="/images/profile-photo@2x.jpg 2x,
+                /images/profile-photo@3x.jpg 3x"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
 
       <H3Title700 text={t.myName} color={themeContext.gray1} marginTop="8px" />
       <PSmall400 text={t.myJob} color={themeContext.gray3} />
 
-      <EmailContainer>
+      <EmailDiv>
         <H2Title700
           text={t.myEmail}
           color={themeContext.gray1}
           marginTop="24px"
         />
 
-        <EmailButtonContainer>
+        <EmailButtonDiv>
           <CopyToClipboard
             text="dalgudot@gmail.com"
             onCopy={() => toastify(toastMessage, toastId)}
@@ -82,45 +86,35 @@ const Contact = () => {
               />
             </a>
           </SendButton>
-        </EmailButtonContainer>
-      </EmailContainer>
+        </EmailButtonDiv>
+      </EmailDiv>
 
-      <SocialContainer>
-        {/* <a href="https://brunch.co.kr/@dalgudot" target="_blank">
-          <TextStyle
-            type="p"
-            text="Brunch"
-            textSize="small"
-            weight={fontWeight[700]}
-            color={themeContext.gray1}
+      <SocialDiv>
+        <SocialLinkA href="https://brunch.co.kr/@dalgudot" target="_blank">
+          <img
+            src="/images/icon-contact-brunch.png"
+            srcSet="/images/icon-contact-brunch@2x.png 2x,
+                /images/icon-contact-brunch@3x.png 3x"
+            alt={useSetLanguage(t.contact.profileAlt)}
           />
-        </a>
-        <a href="https://www.facebook.com/dalgudot" target="_blank">
-          <TextStyle
-            type="p"
-            text="Facebook"
-            textSize="small"
-            weight={fontWeight[700]}
-            color={themeContext.gray1}
-          />
-        </a>
-        <a href="https://www.linkedin.com/in/dalgudot" target="_blank">
-          <TextStyle
-            type="p"
-            text="LinkedIn"
-            textSize="small"
-            weight={fontWeight[700]}
-            color={themeContext.gray1}
-          /> 
-        </a> */}
-      </SocialContainer>
-    </MotionContainer>
+        </SocialLinkA>
+        <SocialLinkA href="https://www.facebook.com/dalgudot" target="_blank">
+          <IconContactFacebook24 />
+        </SocialLinkA>
+        <SocialLinkA
+          href="https://www.linkedin.com/in/dalgudot"
+          target="_blank"
+        >
+          <IconContactLinkedIn24 />
+        </SocialLinkA>
+      </SocialDiv>
+    </MotionMain>
   );
 };
 
 export default Contact;
 
-const MotionContainer = styled(motion.main)`
+const MotionMain = styled(motion.main)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +140,7 @@ const MotionContainer = styled(motion.main)`
   }
 `;
 
-const EmailContainer = styled.section`
+const EmailDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,7 +152,7 @@ const EmailContainer = styled.section`
   max-width: 640px;
 `;
 
-const EmailButtonContainer = styled.section`
+const EmailButtonDiv = styled.div`
   display: flex;
   width: 100%;
   margin-top: 24px;
@@ -195,11 +189,25 @@ const SendButton = styled(Button)`
   margin-left: 9px;
 `;
 
-const SocialContainer = styled.section`
+const SocialDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 24px;
+  margin-top: 48px;
   max-width: 310px;
   position: relative;
+
+  img {
+    all: unset;
+  }
+`;
+
+const SocialLinkA = styled.a`
+  height: 48px;
+  width: 48px;
+  background-color: ${({ theme }) => theme.gray7};
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

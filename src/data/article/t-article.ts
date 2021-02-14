@@ -95,12 +95,12 @@ export const tArticle = {
   eCommerceDesignGuide: {
     title: [
       {
-        k: '이커머스 디자인\u00A0',
-        e: 'Ecommerce Design\u00A0',
+        k: '이커머스 UI/UX\u00A0',
+        e: 'Ecommerce UI/UX\u00A0',
       },
       {
-        k: `가이드 🚀`,
-        e: `Guide 🚀`,
+        k: `디자인 가이드 🚀`,
+        e: `Design Guide 🚀`,
       },
     ],
 

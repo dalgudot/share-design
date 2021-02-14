@@ -38,16 +38,16 @@ const InteractionDesignGuideOne = () => {
     <>
       <HeadSEO info={indexInfo} />
       <MotionArticle
-        variants={stagger}
+        variants={fadeInOut}
         initial="initial"
         animate="animate"
         exit="exit"
       >
-        <MotionBackground width={width} height={height} variants={fadeInOut} />
+        <MotionBackground width={width} height={height} />
 
         <ArticleTitleArea categoryTitle={date} title={title} />
 
-        <MotionContentsDiv variants={smoothUp}>
+        <MotionContentsDiv>
           {contentsTextArray.map((text, index) => (
             <PMedium400
               key={index}

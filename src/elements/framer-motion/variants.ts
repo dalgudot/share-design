@@ -16,6 +16,7 @@ export const stagger = {
 
   exit: {
     transition: {
+      // when: 'beforeChildren',
       staggerChildren: 0.04,
       staggerDirection: -1,
     },
@@ -99,10 +100,18 @@ export const fadeInOut = {
   },
 
   exit: {
+    y: 4,
+    scale: 1.03,
     opacity: 0,
     transition: {
       duration: 0.1,
       ease: 'easeInOut',
     },
   },
+
+  whileHover: {
+    scale: 1.05,
+  },
+
+  whileTap: { scale: 0.97 },
 };

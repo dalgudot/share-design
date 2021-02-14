@@ -70,7 +70,7 @@ const List = ({
               />
             ))}
             {articleList.length < 7 && ( // 리스트 7개가 될 때까지 coming soon 표시
-              <ComingSoonSection>
+              <ComingSoonDiv>
                 <MotionComingSoonLine
                   variants={smoothUp}
                   backgroundGradient={backgroundGradient}
@@ -83,18 +83,18 @@ const List = ({
                     marginTop="16px"
                   />
                 </motion.div>
-              </ComingSoonSection>
+              </ComingSoonDiv>
             )}
           </motion.div>
         </MotionUl>
 
-        <MotionCloseButton //
+        <MotionHomeButton //
           onClick={() => Router.push('/')}
           backgroundGradient={backgroundGradient}
           variants={smoothUp}
         >
           <IconHome24 />
-        </MotionCloseButton>
+        </MotionHomeButton>
         <FillBottomSpace />
       </MotionMain>
     </>
@@ -121,7 +121,7 @@ const MotionMain = styled(motion.main)`
   }
 `;
 
-const CategoryTitle = styled(motion.section)<{ width: number }>`
+const CategoryTitle = styled(motion.div)<{ width: number }>`
   display: ${({ width }) => (width > 480 ? 'flex' : 'block')};
 `;
 
@@ -152,7 +152,7 @@ const MotionUl = styled(motion.ul)`
   }
 `;
 
-const ComingSoonSection = styled.section`
+const ComingSoonDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,14 +175,14 @@ const MotionComingSoonLine = styled(motion.span)<{
   margin-bottom: 16px;
 `;
 
-const MotionCloseButton = styled(motion.button)<{ backgroundGradient: string }>`
+const MotionHomeButton = styled(motion.button)<{ backgroundGradient: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
-  max-width: 480px;
+  max-width: 500px;
   margin: 0 auto;
   left: 0;
   right: 0; // margin: 0 auto, left: 0, right: 0 모두 해줘야 fixed 중앙정렬됨.
@@ -195,7 +195,7 @@ const MotionCloseButton = styled(motion.button)<{ backgroundGradient: string }>`
   width: 100vw;
   border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
 
-  @media all and (max-width: ${mediaBreakPoint.first}) {
+  @media all and (max-width: 500px) {
     bottom: 0;
     width: 100vw;
     border-radius: 0;

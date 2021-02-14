@@ -2,7 +2,11 @@ import CategoryCard from '../page/index/category-card';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import { motion } from 'framer-motion';
-import { smoothUp, stagger } from '../../elements/framer-motion/variants';
+import {
+  fadeInOut,
+  smoothUp,
+  stagger,
+} from '../../elements/framer-motion/variants';
 import { categoryData } from '../../data/data';
 import Link from 'next/link';
 import PMedium400 from '../../elements/typography/p-medium-400';
@@ -33,17 +37,23 @@ const Home = () => {
           title={data[1].title}
           backgroundGradient={data[1].backgroundGradient}
         />
-        <MotionLi variants={smoothUp}>
-          <Link href="/introduction">
-            <a>
-              <PMedium400
-                text={goToIntroductionText}
-                color={themeContext.gray2}
-              />
-            </a>
-          </Link>
-        </MotionLi>
       </MotionUl>
+
+      {/* 디자인 공유하기 프로젝트 > */}
+      <MotionLi
+        variants={fadeInOut}
+        whileHover="whileHover"
+        whileTap="whileTap"
+      >
+        <Link href="/introduction">
+          <a>
+            <PMedium400
+              text={goToIntroductionText}
+              color={themeContext.gray2}
+            />
+          </a>
+        </Link>
+      </MotionLi>
     </>
   );
 };
