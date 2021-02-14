@@ -5,8 +5,8 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Router, { useRouter } from 'next/router';
 import LangChangeToggle from './lang-change-toggle';
-import PMedium700 from '../../elements/typography/p-medium-700';
 import { motion } from 'framer-motion';
+import H5Title700 from '../../elements/typography/h5-title-700';
 
 const Header = () => {
   const themeContext = useContext(ThemeContext);
@@ -33,7 +33,7 @@ const Header = () => {
         animate={modalActiveValidator() === true ? 'hide' : 'show'}
       >
         <Left onClick={goHome}>
-          <PMedium700 text={t.shareDesign} color={themeContext.gray1} />
+          <H5Title700 text={t.shareDesign} color={themeContext.gray1} />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>

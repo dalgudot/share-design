@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
-import Toast from '../elements/toast/toastify';
+import Toast from '../elements/toastify';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import ThemeChangeButton from '../elements/button/theme-change-button';
 import Header from '../components/header/header';

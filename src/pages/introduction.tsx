@@ -1,24 +1,23 @@
-import HeadSEO from '../../../../elements/head-info/head-seo';
-import { interactionDesignGuideOneInfo } from '../../../../elements/head-info/article/interactionDesignGuide/1-info';
+import HeadSEO from '../elements/head-info/head-seo';
 import styled, { ThemeContext } from 'styled-components';
 import { useContext, useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
-import Share from '../../../../components/page/article/share-modal';
-import Comment from '../../../../components/page/article/comment';
-import { mediaBreakPoint } from '../../../../styles/common';
-import { tArticle } from '../../../../data/article/t-article';
-import PMedium400 from '../../../../elements/typography/p-medium-400';
+import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import Share from '../components/page/article/share-modal';
+import { mediaBreakPoint } from '../styles/common';
+import PMedium400 from '../elements/typography/p-medium-400';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import {
   fadeInOut,
   smoothUp,
   stagger,
-} from '../../../../elements/framer-motion/variants';
-import { useWindowWidth } from '../../../../lib/hooks/useWindowWidth';
-import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
-import ArticleTitleArea from '../../../../elements/article-title-area';
-import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
+} from '../elements/framer-motion/variants';
+import { useWindowWidth } from '../lib/hooks/useWindowWidth';
+import { useWindowHeight } from '../lib/hooks/useWindowHeight';
+import ArticleTitleArea from '../elements/article-title-area';
+import { indexInfo } from '../elements/head-info/index/index-info';
+import { t } from '../data/index/t';
+import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 
 const InteractionDesignGuideOne = () => {
   const router = useRouter();
@@ -31,12 +30,13 @@ const InteractionDesignGuideOne = () => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
 
-  const categoryTitle = tArticle.interactionDesignGuide.smallTitle;
-  const title = tArticle.interactionDesignGuide.articleList[0].articleTitle;
-  const contentsTextArray = tArticle.interactionDesignGuide.title;
+  // 여기만 categoryTitle을 date로 대체
+  const date = t.shareDesignProjectIntroduction.date;
+  const title = t.shareDesignProjectIntroduction.title;
+  const contentsTextArray = t.shareDesignProjectIntroduction.contentsText;
   return (
     <>
-      <HeadSEO info={interactionDesignGuideOneInfo} />
+      <HeadSEO info={indexInfo} />
       <MotionArticle
         variants={stagger}
         initial="initial"
@@ -45,7 +45,7 @@ const InteractionDesignGuideOne = () => {
       >
         <MotionBackground width={width} height={height} variants={fadeInOut} />
 
-        <ArticleTitleArea categoryTitle={categoryTitle} title={title} />
+        <ArticleTitleArea categoryTitle={date} title={title} />
 
         <MotionContentsDiv variants={smoothUp}>
           {contentsTextArray.map((text, index) => (
@@ -76,11 +76,11 @@ const MotionArticle = styled(motion.article)`
   max-width: ${({ theme }) => theme.maxWidth.maxWidth};
 
   // 바뀌는 속성
-  margin: 108px auto 48px;
+  margin: 108px auto 72px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
-    margin: 79px auto 72px;
+    margin: 79px auto 48px;
   }
 `;
 

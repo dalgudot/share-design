@@ -30,7 +30,7 @@ const Main = styled.main`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 0 4.5vw;
-    margin-bottom: 72px;
+    margin-bottom: 90px;
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
