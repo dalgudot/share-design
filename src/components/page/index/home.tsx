@@ -1,16 +1,16 @@
-import CategoryCard from '../page/index/category-card';
+import CategoryCard from './category-card';
 import styled, { ThemeContext } from 'styled-components';
-import { mediaBreakPoint } from '../../styles/common';
+import { mediaBreakPoint } from '../../../styles/common';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   fadeInOut,
   smoothUp,
   stagger,
-} from '../../elements/framer-motion/variants';
-import { categoryData } from '../../data/data';
+} from '../../../elements/framer-motion/variants';
+import { categoryData } from '../../../data/data';
 import Link from 'next/link';
-import PMedium400 from '../../elements/typography/p-medium-400';
-import { t } from '../../data/index/t';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import { t } from '../../../data/index/t';
 import { useContext } from 'react';
 
 const Home = () => {

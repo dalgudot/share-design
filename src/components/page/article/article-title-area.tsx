@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { fadeInOut } from './framer-motion/variants';
-import Profile from './profile';
-import H1Title700 from './typography/h1-title-700';
-import H6Title700 from './typography/h6-title-700';
+import { fadeInOut } from '../../../elements/framer-motion/variants';
+import Profile from '../profile';
+import H1Title700 from '../../../elements/typography/h1-title-700';
+import H6Title700 from '../../../elements/typography/h6-title-700';
 
 const ArticleTitleArea = ({
   categoryTitle,

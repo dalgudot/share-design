@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { t } from '../../data/index/t';
-import TextStyle from '../typography/atoms/text-style';
-import { fontWeight } from '../typography/atoms/font';
+import TextStyle from '../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../elements/typography/atoms/font';
 
 const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);

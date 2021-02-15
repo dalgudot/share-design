@@ -14,7 +14,7 @@ import {
 } from '../elements/framer-motion/variants';
 import { useWindowWidth } from '../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
-import ArticleTitleArea from '../elements/article-title-area';
+import ArticleTitleArea from '../components/page/article/article-title-area';
 import { indexInfo } from '../elements/head-info/index/index-info';
 import { t } from '../data/index/t';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';

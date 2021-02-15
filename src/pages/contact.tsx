@@ -3,7 +3,7 @@ import { indexInfo } from '../elements/head-info/index/index-info';
 import styled from 'styled-components';
 import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
-import Contact from '../components/tab-nav-bar/contact';
+import Contact from '../components/page/contact/contact';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';

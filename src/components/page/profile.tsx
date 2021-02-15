@@ -1,10 +1,10 @@
 import Router from 'next/router';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import PSmall400 from './typography/p-small-400';
-import { useSetLanguage } from '../lib/hooks/useSetLanguage';
-import { t } from '../data/index/t';
-import { mediaBreakPoint } from '../styles/common';
+import PSmall400 from '../../elements/typography/p-small-400';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { t } from '../../data/index/t';
+import { mediaBreakPoint } from '../../styles/common';
 
 const Profile = ({ marginTop }: { marginTop: string }) => {
   const themeContext = useContext(ThemeContext);

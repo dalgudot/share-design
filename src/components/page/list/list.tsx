@@ -1,12 +1,12 @@
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import Items from '../index/items';
+import Items from './items';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import HeadSEO from '../../../elements/head-info/head-seo';
 import { indexInfo } from '../../../elements/head-info/index/index-info';
 import Router from 'next/router';
-import Profile from '../../../elements/profile';
+import Profile from '../profile';
 import { mediaBreakPoint } from '../../../styles/common';
 import {
   fadeInOut,

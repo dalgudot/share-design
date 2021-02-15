@@ -37,17 +37,11 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [SWR](https://github.com/vercel/swr)
 
-- [React-FirebaseUI](https://github.com/firebase/firebaseui-web)
-
 - [React-Share](https://github.com/nygardk/react-share)
-
-- [React-Toastify](https://github.com/fkhadra/react-toastify)
 
 - [React-Copy-to-Clipboard](https://github.com/nkbt/react-copy-to-clipboard)
 
 - [React-Query](https://github.com/tannerlinsley/react-query)
-
-- [React-Loading-Skeleton](https://github.com/dvtng/react-loading-skeleton)
 
 <br/>
 
@@ -63,6 +57,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
 
+- [React-Loading-Skeleton](https://github.com/dvtng/react-loading-skeleton)
+
 <br/>
 
 #### Back-End
@@ -76,11 +72,3 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 ## Contents Copyrights 👨‍⚖️
 
 All copyrights of the contents of 'SHARE DESIGN' belong to KyungHwan Kim.
-
-<!-- #### Lecture
-
-- [Ellie's Dream Coding](https://www.youtube.com/channel/UC_4u-bXaba7yrRz_6x6kb_w)
-
-- [The Net Ninja's Framer Motion Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
-
-- [Maksim Ivanov's HTML Canvas in ReactJS Tutorial ](https://www.youtube.com/watch?v=FLESHMJ-bI0) -->

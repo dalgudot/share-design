@@ -6,7 +6,7 @@ export const VisitsAndViewsDuringSession = (where: string) => {
   const statisticsFunction = () => {
     const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
     // console.log('visitsDuringSession');
-    // visitsDuringSession가 null이거나 undefined면
+    // visitsDuringSession이 null이거나 undefined면
     // 세션 동안 모든 페이지에서 1번만 기록됨 -> 방문자 수
     visitsDuringSession ?? VisitsDuringSession();
 

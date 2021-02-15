@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import H3Title700 from '../../elements/typography/h3-title-700';
-import { mediaBreakPoint } from '../../styles/common';
+import H3Title700 from '../../../elements/typography/h3-title-700';
+import { mediaBreakPoint } from '../../../styles/common';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { t } from '../../data/index/t';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import PSmall400 from '../../elements/typography/p-small-400';
-import H2Title700 from '../../elements/typography/h2-title-700';
+import { t } from '../../../data/index/t';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import PSmall400 from '../../../elements/typography/p-small-400';
+import H2Title700 from '../../../elements/typography/h2-title-700';
 import { motion } from 'framer-motion';
-import { smoothUp } from '../../elements/framer-motion/variants';
+import { smoothUp } from '../../../elements/framer-motion/variants';
 import { useRipple } from 'react-use-ripple';
-import IconContactFacebook24 from '../../elements/svg/icon_contact_facebook_24';
-import IconContactLinkedIn24 from '../../elements/svg/icon_contact_linkedin_24';
-import PMedium400 from '../../elements/typography/p-medium-400';
-import PMedium700 from '../../elements/typography/p-medium-700';
+import IconContactFacebook24 from '../../../elements/svg/icon_contact_facebook_24';
+import IconContactLinkedIn24 from '../../../elements/svg/icon_contact_linkedin_24';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import PMedium700 from '../../../elements/typography/p-medium-700';
 
 const Contact = ({ showToast }: { showToast: Function }) => {
   const themeContext = useContext(ThemeContext);
