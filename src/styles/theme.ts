@@ -2,11 +2,36 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 import 'styled-components';
 
 const borderRadius = {
-  PrimaryBorderRadius: '13px',
+  Primary: '13px',
 };
 
 const maxWidth = {
-  maxWidth: '680px',
+  Paragraph: '740px',
+};
+
+const zIndex = {
+  Toast: 99998,
+  bar: 10000,
+  barFillEmptySpace: 9999,
+  background: -1,
+};
+
+const padding = {
+  MobileWrap: '0 4.5vw',
+  TabletWrap: '0 12vw',
+  DesktopWrap: '0 16.6667%',
+};
+
+const margin = {
+  MobileWrap: '72px auto 85px',
+  MobileTop: '72px', // 57px + 1px + '24px'
+  MobileBottom: '85px', // 48px + 1px + '36px'
+  /////////////////////////////////////////////
+  DesktopWrap: '109px auto 109px',
+  DesktopTop: '109px', // 72px + 1px + '36px'
+  DesktopBottom: '109px', // 72px + 1px + '36px' // Desktop은 Top, Bottom이 같은 높이
+  DefaultMobileBottom: '36px',
+  DefaultDesktopBottom: '96px',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -26,6 +51,12 @@ export const darkTheme: DefaultTheme = {
   borderRadius,
   // maxWidth
   maxWidth,
+  // zIndex
+  zIndex,
+  // padding
+  padding,
+  // margin
+  margin,
 };
 
 export const lightTheme: DefaultTheme = {
@@ -43,7 +74,14 @@ export const lightTheme: DefaultTheme = {
   gradientBurgundy: '170deg, #743657, #40192c',
   // BorderRadius
   borderRadius,
+  // maxWidth
   maxWidth,
+  // zIndex
+  zIndex,
+  // padding
+  padding,
+  // margin
+  margin,
 };
 
 // 색과 관련된 GlobalStyle
@@ -70,10 +108,31 @@ declare module 'styled-components' {
     gradientBurgundy: string;
     // BorderRadius
     borderRadius: {
-      PrimaryBorderRadius: string;
+      Primary: string;
     };
     maxWidth: {
-      maxWidth: string;
+      Paragraph: string;
+    };
+    zIndex: {
+      Toast: number;
+      bar: number;
+      barFillEmptySpace: number;
+      background: number;
+    };
+    padding: {
+      MobileWrap: string;
+      TabletWrap: string;
+      DesktopWrap: string;
+    };
+    margin: {
+      MobileWrap: string;
+      MobileTop: string;
+      MobileBottom: string;
+      DesktopWrap: string;
+      DesktopTop: string;
+      DesktopBottom: string;
+      DefaultMobileBottom: string;
+      DefaultDesktopBottom: string;
     };
   }
 }

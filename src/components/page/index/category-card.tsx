@@ -4,12 +4,7 @@ import H1Title700 from '../../../elements/typography/h1-title-700';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import { tArticle } from '../../../data/article/t-article';
 import { mediaBreakPoint } from '../../../styles/common';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {
-  colorVariants,
-  smoothUp,
-} from '../../../elements/framer-motion/variants';
 import React from 'react';
 
 const CategoryCard = ({
@@ -22,29 +17,16 @@ const CategoryCard = ({
   backgroundGradient: string;
 }) => {
   const themeContext = useContext(ThemeContext);
-
   const categoryTitle = title.map((title, idx) => (
     <H1Title700 key={idx} text={title} color={themeContext.gray1} />
   ));
 
   return (
-    <MotionLi //
-      // variants={smoothUp}
-      // variants={colorVariants(backgroundGradient)}
-      // initial="initial"
-      // animate="animate"
-      backgroundGradient={backgroundGradient}
-    >
+    <Li backgroundGradient={backgroundGradient}>
       <Link href={`/list/${url}`}>
-        <motion.a
-        // variants={smoothUp}
-        // variants={colorVariants(backgroundGradient)}
-        // initial="initial"
-        // animate="animate"
-        // whileTap="whileTap"
-        >
-          <MotionTitleDiv>{categoryTitle}</MotionTitleDiv>
-          <MotionListViewDiv>
+        <a>
+          <TitleDiv>{categoryTitle}</TitleDiv>
+          <ListViewDiv>
             <PMedium400 //
               text={tArticle.goToList}
               color={themeContext.gray1}
@@ -53,17 +35,17 @@ const CategoryCard = ({
               text={tArticle.chevronRight}
               color={themeContext.gray1}
             />
-          </MotionListViewDiv>
-        </motion.a>
+          </ListViewDiv>
+        </a>
       </Link>
-    </MotionLi>
+    </Li>
   );
 };
 
 export default React.memo(CategoryCard);
 
-const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
-  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+const Li = styled.li<{ backgroundGradient: string }>`
+  border-radius: ${({ theme }) => theme.borderRadius.Primary};
   background: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
@@ -73,7 +55,6 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   a {
     cursor: pointer;
     width: 100%;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,9 +68,9 @@ const MotionLi = styled(motion.li)<{ backgroundGradient: string }>`
   }
 `;
 
-const MotionTitleDiv = styled(motion.div)``;
+const TitleDiv = styled.div``;
 
-const MotionListViewDiv = styled(motion.div)`
+const ListViewDiv = styled.div`
   padding: 16px 3px;
   display: flex;
   justify-content: space-between;

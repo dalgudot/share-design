@@ -1,12 +1,12 @@
 import { useRef } from 'react';
-import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../styles/common';
-import TabHome24 from '../../elements/svg/tab_home_24';
-import TabContact24 from '../../elements/svg/tab_contact_24';
+import { mediaBreakPoint } from '../../../styles/common';
+import TabHome24 from '../../../elements/svg/tab_home_24';
+import TabContact24 from '../../../elements/svg/tab_contact_24';
 import { motion } from 'framer-motion';
-import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import Router, { useRouter } from 'next/router';
+import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 
 const TabNavBar = () => {
   const router = useRouter();
@@ -35,45 +35,99 @@ const TabNavBar = () => {
   // useRipple
   const homeRef = useRef(null);
   const contactRef = useRef(null);
-  useRipple(homeRef, {
-    rippleColor: 'rgba(0, 0, 0, 0.6)',
-    animationLength: 500,
-    rippleSize: 2000,
-  });
-  useRipple(contactRef, {
-    rippleColor: 'rgba(0, 0, 0, 0.6)',
-    animationLength: 500,
-    rippleSize: 2000,
-  });
+  useMyRipple(homeRef, 500, 2200);
+  useMyRipple(contactRef, 500, 2200);
 
   const width: number = useWindowWidth();
 
   return (
     <>
-      <MotionNav
-        isShow={isShow}
-        // variants={hideVariants(width)}
-        // initial={false}
-        // animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
-      >
+      <Nav isShow={isShow}>
         <Tab onClick={() => setHomeTab()} ref={homeRef}>
           <TabHome24 tab={homeTab} />
         </Tab>
         <Tab onClick={() => setContactTab()} ref={contactRef}>
           <TabContact24 tab={contactTab} />
         </Tab>
-      </MotionNav>
-      <MotionFillEmptySpace
-        isShow={isShow}
-        // variants={hideVariants(width)}
-        // initial={false}
-        // animate={TabNavBarDisplay() === true ? 'show' : 'hide'}
-      />
+      </Nav>
+      <FillEmptySpace isShow={isShow} />
     </>
   );
 };
 
 export default TabNavBar;
+
+type isShowType = {
+  isShow: boolean;
+};
+
+const Nav = styled.nav<isShowType>`
+  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
+  z-index: ${({ theme }) => theme.zIndex.bar};
+  position: fixed;
+
+  // 바뀌는 속성
+  justify-content: space-between;
+  width: 124px;
+  height: 44px;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 48px;
+    top: unset; // 초기화
+    left: 0;
+    right: 0;
+    transform: translateX(0);
+
+    // 추가 속성
+    bottom: 0;
+    align-items: center;
+    border-top: solid 1px ${({ theme }) => theme.gray7};
+    background-color: ${({ theme }) => theme.gray8};
+  }
+`;
+
+const Tab = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // 바뀌는 속성
+  margin-bottom: 24px;
+  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  width: 44px;
+  height: 44px;
+  background-color: ${({ theme }) => theme.gray7};
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-bottom: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: unset;
+  }
+`;
+
+// 아이폰 하단에 나타나는 빈 공간 채워주는 div
+const FillEmptySpace = styled.div<isShowType>`
+  // 바뀌는 속성
+  /* height: 80px; // 72 + 8px */
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    display: ${({ isShow }) => (isShow ? 'block' : 'none')};
+    position: fixed;
+    z-index: ${({ theme }) => theme.zIndex.barFillEmptySpace};
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 56px; // 48 + 8px
+    background-color: ${({ theme }) => theme.gray8};
+  }
+`;
 
 const hideVariants = (width: number) => {
   if (width < 768) {
@@ -121,72 +175,4 @@ const hideVariants = (width: number) => {
       },
     };
   }
-};
-
-const MotionNav = styled(motion.nav)<isShowtype>`
-  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
-  z-index: 10001;
-  position: fixed;
-
-  // 바뀌는 속성
-  justify-content: space-between;
-  width: 124px;
-  height: 44px;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 48px;
-    top: unset; // 초기화
-    left: 0;
-    transform: translateX(0);
-
-    // 추가 속성
-    bottom: 0;
-    align-items: center;
-    border-top: solid 1px ${({ theme }) => theme.gray7};
-    background-color: ${({ theme }) => theme.gray8};
-  }
-`;
-
-const Tab = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  // 바뀌는 속성
-  margin-bottom: 24px;
-  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
-  width: 44px;
-  height: 44px;
-  background-color: ${({ theme }) => theme.gray7};
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-bottom: 0;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    background-color: unset;
-  }
-`;
-
-// 아이폰 하단에 나타나는 빈 공간 채워주는 div
-const MotionFillEmptySpace = styled(motion.div)<isShowtype>`
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    display: ${({ isShow }) => (isShow ? 'block' : 'none')};
-    position: fixed;
-    z-index: 9999;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 56px; // 48 + 8px
-    background-color: ${({ theme }) => theme.gray8};
-  }
-`;
-
-type isShowtype = {
-  isShow: boolean;
 };

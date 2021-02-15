@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import TextStyle from '../../elements/typography/atoms/text-style';
 import { fontWeight } from '../../elements/typography/atoms/font';
-import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 import { t } from '../../data/index/t';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
@@ -9,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useRouter } from 'next/router';
+import { useMyRipple } from '../../lib/hooks/useMyRipple';
 
 const LangChangeButton = () => {
   const themeContext = useContext(ThemeContext);
@@ -21,13 +21,8 @@ const LangChangeButton = () => {
       : router.push(router.pathname, router.pathname, { locale: 'ko' });
   };
 
-  // useRipple
   const btnRef = useRef(null);
-  useRipple(btnRef, {
-    rippleColor: 'rgba(0, 0, 0, 0.3)',
-    animationLength: 600,
-    rippleSize: 2000,
-  });
+  useMyRipple(btnRef);
 
   return (
     <motion.button
@@ -59,6 +54,6 @@ const BtnStyle = styled.div`
   align-items: center;
   width: 128px;
   height: 40px;
-  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius.Primary};
   background-color: ${({ theme }) => theme.gray7};
 `;

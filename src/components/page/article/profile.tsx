@@ -1,10 +1,10 @@
 import Router from 'next/router';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import PSmall400 from '../../elements/typography/p-small-400';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import { t } from '../../data/index/t';
-import { mediaBreakPoint } from '../../styles/common';
+import PSmall400 from '../../../elements/typography/p-small-400';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import { t } from '../../../data/index/t';
+import { mediaBreakPoint } from '../../../styles/common';
 
 const Profile = ({ marginTop }: { marginTop: string }) => {
   const themeContext = useContext(ThemeContext);
@@ -18,9 +18,6 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
       <Author onClick={goToContact} marginTop={marginTop}>
         <img
           src="/images/profile-photo@3x.jpg"
-          // src="/images/profile-photo.jpg"
-          // srcSet="/images/profile-photo@2x.jpg 2x,
-          //       /images/profile-photo@3x.jpg 3x"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
         <PSmall400 text={t.myName} color={themeContext.gray1} />
@@ -69,6 +66,5 @@ const Dot = styled.span`
   margin-left: 4px;
   margin-right: 4px;
   margin-top: 3px;
-
   margin-bottom: 2px; // 시각 보정
 `;

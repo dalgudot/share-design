@@ -1,11 +1,9 @@
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import H3Title700 from '../../../elements/typography/h3-title-700';
 import PSmall400 from '../../../elements/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
-import { listUp, smoothUp } from '../../../elements/framer-motion/variants';
 
 const Items = ({
   date,
@@ -21,7 +19,7 @@ const Items = ({
   const themeContext = useContext(ThemeContext);
 
   return (
-    <MotionLi variants={listUp}>
+    <Li>
       <Link href={url}>
         <a>
           <PSmall400 text={date} color={themeContext.gray3} />
@@ -37,13 +35,13 @@ const Items = ({
           />
         </a>
       </Link>
-    </MotionLi>
+    </Li>
   );
 };
 
 export default Items;
 
-const MotionLi = styled(motion.li)`
+const Li = styled.li`
   border-bottom: solid 1px rgba(230, 230, 245, 0.2);
 
   // 바뀌는 속성

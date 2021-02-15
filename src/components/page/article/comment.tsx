@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
-import { useRipple } from 'react-use-ripple';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
+import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 
 const Comment = () => {
   const today = new Date(); // today는 Date의 Instance
@@ -26,7 +26,7 @@ const Comment = () => {
   const [contents, setContents] = useState('');
 
   const btnRef = useRef(null);
-  useRipple(btnRef);
+  useMyRipple(btnRef);
 
   return (
     <>

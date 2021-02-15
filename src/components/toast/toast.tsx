@@ -31,7 +31,7 @@ const MyToast = ({
 export default React.memo(MyToast);
 
 const ToastDivMotion = styled(motion.div)`
-  z-index: 99998;
+  z-index: ${({ theme }) => theme.zIndex.Toast};
   background-color: ${({ theme }) => theme.gray6};
   display: flex;
   justify-content: center;
@@ -41,9 +41,9 @@ const ToastDivMotion = styled(motion.div)`
   top: 28px; // 상단 위치
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin: 0 auto !important;
   padding: 16px 24px;
-  border-radius: ${({ theme }) => theme.borderRadius.PrimaryBorderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius.Primary};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: 0 4.5vw;

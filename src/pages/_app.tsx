@@ -14,7 +14,7 @@ import type { AppProps /*, AppContext */ } from 'next/app';
 import ThemeChangeButton from '../components/button/theme-change-button';
 import Header from '../components/header/header';
 import { useRouter } from 'next/router';
-import TabNavBar from '../components/tab-nav-bar/tab-nav-bar';
+import TabNavBar from '../components/page/index/tab-nav-bar';
 import MyToast from '../components/toast/toast';
 import React from 'react';
 

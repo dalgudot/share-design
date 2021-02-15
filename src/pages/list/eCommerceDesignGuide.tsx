@@ -15,7 +15,7 @@ const eCommerceDesignGuideList = () => {
   return (
     <>
       <List
-        title={data[1].title}
+        title={data[1].smallTitle}
         backgroundGradient={data[1].backgroundGradient}
         articleList={data[1].articleList}
       />

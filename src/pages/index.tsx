@@ -1,12 +1,14 @@
 import HeadSEO from '../elements/head-info/head-seo';
 import { indexInfo } from '../elements/head-info/index/index-info';
 import styled from 'styled-components';
-import Footer from '../components/footer/footer';
 import { mediaBreakPoint } from '../styles/common';
-import Home from '../components/page/index/home';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
+import { categoryData } from '../data/data';
+import CategoryCard from '../components/page/index/category-card';
+import GotoIntroduction from '../components/page/index/go-to-introduction';
+import Footer from '../components/page/index/footer';
 
 const Index = () => {
   useEffect(() => {
@@ -14,11 +16,25 @@ const Index = () => {
   }, []);
   bodyScrollTop();
 
+  const data = categoryData();
+
   return (
     <>
       <HeadSEO info={indexInfo} />
       <Main>
-        <Home />
+        <Ul>
+          <CategoryCard
+            url={data[0].url}
+            title={data[0].title}
+            backgroundGradient={data[0].backgroundGradient}
+          />
+          <CategoryCard
+            url={data[1].url}
+            title={data[1].title}
+            backgroundGradient={data[1].backgroundGradient}
+          />
+          <GotoIntroduction />
+        </Ul>
       </Main>
       {/* <Footer /> */}
     </>
@@ -28,20 +44,22 @@ const Index = () => {
 export default Index;
 
 const Main = styled.main`
-  margin-top: 108px;
-  margin-bottom: 48px;
+  margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  margin-bottom: ${({ theme }) => theme.margin.DefaultDesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 79px;
-    margin-bottom: 90px;
-    padding: 0 4.5vw;
+    margin-top: ${({ theme }) => theme.margin.MobileTop};
+    margin-top: ${({ theme }) => theme.margin.MobileBottom};
+    padding: ${({ theme }) => theme.padding.MobileWrap};
   }
 
   @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: 0 12vw;
+    padding: ${({ theme }) => theme.padding.TabletWrap};
   }
 
   @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: 0 16.6667%;
+    padding: ${({ theme }) => theme.padding.DesktopWrap};
   }
 `;
+
+const Ul = styled.ul``;
