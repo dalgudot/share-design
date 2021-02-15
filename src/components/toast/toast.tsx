@@ -16,38 +16,45 @@ const MyToast = ({
 
   return (
     <>
-      <ToastDivMotion
+      <ToastWrapMotion
         key={toastMessage}
         variants={toastVariants}
         initial="hide"
         animate={toastOn === true ? 'show' : 'hide'}
       >
-        <PMedium400 text={toastMessage} color={themeContext.gray1} />
-      </ToastDivMotion>
+        <Div>
+          <PMedium400 text={toastMessage} color={themeContext.gray1} />
+        </Div>
+      </ToastWrapMotion>
     </>
   );
 };
 
 export default React.memo(MyToast);
 
-const ToastDivMotion = styled(motion.div)`
+const ToastWrapMotion = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
-  background-color: ${({ theme }) => theme.gray6};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 480px;
   position: absolute;
   top: 28px; // 상단 위치
   left: 0;
   right: 0;
-  margin: 0 auto !important;
-  padding: 16px 24px;
   border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  background-color: ${({ theme }) => theme.gray6};
+  padding: 16px 24px;
+
+  // 바뀌는 속성
+  margin: 0 auto;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 0 4.5vw;
+    margin: ${({ theme }) => theme.padding.MobileWrap};
   }
+`;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const toastVariants = {
