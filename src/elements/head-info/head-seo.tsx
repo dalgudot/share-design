@@ -1,7 +1,11 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
 const HeadSEO = ({ info }: any) => {
+  const router = useRouter();
+  console.log(router);
+
   return (
     <Head>
       <link rel="alternate" hrefLang="x-default" href={info.url.e} />
@@ -108,48 +112,31 @@ const HeadSEO = ({ info }: any) => {
       />
       {/* E of fonts preload */}
       {/* S of Image preload */}
-      {/* <link
-        rel="preload"
-        href="/images/profile-photo.jpg"
-        as="image"
-        type="image/jpg"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/images/profile-photo@2x.jpg"
-        as="image"
-        type="image/jpg"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/images/profile-photo@3x.jpg"
-        as="image"
-        type="image/jpg"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/images/icon-contact-brunch.png"
-        as="image"
-        type="image/png"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/images/icon-contact-brunch@2x.png"
-        as="image"
-        type="image/png"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/images/icon-contact-brunch@3x.png"
-        as="image"
-        type="image/png"
-        crossOrigin="anonymous"
-      /> */}
+      {router.pathname !== '/' && (
+        <>
+          <link
+            rel="preload"
+            href="/images/profile-photo.jpg"
+            as="image"
+            type="image/jpg"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/images/profile-photo@2x.jpg"
+            as="image"
+            type="image/jpg"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/images/profile-photo@3x.jpg"
+            as="image"
+            type="image/jpg"
+            crossOrigin="anonymous"
+          />
+        </>
+      )}
       {/* E of Image preload */}
     </Head>
   );
