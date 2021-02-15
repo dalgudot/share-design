@@ -7,17 +7,20 @@ const HeadSEO = ({ info }: any) => {
 
   return (
     <Head>
-      <link rel="alternate" hrefLang="x-default" href={info.url.e} />
-      <link rel="alternate" hrefLang="ko" href={info.url.k} />
+      <link rel="alternate" hrefLang="x-default" href={info.url.k} />
+      <link rel="alternate" hrefLang="en" href={info.url.e} />
 
       {/* 모바일 대응 meta tag */}
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
-      {/* <meta name="mobile-web-app-capable" content="yes" />
+
+      {/* iOS 대응 Building Manifest File*/}
+      {/* https://joshua1988.github.io/web-development/pwa/webapp-manifest/ */}
+      {/* <meta name="mobile-web-app-capable" content="yes" /> */}
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" /> */}
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
       <title>{useSetLanguage(info.title)}</title>
       <link rel="icon" href={useSetLanguage(info.icoImage)} />
@@ -114,26 +117,34 @@ const HeadSEO = ({ info }: any) => {
       index에서만 쓰이지 않는 이미지이므로 index 제외한 모든 페이지에서만 preload */}
       {router.pathname !== '/' && (
         <>
-          <link
+          {/* <link
             rel="preload"
             href="/images/profile-photo.jpg"
             as="image"
             type="image/jpg"
-            crossOrigin="anonymous"
-          />
-          <link
+          /> */}
+          {/* <link
             rel="preload"
             href="/images/profile-photo@2x.jpg"
             as="image"
             type="image/jpg"
-            crossOrigin="anonymous"
-          />
+          /> */}
           <link
             rel="preload"
             href="/images/profile-photo@3x.jpg"
             as="image"
             type="image/jpg"
-            crossOrigin="anonymous"
+          />
+        </>
+      )}
+
+      {router.pathname === '/contact' && (
+        <>
+          <link
+            rel="preload"
+            href="/images/icon-contact-brunch@3x.png"
+            as="image"
+            type="image/png"
           />
         </>
       )}

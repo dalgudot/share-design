@@ -17,10 +17,10 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
     <AuthorWrap>
       <Author onClick={goToContact} marginTop={marginTop}>
         <img
-          // src="/images/profile-photo@3x.jpg
-          src="/images/profile-photo.jpg"
-          srcSet="/images/profile-photo@2x.jpg 2x,
-                /images/profile-photo@3x.jpg 3x"
+          src="/images/profile-photo@3x.jpg"
+          // src="/images/profile-photo.jpg"
+          // srcSet="/images/profile-photo@2x.jpg 2x,
+          //       /images/profile-photo@3x.jpg 3x"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
         <PSmall400 text={t.myName} color={themeContext.gray1} />

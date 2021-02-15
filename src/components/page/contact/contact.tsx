@@ -45,9 +45,10 @@ const Contact = ({ showToast }: { showToast: Function }) => {
     >
       <img
         className="profile__photo"
-        src="/images/profile-photo.jpg"
-        srcSet="/images/profile-photo@2x.jpg 2x,
-                /images/profile-photo@3x.jpg 3x"
+        src="/images/profile-photo@3x.jpg"
+        // src="/images/profile-photo.jpg"
+        // srcSet="/images/profile-photo@2x.jpg 2x,
+        //         /images/profile-photo@3x.jpg 3x"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
       <H3Title700 text={t.myName} color={themeContext.gray1} marginTop="8px" />
@@ -171,9 +172,10 @@ const Contact = ({ showToast }: { showToast: Function }) => {
       <SocialDiv>
         <SocialLinkA href="https://brunch.co.kr/@dalgudot" target="_blank">
           <img
-            src="/images/icon-contact-brunch.png"
-            srcSet="/images/icon-contact-brunch@2x.png 2x,
-                /images/icon-contact-brunch@3x.png 3x"
+            src="/images/icon-contact-brunch@3x.png"
+            // src="/images/icon-contact-brunch.png"
+            // srcSet="/images/icon-contact-brunch@2x.png 2x,
+            //     /images/icon-contact-brunch@3x.png 3x"
             alt={useSetLanguage(t.contact.brunchAlt)}
           />
         </SocialLinkA>
@@ -291,7 +293,9 @@ const SocialDiv = styled.div`
   position: relative;
 
   img {
-    all: unset;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 `;
 
