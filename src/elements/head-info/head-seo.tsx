@@ -4,7 +4,6 @@ import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
 const HeadSEO = ({ info }: any) => {
   const router = useRouter();
-  console.log(router);
 
   return (
     <Head>
@@ -111,7 +110,8 @@ const HeadSEO = ({ info }: any) => {
         crossOrigin="anonymous"
       />
       {/* E of fonts preload */}
-      {/* S of Image preload */}
+      {/* S of Image preload 
+      index에서만 쓰이지 않는 이미지이므로 index 제외한 모든 페이지에서만 preload */}
       {router.pathname !== '/' && (
         <>
           <link
@@ -143,5 +143,3 @@ const HeadSEO = ({ info }: any) => {
 };
 
 export default HeadSEO;
-
-// [Ref] https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js
