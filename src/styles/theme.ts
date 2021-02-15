@@ -27,9 +27,9 @@ const margin = {
   MobileTop: '72px', // 57px + 1px + '24px'
   MobileBottom: '85px', // 48px + 1px + '36px'
   /////////////////////////////////////////////
-  DesktopWrap: '109px auto 109px',
+  DesktopWrap: '109px auto 93px',
   DesktopTop: '109px', // 72px + 1px + '36px'
-  DesktopBottom: '109px', // 72px + 1px + '36px' // Desktop은 Top, Bottom이 같은 높이
+  DesktopBottom: '93px', // 56px + 1px + '36px' // Desktop은 Top, Bottom이 같은 높이
   DefaultMobileBottom: '36px',
   DefaultDesktopBottom: '96px',
 };

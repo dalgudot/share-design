@@ -19,9 +19,9 @@ const Items = ({
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Li>
-      <Link href={url}>
-        <a>
+    <Link href={url}>
+      <a>
+        <Li>
           <PSmall400 text={date} color={themeContext.gray3} />
           <H3Title700 //
             text={title}
@@ -33,9 +33,9 @@ const Items = ({
             color={themeContext.gray1}
             marginTop="16px"
           />
-        </a>
-      </Link>
-    </Li>
+        </Li>
+      </a>
+    </Link>
   );
 };
 
@@ -49,5 +49,9 @@ const Li = styled.li`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 36px 0;
+  }
+
+  p {
+    margin-left: 2px; // 시각 보정
   }
 `;

@@ -30,4 +30,8 @@ const ArticleTitleArea = ({
 
 export default ArticleTitleArea;
 
-const TitleArea = styled.div``;
+const TitleArea = styled.div`
+  h6 {
+    margin-left: 2px; // smallTitle 시각 보정
+  }
+`;

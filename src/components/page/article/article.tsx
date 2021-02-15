@@ -6,7 +6,7 @@ import PMedium400 from '../../../elements/typography/p-medium-400';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title';
-import ArticleToolBar from './article-tool-bar';
+import ArticleToolBar from './article-tool-bar/article-tool-bar';
 
 const Article = ({
   categoryTitle,

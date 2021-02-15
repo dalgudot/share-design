@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 
 const IconShare24 = () => {
   const themeContext = useContext(ThemeContext);
   const color: string = themeContext.gray1;
+  const width: number = useWindowWidth();
+  const pxSize: string = width < 768 ? '24px' : '30px';
 
   return (
-    <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <SVG width={pxSize} height={pxSize} viewBox="0 0 24 24" version="1.1">
       <g
         id="000-Icon/icon_share-iOS_24"
         stroke="none"

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -11,19 +12,19 @@ const GotoIntroduction = () => {
     t.shareDesignProjectIntroduction.goToIntroduction;
 
   return (
-    <Li>
+    <LiMotion whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
       <Link href="/introduction">
         <a>
           <PMedium400 text={goToIntroductionText} color={themeContext.gray2} />
         </a>
       </Link>
-    </Li>
+    </LiMotion>
   );
 };
 
 export default GotoIntroduction;
 
-const Li = styled.li`
+const LiMotion = styled(motion.li)`
   margin-top: 48px;
   display: flex;
   justify-content: center;

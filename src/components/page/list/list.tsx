@@ -77,7 +77,7 @@ const Background = styled.div<BackgroundType>`
 `;
 
 const FillTopSpace = styled.div`
-  height: 72px;
+  height: 64px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 24px;

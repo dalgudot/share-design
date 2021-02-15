@@ -37,14 +37,14 @@ const ToastWrapMotion = styled(motion.div)`
   max-width: 480px;
   position: absolute;
   top: 28px; // 상단 위치
-  left: 0;
-  right: 0;
+  left: 0; // 좌우 길이 100% 및 가운데 정렬
+  right: 0; // 좌우 길이 100% 및 가운데 정렬
   border-radius: ${({ theme }) => theme.borderRadius.Primary};
   background-color: ${({ theme }) => theme.gray6};
   padding: 16px 24px;
 
   // 바뀌는 속성
-  margin: 0 auto;
+  margin: 0 auto; // 좌우 길이 100% 및 가운데 정렬
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: ${({ theme }) => theme.padding.MobileWrap};

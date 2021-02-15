@@ -1,5 +1,5 @@
-import TextStyle from '../../../elements/typography/atoms/text-style';
-import { fontWeight } from '../../../elements/typography/atoms/font';
+import TextStyle from '../../../../elements/typography/atoms/text-style';
+import { fontWeight } from '../../../../elements/typography/atoms/font';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useContext } from 'react';

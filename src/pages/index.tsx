@@ -9,8 +9,9 @@ import { categoryData } from '../data/data';
 import CategoryCard from '../components/page/index/category-card';
 import GotoIntroduction from '../components/page/index/go-to-introduction';
 import Footer from '../components/page/index/footer';
+import ShareToolBar from '../components/page/index/share-tool-bar';
 
-const Index = () => {
+const Index = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
@@ -35,6 +36,7 @@ const Index = () => {
           />
           <GotoIntroduction />
         </Ul>
+        <ShareToolBar />
       </Main>
       {/* <Footer /> */}
     </>
@@ -45,11 +47,11 @@ export default Index;
 
 const Main = styled.main`
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
-  margin-bottom: ${({ theme }) => theme.margin.DefaultDesktopBottom};
+  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: ${({ theme }) => theme.margin.MobileTop};
-    margin-top: ${({ theme }) => theme.margin.MobileBottom};
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }
 
