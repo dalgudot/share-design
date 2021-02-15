@@ -19,10 +19,10 @@ import { indexInfo } from '../elements/head-info/index/index-info';
 import { t } from '../data/index/t';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 
-const InteractionDesignGuideOne = () => {
+const Introduction = () => {
   const router = useRouter();
   useEffect(() => {
-    VisitsAndViewsDuringSession(router.pathname);
+    VisitsAndViewsDuringSession('Introduction');
   }, []);
   bodyScrollTop();
 
@@ -38,10 +38,10 @@ const InteractionDesignGuideOne = () => {
     <>
       <HeadSEO info={indexInfo} />
       <MotionArticle
-        variants={fadeInOut}
-        initial="initial"
-        animate="animate"
-        // exit="exit"
+      // variants={fadeInOut}
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
       >
         <MotionBackground width={width} height={height} />
 
@@ -62,7 +62,7 @@ const InteractionDesignGuideOne = () => {
   );
 };
 
-export default InteractionDesignGuideOne;
+export default Introduction;
 
 type MotionBackgroundType = {
   height: number;

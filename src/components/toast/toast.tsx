@@ -38,7 +38,7 @@ const ToastDivMotion = styled(motion.div)`
   align-items: center;
   max-width: 480px;
   position: absolute;
-  top: 64px; // 상단 위치
+  top: 28px; // 상단 위치
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -62,7 +62,7 @@ const toastVariants = {
   },
 
   hide: {
-    y: -300,
+    y: -240,
     opacity: 0,
     scale: 0.8,
     transition: {

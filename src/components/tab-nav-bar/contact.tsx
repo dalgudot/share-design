@@ -4,7 +4,6 @@ import { mediaBreakPoint } from '../../styles/common';
 import { useContext, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toastify } from '../../elements/toastify';
 import { t } from '../../data/index/t';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import PSmall400 from '../../elements/typography/p-small-400';
@@ -59,7 +58,6 @@ const Contact = ({ showToast }: { showToast: Function }) => {
         <EmailButtonDiv>
           <CopyToClipboard
             text="dalgudot@gmail.com"
-            // onCopy={() => toastify(toastMessage, toastId)}
             onCopy={() => showToast(toastMessage)}
           >
             <CopyButton ref={copyItRef}>

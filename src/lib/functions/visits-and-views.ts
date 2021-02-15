@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 
 export const VisitsAndViewsDuringSession = (where: string) => {
-  const statisticsOnOff: boolean = false;
+  const statisticsOnOff: boolean = true;
 
   const statisticsFunction = () => {
     const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
@@ -62,7 +62,7 @@ const VisitsDuringSession = () => {
 // 조회수
 const ViewsDuringSession = (where: string) => {
   // Index - Home & Contact
-  const viewsHome = () => {
+  const views = () => {
     // S of Index 전체 조회수
     firebaseFetchSet(`Number of Views/${where}/Total All`);
     // E of Index 전체 조회수
@@ -93,8 +93,14 @@ const ViewsDuringSession = (where: string) => {
     // E of [각] Article 날짜별 조회수
   };
 
-  if (where === 'Home' || where == 'Contact') {
-    viewsHome();
+  if (
+    where === 'Home' ||
+    where === 'Contact' ||
+    where === 'Introduction' ||
+    where === 'List/interactionDesignGuide' ||
+    where === 'List/eCommerceDesignGuide'
+  ) {
+    views();
   } else {
     viewsArticle();
   }
