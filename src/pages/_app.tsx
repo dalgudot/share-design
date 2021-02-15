@@ -11,7 +11,7 @@ import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import ThemeChangeButton from '../elements/button/theme-change-button';
+import ThemeChangeButton from '../components/button/theme-change-button';
 import Header from '../components/header/header';
 import { useRouter } from 'next/router';
 import TabNavBar from '../components/tab-nav-bar/tab-nav-bar';
