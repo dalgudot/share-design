@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../../styles/common';
-import ShareToolButton from './share-button';
+import ShareToolButton from './share-tool-button';
 
 const ArticleToolBar = () => {
   return (
@@ -17,7 +17,7 @@ const ArticleToolBar = () => {
 export default ArticleToolBar;
 
 const ArticleToolBarContainer = styled.div`
-  z-index: ${({ theme }) => theme.zIndex.bar};
+  z-index: ${({ theme }) => theme.zIndex.Bar};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@ const FillEmptySpace = styled.div`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     position: fixed;
-    z-index: ${({ theme }) => theme.zIndex.barFillEmptySpace};
+    z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
     bottom: -8px;
     left: 0;
     width: 100%;

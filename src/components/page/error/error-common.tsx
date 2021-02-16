@@ -15,7 +15,7 @@ const ErrorCommon = () => {
       />
       <Link href="/">
         <a>
-          <AloneButton btnText={btnText} marginTop="24px" />
+          <AloneButton size="medium" btnText={btnText} marginTop="24px" />
         </a>
       </Link>
     </Main>

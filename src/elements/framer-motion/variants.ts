@@ -76,12 +76,18 @@ export const colorVariants = (color: string) => {
 
 export const smoothUp = {
   initial: {
+    // zIndex: -2,
     y: 12,
     scale: 0.99,
     opacity: 0,
+    transition: {
+      duration: 0.4,
+      smoothTransition,
+    },
   },
 
   animate: {
+    // zIndex: 20000,
     y: 0,
     scale: 1,
     opacity: 1,

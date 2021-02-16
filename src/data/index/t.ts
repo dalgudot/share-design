@@ -31,6 +31,34 @@ export const t = {
     e: 'dalgudot@gmail.com',
   },
 
+  closeButton: {
+    k: '닫기',
+    e: 'close',
+  },
+
+  shareModal: {
+    facebook: {
+      k: '페이스북에 공유',
+      e: 'Share on Facebook',
+    },
+    linkedin: {
+      k: '링크드인에 공유',
+      e: 'Share on LinkedIn',
+    },
+    twitter: {
+      k: '트위터에 공유',
+      e: 'Share on Twitter',
+    },
+    copyURL: {
+      k: 'URL 복사',
+      e: 'Copy URL',
+    },
+    toastMessage: {
+      k: 'URL을 복사했습니다 🔗',
+      e: "You've copied this URL 🔗",
+    },
+  },
+
   contact: {
     profileAlt: {
       k: 'UI/UX 디자이너 김경환의 프로필 사진',
@@ -49,7 +77,7 @@ export const t = {
 
     toastMessage: {
       k: '이메일 주소를 복사했습니다 📮',
-      e: 'You copied my email address 📮',
+      e: "You've copied my email address 📮",
     },
 
     brunchAlt: {

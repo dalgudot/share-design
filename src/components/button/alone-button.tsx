@@ -2,13 +2,17 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { btnHoverTap } from '../../elements/framer-motion/variants';
+import PSmall400 from '../../elements/typography/p-small-400';
 import PMedium400 from '../../elements/typography/p-medium-400';
 import { useMyRipple } from '../../lib/hooks/useMyRipple';
+import PSmall700 from '../../elements/typography/p-small-700';
 
 const AloneButton = ({
+  size, // small or medium
   btnText,
   marginTop,
 }: {
+  size: string;
   btnText: object;
   marginTop?: string;
 }) => {
@@ -16,27 +20,37 @@ const AloneButton = ({
   useMyRipple(btnRef);
 
   return (
-    <MotionButton //
+    <MotionDiv //
+      size={size}
       ref={btnRef}
       marginTop={marginTop}
       variants={btnHoverTap}
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      <PMedium400 text={btnText} color="gray2" />
-    </MotionButton>
+      {size === 'small' ? (
+        <PSmall700 text={btnText} color="gray2" />
+      ) : (
+        <PMedium400 text={btnText} color="gray2" />
+      )}
+    </MotionDiv>
   );
 };
 
 export default AloneButton;
 
-const MotionButton = styled(motion.button)<{ marginTop?: string }>`
+const MotionDiv = styled(motion.div)<{
+  marginTop?: string;
+  size: string;
+}>`
   margin-top: ${({ marginTop }) => marginTop};
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: ${({ theme }) => theme.borderRadius.R26};
+  border-radius: ${({ size, theme }) =>
+    size === 'small' ? theme.borderRadius.R13 : theme.borderRadius.R26};
   background-color: ${({ theme }) => theme.gray7};
   color: ${({ theme }) => theme.gray1};
-  padding: 18px 32px;
+  padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
+  max-width: 120px;
 `;

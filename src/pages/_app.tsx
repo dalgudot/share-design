@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
-import { useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
@@ -16,7 +16,7 @@ import Header from '../components/header/header';
 import { useRouter } from 'next/router';
 import TabNavBar from '../components/page/index/tab-nav-bar';
 import MyToast from '../components/toast/toast';
-import React from 'react';
+import ShareModal from '../components/page/article/article-tool-bar/share-modal';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
@@ -30,7 +30,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
-  // Toast
+  // MyToast
   const [toastOn, setToastOn] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const showToast = (toastMessage: string) => {
@@ -42,7 +42,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
       setTimeout(() => setToastOn(false), 1850);
     }
   };
-  // Toast
+  // MyToast
 
   return (
     <>
@@ -54,7 +54,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               darkTheme={darkTheme}
             /> */}
           <ThemeProvider theme={mode}>
-            <MyToast toastOn={toastOn} toastMessage={toastMessage} />
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
             <Header />
@@ -70,6 +69,8 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             {/* </AnimatePresence> */}
             {/* AnimatePresence 밖에 TabNavBar 있어야 re-render 안 됨 */}
             <TabNavBar />
+            <ShareModal showToast={showToast} />
+            <MyToast toastOn={toastOn} toastMessage={toastMessage} />
           </ThemeProvider>
         </PersistGate>
       </Provider>

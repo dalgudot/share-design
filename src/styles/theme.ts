@@ -12,9 +12,11 @@ const maxWidth = {
 
 const zIndex = {
   Toast: 99998,
-  bar: 10000,
-  barFillEmptySpace: 9999,
-  background: -1,
+  Modal: 10002,
+  ModalBackgroundBlur: 10001,
+  Bar: 10000,
+  BarFillEmptySpace: 9999,
+  Background: -1,
 };
 
 const padding = {
@@ -117,9 +119,11 @@ declare module 'styled-components' {
     };
     zIndex: {
       Toast: number;
-      bar: number;
-      barFillEmptySpace: number;
-      background: number;
+      Modal: number;
+      ModalBackgroundBlur: number;
+      Bar: number;
+      BarFillEmptySpace: number;
+      Background: number;
     };
     padding: {
       MobileWrap: string;

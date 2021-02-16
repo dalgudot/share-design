@@ -1,11 +1,27 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import IconShare24 from '../../../../elements/svg/icon_share_24';
+import { useDispatch } from 'react-redux';
 
 const ShareToolButton = () => {
+  const dispatch = useDispatch();
+  const OPEN_MODAL = () =>
+    dispatch({
+      type: 'OPEN_MODAL',
+    });
+  const MODAL_Z_INDEX_HANDLER = () =>
+    dispatch({
+      type: 'MODAL_Z_INDEX_HANDLER',
+    });
+
+  const openModal = () => {
+    OPEN_MODAL();
+    MODAL_Z_INDEX_HANDLER();
+  };
+
   return (
     <>
-      <ShareButtonMotion>
+      <ShareButtonMotion onClick={openModal}>
         <IconShare24 />
       </ShareButtonMotion>
     </>

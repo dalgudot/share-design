@@ -73,7 +73,7 @@ const Background = styled.div<BackgroundType>`
   background: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );
-  z-index: ${({ theme }) => theme.zIndex.background};
+  z-index: ${({ theme }) => theme.zIndex.Background};
 `;
 
 const FillTopSpace = styled.div`

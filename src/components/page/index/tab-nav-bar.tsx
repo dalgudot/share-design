@@ -63,7 +63,7 @@ type isShowType = {
 
 const Nav = styled.nav<isShowType>`
   display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
-  z-index: ${({ theme }) => theme.zIndex.bar};
+  z-index: ${({ theme }) => theme.zIndex.Bar};
   position: fixed;
 
   // 바뀌는 속성
@@ -120,7 +120,7 @@ const FillEmptySpace = styled.div<isShowType>`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     display: ${({ isShow }) => (isShow ? 'block' : 'none')};
     position: fixed;
-    z-index: ${({ theme }) => theme.zIndex.barFillEmptySpace};
+    z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
     bottom: -8px;
     left: 0;
     width: 100%;

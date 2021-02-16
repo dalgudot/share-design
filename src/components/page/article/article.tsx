@@ -1,5 +1,4 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
+import styled from 'styled-components';
 import Comment from './comment';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium400 from '../../../elements/typography/p-medium-400';
@@ -17,7 +16,6 @@ const Article = ({
   articleTitle: object;
   paragraphArray: object[];
 }) => {
-  const themeContext = useContext(ThemeContext);
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
 
@@ -92,7 +90,7 @@ const Background = styled.div<BackgroundType>`
   width: ${({ width }) => width}px;
   min-height: ${({ height }) => height}px;
   background-color: ${({ theme }) => theme.gray7};
-  z-index: ${({ theme }) => theme.zIndex.background};
+  z-index: ${({ theme }) => theme.zIndex.Background};
 `;
 
 const ContentsDiv = styled.div`

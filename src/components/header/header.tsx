@@ -53,7 +53,7 @@ const HeaderContainer = styled.header<isShowtype>`
   height: 72px;
 
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
-  z-index: ${({ theme }) => theme.zIndex.bar};
+  z-index: ${({ theme }) => theme.zIndex.Bar};
   background-color: ${({ theme }) => theme.gray8};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
@@ -75,7 +75,7 @@ const Left = styled.button``;
 // 아이폰 상단에 나타나는 빈 공간 채워주는 div
 const FillEmptySpace = styled.div<isShowtype>`
   display: ${({ isShow }) => (isShow ? 'block' : 'none')};
-  z-index: ${({ theme }) => theme.zIndex.barFillEmptySpace};
+  z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
   position: fixed;
   top: -8px;
   left: 0;

@@ -8,8 +8,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
-  const toastMessage = t.contact.toastMessage;
-
   const copyItRef = useRef(null);
   const sendEmailRef = useRef(null);
   useMyRipple(copyItRef);
@@ -21,7 +19,7 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
       <EmailButtonDiv>
         <CopyToClipboard
           text="dalgudot@gmail.com"
-          onCopy={() => showToast(toastMessage)}
+          onCopy={() => showToast(t.contact.toastMessage)}
         >
           <CopyButton ref={copyItRef}>
             <PSmall400 text={t.contact.copyButton} color="gray1" />
