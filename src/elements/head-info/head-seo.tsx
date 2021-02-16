@@ -18,9 +18,8 @@ const HeadSEO = ({ info }: any) => {
 
       {/* iOS 대응 Building Manifest File*/}
       {/* https://joshua1988.github.io/web-development/pwa/webapp-manifest/ */}
-      {/* <meta name="mobile-web-app-capable" content="yes" /> */}
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      {/* <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" /> */}
 
       <title>{useSetLanguage(info.title)}</title>
       <link rel="icon" href={useSetLanguage(info.icoImage)} />

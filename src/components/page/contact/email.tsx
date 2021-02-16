@@ -1,5 +1,5 @@
-import { useContext, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { useRef } from 'react';
+import styled from 'styled-components';
 import { t } from '../../../data/index/t';
 import H2Title700 from '../../../elements/typography/h2-title-700';
 import PSmall400 from '../../../elements/typography/p-small-400';
@@ -8,7 +8,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
-  const themeContext = useContext(ThemeContext);
   const toastMessage = t.contact.toastMessage;
 
   const copyItRef = useRef(null);
@@ -18,20 +17,20 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
 
   return (
     <EmailDiv>
-      <H2Title700 text={t.myEmail} color={themeContext.gray1} />
+      <H2Title700 text={t.myEmail} color="gray1" />
       <EmailButtonDiv>
         <CopyToClipboard
           text="dalgudot@gmail.com"
           onCopy={() => showToast(toastMessage)}
         >
           <CopyButton ref={copyItRef}>
-            <PSmall400 text={t.contact.copyButton} color={themeContext.gray1} />
+            <PSmall400 text={t.contact.copyButton} color="gray1" />
           </CopyButton>
         </CopyToClipboard>
 
         <SendButton ref={sendEmailRef}>
           <a href="mailto:dalgudot@gmail.com" target="_blank">
-            <PSmall400 text={t.contact.sendButton} color={themeContext.gray1} />
+            <PSmall400 text={t.contact.sendButton} color="gray1" />
           </a>
         </SendButton>
       </EmailButtonDiv>
@@ -49,7 +48,7 @@ const EmailDiv = styled.div`
   align-items: center;
   margin-top: 36px;
   background-color: rgba(28, 28, 30, 0.4);
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 속성
   padding: 48px 0;
@@ -77,7 +76,7 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.gray7};
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 요소
 

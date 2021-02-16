@@ -2,7 +2,8 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 import 'styled-components';
 
 const borderRadius = {
-  Primary: '13px',
+  R13: '13px',
+  R26: '26px',
 };
 
 const maxWidth = {
@@ -27,9 +28,9 @@ const margin = {
   MobileTop: '72px', // 57px + 1px + '24px'
   MobileBottom: '85px', // 48px + 1px + '36px'
   /////////////////////////////////////////////
-  DesktopWrap: '109px auto 93px',
+  DesktopWrap: '109px auto 105px',
   DesktopTop: '109px', // 72px + 1px + '36px'
-  DesktopBottom: '93px', // 56px + 1px + '36px' // Desktop은 Top, Bottom이 같은 높이
+  DesktopBottom: '105px', // 56px + 1px + '48px' // Desktop은 Top, Bottom이 같은 높이
   DefaultMobileBottom: '36px',
   DefaultDesktopBottom: '96px',
 };
@@ -108,7 +109,8 @@ declare module 'styled-components' {
     gradientBurgundy: string;
     // BorderRadius
     borderRadius: {
-      Primary: string;
+      R13: string;
+      R26: string;
     };
     maxWidth: {
       Paragraph: string;

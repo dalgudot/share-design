@@ -16,8 +16,8 @@ const ProfileArea = () => {
         src="/images/profile-photo@3x.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
-      <H3Title700 text={t.myName} color={themeContext.gray1} marginTop="8px" />
-      <PSmall400 text={t.myJob} color={themeContext.gray3} />
+      <H3Title700 text={t.myName} color="gray1" marginTop="8px" />
+      <PSmall400 text={t.myJob} color="gray3" />
     </ProfileDiv>
   );
 };

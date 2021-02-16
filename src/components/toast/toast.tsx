@@ -23,7 +23,7 @@ const MyToast = ({
         animate={toastOn === true ? 'show' : 'hide'}
       >
         <Div>
-          <PMedium400 text={toastMessage} color={themeContext.gray1} />
+          <PMedium400 text={toastMessage} color="gray1" />
         </Div>
       </ToastWrapMotion>
     </>
@@ -39,7 +39,7 @@ const ToastWrapMotion = styled(motion.div)`
   top: 28px; // 상단 위치
   left: 0; // 좌우 길이 100% 및 가운데 정렬
   right: 0; // 좌우 길이 100% 및 가운데 정렬
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   background-color: ${({ theme }) => theme.gray6};
   padding: 16px 24px;
 

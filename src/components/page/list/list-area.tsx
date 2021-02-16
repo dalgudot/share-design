@@ -36,7 +36,7 @@ const ListArea = ({
 
           <H3Title700 //
             text={tArticle.comingSoon}
-            color={themeContext.gray1}
+            color="gray1"
             marginTop="16px"
           />
         </ComingSoonDiv>
@@ -48,7 +48,7 @@ const ListArea = ({
 export default ListArea;
 
 const Ul = styled.ul`
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   background-color: rgba(230, 230, 245, 0.08);
   border: 1px solid rgba(230, 230, 245, 0.2);
 

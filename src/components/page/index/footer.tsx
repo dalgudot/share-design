@@ -2,12 +2,9 @@ import styled from 'styled-components';
 import TextStyle from '../../../elements/typography/atoms/text-style';
 import { fontWeight } from '../../../elements/typography/atoms/font';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { useRouter } from 'next/router';
 
 const Footer = () => {
-  const themeContext = useContext(ThemeContext);
   const router = useRouter();
 
   const footerDisplay = router.pathname === '/' && (
@@ -19,7 +16,7 @@ const Footer = () => {
         weight={fontWeight[300]}
         opacity={0.8}
         lineHeight={1.2}
-        color={themeContext.gray3}
+        color="gray3"
       />
     </FooterContainer>
   );

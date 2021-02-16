@@ -22,17 +22,13 @@ const Items = ({
     <Link href={url}>
       <a>
         <Li>
-          <PSmall400 text={date} color={themeContext.gray3} />
+          <PSmall400 text={date} color="gray3" />
           <H3Title700 //
             text={title}
-            color={themeContext.gray1}
+            color="gray1"
             marginTop="3px"
           />
-          <PSmall400
-            text={summary}
-            color={themeContext.gray1}
-            marginTop="16px"
-          />
+          <PSmall400 text={summary} color="gray1" marginTop="16px" />
         </Li>
       </a>
     </Link>

@@ -39,7 +39,7 @@ const HomeNav = styled.nav<{ backgroundGradient: string }>`
   /* 바뀌는 요소 */
   height: 56px;
   /* bottom: 24px; */
-  /* border-radius: ${({ theme }) => theme.borderRadius.Primary}; */
+  /* border-radius: ${({ theme }) => theme.borderRadius.R13}; */
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 48px;

@@ -98,7 +98,7 @@ const Tab = styled.button`
 
   // 바뀌는 속성
   margin-bottom: 24px;
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   width: 44px;
   height: 44px;
   background-color: ${({ theme }) => theme.gray7};

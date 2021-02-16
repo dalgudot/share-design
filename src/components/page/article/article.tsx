@@ -36,7 +36,7 @@ const Article = ({
               <PMedium400
                 key={index}
                 text={text}
-                color={themeContext.gray3}
+                color="gray3"
                 marginTop="24px"
               />
             ))}

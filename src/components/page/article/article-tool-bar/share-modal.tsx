@@ -2,11 +2,8 @@ import TextStyle from '../../../../elements/typography/atoms/text-style';
 import { fontWeight } from '../../../../elements/typography/atoms/font';
 import { FacebookShareButton, LinkedinShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 const ShareModal = () => {
-  const themeContext = useContext(ThemeContext);
   const url: string = 'https://share-design.kr/articles/1';
 
   return (
@@ -17,7 +14,7 @@ const ShareModal = () => {
           text="페이스북"
           textSize="medium"
           weight={fontWeight[700]}
-          color={themeContext.gray4}
+          color="gray4"
         />
       </FacebookShareButton>
       <br />
@@ -28,7 +25,7 @@ const ShareModal = () => {
           text="링크드인"
           textSize="medium"
           weight={fontWeight[700]}
-          color={themeContext.gray4}
+          color="gray4"
         />
       </LinkedinShareButton>
       <br />
@@ -44,7 +41,7 @@ const ShareModal = () => {
             text="함수로 링크 복사"
             textSize="medium"
             weight={fontWeight[700]}
-            color={themeContext.gray4}
+            color="gray4"
           />
         </button>
       </CopyToClipboard>

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import { fontSize } from './font';
 
@@ -21,20 +22,42 @@ const TextStyle = ({
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color: any;
+  color: string;
   opacity?: number;
   marginTop?: string;
 }) => {
+  const themeContext = useContext(ThemeContext);
+  const textColorFunc = () => {
+    if (color === 'gray1') {
+      return themeContext['gray1'];
+    } else if (color === 'gray2') {
+      return themeContext['gray2'];
+    } else if (color === 'gray3') {
+      return themeContext['gray3'];
+    } else if (color === 'gray4') {
+      return themeContext['gray4'];
+    } else if (color === 'gray5') {
+      return themeContext['gray5'];
+    } else if (color === 'gray6') {
+      return themeContext['gray6'];
+    } else if (color === 'gray7') {
+      return themeContext['gray7'];
+    } else if (color === 'gray8') {
+      return themeContext['gray8'];
+    }
+  };
+  const textColor = textColorFunc();
+
   return (
     <Text
-      as={type} // 태그 결정
+      as={type} // HTML 태그 결정
       mobileSize={fontSize.mobile[textSize]}
       tabletSize={fontSize.tablet[textSize]}
       desktopSize={fontSize.desktop[textSize]}
       weight={weight}
       lineHeight={lineHeight}
       letterSpacing={letterSpacing}
-      color={color}
+      textColor={textColor}
       opacity={opacity}
       marginTop={marginTop}
     >
@@ -45,11 +68,11 @@ const TextStyle = ({
 
 export default TextStyle;
 
-const Text = styled.p<TextStyleComponetType>`
+const Text = styled.p<TextType>`
   font-weight: ${({ weight }) => weight};
   line-height: ${({ lineHeight }) => lineHeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  color: ${({ color }) => color};
+  color: ${({ textColor }) => textColor};
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 
@@ -66,14 +89,14 @@ const Text = styled.p<TextStyleComponetType>`
   }
 `;
 
-interface TextStyleComponetType {
+type TextType = {
   mobileSize: string;
   tabletSize: string;
   desktopSize: string;
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
-  color: any;
+  textColor: any;
   opacity?: number;
   marginTop?: string;
-}
+};

@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import { t } from '../../data/index/t';
 import { mediaBreakPoint } from '../../styles/common';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import Router, { useRouter } from 'next/router';
 import LangChangeToggle from './lang-change-toggle';
-import { motion } from 'framer-motion';
 import H5Title700 from '../../elements/typography/h5-title-700';
 
 const Header = () => {
-  const themeContext = useContext(ThemeContext);
   const router = useRouter();
   const goHome = () => {
     router.pathname !== '/' && Router.push('/');
@@ -30,7 +26,7 @@ const Header = () => {
     <>
       <HeaderContainer isShow={isShow}>
         <Left onClick={goHome}>
-          <H5Title700 text={t.shareDesign} color={themeContext.gray1} />
+          <H5Title700 text={t.shareDesign} color="gray1" />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>

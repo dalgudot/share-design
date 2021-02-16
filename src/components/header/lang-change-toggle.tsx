@@ -31,7 +31,7 @@ const LangChangeToggle = () => {
       >
         <PMedium700
           text={t.header.langChangeToggleKo}
-          color={locale === 'ko' ? themeContext.gray2 : themeContext.gray5}
+          color={locale === 'ko' ? 'gray2' : 'gray5'}
         />
       </motion.div>
       <Divider />
@@ -42,7 +42,7 @@ const LangChangeToggle = () => {
       >
         <PMedium700
           text={t.header.langChangeToggleEn}
-          color={locale === 'en' ? themeContext.gray2 : themeContext.gray5}
+          color={locale === 'en' ? 'gray2' : 'gray5'}
         />
       </motion.div>
     </ButtonContainer>
@@ -56,7 +56,7 @@ const ButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   padding: 12px 0 12px 12px; // 터치 영역
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   div {
     margin-bottom: 2px;

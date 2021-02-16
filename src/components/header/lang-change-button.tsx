@@ -5,14 +5,10 @@ import { useRef } from 'react';
 import { t } from '../../data/index/t';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { useRouter } from 'next/router';
 import { useMyRipple } from '../../lib/hooks/useMyRipple';
 
 const LangChangeButton = () => {
-  const themeContext = useContext(ThemeContext);
-
   const router = useRouter();
   const locale = router.locale;
   const setLanguageChange = () => {
@@ -39,7 +35,7 @@ const LangChangeButton = () => {
           text={useSetLanguage(t.shareDesign)}
           textSize="small"
           weight={fontWeight[700]}
-          color={themeContext.gray1}
+          color="gray1"
         />
       </BtnStyle>
     </motion.button>
@@ -54,6 +50,6 @@ const BtnStyle = styled.div`
   align-items: center;
   width: 128px;
   height: 40px;
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   background-color: ${({ theme }) => theme.gray7};
 `;

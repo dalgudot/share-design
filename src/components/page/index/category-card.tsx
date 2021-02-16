@@ -1,5 +1,4 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
+import styled from 'styled-components';
 import H1Title700 from '../../../elements/typography/h1-title-700';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import { tArticle } from '../../../data/article/t-article';
@@ -16,9 +15,8 @@ const CategoryCard = ({
   title: object[];
   backgroundGradient: string;
 }) => {
-  const themeContext = useContext(ThemeContext);
   const categoryTitle = title.map((title, idx) => (
-    <H1Title700 key={idx} text={title} color={themeContext.gray1} />
+    <H1Title700 key={idx} text={title} color="gray1" />
   ));
 
   return (
@@ -29,11 +27,11 @@ const CategoryCard = ({
           <ListViewDiv>
             <PMedium400 //
               text={tArticle.goToList}
-              color={themeContext.gray1}
+              color="gray1"
             />
             <PMedium400 //
               text={tArticle.chevronRight}
-              color={themeContext.gray1}
+              color="gray1"
             />
           </ListViewDiv>
         </a>
@@ -45,7 +43,7 @@ const CategoryCard = ({
 export default React.memo(CategoryCard);
 
 const Li = styled.li<{ backgroundGradient: string }>`
-  border-radius: ${({ theme }) => theme.borderRadius.Primary};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   background: linear-gradient(
     ${({ backgroundGradient }) => backgroundGradient}
   );

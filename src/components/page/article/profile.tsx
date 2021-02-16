@@ -20,9 +20,9 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
           src="/images/profile-photo@3x.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
-        <PSmall400 text={t.myName} color={themeContext.gray1} />
+        <PSmall400 text={t.myName} color="gray1" />
         <Dot />
-        <PSmall400 text={t.myJob} color={themeContext.gray1} />
+        <PSmall400 text={t.myJob} color="gray1" />
       </Author>
     </AuthorWrap>
   );

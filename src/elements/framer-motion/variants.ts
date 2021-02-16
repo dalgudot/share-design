@@ -23,6 +23,16 @@ export const stagger = {
   },
 };
 
+export const btnHoverTap = {
+  whileHover: {
+    scale: 1.04,
+  },
+
+  whileTap: {
+    scale: 0.97,
+  },
+};
+
 export const colorVariants = (color: string) => {
   return {
     initial: {
@@ -55,7 +65,7 @@ export const colorVariants = (color: string) => {
     },
 
     whileHover: {
-      scale: 1.05,
+      scale: 1.04,
     },
 
     whileTap: {
@@ -92,7 +102,7 @@ export const smoothUp = {
   },
 
   whileHover: {
-    scale: 1.05,
+    scale: 1.04,
   },
 
   whileTap: { scale: 0.97 },
@@ -121,7 +131,7 @@ export const listUp = {
   },
 
   whileHover: {
-    scale: 1.05,
+    scale: 1.04,
   },
 
   whileTap: { scale: 0.97 },
@@ -151,7 +161,7 @@ export const fadeInOut = {
   },
 
   whileHover: {
-    scale: 1.05,
+    scale: 1.04,
   },
 
   whileTap: { scale: 0.97 },
