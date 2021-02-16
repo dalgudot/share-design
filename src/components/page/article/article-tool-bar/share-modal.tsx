@@ -155,12 +155,14 @@ type modalHandlerType = {
 };
 
 const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
+  overflow-x: hidden;
+  overflow-y: hidden;
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
-      ? -2
+      ? -100
       : theme.zIndex.ModalBackgroundBlur};
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -173,10 +175,12 @@ const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
 `;
 
 const DivMotion = styled(motion.div)<modalHandlerType>`
+  overflow-x: hidden;
+  overflow-y: hidden;
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
-      ? -2
+      ? -100
       : theme.zIndex.Modal};
   position: absolute;
   top: 50%;

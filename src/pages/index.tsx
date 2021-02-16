@@ -11,7 +11,7 @@ import GotoIntroduction from '../components/page/index/go-to-introduction';
 import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
 
-const Index = ({ showToast }: { showToast: Function }) => {
+const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);

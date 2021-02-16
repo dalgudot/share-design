@@ -12,8 +12,8 @@ const maxWidth = {
 
 const zIndex = {
   Toast: 99998,
-  Modal: 10002,
-  ModalBackgroundBlur: 10001,
+  Modal: 90001,
+  ModalBackgroundBlur: 90000,
   Bar: 10000,
   BarFillEmptySpace: 9999,
   Background: -1,

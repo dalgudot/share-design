@@ -63,7 +63,7 @@ export const fadeInOut = {
 export const ScaleDownInUpOut = {
   initial: {
     opacity: 0,
-    scale: 1.05,
+    scale: [1, 1.05, 1], // 좌우 스크롤 문제 생길 수 있음
     y: '-52%',
     transition: {
       duration: 0.4,
@@ -73,7 +73,7 @@ export const ScaleDownInUpOut = {
 
   animate: {
     opacity: [0, 1],
-    scale: [1.1, 1],
+    scale: [1.1, 1], // 좌우 스크롤 문제 생길 수 있음
     y: '-52%',
     transition: {
       duration: 0.9,
