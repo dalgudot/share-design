@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import IconShare24 from '../../../../elements/svg/icon_share_24';
 import { useDispatch } from 'react-redux';
+import { btnHoverTap } from '../../../../elements/framer-motion/variants';
 
 const ShareToolButton = () => {
   const dispatch = useDispatch();
@@ -15,13 +16,18 @@ const ShareToolButton = () => {
     });
 
   const openModal = () => {
-    OPEN_MODAL();
+    OPEN_MODAL(); // to ture
     MODAL_Z_INDEX_HANDLER();
   };
 
   return (
     <>
-      <ShareButtonMotion onClick={openModal}>
+      <ShareButtonMotion
+        onClick={openModal}
+        variants={btnHoverTap}
+        whileHover="whileHover"
+        whileTap="whileTap"
+      >
         <IconShare24 />
       </ShareButtonMotion>
     </>

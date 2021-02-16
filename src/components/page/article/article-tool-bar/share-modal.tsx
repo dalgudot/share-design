@@ -8,15 +8,22 @@ import IconShareFacebook24 from '../../../../elements/svg/icon_share_facebook_24
 import IconShareLinkedin24 from '../../../../elements/svg/icon_share_linkedin_24';
 import IconShareTwitter24 from '../../../../elements/svg/icon_share_twitter_24';
 import IconShareCopyURL24 from '../../../../elements/svg/icon_share_copyURL_24';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { mediaBreakPoint } from '../../../../styles/common';
 import AloneButton from '../../../button/alone-button';
 import { t } from '../../../../data/index/t';
 import PMedium700 from '../../../../elements/typography/p-medium-700';
-import { fadeInOut } from '../../../../elements/framer-motion/variants';
+import {
+  btnHoverTap,
+  fadeInOut,
+  listUp,
+  stagger,
+  ScaleDownInUpOut,
+} from '../../../../elements/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useRef } from 'react';
+import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
   const url = window.location.href; // 현재 URL
@@ -40,9 +47,18 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
     });
 
   const closeModal = () => {
-    OPEN_MODAL();
+    OPEN_MODAL(); // to false
     setTimeout(() => MODAL_Z_INDEX_HANDLER(), 400); // 사라지는 애니메이션 위한 시간, Framer Varianst와 시간 통일
   };
+
+  const facebookRef = useRef(null);
+  const linkedinRef = useRef(null);
+  const twitterRef = useRef(null);
+  const copyURLRef = useRef(null);
+  useMyRipple(facebookRef);
+  useMyRipple(linkedinRef);
+  useMyRipple(twitterRef);
+  useMyRipple(copyURLRef);
 
   return (
     <>
@@ -52,63 +68,86 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
         animate={openModal === true ? 'animate' : 'initial'}
         openModal={openModal}
         modalZIndexHandler={modalZIndexHandler}
+        onClick={closeModal}
       />
       <DivMotion
-        variants={fadeInOut}
-        initial={false}
+        variants={ScaleDownInUpOut}
+        initial="initial"
         animate={openModal === true ? 'animate' : 'initial'}
         openModal={openModal}
         modalZIndexHandler={modalZIndexHandler}
       >
-        <UlMotion>
-          <LiMotion>
-            <FacebookShareButton url={url} className="list__common">
+        <UlMotion //
+          variants={stagger}
+          initial={false}
+          animate={openModal === true ? 'animate' : 'initial'}
+        >
+          <FacebookShareButton url={url} className="list__common">
+            <LiMotion ref={facebookRef}>
               <IconShareFacebook24 />
-              <PMedium700 text={t.shareModal.facebook} color="gray1" />
-            </FacebookShareButton>
-          </LiMotion>
+              <motion.div //
+                variants={btnHoverTap}
+                whileHover="whileHover"
+              >
+                <PMedium700 text={t.shareModal.facebook} color="gray1" />
+              </motion.div>
+            </LiMotion>
+          </FacebookShareButton>
 
-          <LiMotion>
-            <LinkedinShareButton url={url} className="list__common">
+          <LinkedinShareButton url={url} className="list__common">
+            <LiMotion ref={linkedinRef} variants={listUp}>
               <IconShareLinkedin24 />
-              <PMedium700 text={t.shareModal.linkedin} color="gray1" />
-            </LinkedinShareButton>
-          </LiMotion>
+              <motion.div //
+                variants={btnHoverTap}
+                whileHover="whileHover"
+              >
+                <PMedium700 text={t.shareModal.linkedin} color="gray1" />
+              </motion.div>
+            </LiMotion>
+          </LinkedinShareButton>
 
-          <LiMotion>
-            <TwitterShareButton url={url} className="list__common">
+          <TwitterShareButton url={url} className="list__common">
+            <LiMotion ref={twitterRef} variants={listUp}>
               <IconShareTwitter24 />
-              <PMedium700 text={t.shareModal.twitter} color="gray1" />
-            </TwitterShareButton>
-          </LiMotion>
+              <motion.div //
+                variants={btnHoverTap}
+                whileHover="whileHover"
+              >
+                <PMedium700 text={t.shareModal.twitter} color="gray1" />
+              </motion.div>
+            </LiMotion>
+          </TwitterShareButton>
 
           {/* CopyToClipboard 밑에는 자식 컴포넌트 1개만 가능 */}
-          <LiMotion>
-            <CopyToClipboard
-              text={url}
-              onCopy={() => showToast(t.shareModal.toastMessage)}
-            >
-              <CopyURLWrap className="list__common">
-                <IconShareCopyURL24 />
+          <CopyToClipboard
+            text={url}
+            onCopy={() => showToast(t.shareModal.toastMessage)}
+          >
+            <LiMotion ref={copyURLRef} variants={listUp}>
+              <IconShareCopyURL24 />
+              <motion.div //
+                variants={btnHoverTap}
+                whileHover="whileHover"
+              >
                 <PMedium700 text={t.shareModal.copyURL} color="gray1" />
-              </CopyURLWrap>
-            </CopyToClipboard>
-          </LiMotion>
+              </motion.div>
+            </LiMotion>
+          </CopyToClipboard>
 
-          <button onClick={closeModal}>
+          <motion.button onClick={closeModal} variants={listUp}>
             <AloneButton
               size="small"
               btnText={t.closeButton}
               marginTop="36px"
             />
-          </button>
+          </motion.button>
         </UlMotion>
       </DivMotion>
     </>
   );
 };
 
-export default ShareModal;
+export default React.memo(ShareModal);
 
 type modalHandlerType = {
   openModal: boolean;
@@ -128,9 +167,9 @@ const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
   height: 100%;
 
   color: ${({ theme }) => theme.gray8};
-  -webkit-backdrop-filter: blur(80px) saturate(120%) brightness(95%)
+  -webkit-backdrop-filter: blur(60px) saturate(120%) brightness(105%)
     hue-rotate(10deg);
-  backdrop-filter: blur(80px) saturate(120%) brightness(95%) hue-rotate(10deg);
+  backdrop-filter: blur(60px) saturate(120%) brightness(105%) hue-rotate(10deg);
 `;
 
 const DivMotion = styled(motion.div)<modalHandlerType>`
@@ -141,7 +180,7 @@ const DivMotion = styled(motion.div)<modalHandlerType>`
       : theme.zIndex.Modal};
   position: absolute;
   top: 50%;
-  transform: translateY(-52%);
+  transform: translateY(-52%); // framer-motion에 영향
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -158,29 +197,32 @@ const UlMotion = styled(motion.ul)`
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.R13};
   background-color: ${({ theme }) => theme.gray8};
-  padding: 20px 36px 24px; // top은 20px + 16px(Li margin-top)
+  padding: 20px 36px 28px; // top은 20px + 16px(Li margin-top)
 
   .list__common {
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 `;
 
 const LiMotion = styled(motion.li)`
   cursor: pointer;
   width: 100%;
+  height: 100%;
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
-
-  button {
-    width: 100%;
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
 
   p {
     margin-left: 16px;
   }
 `;
 
-const CopyURLWrap = styled.div``;
+// hover motion 위해 border-bottom 대신 div로 divider
+const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.gray7};
+`;
