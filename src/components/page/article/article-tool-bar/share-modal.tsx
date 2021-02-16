@@ -21,6 +21,10 @@ import { useDispatch, useSelector } from 'react-redux';
 const ShareModal = ({ showToast }: { showToast: Function }) => {
   const router = useRouter();
   const routerPathName: string = router.pathname;
+
+  const routerLocale = router.route;
+  console.log(`routerLocale: ${routerLocale}`);
+
   const url: string = `https://share-design.kr${routerPathName}`;
   const openModal = useSelector((state: any) => state.openModal);
   const modalZIndexHandler = useSelector(
