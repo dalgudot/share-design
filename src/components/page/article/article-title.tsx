@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Profile from './profile';
 import H1Title700 from '../../../elements/typography/h1-title-700';
 import H6Title700 from '../../../elements/typography/h6-title-700';
+import PSmall700 from '../../../elements/typography/p-small-700';
 
 const ArticleTitleArea = ({
   categoryTitle,
@@ -13,7 +14,7 @@ const ArticleTitleArea = ({
   return (
     <TitleArea>
       {categoryTitle && (
-        <H6Title700 //
+        <PSmall700 //
           text={categoryTitle}
           color="gray4"
         />
@@ -31,7 +32,7 @@ const ArticleTitleArea = ({
 export default ArticleTitleArea;
 
 const TitleArea = styled.div`
-  h6 {
+  p {
     margin-left: 2px; // smallTitle 시각 보정
   }
 `;

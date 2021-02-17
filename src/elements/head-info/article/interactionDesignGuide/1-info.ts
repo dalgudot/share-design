@@ -35,5 +35,5 @@ export const interactionDesignGuideOneInfo = {
 
   thumbnail: { k: '/images/index.jpg', e: '/images/index.jpg' },
 
-  type: { k: 'website', e: 'website' },
+  type: { k: 'article', e: 'article' },
 };

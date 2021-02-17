@@ -14,18 +14,18 @@ const InteractionDesignGuideOne = () => {
   }, []);
   bodyScrollTop();
 
-  const categoryTitle = tArticle.interactionDesignGuide.smallTitle;
-  const articleTitle =
-    tArticle.interactionDesignGuide.articleList[0].articleTitle;
-  const paragraphArray = tArticle.interactionDesignGuide.title;
+  // const categoryTitle = tArticle.interactionDesignGuide.smallTitle;
+  // const articleTitle =
+  //   tArticle.interactionDesignGuide.articleList[0].articleTitle;
+  // const paragraphArray = tArticle.interactionDesignGuide.title;
   return (
     <>
       <HeadSEO info={interactionDesignGuideOneInfo} />
-      <Article
+      {/* <Article
         categoryTitle={categoryTitle}
         articleTitle={articleTitle}
         paragraphArray={paragraphArray}
-      />
+      /> */}
     </>
   );
 };

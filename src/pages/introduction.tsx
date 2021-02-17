@@ -1,10 +1,10 @@
 import HeadSEO from '../elements/head-info/head-seo';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import { indexInfo } from '../elements/head-info/index/index-info';
 import { t } from '../data/index/t';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import Article from '../components/page/article/article';
+import { introductionInfo } from '../elements/head-info/index/introduction-info';
 
 const Introduction = () => {
   useEffect(() => {
@@ -18,7 +18,7 @@ const Introduction = () => {
   const paragraphArray = t.shareDesignProjectIntroduction.contentsText;
   return (
     <>
-      <HeadSEO info={indexInfo} />
+      <HeadSEO info={introductionInfo} />
       <Article
         categoryTitle={categoryTitle}
         articleTitle={articleTitle}

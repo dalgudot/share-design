@@ -16,11 +16,6 @@ const HeadSEO = ({ info }: any) => {
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
 
-      {/* iOS 대응 Building Manifest File*/}
-      {/* https://joshua1988.github.io/web-development/pwa/webapp-manifest/ */}
-      {/* <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black" /> */}
-
       <title>{useSetLanguage(info.title)}</title>
       <link rel="icon" href={useSetLanguage(info.icoImage)} />
       <meta name="author" content={useSetLanguage(info.author)} />
@@ -112,22 +107,9 @@ const HeadSEO = ({ info }: any) => {
         crossOrigin="anonymous"
       />
       {/* E of fonts preload */}
-      {/* S of Image preload 
-      index에서만 쓰이지 않는 이미지이므로 index 제외한 모든 페이지에서만 preload */}
+      {/* S of Image preload */}
       {router.pathname !== '/' && (
         <>
-          {/* <link
-            rel="preload"
-            href="/images/profile-photo.jpg"
-            as="image"
-            type="image/jpg"
-          /> */}
-          {/* <link
-            rel="preload"
-            href="/images/profile-photo@2x.jpg"
-            as="image"
-            type="image/jpg"
-          /> */}
           <link
             rel="preload"
             href="/images/profile-photo@3x.jpg"

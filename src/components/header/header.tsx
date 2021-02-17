@@ -3,7 +3,7 @@ import { t } from '../../data/index/t';
 import { mediaBreakPoint } from '../../styles/common';
 import Router, { useRouter } from 'next/router';
 import LangChangeToggle from './lang-change-toggle';
-import H5Title700 from '../../elements/typography/h5-title-700';
+import PMedium700 from '../../elements/typography/p-medium-700';
 
 const Header = () => {
   const router = useRouter();
@@ -26,7 +26,7 @@ const Header = () => {
     <>
       <HeaderContainer isShow={isShow}>
         <Left onClick={goHome}>
-          <H5Title700 text={t.shareDesign} color="gray1" />
+          <PMedium700 text={t.shareDesign} color="gray1" />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>
