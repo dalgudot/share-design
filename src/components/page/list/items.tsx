@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import H3Title700 from '../../../elements/typography/h3-title-700';
 import PSmall400 from '../../../elements/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -16,13 +15,13 @@ const Items = ({
   summary: string;
   url: string;
 }) => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <Link href={url}>
       <a>
         <Li>
-          <PSmall400 text={date} color="gray3" />
+          <time dateTime="2021-03-07">
+            <PSmall400 text={date} color="gray3" />
+          </time>
           <H3Title700 //
             text={title}
             color="gray1"

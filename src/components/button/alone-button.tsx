@@ -39,10 +39,12 @@ const AloneButton = ({
 
 export default AloneButton;
 
-const MotionDiv = styled(motion.div)<{
+type MotionDivType = {
   marginTop?: string;
   size: string;
-}>`
+};
+
+const MotionDiv = styled(motion.div)<MotionDivType>`
   margin-top: ${({ marginTop }) => marginTop};
   display: flex;
   justify-content: center;
@@ -52,5 +54,5 @@ const MotionDiv = styled(motion.div)<{
   background-color: ${({ theme }) => theme.gray7};
   color: ${({ theme }) => theme.gray1};
   padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
-  max-width: 120px;
+  /* max-width: 200px; */
 `;

@@ -40,6 +40,7 @@ const Article = ({
             ))}
           </ContentsDiv>
 
+          {/* <Comment /> */}
           <ArticleToolBar />
         </ArticleContainer>
       </Main>

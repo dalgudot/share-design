@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';
@@ -26,15 +26,31 @@ const Comment = () => {
   const [contents, setContents] = useState('');
 
   const btnRef = useRef(null);
-  useMyRipple(btnRef);
+  // useMyRipple(btnRef);
+
+  // 기존 댓글 가져오기
+  // useEffect(() => {
+  //   firebase
+  //     .database()
+  //     .ref(`Draft`)
+  //     .once('value')
+  //     .then((snapshot) => {
+  //       const data = snapshot.val();
+  //       data && setContents(data);
+  //       console.log('[Success]Firebase Realtime Database');
+  //     })
+  //     .catch(() => {
+  //       console.error('[Error]Firebase Realtime Database');
+  //     });
+  // }, []);
 
   return (
     <>
       {/* 댓글 남긴 날짜 */}
       <Container>
-        <button ref={btnRef} onClick={() => firebaseSet()}>
+        {/* <button ref={btnRef} onClick={() => firebaseSet()}>
           저장하기
-        </button>
+        </button> */}
         <MultiLineTextField
           ref={textRef}
           value={contents}
@@ -42,7 +58,7 @@ const Comment = () => {
           autoFocus={true}
           name="My Writing Space"
           placeholder="My Writing Space"
-          rows={10000}
+          rows={10}
           cols={4000}
         />
       </Container>
@@ -55,7 +71,7 @@ export default Comment;
 const Container = styled.main`
   display: flex;
   flex-direction: column;
-  max-width: 1080px;
+  max-width: ${({ theme }) => theme.maxWidth.Paragraph};
   margin: 0 auto;
 
   button {
@@ -74,7 +90,7 @@ const Container = styled.main`
 const MultiLineTextField = styled.textarea`
   padding: 72px;
   font-size: 24px;
-  background-color: ${({ theme }) => theme.gray8};
+  background-color: ${({ theme }) => theme.gray7};
   border-radius: 16px;
   margin-top: 120px;
   caret-color: ${({ theme }) => theme.gray2};
