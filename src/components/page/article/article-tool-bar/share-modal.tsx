@@ -22,8 +22,9 @@ import {
   ScaleDownInUpOut,
 } from '../../../../elements/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
+import { useRouter } from 'next/router';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
   const url = window.location.href; // 현재 URL
@@ -50,6 +51,15 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
     OPEN_MODAL(); // to false
     setTimeout(() => MODAL_Z_INDEX_HANDLER(), 400); // 사라지는 애니메이션 위한 시간, Framer Varianst와 시간 통일
   };
+
+  // Modal 켜져 있는데 화면 이동하면 Modal 종료
+  const router = useRouter();
+  useEffect(() => {
+    if (modalZIndexHandler === true && openModal === true) {
+      OPEN_MODAL();
+      MODAL_Z_INDEX_HANDLER();
+    }
+  }, [router.pathname]);
 
   const facebookRef = useRef(null);
   const linkedinRef = useRef(null);
@@ -160,8 +170,10 @@ const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
-      ? -100
+      ? -2
       : theme.zIndex.ModalBackgroundBlur};
+  display: ${({ openModal, modalZIndexHandler }) =>
+    modalZIndexHandler === false && openModal === false ? 'none' : 'block'};
   position: fixed;
   top: 0;
   left: 0;
@@ -180,11 +192,13 @@ const DivMotion = styled(motion.div)<modalHandlerType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
-      ? -100
+      ? -2
       : theme.zIndex.Modal};
+  display: ${({ openModal, modalZIndexHandler }) =>
+    modalZIndexHandler === false && openModal === false ? 'none' : 'block'};
   position: absolute;
   top: 50%;
-  transform: translateY(-52%); // framer-motion에 영향
+  transform: translateY(-50%); // framer-motion에 영향
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -222,11 +236,4 @@ const LiMotion = styled(motion.li)`
   p {
     margin-left: 16px;
   }
-`;
-
-// hover motion 위해 border-bottom 대신 div로 divider
-const Divider = styled.div`
-  height: 1px;
-  width: 100%;
-  background-color: ${({ theme }) => theme.gray7};
 `;

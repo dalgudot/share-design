@@ -14,7 +14,6 @@ const MyToast = ({
   return (
     <>
       <ToastWrapMotion
-        key={toastMessage} // 토스트별 구분 위해 key 필요
         variants={toastVariants}
         initial="hide"
         animate={toastOn === true ? 'show' : 'hide'}

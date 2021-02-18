@@ -69,8 +69,12 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             {/* </AnimatePresence> */}
             {/* AnimatePresence 밖에 TabNavBar 있어야 re-render 안 됨 */}
             <TabNavBar />
-            <ShareModal showToast={showToast} />
-            <MyToast toastOn={toastOn} toastMessage={toastMessage} />
+            <ShareModal key={router.pathname} showToast={showToast} />
+            <MyToast
+              key={toastMessage} // 토스트별 구분 위해 key 필요
+              toastOn={toastOn}
+              toastMessage={toastMessage}
+            />
           </ThemeProvider>
         </PersistGate>
       </Provider>

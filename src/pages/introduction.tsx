@@ -13,14 +13,14 @@ const Introduction = () => {
   bodyScrollTop();
 
   // 여기만 categoryTitle을 date로 대체
-  const categoryTitle = t.shareDesignProjectIntroduction.date;
+  // const categoryTitle = t.shareDesignProjectIntroduction.date;
   const articleTitle = t.shareDesignProjectIntroduction.title;
   const paragraphArray = t.shareDesignProjectIntroduction.contentsText;
   return (
     <>
       <HeadSEO info={introductionInfo} />
       <Article
-        categoryTitle={categoryTitle}
+        // categoryTitle={categoryTitle}
         articleTitle={articleTitle}
         paragraphArray={paragraphArray}
       />

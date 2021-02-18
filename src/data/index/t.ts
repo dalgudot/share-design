@@ -231,10 +231,10 @@ export const t = {
       e: 'SHARE DESIGN Project',
     },
 
-    date: {
-      k: '2021년 3월 7일',
-      e: '7 MAR 2021',
-    },
+    // date: {
+    //   k: '2021년 3월 7일',
+    //   e: '7 MAR 2021',
+    // },
 
     contentsText: [
       {

@@ -12,7 +12,7 @@ const Article = ({
   articleTitle,
   paragraphArray,
 }: {
-  categoryTitle: object;
+  categoryTitle?: object;
   articleTitle: object;
   paragraphArray: object[];
 }) => {

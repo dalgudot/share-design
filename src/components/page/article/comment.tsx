@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
+import { useRouter } from 'next/router';
+import AloneButton from '../../button/alone-button';
+import { tArticle } from '../../../data/article/t-article';
+import loadConfig from 'next/dist/next-server/server/config';
+import StaggerDots from '../../../elements/framer-motion/stagger-dots';
 
 const Comment = () => {
   const today = new Date(); // today는 Date의 Instance
@@ -17,53 +21,79 @@ const Comment = () => {
       : String(today.getDate());
   const when = `${year}${month}${date}`;
 
-  const firebaseDatabaseRef: any = firebase.database().ref(`Draft/${when}`);
+  const router = useRouter();
+
   const firebaseSet: Function = () => {
-    firebaseDatabaseRef.push().set(contents);
+    const firebaseDatabaseRef: any = firebase
+      .database()
+      .ref(`Comment${router.pathname}`);
+
+    firebaseDatabaseRef.push().set([when, newComment]);
   };
 
   const textRef = useRef(null);
-  const [contents, setContents] = useState('');
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  const btnRef = useRef(null);
-  // useMyRipple(btnRef);
+  const setCommentsFunc = () => {
+    // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용
+    firebase
+      .database()
+      .ref(`/Comment${router.pathname}`)
+      .on('value', (snapshot) => {
+        const objData = snapshot.val();
+        const data: any = Object.values(objData);
+        console.log(data);
+        data && setComments(data);
+        setLoading(false);
+        console.log('[Success]Firebase Realtime Database');
+      });
+
+    // .catch(() => {
+    //   console.error('[Error]Firebase Realtime Database');
+    // });
+  };
 
   // 기존 댓글 가져오기
-  // useEffect(() => {
-  //   firebase
-  //     .database()
-  //     .ref(`Draft`)
-  //     .once('value')
-  //     .then((snapshot) => {
-  //       const data = snapshot.val();
-  //       data && setContents(data);
-  //       console.log('[Success]Firebase Realtime Database');
-  //     })
-  //     .catch(() => {
-  //       console.error('[Error]Firebase Realtime Database');
-  //     });
-  // }, []);
+  useEffect(() => {
+    setCommentsFunc();
+  }, []);
 
-  return (
-    <>
-      {/* 댓글 남긴 날짜 */}
-      <Container>
-        {/* <button ref={btnRef} onClick={() => firebaseSet()}>
-          저장하기
-        </button> */}
-        <MultiLineTextField
-          ref={textRef}
-          value={contents}
-          onChange={(e) => setContents(e.target.value)}
-          autoFocus={true}
-          name="My Writing Space"
-          placeholder="My Writing Space"
-          rows={10}
-          cols={4000}
-        />
-      </Container>
-    </>
-  );
+  if (loading === true) {
+    return (
+      <>
+        <Container>
+          <StaggerDots />
+        </Container>
+      </>
+    );
+  } else {
+    return (
+      <>
+        {/* 댓글 남긴 날짜 */}
+        <Container>
+          {/* p 태그 임시 */}
+          <p>{comments}</p>
+          <MultiLineTextField
+            ref={textRef}
+            // value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            autoFocus={true}
+            name="Comments"
+            placeholder="My Writing Space"
+            rows={3}
+            cols={40}
+          />
+
+          {/* 여러 번 클릭 방지해야 함. */}
+          <button onClick={() => firebaseSet()}>
+            <AloneButton size="small" btnText={tArticle.welcomeText} />
+          </button>
+        </Container>
+      </>
+    );
+  }
 };
 
 export default Comment;
@@ -74,29 +104,28 @@ const Container = styled.main`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
   margin: 0 auto;
 
-  button {
-    position: fixed;
-    top: 120px;
-    right: 20%;
-    font-size: 24px;
-    color: ${({ theme }) => theme.gray2};
-    border: solid ${({ theme }) => theme.gray2} 1px;
-    border-radius: 20px;
-    background-color: transparent;
-    padding: 16px 28px;
+  margin-top: 300px; // 임시
+
+  p {
+    color: white; // 임시
   }
+
+  /* button {
+    border-radius: 20px;
+    padding: 16px 28px;
+  } */
 `;
 
 const MultiLineTextField = styled.textarea`
-  padding: 72px;
-  font-size: 24px;
+  padding: 36px;
+  font-size: 18px;
   background-color: ${({ theme }) => theme.gray7};
-  border-radius: 16px;
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
   margin-top: 120px;
   caret-color: ${({ theme }) => theme.gray2};
   color: ${({ theme }) => theme.gray2};
-  font-weight: 300;
-  line-height: 1.9;
+  font-weight: 400;
+  line-height: 1.7;
 
   :invalid {
     border: 1px solid ${({ theme }) => theme.gray8};

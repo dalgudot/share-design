@@ -17,7 +17,6 @@ const HeadSEO = ({ info }: any) => {
       />
 
       <title>{useSetLanguage(info.title)}</title>
-      <link rel="icon" href={useSetLanguage(info.icoImage)} />
       <meta name="author" content={useSetLanguage(info.author)} />
       <meta name="description" content={useSetLanguage(info.description)} />
       <meta name="keywords" content={useSetLanguage(info.keywords)} />
@@ -40,6 +39,8 @@ const HeadSEO = ({ info }: any) => {
         content={useSetLanguage(info.description)}
       />
       <meta name="twitter:image" content={useSetLanguage(info.thumbnail)} />
+
+      <link rel="icon" href={useSetLanguage(info.icoImage)} />
 
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}

@@ -36,7 +36,8 @@ const Container = styled.div`
     height: 7px;
     border-radius: 50%;
     margin: 4px;
-    background-color: ${({ color }) => color};
+    /* background-color: ${({ color }) => color}; */
+    background-color: white;
   }
 `;
 
@@ -57,8 +58,9 @@ const loadingCircleVariants = {
     y: '-50%',
     transition: {
       duration: 0.4,
-      yoyo: Infinity,
-      ease: 'easeInOut',
+      repeat: Infinity,
+      repeatType: 'reverse',
+      // ease: 'easeInOut',
     },
   },
 };
