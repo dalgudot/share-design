@@ -98,7 +98,7 @@ const Comment = () => {
 
 export default Comment;
 
-const Container = styled.main`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};

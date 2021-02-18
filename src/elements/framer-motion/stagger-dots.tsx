@@ -58,9 +58,7 @@ const loadingCircleVariants = {
     y: '-50%',
     transition: {
       duration: 0.4,
-      repeat: Infinity,
-      repeatType: 'reverse',
-      // ease: 'easeInOut',
+      yoyo: 'Infinity',
     },
   },
 };
