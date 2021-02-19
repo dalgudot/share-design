@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import H1Title700 from '../../../elements/typography/h1-title-700';
 import PMedium400 from '../../../elements/typography/p-medium-400';
-import { tArticle } from '../../../data/article/t-article';
+import { tArticleCommon } from '../../../data/article/t-article-common';
 import { mediaBreakPoint } from '../../../styles/common';
 import Link from 'next/link';
 import React from 'react';
@@ -26,11 +26,11 @@ const CategoryCard = ({
           <TitleDiv>{categoryTitle}</TitleDiv>
           <ListViewDiv>
             <PMedium400 //
-              text={tArticle.goToList}
+              text={tArticleCommon.goToList}
               color="gray1"
             />
             <PMedium400 //
-              text={tArticle.chevronRight}
+              text={tArticleCommon.chevronRight}
               color="gray1"
             />
           </ListViewDiv>

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { tArticle } from '../../../data/article/t-article';
+import { tArticleCommon } from '../../../data/article/t-article-common';
 import H3Title700 from '../../../elements/typography/h3-title-700';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -35,7 +35,7 @@ const ListArea = ({
           />
 
           <H3Title700 //
-            text={tArticle.comingSoon}
+            text={tArticleCommon.comingSoon}
             color="gray1"
             marginTop="16px"
           />

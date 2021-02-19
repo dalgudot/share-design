@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import AloneButton from '../../button/alone-button';
-import { tArticle } from '../../../data/article/t-article';
+import { tArticleCommon } from '../../../data/article/t-article-common';
 import loadConfig from 'next/dist/next-server/server/config';
 import StaggerDots from '../../../elements/framer-motion/stagger-dots';
 
@@ -88,7 +88,7 @@ const Comment = () => {
 
           {/* 여러 번 클릭 방지해야 함. */}
           <button onClick={() => firebaseSet()}>
-            <AloneButton size="small" btnText={tArticle.welcomeText} />
+            <AloneButton size="small" btnText={tArticleCommon.welcomeText} />
           </button>
         </Container>
       </>
