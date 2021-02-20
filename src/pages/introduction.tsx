@@ -8,7 +8,7 @@ const Introduction = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Introduction');
   }, []);
-  bodyScrollTop();
+  // bodyScrollTop();
 
   const articleTitle = projectIntroduction().title;
   const paragraphArray = projectIntroduction().contentsText;

@@ -6,6 +6,9 @@ import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
+import { useEffect, useState } from 'react';
+import WriteComment from './write-comment';
+import { useRouter } from 'next/router';
 
 const Article = ({
   categoryTitle,
@@ -18,31 +21,47 @@ const Article = ({
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
+  const [writeCommentMode, setWriteCommentMode] = useState(false);
+
+  // 페이지 이동 시 댓글 쓰기 모드 초기화
+  const router = useRouter();
+  useEffect(() => setWriteCommentMode(false), [router.pathname]);
 
   return (
     <>
       <Main>
-        <ArticleContainer>
-          <Background width={width} height={height} />
-          <ArticleTitleArea
-            categoryTitle={categoryTitle}
-            articleTitle={articleTitle}
-          />
+        {writeCommentMode === false ? (
+          <ArticleContainer>
+            <Background width={width} height={height} />
+            <ArticleTitleArea
+              categoryTitle={categoryTitle}
+              articleTitle={articleTitle}
+            />
 
-          <ContentsDiv>
-            {paragraphArray.map((text, index) => (
-              <PMedium400
-                key={index}
-                text={text}
-                color="gray3"
-                marginTop="24px"
-              />
-            ))}
-          </ContentsDiv>
+            <ContentsDiv>
+              {paragraphArray.map((text, index) => (
+                <PMedium400
+                  key={index}
+                  text={text}
+                  color="gray3"
+                  marginTop="24px"
+                />
+              ))}
+            </ContentsDiv>
 
-          {/* <Comment /> */}
-          <ArticleToolBar />
-        </ArticleContainer>
+            {/* <Comment /> */}
+            {/* 버튼 영역 */}
+            {/* <button //
+              onClick={() => setWriteCommentMode(true)}
+            >
+              쓰기 모드
+            </button> */}
+
+            <ArticleToolBar />
+          </ArticleContainer>
+        ) : (
+          <>{/* <WriteComment /> */}</>
+        )}
       </Main>
     </>
   );

@@ -10,7 +10,7 @@ const eCommerceDesignGuideList = () => {
     VisitsAndViewsDuringSession('List/eCommerceDesignGuide');
   }, []);
   const data = categoryData();
-  bodyScrollTop();
+  // bodyScrollTop();
 
   return (
     <>

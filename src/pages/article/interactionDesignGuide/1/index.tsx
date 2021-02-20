@@ -9,7 +9,7 @@ const InteractionDesignGuideOne = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
-  bodyScrollTop();
+  // bodyScrollTop();
 
   // const categoryTitle = tArticleCommon.interactionDesignGuide.categoryTitle;
   // const articleTitle =

@@ -13,7 +13,7 @@ const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  bodyScrollTop();
+  // bodyScrollTop();
   const data = categoryData();
 
   return (
