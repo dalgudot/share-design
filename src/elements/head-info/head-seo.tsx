@@ -23,6 +23,27 @@ const HeadSEO = () => {
   };
   const info = infoSwitch();
 
+  // 공통 요소들
+  const icoImage = '/share-design.ico';
+
+  const author = {
+    k: '김경환',
+    e: 'KyungHwan Kim',
+  };
+
+  const thumbnail = {
+    k: '/images/og_image_ko.jpg',
+    e: '/images/og_image_en.jpg',
+  };
+
+  const keywords = {
+    k:
+      '김경환, 디자인 공유하기, 디자인, 디자이너, UI, UX, UI 디자인, UX 디자인, UI/UX 디자인, 프로덕트 디자인, 디자인 포트폴리오, 웹 포트폴리오, 포트폴리오 웹 사이트, UI 디자인 포트폴리오, UX 디자인 포트폴리오, UI/UX 디자인 포트폴리오, 프로덕트 디자인 포트폴리오',
+    e:
+      'KyungHwan Kim, Share Design, Design, Designer, UI Design, UX Design, UI/UX Design, Product Design, Design Portfolio, Web Portfolio, Portfolio Web Site, UI Design Portfolio, UX Design Portfolio, UI/UX Design portfolio, Product Design Portfolio',
+  };
+  // 공통 요소들
+
   return (
     <Head>
       <link rel="alternate" hrefLang="x-default" href={info.url.k} />
@@ -41,9 +62,9 @@ const HeadSEO = () => {
       />
 
       <title>{useSetLanguage(info.title)}</title>
-      <meta name="author" content={useSetLanguage(info.author)} />
+      <meta name="author" content={useSetLanguage(author)} />
       <meta name="description" content={useSetLanguage(info.description)} />
-      <meta name="keywords" content={useSetLanguage(info.keywords)} />
+      <meta name="keywords" content={useSetLanguage(keywords)} />
 
       <meta property="og:url" content={useSetLanguage(info.url)} />
       <meta property="og:title" content={useSetLanguage(info.title)} />
@@ -51,9 +72,14 @@ const HeadSEO = () => {
         property="og:description"
         content={useSetLanguage(info.description)}
       />
-      <meta property="og:image" content={useSetLanguage(info.thumbnail)} />
-      <meta property="og:type" content={useSetLanguage(info.type)} />
-      {/* <meta property="og:locale" content={info.locale} /> */}
+      <meta property="og:image" content={useSetLanguage(thumbnail)} />
+      {/* 페이북 권장 사이즈 1200 : 630 = 1.9 : 1(약) */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:type" content={info.type} />
+      {/* locale은 ko_KR라는 형식 맞춰야 함*/}
+      <meta property="og:locale" content="ko_KR" />
+      <meta property="og:locale:alternate" content="en_US" />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={useSetLanguage(info.url)} />
@@ -62,9 +88,9 @@ const HeadSEO = () => {
         name="twitter:description"
         content={useSetLanguage(info.description)}
       />
-      <meta name="twitter:image" content={useSetLanguage(info.thumbnail)} />
+      <meta name="twitter:image" content={useSetLanguage(thumbnail)} />
 
-      <link rel="icon" href={useSetLanguage(info.icoImage)} />
+      <link rel="icon" href={icoImage} />
 
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}
