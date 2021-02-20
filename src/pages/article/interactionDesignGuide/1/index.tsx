@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
-import { tArticleCommon } from '../../../../data/article/t-article-common';
 import { useRouter } from 'next/router';
 import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
 import Article from '../../../../components/page/article/article';
@@ -12,7 +11,7 @@ const InteractionDesignGuideOne = () => {
   }, []);
   bodyScrollTop();
 
-  // const categoryTitle = tArticleCommon.interactionDesignGuide.smallTitle;
+  // const categoryTitle = tArticleCommon.interactionDesignGuide.categoryTitle;
   // const articleTitle =
   //   tArticleCommon.interactionDesignGuide.articleList[0].articleTitle;
   // const paragraphArray = tArticleCommon.interactionDesignGuide.title;

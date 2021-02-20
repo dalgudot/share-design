@@ -1,20 +1,18 @@
 import Router from 'next/router';
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import PSmall400 from '../../../elements/typography/p-small-400';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../../../data/index/t';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const Profile = ({ marginTop }: { marginTop: string }) => {
-  const themeContext = useContext(ThemeContext);
   const goToContact = () => {
     Router.push('/contact');
   };
 
   return (
-    // 버튼 inline-block으로 만들기 위해 wrap 필요
-    <AuthorWrap>
+    // 버튼 inline-block으로 만들기 위해 span wrap 필요
+    <span>
       <Author onClick={goToContact} marginTop={marginTop}>
         <img
           src="/images/profile-photo@3x.jpg"
@@ -24,13 +22,11 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
         <Dot />
         <PSmall400 text={t.myJob} color="gray1" />
       </Author>
-    </AuthorWrap>
+    </span>
   );
 };
 
 export default Profile;
-
-const AuthorWrap = styled.span``;
 
 const Author = styled.button<{ marginTop: string }>`
   display: flex;

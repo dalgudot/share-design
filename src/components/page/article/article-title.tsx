@@ -32,6 +32,6 @@ export default ArticleTitleArea;
 
 const TitleArea = styled.div`
   p {
-    margin-left: 2px; // smallTitle 시각 보정
+    margin-left: 2px; // categoryTitle 시각 보정
   }
 `;

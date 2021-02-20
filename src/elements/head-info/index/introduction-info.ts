@@ -11,6 +11,11 @@ export const introductionInfo = {
 
   type: 'article',
 
+  thumbnail: {
+    k: '/images/og_image_ko.jpg',
+    e: '/images/og_image_en.jpg',
+  },
+
   description: {
     k:
       '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 공간입니다.',

@@ -8,14 +8,14 @@ import React from 'react';
 
 const CategoryCard = ({
   url,
-  title,
+  categoryTitleArray,
   backgroundGradient,
 }: {
   url: string;
-  title: object[];
+  categoryTitleArray: object[];
   backgroundGradient: string;
 }) => {
-  const categoryTitle = title.map((title, idx) => (
+  const homeCategoryTitle = categoryTitleArray.map((title, idx) => (
     <H1Title700 key={idx} text={title} color="gray1" />
   ));
 
@@ -23,7 +23,7 @@ const CategoryCard = ({
     <Li backgroundGradient={backgroundGradient}>
       <Link href={`/list/${url}`}>
         <a>
-          <TitleDiv>{categoryTitle}</TitleDiv>
+          <TitleDiv>{homeCategoryTitle}</TitleDiv>
           <ListViewDiv>
             <PMedium400 //
               text={tArticleCommon.goToList}

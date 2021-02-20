@@ -15,7 +15,7 @@ const interactionDesignGuideList = () => {
   return (
     <>
       <List
-        title={data[0].smallTitle}
+        title={data[0].categoryTitle}
         backgroundGradient={data[0].backgroundGradient}
         articleList={data[0].articleList}
       />

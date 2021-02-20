@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { t } from '../../../data/index/t';
+import { projectIntroduction } from '../../../data/article/introduction';
 import { btnHoverTap } from '../../../elements/framer-motion/variants';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const GotoIntroduction = () => {
-  const goToIntroductionText =
-    t.shareDesignProjectIntroduction.goToIntroduction;
+  const goToIntroductionText = projectIntroduction().goToIntroduction;
 
   return (
     <LiMotion //

@@ -31,11 +31,6 @@ const HeadSEO = () => {
     e: 'KyungHwan Kim',
   };
 
-  const thumbnail = {
-    k: '/images/og_image_ko.jpg',
-    e: '/images/og_image_en.jpg',
-  };
-
   const keywords = {
     k:
       '김경환, 디자인 공유하기, 디자인, 디자이너, UI, UX, UI 디자인, UX 디자인, UI/UX 디자인, 프로덕트 디자인, 디자인 포트폴리오, 웹 포트폴리오, 포트폴리오 웹 사이트, UI 디자인 포트폴리오, UX 디자인 포트폴리오, UI/UX 디자인 포트폴리오, 프로덕트 디자인 포트폴리오',
@@ -72,7 +67,7 @@ const HeadSEO = () => {
         property="og:description"
         content={useSetLanguage(info.description)}
       />
-      <meta property="og:image" content={useSetLanguage(thumbnail)} />
+      <meta property="og:image" content={useSetLanguage(info.thumbnail)} />
       {/* 페이북 권장 사이즈 1200 : 630 = 1.9 : 1(약) */}
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -88,7 +83,7 @@ const HeadSEO = () => {
         name="twitter:description"
         content={useSetLanguage(info.description)}
       />
-      <meta name="twitter:image" content={useSetLanguage(thumbnail)} />
+      <meta name="twitter:image" content={useSetLanguage(info.thumbnail)} />
 
       <link rel="icon" href={icoImage} />
 

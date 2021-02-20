@@ -14,7 +14,6 @@ const Index = () => {
     VisitsAndViewsDuringSession('Home');
   }, []);
   bodyScrollTop();
-
   const data = categoryData();
 
   return (
@@ -23,12 +22,12 @@ const Index = () => {
         <Ul>
           <CategoryCard
             url={data[0].url}
-            title={data[0].title}
+            categoryTitleArray={data[0].categoryTitleArray}
             backgroundGradient={data[0].backgroundGradient}
           />
           <CategoryCard
             url={data[1].url}
-            title={data[1].title}
+            categoryTitleArray={data[1].categoryTitleArray}
             backgroundGradient={data[1].backgroundGradient}
           />
           <GotoIntroduction />
