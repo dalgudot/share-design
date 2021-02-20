@@ -78,8 +78,8 @@ const HeadSEO = () => {
       <meta property="og:image:height" content="630" />
       <meta property="og:type" content={info.type} />
       {/* locale은 ko_KR라는 형식 맞춰야 함*/}
-      <meta property="og:locale" content="ko_KR" />
-      <meta property="og:locale:alternate" content="en_US" />
+      {/* <meta property="og:locale" content="ko_KR" />
+      <meta property="og:locale:alternate" content="en_US" /> */}
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={useSetLanguage(info.url)} />
