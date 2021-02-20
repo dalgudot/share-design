@@ -1,5 +1,3 @@
-import HeadSEO from '../elements/head-info/head-seo';
-import { indexInfo } from '../elements/head-info/index/index-info';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
@@ -21,7 +19,6 @@ const Index = () => {
 
   return (
     <>
-      <HeadSEO info={indexInfo} />
       <Main>
         <Ul>
           <CategoryCard

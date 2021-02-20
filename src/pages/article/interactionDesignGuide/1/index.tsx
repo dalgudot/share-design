@@ -1,5 +1,3 @@
-import HeadSEO from '../../../../elements/head-info/head-seo';
-import { interactionDesignGuideOneInfo } from '../../../../elements/head-info/article/interactionDesignGuide/1-info';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
 import { tArticleCommon } from '../../../../data/article/t-article-common';
@@ -20,7 +18,6 @@ const InteractionDesignGuideOne = () => {
   // const paragraphArray = tArticleCommon.interactionDesignGuide.title;
   return (
     <>
-      <HeadSEO info={interactionDesignGuideOneInfo} />
       {/* <Article
         categoryTitle={categoryTitle}
         articleTitle={articleTitle}

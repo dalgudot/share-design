@@ -1,9 +1,27 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { interactionDesignGuideOneInfo } from './article/interactionDesignGuide/1-info';
+import { indexInfo } from './index/index-info';
+import { introductionInfo } from './index/introduction-info';
 
-const HeadSEO = ({ info }: any) => {
-  const router = useRouter();
+const HeadSEO = () => {
+  const router: NextRouter = useRouter();
+  const pathname: string = router.pathname;
+
+  const infoSwitch = () => {
+    switch (pathname) {
+      case '/':
+        return indexInfo;
+      case '/introduction':
+        return introductionInfo;
+      case '/article/interactionDesignGuide/1':
+        return interactionDesignGuideOneInfo;
+      default:
+        return indexInfo;
+    }
+  };
+  const info = infoSwitch();
 
   return (
     <Head>
@@ -115,7 +133,7 @@ const HeadSEO = ({ info }: any) => {
       />
       {/* E of fonts preload */}
       {/* S of Image preload */}
-      {router.pathname !== '/' && (
+      {pathname !== '/' && (
         <>
           <link
             rel="preload"
@@ -126,7 +144,7 @@ const HeadSEO = ({ info }: any) => {
         </>
       )}
 
-      {router.pathname === '/contact' && (
+      {pathname === '/contact' && (
         <>
           <link
             rel="preload"

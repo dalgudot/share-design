@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import TabNavBar from '../components/page/index/tab-nav-bar';
 import MyToast from '../components/toast/toast';
 import ShareModal from '../components/page/article/article-tool-bar/share-modal';
+import HeadSEO from '../elements/head-info/head-seo';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
@@ -46,6 +47,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <HeadSEO />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {/* <ThemeChangeButton

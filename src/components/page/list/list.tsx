@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
-import HeadSEO from '../../../elements/head-info/head-seo';
-import { indexInfo } from '../../../elements/head-info/index/index-info';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import ArticleTitleArea from '../article/article-title';
@@ -22,7 +20,6 @@ const List = ({
 
   return (
     <>
-      <HeadSEO info={indexInfo} />
       <Main>
         <Background
           backgroundGradient={backgroundGradient}
