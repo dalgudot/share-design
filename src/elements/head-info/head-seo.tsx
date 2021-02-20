@@ -16,6 +16,12 @@ const HeadSEO = ({ info }: any) => {
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
 
+      {/* Google Search Console URL 접두어, 소유권 확인 */}
+      <meta
+        name="google-site-verification"
+        content="nxhLllcTErNmik8JUCWy7Wp4n6qaJo3fAkayzI4I2zc"
+      />
+
       <title>{useSetLanguage(info.title)}</title>
       <meta name="author" content={useSetLanguage(info.author)} />
       <meta name="description" content={useSetLanguage(info.description)} />
