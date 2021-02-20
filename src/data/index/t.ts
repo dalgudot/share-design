@@ -55,7 +55,7 @@ export const t = {
     },
     toastMessage: {
       k: 'URL을 복사했습니다 🔗',
-      e: "You've copied this URL 🔗",
+      e: 'Copied this URL 🔗',
     },
   },
 
@@ -77,7 +77,7 @@ export const t = {
 
     toastMessage: {
       k: '이메일 주소를 복사했습니다 📮',
-      e: "You've copied my email address 📮",
+      e: 'Copied email address 📮',
     },
 
     brunchAlt: {

@@ -4,7 +4,6 @@ import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import AloneButton from '../../button/alone-button';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import loadConfig from 'next/dist/next-server/server/config';
 import StaggerDots from '../../../elements/framer-motion/stagger-dots';
 
 const Comment = () => {
