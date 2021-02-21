@@ -36,24 +36,28 @@ type InitialStateTypes = {
   themeMode: string;
   openModal: boolean;
   modalZIndexHandler: boolean;
+  showToastRedux: Function;
 };
 
 type actionTypesTypes = {
   MODE_CHANGE: string;
   OPEN_MODAL: string;
   MODAL_Z_INDEX_HANDLER: string;
+  SHOW_TOAST_REDUX: string;
 };
 
 const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   openModal: false,
   modalZIndexHandler: false,
+  showToastRedux: (toastMessage: string) => {},
 };
 
 export const actionTypes: actionTypesTypes = {
   MODE_CHANGE: 'MODE_CHANGE',
   OPEN_MODAL: 'OPEN_MODAL',
   MODAL_Z_INDEX_HANDLER: 'MODAL_Z_INDEX_HANDLER',
+  SHOW_TOAST_REDUX: 'SHOW_TOAST_REDUX',
 };
 
 export const reducer = (state = InitialState, action: any) => {

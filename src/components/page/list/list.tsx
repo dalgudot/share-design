@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
-import ArticleTitleArea from '../article/article-title';
+import ArticleTitleArea from '../article/article-title-area';
 import ListToolBar from './list-tool-bar';
 import ListArea from './list-area';
 

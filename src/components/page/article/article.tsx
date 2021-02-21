@@ -4,63 +4,72 @@ import { mediaBreakPoint } from '../../../styles/common';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
-import ArticleTitleArea from './article-title';
+import ArticleTitleArea from './article-title-area';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useEffect, useState } from 'react';
 import WriteComment from './write-comment';
-import { useRouter } from 'next/router';
 
 const Article = ({
   categoryTitle,
   articleTitle,
   paragraphArray,
+  showToast,
 }: {
   categoryTitle?: object;
   articleTitle: object;
   paragraphArray: object[];
+  showToast: Function;
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
+
   const [writeCommentMode, setWriteCommentMode] = useState(false);
 
-  // 페이지 이동 시 댓글 쓰기 모드 초기화
-  const router = useRouter();
-  useEffect(() => setWriteCommentMode(false), [router.pathname]);
+  // 페이지 들어오고 나갈 때 댓글 쓰기 모드 초기화
+  useEffect(() => {
+    setWriteCommentMode(false);
+    return () => {
+      setWriteCommentMode(false);
+    };
+  }, []);
 
   return (
     <>
       <Main>
+        <Background width={width} height={height} />
         {writeCommentMode === false ? (
-          <ArticleContainer>
-            <Background width={width} height={height} />
-            <ArticleTitleArea
-              categoryTitle={categoryTitle}
-              articleTitle={articleTitle}
-            />
+          <>
+            <ArticleContainer>
+              <ArticleTitleArea
+                categoryTitle={categoryTitle}
+                articleTitle={articleTitle}
+              />
 
-            <ContentsDiv>
-              {paragraphArray.map((text, index) => (
-                <PMedium400
-                  key={index}
-                  text={text}
-                  color="gray3"
-                  marginTop="24px"
-                />
-              ))}
-            </ContentsDiv>
+              <ContentsDiv>
+                {paragraphArray.map((text, index) => (
+                  <PMedium400
+                    key={index}
+                    text={text}
+                    color="gray3"
+                    marginTop="24px"
+                  />
+                ))}
+              </ContentsDiv>
 
-            {/* <Comment /> */}
-            {/* 버튼 영역 */}
-            {/* <button //
-              onClick={() => setWriteCommentMode(true)}
-            >
-              쓰기 모드
-            </button> */}
+              <Comment //
+                setWriteCommentMode={setWriteCommentMode}
+              />
 
-            <ArticleToolBar />
-          </ArticleContainer>
+              <ArticleToolBar />
+            </ArticleContainer>
+          </>
         ) : (
-          <>{/* <WriteComment /> */}</>
+          <>
+            <WriteComment //
+              setWriteCommentMode={setWriteCommentMode}
+              showToast={showToast}
+            />
+          </>
         )}
       </Main>
     </>

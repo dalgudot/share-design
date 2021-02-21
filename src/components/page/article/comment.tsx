@@ -1,64 +1,111 @@
-import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import firebase from 'firebase/app';
-import { useRouter } from 'next/router';
-import AloneButton from '../../button/alone-button';
 import { tArticleCommon } from '../../../data/article/t-article-common';
 import StaggerDots from '../../../elements/framer-motion/stagger-dots';
-import { useDate } from '../../../lib/hooks/useDate';
+import { mediaBreakPoint } from '../../../styles/common';
+import H3Title700 from '../../../elements/typography/h3-title-700';
+import { useEffect, useState } from 'react';
+import firebase from 'firebase/app';
+import { useRouter } from 'next/router';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import PMedium700 from '../../../elements/typography/p-medium-700';
+import PSmall700 from '../../../elements/typography/p-small-700';
+import PSmall400 from '../../../elements/typography/p-small-400';
 
-const Comment = () => {
-  const when = useDate();
+const Comment = ({
+  setWriteCommentMode,
+}: {
+  setWriteCommentMode: Function;
+}) => {
+  const [commentsLoading, setCommentsLoading] = useState(true);
+  const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
 
-  const firebaseSet: Function = () => {
-    const firebaseDatabaseRef: any = firebase
-      .database()
-      .ref(`Comment${router.pathname}`);
-
-    firebaseDatabaseRef.push().set([when, newComment]);
-  };
-
-  const textRef = useRef(null);
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState('');
-  const [loading, setLoading] = useState(true);
-
-  const setCommentsFunc = () => {
+  useEffect(() => {
     // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용
     firebase
       .database()
       .ref(`/Comment${router.pathname}`)
       .on('value', (snapshot) => {
         const objData = snapshot.val();
-        const data: any = objData && Object.values(objData);
-        console.log(data);
+        const data = objData && Object.values(objData);
         data && setComments(data);
-        setLoading(false);
+        setCommentsLoading(false);
       });
-  };
 
-  // 기존 댓글 가져오기
-  useEffect(() => {
-    setCommentsFunc();
+    return () => {
+      setComments([]);
+    };
   }, []);
+  // 배열은 객체의 특수한 형태이기 때문에 아래처럼 배열인지 검사해야 함.
+  // console.log(Array.isArray(comments));
 
-  if (loading === true) {
+  console.log(comments);
+
+  if (commentsLoading === true) {
     return (
       <>
-        <Container>
+        <LoadingContainer>
           <StaggerDots />
-        </Container>
+        </LoadingContainer>
       </>
     );
   } else {
     return (
       <>
-        {/* 댓글 남긴 날짜 */}
-        <Container>
-          {/* p 태그 임시 */}
-          <p>안녕{comments}</p>
-        </Container>
+        {comments.length > 0 && (
+          <>
+            <Divider />
+            <H3Title700
+              text={tArticleCommon().comment}
+              color="gray1"
+              marginTop="36px"
+            />
+            {comments.map((comment: any, index) => (
+              <CommentDiv key={index}>
+                <LeftDiv //
+                  profileGradient={comment.profileGradient}
+                >
+                  <span />
+                  <PSmall700
+                    text={{
+                      k: comment.when,
+                      e: comment.when,
+                    }}
+                    color="gray2"
+                  />
+                </LeftDiv>
+                <PMedium400
+                  text={{
+                    k: comment.newComment,
+                    e: comment.newComment,
+                  }}
+                  color="gray2"
+                  marginTop="8px"
+                />
+              </CommentDiv>
+            ))}
+          </>
+        )}
+
+        {/* 버튼 영역 */}
+        <ButtonDiv>
+          {/* <div className="background__color" /> */}
+          <button //
+            onClick={() => setWriteCommentMode(true)}
+          >
+            <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
+            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+          </button>
+          <div className="divider" />
+          <a
+            href="https://join.slack.com/t/sharedesignhq/shared_invite/zt-msweffq9-KGVi~KUf0rwr3b~LnUPz0Q"
+            target="_blank"
+            // ref={linkedinRef}
+          >
+            <PMedium700 text={tArticleCommon().slack} color="gray1" />
+            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+          </a>
+        </ButtonDiv>
       </>
     );
   }
@@ -66,20 +113,78 @@ const Comment = () => {
 
 export default Comment;
 
-const Container = styled.div`
+const LoadingContainer = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: ${({ theme }) => theme.maxWidth.Paragraph};
-  margin: 0 auto;
+  align-items: center;
 
-  margin-top: 300px; // 임시
+  //바뀌는 요소
+  margin-top: 36px;
 
-  p {
-    color: white; // 임시
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    /* margin: ${({ theme }) => theme.margin.MobileWrap}; */
+  }
+`;
+
+const Divider = styled.div`
+  margin-top: 48px;
+  width: 100%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.gray6};
+`;
+
+const CommentDiv = styled.div`
+  margin-top: 36px;
+`;
+
+const LeftDiv = styled.div<{ profileGradient: string }>`
+  display: flex;
+  align-items: center;
+
+  span {
+    border-radius: 50%;
+    background: linear-gradient(${({ profileGradient }) => profileGradient});
+
+    /* 바뀌는 요소 */
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      width: 28px;
+      height: 28px;
+      margin-right: 6px;
+    }
+  }
+`;
+
+const ButtonDiv = styled.div`
+  position: relative;
+  margin-top: 36px;
+  padding: 12px 24px;
+  width: 100%;
+  height: 100%;
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
+  background-color: ${({ theme }) => theme.gray6__30};
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: ${({ theme }) => theme.gray6};
   }
 
-  /* button {
-    border-radius: 20px;
-    padding: 16px 28px;
-  } */
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 24px;
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 24px;
+  }
 `;

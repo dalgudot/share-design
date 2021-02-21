@@ -12,7 +12,7 @@ const Contact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
-  // bodyScrollTop();
+  bodyScrollTop();
 
   return (
     <>

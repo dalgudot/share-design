@@ -26,11 +26,11 @@ const CategoryCard = ({
           <TitleDiv>{homeCategoryTitle}</TitleDiv>
           <ListViewDiv>
             <PMedium400 //
-              text={tArticleCommon.goToList}
+              text={tArticleCommon().goToList}
               color="gray1"
             />
             <PMedium400 //
-              text={tArticleCommon.chevronRight}
+              text={tArticleCommon().chevronRight}
               color="gray1"
             />
           </ListViewDiv>

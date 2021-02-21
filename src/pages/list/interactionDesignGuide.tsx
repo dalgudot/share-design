@@ -10,7 +10,7 @@ const interactionDesignGuideList = () => {
     VisitsAndViewsDuringSession('List/interactionDesignGuide');
   }, []);
   const data = categoryData();
-  // bodyScrollTop();
+  bodyScrollTop();
 
   return (
     <>

@@ -41,6 +41,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Copy-to-Clipboard](https://github.com/nkbt/react-copy-to-clipboard)
 
+- [React-Textarea-Autosize](https://github.com/Andarist/react-textarea-autosize)
+
 - [React-Query](https://github.com/tannerlinsley/react-query)
 
 <br/>

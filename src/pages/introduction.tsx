@@ -4,17 +4,21 @@ import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import Article from '../components/page/article/article';
 import { projectIntroduction } from '../data/article/introduction';
 
-const Introduction = () => {
+const Introduction = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Introduction');
   }, []);
-  // bodyScrollTop();
+  bodyScrollTop();
 
   const articleTitle = projectIntroduction().title;
   const paragraphArray = projectIntroduction().contentsText;
   return (
     <>
-      <Article articleTitle={articleTitle} paragraphArray={paragraphArray} />
+      <Article //
+        articleTitle={articleTitle}
+        paragraphArray={paragraphArray}
+        showToast={showToast}
+      />
     </>
   );
 };

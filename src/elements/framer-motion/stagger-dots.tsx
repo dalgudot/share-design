@@ -8,11 +8,11 @@ interface StaggerDotsPropTypes {
 
 // Big Button 로딩 컬러 => #d2c6cb
 const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
-  const countNum = count || 3;
+  const countNum = count ?? 3;
   const dots = Array(countNum)
     .fill(null)
     .map((_, idx) => (
-      <motion.span key={idx} variants={loadingCircleVariants}></motion.span>
+      <motion.span key={idx} variants={loadingCircleVariants} />
     ));
 
   return (
@@ -36,8 +36,7 @@ const Container = styled.div`
     height: 7px;
     border-radius: 50%;
     margin: 4px;
-    /* background-color: ${({ color }) => color}; */
-    background-color: white;
+    background-color: ${({ theme }) => theme.gray1};
   }
 `;
 
@@ -45,17 +44,17 @@ const loadingStaggerVariants = {
   start: {},
   end: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
 
 const loadingCircleVariants = {
   start: {
-    y: '50%',
+    y: '60%',
   },
   end: {
-    y: '-50%',
+    y: '-60%',
     transition: {
       duration: 0.4,
       yoyo: 'Infinity',

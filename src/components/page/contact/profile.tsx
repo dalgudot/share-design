@@ -12,7 +12,6 @@ const ProfileArea = () => {
   return (
     <ProfileDiv>
       <img
-        className="profile__photo"
         src="/images/profile-photo@3x.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
       />

@@ -35,7 +35,7 @@ const ListArea = ({
           />
 
           <H3Title700 //
-            text={tArticleCommon.comingSoon}
+            text={tArticleCommon().comingSoon}
             color="gray1"
             marginTop="16px"
           />

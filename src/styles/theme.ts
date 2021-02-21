@@ -47,6 +47,8 @@ export const darkTheme: DefaultTheme = {
   gray6: 'rgba(61, 61, 63)', // '#3D3D3F'
   gray7: '#1C1C1E',
   gray8: 'rgba(18, 18, 18)', //'#121212'
+
+  gray6__30: 'rgba(61, 61, 63, 0.3)',
   // Gradient
   gradientPurple: '354deg, #4633d7, #7c62ed',
   gradientBurgundy: '170deg, #743657, #40192c',
@@ -72,6 +74,8 @@ export const lightTheme: DefaultTheme = {
   gray6: '#BFBFC7',
   gray7: '#E0E0EA',
   gray8: '#EBEBF5',
+
+  gray6__30: 'rgba(61, 61, 63, 0.3)',
   // Gradient
   gradientPurple: '354deg, #4633d7, #7c62ed',
   gradientBurgundy: '170deg, #743657, #40192c',
@@ -106,6 +110,8 @@ declare module 'styled-components' {
     gray6: string;
     gray7: string;
     gray8: string;
+
+    gray6__30: string;
     // Gradient
     gradientPurple: string;
     gradientBurgundy: string;

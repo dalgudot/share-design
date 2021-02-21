@@ -29,7 +29,7 @@ const firebaseFetchSet = (route: string) => {
   });
 };
 
-const when = useDate();
+const when = useDate().when;
 
 // 방문자
 const VisitsDuringSession = () => {

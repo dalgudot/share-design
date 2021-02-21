@@ -15,7 +15,7 @@ export const projectIntroduction = () => {
         k:
           '전 세계의 많은 디자이너가 브런치, 미디엄, 유튜브 같은 공간에 공유한 디자인 경험에서 많은 영감을 받아왔다.  나도 사람들에게 좋은 영감을 줄 수 있는 디자인 경험을 공유하고 싶다고 생각했다. 그래서 2019년 2월부터 2020년 상반기까지 나의 UI/UX 디자인 경험을 브런치에 참 열심히 공유했었다.',
         e:
-          'I have been inspired by the design experiences that many designers around the world have shared in spaces such as Brunch, Medium and YouTube. I also thought I would like to share a design experience that can inspire people. So, from February 2019 to the first half of 2020, I worked hard to share my UI/UX design experience with Brunch, the Korean version of Medium.',
+          'I have been inspired by the design experiences that many designers around the world have shared in spaces such as Medium and YouTube. I also thought I would like to share a design experience that can inspire people. So, from February 2019 to the first half of 2020, I worked hard to share my UI/UX design experience with Brunch, the Korean version of Medium.',
       },
 
       {
@@ -41,14 +41,14 @@ export const projectIntroduction = () => {
 
       {
         k:
-          '\u00A0\u00A0\u00A0그동안 나의 UI/UX 디자인 경험의 기록인 포트폴리오가 이직을 위한 목적으로만 쓰이는 게 아쉬웠었다. UI/UX 디자이너로서 지나온 시간의 소중한 발자취인 포트폴리오가 가치 있게 쓰일 수 있다면 좋겠다고 생각했다. 나의 경험이 도움이 될 누군가에게 잘 전달될 수 있다면 가치 있는 포트폴리오가 될 수 있지 않을까? 이직을 위해 보여주기 위한 포트폴리오가 아닌, 내가 디자인한 사용자 경험(UX)으로 온전히 UI/UX 디자인 경험을 공유할 수 있는 새로운 형식의 포트폴리오를 만들면 어떨까?',
+          '\u00A0\u00A0\u00A0그동안 나의 UI/UX 디자인 경험의 기록인 포트폴리오가 이직을 위한 목적으로만 쓰이는 게 아쉬웠었다. UI/UX 디자이너로서 지나온 시간의 소중한 발자취인 포트폴리오가 가치 있게 쓰일 수 있다면 좋겠다고 생각했다. 나의 경험이 도움이 될 누군가에게 잘 전달될 수 있다면 가치 있는 포트폴리오가 될 수 있지 않을까? 보여주기 위한 포트폴리오가 아닌, 내가 디자인한 사용자 경험(UX)으로 온전히 UI/UX 디자인 경험을 공유할 수 있는 새로운 형식의 포트폴리오를 만들면 어떨까?',
         e:
-          "\u00A0\u00A0\u00A0In the meantime, it was regrettable that the portfolio, the record of my UI/UX design experience, was only used for job change purposes. As a UI/UX designer, I thought it would be nice if the portfolio, which is the precious footsteps of the past time, could be used with value. Wouldn't it be a valuable portfolio if my experience could be well conveyed to someone who would be helpful? I wondered what if I could create a new type of portfolio to share the UI/UX design experience entirely with the User Experience(UX) I designed, not a portfolio to show for job change.",
+          "\u00A0\u00A0\u00A0In the meantime, it was regrettable that the portfolio, the record of my UI/UX design experience, was only used for job change purposes. As a UI/UX designer, I thought it would be nice if the portfolio, which is the precious footsteps of the past time, could be used with value. Wouldn't it be a valuable portfolio if my experience could be well conveyed to someone who would be helpful? I wondered what if I could create a new type of portfolio to share the UI/UX design experience entirely with the User Experience(UX) I designed, not a portfolio to show.",
       },
 
       {
         k:
-          "\u00A0\u00A0\u00A0그렇게 내 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했다. 쉬는 날에만 작업했고 기획부터 콘텐츠 제작, 번역, 디자인, 웹 개발, 앱 개발까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하기까지 시간이 참 오래 걸렸다. 그 시간을 지나 2021년 3월 첫 콘텐츠 배포를 앞두고 있다.",
+          "\u00A0\u00A0\u00A0그렇게 내 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했다. 주말이라는 제한된 시간 속에서 기획부터 콘텐츠 제작, 번역, 디자인, 웹 개발, 앱 개발까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하기까지 시간이 꽤 오래 걸렸다. 그 시간을 지나 2021년 3월 첫 콘텐츠 배포를 앞두고 있다.",
         e:
           '\u00A0\u00A0\u00A0So, I started SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experiences. I worked only on days off, and since I was doing everything from planning to content creation, translation, design and development by myself, it took a long time to distribute the first content. After that time, the first content distribution is scheduled for March 2021.',
       },
