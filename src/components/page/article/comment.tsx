@@ -39,8 +39,6 @@ const Comment = ({
   // 배열은 객체의 특수한 형태이기 때문에 아래처럼 배열인지 검사해야 함.
   // console.log(Array.isArray(comments));
 
-  console.log(comments);
-
   if (commentsLoading === true) {
     return (
       <>
