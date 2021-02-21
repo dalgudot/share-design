@@ -56,9 +56,9 @@ const Article = ({
                 ))}
               </ContentsDiv>
 
-              <Comment //
+              {/* <Comment //
                 setWriteCommentMode={setWriteCommentMode}
-              />
+              /> */}
 
               <ArticleToolBar />
             </ArticleContainer>
