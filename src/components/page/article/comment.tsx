@@ -9,13 +9,9 @@ import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PMedium700 from '../../../elements/typography/p-medium-700';
 import PSmall700 from '../../../elements/typography/p-small-700';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import Link from 'next/link';
 
-const Comment = ({
-  setWriteCommentMode,
-}: {
-  setWriteCommentMode: Function;
-}) => {
+const Comment = () => {
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
@@ -87,13 +83,16 @@ const Comment = ({
 
         {/* 버튼 영역 */}
         <ButtonDiv>
-          {/* <div className="background__color" /> */}
-          <button //
-            onClick={() => setWriteCommentMode(true)}
+          <Link
+            href="/article/[category]/[id]/write-comment"
+            as={`${router.pathname}/write-comment`}
           >
-            <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
-            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
-          </button>
+            <a>
+              <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
+              <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+            </a>
+          </Link>
+
           <div className="divider" />
           <a
             href="https://join.slack.com/t/sharedesignhq/shared_invite/zt-msweffq9-KGVi~KUf0rwr3b~LnUPz0Q"

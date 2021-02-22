@@ -3,26 +3,24 @@ import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-an
 import { useRouter } from 'next/router';
 import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
 import Article from '../../../../components/page/article/article';
+import { projectIntroduction } from '../../../../data/article/introduction';
 
-const InteractionDesignGuideOne = ({ showToast }: { showToast: Function }) => {
+const InteractionDesignGuideOne = () => {
   const router = useRouter();
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
   bodyScrollTop();
 
-  // const categoryTitle = tArticleCommon().interactionDesignGuide.categoryTitle;
-  // const articleTitle =
-  //   tArticleCommon().interactionDesignGuide.articleList[0].articleTitle;
-  // const paragraphArray = tArticleCommon().interactionDesignGuide.title;
+  const articleTitle = projectIntroduction().title;
+  const paragraphArray = projectIntroduction().contentsText;
+
   return (
     <>
-      {/* <Article
-        categoryTitle={categoryTitle}
+      <Article //
         articleTitle={articleTitle}
         paragraphArray={paragraphArray}
-        showToast={showToast}
-      /> */}
+      />
     </>
   );
 };

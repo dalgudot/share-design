@@ -6,71 +6,44 @@ import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
-import { useEffect, useState } from 'react';
-import WriteComment from './write-comment';
 
 const Article = ({
   categoryTitle,
   articleTitle,
   paragraphArray,
-  showToast,
 }: {
   categoryTitle?: object;
   articleTitle: object;
   paragraphArray: object[];
-  showToast: Function;
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
-
-  const [writeCommentMode, setWriteCommentMode] = useState(false);
-
-  // 페이지 들어오고 나갈 때 댓글 쓰기 모드 초기화
-  useEffect(() => {
-    setWriteCommentMode(false);
-    return () => {
-      setWriteCommentMode(false);
-    };
-  }, []);
 
   return (
     <>
       <Main>
         <Background width={width} height={height} />
-        {writeCommentMode === false ? (
-          <>
-            <ArticleContainer>
-              <ArticleTitleArea
-                categoryTitle={categoryTitle}
-                articleTitle={articleTitle}
+        <ArticleContainer>
+          <ArticleTitleArea
+            categoryTitle={categoryTitle}
+            articleTitle={articleTitle}
+          />
+
+          <ContentsDiv>
+            {paragraphArray.map((text, index) => (
+              <PMedium400
+                key={index}
+                text={text}
+                color="gray3"
+                marginTop="24px"
               />
+            ))}
+          </ContentsDiv>
 
-              <ContentsDiv>
-                {paragraphArray.map((text, index) => (
-                  <PMedium400
-                    key={index}
-                    text={text}
-                    color="gray3"
-                    marginTop="24px"
-                  />
-                ))}
-              </ContentsDiv>
+          <Comment />
 
-              {/* <Comment //
-                setWriteCommentMode={setWriteCommentMode}
-              /> */}
-
-              <ArticleToolBar />
-            </ArticleContainer>
-          </>
-        ) : (
-          <>
-            <WriteComment //
-              setWriteCommentMode={setWriteCommentMode}
-              showToast={showToast}
-            />
-          </>
-        )}
+          <ArticleToolBar />
+        </ArticleContainer>
       </Main>
     </>
   );

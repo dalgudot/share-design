@@ -13,9 +13,16 @@ const LangChangeToggle = () => {
   const router = useRouter();
   const locale = router.locale;
   const setLanguageChange = () => {
-    locale === 'ko'
-      ? router.push(router.pathname, router.pathname, { locale: 'en' })
-      : router.push(router.pathname, router.pathname, { locale: 'ko' });
+    if (router.query === {}) {
+      locale === 'ko'
+        ? router.push(router.pathname, router.pathname, { locale: 'en' })
+        : router.push(router.pathname, router.pathname, { locale: 'ko' });
+    } else if (router.query !== {}) {
+      // dynamic routing 고려한 조건
+      locale === 'ko'
+        ? router.push(router.asPath, router.asPath, { locale: 'en' })
+        : router.push(router.asPath, router.asPath, { locale: 'ko' });
+    }
   };
 
   // 768을 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.

@@ -1,35 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
-import { useRouter } from 'next/router';
-import { tArticleCommon } from '../../../data/article/t-article-common';
-import StaggerDots from '../../../elements/framer-motion/stagger-dots';
-import { useDate } from '../../../lib/hooks/useDate';
-import { mediaBreakPoint } from '../../../styles/common';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import Router, { useRouter } from 'next/router';
+import { tArticleCommon } from '../../../../data/article/t-article-common';
+import { useDate } from '../../../../lib/hooks/useDate';
+import { mediaBreakPoint } from '../../../../styles/common';
+import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
-import PMedium700 from '../../../elements/typography/p-medium-700';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
-import PSmall700 from '../../../elements/typography/p-small-700';
-import { gradientGenerator } from '../../../lib/functions/gradient-generator';
+import PMedium700 from '../../../../elements/typography/p-medium-700';
+import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
+import PSmall700 from '../../../../elements/typography/p-small-700';
+import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
 
-const WriteComment = ({
-  setWriteCommentMode,
-  showToast,
-}: // newComment,
-// setNewComment,
-// profileGradient,
-// setProfileGradient,
-{
-  setWriteCommentMode: Function;
-  showToast: Function;
-  // newComment: string;
-  // setNewComment: Function;
-  // profileGradient: string;
-  // setProfileGradient: Function;
-}) => {
+const WriteComment = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenComment;
   const router = useRouter();
+  const { category, id } = router.query;
   const [profileGradient, setProfileGradient] = useState('');
 
   // 초기 색 설정
@@ -50,18 +36,16 @@ const WriteComment = ({
   const firebaseSet: Function = () => {
     const firebaseDatabaseRef: any = firebase
       .database()
-      .ref(`Comment${router.pathname}`);
+      .ref(`Comment/article/${category}/${id}`);
 
-    // firebaseDatabaseRef.push().set([profileGradient, when, newComment]);
     firebaseDatabaseRef.push().set({ profileGradient, when, newComment });
-    // firebaseDatabaseRef.push().set(profileGradient);
   };
 
   const setNewCommentAndQuitWriteCommentMode = (e: React.MouseEvent) => {
     e.preventDefault(); // 클릭 이벤트 발생 중단
     firebaseSet();
     showToast(tArticleCommon().completePostComment);
-    setWriteCommentMode(false);
+    Router.push(`/article/${category}/${id}`);
   };
 
   const textLength = newComment.length;
@@ -77,7 +61,7 @@ const WriteComment = ({
   useMyRipple(postBtnRef);
 
   return (
-    <>
+    <Main>
       <DivContainer>
         <AnonymousProfileArea>
           <LeftDiv profileGradient={profileGradient}>
@@ -126,11 +110,25 @@ const WriteComment = ({
           />
         </PostButton>
       </DivContainer>
-    </>
+    </Main>
   );
 };
 
 export default WriteComment;
+
+const Main = styled.main`
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    padding: ${({ theme }) => theme.padding.MobileWrap};
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
+    padding: ${({ theme }) => theme.padding.TabletWrap};
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.fourth}) {
+    padding: ${({ theme }) => theme.padding.DesktopWrap};
+  }
+`;
 
 const DivContainer = styled.div`
   width: 100%;
