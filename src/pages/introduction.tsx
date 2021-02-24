@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../../lib/functions/visits-and-views';
-import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
-import Article from '../../../../components/page/article/article';
-import { projectIntroduction } from '../../../../data/article/introduction';
+import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { bodyScrollTop } from '../lib/functions/body-scroll-top';
+import Article from '../components/page/article/article';
+import { projectIntroduction } from '../data/article/introduction';
 
 const Introduction = () => {
   useEffect(() => {

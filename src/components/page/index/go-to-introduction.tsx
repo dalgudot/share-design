@@ -15,7 +15,7 @@ const GotoIntroduction = () => {
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      <Link href="article/introduction/1">
+      <Link href="/introduction">
         <a>
           <PMedium400 text={goToIntroductionText} color="gray2" />
         </a>

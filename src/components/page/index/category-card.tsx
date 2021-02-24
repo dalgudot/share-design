@@ -21,7 +21,7 @@ const CategoryCard = ({
 
   return (
     <Li backgroundGradient={backgroundGradient}>
-      <Link href={`/list/${url}`}>
+      <Link href={url}>
         <a>
           <TitleDiv>{homeCategoryTitle}</TitleDiv>
           <ListViewDiv>

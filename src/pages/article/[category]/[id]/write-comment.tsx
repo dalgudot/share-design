@@ -32,6 +32,8 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
 
   const [newComment, setNewComment] = useState('');
   const [btnDisbled, setBtnDisbled] = useState(true);
+  const textLength: number = newComment.length;
+  const textLengthCondition: boolean = textLength > 6;
 
   const firebaseSet: Function = () => {
     const firebaseDatabaseRef: any = firebase
@@ -48,9 +50,8 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
     Router.push(`/article/${category}/${id}`);
   };
 
-  const textLength = newComment.length;
   useEffect(() => {
-    textLength > 7 ? setBtnDisbled(false) : setBtnDisbled(true);
+    textLengthCondition ? setBtnDisbled(false) : setBtnDisbled(true);
 
     return () => {
       setBtnDisbled(true);
@@ -89,7 +90,7 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
           onChange={(e) => setNewComment(e.target.value)}
           placeholder={useSetLanguage(tArticleCommon().commentPlaceholder)}
           minRows={3}
-          minLength={7}
+          minLength={6}
           maxLength={3000}
         />
 
@@ -98,11 +99,11 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
           type="submit"
           onClick={(e) => setNewCommentAndQuitWriteCommentMode(e)}
           disabled={btnDisbled}
-          textLength={textLength}
+          textLengthCondition={textLengthCondition}
         >
           <PMedium700
             text={
-              textLength > 7
+              textLengthCondition
                 ? tArticleCommon().postComment
                 : tArticleCommon().minimumCommentLength
             }
@@ -200,7 +201,7 @@ const MultiLineTextField = styled(TextareaAutosize)`
   }
 `;
 
-const PostButton = styled.button<{ textLength: number }>`
+const PostButton = styled.button<{ textLengthCondition: boolean }>`
   width: 100%;
   padding: 14px 0;
   border-radius: ${({ theme }) => theme.borderRadius.R13};
@@ -212,15 +213,17 @@ const PostButton = styled.button<{ textLength: number }>`
 
   // 버튼 활성화 & 비활성화
   border: 1px solid
-    ${({ textLength, theme }) => (textLength > 7 ? theme.gray2 : theme.gray6)};
+    ${({ textLengthCondition, theme }) =>
+      textLengthCondition ? theme.gray2 : theme.gray6};
   -webkit-transition: border 0.23s ease-in-out;
   transition: border 0.23s ease-in-out;
 
   /* PMedium700에 override */
   p {
-    color: ${({ textLength, theme }) =>
-      textLength > 7 ? theme.gray2 : theme.gray5};
-    font-weight: ${({ textLength }) => (textLength > 7 ? 700 : 400)};
+    color: ${({ textLengthCondition, theme }) =>
+      textLengthCondition ? theme.gray2 : theme.gray5};
+    font-weight: ${({ textLengthCondition }) =>
+      textLengthCondition ? 700 : 400};
     -webkit-transition: color 0.23s ease-in-out, font-weight 0.23s ease-in-out;
     transition: color 0.23s ease-in-out, font-weight 0.23s ease-in-out;
   }

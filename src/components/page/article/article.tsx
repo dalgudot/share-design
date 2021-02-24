@@ -6,6 +6,7 @@ import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
+import { useRouter } from 'next/router';
 
 const Article = ({
   categoryTitle,
@@ -18,6 +19,7 @@ const Article = ({
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
+  const router = useRouter();
 
   return (
     <>
@@ -40,7 +42,8 @@ const Article = ({
             ))}
           </ContentsDiv>
 
-          <Comment />
+          {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
+          {router.pathname !== '/introduction' && <Comment />}
 
           <ArticleToolBar />
         </ArticleContainer>

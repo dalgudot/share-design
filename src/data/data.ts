@@ -9,7 +9,7 @@ export const categoryData = () => {
   return [
     {
       // 인터랙션 디자인 가이드 리스트 URL, 카테고리 제목, 배경 색
-      url: 'interactionDesignGuide', // Home 목록에서 쓰이는 고정 url
+      url: '/list/interactionDesignGuide', // Home 목록에서 쓰이는 고정 url
       categoryTitleArray: interactionDesignGuideList().categoryTitleArray,
       categoryTitle: interactionDesignGuideList().categoryTitle,
       backgroundGradient: themeContext.gradientPurple,
@@ -18,7 +18,7 @@ export const categoryData = () => {
     },
     {
       // 이커머스 디자인 가이드 리스트 URL, 카테고리 제목, 배경 색
-      url: 'eCommerceDesignGuide', // Home 목록에서 쓰이는 고정 url
+      url: '/list/eCommerceDesignGuide', // Home 목록에서 쓰이는 고정 url
       categoryTitleArray: eCommerceDesignGuideList().categoryTitleArray,
       categoryTitle: eCommerceDesignGuideList().categoryTitle,
       backgroundGradient: themeContext.gradientBurgundy,
