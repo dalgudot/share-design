@@ -157,7 +157,7 @@ export const t = {
               k:
                 "UI/UX 디자인 경험을 전 세계 사람들과 공유하는 '디자인 공유하기' 프로젝트를 진행하고 있습니다.",
               e:
-                "I am working on a 'SHARE DESIGN' project to share UI/UX design experiences with people around the world.",
+                "I am working on a 'SHARE DESIGN' project to share UI/UX design experience with people around the world.",
             },
           },
           {
@@ -191,7 +191,7 @@ export const t = {
               k:
                 '과학 기자에서 UI/UX 디자이너가 되기까지: 경험을 연결해 나만의 큰 그림 설계하기',
               e:
-                'From Science Journalist to UI/UX Designer: Design your own big picture by connecting your experiences',
+                'From Science Journalist to UI/UX Designer: Design your own big picture by connecting your experience',
             },
           },
         ],

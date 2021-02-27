@@ -44,14 +44,16 @@ export const darkTheme: DefaultTheme = {
   gray3: '#BFBFC7',
   gray4: '#97979E',
   gray5: '#68686C', // 비활성화
-  gray6: 'rgba(61, 61, 63)', // '#3D3D3F'
-  gray7: '#1C1C1E',
-  gray8: 'rgba(18, 18, 18)', //'#121212'
+  gray6: 'rgba(61, 61, 63)', // #3D3D3F
+  gray7: 'rgba(28, 28, 30)', // #1C1C1E
+  gray8: 'rgba(18, 18, 18)', //#121212
 
   gray6__30: 'rgba(61, 61, 63, 0.3)',
+  gray7__40: 'rgba(28, 28, 30, 0.4)',
   // Gradient
   gradientPurple: '354deg, #4633d7, #7c62ed',
   gradientBurgundy: '170deg, #743657, #40192c',
+  gradientNightFade: 'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
   // BorderRadius
   borderRadius,
   // maxWidth
@@ -76,9 +78,11 @@ export const lightTheme: DefaultTheme = {
   gray8: '#EBEBF5',
 
   gray6__30: 'rgba(61, 61, 63, 0.3)',
+  gray7__40: 'rgba(28, 28, 30, 0.4)',
   // Gradient
   gradientPurple: '354deg, #4633d7, #7c62ed',
   gradientBurgundy: '170deg, #743657, #40192c',
+  gradientNightFade: 'linear-gradient(to top, #a18cd1, #fbc2eb)',
   // BorderRadius
   borderRadius,
   // maxWidth
@@ -112,9 +116,11 @@ declare module 'styled-components' {
     gray8: string;
 
     gray6__30: string;
+    gray7__40: string;
     // Gradient
     gradientPurple: string;
     gradientBurgundy: string;
+    gradientNightFade: string;
     // BorderRadius
     borderRadius: {
       R13: string;

@@ -11,7 +11,7 @@ import PMedium700 from '../../../elements/typography/p-medium-700';
 import PSmall700 from '../../../elements/typography/p-small-700';
 import Link from 'next/link';
 
-const Comment = () => {
+const Comment = ({ showToast }: { showToast: Function }) => {
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
@@ -34,6 +34,19 @@ const Comment = () => {
   }, []);
   // 배열은 객체의 특수한 형태이기 때문에 아래처럼 배열인지 검사해야 함.
   // console.log(Array.isArray(comments));
+
+  const checkIsComment = (): void => {
+    const isComment = sessionStorage.getItem(
+      `${router.pathname}/write-comment`
+    );
+
+    isComment === null
+      ? router.push(
+          '/article/[category]/[id]/write-comment',
+          `${router.pathname}/write-comment`
+        )
+      : showToast(tArticleCommon().preventCommentToastMessage);
+  };
 
   if (commentsLoading === true) {
     return (
@@ -83,21 +96,15 @@ const Comment = () => {
 
         {/* 버튼 영역 */}
         <ButtonDiv>
-          <Link
-            href="/article/[category]/[id]/write-comment"
-            as={`${router.pathname}/write-comment`}
-          >
-            <a>
-              <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
-              <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
-            </a>
-          </Link>
+          <a onClick={checkIsComment}>
+            <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
+            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+          </a>
 
           <div className="divider" />
           <a
             href="https://join.slack.com/t/sharedesignhq/shared_invite/zt-msweffq9-KGVi~KUf0rwr3b~LnUPz0Q"
             target="_blank"
-            // ref={linkedinRef}
           >
             <PMedium700 text={tArticleCommon().slack} color="gray1" />
             <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />

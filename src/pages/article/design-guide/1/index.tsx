@@ -5,7 +5,7 @@ import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
 import Article from '../../../../components/page/article/article';
 import { projectIntroduction } from '../../../../data/article/introduction';
 
-const InteractionDesignGuideOne = () => {
+const DesignGuide1 = ({ showToast }: { showToast: Function }) => {
   const router = useRouter();
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
@@ -20,9 +20,10 @@ const InteractionDesignGuideOne = () => {
       <Article //
         articleTitle={articleTitle}
         paragraphArray={paragraphArray}
+        showToast={showToast}
       />
     </>
   );
 };
 
-export default InteractionDesignGuideOne;
+export default DesignGuide1;

@@ -107,7 +107,7 @@ export default AboutArea;
 const AboutDiv = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
-  background-color: rgba(28, 28, 30, 0.4);
+  background-color: ${({ theme }) => theme.gray7__40};
   border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 속성

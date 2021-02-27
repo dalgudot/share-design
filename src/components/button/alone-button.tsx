@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
 import styled from 'styled-components';
 import { btnHoverTap } from '../../elements/framer-motion/variants';
-import PSmall400 from '../../elements/typography/p-small-400';
 import PMedium400 from '../../elements/typography/p-medium-400';
-import { useMyRipple } from '../../lib/hooks/useMyRipple';
 import PSmall700 from '../../elements/typography/p-small-700';
 
 const AloneButton = ({
@@ -16,13 +13,9 @@ const AloneButton = ({
   btnText: object;
   marginTop?: string;
 }) => {
-  const btnRef = useRef(null);
-  useMyRipple(btnRef);
-
   return (
     <MotionDiv //
       size={size}
-      ref={btnRef}
       marginTop={marginTop}
       variants={btnHoverTap}
       whileHover="whileHover"
@@ -54,5 +47,4 @@ const MotionDiv = styled(motion.div)<MotionDivType>`
   background-color: ${({ theme }) => theme.gray7};
   color: ${({ theme }) => theme.gray1};
   padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
-  /* max-width: 200px; */
 `;

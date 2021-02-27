@@ -1,4 +1,4 @@
-export const interactionDesignGuideOneInfo = {
+export const designGuide1Info = {
   title: {
     k: '인터랙션 디자인 가이드 | 디자인 공유하기',
     e: 'Interaction Design Guide | SHARE DESIGN',

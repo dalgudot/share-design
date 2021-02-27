@@ -3,38 +3,35 @@ import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
-import { categoryData } from '../data/data';
-import CategoryCard from '../components/page/index/category-card';
 import GotoIntroduction from '../components/page/index/go-to-introduction';
 import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
+import List from '../components/page/index/list';
+import { articleData } from '../data/article-data';
 
 const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
   bodyScrollTop();
-  const data = categoryData();
+  const data = articleData();
 
   return (
     <>
       <Main>
         <Ul>
-          <CategoryCard
+          <List
             url={data[0].url}
-            categoryTitleArray={data[0].categoryTitleArray}
-            backgroundGradient={data[0].backgroundGradient}
-          />
-          <CategoryCard
-            url={data[1].url}
-            categoryTitleArray={data[1].categoryTitleArray}
-            backgroundGradient={data[1].backgroundGradient}
+            category={data[0].category}
+            date={data[0].date}
+            title={data[0].title}
+            summary={data[0].summary}
           />
           <GotoIntroduction />
         </Ul>
         <ShareToolBar />
       </Main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -12,10 +12,12 @@ const Article = ({
   categoryTitle,
   articleTitle,
   paragraphArray,
+  showToast,
 }: {
   categoryTitle?: object;
   articleTitle: object;
   paragraphArray: object[];
+  showToast: Function;
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
@@ -43,7 +45,9 @@ const Article = ({
           </ContentsDiv>
 
           {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
-          {router.pathname !== '/introduction' && <Comment />}
+          {router.pathname !== '/introduction' && (
+            <Comment showToast={showToast} />
+          )}
 
           <ArticleToolBar />
         </ArticleContainer>

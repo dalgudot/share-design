@@ -35,7 +35,7 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
   const textLength: number = newComment.length;
   const textLengthCondition: boolean = textLength > 6;
 
-  const firebaseSet: Function = () => {
+  const firebaseSet: Function = (): void => {
     const firebaseDatabaseRef: any = firebase
       .database()
       .ref(`Comment/article/${category}/${id}`);
@@ -43,10 +43,12 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
     firebaseDatabaseRef.push().set({ profileGradient, when, newComment });
   };
 
-  const setNewCommentAndQuitWriteCommentMode = (e: React.MouseEvent) => {
+  const setNewCommentAndQuitWriteCommentMode = (e: React.MouseEvent): void => {
     e.preventDefault(); // 클릭 이벤트 발생 중단
     firebaseSet();
     showToast(tArticleCommon().completePostComment);
+    // 연속으로 댓글 쓰는 일 방지하기 위한 Session Storage 활용
+    sessionStorage.setItem(`${router.asPath}`, 'isComment');
     Router.push(`/article/${category}/${id}`);
   };
 

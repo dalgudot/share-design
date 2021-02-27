@@ -12,13 +12,14 @@ const Header = () => {
   };
 
   const HeaderDisplay = () => {
-    if (router.pathname === '/list/interactionDesignGuide') {
-      return false;
-    } else if (router.pathname === '/list/eCommerceDesignGuide') {
-      return false;
-    } else {
-      return true;
-    }
+    // if (router.pathname === '/list/interactionDesignGuide') {
+    //   return false;
+    // } else if (router.pathname === '/list/eCommerceDesignGuide') {
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+    return true; // 나중에 Header 숨기는 곳 대비
   };
   const isShow = HeaderDisplay();
 

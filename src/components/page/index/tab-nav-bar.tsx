@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import TabHome24 from '../../../elements/svg/tab_home_24';
 import TabContact24 from '../../../elements/svg/tab_contact_24';
-import { motion } from 'framer-motion';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import Router, { useRouter } from 'next/router';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';

@@ -1,37 +1,59 @@
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { projectIntroduction } from '../../../data/article/introduction';
-import { btnHoverTap } from '../../../elements/framer-motion/variants';
-import PMedium400 from '../../../elements/typography/p-medium-400';
+import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../styles/common';
+import AloneButton from '../../button/alone-button';
 
 const GotoIntroduction = () => {
   const goToIntroductionText = projectIntroduction().goToIntroduction;
 
+  const height: number = useWindowHeight();
+
   return (
-    <LiMotion //
-      variants={btnHoverTap}
-      whileHover="whileHover"
-      whileTap="whileTap"
-    >
-      <Link href="/introduction">
+    <Li>
+      <ComingSoonLine height={height} />
+      <Link href="/introduction" scroll={false}>
         <a>
-          <PMedium400 text={goToIntroductionText} color="gray2" />
+          <AloneButton //
+            size="medium"
+            btnText={goToIntroductionText}
+          />
         </a>
       </Link>
-    </LiMotion>
+    </Li>
   );
 };
 
 export default GotoIntroduction;
 
-const LiMotion = styled(motion.li)`
-  margin-top: 48px;
+const Li = styled.li`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
+  // 바뀌는 속성
+  margin-top: 48px;
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 36px;
+  }
+`;
+
+type ComingSoonLineType = {
+  height: number;
+};
+
+// 배열 길이에 따라 길이가 달라지는 선분
+const ComingSoonLine = styled.span<ComingSoonLineType>`
+  width: 1px;
+  height: ${({ height }) => height * 0.45}px;
+  background-color: ${({ theme }) => theme.gray6};
+
+  // 바뀌는 속성
+  margin-bottom: 36px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-bottom: 24px;
   }
 `;

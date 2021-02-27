@@ -18,8 +18,8 @@ export const introductionInfo = {
 
   description: {
     k:
-      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 공간입니다.',
+      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하는 프로젝트입니다.',
     e:
-      'SHARE DESIGN is a space to share UI/UX design experience with people around the world.',
+      'SHARE DESIGN Project is a project to share UI/UX design experience with people around the world.',
   },
 };

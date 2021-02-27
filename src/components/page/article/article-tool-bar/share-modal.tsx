@@ -82,7 +82,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
       />
       <DivMotion
         variants={ScaleDownInUpOut}
-        initial="initial"
+        initial={false}
         animate={openModal === true ? 'animate' : 'initial'}
         openModal={openModal}
         modalZIndexHandler={modalZIndexHandler}

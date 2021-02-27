@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';

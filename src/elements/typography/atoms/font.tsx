@@ -3,7 +3,7 @@
 export const fontSize: any = {
   mobile: {
     h1Title: '32px',
-    h2Title: '27px',
+    h2Title: '28px',
     h3Title: '24px',
     h4Title: '21px',
     h5Title: '18px',
@@ -15,7 +15,7 @@ export const fontSize: any = {
   tablet: {
     h1Title: '39px',
     h2Title: '34px',
-    h3Title: '27px',
+    h3Title: '28px',
     h4Title: '24px',
     h5Title: '21px',
     h6Title: '18px',
@@ -26,7 +26,7 @@ export const fontSize: any = {
   desktop: {
     h1Title: '39px',
     h2Title: '34px',
-    h3Title: '27px',
+    h3Title: '28px',
     h4Title: '24px',
     h5Title: '21px',
     h6Title: '18px',

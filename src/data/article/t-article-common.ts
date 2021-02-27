@@ -2,7 +2,7 @@ export const tArticleCommon = () => {
   return {
     welcomeText: [
       {
-        k: '디자인 경험을',
+        k: 'UI/UX 디자인 경험을',
         e: 'I share my UI/UX Design Experience',
       },
 
@@ -65,6 +65,11 @@ export const tArticleCommon = () => {
     slack: {
       k: '슬랙으로 새 글 알림받기',
       e: 'Receive notifications with Slack',
+    },
+
+    preventCommentToastMessage: {
+      k: '연속으로 댓글을 쓸 수 없습니다 😂',
+      e: 'Cannot write comment in a row 😂',
     },
   };
 };
