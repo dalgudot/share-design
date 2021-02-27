@@ -5,6 +5,7 @@ import { mediaBreakPoint } from '../../../styles/common';
 import H2Title700 from '../../../elements/typography/h2-title-700';
 import IconLanguageFill24 from '../../../elements/svg/icon_language_fill_24';
 import PSmall300 from '../../../elements/typography/p-small-300';
+import PSmall400 from '../../../elements/typography/p-small-400';
 
 const List = ({
   url,
@@ -29,10 +30,10 @@ const List = ({
             </div>
           </div>
           <CategoryDateArea>
-            <PSmall300 text={category} color="gray4" opacity={0.9} />
+            <PSmall400 text={category} color="gray4" />
             <span />
             <time dateTime="2021-03-14">
-              <PSmall300 text={date} color="gray4" opacity={0.9} />
+              <PSmall400 text={date} color="gray4" />
             </time>
           </CategoryDateArea>
           <H2Title700 //

@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
-import PMedium700 from '../../../elements/typography/p-medium-700';
 import PSmall700 from '../../../elements/typography/p-small-700';
+import AloneButton from '../../button/alone-button';
 
 const Comment = ({ showToast }: { showToast: any }) => {
   const [commentsLoading, setCommentsLoading] = useState(true);
@@ -94,21 +94,12 @@ const Comment = ({ showToast }: { showToast: any }) => {
         )}
 
         {/* 버튼 영역 */}
-        <ButtonDiv>
-          <a onClick={checkIsComment}>
-            <PMedium700 text={tArticleCommon().writeComment} color="gray1" />
-            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
-          </a>
-
-          <div className="divider" />
-          <a
-            href="https://join.slack.com/t/sharedesignhq/shared_invite/zt-msweffq9-KGVi~KUf0rwr3b~LnUPz0Q"
-            target="_blank"
-          >
-            <PMedium700 text={tArticleCommon().slack} color="gray1" />
-            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
-          </a>
-        </ButtonDiv>
+        <a onClick={checkIsComment}>
+          <AloneButton //
+            size="medium"
+            btnText={tArticleCommon().writeComment}
+          />
+        </a>
       </>
     );
   }

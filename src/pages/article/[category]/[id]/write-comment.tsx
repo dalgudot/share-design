@@ -11,6 +11,8 @@ import PMedium700 from '../../../../elements/typography/p-medium-700';
 import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import PSmall700 from '../../../../elements/typography/p-small-700';
 import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
+import { motion } from 'framer-motion';
+import { vibration } from '../../../../elements/framer-motion/variants';
 
 const WriteComment = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenComment;
@@ -79,9 +81,15 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
               />
             </time>
           </LeftDiv>
-          <button onClick={changeGradient}>
+          <motion.button
+            onClick={changeGradient}
+            variants={vibration}
+            animate="animate"
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
             <PSmall700 text={tArticleCommon().changeColor} color="gray2" />
-          </button>
+          </motion.button>
         </AnonymousProfileArea>
         <MultiLineTextField
           ref={function (ref) {

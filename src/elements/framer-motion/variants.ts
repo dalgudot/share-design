@@ -176,6 +176,48 @@ export const smoothUp = {
   whileTap: { scale: 0.97 },
 };
 
+export const vibration = {
+  animate: {
+    x: [
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+      -1.4,
+      0,
+      1.4,
+      0,
+    ],
+    transition: {
+      duration: 0.55,
+      // smoothTransition,
+    },
+  },
+
+  whileHover: {
+    scale: 1.04,
+  },
+
+  whileTap: { scale: 0.97 },
+};
+
 export const colorVariants = (color: string) => {
   return {
     initial: {

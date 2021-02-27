@@ -32,6 +32,7 @@ const Article = ({
         <ArticleContainer>
           <ArticleTitleArea
             categoryTitle={categoryTitle}
+            date={date}
             articleTitle={articleTitle}
           />
 

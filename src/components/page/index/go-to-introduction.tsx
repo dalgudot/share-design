@@ -6,8 +6,6 @@ import { mediaBreakPoint } from '../../../styles/common';
 import AloneButton from '../../button/alone-button';
 
 const GotoIntroduction = () => {
-  const goToIntroductionText = projectIntroduction().goToIntroduction;
-
   const height: number = useWindowHeight();
 
   return (
@@ -17,7 +15,7 @@ const GotoIntroduction = () => {
         <a>
           <AloneButton //
             size="medium"
-            btnText={goToIntroductionText}
+            btnText={projectIntroduction().goToIntroduction}
           />
         </a>
       </Link>
