@@ -56,14 +56,12 @@ export default List;
 
 const Li = styled.li`
   width: 100%; /* 원하는 너비 */
-  max-width: 640px;
-  /* max-width: ${({ theme }) => theme.maxWidth.Paragraph}; */
+  max-width: ${({ theme }) => theme.maxWidth.List};
   margin: 0 auto;
 
   .image__area__wrap {
     // 16:9 비율 만들기
     position: relative;
-    /* background-color: ${({ theme }) => theme.gray7}; */
     background-color: ${({ theme }) => theme.gray7__40};
     border: solid 1px ${({ theme }) => theme.gray7};
     border-radius: ${({ theme }) => theme.borderRadius.R13};

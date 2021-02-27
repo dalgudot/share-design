@@ -14,14 +14,14 @@ export const designGuide1 = () => {
 
     title: {
       k: '언어 전환 토글 버튼의 UI/UX 디자인은?',
-      e: 'How to design the UI/UX of the language switch toggle button?',
+      e: 'What is the UI/UX design of the switch language toggle button?',
     },
 
     summary: {
       k:
         '언어 전환 토글 버튼의 UI/UX 디자인은? 언어 전환 토글 버튼의 UI/UX 디자인은? 언어 전환 토글 버튼의 UI/UX 디자인은? 언어 전환 토글 버튼의 UI/UX 디자인은? 언어 전환 토글 버튼의 UI/UX 디자인은?',
       e:
-        'How to design the UI/UX of the language switch toggle button? How to design the UI/UX of the language switch toggle button? How to design the UI/UX of the language switch toggle button?',
+        'What is the UI/UX design of the switch language toggle button? What is the UI/UX design of the switch language toggle button? What is the UI/UX design of the switch language toggle button?',
     },
 
     contentsText: [

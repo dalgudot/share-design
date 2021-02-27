@@ -7,6 +7,7 @@ const borderRadius = {
 };
 
 const maxWidth = {
+  List: '640px',
   Paragraph: '740px',
 };
 
@@ -127,6 +128,7 @@ declare module 'styled-components' {
       R26: string;
     };
     maxWidth: {
+      List: string;
       Paragraph: string;
     };
     zIndex: {
