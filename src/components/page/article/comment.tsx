@@ -9,9 +9,8 @@ import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PMedium700 from '../../../elements/typography/p-medium-700';
 import PSmall700 from '../../../elements/typography/p-small-700';
-import Link from 'next/link';
 
-const Comment = ({ showToast }: { showToast: Function }) => {
+const Comment = ({ showToast }: { showToast: any }) => {
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();

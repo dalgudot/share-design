@@ -17,7 +17,7 @@ const Article = ({
   categoryTitle?: object;
   articleTitle: object;
   paragraphArray: object[];
-  showToast: Function;
+  showToast?: Function;
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
