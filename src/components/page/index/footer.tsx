@@ -8,8 +8,10 @@ const Footer = () => {
       <FooterContainer>
         <PSmall400
           text={{
-            k: 'ⓒ KyungHwan Kim. All rights reserved.',
-            e: 'ⓒ KyungHwan Kim. All rights reserved.',
+            // k: 'ⓒ KyungHwan Kim. All rights reserved.',
+            // e: 'ⓒ KyungHwan Kim. All rights reserved.',
+            k: 'ⓒ Desinged and Developed by KyungHwan Kim',
+            e: 'ⓒ Desinged and Developed by KyungHwan Kim',
           }}
           color="gray4"
           opacity={0.8}

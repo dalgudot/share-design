@@ -71,15 +71,13 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
         <AnonymousProfileArea>
           <LeftDiv profileGradient={profileGradient}>
             <span />
-            <time>
-              <PSmall700
-                text={{
-                  k: when,
-                  e: when,
-                }}
-                color="gray2"
-              />
-            </time>
+            <PSmall700
+              text={{
+                k: when,
+                e: when,
+              }}
+              color="gray2"
+            />
           </LeftDiv>
           <motion.button
             onClick={changeGradient}
