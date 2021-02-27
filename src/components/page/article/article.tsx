@@ -10,11 +10,13 @@ import { useRouter } from 'next/router';
 
 const Article = ({
   categoryTitle,
+  date,
   articleTitle,
   paragraphArray,
   showToast,
 }: {
   categoryTitle?: object;
+  date?: object;
   articleTitle: object;
   paragraphArray: object[];
   showToast?: Function;

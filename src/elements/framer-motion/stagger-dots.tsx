@@ -11,15 +11,13 @@ const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
   const countNum = count ?? 3;
   const dots = Array(countNum)
     .fill(null)
-    .map((_, idx) => (
-      <motion.span key={idx} variants={loadingCircleVariants} />
-    ));
+    .map((_, idx) => <motion.span key={idx} variants={circleVariants} />);
 
   return (
     <motion.div //
-      variants={loadingStaggerVariants}
-      initial="start"
-      animate="end"
+      variants={staggerVariants}
+      initial="initial"
+      animate="animate"
     >
       <Container color={color}>{dots}</Container>
     </motion.div>
@@ -35,29 +33,50 @@ const Container = styled.div`
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    margin: 4px;
-    background-color: ${({ theme }) => theme.gray1};
+    margin: 3px;
+    background-color: ${({ theme }) => theme.gray2};
   }
 `;
 
-const loadingStaggerVariants = {
-  start: {},
-  end: {
+const staggerVariants = {
+  initial: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
+    },
+  },
+
+  animate: {
+    transition: {
+      staggerChildren: 0.12,
     },
   },
 };
 
-const loadingCircleVariants = {
-  start: {
+// 타입 정의하지 않으면 repeatType에서 타입 에러
+const circleVariants: {
+  initial: {
+    y: string;
+  };
+
+  animate: {
+    y: string;
+    transition: {
+      repeat: number;
+      repeatType: 'reverse' | 'loop' | 'mirror' | undefined;
+      duration: number;
+    };
+  };
+} = {
+  initial: {
     y: '60%',
   },
-  end: {
+
+  animate: {
     y: '-60%',
     transition: {
-      duration: 0.4,
       repeat: Infinity,
+      repeatType: 'reverse',
+      duration: 0.38,
     },
   },
 };
