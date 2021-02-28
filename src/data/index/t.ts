@@ -111,7 +111,7 @@ export const t = {
           {
             term: {
               k: '2020.06.08 ~ 현재',
-              e: '2020.06.08 ~ present',
+              e: '2020.06.08 ~ Present',
             },
             contents: {
               k: '쿠돈 UI/UX 디자이너',
@@ -151,7 +151,7 @@ export const t = {
           {
             term: {
               k: '2020.09.12 ~ 현재',
-              e: '2020.06.08 ~ present',
+              e: '2020.09.12 ~ Present',
             },
             contents: {
               k:
