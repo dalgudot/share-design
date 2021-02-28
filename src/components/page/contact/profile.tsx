@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { t } from '../../../data/index/t';
 import H3Title700 from '../../../elements/typography/h3-title-700';
 import PSmall400 from '../../../elements/typography/p-small-400';
@@ -7,8 +6,6 @@ import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ProfileArea = () => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <ProfileDiv>
       <img

@@ -28,7 +28,7 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
 
 export default Profile;
 
-const Author = styled.button<{ marginTop: string }>`
+const Author = styled.a<{ marginTop: string }>`
   display: flex;
   align-items: center;
   margin-top: ${({ marginTop }) => marginTop};
