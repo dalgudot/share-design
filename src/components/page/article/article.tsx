@@ -27,6 +27,7 @@ const Article = ({
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
   const router = useRouter();
+  // 모든 Article 통계 함수는 여기서 실행
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
