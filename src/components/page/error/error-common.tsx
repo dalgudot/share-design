@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { t } from '../../../data/index/t';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import AloneButton from '../../button/alone-button';
+import { detectBrowserLang } from '../../../lib/functions/detect-browser-lang';
 
 const ErrorCommon = () => {
   const btnText = t.errorMessage.btn;
+  detectBrowserLang();
 
   return (
     <Main>

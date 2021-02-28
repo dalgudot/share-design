@@ -6,10 +6,10 @@ import Article from '../../../../components/page/article/article';
 import { designGuide1 } from '../../../../data/article/design-guide/1';
 
 const DesignGuide1 = ({ showToast }: { showToast: Function }) => {
-  const router = useRouter();
-  useEffect(() => {
-    VisitsAndViewsDuringSession(router.pathname);
-  }, []);
+  // const router = useRouter();
+  // useEffect(() => {
+  //   VisitsAndViewsDuringSession(router.pathname);
+  // }, []);
   bodyScrollTop();
 
   const categoryTitle = designGuide1().category;

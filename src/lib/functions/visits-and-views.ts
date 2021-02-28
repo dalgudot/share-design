@@ -83,13 +83,7 @@ const ViewsDuringSession = (where: string) => {
     // E of [각] Article 날짜별 조회수
   };
 
-  if (
-    where === 'Home' ||
-    where === 'Contact' ||
-    where === 'Introduction' ||
-    where === 'List/interactionDesignGuide' ||
-    where === 'List/eCommerceDesignGuide'
-  ) {
+  if (where === 'Home' || where === 'Contact') {
     views();
   } else {
     viewsArticle();

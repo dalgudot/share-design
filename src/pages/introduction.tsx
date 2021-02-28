@@ -5,9 +5,9 @@ import Article from '../components/page/article/article';
 import { projectIntroduction } from '../data/article/introduction';
 
 const Introduction = () => {
-  useEffect(() => {
-    VisitsAndViewsDuringSession('Introduction');
-  }, []);
+  // useEffect(() => {
+  //   VisitsAndViewsDuringSession('Introduction');
+  // }, []);
   bodyScrollTop();
 
   const articleTitle = projectIntroduction().title;

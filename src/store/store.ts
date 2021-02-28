@@ -36,28 +36,28 @@ type InitialStateTypes = {
   themeMode: string;
   openModal: boolean;
   modalZIndexHandler: boolean;
-  showToastRedux: Function;
+  wasVisited: boolean;
 };
 
 type actionTypesTypes = {
   MODE_CHANGE: string;
   OPEN_MODAL: string;
   MODAL_Z_INDEX_HANDLER: string;
-  SHOW_TOAST_REDUX: string;
+  WAS_VISITED: string;
 };
 
 const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   openModal: false,
   modalZIndexHandler: false,
-  showToastRedux: (toastMessage: string) => {},
+  wasVisited: false,
 };
 
 export const actionTypes: actionTypesTypes = {
   MODE_CHANGE: 'MODE_CHANGE',
   OPEN_MODAL: 'OPEN_MODAL',
   MODAL_Z_INDEX_HANDLER: 'MODAL_Z_INDEX_HANDLER',
-  SHOW_TOAST_REDUX: 'SHOW_TOAST_REDUX',
+  WAS_VISITED: 'WAS_VISITED',
 };
 
 export const reducer = (state = InitialState, action: any) => {
@@ -80,15 +80,21 @@ export const reducer = (state = InitialState, action: any) => {
         modalZIndexHandler: state.modalZIndexHandler === false ? true : false,
       };
 
+    case actionTypes.WAS_VISITED:
+      return {
+        ...state,
+        wasVisited: state.wasVisited === false && true,
+      };
+
     default:
       return state;
   }
 };
 
 const persistConfig = {
-  key: 'primary',
+  key: 'SHARE DESIGN',
   storage,
-  whitelist: ['themeMode'], // place to select which state you want to persist
+  whitelist: ['wasVisited', 'themeMode'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
