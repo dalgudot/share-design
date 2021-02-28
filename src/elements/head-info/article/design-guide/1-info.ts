@@ -1,7 +1,8 @@
 export const designGuide1Info = {
   title: {
-    k: 'UI/UX 디자인 가이드 | 디자인 공유하기',
-    e: 'UI/UX Design Guide | SHARE DESIGN',
+    k: '언어 전환 버튼의 UI/UX 디자인은? | UI/UX 디자인 가이드',
+    e:
+      'What is the UI/UX design of the language switch toggle button? | UI/UX Design Guide',
   },
 
   url: {
@@ -19,8 +20,8 @@ export const designGuide1Info = {
 
   description: {
     k:
-      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 공간입니다.',
+      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 디지털 프로덕트(Digital Product)입니다.',
     e:
-      'SHARE DESIGN is a space to share UI/UX design experience with people around the world.',
+      'SHARE DESIGN is a digital product to share UI/UX design experience with people around the world.',
   },
 };
