@@ -1,12 +1,12 @@
 export const designGuide1Info = {
   title: {
-    k: '인터랙션 디자인 가이드 | 디자인 공유하기',
-    e: 'Interaction Design Guide | SHARE DESIGN',
+    k: 'UI/UX 디자인 가이드 | 디자인 공유하기',
+    e: 'UI/UX Design Guide | SHARE DESIGN',
   },
 
   url: {
-    k: 'https://share-design.kr/article/interactionDesignGuide/1',
-    e: 'https://share-design.kr/en/article/interactionDesignGuide/1',
+    k: 'https://share-design.kr/article/design-guide/1',
+    e: 'https://share-design.kr/en/article/design-guide/1',
   },
 
   type: 'article',
