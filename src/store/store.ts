@@ -36,7 +36,7 @@ type InitialStateTypes = {
   themeMode: string;
   openModal: boolean;
   modalZIndexHandler: boolean;
-  wasVisited: boolean;
+  visited: boolean;
 };
 
 type actionTypesTypes = {
@@ -50,7 +50,7 @@ const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
   openModal: false,
   modalZIndexHandler: false,
-  wasVisited: false,
+  visited: false,
 };
 
 export const actionTypes: actionTypesTypes = {
@@ -83,7 +83,7 @@ export const reducer = (state = InitialState, action: any) => {
     case actionTypes.WAS_VISITED:
       return {
         ...state,
-        wasVisited: state.wasVisited === false && true,
+        visited: state.visited === false && true,
       };
 
     default:
@@ -94,7 +94,7 @@ export const reducer = (state = InitialState, action: any) => {
 const persistConfig = {
   key: 'SHARE DESIGN',
   storage,
-  whitelist: ['wasVisited', 'themeMode'], // place to select which state you want to persist
+  whitelist: ['visited', 'themeMode'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

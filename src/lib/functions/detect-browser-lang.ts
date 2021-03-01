@@ -5,17 +5,17 @@ import { useSelector, useDispatch } from 'react-redux';
 export const detectBrowserLang = () => {
   const router = useRouter();
 
-  const wasVisited = useSelector((state: any) => state.wasVisited);
+  const visited = useSelector((state: any) => state.visited);
   const dispatch = useDispatch();
-  const wasVisitedCheck = () =>
+  const visitedCheck = () =>
     dispatch({
       type: 'WAS_VISITED',
     });
-  // console.log(`wasVisited: ${wasVisited}`);
+  // console.log(`visited: ${visited}`);
 
   useEffect(() => {
     // 방문 기록 없을 때만 Browser Language 체크(최초 1회)
-    wasVisited === false && setInitialLanguage();
+    visited === false && setInitialLanguage();
   }, []);
 
   const setInitialLanguage = () => {
@@ -42,6 +42,6 @@ export const detectBrowserLang = () => {
         : router.push(router.asPath, router.asPath, { locale: 'en' });
     }
 
-    wasVisitedCheck(); // 최초 1회 방문 시에만 체크하기 위해 필요한 redux-persist dispatch 함수
+    visitedCheck(); // 최초 1회 방문 시에만 체크하기 위해 필요한 redux-persist dispatch 함수
   };
 };
