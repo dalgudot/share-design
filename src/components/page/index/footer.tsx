@@ -15,8 +15,8 @@ const Footer = () => {
           text={{
             // k: 'ⓒ KyungHwan Kim. All rights reserved.',
             // e: 'ⓒ KyungHwan Kim. All rights reserved.',
-            k: 'ⓒ Desinged and Developed by KyungHwan Kim',
-            e: 'ⓒ Desinged and Developed by KyungHwan Kim',
+            k: 'ⓒ Designed and Developed by KyungHwan Kim',
+            e: 'ⓒ Designed and Developed by KyungHwan Kim',
           }}
           color="gray4"
           opacity={0.8}
