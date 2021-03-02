@@ -6,6 +6,6 @@ module.exports = {
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: 'ko',
-    localeDetection: false, // Browser Language로 대체
+    localeDetection: true, // Browser Language로 대체하면 SEO에 문제가 생김
   },
 };

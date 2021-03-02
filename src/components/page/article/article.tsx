@@ -31,7 +31,7 @@ const Article = ({
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
-  detectBrowserLang();
+  // detectBrowserLang();
 
   return (
     <>

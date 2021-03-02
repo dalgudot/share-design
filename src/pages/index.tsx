@@ -14,7 +14,7 @@ const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  detectBrowserLang();
+  // detectBrowserLang();
   bodyScrollTop();
   const data = articleData();
 
@@ -23,6 +23,7 @@ const Index = () => {
       <Main>
         <Ul>
           <List
+            // 추후 url 수정 필요
             url={data[0].url}
             category={data[0].category}
             date={data[0].date}

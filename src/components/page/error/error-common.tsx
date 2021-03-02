@@ -7,7 +7,7 @@ import { detectBrowserLang } from '../../../lib/functions/detect-browser-lang';
 
 const ErrorCommon = () => {
   const btnText = t.errorMessage.btn;
-  detectBrowserLang();
+  // detectBrowserLang();
 
   return (
     <Main>
