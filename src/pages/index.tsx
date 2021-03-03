@@ -14,7 +14,7 @@ const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  // detectBrowserLang();
+  detectBrowserLang();
   bodyScrollTop();
   const data = articleData();
 

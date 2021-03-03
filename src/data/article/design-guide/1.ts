@@ -1,7 +1,6 @@
 export const designGuide1 = () => {
   return {
-    // url: '/article/design-guide/1',
-    url: '/',
+    url: '/article/design-guide/1',
 
     category: {
       k: 'UI/UX 디자인 가이드',
