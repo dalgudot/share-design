@@ -13,7 +13,7 @@ const Contact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
-  detectBrowserLang();
+  // detectBrowserLang();;
   bodyScrollTop();
 
   return (
