@@ -9,27 +9,39 @@ import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
+import IntroductionContents from '../introduction/introduction-contents';
 
 const Article = ({
   categoryTitle,
   date,
   articleTitle,
-  paragraphArray,
+  contentsArray,
   showToast,
 }: {
   categoryTitle?: object;
   date?: object;
   articleTitle: object;
-  paragraphArray: object[];
+  contentsArray: object[];
   showToast?: Function;
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
   const router = useRouter();
+  const pathname: string = router.pathname;
   // 모든 Article 통계 함수는 여기서 실행
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
+
+  const contentsSwitch = () => {
+    switch (pathname) {
+      case '/introduction':
+        return <IntroductionContents contentsArray={contentsArray} />;
+      case '/article/design-guide/1':
+        return <IntroductionContents contentsArray={contentsArray} />;
+    }
+  };
+  const contents = contentsSwitch();
 
   return (
     <>
@@ -42,16 +54,7 @@ const Article = ({
             articleTitle={articleTitle}
           />
 
-          <ContentsDiv>
-            {paragraphArray.map((text, index) => (
-              <PMedium400
-                key={index}
-                text={text}
-                color="gray3"
-                marginTop="24px"
-              />
-            ))}
-          </ContentsDiv>
+          <ContentsDiv>{contents}</ContentsDiv>
 
           {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
           {router.pathname !== '/introduction' && (

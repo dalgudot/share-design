@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import Article from '../components/page/article/article';
 import { projectIntroduction } from '../data/article/introduction';
@@ -8,12 +6,12 @@ const Introduction = () => {
   bodyScrollTop();
 
   const articleTitle = projectIntroduction().title;
-  const paragraphArray = projectIntroduction().contentsText;
+  const contentsArray = projectIntroduction().contents;
   return (
     <>
       <Article //
         articleTitle={articleTitle}
-        paragraphArray={paragraphArray}
+        contentsArray={contentsArray}
       />
     </>
   );
