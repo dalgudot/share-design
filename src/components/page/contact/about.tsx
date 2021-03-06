@@ -109,6 +109,7 @@ const AboutDiv = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
   background-color: ${({ theme }) => theme.gray7__40};
   border-radius: ${({ theme }) => theme.borderRadius.R13};
+  border: solid 1px ${({ theme }) => theme.gray7};
 
   // 바뀌는 속성
   margin-top: 24px;

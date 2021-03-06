@@ -46,6 +46,7 @@ const EmailDiv = styled.div`
   align-items: center;
   margin-top: 36px;
   background-color: ${({ theme }) => theme.gray7__40};
+  border: solid 1px ${({ theme }) => theme.gray7};
   border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 속성

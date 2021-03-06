@@ -7,13 +7,11 @@ import ProfileArea from '../components/page/contact/profile';
 import EmailArea from '../components/page/contact/email';
 import SocialArea from '../components/page/contact/social';
 import AboutArea from '../components/page/contact/about';
-import { detectBrowserLang } from '../lib/functions/detect-browser-lang';
 
 const Contact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
-  // detectBrowserLang();;
   bodyScrollTop();
 
   return (

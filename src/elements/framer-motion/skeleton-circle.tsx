@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-interface SkeletonRectDate {
+interface SkeletonCircleDate {
   width: string;
   height: string;
-  duration: string;
+  duration: number;
 }
 
-const SkeletonRect = ({ width, height, duration }: SkeletonRectDate) => {
+const SkeletonCircle = ({ width, height, duration }: SkeletonCircleDate) => {
   return (
     <List width={width} height={height}>
       <motion.div
-        className="rect"
+        className="circle"
         variants={skeletonVariants(duration)}
         initial="start"
         animate="end"
@@ -20,23 +20,23 @@ const SkeletonRect = ({ width, height, duration }: SkeletonRectDate) => {
   );
 };
 
-export default SkeletonRect;
+export default SkeletonCircle;
 
-interface SkeletonRectList {
+interface SkeletonCircleList {
   width: string;
   height: string;
 }
 
-const List = styled.div<SkeletonRectList>`
-  .rect {
+const List = styled.div<SkeletonCircleList>`
+  .circle {
     width: ${({ width }) => width};
     height: ${({ height }) => height};
-    background-color: #999999;
-    border-radius: 2px;
+    background-color: ${({ theme }) => theme.gray7__40};
+    border-radius: 50%;
   }
 `;
 
-const skeletonVariants = (duration: string) => {
+const skeletonVariants = (duration: number) => {
   return {
     start: {
       opacity: 0.64,

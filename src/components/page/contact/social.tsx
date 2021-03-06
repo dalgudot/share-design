@@ -65,4 +65,5 @@ const A = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 1px ${({ theme }) => theme.gray7};
 `;

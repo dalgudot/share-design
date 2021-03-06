@@ -7,7 +7,6 @@ import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
-import { detectBrowserLang } from '../../../lib/functions/detect-browser-lang';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
@@ -31,7 +30,6 @@ const Article = ({
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
-  // detectBrowserLang();;
 
   return (
     <>

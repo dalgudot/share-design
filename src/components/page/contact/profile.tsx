@@ -30,6 +30,8 @@ const ProfileDiv = styled.div`
     height: 96px;
     border: solid 2px ${({ theme }) => theme.gray7};
     border-radius: 50%;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
       width: 72px;
