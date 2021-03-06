@@ -18,8 +18,8 @@ export const contactInfo = {
 
   description: {
     k:
-      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 디지털 프로덕트(Digital Product)입니다.',
+      'UI/UX 디자인 경험을 전 세계 사람들과 공유하는 디자인 공유하기 프로젝트를 진행하고 있는 UI/UX 디자이너 김경환의 연락처입니다.',
     e:
-      'SHARE DESIGN is a digital product to share UI/UX design experience with people around the world.',
+      'This is the contact information for UI/UX designer KyungHwan Kim, who is working on SHARE DESIGN project that shares UI/UX design experience with people around the world.',
   },
 };
