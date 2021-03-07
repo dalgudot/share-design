@@ -8,15 +8,18 @@ import PSmall700 from '../../elements/typography/p-small-700';
 const AloneButton = ({
   size, // small or medium
   btnText,
+  color,
   marginTop,
 }: {
   size: string;
   btnText: object;
+  color?: string;
   marginTop?: string;
 }) => {
   return (
     <MotionDiv //
       size={size}
+      bgColor={color}
       marginTop={marginTop}
       variants={btnHoverTap}
       whileHover="whileHover"
@@ -36,6 +39,7 @@ export default AloneButton;
 type MotionDivType = {
   marginTop?: string;
   size: string;
+  bgColor?: string;
 };
 
 const MotionDiv = styled(motion.div)<MotionDivType>`
@@ -45,7 +49,7 @@ const MotionDiv = styled(motion.div)<MotionDivType>`
   align-items: center;
   border-radius: ${({ size, theme }) =>
     size === 'small' ? theme.borderRadius.R13 : theme.borderRadius.R26};
-  background-color: ${({ theme }) => theme.gray7};
-  color: ${({ theme }) => theme.gray1};
+  background-color: ${({ bgColor, theme }) =>
+    bgColor !== 'gray6__30' ? theme.gray7 : theme.gray6__30};
   padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
 `;

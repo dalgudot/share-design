@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Comment from './comment';
 import { mediaBreakPoint } from '../../../styles/common';
-import PMedium400 from '../../../elements/typography/p-medium-400';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
@@ -10,6 +9,8 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
+import UIUXDesignContents1 from './ui-ux-design/1';
+import ArticleMessage from './article-message';
 
 const Article = ({
   categoryTitle,
@@ -38,7 +39,7 @@ const Article = ({
       case '/introduction':
         return <IntroductionContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
-        return <IntroductionContents contentsArray={contentsArray} />;
+        return <UIUXDesignContents1 contentsArray={contentsArray} />;
     }
   };
   const contents = contentsSwitch();
@@ -54,7 +55,9 @@ const Article = ({
             articleTitle={articleTitle}
           />
 
-          <ContentsDiv>{contents}</ContentsDiv>
+          <ArticleMessage />
+
+          {contents}
 
           {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
           {router.pathname !== '/introduction' && (
@@ -112,12 +115,4 @@ const Background = styled.div<BackgroundType>`
   min-height: ${({ height }) => height}px;
   background-color: ${({ theme }) => theme.gray7};
   z-index: ${({ theme }) => theme.zIndex.Background};
-`;
-
-const ContentsDiv = styled.div`
-  margin-top: 36px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 24px;
-  }
 `;

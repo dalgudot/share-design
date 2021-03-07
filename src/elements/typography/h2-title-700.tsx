@@ -19,7 +19,7 @@ const H2Title700 = ({
       weight={fontWeight[700]}
       color={color}
       letterSpacing="-1px"
-      lineHeight={1.3}
+      lineHeight={1.4}
       marginTop={marginTop}
     />
   );

@@ -1,55 +1,52 @@
 import styled from 'styled-components';
-import TextStyle from '../../elements/typography/atoms/text-style';
-import { fontWeight } from '../../elements/typography/atoms/font';
-import { useRef } from 'react';
-import { t } from '../../data/index/t';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { uiUxDesign } from '../../data/article/ui-ux-design/1';
+import PSmall700 from '../../elements/typography/p-small-700';
+import { useRef } from 'react';
 import { useMyRipple } from '../../lib/hooks/useMyRipple';
 
-const LangChangeButton = () => {
+const LangChangeButton = ({ text }: { text: object }) => {
   const router = useRouter();
   const locale = router.locale;
   const setLanguageChange = () => {
-    locale === 'ko'
-      ? router.push(router.pathname, router.pathname, { locale: 'en' })
-      : router.push(router.pathname, router.pathname, { locale: 'ko' });
+    if (router.query === {}) {
+      locale === 'ko'
+        ? router.push(router.pathname, router.pathname, { locale: 'en' })
+        : router.push(router.pathname, router.pathname, { locale: 'ko' });
+    } else if (router.query !== {}) {
+      // dynamic routing 고려한 조건
+      locale === 'ko'
+        ? router.push(router.asPath, router.asPath, { locale: 'en' })
+        : router.push(router.asPath, router.asPath, { locale: 'ko' });
+    }
   };
 
-  const btnRef = useRef(null);
-  useMyRipple(btnRef);
+  // const buttonRef = useRef(null);
+  // useMyRipple(buttonRef);
 
   return (
-    <motion.button
+    <MotionButton
+      // ref={buttonRef}
       onClick={setLanguageChange}
-      ref={btnRef}
       whileHover={{
         scale: 1.05,
-        transition: { duration: 0.1 },
       }}
+      whileTap={{ scale: 0.97 }}
     >
-      <BtnStyle>
-        <TextStyle
-          type="p"
-          text={useSetLanguage(t.shareDesign)}
-          textSize="small"
-          weight={fontWeight[700]}
-          color="gray1"
-        />
-      </BtnStyle>
-    </motion.button>
+      <PSmall700 text={text} color="gray1" />
+    </MotionButton>
   );
 };
 
 export default LangChangeButton;
 
-const BtnStyle = styled.div`
+const MotionButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 128px;
-  height: 40px;
+  padding: 16px 30px;
+  margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius.R13};
-  background-color: ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray6__30};
 `;

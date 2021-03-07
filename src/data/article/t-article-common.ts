@@ -1,16 +1,20 @@
 export const tArticleCommon = () => {
   return {
-    welcomeText: [
-      {
-        k: 'UI/UX 디자인 경험을',
-        e: 'I share my UI/UX Design Experience',
-      },
+    message: {
+      k: `UI/UX 디자인 경험을 공유합니다 :)`,
+      e: `I share my UI/UX Design Experience :)`,
+    },
 
-      {
-        k: '전 세계에 공유합니다 🙌',
-        e: 'around the world 🙌',
-      },
-    ],
+    // message: [
+    //   {
+    //     k: `UI/UX 디자인 경험을`,
+    //     e: `I share`,
+    //   },
+    //   {
+    //     k: `공유합니다 :)`,
+    //     e: `my UI/UX Design Experience :)`,
+    //   },
+    // ],
 
     goToList: {
       k: '목록 보기',

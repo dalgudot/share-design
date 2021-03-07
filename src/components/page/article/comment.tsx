@@ -94,12 +94,13 @@ const Comment = ({ showToast }: { showToast: any }) => {
         )}
 
         {/* 버튼 영역 */}
-        <a onClick={checkIsComment}>
+        <A onClick={checkIsComment}>
           <AloneButton //
             size="medium"
             btnText={tArticleCommon().writeComment}
+            color="gray6__30"
           />
-        </a>
+        </A>
       </>
     );
   }
@@ -152,33 +153,6 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
   }
 `;
 
-const ButtonDiv = styled.div`
-  position: relative;
-  margin-top: 36px;
-  padding: 12px 24px;
-  width: 100%;
-  height: 100%;
-  border-radius: ${({ theme }) => theme.borderRadius.R13};
-  background-color: ${({ theme }) => theme.gray6__30};
-
-  .divider {
-    width: 100%;
-    height: 1px;
-    background-color: ${({ theme }) => theme.gray6};
-  }
-
-  button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0 24px;
-    width: 100%;
-  }
-
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0 24px;
-  }
+const A = styled.a`
+  margin: 48px auto 0;
 `;
