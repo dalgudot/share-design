@@ -1,13 +1,13 @@
-import { designGuide1 } from './article/design-guide/1';
+import { uiUxDesign } from './article/ui-ux-design/1';
 
 export const articleData = () => {
   return [
     {
-      url: designGuide1().url,
-      category: designGuide1().category,
-      date: designGuide1().date,
-      title: designGuide1().title,
-      summary: designGuide1().summary,
+      url: uiUxDesign().url,
+      category: uiUxDesign().category,
+      date: uiUxDesign().date,
+      title: uiUxDesign().title,
+      summary: uiUxDesign().summary,
     },
     // 추후 추가
   ];

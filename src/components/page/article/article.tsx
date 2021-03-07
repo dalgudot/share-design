@@ -37,7 +37,7 @@ const Article = ({
     switch (pathname) {
       case '/introduction':
         return <IntroductionContents contentsArray={contentsArray} />;
-      case '/article/design-guide/1':
+      case '/article/ui-ux-design/1':
         return <IntroductionContents contentsArray={contentsArray} />;
     }
   };

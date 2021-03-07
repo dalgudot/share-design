@@ -1,14 +1,14 @@
 import { bodyScrollTop } from '../../../../lib/functions/body-scroll-top';
 import Article from '../../../../components/page/article/article';
-import { designGuide1 } from '../../../../data/article/design-guide/1';
+import { uiUxDesign } from '../../../../data/article/ui-ux-design/1';
 
-const DesignGuide1 = ({ showToast }: { showToast: Function }) => {
+const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
   bodyScrollTop();
 
-  const categoryTitle = designGuide1().category;
-  const date = designGuide1().date;
-  const articleTitle = designGuide1().title;
-  const contentsArray = designGuide1().contents;
+  const categoryTitle = uiUxDesign().category;
+  const date = uiUxDesign().date;
+  const articleTitle = uiUxDesign().title;
+  const contentsArray = uiUxDesign().contents;
 
   return (
     <>
@@ -23,4 +23,4 @@ const DesignGuide1 = ({ showToast }: { showToast: Function }) => {
   );
 };
 
-export default DesignGuide1;
+export default UIUXDesign1;

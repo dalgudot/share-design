@@ -1,10 +1,10 @@
-export const designGuide1 = () => {
+export const uiUxDesign = () => {
   return {
-    url: '/article/design-guide/1',
+    url: '/article/ui-ux-design/1',
 
     category: {
-      k: 'UI/UX 디자인 가이드',
-      e: 'UI/UX Design Guide',
+      k: 'UI/UX 디자인',
+      e: 'UI/UX Design',
     },
 
     date: {

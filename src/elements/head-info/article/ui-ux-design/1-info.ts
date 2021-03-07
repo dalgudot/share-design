@@ -1,13 +1,13 @@
-export const designGuide1Info = {
+export const uiUxDesignInfo = {
   title: {
-    k: '언어 전환 버튼의 UI/UX 디자인은? | UI/UX 디자인 가이드',
+    k: '언어 전환 버튼의 UI/UX 디자인은? | UI/UX 디자인',
     e:
-      'What is the UI/UX design of the language switch toggle button? | UI/UX Design Guide',
+      'What is the UI/UX design of the language switch toggle button? | UI/UX Design',
   },
 
   url: {
-    k: 'https://share-design.kr/article/design-guide/1',
-    e: 'https://share-design.kr/en/article/design-guide/1',
+    k: 'https://share-design.kr/article/ui-ux-design/1',
+    e: 'https://share-design.kr/en/article/ui-ux-design/1',
   },
 
   type: 'article',

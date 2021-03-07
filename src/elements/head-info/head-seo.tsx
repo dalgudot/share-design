@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
-import { designGuide1Info } from './article/design-guide/1-info';
+import { uiUxDesignInfo } from './article/ui-ux-design/1-info';
 import { contactInfo } from './index/contact-info';
 import { indexInfo } from './index/index-info';
 import { introductionInfo } from './index/introduction-info';
@@ -18,8 +18,8 @@ const HeadSEO = () => {
         return contactInfo;
       case '/introduction':
         return introductionInfo;
-      case '/article/design-guide/1':
-        return designGuide1Info;
+      case '/article/ui-ux-design/1':
+        return uiUxDesignInfo;
       default:
         return indexInfo;
     }
