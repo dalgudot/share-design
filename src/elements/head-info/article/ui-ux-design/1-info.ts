@@ -20,8 +20,8 @@ export const uiUxDesignInfo = {
 
   description: {
     k:
-      '디자인 공유하기는 UI/UX 디자인 경험을 전 세계 사람들과 공유하기 위한 디지털 프로덕트(Digital Product)입니다.',
+      '디자인 공유하기는 전 세계 사람들에게 UI/UX 디자인 경험을 공유하기 위한 공간이다. 내가 글을 쓸 수 있는 한국어와 영어 두 언어로 콘텐츠를 제공하고 있다. 영어가 익숙한 사용자가 한국어로 된 디자인 공유하기에 들어왔거나, 한국어가...',
     e:
-      'SHARE DESIGN is a digital product to share UI/UX design experience with people around the world.',
+      'SHARE DESIGN is a space for sharing UI/UX design experiences with people around the world. Contents are provided in both Korean and English, where I can write. In case a user who is familiar with English has entered to share a design in Korean...',
   },
 };
