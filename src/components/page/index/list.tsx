@@ -4,7 +4,6 @@ import PMedium400 from '../../../elements/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import H2Title700 from '../../../elements/typography/h2-title-700';
 import IconLanguageFill24 from '../../../elements/svg/icon_language_fill_24';
-import PSmall300 from '../../../elements/typography/p-small-300';
 import PSmall400 from '../../../elements/typography/p-small-400';
 
 const List = ({

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import GotoIntroduction from '../components/page/index/go-to-introduction';

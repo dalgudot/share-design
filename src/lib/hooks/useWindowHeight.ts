@@ -9,6 +9,7 @@ export const useWindowHeight = () => {
   useEffect(() => {
     const onResize = () => setHeight(window.innerHeight);
     window.addEventListener('resize', onResize);
+
     return () => {
       window.removeEventListener('resize', onResize);
     };
