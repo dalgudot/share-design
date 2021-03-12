@@ -9,13 +9,23 @@ import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PSmall700 from '../../../elements/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
-import { scrollTop } from '../../../lib/functions/scroll-top';
 
-const Comment = ({ showToast }: { showToast: any }) => {
-  const [commentsLoading, setCommentsLoading] = useState(true);
-  const [comments, setComments] = useState<object[]>([] || null);
+const Comment = ({
+  showToast,
+  comments,
+  setComments,
+  commentsLoading,
+  setCommentsLoading,
+}: {
+  showToast: any;
+  comments: object[];
+  setComments: Function;
+  commentsLoading: boolean;
+  setCommentsLoading: Function;
+}) => {
+  // const [commentsLoading, setCommentsLoading] = useState(true);
+  // const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
-  scrollTop();
 
   useEffect(() => {
     // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용
@@ -29,9 +39,7 @@ const Comment = ({ showToast }: { showToast: any }) => {
         setCommentsLoading(false);
       });
 
-    return () => {
-      setComments([]);
-    };
+    return () => setCommentsLoading(true); // CleanUp Function
   }, []);
   // 배열은 객체의 특수한 형태이기 때문에 아래처럼 배열인지 검사해야 함.
   // console.log(Array.isArray(comments));

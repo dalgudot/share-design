@@ -6,12 +6,11 @@ import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1';
 import ArticleMessage from './article-message';
-import { scrollTop } from '../../../lib/functions/scroll-top';
 
 const Article = ({
   categoryTitle,
@@ -34,7 +33,31 @@ const Article = ({
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
-  scrollTop();
+
+  // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
+  const [comments, setComments] = useState<object[]>([] || null);
+  const commentRef = useRef<HTMLDivElement>(null);
+  const executeScroll = () =>
+    commentRef?.current?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  const [commentsLoading, setCommentsLoading] = useState(true);
+
+  useEffect(() => {
+    if (router.query.CompleteComment === 'true') {
+      // console.log('동작');
+      executeScroll();
+    } else {
+      // console.log('스크롤탑');
+      const bodyId = document.querySelector('body');
+      bodyId?.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+
+    return () => setComments([] || null); // CleanUp Function
+  }, []);
 
   const contentsSwitch = () => {
     switch (pathname) {
@@ -63,8 +86,15 @@ const Article = ({
 
           {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
           {router.pathname !== '/introduction' && (
-            <Comment showToast={showToast} />
+            <Comment
+              showToast={showToast}
+              comments={comments}
+              setComments={setComments}
+              commentsLoading={commentsLoading}
+              setCommentsLoading={setCommentsLoading}
+            />
           )}
+          <div ref={commentRef} />
 
           <ArticleToolBar />
         </ArticleContainer>
