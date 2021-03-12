@@ -11,6 +11,7 @@ import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-v
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1';
 import ArticleMessage from './article-message';
+import { scrollTop } from '../../../lib/functions/scroll-top';
 
 const Article = ({
   categoryTitle,
@@ -33,6 +34,7 @@ const Article = ({
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
+  scrollTop();
 
   const contentsSwitch = () => {
     switch (pathname) {
@@ -74,6 +76,10 @@ const Article = ({
 export default Article;
 
 const Main = styled.main`
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.gray7};
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }

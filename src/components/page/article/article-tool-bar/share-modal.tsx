@@ -22,7 +22,7 @@ import {
   ScaleDownInUpOut,
 } from '../../../../elements/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { useRouter } from 'next/router';
 
@@ -36,6 +36,11 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
   );
   // console.log(`openModal: ${openModal}`);
   // console.log(`modalZIndexHandler: ${modalZIndexHandler}`);
+
+  // useEffect(() => {
+  //   const bodyId = document.querySelector('body');
+  //   openModal === true && bodyId?.style.overflowY = 'hidden';
+  // });
 
   const dispatch = useDispatch();
   const OPEN_MODAL = () =>

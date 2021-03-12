@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import ProfileArea from '../components/page/contact/profile';
 import EmailArea from '../components/page/contact/email';
 import SocialArea from '../components/page/contact/social';
 import AboutArea from '../components/page/contact/about';
+import { scrollTop } from '../lib/functions/scroll-top';
 
 const Contact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
-  bodyScrollTop();
+  scrollTop();
 
   return (
     <>

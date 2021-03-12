@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import { bodyScrollTop } from '../lib/functions/body-scroll-top';
 import GotoIntroduction from '../components/page/index/go-to-introduction';
 import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
 import List from '../components/page/index/list';
 import { articleData } from '../data/article-data';
+import { scrollTop } from '../lib/functions/scroll-top';
 
 const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  bodyScrollTop();
+  scrollTop();
   const data = articleData();
 
   return (

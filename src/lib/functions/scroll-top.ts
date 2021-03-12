@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const bodyScrollTop = () => {
+export const scrollTop = () => {
   useEffect(() => {
     const bodyId = document.querySelector('body');
     if (typeof window !== 'undefined') {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { t } from '../../data/index/t';
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../../elements/svg/icon_language_24';
 import PMedium700 from '../../elements/typography/p-medium-700';

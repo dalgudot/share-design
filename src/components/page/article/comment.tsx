@@ -9,11 +9,13 @@ import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PSmall700 from '../../../elements/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
+import { scrollTop } from '../../../lib/functions/scroll-top';
 
 const Comment = ({ showToast }: { showToast: any }) => {
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
+  scrollTop();
 
   useEffect(() => {
     // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용

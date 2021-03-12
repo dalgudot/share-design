@@ -13,6 +13,7 @@ import PSmall700 from '../../../../elements/typography/p-small-700';
 import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
 import { motion } from 'framer-motion';
 import { vibration } from '../../../../elements/framer-motion/variants';
+import { scrollTop } from '../../../../lib/functions/scroll-top';
 
 const WriteComment = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenComment;
@@ -27,6 +28,7 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
       setProfileGradient('');
     };
   }, []);
+  scrollTop();
 
   const changeGradient = () => {
     setProfileGradient(gradientGenerator());

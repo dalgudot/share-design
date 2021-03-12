@@ -1,25 +1,19 @@
 import { useState, useEffect } from 'react';
 
 const useScrollPosition = () => {
-  if (typeof window === 'undefined') return 500;
+  const [scroll, setScroll] = useState(window.pageYOffset);
 
-  // Store the state
-  const [scrollPos, setScrollPos] = useState(window.pageYOffset);
-
-  // On Scroll
-  const onScroll = () => {
-    setScrollPos(window.pageYOffset);
-  };
-
-  // Add and remove the window listener
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => {
+      setScroll(window.pageYOffset);
+      console.log(scroll);
     };
-  });
+    window.addEventListener('scroll', handleScroll);
 
-  return scrollPos;
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return scroll;
 };
 
 export default useScrollPosition;

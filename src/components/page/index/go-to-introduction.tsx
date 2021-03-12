@@ -11,7 +11,7 @@ const GotoIntroduction = () => {
   return (
     <Li>
       <ComingSoonLine height={height} />
-      <Link href="/introduction" scroll={false}>
+      <Link href="/introduction">
         <a>
           <AloneButton //
             size="medium"
