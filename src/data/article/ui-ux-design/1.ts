@@ -19,9 +19,9 @@ export const uiUxDesign = () => {
 
     summary: {
       k:
-        '디자인 공유하기는 전 세계 사람들에게 UI/UX 디자인 경험을 공유하기 위한 공간이다. 내가 글을 쓸 수 있는 한국어와 영어 두 언어로 콘텐츠를 제공하고 있다. 영어가 익숙한 사용자가 한국어로 된 디자인 공유하기에 들어왔거나, 한국어가...',
+        '디자인 공유하기는 전 세계 사람들에게 UI/UX 디자인 경험을 공유하기 위한 공간이다. 내가 글을 쓸 수 있는 한국어와 영어 두 언어로 콘텐츠를 제공하고 있다. 영어가 익숙한 사용자가 한국어로 된 디자인 공유하기에 들어왔거나, 한국어가 익숙한...',
       e:
-        'SHARE DESIGN is a space for sharing UI/UX design experiences with people around the world. Contents are provided in both Korean and English, where I can write. In case a user who is familiar with English has entered to share a design in Korean...',
+        'SHARE DESIGN is a space for sharing UI/UX design experience with people around the world. Contents are provided in both Korean and English, where I can write. In case a user familiar with English entered the SHARE DESIGN in Korean...',
     },
 
     langChangeButton: {
@@ -29,17 +29,18 @@ export const uiUxDesign = () => {
       e: '한글로 보기',
     },
 
-    langChangeButtonBadCase: {
-      k: '한국어',
-      e: 'English',
-    },
-
     contents: [
       {
         k:
-          '디자인 공유하기는 전 세계 사람들에게 UI/UX 디자인 경험을 공유하기 위한 공간이다. 내가 글을 쓸 수 있는 한국어와 영어 두 언어로 콘텐츠를 제공하고 있다. 영어가 익숙한 사용자가 한국어로 된 디자인 공유하기에 들어왔거나, 한국어가 익숙한 사용자가 영어로 된 디자인 공유하기에 들어온 상황을 대비해 디자인 공유하기에서는 모든 화면의 상단 헤더(Header) 컴포넌트에서 언어를 전환할 수 있는 토글 버튼을 제공하고 있다.',
+          '디자인 공유하기는 전 세계 사람들에게 UI/UX 디자인 경험을 공유하기 위한 공간이다. 내가 글을 쓸 수 있는 한국어와 영어 두 언어로 콘텐츠를 제공하고 있다. 영어가 익숙한 사용자가 한국어로 된 디자인 공유하기에 들어왔거나, 한국어가 익숙한 사용자가 영어로 된 디자인 공유하기에 들어온 상황을 대비해 디자인 공유하기에서는 모든 화면의 상단 헤더(Header)에서 언어를 전환할 수 있는 토글 버튼을 제공하고 있다.',
         e:
-          'SHARE DESIGN is a space for sharing UI/UX design experiences with people around the world. Contents are provided in both Korean and English, where I can write. In case a user who is familiar with English has entered to share a design in Korean, or a user who is familiar with Korean has entered to share a design in English, in the case of sharing design, you can switch languages in the header component at the top of all screens. It provides a toggle button that can be used.',
+          'SHARE DESIGN is a space for sharing UI/UX design experience with people around the world. Contents are provided in both Korean and English, where I can write. In case a user familiar with English entered the SHARE DESIGN in Korean, or a user familiar with Korean entered the SHARE DESIGN in English, SHARE DESIGN provides a toggle button that allows user to switch languages at the top header of all screens.',
+      },
+      {
+        k:
+          '토글(Toggle) 버튼은 두 가지 상태 중 하나를 선택하는 데 쓰이는 버튼을 뜻한다. 디자인 공유하기에는 언어가 한국어인 상태와 영어인 상태가 있다. 사용자가 언어 전환 토글 버튼을 누르면 언어가 한국어일 때는 영어로 바뀌고, 영어일 때는 한국어로 바뀐다.',
+        e:
+          'A toggle button is a button used to select one of two states. There are two types of SHARE DESIGN: English and Korean. When the user presses the language switch toggle button, the language changes to English when the language is Korean, and changes to Korean when the language is English.',
       },
       {
         k: '/images/ui-ux-design/001/img__01__ko.png',
@@ -47,96 +48,142 @@ export const uiUxDesign = () => {
       },
       {
         k:
-          '디자인 공유하기에서는 모든 화면의 상단 헤더(Header) 컴포넌트의 오른쪽에서 언어를 전환할 수 있는 토글 버튼을 제공하고 있다. 사용자가 접속한 환경이 모바일인지, 태블릿인지, 데스크톱인지에 따라 헤더 컴포넌트의 모습이 바뀐다.',
+          '디자인 공유하기에서는 모든 UI 화면 상단 헤더(Header) 컴포넌트의 오른쪽에 언어를 전환할 수 있는 토글 버튼을 제공하고 있다(2021년 3월 기준). 사용자가 접속한 환경이 모바일인지, 태블릿인지, 데스크톱인지에 따라 헤더 컴포넌트의 모습이 바뀐다.',
         e:
-          'In SHARE DESIGN, a toggle button to switch languages is provided on the right side of the header component at the top of all screens. The appearance of the header component changes depending on whether the user connected environment is mobile, tablet, or desktop.',
+          'SHARE DESIGN provides a toggle button to switch languages on the right side of the header component at the top of all UI screens(as of March 2021). The appearance of the header component changes depending on whether the user connected environment is mobile, tablet, or desktop.',
+      },
+      {
+        k: '사용자 중심 글쓰기(UX Writing)를 고려한 디자인',
+        e: 'Design in consideration of user-centered writing(UX Writing)',
       },
       {
         k:
-          '상단 헤더(Header) 컴포넌트는 사용자가 접속한 환경이 모바일인지, 태블릿인지, 데스크톱인지에 따라 모습이 바뀐다.',
+          "최초의 언어 전환 토글 버튼은 아래와 같았다. 핵심은 버튼 문구의 사용자 중심 글쓰기(UX Writing)였다. 디자인 공유하기가 한국어인 상태일 때 버튼 문구는 'View in English'이고, 버튼을 누르면 언어가 영어로 바뀐다. 영어인 상태일 때 버튼 문구는 '한글로 보기'이고, 버튼을 누르면 언어가 한국어로 바뀐다. 버튼 문구가 사용자가 버튼을 눌렀을 때 UI가 어떻게 바뀌는지 명확히 알려주고 있다. 또한, 버튼 문구를 버튼을 눌렀을 때 바뀌게 되는 언어로 보여줘 해당 언어가 필요한 사용자가 버튼의 기능을 쉽게 알아챌 수 있도록 했다.",
         e:
-          'The top header component changes appearance depending on whether the user connected environment is mobile, tablet, or desktop.',
+          "The first language switch toggle button was as follows. The key was user-centered writing(UX Writing) of button text. When SHARE DESIGN is in Korean, the button text is 'View in English', and when you press the button, the language changes to English. When SHARE DESIGN is in English, the button text is '한글로 보기(View in Korean)', and when you press the button, the language changes to Korean. The button text clearly tells how the UI changes when the user presses the button. In addition, the wording of the button is displayed in the language that changes when the button is pressed, so that users who need the language can easily recognize the function of the button.",
       },
       {
         k:
-          '토글(Toggle) 버튼은 두 가지 상태 중 하나를 선택하는 데 쓰이는 버튼을 뜻한다. 디자인 공유하기에는 언어가 한국어인 상태와 영어인 상태가 있다. 사용자가 언어 전환 토글 버튼을 누르면 언어가 한국어일 때는 영어로 바뀌고, 영어일 때는 한국어로 바뀐다. ',
+          '최초의 언어 전환 토글 버튼은 사용자 중심 글쓰기(UX Writing)를 신경써서 디자인했다. 이 버튼은 동작한다.',
         e:
-          'Toggle button is a button used to select one of two states. There are two types of design sharing: Korean and English. When the user presses the language switch toggle button, the language changes to English when the language is Korean, and changes to Korean when the language is English.',
+          'The first language switch toggle button was designed with care for user-centered writing(UX Writing). This button works.',
       },
       {
         k:
-          "최초의 언어 전환 토글 버튼은 아래와 같았다. 핵심은 버튼 텍스트의 사용자 중심 글쓰기(UX Writing)였다. 디자인 공유하기가 한국어인 상태일 때에는 'View in English'라는 문구로 돼 있으며 버튼을 누르면 언어가 영어로 바뀌며, 영어인 상태일 때에는 '한글로 보기'라는 문구로 돼 있고 버튼을 누르면 언어가 한국어로 바뀐다. 버튼의 텍스트가 버튼을 누르면 바뀌게 되는 언어로 돼 있어 해당 언어가 필요한 사용자가 쉽게 인지할 수 있도록 디자인한 게 특징이다.",
+          '난 이 버튼처럼 사용자의 행동에 반응하는 UI(User Interface, 사용자 인터페이스) 요소의 문구는 사용자의 행동에 UI가 어떤 반응을 보일지 알려주는 문구를 쓰는 게 좋은 UX(User eXperience, 사용자 경험)를 만드는 사용자 중심 글쓰기(UX Writing)라 생각한다.',
         e:
-          "The first language switch toggle button was as follows. The key was UX Writing, the user-centered writing of button text. When design sharing is in Korean, the phrase'View in English' is displayed. When the button is pressed, the language is changed to English, and when the button is pressed, the language is displayed in Korean. Changes. The text of the button is in a language that changes when the button is pressed, so it is designed to be easily recognized by users who need the language.",
-      },
-      {
-        k: '이 버튼은 동작한다',
-        e: 'This button works',
+          "I think that the text of the UI element that responds to the user's actions like this button is a user-centered writing(UX Writing) that makes a good UX(User eXperience) if you write a text that tells user how the UI(User Interface) will react to the user's actions.",
       },
       {
         k:
-          "난 이 버튼처럼 사용자가 한 행동에 반응하는 UI(User Interface) 요소는 UI가 어떤 반응을 보일지 알려주는 게 좋은 사용자 경험(UX, User eXperience)을 만든다고 생각한다. 만약 한국어 상태인 디자인 공유하기의 토글 버튼이 아래 버튼처럼 텍스트가 현재 상태인 '한국어'라면 어떨까? 사용자는 저 버튼을 누르면 UI가 무슨 반응을 보일지 알 수가 없다. 버튼을 눌러봐야 이 버튼이 다른 언어로 바꾸는 버튼이고, 버튼의 텍스트는 현재 상태를 나타내고 있다는 걸 알 수 있다. 이런 버튼은 사용자에게 불필요한 고민을 하게 해 좋지 않은 UX를 만든다.",
+          "만약 한국어 상태인 디자인 공유하기의 토글 버튼의 문구가 'View in English'가 아닌 현재 상태인 '한국어'라면 어떨까? 사용자는 저 버튼을 눌렀을 때 UI가 어떤 반응을 보일지 알 수가 없다. 버튼을 눌러본 뒤에야 이 버튼이 언어를 전환하는 버튼이고, 버튼의 문구는 현재 언어를 나타내고 있다는 걸 알게 된다. 이런 버튼은 사용자에게 불필요한 고민을 하게 할뿐만 아니라, 버튼이 어떤 역할을 하는지 사용자가 동작시켜봐야 알 수 있기 때문에 좋지 않은 UX를 만든다.",
         e:
-          "I think that UI (User Interface) elements that respond to actions made by the user like this button make a good user experience (UX, User eXperience) to tell how the UI will react. What if the toggle button of Share Design in Korean is'Korean' where the text is in the current state like the button below? The user has no way of knowing what the UI will react to when they press that button. When you press the button, you know that it's a button that switches to a different language, and the text on the button indicates the current state. These buttons make users worry unnecessary and create a bad UX.",
-      },
-      {
-        k:
-          '사용자가 버튼을 동작시켜야 버튼의 역할을 알 수 있는 버튼 텍스트는 좋지 않은 UX를 만든다.',
-        e:
-          "The button text that the user must operate the button to know the button's role makes a bad UX.",
-      },
-
-      {
-        k:
-          '하지만 이 버튼은 화면의 조형적인 완성도를 해쳤기 때문에 디자인을 바꿨다. 데스크톱 화면보다는 모바일 화면에서 조형적 완성도를 해쳤다. 버튼 텍스트 치고는 길이가 길기 때문에 언어 전환 버튼이 화면의 면적을 꽤 많이 차지해 화면의 균형감이 떨어졌다. 게다가 디자인 공유하기의 모든 화면 상단에 있는 헤더 오른쪽 영역에 버튼이 있기 때문에 헤더 아래쪽에 있는 콘텐츠 내용으로 시선이 가는 걸 방해했다.',
-        e:
-          "However, this button changed the design because it spoiled the formative completion of the screen. On the mobile screen rather than the desktop screen, the formative completion was undermined. Since the length of the button text is long, the language switch button occupies a considerable amount of the screen, and the balance of the screen is poor. What's more, there is a button in the area to the right of the header at the top of every screen in Share Design, which hinders the gaze from getting to the content content at the bottom of the header.",
+          "What if the text of the toggle button of SHARE DESIGN in Korean is not 'View in English', but 'Korean', which is the current state? The user has no way of knowing how the UI will react when that button is pressed. It is only after user press the button that user know that this button is a button to switch languages, and the text on the button indicates the current language. These buttons not only cause unnecessary troubles to the user, but also create a bad UX because the user can only know what role the button does by operating it.",
       },
       {
         k: '/images/ui-ux-design/001/img__02__ko.png',
         e: '/images/ui-ux-design/001/img__02__en.png',
       },
       {
-        k: '기존 언어 전환 토글 버튼 디자인은 시각적 잡음을 만든다고 판단했다.',
+        k:
+          '사용자의 행동에 반응하는 UI 요소의 문구는 사용자의 행동에 UI가 어떤 반응을 보일지 알려주는 문구를 쓰는 게 좋은 UX를 만드는 사용자 중심 글쓰기(UX Writing)라 생각한다.',
         e:
-          'I thought the existing language switch toggle button design made visual noise.',
+          "I think that the text of the UI element that responds to the user's behavior is user-centered writing(UX Writing) that makes a good UX to write a text that tells how the UI will react to the user's behavior.",
       },
+
       {
-        k: '기존 언어 전환 토글 버튼 디자인은 시각적 잡음을 만든다고 판단했다.',
+        k:
+          '하지만 최초의 디자인은 UI의 조형적 완성도를 해쳤다. 면적을 많이 차지해 상단 헤더 컴포넌트의 균형감을 떨어뜨렸다. 또한 넓은 면적이 시선을 끌어 헤더 아래쪽에 있는 콘텐츠로 시선이 가는 걸 방해했다.',
         e:
-          'I thought the existing language switch toggle button design made visual noise.',
+          'However, the original design hurt the formative completion of the UI. It occupies a lot of space, reducing the balance of the upper header component. In addition, the large area attracted attention and hindered the gaze from going to the content under the header.',
+      },
+
+      {
+        k: '/images/ui-ux-design/001/img__03__ko.png',
+        e: '/images/ui-ux-design/001/img__03__en.png',
       },
       {
         k:
-          '여러 시행착오를 거친 최종 디자인은 현재 이 화면의 상단에 있는 헤더 컴포넌트의 오른쪽에 있는 토글 버튼이다. 토글 버튼의 왼쪽에는 전 세계에 디자인 경험을 공유한다는 의미와 언어 전환을 할 수 있다는 의미를 담은 지구 모양 아이콘을 그려 넣었다. 토글 버튼의 오른쪽에는 한국어를 뜻하는 영어 단어 korean의 앞쪽 두 알파벳 ko와 영어를 뜻하는 영어 단어 english의 앞쪽 두 알파벳 en을 각 언어의 상징으로 써서 현재 언어 상태는 왼쪽에 흰색(#E0E0EA)으로 활성화된 상태로 보여주고, 오른쪽에는 회색(#68686C)으로 비활성화된 상태 및 버튼을 눌렀을 때 어떤 상태로 바뀌는지 사용자가 알 수 있도록 디자인했다. ',
+          '기존 언어 전환 토글 버튼의 넓은 면적이 사용자의 시선을 끌어 헤더 아래쪽에 있는 콘텐츠로 시선이 가는 걸 방해한다고 판단했다.',
         e:
-          'The final design, after several trials and errors, is currently a toggle button to the right of the header component at the top of this screen. On the left side of the toggle button, a globe-shaped icon is drawn that means that you can share your design experience with the world and that you can switch languages. On the right side of the toggle button, the first two letters ko of the English word korean meaning Korean and the first two letters en of the English word english meaning English are used as symbols for each language, and the current language status is activated as white (#E0E0EA) on the left. It is designed to show the state in which it is turned off, and to the right in gray (#68686C) to let the user know the deactivated state and what state it changes to when the button is pressed.',
+          "I judgeed that the large area of the existing language switch toggle button grabs the user's attention and hinders the gaze from going to the content at the bottom of the header.",
+      },
+      {
+        k: '최종 언어 전환 토글 버튼 디자인은?',
+        e: 'What is the final design of language switch toggle button?',
       },
       {
         k:
-          "사용자가 이 언어 전환 토글 버튼을 눌렀을 때 언어가 바뀐다는 '느낌'을 주며 사용자와 인터랙션(interaction)하기 위해 ko와 en이 서로 교차되면서 색이 각 상태에 맞게 바뀌도록 모션을 디자인했다. 개발자에게 이 모션 디자인 가이드를 전달하면 아래와 같이 전달할 수 있다.",
+          '최종 디자인은 아래와 같다. 토글 버튼의 왼쪽에는 전 세계에 디자인 경험을 공유한다는 의미와 언어 전환 기능을 직관적으로 알려줄 수 있는 지구 모양 아이콘을 그려서 배치했다.',
         e:
-          "The motion is designed so that the color changes according to each state as ko and en cross each other to give the user a 'feel' that the language changes when the user presses this language switch toggle button. If you deliver this motion design guide to the developer, you can deliver it as follows.",
+          'The final design is as follows. On the left side of the toggle button, a globe-shaped icon was drawn and placed, which means that the design experience is shared with the world and the function to switch languages intuitively.',
       },
       {
-        k: '모션 디자인 가이드 이미지',
-        e: '/images/ui-ux-design/001/img__02__en.png',
+        k: '언어 전환 버튼의 최종 디자인. 이 버튼은 동작한다.',
+        e: 'The final design of the language switch button. This button works.',
       },
       {
-        k: '글',
-        e: '',
+        k:
+          "아이콘 오른쪽에는 한국어를 뜻하는 영어 단어 korean의 앞쪽 두 알파벳 'ko'와 영어를 뜻하는 영어 단어 english의 앞쪽 두 알파벳 'en'을 각 언어의 상징으로 써서 현재 언어 상태를 흰색(#E0E0EA)으로 구분선 왼쪽에 배치했다. 버튼을 누르면 전환될 언어는 구분선 오른쪽에 회색(#68686C)으로 배치했다. 다시 말해 왼쪽에는 현재 언어 상태, 오른쪽에는 버튼을 누르면 바뀔 언어 상태를 배치해 버튼을 눌렀을 때 어떤 언어로 바뀌는 지 사용자가 직관적으로 알 수 있도록 디자인했다.",
+        e:
+          "To the right of the icon, the first two letters 'ko' of the English word meaning Korean and the first two letters 'en' of the English word meaning English are used as symbols for each language, and the current language status is placed on the left side of the divider line in white(#E0E0EA). Languages to be switched when the button is pressed are placed in gray(#68686C) to the right of the divider line. In other words, the current language state is placed on the left and the language state that will be changed when the button is pressed on the right, so that the user can intuitively know which language is changed when the button is pressed.",
       },
       {
-        k: '문제가 생긴 화면 이미지',
-        e: '/images/ui-ux-design/001/img__02__en.png',
+        k: '언어 전환 토글 버튼의 모션 디자인은?',
+        e: 'What is the motion design of the language switch toggle button?',
+      },
+
+      {
+        k:
+          "사용자가 이 언어 전환 토글 버튼을 눌렀을 때 사용자에게 언어가 바뀐다는 '느낌'을 주며 인터랙션(interaction)하기 위해 'ko'와 'en'이 서로 교차되면서 색이 각 상태에 맞게 바뀌도록 모션을 디자인했다.",
+        e:
+          "In order to interact with user and give the user a 'feel' that the language changes when the user presses this language switch toggle button, the motion is designed so that the color changes according to each state as 'ko' and 'en' intersect each other.",
+      },
+
+      {
+        k: '/images/ui-ux-design/001/img__04__ko.png',
+        e: '/images/ui-ux-design/001/img__04__en.png',
       },
       {
-        k: '글',
-        e: '',
+        k:
+          '이 모션은 Framer motion API로 개발했다. gray2는 #E0E0EA, gray5는 #68686C, spring은 Framer motion API의 기본 bezier curve를 의미한다.',
+        e:
+          'This motion was developed with the Framer motion API. Gray2 is #E0E0EA, gray5 is #68686C, and spring is the basic bezier curve of Framer motion API.',
       },
       {
-        k: '수정된 모션 디자인 가이드 이미지',
-        e: '/images/ui-ux-design/001/img__02__en.png',
+        k:
+          '그런데 모션을 추가하면서 문제가 하나 생겼다. 모바일에서는 내가 의도한 대로 모션이 동작했지만, 태블릿과 데스크톱에서는 모션이 실행되면 언어 전환 토글 버튼이 아래처럼 이상하게 바뀌었다.',
+        e:
+          'However, there was a problem while adding motion. On mobile, the motion worked as I intended, but on tablets and desktops, when the motion was triggered, the language switch toggle button changed strangely as shown below.',
+      },
+
+      {
+        k: '/images/ui-ux-design/001/img__05__ko.png',
+        e: '/images/ui-ux-design/001/img__05__en.png',
+      },
+      {
+        k:
+          '가로 길이가 768px 이상인 기기에서 언어 전환 토글 버튼의 모션이 동작하면 두 상태 중 한 상태는 오른쪽처럼 비정상적인 모습이 되는 문제가 발생했다.',
+        e:
+          'When the motion of the language switch toggle button was activated on a device with a width of 768px or more, one of the two states became abnormal as shown on the right.',
+      },
+
+      {
+        k:
+          "이는 디자인 공유하기가 반응형 웹이라 발생하는 문제였다. 사용자 기기의 가로 길이가 768px 미만이라면 언어 전환 토글 버튼의 텍스트인 'ko'와 'en'의 폰트 크기가 18px이고, 기기의 가로 길이가 768px 이상이라면 'ko'와 'en'의 폰트 크기가 21px이라 ko와 en 텍스트의 가로 길이가 기기의 가로 길이에 따라 달라져서 레이아웃이 틀어진 것이다. 'ko'와' en'의 텍스트 크기가 18px일 때와 21px일 때 둘의 가로 길이 차이는 3px로, 기존 x 좌표의 움직임보다 3px 더 움직이면 사용자 기기의 가로 길이가 768px 이상일 때에도 정확한 위치로 이동한다.",
+        e:
+          "This was a problem that occurred because SHARE DESIGN is a responsive web. If the width of the user device is less than 768px, the font size of 'ko' and 'en', the text of the language switch button, is 18px, and if the width of the device is 768px or more, the font size of 'ko' and 'en' is 21px. The layout is different because it depends on the width of the device. When the text size of 'ko' and 'en' is 18px and 21px, the difference in horizontal length is 3px, and if it moves 3px more than the existing x-coordinate movement, it moves to the correct position even when the horizontal length of the user device is 768px or more.",
+      },
+
+      {
+        k: '/images/ui-ux-design/001/img__06__ko.png',
+        e: '/images/ui-ux-design/001/img__06__en.png',
+      },
+      {
+        k:
+          "가로 길이가 768px 미만인 기기에서 'ko'와 'en'의 폰트 크기는 18px이고, 768px 이상인 기기에서는 'ko'와 'en'의 폰트 크기가 21px이라 768px 이상인 기기에서는 'ko', 'en'의 가로 길이가 길어진다. 따라서 ko와 en이 이동하는 위치에 오차가 생기게 되고, 오차를 계산해 적용하면 의도한 모습으로 모션이 작동한다.",
+        e:
+          "In devices with a width of less than 768px, the font size of 'ko' and 'en' is 18px, and in devices with a width of 768px or more, the font size of 'ko' and 'en' is 21px. So, on devices that are 768px or more, the width of 'ko' and 'en' becomes longer. Therefore, an error occurs in the position where 'ko' and 'en' move, and if the error is calculated and applied, the motion operates as intended.",
       },
       {
         k: '마치며',
@@ -144,9 +191,9 @@ export const uiUxDesign = () => {
       },
       {
         k:
-          "기획부터 디자인, 개발, 콘텐츠 제작, 번역까지 모든 일을 혼자서 해내고 싶었기에 디자인 공유하기 프로젝트의 첫 콘텐츠인 이 글, '언어 전환 토글 버튼의 UI/UX 디자인은?'을 배포하기까지 참 오랜 시간이 걸렸습니다. 이제 시작입니다. 꾸준히 새로운 UI/UX 디자인에 도전하며 디자인 공유하기를 꾸며볼 생각입니다. 전 세계의 많은 디자이너가 공유해주신 경험들이 제게 큰 도움이 됐듯이, 제 경험이 누군가에게 좋은 영감이 되기를 바랍니다.(끝)",
+          "기획부터 디자인, 웹 개발, 앱 개발, 콘텐츠 제작, 번역까지 모든 일을 혼자서 해내고 싶었기에 디자인 공유하기 프로젝트의 첫 콘텐츠인 이 글, '언어 전환 토글 버튼의 UI/UX 디자인은?'을 배포하기까지 참 오랜 시간이 걸렸습니다. 이제 시작입니다. 꾸준히 새로운 UI/UX 디자인에 도전하며 디자인 공유하기를 꾸며볼 생각입니다. 전 세계의 많은 디자이너가 공유해주신 경험들이 제게 큰 도움이 됐듯이, 제 경험이 누군가에게 좋은 영감이 되기를 바랍니다.",
         e:
-          "I wanted to do everything from planning to design, development, content creation, and translation by myself, so it took a long time to distribute this article, the first content of the project,'What is the UI/UX design of the language switch toggle button?' It took this. Now is the beginning. I plan to continue to challenge new UI/UX designs and share designs. Just as the experiences shared by many designers around the world have helped me a lot, I hope that my experience will be a good inspiration for someone.(End)",
+          "It took a long time to distribute this article, 'What is the UI/UX design of the language switch toggle button?'. This is because I wanted to do everything from planning to design, web development, app development, content creation, and translation by myself. Now is the beginning. I will continue to challenge new UI/UX designs and decorate SHARE DESIGN. As the experiences shared by many designers around the world have helped me a lot, I hope that my experience will be a good inspiration for someone.",
       },
     ],
   };

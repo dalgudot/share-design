@@ -56,7 +56,7 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
     showToast(tArticleCommon().completePostComment);
 
     // 연속으로 댓글 쓰는 일 방지하기 위한 Session Storage 활용
-    // sessionStorage.setItem(`${router.asPath}`, 'isComment');
+    sessionStorage.setItem(`${router.asPath}`, 'isComment');
     // Router.push(`/article/${category}/${id}`);
 
     Router.push({
@@ -70,9 +70,6 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
 
     // CleanUp Function
     return () => {};
-    // return () => {
-    //   setBtnDisbled(true);
-    // };
   }, [textLength]);
 
   const postBtnRef = useRef(null);

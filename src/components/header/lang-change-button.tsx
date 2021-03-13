@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { uiUxDesign } from '../../data/article/ui-ux-design/1';
 import PSmall700 from '../../elements/typography/p-small-700';
-import { useRef } from 'react';
-import { useMyRipple } from '../../lib/hooks/useMyRipple';
 
 const LangChangeButton = ({ text }: { text: object }) => {
   const router = useRouter();
@@ -22,12 +19,8 @@ const LangChangeButton = ({ text }: { text: object }) => {
     }
   };
 
-  // const buttonRef = useRef(null);
-  // useMyRipple(buttonRef);
-
   return (
     <MotionButton
-      // ref={buttonRef}
       onClick={setLanguageChange}
       whileHover={{
         scale: 1.05,

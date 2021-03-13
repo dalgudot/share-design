@@ -63,7 +63,6 @@ const ButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   padding: 12px 0 12px 12px; // 터치 영역
-  border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   div {
     margin-bottom: 2px;

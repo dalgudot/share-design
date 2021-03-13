@@ -4,20 +4,18 @@ import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
 const ArticleCommonImage = ({
   src,
-  alt,
   caption,
   marginTop,
 }: {
   src: object;
-  alt: object;
-  caption: object;
+  caption?: object;
   marginTop: string;
 }) => {
   return (
     <Figure marginTop={marginTop}>
       <img //
         src={useSetLanguage(src)}
-        alt={useSetLanguage(alt)}
+        alt={useSetLanguage(caption)}
       />
       <figcaption>
         <PSmall400 //

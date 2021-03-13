@@ -122,13 +122,7 @@ const LoadingContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  //바뀌는 요소
   margin-top: 36px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    /* margin: ${({ theme }) => theme.margin.MobileWrap}; */
-  }
 `;
 
 const Divider = styled.div`
@@ -164,5 +158,5 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
 `;
 
 const A = styled.a`
-  margin: 48px auto 0;
+  margin: 96px auto 24px;
 `;

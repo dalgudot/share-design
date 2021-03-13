@@ -37,10 +37,11 @@ const Article = ({
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
   const [comments, setComments] = useState<object[]>([] || null);
   const commentRef = useRef<HTMLDivElement>(null);
-  const executeScroll = () =>
+  const executeScroll = () => {
     commentRef?.current?.scrollIntoView({
       behavior: 'smooth',
     });
+  };
   const [commentsLoading, setCommentsLoading] = useState(true);
 
   useEffect(() => {
