@@ -6,20 +6,16 @@ import PMedium400 from '../../../elements/typography/p-medium-400';
 import PMedium700 from '../../../elements/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
-const ArticleReference = () => {
-  const referencesDate: object[] = uiUxDesign().references;
-  console.log(referencesDate);
-
+const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
   uiUxDesign;
   return (
     <Container>
-      <H2Title700
+      <H2Title700 //
         text={tArticleCommon().ReferencesTitle}
         color="gray1"
-        // marginTop="96px"
       />
 
-      {referencesDate.map((reference: any, idx: number) => (
+      {referencesData.map((reference: any, idx: number) => (
         <A key={idx} href={reference.url} target="_blank">
           <Title>
             <PMedium700 text={reference.title} color="gray1" />
@@ -45,10 +41,9 @@ const Container = styled.div`
   flex-direction: column;
 
   // 바뀌는 속성
-  margin: 120px 0 36px;
+  margin-top: 120px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 120px 0 16px;
   }
 `;
 

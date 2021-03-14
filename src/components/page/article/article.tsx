@@ -20,12 +20,14 @@ const Article = ({
   articleTitle,
   contentsArray,
   showToast,
+  referencesData,
 }: {
   categoryTitle?: object;
   date?: object;
   articleTitle: object;
   contentsArray: object[];
   showToast?: Function;
+  referencesData?: object[];
 }) => {
   const width: number = useWindowWidth();
   const height: number = useWindowHeight();
@@ -101,7 +103,9 @@ const Article = ({
           )}
           <div ref={responseRef} />
 
-          <ArticleReference />
+          {referencesData && (
+            <ArticleReference referencesData={referencesData} />
+          )}
 
           <ArticleToolBar />
         </ArticleContainer>

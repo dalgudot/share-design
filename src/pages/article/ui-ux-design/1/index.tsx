@@ -6,6 +6,7 @@ const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
   const date = uiUxDesign().date;
   const articleTitle = uiUxDesign().title;
   const contentsArray = uiUxDesign().contents;
+  const referencesData: object[] = uiUxDesign().references;
 
   return (
     <>
@@ -15,6 +16,7 @@ const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
         articleTitle={articleTitle}
         contentsArray={contentsArray}
         showToast={showToast}
+        referencesData={referencesData}
       />
     </>
   );
