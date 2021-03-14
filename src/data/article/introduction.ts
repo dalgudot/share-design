@@ -48,7 +48,7 @@ export const projectIntroduction = () => {
 
       {
         k:
-          "\u00A0\u00A0\u00A0그렇게 내 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했다. 주말이라는 제한된 시간 속에서 기획부터 디자인, 웹 개발, 앱 개발, 콘텐츠 제작, 번역까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하기까지 시간이 꽤 오래 걸렸다. 그 시간을 지나 2021년 3월 14일 첫 콘텐츠 배포했다.",
+          "\u00A0\u00A0\u00A0그렇게 내 포트폴리오를 UI/UX 디자인 경험을 공유하는 디지털 프로덕트로 만들자는 '디자인 공유하기(SHARE DESIGN) 프로젝트'를 2020년 9월 12일에 시작했다. 주말이라는 제한된 시간 속에서 기획부터 디자인, 웹 개발, 앱 개발, 콘텐츠 제작, 번역까지 모든 일을 혼자 진행하느라 첫 번째 콘텐츠를 배포하기까지 시간이 꽤 오래 걸렸다. 그 시간을 지나 2021년 3월 14일 첫 콘텐츠를 배포했다.",
         e:
           '\u00A0\u00A0\u00A0So, I started SHARE DESIGN project on September 12, 2020, to turn my portfolio into a digital product that shares UI/UX design experience. Within the limited time of the weekend, it took quite a long time for the first content to be released as I was doing everything from planning to design, web development, app development, content creation, and translation by myself. After that time, the first content was released on March 14, 2021.',
       },
