@@ -19,7 +19,7 @@ const Container = styled.div`
   align-items: center;
 
   // 바뀌는 속성
-  margin: 72px 0 36px;
+  margin-top: 72px;
 
   span {
     width: 4px;
@@ -33,7 +33,7 @@ const Container = styled.div`
   }
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 64px 0 36px;
+    margin-top: 64px;
 
     span {
       height: 20px;

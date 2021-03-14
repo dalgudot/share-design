@@ -92,9 +92,9 @@ export const uiUxDesign = () => {
       },
       {
         k:
-          '토글(Toggle) 버튼은 두 가지 상태 중 하나를 선택하는 데 쓰이는 버튼을 뜻한다. 디자인 공유하기에는 언어가 한국어인 상태와 영어인 상태가 있다. 사용자가 언어 전환 토글 버튼을 누르면 언어가 한국어일 때는 영어로 바뀌고, 영어일 때는 한국어로 바뀐다.',
+          '\u00A0\u00A0\u00A0토글(Toggle) 버튼은 두 가지 상태 중 하나를 선택하는 데 쓰이는 버튼을 뜻한다. 디자인 공유하기에는 언어가 한국어인 상태와 영어인 상태가 있다. 사용자가 언어 전환 토글 버튼을 누르면 언어가 한국어일 때는 영어로 바뀌고, 영어일 때는 한국어로 바뀐다.',
         e:
-          'A toggle button is a button used to select one of two states. There are two types of SHARE DESIGN: English and Korean. When the user presses the language switch toggle button, the language changes to English when the language is Korean, and changes to Korean when the language is English.',
+          '\u00A0\u00A0\u00A0A toggle button is a button used to select one of two states. There are two types of SHARE DESIGN: English and Korean. When the user presses the language switch toggle button, the language changes to English when the language is Korean, and changes to Korean when the language is English.',
       },
       {
         k: '/images/ui-ux-design/001/img__01__ko.png',
@@ -130,9 +130,9 @@ export const uiUxDesign = () => {
       },
       {
         k:
-          "만약 한국어 상태인 디자인 공유하기의 토글 버튼의 문구가 'View in English'가 아닌 현재 상태인 '한국어'라면 어떨까? 사용자는 저 버튼을 눌렀을 때 UI가 어떤 반응을 보일지 알 수가 없다. 버튼을 눌러본 뒤에야 이 버튼이 언어를 전환하는 버튼이고, 버튼의 문구는 현재 언어를 나타내고 있다는 걸 알게 된다. 이런 버튼은 사용자에게 불필요한 고민을 하게 할뿐만 아니라, 버튼이 어떤 역할을 하는지 사용자가 동작시켜봐야 알 수 있기 때문에 좋지 않은 UX를 만든다.",
+          "\u00A0\u00A0\u00A0만약 한국어 상태인 디자인 공유하기의 토글 버튼의 문구가 'View in English'가 아닌 현재 상태인 '한국어'라면 어떨까? 사용자는 저 버튼을 눌렀을 때 UI가 어떤 반응을 보일지 알 수가 없다. 버튼을 눌러본 뒤에야 이 버튼이 언어를 전환하는 버튼이고, 버튼의 문구는 현재 언어를 나타내고 있다는 걸 알게 된다. 이런 버튼은 사용자에게 불필요한 고민을 하게 할뿐만 아니라, 버튼이 어떤 역할을 하는지 사용자가 동작시켜봐야 알 수 있기 때문에 좋지 않은 UX를 만든다.",
         e:
-          "What if the text of the toggle button of SHARE DESIGN in Korean is not 'View in English', but 'Korean', which is the current state? The user has no way of knowing how the UI will react when that button is pressed. It is only after user press the button that user know that this button is a button to switch languages, and the text on the button indicates the current language. These buttons not only cause unnecessary troubles to the user, but also create a bad UX because the user can only know what role the button does by operating it.",
+          "\u00A0\u00A0\u00A0What if the text of the toggle button of SHARE DESIGN in Korean is not 'View in English', but 'Korean', which is the current state? The user has no way of knowing how the UI will react when that button is pressed. It is only after user press the button that user know that this button is a button to switch languages, and the text on the button indicates the current language. These buttons not only cause unnecessary troubles to the user, but also create a bad UX because the user can only know what role the button does by operating it.",
       },
       {
         k: '/images/ui-ux-design/001/img__02__ko.png',

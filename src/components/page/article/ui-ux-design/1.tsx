@@ -18,6 +18,7 @@ const UIUXDesignContents1 = ({
       <PMedium400 //
         text={contentsArray[0]}
         color="gray3"
+        marginTop="36px"
       />
 
       <PMedium400 //

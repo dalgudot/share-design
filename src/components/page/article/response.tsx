@@ -62,10 +62,9 @@ const Response = ({
   } else {
     return (
       <>
-        {response.length > 0 && (
-          <Container>
-            <H2Title700 text={tArticleCommon().responses} color="gray1" />
-
+        <Container>
+          <H2Title700 text={tArticleCommon().responses} color="gray1" />
+          {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
                 <ResponseDiv key={idx}>
@@ -92,8 +91,8 @@ const Response = ({
                 </ResponseDiv>
               ))}
             </ContentsContainer>
-          </Container>
-        )}
+          )}
+        </Container>
 
         {/* 버튼 영역 */}
         <A onClick={checkIsResponse}>
