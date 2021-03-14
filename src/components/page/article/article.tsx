@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Comment from './comment';
+import Response from './response';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
@@ -35,17 +35,17 @@ const Article = ({
   }, []);
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
-  const [comments, setComments] = useState<object[]>([] || null);
-  const commentRef = useRef<HTMLDivElement>(null);
+  const [response, setResponse] = useState<object[]>([] || null);
+  const responseRef = useRef<HTMLDivElement>(null);
   const executeScroll = () => {
-    commentRef?.current?.scrollIntoView({
+    responseRef?.current?.scrollIntoView({
       behavior: 'smooth',
     });
   };
-  const [commentsLoading, setCommentsLoading] = useState(true);
+  const [responseLoading, setResponseLoading] = useState(true);
 
   useEffect(() => {
-    if (router.query.CompleteComment === 'true') {
+    if (router.query.CompleteResponse === 'true') {
       // console.log('동작');
       executeScroll();
     } else {
@@ -57,7 +57,7 @@ const Article = ({
       });
     }
 
-    return () => setComments([] || null); // CleanUp Function
+    return () => setResponse([] || null); // CleanUp Function
   }, []);
 
   const contentsSwitch = () => {
@@ -87,15 +87,15 @@ const Article = ({
 
           {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
           {router.pathname !== '/introduction' && (
-            <Comment
+            <Response
               showToast={showToast}
-              comments={comments}
-              setComments={setComments}
-              commentsLoading={commentsLoading}
-              setCommentsLoading={setCommentsLoading}
+              response={response}
+              setResponse={setResponse}
+              responseLoading={responseLoading}
+              setResponseLoading={setResponseLoading}
             />
           )}
-          <div ref={commentRef} />
+          <div ref={responseRef} />
 
           <ArticleToolBar />
         </ArticleContainer>

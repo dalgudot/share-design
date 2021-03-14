@@ -31,29 +31,29 @@ export const tArticleCommon = () => {
       e: 'Coming Soon 🙌',
     },
 
-    comment: {
+    response: {
       k: '댓글',
-      e: 'Comment',
+      e: 'Response',
     },
 
-    commentPlaceholder: {
+    responsePlaceholder: {
       k: '공감과 응원의 댓글은 큰 힘이 됩니다.',
-      e: 'Your comments are of great help to me.',
+      e: 'Your response are of great help to me.',
     },
 
-    postComment: {
+    postResponse: {
       k: '댓글 등록',
-      e: 'Post a Comment',
+      e: 'Post a Response',
     },
 
-    minimumCommentLength: {
+    minimumResponseLength: {
       k: '최소 7자 이상 입력해주세요',
       e: 'Please enter at least 7 characters',
     },
 
-    completePostComment: {
+    completePostResponse: {
       k: '댓글을 등록했습니다 📝',
-      e: 'You have posted a comment 📝',
+      e: 'You have posted a response 📝',
     },
 
     changeColor: {
@@ -61,9 +61,9 @@ export const tArticleCommon = () => {
       e: 'Change Color',
     },
 
-    writeComment: {
+    writeResponse: {
       k: '댓글 남기기',
-      e: 'Write a comment',
+      e: 'Write a response',
     },
 
     slack: {
@@ -71,9 +71,9 @@ export const tArticleCommon = () => {
       e: 'Receive notifications with Slack',
     },
 
-    preventCommentToastMessage: {
+    preventResponseToastMessage: {
       k: '연속으로 댓글을 쓸 수 없습니다 😂',
-      e: 'Cannot write comment in a row 😂',
+      e: 'Cannot write response in a row 😂',
     },
   };
 };

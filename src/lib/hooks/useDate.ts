@@ -11,7 +11,7 @@ export const useDate = () => {
       ? '0' + String(today.getDate())
       : String(today.getDate());
   const when: string = `${year}${month}${date}`;
-  const whenComment: string = `${year}.${month}.${date}`;
+  const whenResponse: string = `${year}.${month}.${date}`;
 
-  return { when, whenComment };
+  return { when, whenResponse };
 };

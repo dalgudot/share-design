@@ -3,61 +3,57 @@ import { tArticleCommon } from '../../../data/article/t-article-common';
 import StaggerDots from '../../../elements/framer-motion/stagger-dots';
 import { mediaBreakPoint } from '../../../styles/common';
 import H3Title700 from '../../../elements/typography/h3-title-700';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PSmall700 from '../../../elements/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
 
-const Comment = ({
+const Response = ({
   showToast,
-  comments,
-  setComments,
-  commentsLoading,
-  setCommentsLoading,
+  response,
+  setResponse,
+  responseLoading,
+  setResponseLoading,
 }: {
   showToast: any;
-  comments: object[];
-  setComments: Function;
-  commentsLoading: boolean;
-  setCommentsLoading: Function;
+  response: object[];
+  setResponse: Function;
+  responseLoading: boolean;
+  setResponseLoading: Function;
 }) => {
-  // const [commentsLoading, setCommentsLoading] = useState(true);
-  // const [comments, setComments] = useState<object[]>([] || null);
   const router = useRouter();
 
   useEffect(() => {
     // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용
     firebase
       .database()
-      .ref(`/Comment${router.pathname}`)
+      .ref(`/Response${router.pathname}`)
       .on('value', (snapshot) => {
         const objData = snapshot.val();
         const data = objData && Object.values(objData);
-        data && setComments(data);
-        setCommentsLoading(false);
+        data && setResponse(data);
+        setResponseLoading(false);
       });
 
-    return () => setCommentsLoading(true); // CleanUp Function
+    return () => setResponseLoading(true); // CleanUp Function
   }, []);
-  // 배열은 객체의 특수한 형태이기 때문에 아래처럼 배열인지 검사해야 함.
-  // console.log(Array.isArray(comments));
 
-  const checkIsComment = (): void => {
-    const isComment = sessionStorage.getItem(
-      `${router.pathname}/write-comment`
+  const checkIsResponse = (): void => {
+    const isResponse = sessionStorage.getItem(
+      `${router.pathname}/write-response`
     );
 
-    isComment === null
+    isResponse === null
       ? router.push(
-          '/article/[category]/[id]/write-comment',
-          `${router.pathname}/write-comment`
+          '/article/[category]/[id]/write-response',
+          `${router.pathname}/write-response`
         )
-      : showToast(tArticleCommon().preventCommentToastMessage);
+      : showToast(tArticleCommon().preventResponseToastMessage);
   };
 
-  if (commentsLoading === true) {
+  if (responseLoading === true) {
     return (
       <>
         <LoadingContainer>
@@ -68,46 +64,46 @@ const Comment = ({
   } else {
     return (
       <>
-        {comments.length > 0 && (
+        {response.length > 0 && (
           <>
             <Divider />
             <H3Title700
-              text={tArticleCommon().comment}
+              text={tArticleCommon().response}
               color="gray1"
               marginTop="36px"
             />
-            {comments.map((comment: any, index) => (
-              <CommentDiv key={index}>
+            {response.map((response: any, index) => (
+              <ResponseDiv key={index}>
                 <LeftDiv //
-                  profileGradient={comment.profileGradient}
+                  profileGradient={response.profileGradient}
                 >
                   <span />
                   <PSmall700
                     text={{
-                      k: comment.when,
-                      e: comment.when,
+                      k: response.when,
+                      e: response.when,
                     }}
                     color="gray2"
                   />
                 </LeftDiv>
                 <PMedium400
                   text={{
-                    k: comment.newComment,
-                    e: comment.newComment,
+                    k: response.newResponse,
+                    e: response.newResponse,
                   }}
                   color="gray2"
                   marginTop="8px"
                 />
-              </CommentDiv>
+              </ResponseDiv>
             ))}
           </>
         )}
 
         {/* 버튼 영역 */}
-        <A onClick={checkIsComment}>
+        <A onClick={checkIsResponse}>
           <AloneButton //
             size="medium"
-            btnText={tArticleCommon().writeComment}
+            btnText={tArticleCommon().writeResponse}
             color="gray6__30"
           />
         </A>
@@ -116,7 +112,7 @@ const Comment = ({
   }
 };
 
-export default Comment;
+export default Response;
 
 const LoadingContainer = styled.section`
   display: flex;
@@ -132,7 +128,7 @@ const Divider = styled.div`
   background-color: ${({ theme }) => theme.gray6};
 `;
 
-const CommentDiv = styled.div`
+const ResponseDiv = styled.div`
   margin-top: 36px;
 `;
 

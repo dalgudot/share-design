@@ -15,8 +15,8 @@ import { motion } from 'framer-motion';
 import { vibration } from '../../../../elements/framer-motion/variants';
 import { scrollTop } from '../../../../lib/functions/scroll-top';
 
-const WriteComment = ({ showToast }: { showToast: Function }) => {
-  const when = useDate().whenComment;
+const WriteResponse = ({ showToast }: { showToast: Function }) => {
+  const when = useDate().whenResponse;
   const router = useRouter();
   const { category, id } = router.query;
   const [profileGradient, setProfileGradient] = useState('');
@@ -37,31 +37,33 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
     setProfileGradient(gradientGenerator());
   };
 
-  const [newComment, setNewComment] = useState('');
+  const [newResponse, setNewResponse] = useState('');
   const [btnDisbled, setBtnDisbled] = useState(true);
-  const textLength: number = newComment.length;
+  const textLength: number = newResponse.length;
   const textLengthCondition: boolean = textLength > 6;
 
   const firebaseSet: Function = (): void => {
     const firebaseDatabaseRef: any = firebase
       .database()
-      .ref(`Comment/article/${category}/${id}`);
+      .ref(`Response/article/${category}/${id}`);
 
-    firebaseDatabaseRef.push().set({ profileGradient, when, newComment });
+    firebaseDatabaseRef.push().set({ profileGradient, when, newResponse });
   };
 
-  const setNewCommentAndQuitWriteCommentMode = (e: React.MouseEvent): void => {
+  const setNewResponseAndQuitWriteResponseMode = (
+    e: React.MouseEvent
+  ): void => {
     e.preventDefault(); // 클릭 이벤트 발생 중단
     firebaseSet();
-    showToast(tArticleCommon().completePostComment);
+    showToast(tArticleCommon().completePostResponse);
 
     // 연속으로 댓글 쓰는 일 방지하기 위한 Session Storage 활용
-    sessionStorage.setItem(`${router.asPath}`, 'isComment');
+    sessionStorage.setItem(`${router.asPath}`, 'isResponse');
     // Router.push(`/article/${category}/${id}`);
 
     Router.push({
       pathname: `/article/${category}/${id}`,
-      query: { CompleteComment: 'true' },
+      query: { CompleteResponse: 'true' },
     });
   };
 
@@ -105,8 +107,8 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
               ref.focus();
             }
           }}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder={useSetLanguage(tArticleCommon().commentPlaceholder)}
+          onChange={(e) => setNewResponse(e.target.value)}
+          placeholder={useSetLanguage(tArticleCommon().responsePlaceholder)}
           minRows={3}
           minLength={6}
           maxLength={3000}
@@ -115,15 +117,15 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
         <PostButton
           ref={postBtnRef}
           type="submit"
-          onClick={(e) => setNewCommentAndQuitWriteCommentMode(e)}
+          onClick={(e) => setNewResponseAndQuitWriteResponseMode(e)}
           disabled={btnDisbled}
           textLengthCondition={textLengthCondition}
         >
           <PMedium700
             text={
               textLengthCondition
-                ? tArticleCommon().postComment
-                : tArticleCommon().minimumCommentLength
+                ? tArticleCommon().postResponse
+                : tArticleCommon().minimumResponseLength
             }
             color="gray2"
           />
@@ -133,7 +135,7 @@ const WriteComment = ({ showToast }: { showToast: Function }) => {
   );
 };
 
-export default WriteComment;
+export default WriteResponse;
 
 const Main = styled.main`
   @media all and (max-width: ${mediaBreakPoint.first}) {
