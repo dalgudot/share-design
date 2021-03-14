@@ -12,7 +12,7 @@ const IntroductionContents = ({
           key={index}
           text={text}
           color="gray3"
-          marginTop="36px;"
+          marginTop="36px"
         />
       ))}
     </>
