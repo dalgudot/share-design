@@ -100,9 +100,9 @@ export const tArticleCommon = () => {
         },
         {
           k:
-            '\u00A0\u00A0\u00A0제가 생각해낸 아이디어는 유튜브나 인스타그램 같은 전 세계 사람들이 쓰는 플랫폼의 구독 혹은 팔로우 기능을 이용해 소식을 전하는 방법이었습니다. 뉴스레터의 형식도 고민했었지만, 추후 비용이 발생할 가능성이 있어서 후보에서 제외했습니다. 최종적으로 선택한 방법은 인스타그램 피드를 통해 소식을 전하는 방법이었습니다. 이 인스타그램 계정에는 디자인 공유하기의 새 글이 발행될 때만 피드가 게시될 예정입니다.',
+            '\u00A0\u00A0\u00A0제가 생각해낸 아이디어는 유튜브나 인스타그램 같은 전 세계 사람들이 쓰는 플랫폼의 구독 혹은 팔로우 기능을 이용해 소식을 전하는 방법이었습니다. 뉴스레터의 형식도 고민했었지만, 추후 비용이 발생할 가능성이 있어서 후보에서 제외했습니다. 최종적으로 선택한 방법은 인스타그램 피드를 통해 소식을 전하는 방법이었습니다. 이 인스타그램 계정에는 디자인 공유하기에 새 콘텐츠가 발행될 때만 피드가 게시될 예정입니다. 새 콘텐츠가 발행됐을 때 인스타그램 피드를 통해 알림을 받고 싶으신 분은 팔로우를 부탁드립니다.  ',
           e:
-            '\u00A0\u00A0\u00A0The idea I came up with was to use the subscribe or follow feature of platforms used by people around the world, such as YouTube and Instagram. I also thought about the format of the newsletter, but I excluded it from the nomination because there is a possibility of incurring costs in the future. The final choice was to share the news via Instagram feed. The feed will only be posted to this Instagram account when a new post on SHARE DESIGN is published.',
+            '\u00A0\u00A0\u00A0The idea I came up with was to use the subscribe or follow feature of platforms used by people around the world, such as YouTube and Instagram. I also thought about the format of the newsletter, but I excluded it from the nomination because there is a possibility of incurring costs in the future. The final choice was to share the news via Instagram feed. The feed will only be posted when new content is published on this Instagram account for SHARE DESIGN. If you would like to be notified via Instagram feed when new content is published, please follow me.',
         },
       ],
     },
