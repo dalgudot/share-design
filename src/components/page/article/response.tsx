@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
 import StaggerDots from '../../../elements/framer-motion/stagger-dots';
 import { mediaBreakPoint } from '../../../styles/common';
-import H3Title700 from '../../../elements/typography/h3-title-700';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PSmall700 from '../../../elements/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
+import H2Title700 from '../../../elements/typography/h2-title-700';
 
 const Response = ({
   showToast,
@@ -55,48 +55,44 @@ const Response = ({
 
   if (responseLoading === true) {
     return (
-      <>
-        <LoadingContainer>
-          <StaggerDots />
-        </LoadingContainer>
-      </>
+      <LoadingContainer>
+        <StaggerDots />
+      </LoadingContainer>
     );
   } else {
     return (
       <>
         {response.length > 0 && (
-          <>
-            <Divider />
-            <H3Title700
-              text={tArticleCommon().response}
-              color="gray1"
-              marginTop="36px"
-            />
-            {response.map((response: any, index) => (
-              <ResponseDiv key={index}>
-                <LeftDiv //
-                  profileGradient={response.profileGradient}
-                >
-                  <span />
-                  <PSmall700
+          <Container>
+            <H2Title700 text={tArticleCommon().responses} color="gray1" />
+
+            <ContentsContainer>
+              {response.map((response: any, idx) => (
+                <ResponseDiv key={idx}>
+                  <LeftDiv //
+                    profileGradient={response.profileGradient}
+                  >
+                    <span />
+                    <PSmall700
+                      text={{
+                        k: response.when,
+                        e: response.when,
+                      }}
+                      color="gray2"
+                    />
+                  </LeftDiv>
+                  <PMedium400
                     text={{
-                      k: response.when,
-                      e: response.when,
+                      k: response.newResponse,
+                      e: response.newResponse,
                     }}
                     color="gray2"
+                    marginTop="8px"
                   />
-                </LeftDiv>
-                <PMedium400
-                  text={{
-                    k: response.newResponse,
-                    e: response.newResponse,
-                  }}
-                  color="gray2"
-                  marginTop="8px"
-                />
-              </ResponseDiv>
-            ))}
-          </>
+                </ResponseDiv>
+              ))}
+            </ContentsContainer>
+          </Container>
         )}
 
         {/* 버튼 영역 */}
@@ -114,18 +110,18 @@ const Response = ({
 
 export default Response;
 
-const LoadingContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 36px;
+const Container = styled.div`
+  margin-top: 72px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 48px;
+  }
 `;
 
-const Divider = styled.div`
-  margin-top: 48px;
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.gray6};
+const ContentsContainer = styled.div`
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: -12px;
+  }
 `;
 
 const ResponseDiv = styled.div`
@@ -154,5 +150,16 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
 `;
 
 const A = styled.a`
-  margin: 96px auto 24px;
+  margin: 48px auto 0;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin: 36px auto 0;
+  }
+`;
+
+const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
 `;

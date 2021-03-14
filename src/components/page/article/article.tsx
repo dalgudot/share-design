@@ -11,6 +11,8 @@ import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-v
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1';
 import ArticleMessage from './article-message';
+import ArticleNotice from './articoe-notice';
+import ArticleReference from './article-reference';
 
 const Article = ({
   categoryTitle,
@@ -85,7 +87,9 @@ const Article = ({
 
           {contents}
 
-          {/* introduction에는 댓글 및 슬랙 넣지 않음 */}
+          <ArticleNotice />
+
+          {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
             <Response
               showToast={showToast}
@@ -96,6 +100,8 @@ const Article = ({
             />
           )}
           <div ref={responseRef} />
+
+          <ArticleReference />
 
           <ArticleToolBar />
         </ArticleContainer>

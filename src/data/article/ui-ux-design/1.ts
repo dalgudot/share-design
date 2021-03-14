@@ -29,6 +29,60 @@ export const uiUxDesign = () => {
       e: '한글로 보기',
     },
 
+    references: [
+      {
+        url:
+          'https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/',
+        title: {
+          k: 'Human Interface Guidelines',
+          e: 'Human Interface Guidelines',
+        },
+        content: {
+          k:
+            'A switch is a visual toggle between two mutually exclusive states — on and off.',
+          e:
+            'A switch is a visual toggle between two mutually exclusive states — on and off.',
+        },
+      },
+      {
+        url: 'https://material.io/components/radio-buttons',
+        title: {
+          k: 'Material Design',
+          e: 'Material Design',
+        },
+        content: {
+          k: 'Radio buttons allow users to select one option from a set.',
+          e: 'Radio buttons allow users to select one option from a set.',
+        },
+      },
+      {
+        url: 'https://www.framer.com/motion/',
+        title: {
+          k: 'Framer Motion API',
+          e: 'Framer Motion API',
+        },
+        content: {
+          k:
+            'A production-ready motion library for React. Utilize the power behind Framer...',
+          e:
+            'A production-ready motion library for React. Utilize the power behind Framer...',
+        },
+      },
+      {
+        url: 'https://styled-components.com/',
+        title: {
+          k: 'styled-components',
+          e: 'styled-components',
+        },
+        content: {
+          k:
+            'Visual primitives for the component age. Use the best bits of ES6 and CSS...',
+          e:
+            'Visual primitives for the component age. Use the best bits of ES6 and CSS...',
+        },
+      },
+    ],
+
     contents: [
       {
         k:
