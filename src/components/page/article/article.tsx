@@ -50,10 +50,8 @@ const Article = ({
 
   useEffect(() => {
     if (router.query.CompleteResponse === 'true') {
-      // console.log('동작');
       executeScroll();
     } else {
-      // console.log('스크롤탑');
       const bodyId = document.querySelector('body');
       bodyId?.scrollTo({
         top: 0,
@@ -61,7 +59,7 @@ const Article = ({
       });
     }
 
-    return () => setResponse([] || null); // CleanUp Function
+    return () => setResponse([] || null);
   }, []);
 
   const contentsSwitch = () => {
@@ -101,11 +99,11 @@ const Article = ({
               setResponseLoading={setResponseLoading}
             />
           )}
-          <div ref={responseRef} />
 
           {referencesData && (
             <ArticleReference referencesData={referencesData} />
           )}
+          <div ref={responseRef} />
 
           <ArticleToolBar />
         </ArticleContainer>

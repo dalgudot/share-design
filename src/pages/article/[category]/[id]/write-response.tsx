@@ -27,9 +27,6 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
 
     // CleanUp Function
     return () => {};
-    // return () => {
-    //   setProfileGradient('');
-    // };
   }, []);
   scrollTop();
 
