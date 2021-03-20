@@ -8,8 +8,8 @@ export const uiUxDesign = () => {
     },
 
     date: {
-      k: '2021년 3월 14일',
-      e: '14 MAR 2021',
+      k: '2021년 3월 20일',
+      e: '20 MAR 2021',
     },
 
     title: {
