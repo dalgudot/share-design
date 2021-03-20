@@ -17,6 +17,7 @@ import ArticleReference from './article-reference';
 const Article = ({
   categoryTitle,
   date,
+  dateTime,
   articleTitle,
   contentsArray,
   showToast,
@@ -24,6 +25,7 @@ const Article = ({
 }: {
   categoryTitle?: object;
   date?: object;
+  dateTime?: string;
   articleTitle: object;
   contentsArray: object[];
   showToast?: Function;
@@ -80,6 +82,7 @@ const Article = ({
           <ArticleTitleArea
             categoryTitle={categoryTitle}
             date={date}
+            dateTime={dateTime}
             articleTitle={articleTitle}
           />
 

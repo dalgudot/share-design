@@ -1,4 +1,4 @@
-export const uiUxDesignInfo = {
+export const uiUxDesign1Info = {
   title: {
     k: '언어 전환 버튼의 UI/UX 디자인은? | UI/UX 디자인',
     e:

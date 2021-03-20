@@ -24,6 +24,7 @@ const Index = () => {
             url={data[0].url}
             category={data[0].category}
             date={data[0].date}
+            dateTime={data[0].dateTime}
             title={data[0].title}
             summary={data[0].summary}
           />

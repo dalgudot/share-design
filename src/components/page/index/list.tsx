@@ -10,12 +10,14 @@ const List = ({
   url,
   category,
   date,
+  dateTime,
   title,
   summary,
 }: {
   url: string;
   category: object;
   date: object;
+  dateTime: string;
   title: object;
   summary: object;
 }) => {
@@ -31,7 +33,7 @@ const List = ({
           <CategoryDateArea>
             <PSmall400 text={category} color="gray4" />
             <span />
-            <time dateTime="2021-03-14">
+            <time dateTime={dateTime}>
               <PSmall400 text={date} color="gray4" />
             </time>
           </CategoryDateArea>

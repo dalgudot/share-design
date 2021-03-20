@@ -1,13 +1,14 @@
-import { uiUxDesign } from './article/ui-ux-design/1';
+import { uiUxDesign1 } from './article/ui-ux-design/1';
 
 export const articleData = () => {
   return [
     {
-      url: uiUxDesign().url,
-      category: uiUxDesign().category,
-      date: uiUxDesign().date,
-      title: uiUxDesign().title,
-      summary: uiUxDesign().summary,
+      url: uiUxDesign1().url,
+      category: uiUxDesign1().category,
+      date: uiUxDesign1().date,
+      dateTime: uiUxDesign1().dateTime,
+      title: uiUxDesign1().title,
+      summary: uiUxDesign1().summary,
     },
     // 추후 추가
   ];

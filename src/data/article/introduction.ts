@@ -27,9 +27,9 @@ export const projectIntroduction = () => {
 
       {
         k:
-          '\u00A0\u00A0\u00A0또 하나, 우리나라만이 아닌 전 세계 사람들에게 경험을 공유하고 싶었다. 모든 언어를 다루는 건 당연히 할 수 없는 일이지만, 내가 글을 쓸 수 있는 한글과 영어만으로라도 전 세계 사람들과 경험을 나누고 싶었다.',
+          '\u00A0\u00A0\u00A0또 하나, 우리나라만이 아닌 전 세계에 경험을 공유하고 싶었다. 모든 언어를 다루는 건 당연히 할 수 없는 일이지만, 내가 글을 쓸 수 있는 한글과 영어만으로라도 전 세계 사람들과 경험을 나누고 싶었다.',
         e:
-          "\u00A0\u00A0\u00A0Another thing, I wanted to share my UI/UX design experience with people around the world, not just in South Korea. Dealing with all languages is definitely something I can't do, but I wanted to share my experience with people all over the world, even in Korean and English, where I can write.",
+          "\u00A0\u00A0\u00A0Another thing, I wanted to share my UI/UX design experience around the world, not just in South Korea. Dealing with all languages is definitely something I can't do, but I wanted to share my experience with people all over the world, even in Korean and English, where I can write.",
       },
 
       {

@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import Profile from './profile';
 import H1Title700 from '../../../elements/typography/h1-title-700';
-import PSmall700 from '../../../elements/typography/p-small-700';
-import PSmall300 from '../../../elements/typography/p-small-300';
 import { mediaBreakPoint } from '../../../styles/common';
 import PSmall400 from '../../../elements/typography/p-small-400';
 
 const ArticleTitleArea = ({
   categoryTitle,
   date,
+  dateTime,
   articleTitle,
 }: {
   categoryTitle?: object;
   date?: object;
+  dateTime?: string;
   articleTitle: object;
 }) => {
   return (
@@ -21,7 +21,7 @@ const ArticleTitleArea = ({
         <CategoryDateArea>
           <PSmall400 text={categoryTitle} color="gray4" />
           <span />
-          <time dateTime="2021-03-14">
+          <time dateTime={dateTime}>
             <PSmall400 text={date} color="gray4" />
           </time>
         </CategoryDateArea>

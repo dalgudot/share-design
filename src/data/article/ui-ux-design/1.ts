@@ -1,4 +1,4 @@
-export const uiUxDesign = () => {
+export const uiUxDesign1 = () => {
   return {
     url: '/article/ui-ux-design/1',
 
@@ -8,9 +8,11 @@ export const uiUxDesign = () => {
     },
 
     date: {
-      k: '2021년 3월 20일',
-      e: '20 MAR 2021',
+      k: '2021년 3월 28일',
+      e: '28 MAR 2021',
     },
+
+    dateTime: '2021-03-28',
 
     title: {
       k: '언어 전환 토글 버튼의 UI/UX 디자인은?',

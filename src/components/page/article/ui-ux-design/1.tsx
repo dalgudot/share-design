@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiUxDesign } from '../../../../data/article/ui-ux-design/1';
+import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/1';
 import H2Title700 from '../../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
 import PSmall400 from '../../../../elements/typography/p-small-400';
@@ -46,7 +46,7 @@ const UIUXDesignContents1 = ({
       />
 
       <FigureWrap>
-        <LangChangeButton text={uiUxDesign().langChangeButton} />
+        <LangChangeButton text={uiUxDesign1().langChangeButton} />
         <figcaption>
           <PSmall400 //
             text={contentsArray[6]}

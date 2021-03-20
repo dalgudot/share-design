@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import { uiUxDesign } from '../../../data/article/ui-ux-design/1';
 import H2Title700 from '../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PMedium700 from '../../../elements/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
-  uiUxDesign;
   return (
     <Container>
       <H2Title700 //
