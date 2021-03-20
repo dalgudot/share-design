@@ -83,12 +83,12 @@ const koVariants = (width: number) => {
   if (width < 768) {
     return {
       on: { x: 0 },
-      off: { x: 32 },
+      off: { x: 33 },
     };
   } else {
     return {
       on: { x: 0 },
-      off: { x: 35 },
+      off: { x: 37 },
     };
   }
 };
@@ -96,12 +96,12 @@ const koVariants = (width: number) => {
 const enVariants = (width: number) => {
   if (width < 768) {
     return {
-      on: { x: -32 },
+      on: { x: -33 },
       off: { x: 0 },
     };
   } else {
     return {
-      on: { x: -35 },
+      on: { x: -37 },
       off: { x: 0 },
     };
   }

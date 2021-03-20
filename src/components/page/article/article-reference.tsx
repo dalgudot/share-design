@@ -17,17 +17,15 @@ const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
 
       {referencesData.map((reference: any, idx: number) => (
         <A key={idx} href={reference.url} target="_blank">
-          <Title>
-            <PMedium700 text={reference.title} color="gray1" />
-            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
-          </Title>
           <ReferenceContents>
+            <PMedium700 text={reference.title} color="gray1" />
             <PMedium400
               text={reference.content}
               color="gray3"
               marginTop="8px"
             />
           </ReferenceContents>
+          <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
         </A>
       ))}
     </Container>
@@ -39,24 +37,16 @@ export default ArticleReference;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-
-  // 바뀌는 속성
   margin-top: 120px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-  }
 `;
 
 const A = styled.a`
   padding: 36px 0;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
-`;
 
-const Title = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 4px; // 시각 보정
 `;
 
 const ReferenceContents = styled.div`
@@ -64,5 +54,9 @@ const ReferenceContents = styled.div`
 
   p {
     line-height: 1.3;
+  }
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-right: 48px;
   }
 `;
