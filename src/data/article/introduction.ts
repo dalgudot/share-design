@@ -41,7 +41,7 @@ export const projectIntroduction = () => {
 
       {
         k:
-          '\u00A0\u00A0\u00A0그동안 나의 UI/UX 디자인 경험의 기록인 포트폴리오가 이직을 위한 목적으로만 쓰이는 게 아쉬웠었다. UI/UX 디자이너로서 지나온 시간의 소중한 발자취인 포트폴리오가 가치 있게 쓰일 수 있다면 좋겠다고 생각했다. 나의 경험이 도움이 될 누군가에게 잘 전달될 수 있다면 가치 있는 포트폴리오가 될 수 있지 않을까? 보여주기 위한 포트폴리오가 아닌, 내가 디자인한 사용자 경험(UX)으로 온전히 UI/UX 디자인 경험을 공유할 수 있는 새로운 형식의 포트폴리오를 만들면 어떨까?',
+          '\u00A0\u00A0\u00A0그동안 나의 UI/UX 디자인 경험의 기록인 포트폴리오가 이직을 위한 목적으로만 쓰이는 게 아쉬웠었다. UI/UX 디자이너로서 지나온 시간의 소중한 발자취인 포트폴리오가 가치 있게 쓰일 수 있다면 좋겠다고 생각했다. 나의 경험이 도움이 될 누군가에게 잘 전달될 수 있다면 가치 있는 포트폴리오가 될 수 있지 않을까? 보여주기 위한 포트폴리오가 아닌, 내가 디자인한 사용자 경험(User eXperience, 사용자 경험)으로 온전히 UI/UX 디자인 경험을 공유할 수 있는 새로운 형식의 포트폴리오를 만들면 어떨까?',
         e:
           "\u00A0\u00A0\u00A0In the meantime, it was regrettable that the portfolio, the record of my UI/UX design experience, was only used for job change purposes. As a UI/UX designer, I thought it would be nice if the portfolio, which is the precious footsteps of the past time, could be used with value. Wouldn't it be a valuable portfolio if my experience could be well conveyed to someone who would be helpful? I wondered what if I could create a new type of portfolio to share the UI/UX design experience entirely with the User Experience(UX) I designed, not a portfolio to show.",
       },

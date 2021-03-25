@@ -167,9 +167,53 @@ export const t = {
             },
             contents: {
               k:
-                "20대의 감정과 이야기를 사진과 글로 남기는 '20대를 남기다' 프로젝트를 진행했으며, 서울과 프랑스 파리에서 총 3번의 전시가 있었습니다.",
+                "20대의 감정과 이야기를 사진과 글로 남기는 '20대를 남기다' 프로젝트를 2017년 5월 26일부터 2018년 12월 20일까지 진행했습니다.",
               e:
-                "I worked on 'Twenties' project, which records the feelings and stories of the twenties with photos and writings. Three exhibitions were held in Seoul, South Korea and Paris, France.",
+                "I worked on 'Twenties' project, which records the feelings and stories of the twenties with photos and writings from May 26, 2017 to December 20, 2018.",
+            },
+          },
+        ],
+      },
+
+      exhibition: {
+        title: {
+          k: '전시',
+          e: 'Exhibition',
+        },
+
+        contentsArray: [
+          {
+            term: {
+              k: '2018.12.14 ~ 12.20',
+              e: '2018.12.14 ~ 12.20',
+            },
+            contents: {
+              k:
+                "'ART-MAS IN PARIS: 20대를 남기다', \u00A0Studio Galerie B&B, 프랑스 파리",
+              e:
+                "'ART-MAS IN PARIS: Twenties', Studio Galerie B&B, Paris, France",
+            },
+          },
+          {
+            term: {
+              k: '2018.07.16 ~ 07.29',
+              e: '2018.07.16 ~ 07.29',
+            },
+            contents: {
+              k:
+                "'작가의 부재, 20대를 남기다', \u00A0Villa des Arts, 프랑스 파리",
+              e:
+                "'The absence of a artist, Twenties', Villa des Arts, Paris, France",
+            },
+          },
+          {
+            term: {
+              k: '2018.06.22 ~ 07.22',
+              e: '2018.06.22 ~ 07.22',
+            },
+            contents: {
+              k: "'20대를 남기다', \u00A0사진문화공간 아지트, 서울 문래",
+              e: "'Twenties', Azit, Seoul, South Korea",
             },
           },
         ],

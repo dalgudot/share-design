@@ -6,7 +6,6 @@ import PMedium700 from '../../../elements/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const AboutArea = () => {
-  const themeContext = useContext(ThemeContext);
   const aboutData = t.contact.about;
 
   return (
@@ -80,6 +79,40 @@ const AboutArea = () => {
       />
       <PMedium400
         text={aboutData.personalProject.contentsArray[1].contents}
+        color="gray1"
+      />
+
+      {/* 전시 */}
+      <PMedium400
+        text={aboutData.exhibition.title}
+        color="gray4"
+        marginTop="72px"
+      />
+      <PMedium700
+        text={aboutData.exhibition.contentsArray[0].term}
+        color="gray2"
+        marginTop="8px"
+      />
+      <PMedium400
+        text={aboutData.exhibition.contentsArray[0].contents}
+        color="gray1"
+      />
+      <PMedium700
+        text={aboutData.exhibition.contentsArray[1].term}
+        color="gray2"
+        marginTop="24px"
+      />
+      <PMedium400
+        text={aboutData.exhibition.contentsArray[1].contents}
+        color="gray1"
+      />
+      <PMedium700
+        text={aboutData.exhibition.contentsArray[2].term}
+        color="gray2"
+        marginTop="24px"
+      />
+      <PMedium400
+        text={aboutData.exhibition.contentsArray[2].contents}
         color="gray1"
       />
 
