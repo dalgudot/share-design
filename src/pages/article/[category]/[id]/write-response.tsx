@@ -25,8 +25,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     setProfileGradient(gradientGenerator());
 
-    // CleanUp Function
-    return () => {};
+    return () => {}; // CleanUp Function
   }, []);
   scrollTop();
 
