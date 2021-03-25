@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { t } from '../../../data/index/t';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import PMedium700 from '../../../elements/typography/p-medium-700';
