@@ -51,12 +51,18 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
     e: React.MouseEvent
   ): void => {
     e.preventDefault(); // 클릭 이벤트 발생 중단
-    firebaseSet();
-    showToast(tArticleCommon().completePostResponse);
 
-    // 연속으로 댓글 쓰는 일 방지하기 위한 Session Storage 활용
-    sessionStorage.setItem(`${router.asPath}`, 'isResponse');
-    // Router.push(`/article/${category}/${id}`);
+    const isResponse = sessionStorage.getItem(`${router.asPath}`);
+
+    if (isResponse === null) {
+      firebaseSet();
+      showToast(tArticleCommon().completePostResponse);
+
+      // 연속으로 댓글 쓰는 일 방지하기 위한 Session Storage 활용
+      sessionStorage.setItem(`${router.asPath}`, 'isResponse');
+    } else {
+      showToast(tArticleCommon().preventResponseToastMessage);
+    }
 
     Router.push({
       pathname: `/article/${category}/${id}`,
