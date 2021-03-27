@@ -13,6 +13,11 @@ import UIUXDesignContents1 from './ui-ux-design/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
+import Link from 'next/link';
+import { projectIntroduction } from '../../../data/article/introduction';
+import PMedium400 from '../../../elements/typography/p-medium-400';
+import { motion } from 'framer-motion';
+import AloneButton from '../../button/alone-button';
 
 const Article = ({
   categoryTitle,
@@ -90,6 +95,20 @@ const Article = ({
 
           {contents}
 
+          {router.pathname === '/introduction' && (
+            <GoToFirstContent>
+              <Link href="/article/ui-ux-design/1">
+                <a>
+                  <AloneButton
+                    size="medium"
+                    btnText={projectIntroduction().goToFirstContent}
+                    color="gray6__30"
+                  />
+                </a>
+              </Link>
+            </GoToFirstContent>
+          )}
+
           <ArticleNotice />
 
           {/* introduction에는 댓글 넣지 않음 */}
@@ -163,4 +182,8 @@ const Background = styled.div<BackgroundType>`
   min-height: ${({ height }) => height}px;
   background-color: ${({ theme }) => theme.gray7};
   z-index: ${({ theme }) => theme.zIndex.Background};
+`;
+
+const GoToFirstContent = styled(motion.button)`
+  margin: 96px auto 32px;
 `;

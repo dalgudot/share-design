@@ -1,6 +1,6 @@
 export const uiUxDesign1Info = {
   title: {
-    k: '언어 전환 버튼의 UI/UX 디자인은? | 디자인 공유하기',
+    k: '언어 전환 토글 버튼의 UI/UX 디자인은? | 디자인 공유하기',
     e:
       'What is the UI/UX design of the language switch toggle button? | SHARE DESIGN ',
   },
