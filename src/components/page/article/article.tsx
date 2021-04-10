@@ -10,12 +10,12 @@ import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1';
+import InteractionDesignContents1 from './interaction-design/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
 import Link from 'next/link';
 import { projectIntroduction } from '../../../data/article/introduction';
-import PMedium400 from '../../../elements/typography/p-medium-400';
 import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 
@@ -75,6 +75,8 @@ const Article = ({
         return <IntroductionContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
+      case '/article/interaction-design/1':
+        return <InteractionDesignContents1 contentsArray={contentsArray} />;
     }
   };
   const contents = contentsSwitch();
