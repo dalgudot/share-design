@@ -7,8 +7,13 @@ import IconLanguage24 from '../../elements/svg/icon_language_24';
 import PMedium700 from '../../elements/typography/p-medium-700';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
+import useScrollPosition from '../../lib/hooks/useScrollPosition';
 
-const LangChangeToggle = () => {
+const LangChangeToggle = ({
+  setFinalToggle,
+}: {
+  setFinalToggle?: Function;
+}) => {
   const themeContext = useContext(ThemeContext);
   const router = useRouter();
   const locale = router.locale;
@@ -23,10 +28,19 @@ const LangChangeToggle = () => {
         ? router.push(router.asPath, router.asPath, { locale: 'en' })
         : router.push(router.asPath, router.asPath, { locale: 'ko' });
     }
+
+    // article 1 본문 중 버튼 눌렀을 때 작동
+    setFinalToggle && setFinalToggle(true);
   };
 
   // 768을 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
   const width: number = useWindowWidth();
+
+  // Header에서 언어 전환 토글로 언어 전환했을 때 스크롤 유지
+  const ScrollY = useScrollPosition();
+  useEffect(() => {
+    window.scrollTo(0, ScrollY);
+  }, [locale]);
 
   return (
     <ButtonContainer onClick={setLanguageChange}>

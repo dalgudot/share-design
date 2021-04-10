@@ -2,7 +2,7 @@ export const tArticleCommon = () => {
   return {
     message: {
       k: `UI/UX 디자인 경험을 공유합니다 :)`,
-      e: `I share my UI/UX Design Experience :)`,
+      e: `I share UI/UX Design Experience :)`,
     },
 
     goToList: {

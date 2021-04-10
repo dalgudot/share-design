@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/1';
 import H2Title700 from '../../../../elements/typography/h2-title-700';
@@ -13,6 +15,37 @@ const UIUXDesignContents1 = ({
 }: {
   contentsArray: object[];
 }) => {
+  const router = useRouter();
+  const locale = router.locale;
+
+  // 본문에 있는 첫 번째 언어 전환 토글 버튼과 두 번째 언어 전환 토글 버튼 눌렀을 때 스크롤 유지
+  const firstTogglePositionRef = useRef<HTMLDivElement>(null);
+  const finalTogglePositionRef = useRef<HTMLDivElement>(null);
+  const [firstToggle, setfirstToggle] = useState(false);
+  const [finalToggle, setFinalToggle] = useState(false);
+
+  const gotoFirstRefAfterLocaleChange = () => {
+    firstTogglePositionRef?.current?.scrollIntoView();
+  };
+
+  const gotoFinalRefAfterLocaleChange = () => {
+    finalTogglePositionRef?.current?.scrollIntoView();
+  };
+
+  useEffect(() => {
+    if (firstToggle === true) {
+      gotoFirstRefAfterLocaleChange();
+      setfirstToggle(false);
+    }
+  }, [locale]);
+
+  useEffect(() => {
+    if (finalToggle === true) {
+      finalToggle === true && gotoFinalRefAfterLocaleChange();
+      setFinalToggle(false);
+    }
+  }, [locale]);
+
   return (
     <>
       <PMedium400 //
@@ -45,8 +78,12 @@ const UIUXDesignContents1 = ({
         marginTop="24px"
       />
 
+      <div ref={firstTogglePositionRef} />
       <FigureWrap>
-        <LangChangeButton text={uiUxDesign1().langChangeButton} />
+        <LangChangeButton
+          setfirstToggle={setfirstToggle}
+          text={uiUxDesign1().langChangeButton}
+        />
         <figcaption>
           <PSmall400 //
             text={contentsArray[6]}
@@ -98,9 +135,10 @@ const UIUXDesignContents1 = ({
         marginTop="24px"
       />
 
+      <div ref={finalTogglePositionRef} />
       <FigureWrap>
         <div className="example__lang_change_toggle">
-          <LangChangeToggle />
+          <LangChangeToggle setFinalToggle={setFinalToggle} />
         </div>
         <figcaption>
           <PSmall400 //

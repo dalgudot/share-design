@@ -30,8 +30,8 @@ export default React.memo(MyToast);
 
 const ToastWrapMotion = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
-  position: absolute;
-  top: 28px; // 상단 위치
+  position: fixed; // toast 위치의 핵심
+  top: 28px;
   left: 0;
   right: 0;
   margin: 0 auto;

@@ -25,10 +25,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useRef, useState } from 'react';
 import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { useRouter } from 'next/router';
+import useScrollPosition from '../../../../lib/hooks/useScrollPosition';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
   const url = window.location.href; // 현재 URL
   // console.log(url);
+
+  // const scrollY = useScrollPosition();
+  // console.log(scrollY);
 
   const openModal = useSelector((state: any) => state.openModal);
   const modalZIndexHandler = useSelector(
@@ -37,10 +41,22 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
   // console.log(`openModal: ${openModal}`);
   // console.log(`modalZIndexHandler: ${modalZIndexHandler}`);
 
-  // useEffect(() => {
-  //   const bodyId = document.querySelector('body');
-  //   openModal === true && bodyId?.style.overflowY = 'hidden';
-  // });
+  // 모달 스크롤 막기
+  // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/
+  useEffect(() => {
+    if (modalZIndexHandler === true && openModal === true) {
+      document.body.style.cssText = `overflow: hidden; height: 100vh;`;
+
+      return () => {
+        document.body.style.cssText = `overflow: ""; height: "";`;
+      };
+    }
+  }, [modalZIndexHandler]);
+
+  let scrollY = window.scrollY;
+  useEffect(() => {
+    scrollY = window.scrollY;
+  }, [openModal]);
 
   const dispatch = useDispatch();
   const OPEN_MODAL = () =>
@@ -86,6 +102,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
         onClick={closeModal}
       />
       <DivMotion
+        scrollY={scrollY}
         variants={ScaleDownInUpOut}
         initial={false}
         animate={openModal === true ? 'animate' : 'initial'}
@@ -164,14 +181,12 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
 
 export default React.memo(ShareModal);
 
-type modalHandlerType = {
+type BackgroundBlurMotionType = {
   openModal: boolean;
   modalZIndexHandler: boolean;
 };
 
-const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
-  overflow-x: hidden;
-  overflow-y: hidden;
+const BackgroundBlurMotion = styled(motion.div)<BackgroundBlurMotionType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
@@ -191,9 +206,13 @@ const BackgroundBlurMotion = styled(motion.div)<modalHandlerType>`
   backdrop-filter: blur(60px) saturate(120%) brightness(105%) hue-rotate(10deg);
 `;
 
+type modalHandlerType = {
+  openModal: boolean;
+  modalZIndexHandler: boolean;
+  scrollY: number;
+};
+
 const DivMotion = styled(motion.div)<modalHandlerType>`
-  overflow-x: hidden;
-  overflow-y: hidden;
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
@@ -201,16 +220,21 @@ const DivMotion = styled(motion.div)<modalHandlerType>`
       : theme.zIndex.Modal};
   display: ${({ openModal, modalZIndexHandler }) =>
     modalZIndexHandler === false && openModal === false ? 'none' : 'block'};
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); // framer-motion에 영향
+
+  position: fixed;
+  // framer-motion에 영향
+  /* transform: translateY(-50%); */
   left: 0;
   right: 0;
   margin: 0 auto;
   max-width: 400px;
 
+  // 바뀌는 속성
+  top: 20%;
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
+    top: 10%;
   }
 `;
 

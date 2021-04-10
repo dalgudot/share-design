@@ -3,7 +3,13 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import PSmall700 from '../../elements/typography/p-small-700';
 
-const LangChangeButton = ({ text }: { text: object }) => {
+const LangChangeButton = ({
+  text,
+  setfirstToggle,
+}: {
+  text: object;
+  setfirstToggle: Function;
+}) => {
   const router = useRouter();
   const locale = router.locale;
   const setLanguageChange = () => {
@@ -17,6 +23,8 @@ const LangChangeButton = ({ text }: { text: object }) => {
         ? router.push(router.asPath, router.asPath, { locale: 'en' })
         : router.push(router.asPath, router.asPath, { locale: 'ko' });
     }
+
+    setfirstToggle(true);
   };
 
   return (

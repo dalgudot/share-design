@@ -18,6 +18,7 @@ import Link from 'next/link';
 import { projectIntroduction } from '../../../data/article/introduction';
 import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
+import { scrollTop } from '../../../lib/functions/scroll-top';
 
 const Article = ({
   categoryTitle,
@@ -44,6 +45,10 @@ const Article = ({
   useEffect(() => {
     VisitsAndViewsDuringSession(router.pathname);
   }, []);
+
+  // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.
+  // ex) Introduction > First Content일 때
+  scrollTop();
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
   const [response, setResponse] = useState<object[]>([] || null);
@@ -83,6 +88,7 @@ const Article = ({
 
   return (
     <>
+      <TopDiv />
       <Main>
         <Background width={width} height={height} />
         <ArticleContainer>
@@ -132,16 +138,31 @@ const Article = ({
           <ArticleToolBar />
         </ArticleContainer>
       </Main>
+      <BottomDiv />
     </>
   );
 };
 
 export default Article;
 
+const TopDiv = styled.div`
+  width: 100%;
+  height: 72px;
+  background-color: ${({ theme }) => theme.gray7};
+`;
+
+const BottomDiv = styled.div`
+  width: 100%;
+  height: 96px;
+  background-color: ${({ theme }) => theme.gray7};
+`;
+
 const Main = styled.main`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.gray7};
+  display: flex;
+  justify-content: center;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
@@ -163,11 +184,11 @@ const ArticleContainer = styled.article`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
 
   // 바뀌는 속성
-  margin: ${({ theme }) => theme.margin.DesktopWrap};
+  /* margin: ${({ theme }) => theme.margin.DesktopWrap};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: ${({ theme }) => theme.margin.MobileWrap};
-  }
+  } */
 `;
 
 type BackgroundType = {

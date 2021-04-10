@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <>
       <Main>
-        <Ul>
+        <ul>
           <List
             url={data[0].url}
             category={data[0].category}
@@ -29,7 +29,7 @@ const Index = () => {
             summary={data[0].summary}
           />
           <GotoIntroduction />
-        </Ul>
+        </ul>
         <ShareToolBar />
       </Main>
       <Footer />
@@ -57,5 +57,3 @@ const Main = styled.main`
     padding: ${({ theme }) => theme.padding.DesktopWrap};
   }
 `;
-
-const Ul = styled.ul``;

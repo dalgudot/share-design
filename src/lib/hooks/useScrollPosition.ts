@@ -6,7 +6,7 @@ const useScrollPosition = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.pageYOffset);
-      console.log(scroll);
+      // console.log(scroll);
     };
     window.addEventListener('scroll', handleScroll);
 
