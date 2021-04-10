@@ -29,7 +29,7 @@ const LangChangeToggle = ({
         : router.push(router.asPath, router.asPath, { locale: 'ko' });
     }
 
-    // article 1 본문 중 버튼 눌렀을 때 작동
+    // ui-ux article 1 본문 중 2번째 언어 전환 토글 눌렀을 때 작동
     setFinalToggle && setFinalToggle(true);
   };
 

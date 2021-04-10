@@ -22,17 +22,13 @@ import {
   ScaleDownInUpOut,
 } from '../../../../elements/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { useRouter } from 'next/router';
-import useScrollPosition from '../../../../lib/hooks/useScrollPosition';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
   const url = window.location.href; // 현재 URL
   // console.log(url);
-
-  // const scrollY = useScrollPosition();
-  // console.log(scrollY);
 
   const openModal = useSelector((state: any) => state.openModal);
   const modalZIndexHandler = useSelector(
@@ -101,80 +97,82 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
         modalZIndexHandler={modalZIndexHandler}
         onClick={closeModal}
       />
-      <DivMotion
-        scrollY={scrollY}
-        variants={ScaleDownInUpOut}
-        initial={false}
-        animate={openModal === true ? 'animate' : 'initial'}
-        openModal={openModal}
-        modalZIndexHandler={modalZIndexHandler}
-      >
-        <UlMotion //
-          variants={stagger}
+      <Wrap openModal={openModal} modalZIndexHandler={modalZIndexHandler}>
+        <DivMotion
+          scrollY={scrollY}
+          variants={ScaleDownInUpOut}
           initial={false}
           animate={openModal === true ? 'animate' : 'initial'}
+          openModal={openModal}
+          modalZIndexHandler={modalZIndexHandler}
         >
-          <FacebookShareButton url={url} className="list__common">
-            <LiMotion ref={facebookRef}>
-              <IconShareFacebook24 />
-              <motion.div //
-                variants={btnHoverTap}
-                whileHover="whileHover"
-              >
-                <PMedium700 text={t.shareModal.facebook} color="gray1" />
-              </motion.div>
-            </LiMotion>
-          </FacebookShareButton>
-
-          <LinkedinShareButton url={url} className="list__common">
-            <LiMotion ref={linkedinRef} variants={listUp}>
-              <IconShareLinkedin24 />
-              <motion.div //
-                variants={btnHoverTap}
-                whileHover="whileHover"
-              >
-                <PMedium700 text={t.shareModal.linkedin} color="gray1" />
-              </motion.div>
-            </LiMotion>
-          </LinkedinShareButton>
-
-          <TwitterShareButton url={url} className="list__common">
-            <LiMotion ref={twitterRef} variants={listUp}>
-              <IconShareTwitter24 />
-              <motion.div //
-                variants={btnHoverTap}
-                whileHover="whileHover"
-              >
-                <PMedium700 text={t.shareModal.twitter} color="gray1" />
-              </motion.div>
-            </LiMotion>
-          </TwitterShareButton>
-
-          {/* CopyToClipboard 밑에는 자식 컴포넌트 1개만 가능 */}
-          <CopyToClipboard
-            text={url}
-            onCopy={() => showToast(t.shareModal.toastMessage)}
+          <UlMotion //
+            variants={stagger}
+            initial={false}
+            animate={openModal === true ? 'animate' : 'initial'}
           >
-            <LiMotion ref={copyURLRef} variants={listUp}>
-              <IconShareCopyURL24 />
-              <motion.div //
-                variants={btnHoverTap}
-                whileHover="whileHover"
-              >
-                <PMedium700 text={t.shareModal.copyURL} color="gray1" />
-              </motion.div>
-            </LiMotion>
-          </CopyToClipboard>
+            <FacebookShareButton url={url} className="list__common">
+              <LiMotion ref={facebookRef}>
+                <IconShareFacebook24 />
+                <motion.div //
+                  variants={btnHoverTap}
+                  whileHover="whileHover"
+                >
+                  <PMedium700 text={t.shareModal.facebook} color="gray1" />
+                </motion.div>
+              </LiMotion>
+            </FacebookShareButton>
 
-          <motion.button onClick={closeModal} variants={listUp}>
-            <AloneButton
-              size="small"
-              btnText={t.closeButton}
-              marginTop="36px"
-            />
-          </motion.button>
-        </UlMotion>
-      </DivMotion>
+            <LinkedinShareButton url={url} className="list__common">
+              <LiMotion ref={linkedinRef} variants={listUp}>
+                <IconShareLinkedin24 />
+                <motion.div //
+                  variants={btnHoverTap}
+                  whileHover="whileHover"
+                >
+                  <PMedium700 text={t.shareModal.linkedin} color="gray1" />
+                </motion.div>
+              </LiMotion>
+            </LinkedinShareButton>
+
+            <TwitterShareButton url={url} className="list__common">
+              <LiMotion ref={twitterRef} variants={listUp}>
+                <IconShareTwitter24 />
+                <motion.div //
+                  variants={btnHoverTap}
+                  whileHover="whileHover"
+                >
+                  <PMedium700 text={t.shareModal.twitter} color="gray1" />
+                </motion.div>
+              </LiMotion>
+            </TwitterShareButton>
+
+            {/* CopyToClipboard 밑에는 자식 컴포넌트 1개만 가능 */}
+            <CopyToClipboard
+              text={url}
+              onCopy={() => showToast(t.shareModal.toastMessage)}
+            >
+              <LiMotion ref={copyURLRef} variants={listUp}>
+                <IconShareCopyURL24 />
+                <motion.div //
+                  variants={btnHoverTap}
+                  whileHover="whileHover"
+                >
+                  <PMedium700 text={t.shareModal.copyURL} color="gray1" />
+                </motion.div>
+              </LiMotion>
+            </CopyToClipboard>
+
+            <motion.button onClick={closeModal} variants={listUp}>
+              <AloneButton
+                size="small"
+                btnText={t.closeButton}
+                marginTop="36px"
+              />
+            </motion.button>
+          </UlMotion>
+        </DivMotion>
+      </Wrap>
     </>
   );
 };
@@ -212,29 +210,29 @@ type modalHandlerType = {
   scrollY: number;
 };
 
-const DivMotion = styled(motion.div)<modalHandlerType>`
+const Wrap = styled.div<BackgroundBlurMotionType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
       ? -2
       : theme.zIndex.Modal};
-  display: ${({ openModal, modalZIndexHandler }) =>
-    modalZIndexHandler === false && openModal === false ? 'none' : 'block'};
 
   position: fixed;
-  // framer-motion에 영향
-  /* transform: translateY(-50%); */
+  top: 48%; // 세로 중앙정렬 시각 보정
+  transform: translateY(-50%);
   left: 0;
   right: 0;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`;
+
+const DivMotion = styled(motion.div)<modalHandlerType>`
+  width: 100%;
   max-width: 400px;
 
   // 바뀌는 속성
-  top: 20%;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
-    top: 10%;
   }
 `;
 

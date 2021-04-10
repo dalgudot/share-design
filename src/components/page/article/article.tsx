@@ -88,7 +88,6 @@ const Article = ({
 
   return (
     <>
-      <TopDiv />
       <Main>
         <Background width={width} height={height} />
         <ArticleContainer>
@@ -138,24 +137,11 @@ const Article = ({
           <ArticleToolBar />
         </ArticleContainer>
       </Main>
-      <BottomDiv />
     </>
   );
 };
 
 export default Article;
-
-const TopDiv = styled.div`
-  width: 100%;
-  height: 72px;
-  background-color: ${({ theme }) => theme.gray7};
-`;
-
-const BottomDiv = styled.div`
-  width: 100%;
-  height: 96px;
-  background-color: ${({ theme }) => theme.gray7};
-`;
 
 const Main = styled.main`
   width: 100%;
@@ -184,11 +170,11 @@ const ArticleContainer = styled.article`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
 
   // 바뀌는 속성
-  /* margin: ${({ theme }) => theme.margin.DesktopWrap};
+  margin: ${({ theme }) => theme.margin.DesktopWrap};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: ${({ theme }) => theme.margin.MobileWrap};
-  } */
+  }
 `;
 
 type BackgroundType = {

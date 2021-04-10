@@ -7,13 +7,11 @@ import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
 import List from '../components/page/index/list';
 import { articleData } from '../data/article-data';
-import { scrollTop } from '../lib/functions/scroll-top';
 
 const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  scrollTop();
   const data = articleData();
 
   return (

@@ -6,13 +6,11 @@ import ProfileArea from '../components/page/contact/profile';
 import EmailArea from '../components/page/contact/email';
 import SocialArea from '../components/page/contact/social';
 import AboutArea from '../components/page/contact/about';
-import { scrollTop } from '../lib/functions/scroll-top';
 
 const Contact = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
-  scrollTop();
 
   return (
     <>
