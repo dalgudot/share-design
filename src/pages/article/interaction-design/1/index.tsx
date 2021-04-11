@@ -1,13 +1,13 @@
 import Article from '../../../../components/page/article/article';
-import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/1';
+import { interactionDesign1 } from '../../../../data/article/interaction-design/1';
 
 const InteractionDesign1 = ({ showToast }: { showToast: Function }) => {
-  const categoryTitle = uiUxDesign1().category;
-  const date = uiUxDesign1().date;
-  const dateTime = uiUxDesign1().dateTime;
-  const articleTitle = uiUxDesign1().title;
-  const contentsArray = uiUxDesign1().contents;
-  const referencesData: object[] = uiUxDesign1().references;
+  const categoryTitle = interactionDesign1().category;
+  const date = interactionDesign1().date;
+  const dateTime = interactionDesign1().dateTime;
+  const articleTitle = interactionDesign1().title;
+  const contentsArray = interactionDesign1().contents;
+  const referencesData: object[] = interactionDesign1().references;
 
   return (
     <>

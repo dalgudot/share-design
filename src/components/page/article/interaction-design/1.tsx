@@ -23,15 +23,15 @@ const InteractionDesignContents1 = ({
     threshold: 0,
   });
 
-  const { scrollYProgress } = useViewportScroll();
+  // const { scrollYProgress } = useViewportScroll();
 
   // const listRef = useRef(null);
   // const { scrollYProgress } = useElementScroll(listRef);
 
   // useTransform(value, inputRange, outputRange, options): MotionValue<O>
   // https://www.framer.com/api/motion/motionvalue/#motionvalue-api
-  const scale = useTransform(scrollYProgress, [0, 0.7], [0.2, 1]);
-  console.log(scale);
+  // const scale = useTransform(scrollYProgress, [0, 0.7], [0.2, 1]);
+  // console.log(scale);
 
   return (
     <>
@@ -83,7 +83,7 @@ const InteractionDesignContents1 = ({
         marginTop="36px"
       />
 
-      <motion.ul
+      {/* <motion.ul
         variants={stagger}
         initial={false}
         animate="animate"
@@ -107,7 +107,7 @@ const InteractionDesignContents1 = ({
             scaleX: scrollYProgress,
           }}
         />
-      </motion.ul>
+      </motion.ul> */}
 
       <PMedium400 //
         text={contentsArray[0]}
