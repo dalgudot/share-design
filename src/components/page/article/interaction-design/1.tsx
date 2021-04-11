@@ -1,7 +1,13 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import {
+  motion,
+  useElementScroll,
+  useTransform,
+  useViewportScroll,
+} from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
+import { stagger } from '../../../../elements/framer-motion/variants';
 import H2Title700 from '../../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
 import PSmall400 from '../../../../elements/typography/p-small-400';
@@ -17,6 +23,16 @@ const InteractionDesignContents1 = ({
     threshold: 0,
   });
 
+  const { scrollYProgress } = useViewportScroll();
+
+  // const listRef = useRef(null);
+  // const { scrollYProgress } = useElementScroll(listRef);
+
+  // useTransform(value, inputRange, outputRange, options): MotionValue<O>
+  // https://www.framer.com/api/motion/motionvalue/#motionvalue-api
+  const scale = useTransform(scrollYProgress, [0, 0.7], [0.2, 1]);
+  console.log(scale);
+
   return (
     <>
       <PMedium400 //
@@ -29,11 +45,74 @@ const InteractionDesignContents1 = ({
         color="gray3"
         marginTop="36px"
       />
-      <TestMotionDiv
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
+      />
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
+      />
+
+      <motion.ul
         ref={ref}
-        variants={smoothUp}
+        variants={stagger}
         initial={false}
-        animate={inView ? 'animate' : 'initial'}
+        animate={inView === true ? 'animate' : 'initial'}
+      >
+        <MotionList variants={listVariants} />
+        <MotionList variants={listVariants} />
+        <MotionList variants={listVariants} />
+      </motion.ul>
+
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
+      />
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
+      />
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
+      />
+
+      <motion.ul
+        variants={stagger}
+        initial={false}
+        animate="animate"
+        style={{ overflow: 'scroll' }}
+      >
+        <MotionList
+          variants={listVariants2}
+          style={{
+            scaleX: scrollYProgress,
+          }}
+        />
+        <MotionList
+          variants={listVariants2}
+          style={{
+            scaleX: scrollYProgress,
+          }}
+        />
+        <MotionList
+          variants={listVariants2}
+          style={{
+            scaleX: scrollYProgress,
+          }}
+        />
+      </motion.ul>
+
+      <PMedium400 //
+        text={contentsArray[0]}
+        color="gray3"
+        marginTop="36px"
       />
     </>
   );
@@ -41,51 +120,54 @@ const InteractionDesignContents1 = ({
 
 export default InteractionDesignContents1;
 
-const TestMotionDiv = styled(motion.div)`
-  width: 100px;
-  height: 100px;
-  background-color: ${({ theme }) => theme.gray1};
-  margin: 96px auto;
+const MotionList = styled(motion.li)`
+  width: 100%;
+  height: 48px;
+  background-color: ${({ theme }) => theme.gray3};
+  margin-top: 24px;
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
 `;
 
 const smoothTransition = { ease: [0.43, 0.13, 0.23, 0.96] };
 
-const smoothUp = {
+const listVariants = {
   initial: {
     y: 12,
-    scale: 0.1,
+    scale: 0,
     opacity: 0,
-    transition: {
-      duration: 1,
-      smoothTransition,
-    },
+    // rotateX: 90,
   },
 
   animate: {
     y: 0,
     scale: 1,
     opacity: 1,
+    // rotateX: 0,
     transition: {
       duration: 1,
       smoothTransition,
     },
   },
+};
 
-  exit: {
-    y: 4,
-    scale: 1.03,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-      smoothTransition,
-    },
+const listVariants2 = {
+  initial: {
+    // y: 0,
+    // scale: 0,
+    opacity: 0.5,
+    // rotateX: 90,
   },
 
-  whileHover: {
-    scale: 1.2,
+  animate: {
+    // y: 36,
+    // scale: 1,
+    opacity: 1,
+    // rotateX: 0,
+    // transition: {
+    //   duration: 1,
+    //   smoothTransition,
+    // },
   },
-
-  whileTap: { scale: 0.9 },
 };
 
 const FigureWrap = styled.figure`

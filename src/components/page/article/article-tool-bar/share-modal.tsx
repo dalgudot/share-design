@@ -40,6 +40,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
   // 모달 스크롤 막기
   // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/
   useEffect(() => {
+    // 리렌더 방지 위해 'style.csstext' 활용
     if (modalZIndexHandler === true && openModal === true) {
       document.body.style.cssText = `overflow: hidden; height: 100vh;`;
 
