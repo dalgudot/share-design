@@ -63,6 +63,12 @@ const HeadSEO = () => {
         content="nxhLllcTErNmik8JUCWy7Wp4n6qaJo3fAkayzI4I2zc"
       />
 
+      {/* 네이버 서치어드바이저 사이트 소유 확인 */}
+      <meta
+        name="naver-site-verification"
+        content="b76a6acf796165dd21c2cac5a49675397ce9386c"
+      />
+
       <title>{useSetLanguage(info.title)}</title>
       <meta name="author" content={useSetLanguage(author)} />
       <meta name="description" content={useSetLanguage(info.description)} />
