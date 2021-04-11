@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import H2Title700 from '../../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
 import PSmall400 from '../../../../elements/typography/p-small-400';
-import useScrollPosition from '../../../../lib/hooks/useScrollPosition';
 import { mediaBreakPoint } from '../../../../styles/common';
 
 const InteractionDesignContents1 = ({
@@ -18,16 +17,9 @@ const InteractionDesignContents1 = ({
     threshold: 0,
   });
 
-  //   console.log(ref);
-  //   console.log(inView);
-  //   console.log(entry);
-
-  const scrollY = useScrollPosition();
-  //   console.log(scrollY);
-
   return (
     <>
-      {/* <PMedium400 //
+      <PMedium400 //
         text={contentsArray[0]}
         color="gray3"
         marginTop="36px"
@@ -36,13 +28,13 @@ const InteractionDesignContents1 = ({
         text={contentsArray[0]}
         color="gray3"
         marginTop="36px"
-      /> 
+      />
       <TestMotionDiv
         ref={ref}
         variants={smoothUp}
         initial={false}
         animate={inView ? 'animate' : 'initial'}
-      /> */}
+      />
     </>
   );
 };

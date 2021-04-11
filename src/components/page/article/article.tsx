@@ -19,6 +19,7 @@ import { projectIntroduction } from '../../../data/article/introduction';
 import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../lib/functions/scroll-top';
+import ArticleProgressBar from './article-progress-bar';
 
 const Article = ({
   categoryTitle,
@@ -134,6 +135,8 @@ const Article = ({
           )}
           <div ref={responseRef} />
 
+          {/* introduction에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
+          {router.pathname !== '/introduction' && <ArticleProgressBar />}
           <ArticleToolBar />
         </ArticleContainer>
       </Main>
