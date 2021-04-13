@@ -84,6 +84,7 @@ const FillEmptySpace = styled.div<isShowtype>`
   background-color: ${({ theme }) => theme.gray8};
 
   // 바뀌는 속성
+  // iOS 상단 투명한 공간 대비
   /* height: 80px; // 72 + 8px */
   height: 120px; // 72 + 48px
 

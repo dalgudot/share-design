@@ -117,8 +117,6 @@ const Article = ({
             </GoToFirstContent>
           )}
 
-          <ArticleNotice />
-
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
             <Response
@@ -129,6 +127,8 @@ const Article = ({
               setResponseLoading={setResponseLoading}
             />
           )}
+
+          <ArticleNotice />
 
           {referencesData && (
             <ArticleReference referencesData={referencesData} />

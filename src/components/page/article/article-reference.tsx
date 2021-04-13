@@ -36,6 +36,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 120px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 72px;
+  }
 `;
 
 const A = styled.a`

@@ -93,7 +93,7 @@ const Container = styled.div`
   align-items: center;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
 
-  margin-top: 96px;
+  margin-top: 120px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 72px;

@@ -110,10 +110,10 @@ const Response = ({
 export default Response;
 
 const Container = styled.div`
-  margin-top: 72px;
+  margin-top: 120px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 48px;
+    margin-top: 72px;
   }
 `;
 
