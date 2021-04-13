@@ -78,16 +78,18 @@ const FillEmptySpace = styled.div<isShowtype>`
   display: ${({ isShow }) => (isShow ? 'block' : 'none')};
   z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
   position: fixed;
-  top: -8px;
+  top: -48px;
   left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.gray8};
 
   // 바뀌는 속성
-  height: 80px; // 72 + 8px
+  /* height: 80px; // 72 + 8px */
+  height: 120px; // 72 + 48px
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 65px; // 57 + 8px
+    /* height: 65px; // 57 + 8px */
+    height: 105px; // 57 + 48px
   }
 `;
 
