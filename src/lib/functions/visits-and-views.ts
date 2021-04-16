@@ -30,6 +30,8 @@ const firebaseFetchSet = (route: string) => {
 };
 
 const when = useDate().when;
+const year = useDate().year;
+const month = useDate().month;
 
 // 방문자
 const VisitsDuringSession = () => {
@@ -42,8 +44,14 @@ const VisitsDuringSession = () => {
   firebaseFetchSet(`Number of Visitors/Total Visitors/${userBrowserLanguage}`);
   // E of 전체 방문자 수
 
+  // S of 월별 전체 방문자 수
+  firebaseFetchSet(`Number of Visitors/${year}/${month}/Total All`);
+  // E of 월별 전체 방문자 수
+
   // S of 날짜별 전체 방문자 수
-  firebaseFetchSet(`Number of Visitors/Total Visitors on ${when}`);
+  firebaseFetchSet(
+    `Number of Visitors/${year}/${month}/Total Visitors on ${when}`
+  );
   // E of 날짜별 전체 방문자 수
 
   sessionStorage.setItem('visitsDuringSession', 'yes');
@@ -57,8 +65,14 @@ const ViewsDuringSession = (where: string) => {
     firebaseFetchSet(`Number of Views/${where}/Total All`);
     // E of Index 전체 조회수
 
+    // S of 월별 전체 조회수
+    firebaseFetchSet(`Number of Views/${where}/${year}/${month}/Total All`);
+    // E of 월별 전체 조회수
+
     // S of Index 날짜별 전체 조회수
-    firebaseFetchSet(`Number of Views/${where}/Total on ${when}`);
+    firebaseFetchSet(
+      `Number of Views/${where}/${year}/${month}/Total on ${when}`
+    );
     // E of Index 날짜별 전체 조회수
   };
 
@@ -68,9 +82,15 @@ const ViewsDuringSession = (where: string) => {
     firebaseFetchSet('Number of Views/Article/000 All Articles/Total All');
     // E of Article 전체 조회수
 
+    // S of Article 월별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Article/000 All Articles/${year}/${month}/Total All`
+    );
+    // E of Article 월별 전체 조회수
+
     // S of Article 날짜별 전체 조회수
     firebaseFetchSet(
-      `Number of Views/Article/000 All Articles/Total on ${when}`
+      `Number of Views/Article/000 All Articles/${year}/${month}/Total on ${when}`
     );
     // E of Article 날짜별 전체 조회수
 
@@ -78,8 +98,16 @@ const ViewsDuringSession = (where: string) => {
     firebaseFetchSet(`Number of Views/Article/${where}/Total All`);
     // E of [각] Article 전체 조회수
 
+    // S of [각] Article 월별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Article/${where}/${year}/${month}/Total All`
+    );
+    // E of [각] Article 월별 전체 조회수
+
     // S of [각] Article 날짜별 조회수
-    firebaseFetchSet(`Number of Views/Article/${where}/Total on ${when}`);
+    firebaseFetchSet(
+      `Number of Views/Article/${where}/${year}/${month}/Total on ${when}`
+    );
     // E of [각] Article 날짜별 조회수
   };
 

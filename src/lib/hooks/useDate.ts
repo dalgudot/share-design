@@ -13,5 +13,5 @@ export const useDate = () => {
   const when: string = `${year}${month}${date}`;
   const whenResponse: string = `${year}.${month}.${date}`;
 
-  return { when, whenResponse };
+  return { year, month, date, when, whenResponse };
 };
