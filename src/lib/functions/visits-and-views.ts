@@ -37,11 +37,17 @@ const month = useDate().month;
 const VisitsDuringSession = () => {
   const userBrowserLanguage = navigator.language;
 
+  // S of 연도별 전체 방문자 수
+  firebaseFetchSet(`Number of Visitors/Total Visitors/Total All on ${year}`);
+  // E of 연도별 전체 방문자 수
+
   // S of 전체 방문자 수
   firebaseFetchSet('Number of Visitors/Total Visitors/Total All');
 
   // 브라우저 언어별 방문자 수
-  firebaseFetchSet(`Number of Visitors/Total Visitors/${userBrowserLanguage}`);
+  firebaseFetchSet(
+    `Number of Visitors/Total Visitors/userBrowserLanguage/${userBrowserLanguage}`
+  );
   // E of 전체 방문자 수
 
   // S of 월별 전체 방문자 수
@@ -61,6 +67,10 @@ const VisitsDuringSession = () => {
 const ViewsDuringSession = (where: string) => {
   // Index - Home & Contact
   const views = () => {
+    // S of Index 연도별 전체 조회수
+    firebaseFetchSet(`Number of Views/${where}/Total All on ${year}`);
+    // E of Index 연도별 전체 조회수
+
     // S of Index 전체 조회수
     firebaseFetchSet(`Number of Views/${where}/Total All`);
     // E of Index 전체 조회수
@@ -78,6 +88,12 @@ const ViewsDuringSession = (where: string) => {
 
   // Article
   const viewsArticle = () => {
+    // S of Article 연도별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Article/000 All Articles/Total All on ${year}`
+    );
+    // E of Article 연도별 전체 조회수
+
     // S of Article 전체 조회수
     firebaseFetchSet('Number of Views/Article/000 All Articles/Total All');
     // E of Article 전체 조회수
@@ -93,6 +109,12 @@ const ViewsDuringSession = (where: string) => {
       `Number of Views/Article/000 All Articles/${year}/${month}/Total on ${when}`
     );
     // E of Article 날짜별 전체 조회수
+
+    /////////////////////////////////////////////////////////////////////////////////
+
+    // S of [각] Article 연도별 전체 조회수
+    firebaseFetchSet(`Number of Views/Article/${where}/Total All on ${year}`);
+    // E of [각] Article 연도별 전체 조회수
 
     // S of [각] Article 전체 조회수
     firebaseFetchSet(`Number of Views/Article/${where}/Total All`);
