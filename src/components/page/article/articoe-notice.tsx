@@ -8,7 +8,6 @@ import PSmall400 from '../../../elements/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
-import { useEffect } from 'react';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // webkit 에러 해결
@@ -27,10 +26,8 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
       : 'https://apps.apple.com/kr/app/share-design/id1557230065?l=en';
 
   // console.log([ua.isMobile, ua.isIos]);
-  console.log(ua);
-  const { isMobile, isAndroid, isIos, isIpad, isIphone, isTablet, os } = ua;
-
-  console.log(isIpad);
+  // console.log(ua);
+  const { isAndroid, isIos } = ua;
 
   // const isIosMobileApp =
   //   !!window?.webkit?.messageHandlers?.IOS && isIos && isMobile;
@@ -63,7 +60,7 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
         </A>
       )}
 
-      {/* iOS or iPad인 경우 인스타그램 알림 빼기 */}
+      {/* iOS인 경우 인스타그램 알림 빼기 */}
       {isIos === false && (
         <A href="https://www.instagram.com/dalgu_dot/" target="_blank">
           <Title>
