@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
-import UIUXDesignContents1 from './ui-ux-design/1';
+import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
@@ -19,7 +19,7 @@ import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../lib/functions/scroll-top';
 import ArticleProgressBar from './article-progress-bar';
-import UIUXDesignContents2 from './ui-ux-design/2';
+import UIUXDesignContents2 from './ui-ux-design/2/2';
 
 const Article = ({
   categoryTitle,

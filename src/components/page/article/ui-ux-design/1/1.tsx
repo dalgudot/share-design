@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/1';
-import H2Title700 from '../../../../elements/typography/h2-title-700';
-import PMedium400 from '../../../../elements/typography/p-medium-400';
-import PSmall400 from '../../../../elements/typography/p-small-400';
-import { mediaBreakPoint } from '../../../../styles/common';
-import LangChangeButton from '../../../header/lang-change-button';
-import LangChangeToggle from '../../../header/lang-change-toggle';
-import ArticleCommonImage from '../article-common-image';
+import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
+import H2Title700 from '../../../../../elements/typography/h2-title-700';
+import PMedium400 from '../../../../../elements/typography/p-medium-400';
+import PSmall400 from '../../../../../elements/typography/p-small-400';
+import { mediaBreakPoint } from '../../../../../styles/common';
+import LangChangeButton from '../../../../header/lang-change-button';
+import LangChangeToggle from '../../../../header/lang-change-toggle';
+import ArticleCommonImage from '../../article-common-image';
 
 const UIUXDesignContents1 = ({
   contentsArray,

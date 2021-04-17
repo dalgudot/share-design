@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
-import { stagger } from '../../../../elements/framer-motion/variants';
-import H2Title700 from '../../../../elements/typography/h2-title-700';
-import PMedium400 from '../../../../elements/typography/p-medium-400';
-import PMedium700 from '../../../../elements/typography/p-medium-700';
-import PSmall400 from '../../../../elements/typography/p-small-400';
-import PSmall700 from '../../../../elements/typography/p-small-700';
-import { useWindowHeight } from '../../../../lib/hooks/useWindowHeight';
-import { mediaBreakPoint } from '../../../../styles/common';
-import ArticleCommonImage from '../article-common-image';
+import { stagger } from '../../../../../elements/framer-motion/variants';
+import H2Title700 from '../../../../../elements/typography/h2-title-700';
+import PMedium400 from '../../../../../elements/typography/p-medium-400';
+import PSmall700 from '../../../../../elements/typography/p-small-700';
+import { useWindowHeight } from '../../../../../lib/hooks/useWindowHeight';
+import { mediaBreakPoint } from '../../../../../styles/common';
+import ArticleCommonImage from '../../article-common-image';
+import KoodonWriteReview from './koodon-write-review';
 
 const UIUXDesignContents2 = ({
   contentsArray,
@@ -17,7 +16,7 @@ const UIUXDesignContents2 = ({
   contentsArray: object[];
 }) => {
   const { ref, inView, entry } = useInView({
-    /* Optional options */
+    /* options */
     threshold: 0,
   });
   const listCount = [
@@ -91,22 +90,55 @@ const UIUXDesignContents2 = ({
       <ListLine height={height} />
 
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[7]}
         color="gray3"
       />
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[8]}
         color="gray3"
         marginTop="36px"
       />
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[9]}
+        color="gray3"
+        marginTop="36px"
+      />
+
+      <ListLine height={height} />
+      <KoodonWriteReview />
+      <ListLine height={height} />
+
+      <PMedium400 //
+        text={contentsArray[10]}
         color="gray3"
         marginTop="36px"
       />
 
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[11]}
+        color="gray3"
+        marginTop="36px"
+      />
+
+      <H2Title700 //
+        text={contentsArray[12]}
+        color="gray2"
+        marginTop="120px"
+      />
+
+      <PMedium400 //
+        text={contentsArray[13]}
+        color="gray3"
+        marginTop="36px"
+      />
+      <PMedium400 //
+        text={contentsArray[14]}
+        color="gray3"
+        marginTop="36px"
+      />
+
+      <PMedium400 //
+        text={contentsArray[15]}
         color="gray3"
         marginTop="36px"
       />
@@ -158,8 +190,8 @@ const MotionLi = styled(motion.li)`
   align-items: center;
 
   // 바뀌는 속성
-  max-width: 480px;
-  height: 104px;
+  max-width: 400px;
+  height: 120px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     max-width: 300px;
@@ -167,19 +199,24 @@ const MotionLi = styled(motion.li)`
   }
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    margin-left: 24px;
+    margin-left: 36px;
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
       width: 36px;
       height: 36px;
+      margin-left: 24px;
     }
   }
 
   p {
-    margin-left: 12px;
+    margin-left: 16px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin-left: 12px;
+    }
   }
 `;
 
@@ -202,21 +239,3 @@ const listVariants = {
     },
   },
 };
-
-const FigureWrap = styled.figure`
-  margin: 96px auto 0;
-  text-align: center;
-  max-width: 380px;
-
-  .example__lang_change_toggle {
-    display: flex;
-    justify-content: center;
-
-    // 바뀌는 속성
-    margin-right: 28px; // 중앙으로 보이도록 시각 보정
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin-right: 20px; // 중앙으로 보이도록 시각 보정
-    }
-  }
-`;
