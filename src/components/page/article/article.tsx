@@ -10,7 +10,6 @@ import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1';
-import InteractionDesignContents1 from './interaction-design/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
@@ -20,6 +19,7 @@ import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../lib/functions/scroll-top';
 import ArticleProgressBar from './article-progress-bar';
+import UIUXDesignContents2 from './ui-ux-design/2';
 
 const Article = ({
   categoryTitle,
@@ -81,8 +81,8 @@ const Article = ({
         return <IntroductionContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
-      case '/article/interaction-design/1':
-        return <InteractionDesignContents1 contentsArray={contentsArray} />;
+      case '/article/ui-ux-design/2':
+        return <UIUXDesignContents2 contentsArray={contentsArray} />;
     }
   };
   const contents = contentsSwitch();

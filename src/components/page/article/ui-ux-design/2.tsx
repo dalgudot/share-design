@@ -1,10 +1,4 @@
-import {
-  motion,
-  useElementScroll,
-  useTransform,
-  useViewportScroll,
-} from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { stagger } from '../../../../elements/framer-motion/variants';
@@ -12,8 +6,9 @@ import H2Title700 from '../../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../../elements/typography/p-medium-400';
 import PSmall400 from '../../../../elements/typography/p-small-400';
 import { mediaBreakPoint } from '../../../../styles/common';
+import ArticleCommonImage from '../article-common-image';
 
-const InteractionDesignContents1 = ({
+const UIUXDesignContents2 = ({
   contentsArray,
 }: {
   contentsArray: object[];
@@ -23,16 +18,6 @@ const InteractionDesignContents1 = ({
     threshold: 0,
   });
 
-  // const { scrollYProgress } = useViewportScroll();
-
-  // const listRef = useRef(null);
-  // const { scrollYProgress } = useElementScroll(listRef);
-
-  // useTransform(value, inputRange, outputRange, options): MotionValue<O>
-  // https://www.framer.com/api/motion/motionvalue/#motionvalue-api
-  // const scale = useTransform(scrollYProgress, [0, 0.7], [0.2, 1]);
-  // console.log(scale);
-
   return (
     <>
       <PMedium400 //
@@ -40,18 +25,33 @@ const InteractionDesignContents1 = ({
         color="gray3"
         marginTop="36px"
       />
+
+      <ArticleCommonImage
+        src={contentsArray[1]}
+        caption={contentsArray[2]}
+        marginTop="36px"
+      />
+
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[3]}
+        color="gray3"
+        marginTop="96px"
+      />
+
+      <PMedium400 //
+        text={contentsArray[4]}
         color="gray3"
         marginTop="36px"
       />
+
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[5]}
         color="gray3"
         marginTop="36px"
       />
+
       <PMedium400 //
-        text={contentsArray[0]}
+        text={contentsArray[6]}
         color="gray3"
         marginTop="36px"
       />
@@ -83,32 +83,6 @@ const InteractionDesignContents1 = ({
         marginTop="36px"
       />
 
-      {/* <motion.ul
-        variants={stagger}
-        initial={false}
-        animate="animate"
-        style={{ overflow: 'scroll' }}
-      >
-        <MotionList
-          variants={listVariants2}
-          style={{
-            scaleX: scrollYProgress,
-          }}
-        />
-        <MotionList
-          variants={listVariants2}
-          style={{
-            scaleX: scrollYProgress,
-          }}
-        />
-        <MotionList
-          variants={listVariants2}
-          style={{
-            scaleX: scrollYProgress,
-          }}
-        />
-      </motion.ul> */}
-
       <PMedium400 //
         text={contentsArray[0]}
         color="gray3"
@@ -118,7 +92,7 @@ const InteractionDesignContents1 = ({
   );
 };
 
-export default InteractionDesignContents1;
+export default UIUXDesignContents2;
 
 const MotionList = styled(motion.li)`
   width: 100%;
@@ -132,41 +106,21 @@ const smoothTransition = { ease: [0.43, 0.13, 0.23, 0.96] };
 
 const listVariants = {
   initial: {
-    y: 12,
+    y: 16,
     scale: 0,
     opacity: 0,
-    // rotateX: 90,
+    rotateX: 135,
   },
 
   animate: {
     y: 0,
     scale: 1,
     opacity: 1,
-    // rotateX: 0,
+    rotateX: 0,
     transition: {
       duration: 1,
       smoothTransition,
     },
-  },
-};
-
-const listVariants2 = {
-  initial: {
-    // y: 0,
-    // scale: 0,
-    opacity: 0.5,
-    // rotateX: 90,
-  },
-
-  animate: {
-    // y: 36,
-    // scale: 1,
-    opacity: 1,
-    // rotateX: 0,
-    // transition: {
-    //   duration: 1,
-    //   smoothTransition,
-    // },
   },
 };
 
