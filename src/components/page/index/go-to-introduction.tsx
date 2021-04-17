@@ -42,7 +42,7 @@ type ComingSoonLineType = {
   height: number;
 };
 
-// 배열 길이에 따라 길이가 달라지는 선분
+// 화면 세로 길이에 따라 길이가 달라지는 선분
 const ComingSoonLine = styled.span<ComingSoonLineType>`
   width: 1px;
   height: ${({ height }) => height * 0.45}px;
