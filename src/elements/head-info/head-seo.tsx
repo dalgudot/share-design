@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 import { responseInfo } from './article/response';
 import { uiUxDesign1Info } from './article/ui-ux-design/1-info';
+import { uiUxDesign2Info } from './article/ui-ux-design/2-info';
 import { contactInfo } from './index/contact-info';
 import { indexInfo } from './index/index-info';
 import { introductionInfo } from './index/introduction-info';
@@ -21,6 +22,8 @@ const HeadSEO = () => {
         return introductionInfo;
       case '/article/ui-ux-design/1':
         return uiUxDesign1Info;
+      case '/article/ui-ux-design/1':
+        return uiUxDesign2Info;
       case '/article/[category]/[id]/write-response':
         return responseInfo;
 

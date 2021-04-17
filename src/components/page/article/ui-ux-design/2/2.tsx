@@ -21,15 +21,15 @@ const UIUXDesignContents2 = ({
   });
   const listCount = [
     {
-      src: '/images/ui-ux-design/002/1.jpg',
+      src: '/images/ui-ux-design/002/1@3x.jpg',
       photoSrc: { k: 'davisuko on Unsplash', e: 'davisuko on Unsplash' },
     },
     {
-      src: '/images/ui-ux-design/002/2.jpg',
+      src: '/images/ui-ux-design/002/2@3x.jpg',
       photoSrc: { k: 'Oleg Laptev on Unsplash', e: 'Oleg Laptev on Unsplash' },
     },
     {
-      src: '/images/ui-ux-design/002/3.jpg',
+      src: '/images/ui-ux-design/002/3@3x.jpg',
       photoSrc: { k: 'Mae Mu on Unsplash', e: 'Mae Mu on Unsplash' },
     },
   ];
@@ -199,8 +199,8 @@ const MotionLi = styled(motion.li)`
   }
 
   img {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     margin-left: 36px;
 
