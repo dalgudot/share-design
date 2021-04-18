@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PMedium400 from '../../../elements/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import H2Title700 from '../../../elements/typography/h2-title-700';
-import IconLanguageFill24 from '../../../elements/svg/icon_language_fill_24';
 import PSmall400 from '../../../elements/typography/p-small-400';
+import { motion } from 'framer-motion';
 
 const List = ({
   url,
@@ -13,6 +13,8 @@ const List = ({
   dateTime,
   title,
   summary,
+  marginTop,
+  children,
 }: {
   url: string;
   category: object;
@@ -20,16 +22,25 @@ const List = ({
   dateTime: string;
   title: object;
   summary: object;
+  marginTop?: string;
+  // https://www.carlrippon.com/react-children-with-typescript/
+  children: JSX.Element;
 }) => {
   return (
-    <Li>
+    <MotionLi //
+      variants={liVariants}
+      // whileHover="whileHover"
+      whileTap="whileTap"
+      marginTop={marginTop}
+    >
       <Link href={url}>
         <a>
+          {/* 이미지 영역 */}
           <div className="image__area__wrap">
-            <div className="image__area">
-              <IconLanguageFill24 />
-            </div>
+            <div className="image__area">{children}</div>
           </div>
+
+          {/* 메타 정보 영역 */}
           <CategoryDateArea>
             <PSmall400 text={category} color="gray4" />
             <span />
@@ -37,6 +48,8 @@ const List = ({
               <PSmall400 text={date} color="gray4" />
             </time>
           </CategoryDateArea>
+
+          {/* 제목 및 요약 영역 */}
           <H2Title700 //
             text={title}
             color="gray1"
@@ -50,13 +63,21 @@ const List = ({
           />
         </a>
       </Link>
-    </Li>
+    </MotionLi>
   );
 };
 
 export default List;
 
-const Li = styled.li`
+const liVariants = {
+  whileHover: {
+    scale: 1.02,
+  },
+
+  whileTap: { scale: 0.98 },
+};
+
+const MotionLi = styled(motion.li)<{ marginTop?: string }>`
   width: 100%; /* 원하는 너비 */
   max-width: ${({ theme }) => theme.maxWidth.List};
   margin: 0 auto;
@@ -67,6 +88,9 @@ const Li = styled.li`
     background-color: ${({ theme }) => theme.gray7__40};
     border: solid 1px ${({ theme }) => theme.gray7};
     border-radius: ${({ theme }) => theme.borderRadius.R13};
+
+    // 리스트 사이의 간격
+    margin-top: ${({ marginTop }) => marginTop};
   }
   .image__area__wrap:before {
     content: '';
@@ -80,7 +104,6 @@ const Li = styled.li`
     right: 0;
     bottom: 0;
     left: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;

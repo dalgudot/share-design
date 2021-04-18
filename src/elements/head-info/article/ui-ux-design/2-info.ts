@@ -13,8 +13,8 @@ export const uiUxDesign2Info = {
 
   // Aricle마다 다른 이미지
   thumbnail: {
-    k: '/images/og_image_ko.jpg',
-    e: '/images/og_image_en.jpg',
+    k: '/images/ui-ux-design/002/og_image_koog_image_ko.jpg',
+    e: '/images/ui-ux-design/002/og_image_koog_image_en.jpg',
   },
 
   description: {

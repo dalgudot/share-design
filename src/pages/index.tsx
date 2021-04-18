@@ -7,6 +7,8 @@ import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
 import List from '../components/page/index/list';
 import { articleData } from '../data/article-data';
+import IconLanguage169 from '../elements/svg/icon_language_16_9';
+import IconMotion169 from '../elements/svg/icon_motion_16_9';
 
 const Index = () => {
   useEffect(() => {
@@ -19,13 +21,26 @@ const Index = () => {
       <Main>
         <ul>
           <List
+            url={data[1].url}
+            category={data[1].category}
+            date={data[1].date}
+            dateTime={data[1].dateTime}
+            title={data[1].title}
+            summary={data[1].summary}
+          >
+            <IconMotion169 />
+          </List>
+          <List
             url={data[0].url}
             category={data[0].category}
             date={data[0].date}
             dateTime={data[0].dateTime}
             title={data[0].title}
             summary={data[0].summary}
-          />
+            marginTop="72px"
+          >
+            <IconLanguage169 />
+          </List>
           <GotoIntroduction />
         </ul>
         <ShareToolBar />

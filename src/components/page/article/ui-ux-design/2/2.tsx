@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
+import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../elements/framer-motion/variants';
 import H2Title700 from '../../../../../elements/typography/h2-title-700';
 import PMedium400 from '../../../../../elements/typography/p-medium-400';
 import PSmall700 from '../../../../../elements/typography/p-small-700';
+import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../../../lib/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import ArticleCommonImage from '../../article-common-image';
@@ -19,20 +21,7 @@ const UIUXDesignContents2 = ({
     /* options */
     threshold: 0,
   });
-  const listCount = [
-    {
-      src: '/images/ui-ux-design/002/1@3x.jpg',
-      photoSrc: { k: 'davisuko on Unsplash', e: 'davisuko on Unsplash' },
-    },
-    {
-      src: '/images/ui-ux-design/002/2@3x.jpg',
-      photoSrc: { k: 'Oleg Laptev on Unsplash', e: 'Oleg Laptev on Unsplash' },
-    },
-    {
-      src: '/images/ui-ux-design/002/3@3x.jpg',
-      photoSrc: { k: 'Mae Mu on Unsplash', e: 'Mae Mu on Unsplash' },
-    },
-  ];
+  const listCount = uiUxDesign2().listCount;
   const height: number = useWindowHeight();
 
   return (
@@ -81,8 +70,11 @@ const UIUXDesignContents2 = ({
         animate={inView === true ? 'animate' : 'initial'}
       >
         {listCount.map((value) => (
-          <MotionLi key={value.src} variants={listVariants}>
-            <img src={value.src} />
+          <MotionLi //
+            key={value.src}
+            variants={listVariants}
+          >
+            <img src={value.src} alt={useSetLanguage(value.alt)} />
             <PSmall700 text={value.photoSrc} color="gray3" />
           </MotionLi>
         ))}
@@ -234,7 +226,7 @@ const listVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.9,
+      duration: 0.8,
       smoothTransition,
     },
   },

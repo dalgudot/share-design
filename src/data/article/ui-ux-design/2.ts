@@ -20,8 +20,10 @@ export const uiUxDesign2 = () => {
     },
 
     summary: {
-      k: '',
-      e: '',
+      k:
+        "앱이나 웹 같은 디지털 프로덕트(Digital Product, 이하 프로덕트)에서 모션(Motion, 움직임)은 사용자의 시선을 끌거나, 사용자가 한 행동에 반응을 보여주는 좋은 방법이다. UI(User Interface, 사용자 인터페이스)를 사용자와 소통하도록 디자인하는 '인터랙션 디자인(Interaction Design)'의 방법론 중 하나로 볼 수 있다.",
+      e:
+        "In a digital product such as an app or the web, motion is a great way to grab a user's attention or show a reaction to a user's actions. It can be seen as one of the methodologies of 'Interaction Design', which designs UI(User Interface) to communicate with users.",
     },
 
     references: [
@@ -64,6 +66,19 @@ export const uiUxDesign2 = () => {
             'Visual primitives for the component age. Use the best bits of ES6 and CSS...',
         },
       },
+      {
+        url: 'https://webgradients.com/',
+        title: {
+          k: 'WebGradients',
+          e: 'WebGradients',
+        },
+        content: {
+          k:
+            'WebGradients is a free collection of 180 linear gradients that you can use as content backdrops...',
+          e:
+            'WebGradients is a free collection of 180 linear gradients that you can use as content backdrops...',
+        },
+      },
     ],
 
     koodonReviewText: [
@@ -77,6 +92,36 @@ export const uiUxDesign2 = () => {
       },
     ],
 
+    listCount: [
+      {
+        src: '/images/ui-ux-design/002/1@3x.jpg',
+        alt: {
+          k: 'Unsplash의 davisuko의 사진',
+          e: 'Photo by davisuko on Unsplash',
+        },
+        photoSrc: { k: 'davisuko on Unsplash', e: 'davisuko on Unsplash' },
+      },
+      {
+        src: '/images/ui-ux-design/002/2@3x.jpg',
+        alt: {
+          k: ' Unsplash의 Oleg Laptev의 사진',
+          e: 'Photo by Oleg Laptev on Unsplash',
+        },
+        photoSrc: {
+          k: 'Oleg Laptev on Unsplash',
+          e: 'Oleg Laptev on Unsplash',
+        },
+      },
+      {
+        src: '/images/ui-ux-design/002/3@3x.jpg',
+        alt: {
+          k: 'Unsplash의 Mae Mu의 사진',
+          e: 'Photo by Mae Mu on Unsplash',
+        },
+        photoSrc: { k: 'Mae Mu on Unsplash', e: 'Mae Mu on Unsplash' },
+      },
+    ],
+
     contents: [
       {
         k:
@@ -85,11 +130,11 @@ export const uiUxDesign2 = () => {
           "In a digital product such as an app or the web, motion is a great way to grab a user's attention or show a reaction to a user's actions. It can be seen as one of the methodologies of 'Interaction Design', which designs UI(User Interface) to communicate with users.",
       },
       {
-        k: '/images/ui-ux-design/001/img__01__ko.png',
-        e: '/images/ui-ux-design/001/img__01__en.png',
+        k: '/images/ui-ux-design/002/img__thumbnail.jpg',
+        e: '/images/ui-ux-design/002/img__thumbnail.jpg',
       },
       {
-        k: '캡션',
+        k: '',
         e: '',
       },
       {

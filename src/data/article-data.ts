@@ -1,4 +1,5 @@
 import { uiUxDesign1 } from './article/ui-ux-design/1';
+import { uiUxDesign2 } from './article/ui-ux-design/2';
 
 export const articleData = () => {
   return [
@@ -10,6 +11,13 @@ export const articleData = () => {
       title: uiUxDesign1().title,
       summary: uiUxDesign1().summary,
     },
-    // 추후 추가
+    {
+      url: uiUxDesign2().url,
+      category: uiUxDesign2().category,
+      date: uiUxDesign2().date,
+      dateTime: uiUxDesign2().dateTime,
+      title: uiUxDesign2().title,
+      summary: uiUxDesign2().summary,
+    },
   ];
 };

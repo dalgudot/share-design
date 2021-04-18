@@ -83,6 +83,19 @@ export const uiUxDesign1 = () => {
             'Visual primitives for the component age. Use the best bits of ES6 and CSS...',
         },
       },
+      {
+        url: 'https://webgradients.com/',
+        title: {
+          k: 'WebGradients',
+          e: 'WebGradients',
+        },
+        content: {
+          k:
+            'WebGradients is a free collection of 180 linear gradients that you can use as content backdrops...',
+          e:
+            'WebGradients is a free collection of 180 linear gradients that you can use as content backdrops...',
+        },
+      },
     ],
 
     contents: [

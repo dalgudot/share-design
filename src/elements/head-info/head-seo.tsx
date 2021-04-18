@@ -26,7 +26,6 @@ const HeadSEO = () => {
         return uiUxDesign2Info;
       case '/article/[category]/[id]/write-response':
         return responseInfo;
-
       default:
         return indexInfo;
     }

@@ -42,6 +42,7 @@ const KoodonWriteReview = () => {
             >
               <IconStar48Fill
                 idx={idx}
+                starAnimation={starAnimation}
                 starCount={starCount}
                 setStarCount={setStarCount}
               />
