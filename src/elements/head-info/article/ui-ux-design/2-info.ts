@@ -13,12 +13,14 @@ export const uiUxDesign2Info = {
 
   // Aricle마다 다른 이미지
   thumbnail: {
-    k: '/images/ui-ux-design/002/og_image_koog_image_ko.jpg',
-    e: '/images/ui-ux-design/002/og_image_koog_image_en.jpg',
+    k: '/images/ui-ux-design/002/og_image_ko.jpg',
+    e: '/images/ui-ux-design/002/og_image_ko.jpg',
   },
 
   description: {
-    k: '',
-    e: '',
+    k:
+      "앱이나 웹 같은 디지털 프로덕트(Digital Product, 이하 프로덕트)에서 모션(Motion, 움직임)은 사용자의 시선을 끌거나, 사용자가 한 행동에 반응을 보여주는 좋은 방법이다. UI(User Interface, 사용자 인터페이스)를 사용자와 소통하도록 디자인하는 '인터랙션 디자인(Interaction Design)'의 방법론 중 하나로 볼 수 있다.",
+    e:
+      "In a digital product like apps or webs, motion is a great way to grab a user's attention or show a reaction to a user's actions. It can be seen as one of the methodologies of 'Interaction Design', which designs UI(User Interface) to communicate with users.",
   },
 };

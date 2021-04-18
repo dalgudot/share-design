@@ -41,7 +41,7 @@ const UIUXDesignContents2 = ({
       <PMedium400 //
         text={contentsArray[3]}
         color="gray3"
-        marginTop="96px"
+        marginTop="36px"
       />
 
       <PMedium400 //
@@ -121,7 +121,7 @@ const UIUXDesignContents2 = ({
       <PMedium400 //
         text={contentsArray[13]}
         color="gray3"
-        marginTop="36px"
+        marginTop="24px"
       />
       <PMedium400 //
         text={contentsArray[14]}

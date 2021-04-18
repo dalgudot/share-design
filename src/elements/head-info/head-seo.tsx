@@ -22,7 +22,7 @@ const HeadSEO = () => {
         return introductionInfo;
       case '/article/ui-ux-design/1':
         return uiUxDesign1Info;
-      case '/article/ui-ux-design/1':
+      case '/article/ui-ux-design/2':
         return uiUxDesign2Info;
       case '/article/[category]/[id]/write-response':
         return responseInfo;
