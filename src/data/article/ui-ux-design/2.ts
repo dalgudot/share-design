@@ -79,6 +79,59 @@ export const uiUxDesign2 = () => {
             'WebGradients is a free collection of 180 linear gradients that you can use as content backdrops...',
         },
       },
+      {
+        url:
+          'http://uidesignguides.com/%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%97%90-%EB%AA%A8%EC%85%98%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%98%EB%8A%94-5%EB%8B%A8%EA%B3%84/',
+        title: {
+          k: '디자인 시스템에 모션을 적용하는 5단계',
+          e: '디자인 시스템에 모션을 적용하는 5단계',
+        },
+        content: {
+          k:
+            'UI에서 모션은 멋있어 보이는 효과 말고도 다음과 같은 방식으로 사용자 경험에 도움이...',
+          e:
+            'UI에서 모션은 멋있어 보이는 효과 말고도 다음과 같은 방식으로 사용자 경험에 도움이...',
+        },
+      },
+      {
+        url: 'https://brunch.co.kr/@lain/2',
+        title: {
+          k: '모션으로 사용성 만들기 : 모션 선언문의 UX',
+          e: '모션으로 사용성 만들기 : 모션 선언문의 UX',
+        },
+        content: {
+          k:
+            "이 글은 '디자이너들이 모션의 사용성을 확인할 때 어떤 것을 고려해야 할까'라는 질문에 대한 답이 될 수 있...",
+          e:
+            "이 글은 '디자이너들이 모션의 사용성을 확인할 때 어떤 것을 고려해야 할까'라는 질문에 대한 답이 될 수 있...",
+        },
+      },
+      {
+        url: 'https://chaeyeon-chaeyeon.tistory.com/13#contents_7',
+        title: {
+          k: '모션 UI 디자인 스타일(기법) 명칭 정리하기',
+          e: '모션 UI 디자인 스타일(기법) 명칭 정리하기',
+        },
+        content: {
+          k:
+            '최근 들어 뜨고 있는 UI 기법 중 하나로 UI 요소들에 모션을 적용해 전체적인 디자인을 더 풍성하게 만들고...',
+          e:
+            '최근 들어 뜨고 있는 UI 기법 중 하나로 UI 요소들에 모션을 적용해 전체적인 디자인을 더 풍성하게 만들고...',
+        },
+      },
+      {
+        url: 'http://koreawebdesign.com/motion-ui-design-201609/',
+        title: {
+          k: '모션감이 센스 돋보이는 UI 32개',
+          e: '모션감이 센스 돋보이는 UI 32개',
+        },
+        content: {
+          k:
+            '플랫한 UI들이 자리잡은지 오래이고 이제는 더욱 심플하기 위해 라인 UI들이 대세를 이룰 정도로 많이 보입니...',
+          e:
+            '플랫한 UI들이 자리잡은지 오래이고 이제는 더욱 심플하기 위해 라인 UI들이 대세를 이룰 정도로 많이 보입니...',
+        },
+      },
     ],
 
     koodonReviewText: [

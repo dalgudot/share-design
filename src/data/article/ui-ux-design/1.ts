@@ -157,7 +157,7 @@ export const uiUxDesign1 = () => {
         k:
           '사용자의 행동에 반응하는 UI 요소의 문구는 사용자의 행동에 UI가 어떤 반응을 보일지 알려주는 문구를 쓰는 게 좋은 UX를 만드는 사용자 중심 글쓰기(UX Writing)라 생각한다.',
         e:
-          "I think that writing a text that tells how the UI will react to the user's actions is a user-centered writing(UX Writing) that makes a good UX in the case of the text of the UI element that responds to the user's actions",
+          "I think that writing a text that tells how the UI will react to the user's actions is a user-centered writing(UX Writing) that makes a good UX in the case of the text of the UI element that responds to the user's actions.",
       },
 
       {
@@ -175,7 +175,7 @@ export const uiUxDesign1 = () => {
         k:
           '최초의 언어 전환 토글 버튼의 넓은 면적이 사용자의 시선을 끌어 헤더 아래쪽에 있는 콘텐츠로 시선이 가는 걸 방해한다고 판단했다.',
         e:
-          "I judgeed that the large area of the first language switch toggle button grabs the user's attention and hinders the gaze from going to the content under the header.",
+          "I judged that the large area of the first language switch toggle button grabs the user's attention and hinders the gaze from going to the content under the header.",
       },
       {
         k: '최종 언어 전환 토글 버튼 디자인은?',
