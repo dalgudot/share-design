@@ -13,6 +13,11 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* iOS top safe area */
+  /* top은 여기서 모두 먹지만, bottom은 각각 해줘야. */
+  margin-top: calc(env(safe-area-inset-top));
+  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
 }
 
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */

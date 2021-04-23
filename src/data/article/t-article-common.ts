@@ -67,8 +67,8 @@ export const tArticleCommon = () => {
 
     articleNotice: {
       iOSAPPDownload: {
-        k: '디자인 공유하기 iOS 앱 다운받기',
-        e: "Download the iOS app 'SHARE DESIGN'",
+        k: 'iOS 앱 다운받기',
+        e: 'Download the iOS app',
       },
 
       iOSAPPDownloadContents: [

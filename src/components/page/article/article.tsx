@@ -153,6 +153,10 @@ const Main = styled.main`
   display: flex;
   justify-content: center;
 
+  /* iOS top safe area */
+  /* margin-top: calc(env(safe-area-inset-top)); */
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }

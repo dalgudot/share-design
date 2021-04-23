@@ -37,8 +37,14 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 120px;
 
+  // iOS bottom safe area
+  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 96px;
+
+    // iOS bottom safe area
+    /* margin-bottom: calc(env(safe-area-inset-bottom)); */
   }
 `;
 

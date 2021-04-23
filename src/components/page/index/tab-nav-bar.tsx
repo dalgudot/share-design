@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
 import TabHome24 from '../../../elements/svg/tab_home_24';
 import TabContact24 from '../../../elements/svg/tab_contact_24';
-import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import Router, { useRouter } from 'next/router';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 
@@ -37,8 +36,6 @@ const TabNavBar = () => {
   useMyRipple(homeRef, 500, 2200);
   useMyRipple(contactRef, 500, 2200);
 
-  const width: number = useWindowWidth();
-
   return (
     <>
       <Nav isShow={isShow}>
@@ -65,6 +62,10 @@ const Nav = styled.nav<isShowType>`
   z-index: ${({ theme }) => theme.zIndex.Bar};
   position: fixed;
 
+  // iOS bottom safe area
+  margin-top: calc(env(safe-area-inset-top));
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   // 바뀌는 속성
   justify-content: space-between;
   width: 124px;
@@ -87,6 +88,9 @@ const Nav = styled.nav<isShowType>`
     align-items: center;
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray8};
+
+    // iOS bottom safe area
+    margin-bottom: calc(env(safe-area-inset-bottom));
   }
 `;
 
@@ -116,15 +120,24 @@ const FillEmptySpace = styled.div<isShowType>`
   // 바뀌는 속성
   /* height: 80px; // 72 + 8px */
 
+  // iOS bottom safe area
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     display: ${({ isShow }) => (isShow ? 'block' : 'none')};
     position: fixed;
     z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
-    bottom: -8px;
+    /* bottom: -8px; */
+    bottom: -42px; // -8 -34
     left: 0;
     width: 100%;
-    height: 56px; // 48 + 8px
+    // 48 + 8px
+    /* height: 56px; */
+    height: 90px; // 56 + 34
     background-color: ${({ theme }) => theme.gray8};
+
+    // iOS bottom safe area
+    padding-bottom: calc(env(safe-area-inset-bottom));
   }
 `;
 

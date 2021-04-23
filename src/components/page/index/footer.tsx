@@ -34,7 +34,17 @@ const FooterContainer = styled.footer`
   width: 100%;
   margin: 72px auto 105px;
 
+  // iOS bottom safe area
+  padding-bottom: calc(env(safe-area-inset-bottom));
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 72px auto 73px; // Bottom: 48px + 1px + '24px'
+    // Bottom: 48px + 1px + '24px'
+    margin: 72px auto 73px;
+    // Bottom: 48px + 1px + '36px'
+    // 아이폰 하단 Home indicator 대응 위해 하단 마진 높게
+    /* margin: 72px auto 109px; */
+
+    // iOS bottom safe area
+    padding-bottom: calc(env(safe-area-inset-bottom));
   }
 `;

@@ -54,9 +54,15 @@ const HeadSEO = () => {
       <link rel="alternate" hrefLang="en" href={info.url.e} />
 
       {/* 모바일 대응 meta tag */}
-      <meta
+      {/* <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      /> */}
+
+      {/* 모바일 대응 meta tag, viewport-fit=cover 는 아이폰 Safe-Area 대응 가능*/}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
       />
 
       {/* Google Search Console URL 접두어, 소유권 확인 */}
@@ -70,6 +76,8 @@ const HeadSEO = () => {
         name="naver-site-verification"
         content="b76a6acf796165dd21c2cac5a49675397ce9386c"
       />
+
+      <meta charSet="utf-8" />
 
       <title>{useSetLanguage(info.title)}</title>
       <meta name="author" content={useSetLanguage(author)} />

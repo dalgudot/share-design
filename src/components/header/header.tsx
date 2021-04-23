@@ -47,6 +47,9 @@ const HeaderContainer = styled.header<isShowtype>`
   justify-content: space-between;
   align-items: center;
 
+  // iOS top safe area
+  margin-top: calc(env(safe-area-inset-top));
+
   position: fixed;
   top: 0;
   left: 0;
@@ -82,6 +85,9 @@ const FillEmptySpace = styled.div<isShowtype>`
   left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.gray8};
+
+  // iOS top safe area
+  margin-top: calc(env(safe-area-inset-top));
 
   // 바뀌는 속성
   // iOS 상단 투명한 공간 대비

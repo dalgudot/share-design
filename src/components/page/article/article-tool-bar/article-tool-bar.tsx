@@ -32,9 +32,15 @@ const ArticleToolBarContainer = styled.div`
   // 바뀌는 요소
   height: 56px;
 
+  // iOS bottom safe area
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     /* justify-content: space-evenly; */
     height: 48px;
+
+    // iOS bottom safe area
+    margin-bottom: calc(env(safe-area-inset-bottom));
   }
 `;
 
@@ -42,13 +48,22 @@ const FillEmptySpace = styled.div`
   // 바뀌는 속성
   /* height: 80px; // 72 + 8px */
 
+  // iOS bottom safe area
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
     position: fixed;
     z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
-    bottom: -8px;
+    /* bottom: -8px; */
+    bottom: -42px; // -8 -34
     left: 0;
     width: 100%;
-    height: 56px; // 48 + 8px
+    // 48 + 8px
+    /* height: 56px; */
+    height: 90px; // 56 + 34
     background-color: ${({ theme }) => theme.gray8};
+
+    // iOS bottom safe area
+    margin-bottom: calc(env(safe-area-inset-bottom));
   }
 `;

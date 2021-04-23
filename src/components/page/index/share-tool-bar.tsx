@@ -27,6 +27,9 @@ const ShareToolBarContainer = styled.div`
   border-top: solid 1px ${({ theme }) => theme.gray7};
   background-color: ${({ theme }) => theme.gray8};
 
+  // iOS bottom safe area
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   // 바뀌는 요소
   display: flex;
   height: 56px;
@@ -34,5 +37,8 @@ const ShareToolBarContainer = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     display: none;
     height: 48px;
+
+    // iOS bottom safe area
+    margin-bottom: calc(env(safe-area-inset-bottom));
   }
 `;
