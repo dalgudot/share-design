@@ -22,8 +22,8 @@ export const t = {
   },
 
   myJob: {
-    k: 'UI/UX 디자이너',
-    e: 'UI/UX Designer',
+    k: '프로덕트 디자이너',
+    e: 'Product Designer',
   },
 
   myEmail: {
