@@ -39,6 +39,9 @@ body {
   -ms-overflow-style: none;
   /* Firefox */
   scrollbar-width: none;
+
+  /* iOS top safe area */
+  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
 }
 
 * {
