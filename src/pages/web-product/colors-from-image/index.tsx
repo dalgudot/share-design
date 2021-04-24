@@ -28,7 +28,7 @@ const Index = ({ showToast }: { showToast: Function }) => {
           imageRef={imageRef}
           image={image}
         />
-        <ShareToolBar />
+        {/* <ShareToolBar /> */}
       </Main>
     </>
   );
@@ -38,8 +38,13 @@ export default Index;
 
 const Main = styled.main`
   position: fixed;
-  top: 20%;
+  top: 10%;
   margin: 0 auto;
+
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* z-index: 99999; */
 
   /* margin-top: ${({ theme }) => theme.margin.DesktopTop};
   margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
