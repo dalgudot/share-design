@@ -3,7 +3,7 @@ import { t } from '../../data/index/t';
 import { mediaBreakPoint } from '../../styles/common';
 import Router, { useRouter } from 'next/router';
 import LangChangeToggle from './lang-change-toggle';
-import PMedium700 from '../../elements/typography/p-medium-700';
+import PMedium700 from '../../foundation/typography/p-medium-700';
 
 const Header = () => {
   const router = useRouter();

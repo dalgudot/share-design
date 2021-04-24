@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import PSmall400 from '../../../elements/typography/p-small-400';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import PSmall400 from '../../../foundation/typography/p-small-400';
+import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 
 const ArticleCommonImage = ({
   src,

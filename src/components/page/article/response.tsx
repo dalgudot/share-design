@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import StaggerDots from '../../../elements/framer-motion/stagger-dots';
+import StaggerDots from '../../../foundation/framer-motion/stagger-dots';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
-import PMedium400 from '../../../elements/typography/p-medium-400';
-import PSmall700 from '../../../elements/typography/p-small-700';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PSmall700 from '../../../foundation/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
-import H2Title700 from '../../../elements/typography/h2-title-700';
+import H2Title700 from '../../../foundation/typography/h2-title-700';
 
 const Response = ({
   showToast,

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Profile from './profile';
-import H1Title700 from '../../../elements/typography/h1-title-700';
+import H1Title700 from '../../../foundation/typography/h1-title-700';
 import { mediaBreakPoint } from '../../../styles/common';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import PSmall400 from '../../../foundation/typography/p-small-400';
 
 const ArticleTitleArea = ({
   categoryTitle,

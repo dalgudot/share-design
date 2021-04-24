@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { projectIntroduction } from '../../../data/article/introduction';
-import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
+import { useWindowHeight } from '../../../library/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../styles/common';
 import AloneButton from '../../button/alone-button';
 

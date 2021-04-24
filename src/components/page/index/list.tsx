@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import PMedium400 from '../../../elements/typography/p-medium-400';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
-import H2Title700 from '../../../elements/typography/h2-title-700';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import H2Title700 from '../../../foundation/typography/h2-title-700';
+import PSmall400 from '../../../foundation/typography/p-small-400';
 import { motion } from 'framer-motion';
 
 const List = ({

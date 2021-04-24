@@ -3,11 +3,11 @@ import { t } from '../../data/index/t';
 import { motion } from 'framer-motion';
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
-import IconLanguage24 from '../../elements/svg/icon_language_24';
-import PMedium700 from '../../elements/typography/p-medium-700';
-import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
+import IconLanguage24 from '../../foundation/svg/icon_language_24';
+import PMedium700 from '../../foundation/typography/p-medium-700';
+import { useWindowWidth } from '../../library/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
-import useScrollPosition from '../../lib/hooks/useScrollPosition';
+import useScrollPosition from '../../library/hooks/useScrollPosition';
 
 const LangChangeToggle = ({
   setFinalToggle,

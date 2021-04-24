@@ -1,30 +1,27 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const PSmall300 = ({
+const PMedium700 = ({
   text,
   color,
   marginTop,
-  opacity,
 }: {
   text: any;
   color: string;
   marginTop?: string;
-  opacity?: number;
 }) => {
   return (
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize="small"
-      weight={fontWeight[300]}
+      textSize="medium"
+      weight={fontWeight[700]}
       color={color}
       lineHeight={1.55}
       marginTop={marginTop}
-      opacity={opacity}
     />
   );
 };
 
-export default PSmall300;
+export default PMedium700;

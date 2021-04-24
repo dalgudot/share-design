@@ -4,26 +4,26 @@ import {
   TwitterShareButton,
 } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import IconShareFacebook24 from '../../../../elements/svg/icon_share_facebook_24';
-import IconShareLinkedin24 from '../../../../elements/svg/icon_share_linkedin_24';
-import IconShareTwitter24 from '../../../../elements/svg/icon_share_twitter_24';
-import IconShareCopyURL24 from '../../../../elements/svg/icon_share_copyURL_24';
+import IconShareFacebook24 from '../../../../foundation/svg/icon_share_facebook_24';
+import IconShareLinkedin24 from '../../../../foundation/svg/icon_share_linkedin_24';
+import IconShareTwitter24 from '../../../../foundation/svg/icon_share_twitter_24';
+import IconShareCopyURL24 from '../../../../foundation/svg/icon_share_copyURL_24';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { mediaBreakPoint } from '../../../../styles/common';
 import AloneButton from '../../../button/alone-button';
 import { t } from '../../../../data/index/t';
-import PMedium700 from '../../../../elements/typography/p-medium-700';
+import PMedium700 from '../../../../foundation/typography/p-medium-700';
 import {
   btnHoverTap,
   fadeInOut,
   listUp,
   stagger,
   ScaleDownInUpOut,
-} from '../../../../elements/framer-motion/variants';
+} from '../../../../foundation/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useRef } from 'react';
-import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
+import { useMyRipple } from '../../../../library/hooks/useMyRipple';
 import { useRouter } from 'next/router';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
@@ -218,12 +218,17 @@ const Wrap = styled.div<BackgroundBlurMotionType>`
       ? -2
       : theme.zIndex.Modal};
 
+  // z-index가 -2더라도 위에 z-index가 높은 요소가 위에 없으면 눌리는 현상 발생
+  // display 'none'으로 해결
+  display: ${({ openModal, modalZIndexHandler, theme }) =>
+    modalZIndexHandler === false && openModal === false ? 'none' : 'flex'};
+
   position: fixed;
   top: 48%; // 세로 중앙정렬 시각 보정
   transform: translateY(-50%);
   left: 0;
   right: 0;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
 `;
 

@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import firebase from 'firebase/app';
 import Router, { useRouter } from 'next/router';
 import { tArticleCommon } from '../../../../data/article/t-article-common';
-import { useDate } from '../../../../lib/hooks/useDate';
+import { useDate } from '../../../../library/hooks/useDate';
 import { mediaBreakPoint } from '../../../../styles/common';
-import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../library/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
-import PMedium700 from '../../../../elements/typography/p-medium-700';
-import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
-import PSmall700 from '../../../../elements/typography/p-small-700';
-import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
+import PMedium700 from '../../../../foundation/typography/p-medium-700';
+import { useMyRipple } from '../../../../library/hooks/useMyRipple';
+import PSmall700 from '../../../../foundation/typography/p-small-700';
+import { gradientGenerator } from '../../../../library/functions/gradient-generator';
 import { motion } from 'framer-motion';
-import { vibration } from '../../../../elements/framer-motion/variants';
-import { scrollTop } from '../../../../lib/functions/scroll-top';
+import { vibration } from '../../../../foundation/framer-motion/variants';
+import { scrollTop } from '../../../../library/functions/scroll-top';
 
 const WriteResponse = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenResponse;

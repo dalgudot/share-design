@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import PSmall700 from '../../elements/typography/p-small-700';
+import PSmall700 from '../../foundation/typography/p-small-700';
 
 const LangChangeButton = ({
   text,

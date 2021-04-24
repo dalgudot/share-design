@@ -1,8 +1,8 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const PMedium700 = ({
+const H2Title700 = ({
   text,
   color,
   marginTop,
@@ -13,15 +13,16 @@ const PMedium700 = ({
 }) => {
   return (
     <TextStyle
-      type="p"
+      type="h2"
       text={useSetLanguage(text)}
-      textSize="medium"
+      textSize="h2Title"
       weight={fontWeight[700]}
       color={color}
-      lineHeight={1.55}
+      letterSpacing="-1px"
+      lineHeight={1.4}
       marginTop={marginTop}
     />
   );
 };
 
-export default PMedium700;
+export default H2Title700;

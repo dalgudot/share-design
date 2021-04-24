@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import PSmall400 from '../../../foundation/typography/p-small-400';
 import Router from 'next/router';
 
 const Footer = () => {

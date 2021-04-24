@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import IconContactFacebook24 from '../../../elements/svg/icon_contact_facebook_24';
-import IconContactLinkedIn24 from '../../../elements/svg/icon_contact_linkedin_24';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import IconContactFacebook24 from '../../../foundation/svg/icon_contact_facebook_24';
+import IconContactLinkedIn24 from '../../../foundation/svg/icon_contact_linkedin_24';
+import { useMyRipple } from '../../../library/hooks/useMyRipple';
+import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 
 const SocialArea = () => {
   const brunchRef = useRef(null);

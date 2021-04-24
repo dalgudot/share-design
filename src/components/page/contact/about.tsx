@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import PMedium400 from '../../../elements/typography/p-medium-400';
-import PMedium700 from '../../../elements/typography/p-medium-700';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PMedium700 from '../../../foundation/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const AboutArea = () => {

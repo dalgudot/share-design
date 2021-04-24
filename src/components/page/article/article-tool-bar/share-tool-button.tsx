@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import IconShare24 from '../../../../elements/svg/icon_share_24';
+import IconShare24 from '../../../../foundation/svg/icon_share_24';
 import { useDispatch } from 'react-redux';
-import { btnHoverTap } from '../../../../elements/framer-motion/variants';
+import { btnHoverTap } from '../../../../foundation/framer-motion/variants';
 
 const ShareToolButton = () => {
   const dispatch = useDispatch();

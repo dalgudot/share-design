@@ -1,8 +1,8 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const H3Title700 = ({
+const H4Title700 = ({
   text,
   color,
   marginTop,
@@ -13,16 +13,15 @@ const H3Title700 = ({
 }) => {
   return (
     <TextStyle
-      type="h3"
+      type="h4"
       text={useSetLanguage(text)}
-      textSize="h3Title"
+      textSize="h4Title"
       weight={fontWeight[700]}
       color={color}
-      letterSpacing="-0.8px"
-      lineHeight={1.4}
+      lineHeight={1.3}
       marginTop={marginTop}
     />
   );
 };
 
-export default H3Title700;
+export default H4Title700;

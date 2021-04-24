@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import React from 'react';
-import PMedium400 from '../../elements/typography/p-medium-400';
+import PMedium400 from '../../foundation/typography/p-medium-400';
 import { mediaBreakPoint } from '../../styles/common';
 
 const MyToast = ({

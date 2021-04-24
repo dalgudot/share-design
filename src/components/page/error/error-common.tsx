@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { t } from '../../../data/index/t';
-import PMedium400 from '../../../elements/typography/p-medium-400';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
 import AloneButton from '../../button/alone-button';
 
 const ErrorCommon = () => {

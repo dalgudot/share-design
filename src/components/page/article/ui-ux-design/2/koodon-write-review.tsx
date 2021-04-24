@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import IconStar48Fill from '../../../../../elements/svg/icon_star_48_fill';
+import IconStar48Fill from '../../../../../foundation/svg/icon_star_48_fill';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
-import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../../../styles/common';
-import PSmall400 from '../../../../../elements/typography/p-small-400';
-import H3Title700 from '../../../../../elements/typography/h3-title-700';
+import PSmall400 from '../../../../../foundation/typography/p-small-400';
+import H3Title700 from '../../../../../foundation/typography/h3-title-700';
 
 const KoodonWriteReview = () => {
   const [starCount, setStarCount] = useState([0, 0, 0, 0, 0]); // 0: off 1: on

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { btnHoverTap } from '../../elements/framer-motion/variants';
-import PMedium400 from '../../elements/typography/p-medium-400';
-import PSmall700 from '../../elements/typography/p-small-700';
+import { btnHoverTap } from '../../foundation/framer-motion/variants';
+import PMedium400 from '../../foundation/typography/p-medium-400';
+import PSmall700 from '../../foundation/typography/p-small-700';
 
 const AloneButton = ({
   size, // small or medium

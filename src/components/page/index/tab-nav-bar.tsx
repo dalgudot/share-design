@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import TabHome24 from '../../../elements/svg/tab_home_24';
-import TabContact24 from '../../../elements/svg/tab_contact_24';
+import TabHome24 from '../../../foundation/svg/tab_home_24';
+import TabContact24 from '../../../foundation/svg/tab_contact_24';
 import Router, { useRouter } from 'next/router';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
+import { useMyRipple } from '../../../library/hooks/useMyRipple';
 
 const TabNavBar = () => {
   const router = useRouter();

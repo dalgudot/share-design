@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import H2Title700 from '../../../elements/typography/h2-title-700';
-import PMedium400 from '../../../elements/typography/p-medium-400';
-import PMedium700 from '../../../elements/typography/p-medium-700';
+import H2Title700 from '../../../foundation/typography/h2-title-700';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PMedium700 from '../../../foundation/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {

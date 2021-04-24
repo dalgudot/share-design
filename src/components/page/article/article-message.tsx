@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import PMedium400 from '../../../elements/typography/p-medium-400';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleMessage = () => {

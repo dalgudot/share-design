@@ -1,27 +1,30 @@
 import TextStyle from './atoms/text-style';
 import { fontWeight } from './atoms/font';
-import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const H6Title700 = ({
+const PSmall400 = ({
   text,
   color,
   marginTop,
+  opacity,
 }: {
   text: any;
   color: string;
   marginTop?: string;
+  opacity?: number;
 }) => {
   return (
     <TextStyle
-      type="h6"
+      type="p"
       text={useSetLanguage(text)}
-      textSize="h6Title"
-      weight={fontWeight[700]}
+      textSize="small"
+      weight={fontWeight[400]}
       color={color}
-      lineHeight={1.3}
+      lineHeight={1.55}
       marginTop={marginTop}
+      opacity={opacity}
     />
   );
 };
 
-export default H6Title700;
+export default PSmall400;

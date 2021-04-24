@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H3Title700 from '../../../elements/typography/h3-title-700';
-import PSmall400 from '../../../elements/typography/p-small-400';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import H3Title700 from '../../../foundation/typography/h3-title-700';
+import PSmall400 from '../../../foundation/typography/p-small-400';
+import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ProfileArea = () => {

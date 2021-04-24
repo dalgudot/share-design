@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H2Title700 from '../../../elements/typography/h2-title-700';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import H2Title700 from '../../../foundation/typography/h2-title-700';
+import PSmall400 from '../../../foundation/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
+import { useMyRipple } from '../../../library/hooks/useMyRipple';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
   const copyItRef = useRef(null);

@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import IconAppleLogo24 from '../../../elements/svg/icon_logo_apple_24';
-import IconInstagramLogo24 from '../../../elements/svg/icon_logo_instagram_24';
-import PMedium700 from '../../../elements/typography/p-medium-700';
-import PSmall400 from '../../../elements/typography/p-small-400';
+import IconAppleLogo24 from '../../../foundation/svg/icon_logo_apple_24';
+import IconInstagramLogo24 from '../../../foundation/svg/icon_logo_instagram_24';
+import PMedium700 from '../../../foundation/typography/p-medium-700';
+import PSmall400 from '../../../foundation/typography/p-small-400';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
-import H2Title700 from '../../../elements/typography/h2-title-700';
+import H2Title700 from '../../../foundation/typography/h2-title-700';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // webkit 에러 해결

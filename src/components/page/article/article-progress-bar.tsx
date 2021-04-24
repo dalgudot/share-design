@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useScrollPercentage from '../../../lib/hooks/useScrollPercentage';
+import useScrollPercentage from '../../../library/hooks/useScrollPercentage';
 import { mediaBreakPoint } from '../../../styles/common';
 import React from 'react';
 

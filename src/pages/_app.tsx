@@ -7,7 +7,7 @@ import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import React, { useState } from 'react';
-import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
+import { PreventIllegalTheft } from '../library/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps /*, AppContext */ } from 'next/app';
@@ -17,7 +17,7 @@ import { useRouter } from 'next/router';
 import TabNavBar from '../components/page/index/tab-nav-bar';
 import MyToast from '../components/toast/toast';
 import ShareModal from '../components/page/article/article-tool-bar/share-modal';
-import HeadSEO from '../elements/head-info/head-seo';
+import HeadSEO from '../foundation/head-info/head-seo';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);

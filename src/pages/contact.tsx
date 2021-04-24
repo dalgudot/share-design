@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
 import ProfileArea from '../components/page/contact/profile';
 import EmailArea from '../components/page/contact/email';
 import SocialArea from '../components/page/contact/social';

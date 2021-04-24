@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
 import GotoIntroduction from '../components/page/index/go-to-introduction';
 import Footer from '../components/page/index/footer';
 import ShareToolBar from '../components/page/index/share-tool-bar';
 import List from '../components/page/index/list';
 import { articleData } from '../data/article-data';
-import IconLanguage169 from '../elements/svg/icon_language_16_9';
-import IconMotion169 from '../elements/svg/icon_motion_16_9';
+import IconLanguage169 from '../foundation/svg/icon_language_16_9';
+import IconMotion169 from '../foundation/svg/icon_motion_16_9';
 
 const Index = () => {
   useEffect(() => {
