@@ -25,7 +25,6 @@ const Index = ({ showToast }: { showToast: Function }) => {
           setImage={setImage}
         />
         <ExtractColors //
-          imageRef={imageRef}
           image={image}
         />
         {/* <ShareToolBar /> */}

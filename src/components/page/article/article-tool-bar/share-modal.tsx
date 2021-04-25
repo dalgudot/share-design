@@ -42,18 +42,15 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     // 리렌더 방지 위해 'style.csstext' 활용
     if (modalZIndexHandler === true && openModal === true) {
-      document.body.style.cssText = `overflow: hidden; height: 100vh;`;
+      // document.body.style.cssText = `overflow: hidden; height: 100vh;`;
+      document.body.style.cssText = `overflow: hidden;`;
+      // height 없이 overflow: hidden;만 해도 잘 동작.
 
       return () => {
-        document.body.style.cssText = `overflow: ""; height: "";`;
+        document.body.style.cssText = `overflow: "";`;
       };
     }
   }, [modalZIndexHandler]);
-
-  let scrollY = window.scrollY;
-  useEffect(() => {
-    scrollY = window.scrollY;
-  }, [openModal]);
 
   const dispatch = useDispatch();
   const OPEN_MODAL = () =>
@@ -100,7 +97,6 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
       />
       <Wrap openModal={openModal} modalZIndexHandler={modalZIndexHandler}>
         <DivMotion
-          scrollY={scrollY}
           variants={ScaleDownInUpOut}
           initial={false}
           animate={openModal === true ? 'animate' : 'initial'}
@@ -208,7 +204,6 @@ const BackgroundBlurMotion = styled(motion.div)<BackgroundBlurMotionType>`
 type modalHandlerType = {
   openModal: boolean;
   modalZIndexHandler: boolean;
-  scrollY: number;
 };
 
 const Wrap = styled.div<BackgroundBlurMotionType>`
@@ -220,7 +215,7 @@ const Wrap = styled.div<BackgroundBlurMotionType>`
 
   // z-index가 -2더라도 위에 z-index가 높은 요소가 위에 없으면 눌리는 현상 발생
   // display 'none'으로 해결
-  display: ${({ openModal, modalZIndexHandler, theme }) =>
+  display: ${({ openModal, modalZIndexHandler }) =>
     modalZIndexHandler === false && openModal === false ? 'none' : 'flex'};
 
   position: fixed;
@@ -228,7 +223,6 @@ const Wrap = styled.div<BackgroundBlurMotionType>`
   transform: translateY(-50%);
   left: 0;
   right: 0;
-  /* display: flex; */
   justify-content: center;
 `;
 

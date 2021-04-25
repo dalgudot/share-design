@@ -17,7 +17,7 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 ## Thanks to 🙏
 
-#### Front-End
+#### FrontEnd
 
 - [Typescript](https://www.typescriptlang.org/)
 
@@ -45,6 +45,10 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Query](https://github.com/tannerlinsley/react-query)
 
+- [Vibrant-Colors](https://github.com/Vibrant-Colors/node-vibrant)
+
+- [React-Palette](https://github.com/leonardokl/react-palette#readme)
+
 <br/>
 
 #### Interaction
@@ -63,7 +67,7 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 <br/>
 
-#### Back-End
+#### BackEnd
 
 - [Firebase](https://github.com/firebase/firebase-js-sdk)
 
