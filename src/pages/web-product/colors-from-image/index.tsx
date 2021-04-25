@@ -36,13 +36,14 @@ const Index = ({ showToast }: { showToast: Function }) => {
 export default Index;
 
 const Main = styled.main`
-  position: fixed;
+  /* position: fixed;
   top: 10%;
-  margin: 0 auto;
+  left: 20%;
+  margin: 0 auto; */
 
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  /* width: 100%; */
+  /* height: 100%; */
+  overflow-y: scroll;
   /* z-index: 99999; */
 
   /* margin-top: ${({ theme }) => theme.margin.DesktopTop};
