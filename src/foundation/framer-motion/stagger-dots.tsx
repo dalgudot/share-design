@@ -40,14 +40,12 @@ const Container = styled.div`
 
 const staggerVariants = {
   initial: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: {},
   },
 
   animate: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.04,
     },
   },
 };
@@ -68,11 +66,11 @@ const circleVariants: {
   };
 } = {
   initial: {
-    y: '60%',
+    y: '70%',
   },
 
   animate: {
-    y: '-60%',
+    y: '-70%',
     transition: {
       repeat: Infinity,
       repeatType: 'reverse',

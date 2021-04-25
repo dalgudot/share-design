@@ -51,6 +51,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [Html-to-Image](https://github.com/bubkoo/html-to-image#readme)
 
+- [File-Saver](https://www.npmjs.com/package/file-saver)
+
 <br/>
 
 #### Interaction
