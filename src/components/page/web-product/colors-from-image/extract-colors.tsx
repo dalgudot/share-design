@@ -36,7 +36,6 @@ const UploadImage = styled.img`
 `;
 
 const Wrap = styled.div`
-  /* overflow-y: scroll; */
   height: 100%;
   display: flex;
 `;
