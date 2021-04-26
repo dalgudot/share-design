@@ -7,13 +7,11 @@ import React from 'react';
 import StaggerDots from '../../../../foundation/framer-motion/stagger-dots';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 import { saveAs } from 'file-saver';
-import { useUserAgent, withUserAgent } from 'next-useragent';
-import { GetServerSideProps } from 'next';
+import { isMobile, isAndroid } from 'react-device-detect';
 
 // 아웃풋은 color palette
 // 로딩을 pixel 단위로
-const ExtractColors = ({ image, ua }: { image: any; ua?: any }) => {
-  const { isIos } = ua;
+const ExtractColors = ({ image }: { image: any }) => {
   const { data, loading, error } = usePalette(image[0]);
   const dataArray = Object.values(data);
 
@@ -46,8 +44,10 @@ const ExtractColors = ({ image, ua }: { image: any; ua?: any }) => {
             </Wrap>
           </DownloadWrap>
 
-          {/* iOS에서는 문제가 많아서 다운로드 버튼 숨기기 */}
-          {!isIos && (
+          {/* iOS에서는 문제가 많아서 모바일 전체에서 다운로드 버튼 숨기기 */}
+          {/* isMobile -> returns true if device type is mobile or tablet */}
+          {/* 데스크톱과 안드로이드 기기에서만 다운로드 가능 */}
+          {(!isMobile || isAndroid) && (
             <motion.button
               onClick={downloadImageAndPalette}
               whileTap={{ scale: 0.8 }}
@@ -64,15 +64,7 @@ const ExtractColors = ({ image, ua }: { image: any; ua?: any }) => {
   }
 };
 
-export default withUserAgent(ExtractColors);
-
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const ua = useUserAgent(context.req.headers['user-agent']);
-
-  return {
-    props: { ua },
-  };
-};
+export default ExtractColors;
 
 const Container = styled.div`
   width: 100%;

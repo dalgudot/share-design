@@ -53,6 +53,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [File-Saver](https://www.npmjs.com/package/file-saver)
 
+- [React-Device-Detect](https://github.com/duskload/react-device-detect#readme)
+
 <br/>
 
 #### Interaction
