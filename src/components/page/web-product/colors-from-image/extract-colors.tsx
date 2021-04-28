@@ -67,9 +67,8 @@ const ExtractColors = ({ image }: { image: any }) => {
 export default ExtractColors;
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  margin: 0 auto;
+  width: 300px;
 
   button {
     margin-bottom: 240px;

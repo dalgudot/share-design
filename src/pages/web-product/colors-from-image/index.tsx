@@ -36,17 +36,9 @@ const Index = ({ showToast }: { showToast: Function }) => {
 export default Index;
 
 const Main = styled.main`
-  /* position: fixed;
-  top: 10%;
-  left: 20%;
-  margin: 0 auto; */
-
-  /* width: 100%; */
-  /* height: 100%; */
   overflow-y: scroll;
-  /* z-index: 99999; */
 
-  /* margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  margin-top: ${({ theme }) => theme.margin.DesktopTop};
   margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
@@ -54,12 +46,4 @@ const Main = styled.main`
     margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: ${({ theme }) => theme.padding.TabletWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: ${({ theme }) => theme.padding.DesktopWrap};
-  } */
 `;

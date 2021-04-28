@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import DragAndDropImageFile from './drag-and-drop-image-file';
 
 const UploadImage = ({ setImage }: { setImage: Function }) => {
   const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,19 +22,21 @@ const UploadImage = ({ setImage }: { setImage: Function }) => {
   return (
     <>
       {/* https://github.com/facebook/react/issues/310 */}
-      <PhotoUploadArea>
-        <MotionUploadPhotoLabel htmlFor="upload-photo">
-          <input
-            // display: 'none'은 접근성 문제 발생
-            style={{ opacity: '0', height: '0', width: '0' }}
-            id="upload-photo"
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={imageHandler}
-          />
-        </MotionUploadPhotoLabel>
-      </PhotoUploadArea>
+      <DragAndDropImageFile>
+        <div>
+          <MotionUploadPhotoLabel htmlFor="upload-photo">
+            <input
+              // display: 'none'은 접근성 문제 발생
+              style={{ opacity: '0', height: '0', width: '0' }}
+              id="upload-photo"
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={imageHandler}
+            />
+          </MotionUploadPhotoLabel>
+        </div>
+      </DragAndDropImageFile>
       {/* https://helloinyong.tistory.com/275 */}
     </>
   );
@@ -41,25 +44,12 @@ const UploadImage = ({ setImage }: { setImage: Function }) => {
 
 export default UploadImage;
 
-const PhotoUploadArea = styled(motion.div)`
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  // white-space: nowrap: 줄바꿈을 하지 않겠다
-`;
-
-const MotionUploadPhotoLabel = styled(motion.label)`
+const MotionUploadPhotoLabel = styled.label`
+  margin: 0 auto;
   border-radius: 2px;
   border: solid 1px ${({ theme }) => theme.gray1};
-  max-width: 133px;
-  padding: 0 40px; // 가로만 패딩 적용, 패딩이 없으면 가로로 작아짐. -> max-width와 함께 이용.
-  height: 133px;
-  // Text Area 아래 생기는 5px 영역 보정
-  /* margin: 35px 0 0 16px;  */
+  width: 300px;
+  height: 300px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* display: inline-block; */
   cursor: pointer;
 `;
