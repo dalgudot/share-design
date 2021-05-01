@@ -1,33 +1,33 @@
-import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import ShareToolBar from '../../../components/page/index/share-tool-bar';
 import ExtractColors from '../../../components/page/web-product/colors-from-image/extract-colors';
 import Unsplash from '../../../components/page/web-product/colors-from-image/unsplash';
 import UploadImage from '../../../components/page/web-product/colors-from-image/upload-image';
 import toast from '../../../components/toast/toast';
+import { tColorsFromImage } from '../../../data/web-product/t-colors-from-image';
+import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PMedium700 from '../../../foundation/typography/p-medium-700';
 import { useAmplitude } from '../../../library/hooks/useAmplitude';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const Index = ({ showToast }: { showToast: Function }) => {
-  const router = useRouter();
-  const [image, setImage] = useState<[]>([]);
-  const imageRef = useRef<HTMLImageElement | null>(null);
-
+  const [image, setImage] = useState<string[]>([]);
   useAmplitude('arv_colors_from_image');
 
   return (
     <>
       <Main>
+        <PMedium700 text={tColorsFromImage().mainMessage} color="gray1" />
+        {/* <PMedium400 text={tColorsFromImage().mainMessage} color="gray1" /> */}
         <UploadImage //
+          image={image}
           setImage={setImage}
         />
         <ExtractColors //
           image={image}
         />
-        <Unsplash />
-        {/* <ShareToolBar /> */}
+        <ShareToolBar />
       </Main>
     </>
   );
@@ -38,11 +38,19 @@ export default Index;
 const Main = styled.main`
   overflow-y: scroll;
 
-  margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  p {
+    text-align: center;
+  }
+
+  /* margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom}; */
+  margin-top: 144px; //72+72px
   margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: ${({ theme }) => theme.margin.MobileTop};
+    /* margin-top: ${({ theme }) => theme.margin.MobileTop};
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom}; */
+    margin-top: 129px; // 57+72px
     margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }

@@ -1,8 +1,50 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import PSmall400 from '../../../../foundation/typography/p-small-400';
+import { mediaBreakPoint } from '../../../../styles/common';
 import DragAndDropImageFile from './drag-and-drop-image-file';
+import { createApi } from 'unsplash-js';
+import { useEffect, useState } from 'react';
 
-const UploadImage = ({ setImage }: { setImage: Function }) => {
+type Photo = {
+  id: number;
+  width: number;
+  height: number;
+  urls: { large: string; regular: string; raw: string; small: string };
+  color: string | null;
+  user: {
+    username: string;
+    name: string;
+  };
+};
+
+//  https://stackblitz.com/edit/unsplash-js-typescript-n5sc6z?file=index.tsx
+const api = createApi({
+  accessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY ?? '',
+});
+
+const UploadImage = ({
+  image,
+  setImage,
+}: {
+  image: string[];
+  setImage: Function;
+}) => {
+  const [unsplashData, setUnsplashData] = useState<any>();
+
+  useEffect(() => {
+    api.search
+      .getPhotos({ query: 'color', orientation: 'landscape' })
+      .then((result) => {
+        setUnsplashData(result);
+      })
+      .catch(() => {
+        console.log('something went wrong!');
+      });
+  }, []);
+
+  console.log('unsplashData', unsplashData);
+
   const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     // https://www.youtube.com/watch?v=iBonBC-ySgo
     const fileArray = Array.from(e.target.files as any).map((file) =>
@@ -19,37 +61,105 @@ const UploadImage = ({ setImage }: { setImage: Function }) => {
     );
   };
 
-  return (
-    <>
-      {/* https://github.com/facebook/react/issues/310 */}
-      <DragAndDropImageFile>
-        <div>
-          <MotionUploadPhotoLabel htmlFor="upload-photo">
-            <input
-              // display: 'none'은 접근성 문제 발생
-              style={{ opacity: '0', height: '0', width: '0' }}
-              id="upload-photo"
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={imageHandler}
+  if (unsplashData === null) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <>
+        {/* https://github.com/facebook/react/issues/310 */}
+        {/* <DragAndDropImageFile> */}
+        <MotionUploadPhotoLabel htmlFor="upload-photo">
+          <input
+            // display: 'none'은 접근성 문제 발생
+            style={{ opacity: '0', height: '0', width: '0' }}
+            id="upload-photo"
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={imageHandler}
+          />
+          <UnsplashPhotoUl>
+            {unsplashData?.response?.results.map((photo: any) => (
+              <li key={photo.id} className="li">
+                <img className="img" src={photo.urls.regular} />
+              </li>
+            ))}
+          </UnsplashPhotoUl>
+          <UploadButton>
+            <PSmall400
+              text={{ k: '이미지 업로드', e: 'Image upload' }}
+              color="gray2"
             />
-          </MotionUploadPhotoLabel>
-        </div>
-      </DragAndDropImageFile>
-      {/* https://helloinyong.tistory.com/275 */}
-    </>
-  );
+          </UploadButton>
+        </MotionUploadPhotoLabel>
+        {/* </DragAndDropImageFile> */}
+        {/* https://helloinyong.tistory.com/275 */}
+      </>
+    );
+  }
 };
 
 export default UploadImage;
 
-const MotionUploadPhotoLabel = styled.label`
+const UnsplashPhotoUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 100%; */
+  /* max-width: 100%; */
+  /* margin: 0 auto; */
+
+  li {
+    margin: 0 auto;
+  }
+`;
+
+// const PhotoComp: React.FC<{ photo: Photo }> = ({ photo }) => {
+//   const { user, urls } = photo;
+
+//   return (
+//     <>
+//       <img className="img" src={urls.regular} />
+//       <a
+//         className="credit"
+//         target="_blank"
+//         href={`https://unsplash.com/@${user.username}`}
+//       >
+//         {user.name}
+//       </a>
+//     </>
+//   );
+// };
+
+const MotionUploadPhotoLabel = styled(motion.label)`
   margin: 0 auto;
-  border-radius: 2px;
-  border: solid 1px ${({ theme }) => theme.gray1};
-  width: 300px;
-  height: 300px;
+  border: solid 1px ${({ theme }) => theme.gray5};
+  max-width: 540px;
   display: flex;
   cursor: pointer;
+  margin-top: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :after {
+    content: '';
+    display: block;
+    /* padding이 부모의 '너비'에 의해 계산됨 */
+    padding-bottom: 100%;
+  }
+
+  // 바뀌는 요소
+  width: 50%;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    width: 100%;
+  }
+`;
+
+const UploadButton = styled(motion.button)`
+  background-color: ${({ theme }) => theme.gray7};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
+  padding: 18px 32px;
 `;

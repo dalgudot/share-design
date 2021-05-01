@@ -11,7 +11,7 @@ import { isMobile, isAndroid } from 'react-device-detect';
 
 // 아웃풋은 color palette
 // 로딩을 pixel 단위로
-const ExtractColors = ({ image }: { image: any }) => {
+const ExtractColors = ({ image }: { image: string[] }) => {
   const { data, loading, error } = usePalette(image[0]);
   const dataArray = Object.values(data);
 
@@ -34,20 +34,19 @@ const ExtractColors = ({ image }: { image: any }) => {
     return (
       <>
         <Container>
-          <DownloadWrap ref={downloadRef}>
-            <UploadImage src={image[0]} />
-            {/* <Canvas ref={canvasRef} /> */}
-            <Wrap>
-              {dataArray.map((hex?: string) => (
-                <ColorChip key={hex} hex={hex} />
-              ))}
-            </Wrap>
-          </DownloadWrap>
+          {/* <DownloadWrap ref={downloadRef}> */}
+          <UploadImage src={image[0]} />
+          <Wrap>
+            {dataArray.map((hex?: string) => (
+              <ColorChip key={hex} hex={hex} />
+            ))}
+          </Wrap>
+          {/* </DownloadWrap> */}
 
           {/* iOS에서는 문제가 많아서 모바일 전체에서 다운로드 버튼 숨기기 */}
           {/* isMobile -> returns true if device type is mobile or tablet */}
           {/* 데스크톱과 안드로이드 기기에서만 다운로드 가능 */}
-          {(!isMobile || isAndroid) && (
+          {/* {(!isMobile || isAndroid) && (
             <motion.button
               onClick={downloadImageAndPalette}
               whileTap={{ scale: 0.8 }}
@@ -57,7 +56,7 @@ const ExtractColors = ({ image }: { image: any }) => {
                 color="gray1"
               />
             </motion.button>
-          )}
+          )} */}
         </Container>
       </>
     );
