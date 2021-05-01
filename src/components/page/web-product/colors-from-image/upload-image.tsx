@@ -5,21 +5,11 @@ import { mediaBreakPoint } from '../../../../styles/common';
 import DragAndDropImageFile from './drag-and-drop-image-file';
 import { createApi } from 'unsplash-js';
 import { useEffect, useState } from 'react';
+import StaggerDots from '../../../../foundation/framer-motion/stagger-dots';
 
-type Photo = {
-  id: number;
-  width: number;
-  height: number;
-  urls: { large: string; regular: string; raw: string; small: string };
-  color: string | null;
-  user: {
-    username: string;
-    name: string;
-  };
-};
-
+// https://unsplash.com/documentation
 //  https://stackblitz.com/edit/unsplash-js-typescript-n5sc6z?file=index.tsx
-const api = createApi({
+const unsplashApi = createApi({
   accessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY ?? '',
 });
 
@@ -33,8 +23,22 @@ const UploadImage = ({
   const [unsplashData, setUnsplashData] = useState<any>();
 
   useEffect(() => {
-    api.search
-      .getPhotos({ query: 'color', orientation: 'landscape' })
+    // unsplashApi.photos
+    //   .getRandom({
+    //     count: 30,
+    //   })
+    //   .then((result) => {
+    //     console.log('result', result);
+    //     setUnsplashData(result);
+    //   })
+    //   .catch(() => {
+    //     console.log('something went wrong!');
+    //   });
+    unsplashApi.search
+      .getPhotos({
+        query: 'color',
+        orientation: 'landscape',
+      })
       .then((result) => {
         setUnsplashData(result);
       })
@@ -43,7 +47,7 @@ const UploadImage = ({
       });
   }, []);
 
-  console.log('unsplashData', unsplashData);
+  // console.log('unsplashData', unsplashData);
 
   const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     // https://www.youtube.com/watch?v=iBonBC-ySgo
@@ -62,12 +66,15 @@ const UploadImage = ({
   };
 
   if (unsplashData === null) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <StaggerDots />
+      </>
+    );
   } else {
     return (
       <>
         {/* https://github.com/facebook/react/issues/310 */}
-        {/* <DragAndDropImageFile> */}
         <MotionUploadPhotoLabel htmlFor="upload-photo">
           <input
             // display: 'none'은 접근성 문제 발생
@@ -78,13 +85,7 @@ const UploadImage = ({
             multiple
             onChange={imageHandler}
           />
-          <UnsplashPhotoUl>
-            {unsplashData?.response?.results.map((photo: any) => (
-              <li key={photo.id} className="li">
-                <img className="img" src={photo.urls.regular} />
-              </li>
-            ))}
-          </UnsplashPhotoUl>
+
           <UploadButton>
             <PSmall400
               text={{ k: '이미지 업로드', e: 'Image upload' }}
@@ -92,7 +93,19 @@ const UploadImage = ({
             />
           </UploadButton>
         </MotionUploadPhotoLabel>
-        {/* </DragAndDropImageFile> */}
+
+        <UnsplashImagesUl>
+          {/* 검색 이용할 때 */}
+          {unsplashData?.response?.results.map((photo: Photo) => (
+            // {unsplashData?.response?.map((photo: Photo) => (
+            <li key={photo.id}>
+              <img
+                src={photo.urls.regular}
+                alt={`Photo by ${photo.user.name} on Unplash`}
+              />
+            </li>
+          ))}
+        </UnsplashImagesUl>
         {/* https://helloinyong.tistory.com/275 */}
       </>
     );
@@ -101,17 +114,26 @@ const UploadImage = ({
 
 export default UploadImage;
 
-const UnsplashPhotoUl = styled.ul`
+const UnsplashImagesUl = styled.ul`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 100%; */
-  /* max-width: 100%; */
-  /* margin: 0 auto; */
+  justify-content: center;
+  align-items: center;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   li {
-    margin: 0 auto;
+    display: flex; // 하단 5px 간격 제거
+    margin-top: 72px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -133,10 +155,8 @@ const UnsplashPhotoUl = styled.ul`
 // };
 
 const MotionUploadPhotoLabel = styled(motion.label)`
-  margin: 0 auto;
   border: solid 1px ${({ theme }) => theme.gray5};
   max-width: 540px;
-  display: flex;
   cursor: pointer;
   margin-top: 72px;
   display: flex;
@@ -163,3 +183,22 @@ const UploadButton = styled(motion.button)`
   border-radius: ${({ theme }) => theme.borderRadius.R13};
   padding: 18px 32px;
 `;
+
+type Photo = {
+  id: number;
+  width: number;
+  height: number;
+  urls: {
+    full: string;
+    raw: string;
+    regular: string;
+    small: string;
+    thumb: string;
+  };
+  color: string | null;
+  user: {
+    username: string;
+    name: string;
+  };
+  alt_description: string;
+};

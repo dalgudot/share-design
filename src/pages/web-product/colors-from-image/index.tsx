@@ -42,16 +42,22 @@ const Main = styled.main`
     text-align: center;
   }
 
-  /* margin-top: ${({ theme }) => theme.margin.DesktopTop};
-  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom}; */
-  margin-top: 144px; //72+72px
+  /* margin-top: ${({ theme }) => theme.margin.DesktopTop};*/
   margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
+  margin-top: 144px; //72+72px
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    /* margin-top: ${({ theme }) => theme.margin.MobileTop};
-    margin-bottom: ${({ theme }) => theme.margin.MobileBottom}; */
-    margin-top: 129px; // 57+72px
+    /* margin-top: ${({ theme }) => theme.margin.MobileTop};*/
     margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
+    margin-top: 129px; // 57+72px
     padding: ${({ theme }) => theme.padding.MobileWrap};
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
+    padding: ${({ theme }) => theme.padding.TabletWrap};
+  }
+
+  @media all and (min-width: ${mediaBreakPoint.fourth}) {
+    padding: ${({ theme }) => theme.padding.DesktopWrap};
   }
 `;

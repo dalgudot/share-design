@@ -54,9 +54,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
         .getInstance()
         .init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, null, {
           // optional configuration options
-          // 쿠키 저장하는 도메인 지정
-          // domain: ".khk-design.kr",
-          // saveEvents: false,
         });
     }
   }, []);
