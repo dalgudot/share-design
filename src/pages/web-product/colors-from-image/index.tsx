@@ -4,19 +4,18 @@ import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import ShareToolBar from '../../../components/page/index/share-tool-bar';
 import ExtractColors from '../../../components/page/web-product/colors-from-image/extract-colors';
+import Unsplash from '../../../components/page/web-product/colors-from-image/unsplash';
 import UploadImage from '../../../components/page/web-product/colors-from-image/upload-image';
 import toast from '../../../components/toast/toast';
-import { VisitsAndViewsDuringSession } from '../../../library/functions/visits-and-views';
+import { useAmplitude } from '../../../library/hooks/useAmplitude';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const Index = ({ showToast }: { showToast: Function }) => {
   const router = useRouter();
-  //   useEffect(() => {
-  //     VisitsAndViewsDuringSession(router.pathname);
-  //   }, []);
-
   const [image, setImage] = useState<[]>([]);
   const imageRef = useRef<HTMLImageElement | null>(null);
+
+  useAmplitude('arv_colors_from_image');
 
   return (
     <>
@@ -27,6 +26,7 @@ const Index = ({ showToast }: { showToast: Function }) => {
         <ExtractColors //
           image={image}
         />
+        <Unsplash />
         {/* <ShareToolBar /> */}
       </Main>
     </>

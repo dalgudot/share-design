@@ -50,7 +50,7 @@ const DragAndDropImageFile = ({ children }: { children: JSX.Element }) => {
     dropRefCurrent?.addEventListener('dragover', handleDrag);
     dropRefCurrent?.addEventListener('drop', handleDrop);
 
-    console.log('useEffet');
+    // console.log('useEffet');
 
     return () => {
       dropRefCurrent?.removeEventListener('dragenter', handleDragIn);
@@ -60,7 +60,7 @@ const DragAndDropImageFile = ({ children }: { children: JSX.Element }) => {
     };
   }, []);
 
-  console.log(dragging);
+  // console.log(dragging);
 
   return (
     <>

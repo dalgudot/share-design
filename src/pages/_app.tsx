@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PreventIllegalTheft } from '../library/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
@@ -44,6 +44,22 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     }
   };
   // MyToast
+
+  // Amplitude initialize
+  // 참고: https://developers.amplitude.com/docs/advanced-settings
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const amplitude = require('amplitude-js');
+      amplitude
+        .getInstance()
+        .init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, null, {
+          // optional configuration options
+          // 쿠키 저장하는 도메인 지정
+          // domain: ".khk-design.kr",
+          // saveEvents: false,
+        });
+    }
+  }, []);
 
   return (
     <>
