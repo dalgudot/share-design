@@ -6,11 +6,6 @@ const AdTest = () => {
     <>
       <Head>
         <title>AdTest</title>
-        <script
-          data-ad-client="ca-pub-8444228904401312"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
       </Head>
     </>
   );
