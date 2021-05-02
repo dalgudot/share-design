@@ -1,16 +1,13 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { projectIntroduction } from '../../../data/article/introduction';
-import { useWindowHeight } from '../../../library/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../styles/common';
 import AloneButton from '../../button/alone-button';
 
 const GotoIntroduction = () => {
-  const height: number = useWindowHeight();
-
   return (
     <Li>
-      <ComingSoonLine height={height} />
+      <ComingSoonLine />
       <Link href="/introduction">
         <a>
           <AloneButton //
@@ -38,14 +35,10 @@ const Li = styled.li`
   }
 `;
 
-type ComingSoonLineType = {
-  height: number;
-};
-
 // 화면 세로 길이에 따라 길이가 달라지는 선분
-const ComingSoonLine = styled.span<ComingSoonLineType>`
+const ComingSoonLine = styled.span`
   width: 1px;
-  height: ${({ height }) => height * 0.45}px;
+  height: 45vh;
   background-color: ${({ theme }) => theme.gray6};
 
   // 바뀌는 속성

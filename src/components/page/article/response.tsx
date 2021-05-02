@@ -54,11 +54,7 @@ const Response = ({
   };
 
   if (responseLoading === true) {
-    return (
-      <LoadingContainer>
-        <StaggerDots />
-      </LoadingContainer>
-    );
+    return <StaggerDots />;
   } else {
     return (
       <>
@@ -154,11 +150,4 @@ const A = styled.a`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: 36px auto 0;
   }
-`;
-
-const LoadingContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 36px;
 `;

@@ -6,7 +6,6 @@ interface StaggerDotsPropTypes {
   count?: number;
 }
 
-// Big Button 로딩 컬러 => #d2c6cb
 const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
   const countNum = count ?? 3;
   const dots = Array(countNum)
@@ -19,15 +18,18 @@ const StaggerDots = ({ color, count }: StaggerDotsPropTypes) => {
       initial="initial"
       animate="animate"
     >
-      <Container color={color}>{dots}</Container>
+      <DotContainer color={color}>{dots}</DotContainer>
     </motion.div>
   );
 };
 
 export default StaggerDots;
 
-const Container = styled.div`
+const DotContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
 
   span {
     width: 7px;
@@ -45,12 +47,11 @@ const staggerVariants = {
 
   animate: {
     transition: {
-      staggerChildren: 0.04,
+      staggerChildren: 0.09,
     },
   },
 };
 
-// 타입 정의하지 않으면 repeatType에서 타입 에러
 const circleVariants: {
   initial: {
     y: string;
@@ -66,15 +67,15 @@ const circleVariants: {
   };
 } = {
   initial: {
-    y: '70%',
+    y: '80%',
   },
 
   animate: {
-    y: '-70%',
+    y: '-80%',
     transition: {
       repeat: Infinity,
       repeatType: 'reverse',
-      duration: 0.38,
+      duration: 0.4,
     },
   },
 };
