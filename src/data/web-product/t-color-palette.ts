@@ -15,6 +15,11 @@ export const tColorPalette = () => {
       e: 'Upload Image',
     },
 
+    uploadImageColorPaletteDownload: {
+      k: '팔레트 다운로드',
+      e: 'Download Palette',
+    },
+
     unsplashHeadText: {
       k: '새로운 영감',
       e: 'New Inspiration',
