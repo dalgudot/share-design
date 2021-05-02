@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import IconShare24 from '../../../../foundation/svg/icon_share_24';
 import { useDispatch, useSelector } from 'react-redux';
 import { btnHoverTap } from '../../../../foundation/framer-motion/variants';
-import { useTabAmplitude } from '../../../../library/hooks/Amplitude/useTabAmplitude';
+import { useTapAmplitude } from '../../../../library/hooks/Amplitude/useTapAmplitude';
 
 const ShareToolButton = () => {
   const openModalForAmplitude = useSelector((state: any) => state.openModal);
@@ -19,7 +19,7 @@ const ShareToolButton = () => {
     });
 
   const openModal = () => {
-    !openModalForAmplitude && useTabAmplitude('tab_open_share_modal');
+    !openModalForAmplitude && useTapAmplitude('tap_open_share_modal');
     OPEN_MODAL(); // to ture
     MODAL_Z_INDEX_HANDLER();
   };
