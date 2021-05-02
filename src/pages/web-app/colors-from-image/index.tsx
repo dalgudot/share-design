@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import ShareToolBar from '../../../components/page/index/share-tool-bar';
-import ExtractColors from '../../../components/page/web-product/colors-from-image/extract-colors';
-import Unsplash from '../../../components/page/web-product/colors-from-image/unsplash';
-import UploadImage from '../../../components/page/web-product/colors-from-image/upload-image';
+import ExtractColors from '../../../components/page/web-app/colors-from-image/extract-colors';
+import Unsplash from '../../../components/page/web-app/colors-from-image/unsplash';
+import UploadImage from '../../../components/page/web-app/colors-from-image/upload-image';
 import toast from '../../../components/toast/toast';
 import { tColorsFromImage } from '../../../data/web-product/t-colors-from-image';
 import PMedium400 from '../../../foundation/typography/p-medium-400';
