@@ -111,11 +111,11 @@ const HeadSEO = () => {
       <link rel="icon" href={icoImage} />
 
       {/* Google AdSense */}
-      <script
+      {/* <script
         data-ad-client="ca-pub-8444228904401312"
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      ></script>
+      ></script> */}
 
       {/* S of fonts preload */}
       {/* <link rel="stylesheet" href="../styles/font.css" /> */}
