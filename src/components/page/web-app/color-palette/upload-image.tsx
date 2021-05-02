@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { usePalette } from 'react-palette';
 import styled from 'styled-components';
+import { tColorPalette } from '../../../../data/web-product/t-color-palette';
+import { btnHoverTap } from '../../../../foundation/framer-motion/variants';
+import PMedium700 from '../../../../foundation/typography/p-medium-700';
 import PSmall400 from '../../../../foundation/typography/p-small-400';
 import { mediaBreakPoint } from '../../../../styles/common';
 import DragAndDropImageFile from './drag-and-drop-image-file';
 
-const UploadImage = ({
-  image,
-  setImage,
-}: {
-  image: string[];
-  setImage: Function;
-}) => {
+const UploadImage = () => {
+  const [image, setImage] = useState<string[]>([]);
+  const { data, loading, error } = usePalette(image[0]);
+  const dataArray = Object.values(data);
+
   const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     // https://www.youtube.com/watch?v=iBonBC-ySgo
     const fileArray = Array.from(e.target.files as any).map((file) =>
@@ -29,25 +32,32 @@ const UploadImage = ({
 
   return (
     <>
-      {/* https://github.com/facebook/react/issues/310 */}
-      <MotionUploadPhotoLabel htmlFor="upload-photo">
-        <input
-          // display: 'none'은 접근성 문제 발생
-          style={{ opacity: '0', height: '0', width: '0' }}
-          id="upload-photo"
-          type="file"
-          accept="image/*"
-          multiple
-          onChange={imageHandler}
-        />
-
-        <UploadButton>
-          <PSmall400
-            text={{ k: '이미지 업로드', e: 'Image upload' }}
-            color="gray2"
+      <UploadButton>
+        <MotionUploadPhotoLabel
+          htmlFor="upload-photo"
+          variants={btnHoverTap}
+          whileHover="whileHover"
+          whileTap="whileTap"
+        >
+          <input
+            // display: 'none'은 접근성 문제 발생
+            style={{ opacity: '0', height: '0', width: '0' }}
+            id="upload-photo"
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={imageHandler}
           />
-        </UploadButton>
-      </MotionUploadPhotoLabel>
+          <PMedium700 text={tColorPalette().uploadImageButton} color="gray2" />
+        </MotionUploadPhotoLabel>
+      </UploadButton>
+      {/* https://github.com/facebook/react/issues/310 */}
+      <ColorChipWrap>
+        {dataArray.map((hex?: string) => (
+          <ColorChip key={hex} hex={hex} />
+        ))}
+      </ColorChipWrap>
+      <UploadImageArea src={image[0]} />
       {/* https://helloinyong.tistory.com/275 */}
     </>
   );
@@ -55,32 +65,43 @@ const UploadImage = ({
 
 export default UploadImage;
 
-const MotionUploadPhotoLabel = styled(motion.label)`
-  border: solid 1px ${({ theme }) => theme.gray5};
-  max-width: 540px;
-  cursor: pointer;
-  margin-top: 72px;
+const UploadButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  :after {
-    content: '';
-    display: block;
-    /* padding이 부모의 '너비'에 의해 계산됨 */
-    padding-bottom: 100%;
-  }
-
-  // 바뀌는 요소
-  width: 50%;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    width: 100%;
-  }
+  margin: 24px auto 0;
 `;
 
-const UploadButton = styled(motion.button)`
+const MotionUploadPhotoLabel = styled(motion.label)`
   background-color: ${({ theme }) => theme.gray7};
   border-radius: ${({ theme }) => theme.borderRadius.R13};
   padding: 18px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ColorChipWrap = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 72px auto 0;
+`;
+
+const ColorChip = styled.div<{ hex?: string }>`
+  background-color: ${({ hex }) => hex};
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+`;
+
+const UploadImageArea = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto 0;
 `;
