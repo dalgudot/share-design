@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { t } from '../data/index/t';
 import PMedium400 from '../foundation/typography/p-medium-400';
+import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const Privacy = () => {
+  useArvAmplitude('arv_privacy');
   return (
     <Container>
       <PMedium400 text={t.privacyMessage} color="gray3" />

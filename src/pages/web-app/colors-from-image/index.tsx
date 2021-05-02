@@ -8,12 +8,12 @@ import toast from '../../../components/toast/toast';
 import { tColorsFromImage } from '../../../data/web-product/t-colors-from-image';
 import PMedium400 from '../../../foundation/typography/p-medium-400';
 import PMedium700 from '../../../foundation/typography/p-medium-700';
-import { useAmplitude } from '../../../library/hooks/useAmplitude';
+import { useArvAmplitude } from '../../../library/hooks/Amplitude/useArvAmplitude';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const Index = ({ showToast }: { showToast: Function }) => {
+  useArvAmplitude('arv_colors_from_image');
   const [image, setImage] = useState<string[]>([]);
-  useAmplitude('arv_colors_from_image');
 
   return (
     <>

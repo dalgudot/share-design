@@ -9,8 +9,10 @@ import List from '../components/page/index/list';
 import { articleData } from '../data/article-data';
 import IconLanguage169 from '../foundation/svg/icon_language_16_9';
 import IconMotion169 from '../foundation/svg/icon_motion_16_9';
+import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const Index = () => {
+  useArvAmplitude('arv_home');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);

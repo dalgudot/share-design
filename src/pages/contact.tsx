@@ -6,8 +6,10 @@ import ProfileArea from '../components/page/contact/profile';
 import EmailArea from '../components/page/contact/email';
 import SocialArea from '../components/page/contact/social';
 import AboutArea from '../components/page/contact/about';
+import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const Contact = ({ showToast }: { showToast: Function }) => {
+  useArvAmplitude('arv_contact');
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
