@@ -14,6 +14,8 @@ const Index = ({ showToast }: { showToast: Function }) => {
   return (
     <>
       <Main>
+        <Unsplash />
+        <Line />
         <H1LargeTitle700 text={tColorPalette().webAppName} color="gray1" />
         <PMedium700
           text={tColorPalette().mainMessage}
@@ -21,8 +23,7 @@ const Index = ({ showToast }: { showToast: Function }) => {
           marginTop="8px"
         />
         <UploadImage />
-        <Line />
-        <Unsplash />
+
         <ShareToolBar />
       </Main>
     </>
