@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../styles/common';
+import { mediaBreakPoint } from '../../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
-import ProfileArea from '../components/page/contact/profile';
-import EmailArea from '../components/page/contact/email';
-import SocialArea from '../components/page/contact/social';
-import AboutArea from '../components/page/contact/about';
-import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { VisitsAndViewsDuringSession } from '../../library/functions/visits-and-views';
+import ProfileArea from '../../components/page/contact/profile';
+import EmailArea from '../../components/page/contact/email';
+import SocialArea from '../../components/page/contact/social';
+import AboutArea from '../../components/page/contact/about';
+import { useArvAmplitude } from '../../library/hooks/Amplitude/useArvAmplitude';
 
-const Contact = ({ showToast }: { showToast: Function }) => {
+const ContactIndex = ({ showToast }: { showToast: Function }) => {
   useArvAmplitude('arv_contact');
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
@@ -28,7 +28,7 @@ const Contact = ({ showToast }: { showToast: Function }) => {
   );
 };
 
-export default Contact;
+export default ContactIndex;
 
 const Main = styled.main`
   display: flex;

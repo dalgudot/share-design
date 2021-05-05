@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ShareToolBar from '../../../components/page/index/share-tool-bar';
 import Unsplash from '../../../components/page/web-app/color-palette/unsplash';
@@ -15,16 +16,16 @@ const Index = ({ showToast }: { showToast: Function }) => {
     <>
       <Main>
         <Unsplash />
-        <Line />
+        {/* <Line />
         <H1LargeTitle700 text={tColorPalette().webAppName} color="gray1" />
         <PMedium700
           text={tColorPalette().mainMessage}
           color="gray5"
           marginTop="8px"
         />
-        <UploadImage />
+        <UploadImage /> */}
 
-        <ShareToolBar />
+        {/* <ShareToolBar /> */}
       </Main>
     </>
   );

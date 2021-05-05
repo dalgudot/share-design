@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createApi } from 'unsplash-js';
 import StaggerDots from '../../../../foundation/framer-motion/stagger-dots';
 import H1LargeTitle700 from '../../../../foundation/typography/h1-large-title-700';
@@ -8,6 +8,7 @@ import { tColorPalette } from '../../../../data/web-product/t-color-palette';
 import { motion } from 'framer-motion';
 import { btnHoverTap } from '../../../../foundation/framer-motion/variants';
 import { usePalette } from 'react-palette';
+import { useWindowHeight } from '../../../../library/hooks/useWindowHeight';
 
 // https://unsplash.com/documentation
 //  https://stackblitz.com/edit/unsplash-js-typescript-n5sc6z?file=index.tsx
@@ -33,30 +34,32 @@ type Photo = {
 
 const Unsplash = () => {
   const [unsplashData, setUnsplashData] = useState<any>();
-  const [unsplashImage, setUnsplashImage] = useState(
-    unsplashData?.response[0]?.urls?.regular
-  );
+  const [unsplashImage, setUnsplashImage] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const unsplashApi = createApi({
     accessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY ?? '',
   });
 
-  console.log('unsplashImage', unsplashImage);
+  const height = useWindowHeight();
+
+  // console.log('unsplashImage', unsplashImage);
   const { data, loading, error } = usePalette(unsplashImage);
   const dataArray = Object.values(data);
 
-  console.log('dataArray', dataArray);
+  // console.log('dataArray', dataArray);
 
-  useEffect(() => {
-    setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
-  }, [unsplashData]);
+  // useEffect(() => {
+  //   setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
+  // }, [unsplashData]);
 
   const getRandomImage = (): void => {
     setIsLoading(true);
 
     unsplashApi.photos
       .getRandom({
+        // featured: true,
         query: 'colorful scenery',
+        // query: searchKeyword,
         count: 1,
       })
       .then((result) => {
@@ -64,6 +67,7 @@ const Unsplash = () => {
         result && setIsLoading(false);
         // console.log(result.response);
         setUnsplashData(result);
+        // result.errors && setUnsplashData('');
       })
       .catch(() => {
         console.log('something went wrong!');
@@ -76,6 +80,17 @@ const Unsplash = () => {
 
   const findInspiration = (): void => {
     getRandomImage();
+    setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
+  };
+
+  const [searchKeyword, setSearchKeyword] = useState<string | undefined>(
+    'colorful scenery'
+  );
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const text = e.target.value;
+    console.log(text);
+    setSearchKeyword(text);
   };
 
   return (
@@ -98,6 +113,16 @@ const Unsplash = () => {
         />
       </ChangeImageButton>
 
+      {/* <input type="search" id="unsplash-search" onChange={handleChange} />
+      <ChangeImageButton
+        onClick={findInspiration}
+        variants={btnHoverTap}
+        whileHover="whileHover"
+        whileTap="whileTap"
+      >
+        <PMedium700 text={{ k: '버튼', e: 'Button' }} color="gray2" />
+      </ChangeImageButton> */}
+
       {isLoading ? (
         <StaggerDots />
       ) : (
@@ -107,7 +132,8 @@ const Unsplash = () => {
               <ColorChip key={hex} hex={hex} />
             ))}
           </ColorChipWrap>
-          <UnsplashImagesUl>
+
+          <UnsplashImagesUl height={height}>
             {/* 검색 이용할 때 */}
             {/* {unsplashData?.response?.results.map((photo: Photo) => ( */}
             {unsplashData?.response?.map((photo: Photo) => (
@@ -136,7 +162,7 @@ const Section = styled.section`
   }
 `;
 
-const UnsplashImagesUl = styled.ul`
+const UnsplashImagesUl = styled.ul<{ height: number }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,6 +184,7 @@ const UnsplashImagesUl = styled.ul`
   img {
     width: 100%;
     height: 100%;
+    /* max-height: ${({ height }) => 0.6 * height}px; */
   }
 `;
 
