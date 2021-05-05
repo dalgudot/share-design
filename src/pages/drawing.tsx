@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 
-const Canvas = () => {
+const Drawing = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -53,4 +53,4 @@ const Canvas = () => {
   );
 };
 
-export default Canvas;
+export default Drawing;
