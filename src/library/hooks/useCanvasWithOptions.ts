@@ -15,24 +15,13 @@ export const useCanvasWithOptions = (draw: Function, options: any = {}) => {
     let frameCount = 0;
     let animationFrameId: number;
 
-    // Retina 대응 - 위치 바뀜
-    // https://velog.io/@cjswoqkrwls/Canvas
-    // 위 링크 참고해 변경 필요
-    const pixelRatio = window.devicePixelRatio;
-    let stageWidth = document.body.clientWidth;
-    let stageHeight = document.body.clientHeight;
-    canvas.width = stageWidth * pixelRatio;
-    canvas.height = stageWidth * pixelRatio;
-    ctx.scale(pixelRatio, pixelRatio);
-    // canvas.width = stageWidth * 2;
-    // canvas.height = stageHeight * 2;
-    // ctx.scale(2, 2);
-    // Retina 대응
-
+    // S of Retina 대응
     const resize = () => {
-      stageWidth = document.body.clientWidth;
-      stageHeight = document.body.clientHeight;
-
+      const pixelRatio = window.devicePixelRatio;
+      // let stageWidth = document.body.clientWidth;
+      // let stageHeight = document.body.clientHeight;
+      let stageWidth = window.innerWidth;
+      let stageHeight = window.innerHeight;
       canvas.width = stageWidth * pixelRatio;
       canvas.height = stageHeight * pixelRatio;
 
@@ -41,8 +30,9 @@ export const useCanvasWithOptions = (draw: Function, options: any = {}) => {
       canvas.style.width = stageWidth + 'px';
       canvas.style.height = stageHeight + 'px';
     };
-
+    resize();
     window.addEventListener('resize', resize);
+    // E of Retina 대응
 
     const render = () => {
       frameCount++;
