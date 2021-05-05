@@ -11,39 +11,23 @@ const Header = () => {
     router.pathname !== '/' && Router.push('/');
   };
 
-  const HeaderDisplay = () => {
-    // if (router.pathname === '/list/interactionDesignGuide') {
-    //   return false;
-    // } else if (router.pathname === '/list/eCommerceDesignGuide') {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
-    return true; // 나중에 Header 숨기는 곳 대비
-  };
-  const isShow = HeaderDisplay();
-
   return (
     <>
-      <HeaderContainer isShow={isShow}>
+      <HeaderContainer>
         <Left onClick={goHome}>
           <PMedium700 text={t.shareDesign} color="gray1" />
         </Left>
         <LangChangeToggle />
       </HeaderContainer>
-      <FillEmptySpace isShow={isShow} />
+      <FillEmptySpace />
     </>
   );
 };
 
 export default Header;
 
-type isShowtype = {
-  isShow: boolean;
-};
-
-const HeaderContainer = styled.header<isShowtype>`
-  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
+const HeaderContainer = styled.header`
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
@@ -77,8 +61,8 @@ const HeaderContainer = styled.header<isShowtype>`
 const Left = styled.button``;
 
 // 아이폰 상단에 나타나는 빈 공간 채워주는 div
-const FillEmptySpace = styled.div<isShowtype>`
-  display: ${({ isShow }) => (isShow ? 'block' : 'none')};
+const FillEmptySpace = styled.div`
+  display: block;
   z-index: ${({ theme }) => theme.zIndex.BarFillEmptySpace};
   position: fixed;
   top: -48px;
@@ -99,23 +83,3 @@ const FillEmptySpace = styled.div<isShowtype>`
     height: 105px; // 57 + 48px
   }
 `;
-
-const hideVariants = {
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.3,
-      delay: 0.1,
-    },
-  },
-
-  hide: {
-    y: -500,
-    opacity: 0,
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-};
