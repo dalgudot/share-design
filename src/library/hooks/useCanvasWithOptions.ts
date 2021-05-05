@@ -16,17 +16,37 @@ export const useCanvasWithOptions = (draw: Function, options: any = {}) => {
     let animationFrameId: number;
 
     // Retina 대응 - 위치 바뀜
-    const stageWidth = document.body.clientWidth;
-    const stageHeight = document.body.clientHeight;
-    canvas.width = stageWidth * 2;
-    canvas.height = stageHeight * 2;
-    ctx.scale(2, 2);
+    // https://velog.io/@cjswoqkrwls/Canvas
+    // 위 링크 참고해 변경 필요
+    const pixelRatio = window.devicePixelRatio;
+    let stageWidth = document.body.clientWidth;
+    let stageHeight = document.body.clientHeight;
+    canvas.width = stageWidth * pixelRatio;
+    canvas.height = stageWidth * pixelRatio;
+    ctx.scale(pixelRatio, pixelRatio);
+    // canvas.width = stageWidth * 2;
+    // canvas.height = stageHeight * 2;
+    // ctx.scale(2, 2);
     // Retina 대응
+
+    const resize = () => {
+      stageWidth = document.body.clientWidth;
+      stageHeight = document.body.clientHeight;
+
+      canvas.width = stageWidth * pixelRatio;
+      canvas.height = stageHeight * pixelRatio;
+
+      ctx.scale(pixelRatio, pixelRatio);
+
+      canvas.style.width = stageWidth + 'px';
+      canvas.style.height = stageHeight + 'px';
+    };
+
+    window.addEventListener('resize', resize);
 
     const render = () => {
       frameCount++;
       draw(ctx, frameCount);
-
       // requestAnimationFrame라는 재귀 함수로 애니메이션 반복
       animationFrameId = window.requestAnimationFrame(render);
     };
@@ -37,6 +57,7 @@ export const useCanvasWithOptions = (draw: Function, options: any = {}) => {
     // 이 컴포넌트가 unmount됐을 때 AnimationFrame 취소
     return () => {
       window.cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resize);
     };
   }, [draw]);
   // [] 빈 배열은 컴포넌트가 마운트된 후 1번만 실행된다고 useEffect에 전달
