@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../library/functions/visits-and-views';
-import ProfileArea from '../../components/page/contact/profile';
-import EmailArea from '../../components/page/contact/email';
-import SocialArea from '../../components/page/contact/social';
-import AboutArea from '../../components/page/contact/about';
+import ProfileArea from '../../components/pages/contact/profile';
+import EmailArea from '../../components/pages/contact/email';
+import SocialArea from '../../components/pages/contact/social';
+import AboutArea from '../../components/pages/contact/about';
 import { useArvAmplitude } from '../../library/hooks/Amplitude/useArvAmplitude';
 
 const ContactIndex = ({ showToast }: { showToast: Function }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorCommon from '../components/page/error/error-common';
+import ErrorCommon from '../components/pages/error/error-common';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 // NextJS Custom Error Page

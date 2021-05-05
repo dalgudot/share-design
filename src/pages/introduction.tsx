@@ -1,4 +1,4 @@
-import Article from '../components/page/article/article';
+import Article from '../components/pages/article/article';
 import { projectIntroduction } from '../data/article/introduction';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 

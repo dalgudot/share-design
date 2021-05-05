@@ -1,8 +1,6 @@
-import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import ShareToolBar from '../../../components/page/index/share-tool-bar';
-import Unsplash from '../../../components/page/web-app/color-palette/unsplash';
-import UploadImage from '../../../components/page/web-app/color-palette/upload-image';
+import Unsplash from '../../../components/pages/web-app/color-palette/unsplash';
+import UploadImage from '../../../components/pages/web-app/color-palette/upload-image';
 import { tColorPalette } from '../../../data/web-product/t-color-palette';
 import H1LargeTitle700 from '../../../foundation/typography/h1-large-title-700';
 import PMedium700 from '../../../foundation/typography/p-medium-700';
@@ -16,16 +14,14 @@ const Index = ({ showToast }: { showToast: Function }) => {
     <>
       <Main>
         <Unsplash />
-        {/* <Line />
+        <Line />
         <H1LargeTitle700 text={tColorPalette().webAppName} color="gray1" />
         <PMedium700
           text={tColorPalette().mainMessage}
           color="gray5"
           marginTop="8px"
         />
-        <UploadImage /> */}
-
-        {/* <ShareToolBar /> */}
+        <UploadImage />
       </Main>
     </>
   );

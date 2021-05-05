@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorCommon from '../components/page/error/error-common';
+import ErrorCommon from '../components/pages/error/error-common';
 
 // NextJS Custom Error Page
 // https://nextjs.org/docs/advanced-features/custom-error-page

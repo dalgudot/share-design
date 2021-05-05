@@ -48,9 +48,9 @@ const Unsplash = () => {
 
   // console.log('dataArray', dataArray);
 
-  // useEffect(() => {
-  //   setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
-  // }, [unsplashData]);
+  useEffect(() => {
+    setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
+  }, [unsplashData]);
 
   const getRandomImage = (): void => {
     setIsLoading(true);
@@ -63,7 +63,7 @@ const Unsplash = () => {
         count: 1,
       })
       .then((result) => {
-        console.log('result', result);
+        // console.log('result', result);
         result && setIsLoading(false);
         // console.log(result.response);
         setUnsplashData(result);
@@ -81,16 +81,6 @@ const Unsplash = () => {
   const findInspiration = (): void => {
     getRandomImage();
     setUnsplashImage(unsplashData?.response[0]?.urls?.regular);
-  };
-
-  const [searchKeyword, setSearchKeyword] = useState<string | undefined>(
-    'colorful scenery'
-  );
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const text = e.target.value;
-    console.log(text);
-    setSearchKeyword(text);
   };
 
   return (

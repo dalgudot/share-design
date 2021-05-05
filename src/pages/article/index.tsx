@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../styles/common';
+import { mediaBreakPoint } from '../../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
-import GotoIntroduction from '../components/pages/index/go-to-introduction';
-import Footer from '../components/pages/index/footer';
-import ShareToolBar from '../components/pages/index/share-tool-bar';
-import List from '../components/pages/index/list';
-import { articleData } from '../data/article-data';
-import IconLanguage169 from '../foundation/svg/icon_language_16_9';
-import IconMotion169 from '../foundation/svg/icon_motion_16_9';
-import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { VisitsAndViewsDuringSession } from '../../library/functions/visits-and-views';
+import GotoIntroduction from '../../components/pages/index/go-to-introduction';
+import Footer from '../../components/pages/index/footer';
+import ShareToolBar from '../../components/pages/index/share-tool-bar';
+import List from '../../components/pages/index/list';
+import { articleData } from '../../data/article-data';
+import IconLanguage169 from '../../foundation/svg/icon_language_16_9';
+import IconMotion169 from '../../foundation/svg/icon_motion_16_9';
+import { useArvAmplitude } from '../../library/hooks/Amplitude/useArvAmplitude';
 
 const Index = () => {
   useArvAmplitude('arv_home');

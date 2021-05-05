@@ -1,4 +1,4 @@
-import Article from '../../../../components/page/article/article';
+import Article from '../../../../components/pages/article/article';
 import { uiUxDesign2 } from '../../../../data/article/ui-ux-design/2';
 import { useArvAmplitude } from '../../../../library/hooks/Amplitude/useArvAmplitude';
 
