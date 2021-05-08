@@ -7,11 +7,11 @@ export const useCanvasWithOptions = (draw: Function, options: any = {}) => {
 
   // canvas가 렌더링되기 전에는 canvasRef.current가 존재하지 않음.  -> component가 마운트될 때까지 기다려야 함(componentDidMount) -> useEffect로 처리
   useEffect(() => {
-    // [중요] any를 해야 ctx.fillStyle에 타입 에러 안 남
-    // https://stackoverflow.com/questions/13669404/typescript-problems-with-type-system
-    const canvas: any = canvasRef.current;
+    // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html
+    // 느낌표(!)는 non-null assertion, 특정 코드가 null, undefined가 아니다라는 것을 사용자가 타입스크립트에게 얘기해주는 것
+    const canvas = canvasRef.current!;
     // console.log(canvas);
-    const ctx = canvas.getContext(options?.context || '2d');
+    const ctx = canvas.getContext(options?.context || '2d')!;
     let frameCount = 0;
     let animationFrameId: number;
 
