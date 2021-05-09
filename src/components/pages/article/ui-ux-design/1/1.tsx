@@ -10,6 +10,14 @@ import LangChangeButton from '../../../../header/lang-change-button';
 import LangChangeToggle from '../../../../header/lang-change-toggle';
 import ArticleCommonImage from '../../article-common-image';
 
+// 임시
+type ArticleCommonImageType =
+  | {
+      k: string;
+      e: string;
+    }
+  | string;
+
 const UIUXDesignContents1 = ({
   contentsArray,
 }: {
@@ -61,8 +69,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[2]}
-        caption={contentsArray[3]}
+        src={contentsArray[2] as ArticleCommonImageType}
+        caption={contentsArray[3] as ArticleCommonImageType}
         marginTop="36px"
       />
 
@@ -106,8 +114,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[9]}
-        caption={contentsArray[10]}
+        src={contentsArray[9] as ArticleCommonImageType}
+        caption={contentsArray[10] as ArticleCommonImageType}
         marginTop="36px"
       />
 
@@ -118,8 +126,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[12]}
-        caption={contentsArray[13]}
+        src={contentsArray[12] as ArticleCommonImageType}
+        caption={contentsArray[13] as ArticleCommonImageType}
         marginTop="48px"
       />
 
@@ -168,8 +176,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[20]}
-        caption={contentsArray[21]}
+        src={contentsArray[20] as ArticleCommonImageType}
+        caption={contentsArray[21] as ArticleCommonImageType}
         marginTop="36px"
       />
 
@@ -180,8 +188,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[23]}
-        caption={contentsArray[24]}
+        src={contentsArray[23] as ArticleCommonImageType}
+        caption={contentsArray[24] as ArticleCommonImageType}
         marginTop="36px"
       />
 
@@ -192,8 +200,8 @@ const UIUXDesignContents1 = ({
       />
 
       <ArticleCommonImage //
-        src={contentsArray[26]}
-        caption={contentsArray[27]}
+        src={contentsArray[26] as ArticleCommonImageType}
+        caption={contentsArray[27] as ArticleCommonImageType}
         marginTop="36px"
       />
 

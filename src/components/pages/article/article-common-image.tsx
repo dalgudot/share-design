@@ -2,13 +2,18 @@ import styled from 'styled-components';
 import PSmall400 from '../../../foundation/typography/p-small-400';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 
+type tStaticType = {
+  k: string;
+  e: string;
+};
+
 const ArticleCommonImage = ({
   src,
   caption,
   marginTop,
 }: {
-  src: object;
-  caption?: object;
+  src: tStaticType | string;
+  caption: tStaticType | string;
   marginTop: string;
 }) => {
   return (

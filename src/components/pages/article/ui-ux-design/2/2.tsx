@@ -12,6 +12,14 @@ import { mediaBreakPoint } from '../../../../../styles/common';
 import ArticleCommonImage from '../../article-common-image';
 import KoodonWriteReview from './koodon-write-review';
 
+// 임시
+type ArticleCommonImageType =
+  | {
+      k: string;
+      e: string;
+    }
+  | string;
+
 const UIUXDesignContents2 = ({
   contentsArray,
 }: {
@@ -33,8 +41,8 @@ const UIUXDesignContents2 = ({
       />
 
       <ArticleCommonImage
-        src={contentsArray[1]}
-        caption={contentsArray[2]}
+        src={contentsArray[1] as ArticleCommonImageType}
+        caption={contentsArray[2] as ArticleCommonImageType}
         marginTop="36px"
       />
 
