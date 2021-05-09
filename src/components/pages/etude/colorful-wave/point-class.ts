@@ -13,7 +13,7 @@ export class PointClass {
     this.speed = 0.1;
     this.cur = 0;
     this.max = Math.random() * 100 + 150;
-    console.log('max', this.max);
+    // console.log('max', this.max);
   }
 
   update() {

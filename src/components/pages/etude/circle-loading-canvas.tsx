@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 import Canvas from '../../canvas/canvas';
 import { useThemeContext } from '../../../library/hooks/useThemeContext';
+import { useRef } from 'react';
 
 const CircleLoadingCanvas = () => {
   const color = useThemeContext('gray1');
+  const ContainerRef = useRef<HTMLDivElement>(null);
 
-  let stageWidth = window.innerWidth;
-  let stageHeight = window.innerHeight;
-
-  const draw = (ctx: any, frameCount: number) => {
-    let x = stageWidth / 2; // x coordinate
-    let y = stageHeight / 2; // y coordinate
-    let radius = 20 * Math.sin(frameCount * 0.05) ** 2; // Arc radius
-    let startAngle = 0; // Starting point on circle
-    let endAngle = 2 * Math.PI; // End point on circle
-    // let counterclockwise =            Draw counterclockwise
+  const draw = (ctx: CanvasRenderingContext2D) => {
+    const x = ContainerRef.current?.offsetWidth! / 2;
+    const y = ContainerRef.current?.offsetHeight! / 2;
+    // let radius = 20 * Math.sin(frameCount * 0.05) ** 2;
+    let radius = 20;
+    let startAngle = 0;
+    let endAngle = 2 * Math.PI;
 
     // clearRect()로 기존 drawing 지워줌.
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = color;
+    ctx.fillStyle = color!;
     ctx.beginPath();
     // **는 지수 연산
     ctx.arc(x, y, radius, startAngle, endAngle);
@@ -26,22 +25,29 @@ const CircleLoadingCanvas = () => {
   };
 
   return (
-    // <Container>
-    <Canvas draw={draw} />
-    // </Container>
+    <>
+      {/* <Container ref={ContainerRef}>
+        <Canvas draw={draw} />
+      </Container> */}
+    </>
   );
 };
 
 export default CircleLoadingCanvas;
 
 const Container = styled.div`
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 200px auto 0;
   position: relative;
+  overflow-x: hidden;
 
   canvas {
     position: absolute;
-    top: 20%;
+    top: 0;
+    left: 0;
   }
 `;

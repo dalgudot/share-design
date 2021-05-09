@@ -1,8 +1,8 @@
 export const tArticleCommon = () => {
   return {
     message: {
-      k: `UI/UX 디자인 경험을 공유합니다 :)`,
-      e: `I share UI/UX Design Experience :)`,
+      k: '디자인과 개발 경험을 공유합니다 :)',
+      e: 'I share my experience :)',
     },
 
     goToList: {
@@ -53,11 +53,6 @@ export const tArticleCommon = () => {
     writeResponse: {
       k: '댓글 남기기',
       e: 'Write a response',
-    },
-
-    slack: {
-      k: '슬랙으로 새 글 알림받기',
-      e: 'Receive notifications with Slack',
     },
 
     preventResponseToastMessage: {

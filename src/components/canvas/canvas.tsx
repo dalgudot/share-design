@@ -1,9 +1,9 @@
-import { useCanvasWithOptions } from '../../library/hooks/useCanvasWithOptions';
+import { useCanvas } from '../../library/hooks/useCanvas';
 
 // https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
-const Canvas = ({ draw, options }: { draw: Function; options?: any }) => {
+const Canvas = ({ draw }: { draw: Function }) => {
   // options는 webgl context 쓸 때 활용 가능
-  const canvasRef = useCanvasWithOptions(draw, { options });
+  const canvasRef = useCanvas(draw);
 
   return (
     <>

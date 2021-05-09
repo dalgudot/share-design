@@ -4,6 +4,7 @@ import { useArvAmplitude } from '../../../../library/hooks/Amplitude/useArvAmpli
 
 const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
   useArvAmplitude('arv_ui_ux_design_1');
+
   const categoryTitle = uiUxDesign1().category;
   const date = uiUxDesign1().date;
   const dateTime = uiUxDesign1().dateTime;

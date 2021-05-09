@@ -20,6 +20,7 @@ import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../library/functions/scroll-top';
 import ArticleProgressBar from './article-progress-bar';
 import UIUXDesignContents2 from './ui-ux-design/2/2';
+import DesignXCodeContents1 from './design-X-Code/1';
 
 const Article = ({
   categoryTitle,
@@ -83,6 +84,8 @@ const Article = ({
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
       case '/article/ui-ux-design/2':
         return <UIUXDesignContents2 contentsArray={contentsArray} />;
+      case '/article/design-X-code/1':
+        return <DesignXCodeContents1 contentsArray={contentsArray} />;
     }
   };
   const contents = contentsSwitch();
