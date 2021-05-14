@@ -1,12 +1,12 @@
 export class PointClass {
-  x: number;
-  y: number;
-  fixedY: number;
-  speed: number;
-  cur: number;
-  max: number;
+  // x: number;
+  // y: number;
+  // fixedY: number;
+  // speed: number;
+  // cur: number;
+  // max: number;
 
-  constructor(index: number, x: number, y: number) {
+  constructor(index, x, y) {
     this.x = x;
     this.y = y;
     this.fixedY = y;

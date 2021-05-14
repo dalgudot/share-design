@@ -55,23 +55,34 @@ const Article = ({
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
   const [response, setResponse] = useState<object[]>([] || null);
   const responseRef = useRef<HTMLDivElement>(null);
-  const executeScroll = () => {
-    responseRef?.current?.scrollIntoView({
+
+  const goToResponse = () => {
+    const target = responseRef.current!;
+    const clientRect = target.getBoundingClientRect();
+    // console.log(clientRect);
+    const relativeTop = clientRect.top;
+    const scrolledTopLength = window.pageYOffset; // 스크롤된 길이
+    // console.log('scrolledTopLength', scrolledTopLength);
+    const absoluteTop = scrolledTopLength + relativeTop; // 절대좌표
+    // console.log('absoluteTop', absoluteTop);
+
+    window.scrollTo({
+      top: absoluteTop,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+  const goToTop = () => {
+    const bodyId = document.querySelector('body');
+    bodyId?.scrollTo({
+      top: 0,
       behavior: 'smooth',
     });
   };
   const [responseLoading, setResponseLoading] = useState(true);
 
   useEffect(() => {
-    if (router.query.CompleteResponse === 'true') {
-      executeScroll();
-    } else {
-      const bodyId = document.querySelector('body');
-      bodyId?.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
+    router.query.CompleteResponse === 'true' ? goToResponse() : goToTop();
 
     return () => setResponse([] || null);
   }, []);

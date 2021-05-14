@@ -1,31 +1,31 @@
 import { PointClass } from './point-class';
 
 export class WaveClass {
-  index: number;
-  totalPoints: number;
-  color: string;
-  points: any;
-  stageWidth: number;
-  stageHeight: number;
-  centerX: number;
-  centerY: number;
-  pointGap: number;
-  pointClass: any;
+  // index: number;
+  // totalPoints: number;
+  // color: string;
+  // points: any;
+  // stageWidth: number;
+  // stageHeight: number;
+  // centerX: number;
+  // centerY: number;
+  // pointGap: number;
+  // pointClass: any;
 
-  constructor(index: number, totalPoints: number, color: string) {
+  constructor(index, totalPoints, color) {
     this.index = index;
     this.totalPoints = totalPoints;
     this.color = color;
     this.points = [];
-    this.stageWidth = 0;
-    this.stageHeight = 0;
-    this.centerX = 0;
-    this.centerY = 0;
-    this.pointGap = 0;
-    this.pointClass = {};
+    // this.stageWidth = 0;
+    // this.stageHeight = 0;
+    // this.centerX = 0;
+    // this.centerY = 0;
+    // this.pointGap = 0;
+    // this.pointClass = {};
   }
 
-  resize(stageWidth: number, stageHeight: number) {
+  resize(stageWidth, stageHeight) {
     this.stageWidth = stageWidth;
     this.stageHeight = stageHeight;
     this.centerX = stageWidth / 2;
@@ -50,7 +50,7 @@ export class WaveClass {
     }
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
+  draw(ctx) {
     ctx.beginPath();
     ctx.fillStyle = this.color;
 
