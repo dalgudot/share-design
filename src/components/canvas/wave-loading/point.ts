@@ -8,7 +8,7 @@ export const Point = (
   let fixedY = y;
   let speed = 0.05;
   let 초기위치 = index;
-  let max = Math.random() * 100 + 150;
+  let max = Math.random() * 50 + 15;
 
   const pointUpdate = () => {
     초기위치 += speed;

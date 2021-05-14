@@ -4,9 +4,9 @@ export const WaveGroup = (stageWidth: number, stageHeight: number) => {
   const totalWaves = 3;
   const totalPoints = 6;
   const color = [
-    'rgba(255, 0, 0, 0.4)',
-    'rgba(255, 255, 0, 0.4)',
-    'rgba(0, 255, 255, 0.4)',
+    'rgba(255, 0, 0, 0.5)',
+    'rgba(255, 255, 0, 0.5)',
+    'rgba(0, 255, 255, 0.5)',
   ];
   const waves: {
     waveDraw: Function;
@@ -19,8 +19,6 @@ export const WaveGroup = (stageWidth: number, stageHeight: number) => {
     }
   };
   init();
-
-  // console.log(waves);
 
   const waveGroupDraw = (ctx: CanvasRenderingContext2D) => {
     for (let i = 0; i < totalWaves; i++) {

@@ -52,6 +52,8 @@ export const Wave = (
       const centerX = (prevX + x) / 2;
       const centerY = (prevY + y) / 2;
       // ctx.lineTo(centerX, centerY);
+      // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo
+      // 여기가 사이에 곡선으로 표현되는 부분이라서 곡선으로 만들어주면 됨
       ctx.quadraticCurveTo(prevX, prevY, centerX, centerY);
 
       prevX = x;

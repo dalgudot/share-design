@@ -16,27 +16,30 @@ export const useCanvas = (
     })!;
     let animationFrameId: number;
 
+    // 내가 쓰려고 하는 형태에서는 Resize 함수가 필요없음. 초기화만 있으면 됨.
+    // 크기를 고정하기 때문에.
     const Resize = () => {
       // 미리 pixelRatio 곱해서 옴
       canvas.width = stageWidth;
       canvas.height = stageHeight;
 
-      const pixelRatio = window.devicePixelRatio; // Retina 대응
-      ctx.scale(pixelRatio, pixelRatio);
+      // Retina 대응
+      // const pixelRatio = window.devicePixelRatio;
+      // ctx.scale(pixelRatio, pixelRatio);
+      ctx.scale(2, 2);
 
       // pixelRatio로 나눠줘 지정한 크기로 돌아오도록 하기
-      // canvas.style.width = stageWidth / pixelRatio + 'px';
-      // canvas.style.height = stageHeight / pixelRatio + 'px';
+      // https://webglfundamentals.org/webgl/lessons/ko/webgl-resizing-the-canvas.html
+      // canvas.style.width = stageWidth + 'px';
+      // canvas.style.height = stageHeight + 'px';
     };
     Resize(); // 초기화
     window.addEventListener('resize', Resize, false);
 
     const animate = () => {
       // clearRect 영향으로 검정 지워지고 뒤에 다른 배경색 나오는 듯(?)
-      ctx.clearRect(0, 0, stageWidth, stageHeight);
+      ctx.clearRect(0, 0, stageWidth / 2, stageHeight / 2);
       draw(ctx);
-
-      // requestAnimationFrame라는 재귀 함수로 애니메이션 반복
       animationFrameId = requestAnimationFrame(animate);
     };
     animate();
@@ -55,15 +58,6 @@ export const useCanvas = (
   // canvas Ref 받아오기 위해 return
   return canvasRef;
 };
-
-// 캔버스 중앙 정렬
-// let stageWidth = window.innerWidth;
-// let stageHeight = window.innerHeight;
-// let x = stageWidth / 2;
-// let y = stageHeight / 2;
-
-// let stageWidth = document.body.clientWidth;
-// let stageHeight = document.body.clientHeight;
 
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html
 // 느낌표(!)는 non-null assertion, 특정 코드가 null, undefined가 아니다라는 것을 사용자가 타입스크립트에게 얘기해주는 것
