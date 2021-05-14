@@ -1,21 +1,27 @@
 import { Point } from './point';
 
-export const Wave = (stageWidth: number, stageHeight: number) => {
-  const color = 'rgba(255, 0, 0, 0.4)';
+export const Wave = (
+  index: number,
+  totalPoints: number,
+  color: string,
+  stageWidth: number,
+  stageHeight: number
+) => {
+  // const color = 'rgba(255, 0, 0, 0.4)';
   let points: {
     x: number;
     y: number;
-    pointDraw: Function;
     pointUpdate: Function;
   }[] = []; // 각 점을 담는 핵심 배열
-  const totalPoints = 6;
+  // const totalPoints = 6;
 
   const init = () => {
     const pointGap = stageWidth / (totalPoints - 1);
 
     for (let i = 0; i < totalPoints; i++) {
+      // Point 첫 번째 인자에 WaveGroup에서 받아온 index 더해줌
       // stageHeight는 왜 2를 나눠야 하는지 고민 필요
-      const point = Point(i, pointGap * i, stageHeight / 2);
+      const point = Point(index + i, pointGap * i, stageHeight / 2);
       points[i] = point;
     }
   };
@@ -45,7 +51,8 @@ export const Wave = (stageWidth: number, stageHeight: number) => {
 
       const centerX = (prevX + x) / 2;
       const centerY = (prevY + y) / 2;
-      ctx.lineTo(centerX, centerY);
+      // ctx.lineTo(centerX, centerY);
+      ctx.quadraticCurveTo(prevX, prevY, centerX, centerY);
 
       prevX = x;
       prevY = y;

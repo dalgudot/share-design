@@ -1,31 +1,33 @@
 import { Wave } from './wave';
 
-const totalWaves = 3;
-let waves: object[] = [];
-
-export const WaveGroup = () => {
+export const WaveGroup = (stageWidth: number, stageHeight: number) => {
+  const totalWaves = 3;
   const totalPoints = 6;
   const color = [
     'rgba(255, 0, 0, 0.4)',
     'rgba(255, 255, 0, 0.4)',
     'rgba(0, 255, 255, 0.4)',
   ];
+  const waves: {
+    waveDraw: Function;
+  }[] = []; // 각 wave를 담는 핵심 배열
 
-  for (let i = 0; i < totalWaves; i++) {
-    const wave = Wave(i, totalPoints, color[i]);
-    waves[i] = wave;
-    // console.log(waves[i]);
-  }
-};
+  const init = () => {
+    for (let i = 0; i < totalWaves; i++) {
+      const wave = Wave(i, totalPoints, color[i], stageWidth, stageHeight);
+      waves[i] = wave;
+    }
+  };
+  init();
 
-export const WaveGroupResize = (stageWidth: number, stageHeight: number) => {
-  for (let i = 0; i < totalWaves; i++) {
-    const wave = waves[i];
-    console.log(waves[i]);
-    // wave().WaveResize(stageWidth, stageHeight);
-  }
-};
+  // console.log(waves);
 
-export const draw = () => {
-  console.log('draw');
+  const waveGroupDraw = (ctx: CanvasRenderingContext2D) => {
+    for (let i = 0; i < totalWaves; i++) {
+      const wave = waves[i];
+      wave.waveDraw(ctx);
+    }
+  };
+
+  return { waveGroupDraw };
 };
