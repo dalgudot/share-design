@@ -9,6 +9,7 @@ import PMedium400 from '../../../foundation/typography/p-medium-400';
 import PSmall700 from '../../../foundation/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
 import H2Title700 from '../../../foundation/typography/h2-title-700';
+import WaveLoading from '../../canvas/wave-loading/wave-loading';
 
 const Response = ({
   showToast,
@@ -53,54 +54,57 @@ const Response = ({
       : showToast(tArticleCommon().preventResponseToastMessage);
   };
 
-  if (responseLoading === true) {
-    return <StaggerDots />;
-  } else {
-    return (
-      <>
-        <Container>
-          <H2Title700 text={tArticleCommon().responses} color="gray1" />
-          {response.length > 0 && (
-            <ContentsContainer>
-              {response.map((response: any, idx) => (
-                <ResponseDiv key={idx}>
-                  <LeftDiv //
-                    profileGradient={response.profileGradient}
-                  >
-                    <span />
-                    <PSmall700
-                      text={{
-                        k: response.when,
-                        e: response.when,
-                      }}
-                      color="gray2"
-                    />
-                  </LeftDiv>
-                  <PMedium400
-                    text={{
-                      k: response.newResponse,
-                      e: response.newResponse,
-                    }}
-                    color="gray2"
-                    marginTop="8px"
-                  />
-                </ResponseDiv>
-              ))}
-            </ContentsContainer>
-          )}
-        </Container>
+  return <WaveLoading marginTop="48px" />;
 
-        {/* 버튼 영역 */}
-        <A onClick={checkIsResponse}>
-          <AloneButton //
-            size="medium"
-            btnText={tArticleCommon().writeResponse}
-            color="gray6__30"
-          />
-        </A>
-      </>
-    );
-  }
+  // if (responseLoading === true) {
+  //
+  //   return <WaveLoading />;
+  // } else {
+  //   return (
+  //     <>
+  //       <Container>
+  //         <H2Title700 text={tArticleCommon().responses} color="gray1" />
+  //         {response.length > 0 && (
+  //           <ContentsContainer>
+  //             {response.map((response: any, idx) => (
+  //               <ResponseDiv key={idx}>
+  //                 <LeftDiv //
+  //                   profileGradient={response.profileGradient}
+  //                 >
+  //                   <span />
+  //                   <PSmall700
+  //                     text={{
+  //                       k: response.when,
+  //                       e: response.when,
+  //                     }}
+  //                     color="gray2"
+  //                   />
+  //                 </LeftDiv>
+  //                 <PMedium400
+  //                   text={{
+  //                     k: response.newResponse,
+  //                     e: response.newResponse,
+  //                   }}
+  //                   color="gray2"
+  //                   marginTop="8px"
+  //                 />
+  //               </ResponseDiv>
+  //             ))}
+  //           </ContentsContainer>
+  //         )}
+  //       </Container>
+
+  //       {/* 버튼 영역 */}
+  //       <A onClick={checkIsResponse}>
+  //         <AloneButton //
+  //           size="medium"
+  //           btnText={tArticleCommon().writeResponse}
+  //           color="gray6__30"
+  //         />
+  //       </A>
+  //     </>
+  //   );
+  // }
 };
 
 export default Response;

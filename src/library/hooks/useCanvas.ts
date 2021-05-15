@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 export const useCanvas = (
@@ -6,15 +6,17 @@ export const useCanvas = (
   stageWidth: number,
   stageHeight: number
 ) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  // console.log('component', canvasRef);
 
   // canvas가 렌더링되기 전에는 canvasRef.current, document.body.clientWidth, document.body.clientHeight가 존재하지 않음.  -> component가 마운트될 때까지 기다려야 함(componentDidMount) -> useEffect로 처리
   useEffect(() => {
-    const canvas: any = canvasRef.current;
+    // console.log('useEffect', canvasRef);
+    const canvas = canvasRef.current as HTMLCanvasElement;
     const ctx: CanvasRenderingContext2D = canvas.getContext('2d', {
       alpha: false,
     })!;
-    let animationFrameId: number;
+    let requestId: number;
 
     // 내가 쓰려고 하는 형태에서는 Resize 함수가 필요없음. 초기화만 있으면 됨.
     // 크기를 고정하기 때문에.
@@ -34,21 +36,22 @@ export const useCanvas = (
       // canvas.style.height = stageHeight + 'px';
     };
     Resize(); // 초기화
-    window.addEventListener('resize', Resize, false);
+    // window.addEventListener('resize', Resize, false);
 
     const animate = () => {
       // clearRect 영향으로 검정 지워지고 뒤에 다른 배경색 나오는 듯(?)
       ctx.clearRect(0, 0, stageWidth / 2, stageHeight / 2);
       draw(ctx);
-      animationFrameId = requestAnimationFrame(animate);
+      requestId = window.requestAnimationFrame(animate);
     };
     animate();
+    // console.log('mount', requestId);
 
     // clean-up function
     // 이 컴포넌트가 unmount됐을 때 AnimationFrame 취소
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', Resize, false);
+      window.cancelAnimationFrame(requestId);
+      // window.removeEventListener('resize', Resize, false);
     };
   }, []);
   // [] 빈 배열은 컴포넌트가 마운트된 후 1번만 실행된다고 useEffect에 전달

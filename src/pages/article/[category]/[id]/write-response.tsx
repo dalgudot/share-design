@@ -14,6 +14,7 @@ import { gradientGenerator } from '../../../../library/functions/gradient-genera
 import { motion } from 'framer-motion';
 import { vibration } from '../../../../foundation/framer-motion/variants';
 import { scrollTop } from '../../../../library/functions/scroll-top';
+import React from 'react';
 
 const WriteResponse = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenResponse;
@@ -104,11 +105,6 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
           </motion.button>
         </AnonymousProfileArea>
         <MultiLineTextField
-          ref={function (ref) {
-            if (ref !== null) {
-              ref.focus();
-            }
-          }}
           onChange={(e) => setNewResponse(e.target.value)}
           placeholder={useSetLanguage(tArticleCommon().responsePlaceholder)}
           minRows={3}
@@ -137,7 +133,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
   );
 };
 
-export default WriteResponse;
+export default React.memo(WriteResponse);
 
 const Main = styled.main`
   @media all and (max-width: ${mediaBreakPoint.first}) {

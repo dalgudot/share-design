@@ -71,7 +71,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={mode}>
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
-            {/* <Header /> */}
+            <Header />
             {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
             {/* <AnimatePresence> */}
             {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
