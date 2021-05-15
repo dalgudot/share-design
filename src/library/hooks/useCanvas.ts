@@ -14,12 +14,13 @@ export const useCanvas = (
     let requestId: number;
 
     const Resize = () => {
+      // Retina 대응
       const pixelRatio = window.devicePixelRatio;
       canvas.width = stageWidth * pixelRatio;
       canvas.height = stageHeight * pixelRatio;
+      ctx.scale(pixelRatio, pixelRatio);
 
-      ctx.scale(pixelRatio, pixelRatio); // Retina 대응
-
+      // Retina일 때 원래 크기로 압축시켜주는 역할
       canvas.style.width = stageWidth + 'px';
       canvas.style.height = stageHeight + 'px';
     };
