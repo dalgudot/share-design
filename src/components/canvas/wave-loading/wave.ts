@@ -7,13 +7,11 @@ export const Wave = (
   stageWidth: number,
   stageHeight: number
 ) => {
-  // const color = 'rgba(255, 0, 0, 0.4)';
   let points: {
     x: number;
     y: number;
-    pointUpdate: Function;
-  }[] = []; // 각 점을 담는 핵심 배열
-  // const totalPoints = 6;
+    pointUpdate: () => number;
+  }[] = [];
 
   const init = () => {
     const pointGap = stageWidth / (totalPoints - 1);
@@ -50,9 +48,8 @@ export const Wave = (
 
       const centerX = (prevX + x) / 2;
       const centerY = (prevY + y) / 2;
-      // ctx.lineTo(centerX, centerY);
       // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo
-      // 여기가 사이에 곡선으로 표현되는 부분이라서 곡선으로 만들어주면 됨
+      // 여기가 사이에 곡선으로 표현되는 곳
       ctx.quadraticCurveTo(prevX, prevY, centerX, centerY);
 
       prevX = x;
@@ -71,5 +68,5 @@ export const Wave = (
     // ctx.closePath();
   };
 
-  return { waveDraw };
+  return waveDraw;
 };

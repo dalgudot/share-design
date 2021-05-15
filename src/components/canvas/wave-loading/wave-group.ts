@@ -8,10 +8,7 @@ export const WaveGroup = (stageWidth: number, stageHeight: number) => {
     'rgba(255, 0, 255, 0.3)',
     'rgba(255, 0, 255, 0.4)',
   ];
-  // 각 wave를 담는 핵심 배열
-  const waves: {
-    waveDraw: Function;
-  }[] = [];
+  const waves: ((ctx: CanvasRenderingContext2D) => void)[] = [];
 
   const init = () => {
     for (let i = 0; i < totalWaves; i++) {
@@ -23,8 +20,7 @@ export const WaveGroup = (stageWidth: number, stageHeight: number) => {
 
   const waveGroupDraw = (ctx: CanvasRenderingContext2D) => {
     for (let i = 0; i < totalWaves; i++) {
-      const wave = waves[i];
-      wave.waveDraw(ctx);
+      waves[i](ctx);
     }
   };
 
