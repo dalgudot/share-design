@@ -39,14 +39,16 @@ const TabNavBar = () => {
   return (
     <>
       <Nav isShow={isShow}>
-        <Tab onClick={() => setHomeTab()} ref={homeRef}>
-          <TabHome24 tab={homeTab} />
-        </Tab>
-        <Tab onClick={() => setContactTab()} ref={contactRef}>
-          <TabContact24 tab={contactTab} />
-        </Tab>
+        <div className="tab__wrap__zIndex">
+          <Tab onClick={() => setHomeTab()} ref={homeRef}>
+            <TabHome24 tab={homeTab} />
+          </Tab>
+          <Tab onClick={() => setContactTab()} ref={contactRef}>
+            <TabContact24 tab={contactTab} />
+          </Tab>
+        </div>
+        <FillEmptySpace isShow={isShow} />
       </Nav>
-      <FillEmptySpace isShow={isShow} />
     </>
   );
 };
@@ -58,39 +60,41 @@ type isShowType = {
 };
 
 const Nav = styled.nav<isShowType>`
-  display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
-  z-index: ${({ theme }) => theme.zIndex.Bar};
-  position: fixed;
+  .tab__wrap__zIndex {
+    display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
+    z-index: ${({ theme }) => theme.zIndex.Bar};
+    position: fixed;
 
-  // iOS bottom safe area
-  margin-top: calc(env(safe-area-inset-top));
-  margin-bottom: calc(env(safe-area-inset-bottom));
-
-  // 바뀌는 속성
-  justify-content: space-between;
-  width: 124px;
-  height: 44px;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 48px;
-    top: unset; // 초기화
-    left: 0;
-    right: 0;
-    transform: translateX(0);
-
-    // 추가 속성
-    bottom: 0;
-    align-items: center;
-    border-top: solid 1px ${({ theme }) => theme.gray7};
-    background-color: ${({ theme }) => theme.gray8};
-
-    // iOS bottom safe area
+    // iOS safe area
+    margin-top: calc(env(safe-area-inset-top));
     margin-bottom: calc(env(safe-area-inset-bottom));
+
+    // 바뀌는 속성
+    justify-content: space-between;
+    width: 124px;
+    height: 44px;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      justify-content: space-evenly;
+      width: 100vw;
+      height: 48px;
+      top: unset; // 초기화
+      left: 0;
+      right: 0;
+      transform: translateX(0);
+
+      // 추가 속성
+      bottom: 0;
+      align-items: center;
+      border-top: solid 1px ${({ theme }) => theme.gray7};
+      background-color: ${({ theme }) => theme.gray8};
+
+      // iOS bottom safe area
+      margin-bottom: calc(env(safe-area-inset-bottom));
+    }
   }
 `;
 

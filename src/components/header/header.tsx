@@ -14,12 +14,14 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Left onClick={goHome}>
-          <PMedium700 text={t.shareDesign} color="gray1" />
-        </Left>
-        <LangChangeToggle />
+        <div className="header__wrap__zIndex">
+          <Left onClick={goHome}>
+            <PMedium700 text={t.shareDesign} color="gray1" />
+          </Left>
+          <LangChangeToggle />
+        </div>
+        <FillEmptySpace />
       </HeaderContainer>
-      <FillEmptySpace />
     </>
   );
 };
@@ -27,34 +29,34 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .header__wrap__zIndex {
+    // iOS top safe area
+    margin-top: calc(env(safe-area-inset-top));
 
-  // iOS top safe area
-  margin-top: calc(env(safe-area-inset-top));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: ${({ theme }) => theme.zIndex.Bar};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    border-bottom: solid 1px ${({ theme }) => theme.gray7};
+    background-color: ${({ theme }) => theme.gray8};
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 72px;
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      height: 57px;
+      padding: ${({ theme }) => theme.padding.MobileWrap};
+    }
 
-  border-bottom: solid 1px ${({ theme }) => theme.gray7};
-  z-index: ${({ theme }) => theme.zIndex.Bar};
-  background-color: ${({ theme }) => theme.gray8};
+    @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
+      padding: ${({ theme }) => theme.padding.TabletWrap};
+    }
 
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 57px;
-    padding: ${({ theme }) => theme.padding.MobileWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: ${({ theme }) => theme.padding.TabletWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: ${({ theme }) => theme.padding.DesktopWrap};
+    @media all and (min-width: ${mediaBreakPoint.fourth}) {
+      padding: ${({ theme }) => theme.padding.DesktopWrap};
+    }
   }
 `;
 

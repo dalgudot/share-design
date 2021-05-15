@@ -18,9 +18,9 @@ const WaveLoading = ({ marginTop }: { marginTop?: string }) => {
 export default WaveLoading;
 
 const Wrap = styled.div<{ width: number; height: number; marginTop?: string }>`
-  margin: ${({ marginTop }) => marginTop ?? 0} auto 0;
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
+  margin: ${({ marginTop }) => marginTop ?? 0} auto 0;
 
   canvas {
     border-radius: 50%;

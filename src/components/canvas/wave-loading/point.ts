@@ -10,12 +10,9 @@ export const Point = (
   let radian = index;
   let amplitude = Math.random() * 18;
 
-  console.log(amplitude);
-
   const pointUpdate = () => {
     radian += speed;
     y = amplitude * Math.sin(radian) + fixedY;
-
     return y;
   };
 
