@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import StaggerDots from '../../../foundation/framer-motion/stagger-dots';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
@@ -54,57 +53,54 @@ const Response = ({
       : showToast(tArticleCommon().preventResponseToastMessage);
   };
 
-  return <WaveLoading marginTop="48px" />;
+  if (responseLoading === true) {
+    return <WaveLoading marginTop="48px" />;
+  } else {
+    return (
+      <>
+        <Container>
+          <H2Title700 text={tArticleCommon().responses} color="gray1" />
+          {response.length > 0 && (
+            <ContentsContainer>
+              {response.map((response: any, idx) => (
+                <ResponseDiv key={idx}>
+                  <LeftDiv //
+                    profileGradient={response.profileGradient}
+                  >
+                    <span />
+                    <PSmall700
+                      text={{
+                        k: response.when,
+                        e: response.when,
+                      }}
+                      color="gray2"
+                    />
+                  </LeftDiv>
+                  <PMedium400
+                    text={{
+                      k: response.newResponse,
+                      e: response.newResponse,
+                    }}
+                    color="gray2"
+                    marginTop="8px"
+                  />
+                </ResponseDiv>
+              ))}
+            </ContentsContainer>
+          )}
+        </Container>
 
-  // if (responseLoading === true) {
-  //
-  //   return <WaveLoading />;
-  // } else {
-  //   return (
-  //     <>
-  //       <Container>
-  //         <H2Title700 text={tArticleCommon().responses} color="gray1" />
-  //         {response.length > 0 && (
-  //           <ContentsContainer>
-  //             {response.map((response: any, idx) => (
-  //               <ResponseDiv key={idx}>
-  //                 <LeftDiv //
-  //                   profileGradient={response.profileGradient}
-  //                 >
-  //                   <span />
-  //                   <PSmall700
-  //                     text={{
-  //                       k: response.when,
-  //                       e: response.when,
-  //                     }}
-  //                     color="gray2"
-  //                   />
-  //                 </LeftDiv>
-  //                 <PMedium400
-  //                   text={{
-  //                     k: response.newResponse,
-  //                     e: response.newResponse,
-  //                   }}
-  //                   color="gray2"
-  //                   marginTop="8px"
-  //                 />
-  //               </ResponseDiv>
-  //             ))}
-  //           </ContentsContainer>
-  //         )}
-  //       </Container>
-
-  //       {/* 버튼 영역 */}
-  //       <A onClick={checkIsResponse}>
-  //         <AloneButton //
-  //           size="medium"
-  //           btnText={tArticleCommon().writeResponse}
-  //           color="gray6__30"
-  //         />
-  //       </A>
-  //     </>
-  //   );
-  // }
+        {/* 버튼 영역 */}
+        <A onClick={checkIsResponse}>
+          <AloneButton //
+            size="medium"
+            btnText={tArticleCommon().writeResponse}
+            color="gray6__30"
+          />
+        </A>
+      </>
+    );
+  }
 };
 
 export default Response;

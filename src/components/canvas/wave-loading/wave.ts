@@ -20,8 +20,7 @@ export const Wave = (
 
     for (let i = 0; i < totalPoints; i++) {
       // Point 첫 번째 인자에 WaveGroup에서 받아온 index 더해줌
-      // stageHeight는 왜 2를 나눠야 하는지 고민 필요
-      const point = Point(index + i, pointGap * i, stageHeight / 2);
+      const point = Point(index + i, pointGap * i, stageHeight);
       points[i] = point;
     }
   };

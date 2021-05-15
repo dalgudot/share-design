@@ -3,16 +3,23 @@ export const Point = (
   stageWidth: number,
   stageHeight: number
 ) => {
-  let x = stageWidth / 2;
-  let y = stageHeight / 2;
+  let x = stageWidth;
+  let y = stageHeight / 2; // 점의 y는 세로에서 중간으로 오도록 만들기
   let fixedY = y;
-  let speed = 0.05;
-  let 초기위치 = index;
-  let max = Math.random() * 50 + 15;
+  let speed = 0.06;
+  let radian = index;
+  // Math.random() 메소드는 0 이상 1 미만의 부동소숫점 의사 난수를 반환
+  // amplitude는 렌더될 때 고정됨. 새로운 렌더마다 바뀜.
+  let amplitude = Math.random() * 18;
+
+  // console.log('x', x, 'y', y);
+  // console.log('point');
+  // console.log('amplitude', amplitude);
 
   const pointUpdate = () => {
-    초기위치 += speed;
-    y = fixedY + Math.sin(초기위치) * max;
+    radian += speed;
+    // Math.sin() 메소드는 라디안인 각도의 사인 값인 -1과 1 사이의 수를 반환
+    y = amplitude * Math.sin(radian) + fixedY;
 
     return y;
   };

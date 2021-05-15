@@ -3,15 +3,10 @@ import { useCanvas } from '../../../library/hooks/useCanvas';
 import { WaveGroup } from './wave-group';
 
 const WaveLoading = ({ marginTop }: { marginTop?: string }) => {
-  const pixelRatio = window.devicePixelRatio; // Retina 대응
-  // let stageWidth = window.innerWidth * 2;
-  // let stageHeight = window.innerHeight * 2;
-  let stageWidth = 48;
-  let stageHeight = 48;
-  const { waveGroupDraw } = WaveGroup(stageWidth, stageHeight);
-  const canvasRef = useCanvas(waveGroupDraw, stageWidth, stageHeight);
-
-  // console.log('stageWidth', stageWidth, 'stageHeight', stageHeight);
+  const stageWidth = 48;
+  const stageHeight = 48;
+  const draw = WaveGroup(stageWidth, stageHeight);
+  const canvasRef = useCanvas(draw, stageWidth, stageHeight);
 
   return (
     <Wrap width={stageWidth} height={stageHeight} marginTop={marginTop}>
@@ -23,14 +18,12 @@ const WaveLoading = ({ marginTop }: { marginTop?: string }) => {
 export default WaveLoading;
 
 const Wrap = styled.div<{ width: number; height: number; marginTop?: string }>`
-  margin: 0 auto;
+  margin: ${({ marginTop }) => marginTop ?? 0} auto 0;
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  background-color: transparent;
-  border-radius: 50%;
-  margin-top: ${({ marginTop }) => marginTop};
 
   canvas {
     border-radius: 50%;
+    background-color: rgba(255, 0, 255, 0.1);
   }
 `;

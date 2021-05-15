@@ -115,7 +115,7 @@ const Article = ({
 
           <ArticleMessage />
 
-          {/* {contents} */}
+          {contents}
 
           {router.pathname === '/introduction' && (
             <GoToFirstContent>
