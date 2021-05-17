@@ -10,13 +10,20 @@ import { articleData } from '../data/article-data';
 import IconLanguage169 from '../foundation/svg/icon_language_16_9';
 import IconMotion169 from '../foundation/svg/icon_motion_16_9';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { useRouter } from 'next/router';
 
-const Index = () => {
+const Index = ({ showToast }: { showToast: Function }) => {
   useArvAmplitude('arv_home');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
   const data = articleData();
+
+  const router = useRouter();
+  const test = () => {
+    router.push('/test', '/test');
+    showToast('테스트 성공');
+  };
 
   return (
     <>
@@ -43,8 +50,10 @@ const Index = () => {
           >
             <IconLanguage169 />
           </List>
+          <button onClick={test}>테스트 버튼</button>
           <GotoIntroduction />
         </ul>
+
         <ShareToolBar />
       </Main>
       <Footer />
