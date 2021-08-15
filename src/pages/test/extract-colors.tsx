@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import H1Title700 from '../src/foundation/typography/h1-title-700';
+import H1Title700 from '../../foundation/typography/h1-title-700';
 import { usePalette } from 'react-palette';
 import React from 'react';
-import StaggerDots from '../src/foundation/framer-motion/stagger-dots';
+import StaggerDots from '../../foundation/framer-motion/stagger-dots';
 
+// 컴포넌트로 옮겨야 함
 // 아웃풋은 color palette
 // 로딩을 pixel 단위로
 const ExtractColors = ({ image, imageRef }: { image: any; imageRef: any }) => {

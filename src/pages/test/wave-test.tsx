@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import WaveLoading from '../components/canvas/wave-loading/wave-loading';
+import WaveLoading from '../../components/canvas/wave-loading/wave-loading';
 
+// SVG 배경도 함께 Test한 Page
 const WaveTest = () => {
   return (
     <>
