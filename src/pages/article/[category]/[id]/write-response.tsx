@@ -7,9 +7,9 @@ import { useDate } from '../../../../library/hooks/useDate';
 import { mediaBreakPoint } from '../../../../styles/common';
 import { useSetLanguage } from '../../../../library/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
-import PMedium700 from '../../../../foundation/typography/p-medium-700';
+import PLarge from '../../../../foundation/typography/p-large';
 import { useMyRipple } from '../../../../library/hooks/useMyRipple';
-import PSmall700 from '../../../../foundation/typography/p-small-700';
+import PSmall from '../../../../foundation/typography/p-small-700';
 import { gradientGenerator } from '../../../../library/functions/gradient-generator';
 import { motion } from 'framer-motion';
 import { vibration } from '../../../../foundation/framer-motion/variants';
@@ -86,7 +86,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
         <AnonymousProfileArea>
           <LeftDiv profileGradient={profileGradient}>
             <span />
-            <PSmall700
+            <PSmall
               text={{
                 k: when,
                 e: when,
@@ -101,7 +101,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <PSmall700 text={tArticleCommon().changeColor} color="gray2" />
+            <PSmall text={tArticleCommon().changeColor} color="gray2" />
           </motion.button>
         </AnonymousProfileArea>
         <MultiLineTextField
@@ -119,7 +119,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
           disabled={btnDisbled}
           textLengthCondition={textLengthCondition}
         >
-          <PMedium700
+          <PLarge
             text={
               textLengthCondition
                 ? tArticleCommon().postResponse
@@ -236,7 +236,7 @@ const PostButton = styled.button<{ textLengthCondition: boolean }>`
   -webkit-transition: border 0.23s ease-in-out;
   transition: border 0.23s ease-in-out;
 
-  /* PMedium700에 override */
+  /* PLarge에 override */
   p {
     color: ${({ textLengthCondition, theme }) =>
       textLengthCondition ? theme.gray2 : theme.gray5};

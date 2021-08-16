@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H2Title700 from '../../../foundation/typography/h2-title-700';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import H2Title from '../../../foundation/typography/h2';
+import PSmall from '../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useMyRipple } from '../../../library/hooks/useMyRipple';
@@ -15,20 +15,20 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
 
   return (
     <EmailDiv>
-      <H2Title700 text={t.myEmail} color="gray1" />
+      <H2Title text={t.myEmail} color="gray1" />
       <EmailButtonDiv>
         <CopyToClipboard
           text="dalgudot@gmail.com"
           onCopy={() => showToast(t.contact.toastMessage)}
         >
           <CopyButton ref={copyItRef}>
-            <PSmall400 text={t.contact.copyButton} color="gray1" />
+            <PSmall text={t.contact.copyButton} color="gray1" />
           </CopyButton>
         </CopyToClipboard>
 
         <SendButton ref={sendEmailRef}>
           <a href="mailto:dalgudot@gmail.com" target="_blank">
-            <PSmall400 text={t.contact.sendButton} color="gray1" />
+            <PSmall text={t.contact.sendButton} color="gray1" />
           </a>
         </SendButton>
       </EmailButtonDiv>

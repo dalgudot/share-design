@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { btnHoverTap } from '../../foundation/framer-motion/variants';
-import PMedium400 from '../../foundation/typography/p-medium-400';
-import PSmall700 from '../../foundation/typography/p-small-700';
+import PLarge from '../../foundation/typography/p-medium';
+import PSmall from '../../foundation/typography/p-small';
 
 const AloneButton = ({
   size, // small or medium
@@ -25,11 +25,11 @@ const AloneButton = ({
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      {size === 'small' ? (
-        <PSmall700 text={btnText} color="gray2" />
+      {/* {size === 'small' ? (
+        <PSmall text={btnText} color="gray2" />
       ) : (
-        <PMedium400 text={btnText} color="gray2" />
-      )}
+        <PLarge text={btnText} color="gray2" />
+      )} */}
     </MotionDiv>
   );
 };

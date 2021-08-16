@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { t } from '../../../data/index/t';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PLarge from '../../../foundation/typography/p-medium';
 import AloneButton from '../../button/alone-button';
 
 const ErrorCommon = () => {
@@ -9,7 +9,7 @@ const ErrorCommon = () => {
 
   return (
     <Main>
-      <PMedium400 //
+      <PLarge //
         text={t.errorMessage.message}
         color="gray2"
       />

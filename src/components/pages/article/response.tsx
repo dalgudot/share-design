@@ -4,10 +4,10 @@ import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
-import PSmall700 from '../../../foundation/typography/p-small-700';
+import PLarge from '../../../foundation/typography/p-medium';
+import PSmall from '../../../foundation/typography/p-small-700';
 import AloneButton from '../../button/alone-button';
-import H2Title700 from '../../../foundation/typography/h2-title-700';
+import H2Title from '../../../foundation/typography/h2';
 import WaveLoading from '../../canvas/wave-loading/wave-loading';
 
 const Response = ({
@@ -59,7 +59,7 @@ const Response = ({
     return (
       <>
         <Container>
-          <H2Title700 text={tArticleCommon().responses} color="gray1" />
+          <H2Title text={tArticleCommon().responses} color="gray1" />
           {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
@@ -68,7 +68,7 @@ const Response = ({
                     profileGradient={response.profileGradient}
                   >
                     <span />
-                    <PSmall700
+                    <PSmall
                       text={{
                         k: response.when,
                         e: response.when,
@@ -76,7 +76,7 @@ const Response = ({
                       color="gray2"
                     />
                   </LeftDiv>
-                  <PMedium400
+                  <PLarge
                     text={{
                       k: response.newResponse,
                       e: response.newResponse,

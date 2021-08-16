@@ -82,11 +82,10 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               // key={router.pathname}
               // exit Animation 위해 필요한 key
             />
-
             {/* </AnimatePresence> */}
             {/* AnimatePresence 밖에 TabNavBar 있어야 re-render 안 됨 */}
 
-            <TabNavBar />
+            {/* <TabNavBar /> */}
             <ShareModal key={router.pathname} showToast={showToast} />
             <MyToast
               key={toastMessage} // 토스트별 구분 위해 key 필요

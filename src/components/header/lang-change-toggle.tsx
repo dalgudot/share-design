@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../../foundation/svg/icon_language_24';
-import PMedium700 from '../../foundation/typography/p-medium-700';
 import { useWindowWidth } from '../../library/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
 import useScrollPosition from '../../library/hooks/useScrollPosition';
+import PLarge from '../../foundation/typography/p-large';
 
 const LangChangeToggle = ({
   setFinalToggle,
@@ -44,15 +44,16 @@ const LangChangeToggle = ({
 
   return (
     <ButtonContainer onClick={setLanguageChange}>
-      <IconLanguage24 color={themeContext.gray2} />
+      <IconLanguage24 color={themeContext.gray0} />
       <motion.div //
         variants={koVariants(width)}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'ko' ? 'on' : 'off'}
       >
-        <PMedium700
+        <PLarge
           text={t.header.langChangeToggleKo}
-          color={locale === 'ko' ? 'gray2' : 'gray5'}
+          color={locale === 'ko' ? 'gray0' : 'gray5'}
+          weight={700}
         />
       </motion.div>
       <Divider />
@@ -61,9 +62,10 @@ const LangChangeToggle = ({
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'en' ? 'on' : 'off'}
       >
-        <PMedium700
+        <PLarge
           text={t.header.langChangeToggleEn}
-          color={locale === 'en' ? 'gray2' : 'gray5'}
+          color={locale === 'en' ? 'gray0' : 'gray5'}
+          weight={700}
         />
       </motion.div>
     </ButtonContainer>
@@ -88,11 +90,39 @@ const Divider = styled.span`
   height: 12px;
   width: 1px;
   margin-top: 2px;
-  background-color: ${({ theme }) => theme.gray6};
+  background-color: ${({ theme }) => theme.gray5};
   margin-left: 6px;
 `;
 
 // Framer Motion
+// const koVariants = (width: number) => {
+//   if (width < 768) {
+//     return {
+//       on: { x: 0 },
+//       off: { x: 33 },
+//     };
+//   } else {
+//     return {
+//       on: { x: 0 },
+//       off: { x: 33 },
+//     };
+//   }
+// };
+
+// const enVariants = (width: number) => {
+//   if (width < 768) {
+//     return {
+//       on: { x: -33 },
+//       off: { x: 0 },
+//     };
+//   } else {
+//     return {
+//       on: { x: -33 },
+//       off: { x: 0 },
+//     };
+//   }
+// };
+
 const koVariants = (width: number) => {
   if (width < 768) {
     return {

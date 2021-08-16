@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PLarge from '../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../styles/common';
-import H2Title700 from '../../../foundation/typography/h2-title-700';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import H2Title from '../../../foundation/typography/h2';
+import PSmall from '../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 
 const List = ({
@@ -14,7 +14,6 @@ const List = ({
   title,
   summary,
   marginTop,
-  children,
 }: {
   url: string;
   category: object;
@@ -24,7 +23,6 @@ const List = ({
   summary: object;
   marginTop?: string;
   // https://www.carlrippon.com/react-children-with-typescript/
-  children: JSX.Element;
 }) => {
   return (
     <MotionLi //
@@ -36,26 +34,26 @@ const List = ({
       <Link href={url}>
         <a>
           {/* 이미지 영역 */}
-          <div className="image__area__wrap">
-            <div className="image__area">{children}</div>
-          </div>
+          {/* <div className="image__area__wrap">
+            <div className="image__area"></div>
+          </div> */}
 
           {/* 메타 정보 영역 */}
           <CategoryDateArea>
-            <PSmall400 text={category} color="gray4" />
+            <PSmall text={category} color="gray4" />
             <span />
             <time dateTime={dateTime}>
-              <PSmall400 text={date} color="gray4" />
+              <PSmall text={date} color="gray4" />
             </time>
           </CategoryDateArea>
 
           {/* 제목 및 요약 영역 */}
-          <H2Title700 //
+          <H2Title //
             text={title}
             color="gray1"
             marginTop="4px"
           />
-          <PMedium400
+          <PLarge
             text={summary}
             color="gray3"
             marginTop="16px"

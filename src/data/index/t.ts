@@ -5,15 +5,8 @@ export const t = {
   },
 
   header: {
-    langChangeToggleKo: {
-      k: 'ko',
-      e: 'ko',
-    },
-
-    langChangeToggleEn: {
-      k: 'en',
-      e: 'en',
-    },
+    langChangeToggleKo: 'ko',
+    langChangeToggleEn: 'en',
   },
 
   myName: {
@@ -82,8 +75,7 @@ export const t = {
 
     brunchAlt: {
       k: 'UI/UX 디자이너 김경환의 브런치 링크 버튼 이미지',
-      e:
-        'Brunch, the Korean version of Medium, Link Button Image of KyungHwan Kim, UI/UX designer',
+      e: 'Brunch, the Korean version of Medium, Link Button Image of KyungHwan Kim, UI/UX designer',
     },
 
     about: {
@@ -96,8 +88,7 @@ export const t = {
         term: {}, // 여기에는 term 없음
         contents: {
           k: '젊은 세대에게 좋은 영감을 주는 사람으로 나이 들어가기',
-          e:
-            'Getting older as a good inspirational person for the younger generation',
+          e: 'Getting older as a good inspirational person for the younger generation',
         },
       },
 
@@ -154,10 +145,8 @@ export const t = {
               e: '2020.09.12 ~ Present',
             },
             contents: {
-              k:
-                "UI/UX 디자인 경험을 전 세계 사람들과 공유하는 '디자인 공유하기' 프로젝트를 진행하고 있습니다.",
-              e:
-                "I am working on a 'SHARE DESIGN' project to share UI/UX design experience with people around the world.",
+              k: "UI/UX 디자인 경험을 전 세계 사람들과 공유하는 '디자인 공유하기' 프로젝트를 진행하고 있습니다.",
+              e: "I am working on a 'SHARE DESIGN' project to share UI/UX design experience with people around the world.",
             },
           },
           {
@@ -166,10 +155,8 @@ export const t = {
               e: '2017.05.26 ~ 2018.12.20',
             },
             contents: {
-              k:
-                "20대의 감정과 이야기를 사진과 글로 남기는 '20대를 남기다' 프로젝트를 2017년 5월 26일부터 2018년 12월 20일까지 진행했습니다.",
-              e:
-                "I worked on 'Twenties' project, which records the feelings and stories of the twenties with photos and writings from May 26, 2017 to December 20, 2018.",
+              k: "20대의 감정과 이야기를 사진과 글로 남기는 '20대를 남기다' 프로젝트를 2017년 5월 26일부터 2018년 12월 20일까지 진행했습니다.",
+              e: "I worked on 'Twenties' project, which records the feelings and stories of the twenties with photos and writings from May 26, 2017 to December 20, 2018.",
             },
           },
         ],
@@ -188,10 +175,8 @@ export const t = {
               e: '2018.12.14 ~ 12.20',
             },
             contents: {
-              k:
-                "'ART-MAS IN PARIS: 20대를 남기다', \u00A0Studio Galerie B&B, 프랑스 파리",
-              e:
-                "'ART-MAS IN PARIS: Twenties', Studio Galerie B&B, Paris, France",
+              k: "'ART-MAS IN PARIS: 20대를 남기다', \u00A0Studio Galerie B&B, 프랑스 파리",
+              e: "'ART-MAS IN PARIS: Twenties', Studio Galerie B&B, Paris, France",
             },
           },
           {
@@ -200,10 +185,8 @@ export const t = {
               e: '2018.07.16 ~ 07.29',
             },
             contents: {
-              k:
-                "'작가의 부재, 20대를 남기다', \u00A0Villa des Arts, 프랑스 파리",
-              e:
-                "'The absence of a artist, Twenties', Villa des Arts, Paris, France",
+              k: "'작가의 부재, 20대를 남기다', \u00A0Villa des Arts, 프랑스 파리",
+              e: "'The absence of a artist, Twenties', Villa des Arts, Paris, France",
             },
           },
           {
@@ -232,10 +215,8 @@ export const t = {
               e: '2019.08.27',
             },
             contents: {
-              k:
-                '과학 기자에서 UI/UX 디자이너가 되기까지: 경험을 연결해 나만의 큰 그림 설계하기',
-              e:
-                'From Science Journalist to UI/UX Designer: Design your own big picture by connecting your experience',
+              k: '과학 기자에서 UI/UX 디자이너가 되기까지: 경험을 연결해 나만의 큰 그림 설계하기',
+              e: 'From Science Journalist to UI/UX Designer: Design your own big picture by connecting your experience',
             },
           },
         ],

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import PSmall from '../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 
 type tStaticType =
@@ -25,7 +25,7 @@ const ArticleCommonImage = ({
         alt={useSetLanguage(caption)}
       />
       <figcaption>
-        <PSmall400 //
+        <PSmall //
           text={caption}
           color="gray5"
           marginTop="4px"

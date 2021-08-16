@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H3Title700 from '../../../foundation/typography/h3-title-700';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import H3Title from '../../../foundation/typography/h3-title';
+import PSmall from '../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
@@ -12,8 +12,8 @@ const ProfileArea = () => {
         src="/images/profile-photo@3x.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
-      <H3Title700 text={t.myName} color="gray1" marginTop="8px" />
-      <PSmall400 text={t.myJob} color="gray3" />
+      <H3Title text={t.myName} color="gray1" marginTop="8px" />
+      <PSmall text={t.myJob} color="gray3" />
     </ProfileDiv>
   );
 };

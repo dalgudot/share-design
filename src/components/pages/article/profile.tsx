@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import styled from 'styled-components';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import PSmall from '../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 import { t } from '../../../data/index/t';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -18,9 +18,9 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
           src="/images/profile-photo@3x.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
-        <PSmall400 text={t.myName} color="gray1" />
+        <PSmall text={t.myName} color="gray1" />
         <Dot />
-        <PSmall400 text={t.myJob} color="gray1" />
+        <PSmall text={t.myJob} color="gray1" />
       </Author>
     </span>
   );

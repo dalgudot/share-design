@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PLarge from '../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleMessage = () => {
   return (
     <Container>
       <span />
-      <PMedium400 text={tArticleCommon().message} color="gray3" />
+      <PLarge text={tArticleCommon().message} color="gray3" />
     </Container>
   );
 };

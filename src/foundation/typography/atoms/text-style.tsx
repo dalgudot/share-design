@@ -1,10 +1,7 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import { fontSize } from './font';
 
-// 코드로 디자인을 하기 위한 Text Component
-// 나중에 Design System이 만들어지더라도 코드로 디자인을 위해 계속 쓰면 좋을 Component
 const TextStyle = ({
   type, // 기본값은 Styled-components에서 p
   text,
@@ -18,7 +15,10 @@ const TextStyle = ({
 }: {
   type: any;
   text: string;
-  textSize: string;
+  textSize: {
+    mobile: string;
+    desktop: string;
+  };
   weight: number;
   lineHeight?: number;
   letterSpacing?: string;
@@ -28,7 +28,9 @@ const TextStyle = ({
 }) => {
   const themeContext = useContext(ThemeContext);
   const textColorFunc = () => {
-    if (color === 'gray1') {
+    if (color === 'gray0') {
+      return themeContext['gray0'];
+    } else if (color === 'gray1') {
       return themeContext['gray1'];
     } else if (color === 'gray2') {
       return themeContext['gray2'];
@@ -44,6 +46,8 @@ const TextStyle = ({
       return themeContext['gray7'];
     } else if (color === 'gray8') {
       return themeContext['gray8'];
+    } else if (color === 'gray9') {
+      return themeContext['gray9'];
     }
   };
   const textColor = textColorFunc();
@@ -51,9 +55,8 @@ const TextStyle = ({
   return (
     <Text
       as={type} // HTML 태그 결정
-      mobileSize={fontSize.mobile[textSize]}
-      tabletSize={fontSize.tablet[textSize]}
-      desktopSize={fontSize.desktop[textSize]}
+      mobileSize={textSize.mobile}
+      desktopSize={textSize.desktop}
       weight={weight}
       lineHeight={lineHeight}
       letterSpacing={letterSpacing}
@@ -76,22 +79,16 @@ const Text = styled.p<TextType>`
   opacity: ${({ opacity }) => opacity};
   margin-top: ${({ marginTop }) => marginTop};
 
+  // 바뀌는 속성
+  font-size: ${({ desktopSize }) => desktopSize};
+
   @media screen and (max-width: ${mediaBreakPoint.first}) {
     font-size: ${({ mobileSize }) => mobileSize};
-  }
-
-  @media screen and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    font-size: ${({ tabletSize }) => tabletSize};
-  }
-
-  @media screen and (min-width: ${mediaBreakPoint.fourth}) {
-    font-size: ${({ desktopSize }) => desktopSize};
   }
 `;
 
 type TextType = {
   mobileSize: string;
-  tabletSize: string;
   desktopSize: string;
   weight: number;
   lineHeight?: number;

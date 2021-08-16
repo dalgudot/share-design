@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import PSmall from '../../../foundation/typography/p-small';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
       <FooterContainer>
         <Link href="/contact">
           <a>
-            <PSmall400
+            <PSmall
               text={{
                 // k: 'ⓒ KyungHwan Kim. All rights reserved.',
                 // e: 'ⓒ KyungHwan Kim. All rights reserved.',

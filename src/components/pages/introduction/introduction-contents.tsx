@@ -1,4 +1,4 @@
-import PMedium400 from '../../../foundation/typography/p-medium-400';
+import PLarge from '../../../foundation/typography/p-medium';
 
 const IntroductionContents = ({
   contentsArray,
@@ -8,7 +8,7 @@ const IntroductionContents = ({
   return (
     <>
       {contentsArray.map((text, index) => (
-        <PMedium400 //
+        <PLarge //
           key={index}
           text={text}
           color="gray3"

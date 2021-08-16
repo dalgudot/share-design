@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
-import H2Title700 from '../../../../../foundation/typography/h2-title-700';
-import PMedium400 from '../../../../../foundation/typography/p-medium-400';
-import PSmall400 from '../../../../../foundation/typography/p-small-400';
+import H2Title from '../../../../../foundation/typography/h2';
+import PLarge from '../../../../../foundation/typography/p-medium';
+import PSmall from '../../../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import LangChangeButton from '../../../../header/lang-change-button';
 import LangChangeToggle from '../../../../header/lang-change-toggle';
@@ -56,13 +56,13 @@ const UIUXDesignContents1 = ({
 
   return (
     <>
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[0]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[1]}
         color="gray3"
         marginTop="36px"
@@ -74,13 +74,13 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <H2Title700 //
+      <H2Title //
         text={contentsArray[4]}
         color="gray2"
         marginTop="120px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[5]}
         color="gray3"
         marginTop="24px"
@@ -93,7 +93,7 @@ const UIUXDesignContents1 = ({
           text={uiUxDesign1().langChangeButton}
         />
         <figcaption>
-          <PSmall400 //
+          <PSmall //
             text={contentsArray[6]}
             color="gray5"
             marginTop="12px"
@@ -101,13 +101,13 @@ const UIUXDesignContents1 = ({
         </figcaption>
       </FigureWrap>
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[7]}
         color="gray3"
         marginTop="96px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[8]}
         color="gray3"
         marginTop="36px"
@@ -119,7 +119,7 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[11]}
         color="gray3"
         marginTop="96px"
@@ -131,13 +131,13 @@ const UIUXDesignContents1 = ({
         marginTop="48px"
       />
 
-      <H2Title700 //
+      <H2Title //
         text={contentsArray[14]}
         color="gray2"
         marginTop="120px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[15]}
         color="gray3"
         marginTop="24px"
@@ -149,7 +149,7 @@ const UIUXDesignContents1 = ({
           <LangChangeToggle setFinalToggle={setFinalToggle} />
         </div>
         <figcaption>
-          <PSmall400 //
+          <PSmall //
             text={contentsArray[16]}
             color="gray5"
             marginTop="16px"
@@ -157,19 +157,19 @@ const UIUXDesignContents1 = ({
         </figcaption>
       </FigureWrap>
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[17]}
         color="gray3"
         marginTop="96px"
       />
 
-      <H2Title700 //
+      <H2Title //
         text={contentsArray[18]}
         color="gray2"
         marginTop="120px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[19]}
         color="gray3"
         marginTop="24px"
@@ -181,7 +181,7 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[22]}
         color="gray3"
         marginTop="96px"
@@ -193,7 +193,7 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[25]}
         color="gray3"
         marginTop="96px"
@@ -205,13 +205,13 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <H2Title700 //
+      <H2Title //
         text={contentsArray[28]}
         color="gray2"
         marginTop="96px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[29]}
         color="gray3"
         marginTop="12px"

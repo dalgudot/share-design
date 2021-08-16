@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import React from 'react';
-import PMedium400 from '../../foundation/typography/p-medium-400';
+import PLarge from '../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../styles/common';
 
 const MyToast = ({
@@ -19,7 +19,7 @@ const MyToast = ({
         animate={toastOn === true ? 'show' : 'hide'}
       >
         <Div>
-          <PMedium400 text={toastMessage} color="gray1" />
+          <PLarge text={toastMessage} color="gray1" />
         </Div>
       </ToastWrapMotion>
     </>

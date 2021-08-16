@@ -3,9 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
-import H2Title700 from '../../../../../foundation/typography/h2-title-700';
-import PMedium400 from '../../../../../foundation/typography/p-medium-400';
-import PSmall700 from '../../../../../foundation/typography/p-small-700';
+import H2Title from '../../../../../foundation/typography/h2';
+import PLarge from '../../../../../foundation/typography/p-medium';
+import PSmall from '../../../../../foundation/typography/p-small-700';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../../../library/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../../../styles/common';
@@ -34,7 +34,7 @@ const UIUXDesignContents2 = ({
 
   return (
     <>
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[0]}
         color="gray3"
         marginTop="36px"
@@ -46,25 +46,25 @@ const UIUXDesignContents2 = ({
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[3]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[4]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[5]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[6]}
         color="gray3"
         marginTop="36px"
@@ -83,22 +83,22 @@ const UIUXDesignContents2 = ({
             variants={listVariants}
           >
             <img src={value.src} alt={useSetLanguage(value.alt)} />
-            <PSmall700 text={value.photoSrc} color="gray3" />
+            <PSmall text={value.photoSrc} color="gray3" />
           </MotionLi>
         ))}
       </MotionUl>
       <ListLine height={height} />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[7]}
         color="gray3"
       />
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[8]}
         color="gray3"
         marginTop="36px"
       />
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[9]}
         color="gray3"
         marginTop="36px"
@@ -108,36 +108,36 @@ const UIUXDesignContents2 = ({
       <KoodonWriteReview />
       <ListLine height={height} />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[10]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[11]}
         color="gray3"
         marginTop="36px"
       />
 
-      <H2Title700 //
+      <H2Title //
         text={contentsArray[12]}
         color="gray2"
         marginTop="120px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[13]}
         color="gray3"
         marginTop="24px"
       />
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[14]}
         color="gray3"
         marginTop="36px"
       />
 
-      <PMedium400 //
+      <PLarge //
         text={contentsArray[15]}
         color="gray3"
         marginTop="36px"

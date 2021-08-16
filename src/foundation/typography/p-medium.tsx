@@ -1,27 +1,37 @@
 import TextStyle from './atoms/text-style';
-import { fontWeight } from './atoms/font';
 import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const PSmall700 = ({
+const PMedium = ({
   text,
   color,
+  weight,
   marginTop,
 }: {
-  text: any;
+  text:
+    | {
+        k: string;
+        e: string;
+      }
+    | string;
   color: string;
+  weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
 }) => {
   return (
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize="small"
-      weight={fontWeight[700]}
+      textSize={{
+        mobile: '14px',
+        desktop: '18px',
+      }}
+      weight={weight || 400}
       color={color}
+      letterSpacing=""
       lineHeight={1.55}
       marginTop={marginTop}
     />
   );
 };
 
-export default PSmall700;
+export default PMedium;

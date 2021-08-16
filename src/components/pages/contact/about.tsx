@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
-import PMedium700 from '../../../foundation/typography/p-medium-700';
+import PLarge from '../../../foundation/typography/p-medium';
+import PLarge from '../../../foundation/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const AboutArea = () => {
@@ -10,123 +10,102 @@ const AboutArea = () => {
   return (
     <AboutDiv>
       {/* 인생 목표 */}
-      <PMedium400
-        text={aboutData.lifeGoal.title}
-        color="gray4"
-        marginTop="24px"
-      />
+      <PLarge text={aboutData.lifeGoal.title} color="gray4" marginTop="24px" />
       {/* term 없음 */}
-      <PMedium400
+      <PLarge
         text={aboutData.lifeGoal.contents}
         color="gray1"
         marginTop="8px"
       />
 
       {/* 경력 */}
-      <PMedium400
-        text={aboutData.career.title}
-        color="gray4"
-        marginTop="72px"
-      />
-      <PMedium700
+      <PLarge text={aboutData.career.title} color="gray4" marginTop="72px" />
+      <PLarge
         text={aboutData.career.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
       />
-      <PMedium400
-        text={aboutData.career.contentsArray[0].contents}
-        color="gray1"
-      />
-      <PMedium700
+      <PLarge text={aboutData.career.contentsArray[0].contents} color="gray1" />
+      <PLarge
         text={aboutData.career.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
       />
-      <PMedium400
-        text={aboutData.career.contentsArray[1].contents}
-        color="gray1"
-      />
-      <PMedium700
+      <PLarge text={aboutData.career.contentsArray[1].contents} color="gray1" />
+      <PLarge
         text={aboutData.career.contentsArray[2].term}
         color="gray2"
         marginTop="24px"
       />
-      <PMedium400
-        text={aboutData.career.contentsArray[2].contents}
-        color="gray1"
-      />
+      <PLarge text={aboutData.career.contentsArray[2].contents} color="gray1" />
 
       {/* 개인 프로젝트 */}
-      <PMedium400
+      <PLarge
         text={aboutData.personalProject.title}
         color="gray4"
         marginTop="72px"
       />
-      <PMedium700
+      <PLarge
         text={aboutData.personalProject.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.personalProject.contentsArray[0].contents}
         color="gray1"
       />
-      <PMedium700
+      <PLarge
         text={aboutData.personalProject.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.personalProject.contentsArray[1].contents}
         color="gray1"
       />
 
       {/* 전시 */}
-      <PMedium400
+      <PLarge
         text={aboutData.exhibition.title}
         color="gray4"
         marginTop="72px"
       />
-      <PMedium700
+      <PLarge
         text={aboutData.exhibition.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.exhibition.contentsArray[0].contents}
         color="gray1"
       />
-      <PMedium700
+      <PLarge
         text={aboutData.exhibition.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.exhibition.contentsArray[1].contents}
         color="gray1"
       />
-      <PMedium700
+      <PLarge
         text={aboutData.exhibition.contentsArray[2].term}
         color="gray2"
         marginTop="24px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.exhibition.contentsArray[2].contents}
         color="gray1"
       />
 
       {/* 강연 */}
-      <PMedium400
-        text={aboutData.lecture.title}
-        color="gray4"
-        marginTop="72px"
-      />
-      <PMedium700
+      <PLarge text={aboutData.lecture.title} color="gray4" marginTop="72px" />
+      <PLarge
         text={aboutData.lecture.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
       />
-      <PMedium400
+      <PLarge
         text={aboutData.lecture.contentsArray[0].contents}
         color="gray1"
       />

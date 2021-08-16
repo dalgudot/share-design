@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import H2Title700 from '../../../foundation/typography/h2-title-700';
-import PMedium400 from '../../../foundation/typography/p-medium-400';
-import PMedium700 from '../../../foundation/typography/p-medium-700';
+import H2Title from '../../../foundation/typography/h2';
+import PLarge from '../../../foundation/typography/p-medium';
+import PLarge from '../../../foundation/typography/p-medium-700';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
   return (
     <Container>
-      <H2Title700 //
+      <H2Title //
         text={tArticleCommon().ReferencesTitle}
         color="gray1"
       />
@@ -16,14 +16,10 @@ const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
       {referencesData.map((reference: any, idx: number) => (
         <A key={idx} href={reference.url} target="_blank">
           <ReferenceContents>
-            <PMedium700 text={reference.title} color="gray1" />
-            <PMedium400
-              text={reference.content}
-              color="gray3"
-              marginTop="8px"
-            />
+            <PLarge text={reference.title} color="gray1" />
+            <PLarge text={reference.content} color="gray3" marginTop="8px" />
           </ReferenceContents>
-          <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+          <PLarge text={tArticleCommon().chevronRight} color="gray1" />
         </A>
       ))}
     </Container>

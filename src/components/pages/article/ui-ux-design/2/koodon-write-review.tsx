@@ -6,8 +6,8 @@ import IconStar48Fill from '../../../../../foundation/svg/icon_star_48_fill';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../../../styles/common';
-import PSmall400 from '../../../../../foundation/typography/p-small-400';
-import H3Title700 from '../../../../../foundation/typography/h3-title-700';
+import PSmall from '../../../../../foundation/typography/p-small';
+import H3Title from '../../../../../foundation/typography/h3-title';
 
 const KoodonWriteReview = () => {
   const [starCount, setStarCount] = useState([0, 0, 0, 0, 0]); // 0: off 1: on
@@ -25,7 +25,7 @@ const KoodonWriteReview = () => {
           initial={false}
           animate={starAnimation ? 'animate' : 'initial'}
         >
-          <H3Title700 text={uiUxDesign2().koodonReviewText[0]} color="gray2" />
+          <H3Title text={uiUxDesign2().koodonReviewText[0]} color="gray2" />
         </motion.div>
 
         {/* S of Star Area */}
@@ -66,14 +66,14 @@ const KoodonWriteReview = () => {
             maxLength={500}
           />
           <CountCharacters>
-            <PSmall400 //
+            <PSmall //
               text={{
                 k: String(reviewText.length),
                 e: String(reviewText.length),
               }}
               color="gray4"
             />
-            <PSmall400 //
+            <PSmall //
               text={{ k: '/500', e: '/500' }}
               color="gray4"
             />

@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
 import { mediaBreakPoint } from '../../../../styles/common';
 import AloneButton from '../../../button/alone-button';
 import { t } from '../../../../data/index/t';
-import PMedium700 from '../../../../foundation/typography/p-medium-700';
+import PLarge from '../../../../foundation/typography/p-large';
 import {
   btnHoverTap,
   fadeInOut,
@@ -115,7 +115,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
                   variants={btnHoverTap}
                   whileHover="whileHover"
                 >
-                  <PMedium700 text={t.shareModal.facebook} color="gray1" />
+                  <PLarge text={t.shareModal.facebook} color="gray1" />
                 </motion.div>
               </LiMotion>
             </FacebookShareButton>
@@ -127,7 +127,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
                   variants={btnHoverTap}
                   whileHover="whileHover"
                 >
-                  <PMedium700 text={t.shareModal.linkedin} color="gray1" />
+                  <PLarge text={t.shareModal.linkedin} color="gray1" />
                 </motion.div>
               </LiMotion>
             </LinkedinShareButton>
@@ -139,7 +139,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
                   variants={btnHoverTap}
                   whileHover="whileHover"
                 >
-                  <PMedium700 text={t.shareModal.twitter} color="gray1" />
+                  <PLarge text={t.shareModal.twitter} color="gray1" />
                 </motion.div>
               </LiMotion>
             </TwitterShareButton>
@@ -155,7 +155,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
                   variants={btnHoverTap}
                   whileHover="whileHover"
                 >
-                  <PMedium700 text={t.shareModal.copyURL} color="gray1" />
+                  <PLarge text={t.shareModal.copyURL} color="gray1" />
                 </motion.div>
               </LiMotion>
             </CopyToClipboard>

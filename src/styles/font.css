@@ -7,6 +7,7 @@
     url('/fonts/Spoqa Han Sans Bold.woff') format('woff'),
     url('/fonts/Spoqa Han Sans Bold.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
   font-weight: 400;
@@ -15,6 +16,7 @@
     url('/fonts/Spoqa Han Sans Regular.woff') format('woff'),
     url('/fonts/Spoqa Han Sans Regular.ttf') format('truetype');
 }
+/* Light */
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
   font-weight: 300;
@@ -23,6 +25,7 @@
     url('/fonts/Spoqa Han Sans Light.woff') format('woff'),
     url('/fonts/Spoqa Han Sans Light.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
   font-weight: 100;
@@ -53,7 +56,7 @@
     url('/fonts/roboto-v20-latin-regular.ttf') format('truetype');
   unicode-range: U+0041-005A, U+0061-007A;
 }
-
+/* Light */
 @font-face {
   font-family: 'Korean, Number is SpoqaHanSans & English is Roboto';
   font-weight: 300;

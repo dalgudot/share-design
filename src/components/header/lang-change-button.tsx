@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import PSmall700 from '../../foundation/typography/p-small-700';
+import PSmall from '../../foundation/typography/p-small';
 
 const LangChangeButton = ({
   text,
@@ -35,7 +35,7 @@ const LangChangeButton = ({
       }}
       whileTap={{ scale: 0.97 }}
     >
-      <PSmall700 text={text} color="gray1" />
+      <PSmall text={text} color="gray1" />
     </MotionButton>
   );
 };

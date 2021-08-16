@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
 import IconAppleLogo24 from '../../../foundation/svg/icon_logo_apple_24';
 import IconInstagramLogo24 from '../../../foundation/svg/icon_logo_instagram_24';
-import PMedium700 from '../../../foundation/typography/p-medium-700';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import PLarge from '../../../foundation/typography/p-medium-700';
+import PSmall from '../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
-import H2Title700 from '../../../foundation/typography/h2-title-700';
+import H2Title from '../../../foundation/typography/h2';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // webkit 에러 해결
@@ -38,19 +38,19 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
             <Title>
               <Left>
                 <IconAppleLogo24 />
-                <PMedium700
+                <PLarge
                   text={tArticleCommon().articleNotice.iOSAPPDownload}
                   color="gray1"
                 />
               </Left>
-              <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+              <PLarge text={tArticleCommon().chevronRight} color="gray1" />
             </Title>
-            {/* <PSmall400
+            {/* <PSmall
               text={tArticleCommon().articleNotice.iOSAPPDownloadContents[0]}
               color="gray3"
               marginTop="16px"
             />
-            <PSmall400
+            <PSmall
               text={tArticleCommon().articleNotice.iOSAPPDownloadContents[1]}
               color="gray3"
             /> */}
@@ -113,19 +113,19 @@ const Container = styled.div`
           <Title>
             <Left>
               <IconInstagramLogo24 />
-              <PMedium700
+              <PLarge
                 text={tArticleCommon().articleNotice.newNotification}
                 color="gray1"
               />
             </Left>
-            <PMedium700 text={tArticleCommon().chevronRight} color="gray1" />
+            <PLarge text={tArticleCommon().chevronRight} color="gray1" />
           </Title>
-          <PSmall400
+          <PSmall
             text={tArticleCommon().articleNotice.newNotificationContents[0]}
             color="gray3"
             marginTop="16px"
           />
-          <PSmall400
+          <PSmall
             text={tArticleCommon().articleNotice.newNotificationContents[1]}
             color="gray3"
           />

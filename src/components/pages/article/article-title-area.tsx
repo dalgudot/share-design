@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Profile from './profile';
-import H1Title700 from '../../../foundation/typography/h1-title-700';
+import H1Title from '../../../foundation/typography/h1-title';
 import { mediaBreakPoint } from '../../../styles/common';
-import PSmall400 from '../../../foundation/typography/p-small-400';
+import PSmall from '../../../foundation/typography/p-small';
 
 const ArticleTitleArea = ({
   categoryTitle,
@@ -19,14 +19,14 @@ const ArticleTitleArea = ({
     <TitleArea>
       {categoryTitle && date && (
         <CategoryDateArea>
-          <PSmall400 text={categoryTitle} color="gray4" />
+          <PSmall text={categoryTitle} color="gray4" />
           <span />
           <time dateTime={dateTime}>
-            <PSmall400 text={date} color="gray4" />
+            <PSmall text={date} color="gray4" />
           </time>
         </CategoryDateArea>
       )}
-      <H1Title700 //
+      <H1Title //
         text={articleTitle}
         color="gray1"
         marginTop="4px"
