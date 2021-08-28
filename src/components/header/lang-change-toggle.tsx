@@ -8,6 +8,7 @@ import { useWindowWidth } from '../../library/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
 import useScrollPosition from '../../library/hooks/useScrollPosition';
 import PLarge from '../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../styles/common';
 
 const LangChangeToggle = ({
   setFinalToggle,
@@ -33,8 +34,10 @@ const LangChangeToggle = ({
     setFinalToggle && setFinalToggle(true);
   };
 
-  // 768을 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
+  // mediaBreakPoint.first를 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
   const width: number = useWindowWidth();
+  const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
+  const numberMediaBreakPoint = Number(stringMediaBreakPoint);
 
   // Header에서 언어 전환 토글로 언어 전환했을 때 스크롤 유지
   const ScrollY = useScrollPosition();
@@ -46,7 +49,7 @@ const LangChangeToggle = ({
     <ButtonContainer onClick={setLanguageChange}>
       <IconLanguage24 color={themeContext.gray0} />
       <motion.div //
-        variants={koVariants(width)}
+        variants={koVariants(width, numberMediaBreakPoint)}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'ko' ? 'on' : 'off'}
       >
@@ -58,7 +61,7 @@ const LangChangeToggle = ({
       </motion.div>
       <Divider />
       <motion.div //
-        variants={enVariants(width)}
+        variants={enVariants(width, numberMediaBreakPoint)}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'en' ? 'on' : 'off'}
       >
@@ -78,7 +81,7 @@ const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 0 12px 12px; // 터치 영역
+  padding: 12px 0 12px 12px; // touch area
 
   div {
     margin-bottom: 2px;
@@ -95,8 +98,8 @@ const Divider = styled.span`
 `;
 
 // Framer Motion
-const koVariants = (width: number) => {
-  if (width < 768) {
+const koVariants = (width: number, numberMediaBreakPoint: number) => {
+  if (width < numberMediaBreakPoint) {
     return {
       on: { x: 0 },
       off: { x: 33 },
@@ -109,8 +112,8 @@ const koVariants = (width: number) => {
   }
 };
 
-const enVariants = (width: number) => {
-  if (width < 768) {
+const enVariants = (width: number, numberMediaBreakPoint: number) => {
+  if (width < numberMediaBreakPoint) {
     return {
       on: { x: -33 },
       off: { x: 0 },

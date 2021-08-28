@@ -78,7 +78,7 @@ const Nav = styled.nav`
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     p {
       padding-top: 4px;

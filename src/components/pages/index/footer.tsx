@@ -7,19 +7,18 @@ const Footer = () => {
   return (
     <>
       <FooterContainer>
-        <Link href="/contact">
-          <a>
-            <PSmall
-              text={{
-                // k: 'ⓒ KyungHwan Kim. All rights reserved.',
-                // e: 'ⓒ KyungHwan Kim. All rights reserved.',
-                k: 'ⓒ Designed and Developed by KyungHwan Kim',
-                e: 'ⓒ Designed and Developed by KyungHwan Kim',
-              }}
-              color="gray4"
-            />
-          </a>
-        </Link>
+        <Left></Left>
+
+        <Right>
+          <Link href="/contact">
+            <a>
+              <PSmall
+                text="ⓒ KyungHwan Kim. All rights reserved."
+                color="gray4"
+              />
+            </a>
+          </Link>
+        </Right>
       </FooterContainer>
     </>
   );
@@ -28,22 +27,16 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
-  cursor: pointer;
-  text-align: center;
-  /* width: 100%; */
-  margin: 72px auto 105px;
+  display: flex;
+  justify-content: space-around;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+  }
 
   // iOS bottom safe area
   padding-bottom: calc(env(safe-area-inset-bottom));
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    // Bottom: 48px + 1px + '24px'
-    margin: 72px auto 73px;
-    // Bottom: 48px + 1px + '36px'
-    // 아이폰 하단 Home indicator 대응 위해 하단 마진 높게
-    /* margin: 72px auto 109px; */
-
-    // iOS bottom safe area
-    padding-bottom: calc(env(safe-area-inset-bottom));
-  }
 `;
+
+const Left = styled.div``;
+
+const Right = styled.div``;
