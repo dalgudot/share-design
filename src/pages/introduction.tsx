@@ -1,11 +1,11 @@
 import Article from '../components/pages/article/article';
-import { aboutProject } from '../data/article/about';
+import { ProjectIntroduction } from '../data/article/introduction';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const About = () => {
-  useArvAmplitude('arv_about');
-  const articleTitle = aboutProject().title;
-  const contentsArray = aboutProject().contents;
+  useArvAmplitude('arv_introduction');
+  const articleTitle = ProjectIntroduction().title;
+  const contentsArray = ProjectIntroduction().contents;
 
   return (
     <>

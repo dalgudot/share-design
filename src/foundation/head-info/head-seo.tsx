@@ -6,7 +6,7 @@ import { uiUxDesign1Info } from './article/ui-ux-design/1-info';
 import { uiUxDesign2Info } from './article/ui-ux-design/2-info';
 import { contactInfo } from './index/contact-info';
 import { indexInfo } from './index/index-info';
-import { aboutInfo } from './index/about-info';
+import { introductionInfo } from './index/introduction-info';
 
 const HeadSEO = () => {
   const router = useRouter();
@@ -18,8 +18,8 @@ const HeadSEO = () => {
         return indexInfo;
       case '/contact':
         return contactInfo;
-      case '/about':
-        return aboutInfo;
+      case '/introduction':
+        return introductionInfo;
       case '/article/ui-ux-design/1':
         return uiUxDesign1Info;
       case '/article/ui-ux-design/2':

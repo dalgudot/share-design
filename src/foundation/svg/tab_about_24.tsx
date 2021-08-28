@@ -5,7 +5,7 @@ import { mediaBreakPoint } from '../../styles/common';
 const TabAbout24 = ({ pathname }: any) => {
   const themeContext = useContext(ThemeContext);
   const color: string =
-    pathname === '/about' ? themeContext.gray0 : themeContext.gray4;
+    pathname === '/introduction' ? themeContext.gray0 : themeContext.gray4;
 
   return (
     <SVG

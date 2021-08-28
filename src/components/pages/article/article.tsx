@@ -8,13 +8,13 @@ import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../library/functions/visits-and-views';
-import AboutContents from '../about/about-contents';
+import AboutContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
 import Link from 'next/link';
-import { aboutProject } from '../../../data/article/about';
+import { ProjectIntroduction } from '../../../data/article/introduction';
 import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../library/functions/scroll-top';
@@ -88,7 +88,7 @@ const Article = ({
 
   const contentsSwitch = () => {
     switch (pathname) {
-      case '/about':
+      case '/introduction':
         return <AboutContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
@@ -114,13 +114,13 @@ const Article = ({
 
           {contents}
 
-          {router.pathname === '/about' && (
+          {router.pathname === '/introduction' && (
             <GoToFirstContent>
               <Link href="/article/ui-ux-design/1">
                 <a>
                   <AloneButton
                     size="medium"
-                    btnText={aboutProject().goToFirstContent}
+                    btnText={ProjectIntroduction().goToFirstContent}
                     color="gray6__30"
                   />
                 </a>
@@ -129,7 +129,7 @@ const Article = ({
           )}
 
           {/* about에는 댓글 넣지 않음 */}
-          {router.pathname !== '/about' && (
+          {router.pathname !== '/introduction' && (
             <Response
               showToast={showToast}
               response={response}
@@ -147,7 +147,7 @@ const Article = ({
           <div ref={responseRef} />
 
           {/* about에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
-          {/* {router.pathname !== '/about' && <ArticleProgressBar />} */}
+          {/* {router.pathname !== '/introduction' && <ArticleProgressBar />} */}
           {/* <ArticleToolBar /> */}
         </ArticleContainer>
       </Main>

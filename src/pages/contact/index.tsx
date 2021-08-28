@@ -44,12 +44,4 @@ const Main = styled.main`
     margin-bottom: 97px; // 48px + 1px + '48px'
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: ${({ theme }) => theme.padding.TabletWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: ${({ theme }) => theme.padding.DesktopWrap};
-  }
 `;

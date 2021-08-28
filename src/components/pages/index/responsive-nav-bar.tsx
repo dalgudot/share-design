@@ -11,10 +11,7 @@ const ResponsiveNavBar = () => {
   const router = useRouter();
   const pathname = router.pathname;
   const isShow: boolean =
-    pathname === '/' || pathname === '/about' || pathname === '/contact';
-
-  const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
-  const breakPoint: number = +stringMediaBreakPoint;
+    pathname === '/' || pathname === '/introduction' || pathname === '/contact';
 
   if (isShow) {
     return (
@@ -23,7 +20,6 @@ const ResponsiveNavBar = () => {
           <Link href="/">
             <a>
               <TabRecord24 pathname={pathname} />
-
               <PMedium
                 text={{ k: '기록', e: 'RECORD' }}
                 color={pathname === '/' ? 'gray0' : 'gray4'}
@@ -31,21 +27,19 @@ const ResponsiveNavBar = () => {
               />
             </a>
           </Link>
-          <Link href="/about">
+          <Link href="/introduction">
             <a>
               <TabAbout24 pathname={pathname} />
-
               <PMedium
-                text={{ k: '프로젝트 소개', e: 'ABOUT PROJECT' }}
-                color={pathname === '/about' ? 'gray0' : 'gray4'}
-                weight={pathname === '/about' ? 700 : 400}
+                text={{ k: '프로젝트 소개', e: 'PROJECT INTRO' }}
+                color={pathname === '/introduction' ? 'gray0' : 'gray4'}
+                weight={pathname === '/introduction' ? 700 : 400}
               />
             </a>
           </Link>
           <Link href="/contact">
             <a>
               <TabContact24 pathname={pathname} />
-
               <PMedium
                 text={{ k: '연락처', e: 'CONTACT' }}
                 color={pathname === '/contact' ? 'gray0' : 'gray4'}

@@ -1,12 +1,12 @@
-export const aboutInfo = {
+export const introductionInfo = {
   title: {
-    k: '디자인 공유하기 프로젝트 | 디자인 공유하기',
-    e: 'SHARE DESIGN Project | SHARE DESIGN',
+    k: '프로젝트 소개 | 디자인 공유하기',
+    e: 'Project Introduction | SHARE DESIGN',
   },
 
   url: {
-    k: 'https://share-design.kr/about',
-    e: 'https://share-design.kr/en/about',
+    k: 'https://share-design.kr/introduction',
+    e: 'https://share-design.kr/en/introduction',
   },
 
   type: 'article',

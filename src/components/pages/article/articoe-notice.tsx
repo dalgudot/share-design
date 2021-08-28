@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
 import IconAppleLogo24 from '../../../foundation/svg/icon_logo_apple_24';
-import IconInstagramLogo24 from '../../../foundation/svg/icon_logo_instagram_24';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';

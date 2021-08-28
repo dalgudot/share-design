@@ -31,7 +31,7 @@ const Index = () => {
           ))}
         </ul>
       </Main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -17,7 +17,6 @@ const Footer = () => {
                 e: 'ⓒ Designed and Developed by KyungHwan Kim',
               }}
               color="gray4"
-              opacity={0.8}
             />
           </a>
         </Link>

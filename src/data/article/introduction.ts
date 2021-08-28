@@ -1,4 +1,4 @@
-export const aboutProject = () => {
+export const ProjectIntroduction = () => {
   return {
     title: {
       k: '디자인 공유하기 프로젝트',
