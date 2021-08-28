@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H2Title from '../../../foundation/typography/h2';
+import H2Title from '../../../foundation/typography/h2-title';
 import PSmall from '../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';

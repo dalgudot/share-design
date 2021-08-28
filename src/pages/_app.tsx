@@ -14,7 +14,7 @@ import type { AppProps /*, AppContext */ } from 'next/app';
 import ThemeChangeButton from '../components/button/theme-change-button';
 import Header from '../components/header/header';
 import { useRouter } from 'next/router';
-import TabNavBar from '../components/pages/index/tab-nav-bar';
+import ResponsiveNavBar from '../components/pages/index/responsive-nav-bar';
 import MyToast from '../components/toast/toast';
 import ShareModal from '../components/pages/article/article-tool-bar/share-modal';
 import HeadSEO from '../foundation/head-info/head-seo';
@@ -72,6 +72,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
             <Header />
+            <ResponsiveNavBar />
             {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
             {/* <AnimatePresence> */}
             {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
@@ -83,10 +84,9 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
               // exit Animation 위해 필요한 key
             />
             {/* </AnimatePresence> */}
-            {/* AnimatePresence 밖에 TabNavBar 있어야 re-render 안 됨 */}
+            {/* AnimatePresence 밖에 ResponsiveNavBar 있어야 re-render 안 됨 */}
 
-            {/* <TabNavBar /> */}
-            <ShareModal key={router.pathname} showToast={showToast} />
+            {/* <ShareModal key={router.pathname} showToast={showToast} /> */}
             <MyToast
               key={toastMessage} // 토스트별 구분 위해 key 필요
               toastOn={toastOn}

@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const TabContact24 = ({ pathname }: any) => {
+const TabRecord24 = ({ pathname }: any) => {
   const themeContext = useContext(ThemeContext);
   const color: string =
-    pathname === '/contact' ? themeContext.gray0 : themeContext.gray4;
+    pathname === '/' ? themeContext.gray0 : themeContext.gray4;
 
   return (
     <SVG
@@ -17,14 +17,14 @@ const TabContact24 = ({ pathname }: any) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <g
-        id="000-Icon/icon_contact_24"
+        id="000-Icon/icon_record_24"
         stroke="none"
         strokeWidth="1"
         fill="none"
         fillRule="evenodd"
       >
         <path
-          d="M21,6 L21,18 L3,18 L3,6 L21,6 Z M20,7.625 L12,13.625 L4,7.626 L4,17 L20,17 L20,7.625 Z M19.167,7 L4.832,7 L12,12.375 L19.167,7 Z"
+          d="M18,3 L18,21 L6,21 L6,3 L18,3 Z M17,4 L7,4 L7,20 L17,20 L17,4 Z M12,12 L12,13 L9,13 L9,12 L12,12 Z M15,9 L15,10 L9,10 L9,9 L15,9 Z M15,6 L15,7 L9,7 L9,6 L15,6 Z"
           id="Shape"
           fill={color}
           fillRule="nonzero"
@@ -33,7 +33,7 @@ const TabContact24 = ({ pathname }: any) => {
     </SVG>
   );
 };
-export default TabContact24;
+export default TabRecord24;
 
 const SVG = styled.svg`
   display: none;

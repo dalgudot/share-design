@@ -4,10 +4,10 @@ import { mediaBreakPoint } from '../../../styles/common';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
-import PLarge from '../../../foundation/typography/p-medium';
-import PSmall from '../../../foundation/typography/p-small-700';
+import PLarge from '../../../foundation/typography/p-large';
+import PSmall from '../../../foundation/typography/p-small';
 import AloneButton from '../../button/alone-button';
-import H2Title from '../../../foundation/typography/h2';
+import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas/wave-loading/wave-loading';
 
 const Response = ({

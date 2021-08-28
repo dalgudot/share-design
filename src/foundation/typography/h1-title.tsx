@@ -23,12 +23,11 @@ const H1Title = ({
       text={useSetLanguage(text)}
       textSize={{
         mobile: '24px',
-
         desktop: '36px',
       }}
       weight={weight || 700}
       color={color}
-      letterSpacing="-1px"
+      letterSpacing="-0.75px"
       lineHeight={1.4}
       marginTop={marginTop}
     />

@@ -27,7 +27,7 @@ const PSmall = ({
       }}
       weight={weight || 400}
       color={color}
-      letterSpacing=""
+      letterSpacing="0.2px"
       lineHeight={1.55}
       marginTop={marginTop}
     />

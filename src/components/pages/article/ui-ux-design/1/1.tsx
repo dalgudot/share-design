@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
-import H2Title from '../../../../../foundation/typography/h2';
-import PLarge from '../../../../../foundation/typography/p-medium';
+import H2Title from '../../../../../foundation/typography/h2-title';
+import PLarge from '../../../../../foundation/typography/p-large';
 import PSmall from '../../../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import LangChangeButton from '../../../../header/lang-change-button';
@@ -18,11 +18,7 @@ type ArticleCommonImageType =
     }
   | string;
 
-const UIUXDesignContents1 = ({
-  contentsArray,
-}: {
-  contentsArray: object[];
-}) => {
+const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
   const router = useRouter();
   const locale = router.locale;
 

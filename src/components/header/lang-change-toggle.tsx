@@ -95,34 +95,6 @@ const Divider = styled.span`
 `;
 
 // Framer Motion
-// const koVariants = (width: number) => {
-//   if (width < 768) {
-//     return {
-//       on: { x: 0 },
-//       off: { x: 33 },
-//     };
-//   } else {
-//     return {
-//       on: { x: 0 },
-//       off: { x: 33 },
-//     };
-//   }
-// };
-
-// const enVariants = (width: number) => {
-//   if (width < 768) {
-//     return {
-//       on: { x: -33 },
-//       off: { x: 0 },
-//     };
-//   } else {
-//     return {
-//       on: { x: -33 },
-//       off: { x: 0 },
-//     };
-//   }
-// };
-
 const koVariants = (width: number) => {
   if (width < 768) {
     return {

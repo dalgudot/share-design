@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
 import IconAppleLogo24 from '../../../foundation/svg/icon_logo_apple_24';
 import IconInstagramLogo24 from '../../../foundation/svg/icon_logo_instagram_24';
-import PLarge from '../../../foundation/typography/p-medium-700';
-import PSmall from '../../../foundation/typography/p-small';
+import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
-import H2Title from '../../../foundation/typography/h2';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // webkit 에러 해결

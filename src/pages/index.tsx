@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
-import GotoIntroduction from '../components/pages/index/go-to-introduction';
 import Footer from '../components/pages/index/footer';
 import List from '../components/pages/index/list';
 import { articleData } from '../data/article-data';
@@ -19,24 +18,17 @@ const Index = () => {
     <>
       <Main>
         <ul>
-          {/* <List
-            url={data[1].url}
-            category={data[1].category}
-            date={data[1].date}
-            dateTime={data[1].dateTime}
-            title={data[1].title}
-            summary={data[1].summary}
-          />
-          <List
-            url={data[0].url}
-            category={data[0].category}
-            date={data[0].date}
-            dateTime={data[0].dateTime}
-            title={data[0].title}
-            summary={data[0].summary}
-            marginTop="72px"
-          /> */}
-          {/* <GotoIntroduction /> */}
+          {data.map((_, idx) => (
+            <List
+              key={data[idx].url}
+              url={data[idx].url}
+              category={data[idx].category}
+              date={data[idx].date}
+              dateTime={data[idx].dateTime}
+              title={data[idx].title}
+              hashTags={data[idx].hashTags}
+            />
+          ))}
         </ul>
       </Main>
       {/* <Footer /> */}
@@ -52,18 +44,9 @@ const Main = styled.main`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: ${({ theme }) => theme.margin.MobileTop};
-
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
 
     /* margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
      */
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    /* padding: ${({ theme }) => theme.padding.TabletWrap}; */
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    /* padding: ${({ theme }) => theme.padding.DesktopWrap}; */
   }
 `;

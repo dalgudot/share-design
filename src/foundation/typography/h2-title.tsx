@@ -23,7 +23,6 @@ const H2Title = ({
       text={useSetLanguage(text)}
       textSize={{
         mobile: '21px',
-
         desktop: '24px',
       }}
       weight={weight || 700}

@@ -8,13 +8,13 @@ import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../library/functions/visits-and-views';
-import IntroductionContents from '../introduction/introduction-contents';
+import AboutContents from '../about/about-contents';
 import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
 import Link from 'next/link';
-import { projectIntroduction } from '../../../data/article/introduction';
+import { aboutProject } from '../../../data/article/about';
 import { motion } from 'framer-motion';
 import AloneButton from '../../button/alone-button';
 import { scrollTop } from '../../../library/functions/scroll-top';
@@ -48,7 +48,7 @@ const Article = ({
   }, []);
 
   // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.
-  // ex) Introduction > First Content일 때
+  // ex) About > First Content일 때
   scrollTop();
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
@@ -88,8 +88,8 @@ const Article = ({
 
   const contentsSwitch = () => {
     switch (pathname) {
-      case '/introduction':
-        return <IntroductionContents contentsArray={contentsArray} />;
+      case '/about':
+        return <AboutContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
       case '/article/ui-ux-design/2':
@@ -114,13 +114,13 @@ const Article = ({
 
           {contents}
 
-          {router.pathname === '/introduction' && (
+          {router.pathname === '/about' && (
             <GoToFirstContent>
               <Link href="/article/ui-ux-design/1">
                 <a>
                   <AloneButton
                     size="medium"
-                    btnText={projectIntroduction().goToFirstContent}
+                    btnText={aboutProject().goToFirstContent}
                     color="gray6__30"
                   />
                 </a>
@@ -128,8 +128,8 @@ const Article = ({
             </GoToFirstContent>
           )}
 
-          {/* introduction에는 댓글 넣지 않음 */}
-          {router.pathname !== '/introduction' && (
+          {/* about에는 댓글 넣지 않음 */}
+          {router.pathname !== '/about' && (
             <Response
               showToast={showToast}
               response={response}
@@ -146,9 +146,9 @@ const Article = ({
           )}
           <div ref={responseRef} />
 
-          {/* introduction에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
-          {router.pathname !== '/introduction' && <ArticleProgressBar />}
-          <ArticleToolBar />
+          {/* about에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
+          {/* {router.pathname !== '/about' && <ArticleProgressBar />} */}
+          {/* <ArticleToolBar /> */}
         </ArticleContainer>
       </Main>
     </>
@@ -170,14 +170,6 @@ const Main = styled.main`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: ${({ theme }) => theme.padding.TabletWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: ${({ theme }) => theme.padding.DesktopWrap};
   }
 `;
 

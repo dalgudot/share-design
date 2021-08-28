@@ -7,7 +7,7 @@ const borderRadius = {
 };
 
 const maxWidth = {
-  List: '640px',
+  List: '600px',
   Paragraph: '740px',
 };
 
@@ -54,13 +54,6 @@ export const darkTheme: DefaultTheme = {
   gray7: '#29292B',
   gray8: '#171718',
   gray9: '#121213',
-
-  gray6__30: 'rgba(61, 61, 63, 0.3)',
-  gray7__40: 'rgba(28, 28, 30, 0.4)',
-
-  gradientPurple: '354deg, #4633d7, #7c62ed',
-  gradientBurgundy: '170deg, #743657, #40192c',
-  gradientNightFade: 'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
   borderRadius,
   maxWidth,
   zIndex,
@@ -79,13 +72,6 @@ export const lightTheme: DefaultTheme = {
   gray7: '#29292B',
   gray8: '#171718',
   gray9: '#121213',
-
-  gray6__30: 'rgba(61, 61, 63, 0.3)',
-  gray7__40: 'rgba(28, 28, 30, 0.4)',
-
-  gradientPurple: '354deg, #4633d7, #7c62ed',
-  gradientBurgundy: '170deg, #743657, #40192c',
-  gradientNightFade: 'linear-gradient(to top, #a18cd1, #fbc2eb)',
   borderRadius,
   maxWidth,
   zIndex,
@@ -102,50 +88,6 @@ body {
 
 export default GlobalColors;
 
-// export const darkTheme: DefaultTheme = {
-//   gray1: '#E6E6F5',
-//   gray2: '#E0E0EA',
-//   gray3: '#BFBFC7',
-//   gray4: '#97979E',
-//   gray5: '#68686C', // 비활성화
-//   gray6: 'rgba(61, 61, 63)', // #3D3D3F
-//   gray7: 'rgba(28, 28, 30)', // #1C1C1E
-//   gray8: 'rgba(18, 18, 18)', //#121212
-
-//   gray6__30: 'rgba(61, 61, 63, 0.3)',
-//   gray7__40: 'rgba(28, 28, 30, 0.4)',
-//   gradientPurple: '354deg, #4633d7, #7c62ed',
-//   gradientBurgundy: '170deg, #743657, #40192c',
-//   gradientNightFade: 'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
-//   borderRadius,
-//   maxWidth,
-//   zIndex,
-//   padding,
-//   margin,
-// };
-
-// export const lightTheme: DefaultTheme = {
-//   gray1: '#121212',
-//   gray2: '#232324',
-//   gray3: '#3D3D3F',
-//   gray4: '#68686C',
-//   gray5: '#94949B',
-//   gray6: '#BFBFC7',
-//   gray7: '#E0E0EA',
-//   gray8: '#EBEBF5',
-
-//   gray6__30: 'rgba(61, 61, 63, 0.3)',
-//   gray7__40: 'rgba(28, 28, 30, 0.4)',
-//   gradientPurple: '354deg, #4633d7, #7c62ed',
-//   gradientBurgundy: '170deg, #743657, #40192c',
-//   gradientNightFade: 'linear-gradient(to top, #a18cd1, #fbc2eb)',
-//   borderRadius,
-//   maxWidth,
-//   zIndex,
-//   padding,
-//   margin,
-// };
-
 declare module 'styled-components' {
   export interface DefaultTheme {
     gray0: string;
@@ -158,14 +100,6 @@ declare module 'styled-components' {
     gray7: string;
     gray8: string;
     gray9: string;
-
-    gray6__30: string;
-    gray7__40: string;
-    // Gradient
-    gradientPurple: string;
-    gradientBurgundy: string;
-    gradientNightFade: string;
-    // BorderRadius
     borderRadius: {
       R13: string;
       R26: string;

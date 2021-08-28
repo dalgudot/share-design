@@ -3,9 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
-import H2Title from '../../../../../foundation/typography/h2';
-import PLarge from '../../../../../foundation/typography/p-medium';
-import PSmall from '../../../../../foundation/typography/p-small-700';
+import H2Title from '../../../../../foundation/typography/h2-title';
+import PLarge from '../../../../../foundation/typography/p-large';
+import PSmall from '../../../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../../../library/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../../../styles/common';
@@ -20,11 +20,7 @@ type ArticleCommonImageType =
     }
   | string;
 
-const UIUXDesignContents2 = ({
-  contentsArray,
-}: {
-  contentsArray: object[];
-}) => {
+const UIUXDesignContents2 = ({ contentsArray }: { contentsArray: any }) => {
   const { ref, inView, entry } = useInView({
     /* options */
     threshold: 0,

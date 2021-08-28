@@ -26,32 +26,25 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-  /* .header__wrap__zIndex { */
-  // iOS top safe area
-  margin-top: calc(env(safe-area-inset-top));
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: ${({ theme }) => theme.zIndex.Bar};
+  border-bottom: solid 1px ${({ theme }) => theme.gray7};
+  background-color: ${({ theme }) => theme.gray9};
+  padding: ${({ theme }) => theme.padding.LeftRightPadding};
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 72px;
-  border-bottom: solid 1px ${({ theme }) => theme.gray7};
-  background-color: ${({ theme }) => theme.gray9};
-  padding: ${({ theme }) => theme.padding.LeftRightPadding}; // 좌우 기준 패딩
 
-  /* h3 {
-    font-size: 19px;
-  } */
+  // Properties that change
+  height: 72px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 56px;
-
-    /* h3 {
-      font-size: 18px;
-    } */
   }
+
+  // iOS top safe area
+  margin-top: calc(env(safe-area-inset-top));
 `;

@@ -27,7 +27,6 @@ const PMedium = ({
       }}
       weight={weight || 400}
       color={color}
-      letterSpacing=""
       lineHeight={1.55}
       marginTop={marginTop}
     />

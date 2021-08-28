@@ -9,7 +9,7 @@ import { useSetLanguage } from '../../../../library/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
 import PLarge from '../../../../foundation/typography/p-large';
 import { useMyRipple } from '../../../../library/hooks/useMyRipple';
-import PSmall from '../../../../foundation/typography/p-small-700';
+import PSmall from '../../../../foundation/typography/p-small';
 import { gradientGenerator } from '../../../../library/functions/gradient-generator';
 import { motion } from 'framer-motion';
 import { vibration } from '../../../../foundation/framer-motion/variants';

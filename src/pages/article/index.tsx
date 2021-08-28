@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../library/functions/visits-and-views';
-import GotoIntroduction from '../../components/pages/index/go-to-introduction';
+import GotoAbout from '../../components/pages/index/go-to-about';
 import Footer from '../../components/pages/index/footer';
 import ShareToolBar from '../../components/pages/index/share-tool-bar';
 import List from '../../components/pages/index/list';
@@ -43,7 +43,7 @@ const Index = () => {
           >
             <IconLanguage169 />
           </List>
-          <GotoIntroduction />
+          <GotoAbout />
         </ul>
         <ShareToolBar />
       </Main>
