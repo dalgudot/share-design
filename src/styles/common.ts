@@ -5,7 +5,7 @@ export const mediaBreakPoint: {
   // fourth: string;
 } = {
   // first: '767px',
-  first: '1200px',
+  first: '1350px',
   // second: '768px',
   // third: '1440px',
   // fourth: '1441px',

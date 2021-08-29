@@ -9,15 +9,12 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        {/* <div className="header__wrap__zIndex"> */}
         <Link href="/">
           <a>
             <H3Title700 text={t.shareDesign} color="gray0" />
           </a>
         </Link>
         <LangChangeToggle />
-        {/* </div> */}
-        {/* <FillEmptySpace /> */}
       </HeaderContainer>
     </>
   );
@@ -39,7 +36,7 @@ const HeaderContainer = styled.header`
   width: 100%;
 
   // Properties that change
-  height: 72px;
+  height: 63px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 56px;

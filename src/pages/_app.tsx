@@ -18,6 +18,7 @@ import ResponsiveNavBar from '../components/pages/index/responsive-nav-bar';
 import MyToast from '../components/toast/toast';
 import ShareModal from '../components/pages/article/article-tool-bar/share-modal';
 import HeadSEO from '../foundation/head-info/head-seo';
+import Footer from '../components/pages/index/footer';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
