@@ -232,7 +232,7 @@ const DivMotion = styled(motion.div)<modalHandlerType>`
 
   // 바뀌는 속성
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: ${({ theme }) => theme.padding.MobileWrap};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 

@@ -137,7 +137,7 @@ export default React.memo(WriteResponse);
 
 const Main = styled.main`
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: ${({ theme }) => theme.padding.MobileWrap};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 
