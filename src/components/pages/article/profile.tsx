@@ -33,6 +33,7 @@ const Author = styled.a<{ marginTop: string }>`
   display: flex;
   align-items: center;
   margin-top: ${({ marginTop }) => marginTop};
+  margin-left: 1px;
 
   img {
     border: solid 2px ${({ theme }) => theme.gray1};

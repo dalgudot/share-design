@@ -9,12 +9,12 @@ import { useSetLanguage } from '../../../../library/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
 import PLarge from '../../../../foundation/typography/p-large';
 import { useMyRipple } from '../../../../library/hooks/useMyRipple';
-import PSmall from '../../../../foundation/typography/p-small';
 import { gradientGenerator } from '../../../../library/functions/gradient-generator';
 import { motion } from 'framer-motion';
 import { vibration } from '../../../../foundation/framer-motion/variants';
 import { scrollTop } from '../../../../library/functions/scroll-top';
 import React from 'react';
+import PMedium from '../../../../foundation/typography/p-medium';
 
 const WriteResponse = ({ showToast }: { showToast: Function }) => {
   const when = useDate().whenResponse;
@@ -73,8 +73,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
   useEffect(() => {
     textLengthCondition ? setBtnDisbled(false) : setBtnDisbled(true);
 
-    // CleanUp Function
-    return () => {};
+    return () => {}; // CleanUp Function
   }, [textLength]);
 
   const postBtnRef = useRef(null);
@@ -86,12 +85,13 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
         <AnonymousProfileArea>
           <LeftDiv profileGradient={profileGradient}>
             <span />
-            <PSmall
+            <PMedium
               text={{
                 k: when,
                 e: when,
               }}
               color="gray2"
+              weight={700}
             />
           </LeftDiv>
           <motion.button
@@ -101,7 +101,11 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <PSmall text={tArticleCommon().changeColor} color="gray2" />
+            <PMedium
+              text={tArticleCommon().changeColor}
+              color="gray2"
+              weight={700}
+            />
           </motion.button>
         </AnonymousProfileArea>
         <MultiLineTextField
@@ -136,17 +140,27 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
 export default React.memo(WriteResponse);
 
 const Main = styled.main`
+  display: flex;
+  justify-content: center;
+
+  // 변경 속성
+  margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
+
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: ${({ theme }) => theme.padding.LeftRightPadding};
+    margin-top: ${({ theme }) => theme.margin.MobileTop};
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
   }
 `;
 
 const DivContainer = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.maxWidth.Paragraph};
+  max-width: ${({ theme }) => theme.maxWidth.List};
+  margin-top: 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: ${({ theme }) => theme.padding.LeftRightPadding};
+    margin-top: 24px;
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 

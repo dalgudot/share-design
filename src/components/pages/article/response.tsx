@@ -9,6 +9,8 @@ import PSmall from '../../../foundation/typography/p-small';
 import AloneButton from '../../button/alone-button';
 import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas/wave-loading/wave-loading';
+import H1Title from '../../../foundation/typography/h1-title';
+import PMedium from '../../../foundation/typography/p-medium';
 
 const Response = ({
   showToast,
@@ -59,7 +61,7 @@ const Response = ({
     return (
       <>
         <Container>
-          <H2Title text={tArticleCommon().responses} color="gray1" />
+          <H1Title text={tArticleCommon().responses} color="gray1" />
           {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
@@ -68,12 +70,13 @@ const Response = ({
                     profileGradient={response.profileGradient}
                   >
                     <span />
-                    <PSmall
+                    <PMedium
                       text={{
                         k: response.when,
                         e: response.when,
                       }}
                       color="gray2"
+                      weight={700}
                     />
                   </LeftDiv>
                   <PLarge
@@ -134,12 +137,12 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
     /* 바뀌는 요소 */
     width: 32px;
     height: 32px;
-    margin-right: 8px;
+    margin-right: 10px;
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
       width: 28px;
       height: 28px;
-      margin-right: 6px;
+      margin-right: 8px;
     }
   }
 `;

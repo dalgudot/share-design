@@ -28,7 +28,7 @@ const Footer = () => {
         setLoading(false);
       });
 
-    return () => setLoading(true); // CleanUp Function
+    return () => {}; // CleanUp Function
   }, []);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Footer = () => {
         setLoading(false);
       });
 
-    return () => setLoading(true); // CleanUp Function
+    return () => {}; // CleanUp Function
   }, []);
 
   const width: number = useWindowWidth();

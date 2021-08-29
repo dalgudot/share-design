@@ -117,20 +117,6 @@ const Article = ({
 
           {contents}
 
-          {/* {router.pathname === '/introduction' && (
-            <GoToFirstContent>
-              <Link href="/article/ui-ux-design/1">
-                <a>
-                  <AloneButton
-                    size="medium"
-                    btnText={ProjectIntroduction().goToFirstContent}
-                    color="gray6"
-                  />
-                </a>
-              </Link>
-            </GoToFirstContent>
-          )} */}
-
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
             <Response
@@ -144,6 +130,7 @@ const Article = ({
 
           {/* introduction에는 iOS 앱 다운로드 넣지 않음 */}
           {router.pathname !== '/introduction' && <ArticleNotice />}
+          {/* <ArticleNotice /> */}
 
           {referencesData && (
             <ArticleReference referencesData={referencesData} />
@@ -167,12 +154,11 @@ const Main = styled.main`
   justify-content: center;
 
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
-  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
+  padding-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: ${({ theme }) => theme.margin.MobileTop};
-    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
-    padding: ${({ theme }) => theme.padding.LeftRightPadding};
+    padding-bottom: ${({ theme }) => theme.margin.MobileBottom};
   }
 
   /* iOS top safe area */
@@ -190,6 +176,7 @@ const ArticleContainer = styled.article`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 24px;
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 
@@ -207,8 +194,4 @@ const Background = styled.div<BackgroundType>`
   min-height: ${({ height }) => height}px;
   background-color: ${({ theme }) => theme.gray7};
   z-index: ${({ theme }) => theme.zIndex.Background};
-`;
-
-const GoToFirstContent = styled(motion.button)`
-  margin: 96px auto 32px;
 `;

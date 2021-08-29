@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import PSmall from '../../foundation/typography/p-small';
+import PMedium from '../../foundation/typography/p-medium';
 
 const LangChangeButton = ({
   text,
@@ -40,7 +41,7 @@ const LangChangeButton = ({
       }}
       whileTap={{ scale: 0.97 }}
     >
-      <PSmall text={text} color="gray1" />
+      <PMedium text={text} color="gray1" weight={700} />
     </MotionButton>
   );
 };

@@ -2,23 +2,23 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
+import H1Title from '../../../../../foundation/typography/h1-title';
 import H2Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
-import PSmall from '../../../../../foundation/typography/p-small';
+import PMedium from '../../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import LangChangeButton from '../../../../header/lang-change-button';
 import LangChangeToggle from '../../../../header/lang-change-toggle';
 import ArticleCommonImage from '../../article-common-image';
 
-// 임시
-type ArticleCommonImageType =
-  | {
-      k: string;
-      e: string;
-    }
-  | string;
-
-const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
+const UIUXDesignContents1 = ({
+  contentsArray,
+}: {
+  contentsArray: {
+    k: string;
+    e: string;
+  }[];
+}) => {
   const router = useRouter();
   const locale = router.locale;
 
@@ -65,12 +65,12 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[2] as ArticleCommonImageType}
-        caption={contentsArray[3] as ArticleCommonImageType}
+        src={contentsArray[2]}
+        caption={contentsArray[3]}
         marginTop="36px"
       />
 
-      <H2Title //
+      <H1Title //
         text={contentsArray[4]}
         color="gray2"
         marginTop="120px"
@@ -89,7 +89,7 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
           text={uiUxDesign1().langChangeButton}
         />
         <figcaption>
-          <PSmall //
+          <PMedium //
             text={contentsArray[6]}
             color="gray5"
             marginTop="12px"
@@ -110,8 +110,8 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[9] as ArticleCommonImageType}
-        caption={contentsArray[10] as ArticleCommonImageType}
+        src={contentsArray[9]}
+        caption={contentsArray[10]}
         marginTop="36px"
       />
 
@@ -122,12 +122,12 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[12] as ArticleCommonImageType}
-        caption={contentsArray[13] as ArticleCommonImageType}
+        src={contentsArray[12]}
+        caption={contentsArray[13]}
         marginTop="48px"
       />
 
-      <H2Title //
+      <H1Title //
         text={contentsArray[14]}
         color="gray2"
         marginTop="120px"
@@ -145,7 +145,7 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
           <LangChangeToggle setFinalToggle={setFinalToggle} />
         </div>
         <figcaption>
-          <PSmall //
+          <PMedium //
             text={contentsArray[16]}
             color="gray5"
             marginTop="16px"
@@ -159,7 +159,7 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
         marginTop="96px"
       />
 
-      <H2Title //
+      <H1Title //
         text={contentsArray[18]}
         color="gray2"
         marginTop="120px"
@@ -172,8 +172,8 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[20] as ArticleCommonImageType}
-        caption={contentsArray[21] as ArticleCommonImageType}
+        src={contentsArray[20]}
+        caption={contentsArray[21]}
         marginTop="36px"
       />
 
@@ -184,8 +184,8 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[23] as ArticleCommonImageType}
-        caption={contentsArray[24] as ArticleCommonImageType}
+        src={contentsArray[23]}
+        caption={contentsArray[24]}
         marginTop="36px"
       />
 
@@ -196,12 +196,12 @@ const UIUXDesignContents1 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage //
-        src={contentsArray[26] as ArticleCommonImageType}
-        caption={contentsArray[27] as ArticleCommonImageType}
+        src={contentsArray[26]}
+        caption={contentsArray[27]}
         marginTop="36px"
       />
 
-      <H2Title //
+      <H1Title //
         text={contentsArray[28]}
         color="gray2"
         marginTop="96px"

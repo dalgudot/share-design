@@ -26,7 +26,7 @@ const Container = styled.div`
     margin-left: 2px; // 시각 보정
     margin-right: 8px;
     margin-top: 1px;
-    background-color: ${({ theme }) => theme.gray2};
+    background-color: ${({ theme }) => theme.gray3};
 
     // 바뀌는 속성
     height: 24px;

@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
-import H2Title from '../../../../../foundation/typography/h2-title';
+import H1Title from '../../../../../foundation/typography/h1-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PSmall from '../../../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
@@ -12,15 +12,14 @@ import { mediaBreakPoint } from '../../../../../styles/common';
 import ArticleCommonImage from '../../article-common-image';
 import KoodonWriteReview from './koodon-write-review';
 
-// 임시
-type ArticleCommonImageType =
-  | {
-      k: string;
-      e: string;
-    }
-  | string;
-
-const UIUXDesignContents2 = ({ contentsArray }: { contentsArray: any }) => {
+const UIUXDesignContents2 = ({
+  contentsArray,
+}: {
+  contentsArray: {
+    k: string;
+    e: string;
+  }[];
+}) => {
   const { ref, inView, entry } = useInView({
     /* options */
     threshold: 0,
@@ -37,8 +36,8 @@ const UIUXDesignContents2 = ({ contentsArray }: { contentsArray: any }) => {
       />
 
       <ArticleCommonImage
-        src={contentsArray[1] as ArticleCommonImageType}
-        caption={contentsArray[2] as ArticleCommonImageType}
+        src={contentsArray[1]}
+        caption={contentsArray[2]}
         marginTop="36px"
       />
 
@@ -116,7 +115,7 @@ const UIUXDesignContents2 = ({ contentsArray }: { contentsArray: any }) => {
         marginTop="36px"
       />
 
-      <H2Title //
+      <H1Title //
         text={contentsArray[12]}
         color="gray2"
         marginTop="120px"
