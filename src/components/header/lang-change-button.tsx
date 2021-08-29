@@ -7,7 +7,12 @@ const LangChangeButton = ({
   text,
   setfirstToggle,
 }: {
-  text: object;
+  text:
+    | {
+        k: string;
+        e: string;
+      }
+    | string;
   setfirstToggle: Function;
 }) => {
   const router = useRouter();
