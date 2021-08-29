@@ -31,7 +31,7 @@ const List = styled.div<SkeletonCircleList>`
   .circle {
     width: ${({ width }) => width};
     height: ${({ height }) => height};
-    background-color: ${({ theme }) => theme.gray7__40};
+    background-color: ${({ theme }) => theme.gray7};
     border-radius: 50%;
   }
 `;

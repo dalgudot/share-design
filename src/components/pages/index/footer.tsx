@@ -6,8 +6,10 @@ import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useState } from 'react';
 import { useDate } from '../../../library/hooks/useDate';
+import LoadingSkeletonRect from '../../../foundation/framer-motion/loading-skeleton-rect';
 
 const Footer = () => {
+  const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
   const [total, setTotal] = useState('');
 
@@ -23,7 +25,7 @@ const Footer = () => {
         const data = objData && Object.values(objData);
         // The last value in the array is the current date
         data[data.length - 1] && setToday(data[data.length - 1]);
-        // setResponseLoading(false);
+        setLoading(false);
       });
   }, []);
 
@@ -36,7 +38,7 @@ const Footer = () => {
         const data = objData && Object.values(objData);
         // data[0] is Total All
         data[0] && setTotal(data[0]);
-        // setResponseLoading(false);
+        setLoading(false);
       });
   }, []);
 
@@ -44,11 +46,20 @@ const Footer = () => {
     <>
       <FooterContainer>
         {/*  */}
+
         <Left>
           <Statistics>
-            <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
+            {loading === true ? (
+              <LoadingSkeletonRect width="57px" height="21px" />
+            ) : (
+              <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
+            )}
             <Divider />
-            <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
+            {loading === true ? (
+              <LoadingSkeletonRect width="81px" height="21px" />
+            ) : (
+              <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
+            )}
           </Statistics>
         </Left>
 
