@@ -49,5 +49,5 @@ const MotionButton = styled(motion.button)`
   padding: 16px 30px;
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius.R13};
-  background-color: ${({ theme }) => theme.gray6__30};
+  background-color: ${({ theme }) => theme.gray6};
 `;

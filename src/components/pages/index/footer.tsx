@@ -27,6 +27,10 @@ const Footer = () => {
         data[data.length - 1] && setToday(data[data.length - 1]);
         setLoading(false);
       });
+
+    return () => setToday('');
+
+    // CleanUp Function
   }, []);
 
   useEffect(() => {
@@ -40,23 +44,24 @@ const Footer = () => {
         data[0] && setTotal(data[0]);
         setLoading(false);
       });
+
+    return () => setTotal(''); // CleanUp Function
   }, []);
 
   return (
     <>
       <FooterContainer>
         {/*  */}
-
         <Left>
           <Statistics>
             {loading === true ? (
-              <LoadingSkeletonRect width="57px" height="21px" />
+              <LoadingSkeletonRect width="61px" height="21px" />
             ) : (
               <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
             )}
             <Divider />
             {loading === true ? (
-              <LoadingSkeletonRect width="81px" height="21px" />
+              <LoadingSkeletonRect width="85px" height="21px" />
             ) : (
               <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
             )}
@@ -106,6 +111,13 @@ const FooterContainer = styled.footer`
   right: 0;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 80px; // 56(Tab bar height) + 24
+
+    p {
+      font-size: 14px;
+    }
   }
 
   // iOS bottom safe area
@@ -116,6 +128,7 @@ const Left = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  margin-left: 2px; // Visual Correction
 `;
 
 const Statistics = styled.div`

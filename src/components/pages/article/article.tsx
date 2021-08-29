@@ -114,19 +114,19 @@ const Article = ({
 
           {contents}
 
-          {router.pathname === '/introduction' && (
+          {/* {router.pathname === '/introduction' && (
             <GoToFirstContent>
               <Link href="/article/ui-ux-design/1">
                 <a>
                   <AloneButton
                     size="medium"
                     btnText={ProjectIntroduction().goToFirstContent}
-                    color="gray6__30"
+                    color="gray6"
                   />
                 </a>
               </Link>
             </GoToFirstContent>
-          )}
+          )} */}
 
           {/* about에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
@@ -165,7 +165,6 @@ const Main = styled.main`
   justify-content: center;
 
   /* iOS top safe area */
-  /* margin-top: calc(env(safe-area-inset-top)); */
   margin-bottom: calc(env(safe-area-inset-bottom));
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

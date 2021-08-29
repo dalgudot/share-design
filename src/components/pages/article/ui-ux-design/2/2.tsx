@@ -180,7 +180,7 @@ const MotionUl = styled(motion.ul)`
 
 const MotionLi = styled(motion.li)`
   width: 100%;
-  background-color: ${({ theme }) => theme.gray6__30};
+  background-color: ${({ theme }) => theme.gray6};
   border-radius: ${({ theme }) => theme.borderRadius.R26};
   display: flex;
   align-items: center;

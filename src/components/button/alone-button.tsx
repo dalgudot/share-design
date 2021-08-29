@@ -50,6 +50,6 @@ const MotionDiv = styled(motion.div)<MotionDivType>`
   border-radius: ${({ size, theme }) =>
     size === 'small' ? theme.borderRadius.R13 : theme.borderRadius.R26};
   background-color: ${({ bgColor, theme }) =>
-    bgColor !== 'gray6__30' ? theme.gray7 : theme.gray6__30};
+    bgColor !== 'gray6' ? theme.gray7 : theme.gray6};
   padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
 `;

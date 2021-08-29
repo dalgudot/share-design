@@ -139,14 +139,6 @@ const Main = styled.main`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.MobileWrap};
   }
-
-  @media all and (min-width: ${mediaBreakPoint.second}) and (max-width: ${mediaBreakPoint.third}) {
-    padding: ${({ theme }) => theme.padding.TabletWrap};
-  }
-
-  @media all and (min-width: ${mediaBreakPoint.fourth}) {
-    padding: ${({ theme }) => theme.padding.DesktopWrap};
-  }
 `;
 
 const DivContainer = styled.div`

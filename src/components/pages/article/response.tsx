@@ -95,7 +95,7 @@ const Response = ({
           <AloneButton //
             size="medium"
             btnText={tArticleCommon().writeResponse}
-            color="gray6__30"
+            color="gray6"
           />
         </A>
       </>
