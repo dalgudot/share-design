@@ -47,7 +47,7 @@ const SocialDiv = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 48px;
-  max-width: 320px;
+  max-width: 480px;
   position: relative;
 
   // iOS bottom safe area
@@ -68,5 +68,5 @@ const A = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px ${({ theme }) => theme.gray7};
+  border: solid 1px ${({ theme }) => theme.gray8};
 `;

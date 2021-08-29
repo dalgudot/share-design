@@ -25,8 +25,8 @@ const padding = {
 };
 
 const margin = {
-  DesktopTop: '73px', // 72px + 1px, Header만큼만
-  MobileTop: '57px', // 56px + 1px, Header만큼만
+  DesktopTop: '64px', // 63px + 1px, Header만큼만
+  MobileTop: '56px', // 55px + 1px, Header만큼만
   DesktopBottom: '144px', // Same Height as footer margin-bottom(48px) + 96px
   MobileBottom: '104px', // 56 + 48px
 };

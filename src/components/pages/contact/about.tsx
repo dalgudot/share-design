@@ -23,18 +23,21 @@ const AboutArea = () => {
         text={aboutData.career.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
+        weight={700}
       />
       <PLarge text={aboutData.career.contentsArray[0].contents} color="gray1" />
       <PLarge
         text={aboutData.career.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
+        weight={700}
       />
       <PLarge text={aboutData.career.contentsArray[1].contents} color="gray1" />
       <PLarge
         text={aboutData.career.contentsArray[2].term}
         color="gray2"
         marginTop="24px"
+        weight={700}
       />
       <PLarge text={aboutData.career.contentsArray[2].contents} color="gray1" />
 
@@ -48,6 +51,7 @@ const AboutArea = () => {
         text={aboutData.personalProject.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
+        weight={700}
       />
       <PLarge
         text={aboutData.personalProject.contentsArray[0].contents}
@@ -57,9 +61,20 @@ const AboutArea = () => {
         text={aboutData.personalProject.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
+        weight={700}
       />
       <PLarge
         text={aboutData.personalProject.contentsArray[1].contents}
+        color="gray1"
+      />
+      <PLarge
+        text={aboutData.personalProject.contentsArray[2].term}
+        color="gray2"
+        marginTop="24px"
+        weight={700}
+      />
+      <PLarge
+        text={aboutData.personalProject.contentsArray[2].contents}
         color="gray1"
       />
 
@@ -73,6 +88,7 @@ const AboutArea = () => {
         text={aboutData.exhibition.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
+        weight={700}
       />
       <PLarge
         text={aboutData.exhibition.contentsArray[0].contents}
@@ -82,6 +98,7 @@ const AboutArea = () => {
         text={aboutData.exhibition.contentsArray[1].term}
         color="gray2"
         marginTop="24px"
+        weight={700}
       />
       <PLarge
         text={aboutData.exhibition.contentsArray[1].contents}
@@ -91,6 +108,7 @@ const AboutArea = () => {
         text={aboutData.exhibition.contentsArray[2].term}
         color="gray2"
         marginTop="24px"
+        weight={700}
       />
       <PLarge
         text={aboutData.exhibition.contentsArray[2].contents}
@@ -103,6 +121,7 @@ const AboutArea = () => {
         text={aboutData.lecture.contentsArray[0].term}
         color="gray2"
         marginTop="8px"
+        weight={700}
       />
       <PLarge
         text={aboutData.lecture.contentsArray[0].contents}
@@ -117,9 +136,9 @@ export default AboutArea;
 const AboutDiv = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
-  background-color: ${({ theme }) => theme.gray7__40};
-  border-radius: ${({ theme }) => theme.borderRadius.R13};
+  background-color: ${({ theme }) => theme.gray8};
   border: solid 1px ${({ theme }) => theme.gray7};
+  border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 속성
   margin-top: 24px;

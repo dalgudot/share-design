@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../styles/common';
+import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../../library/functions/visits-and-views';
-import ProfileArea from '../../components/pages/contact/profile';
-import EmailArea from '../../components/pages/contact/email';
-import SocialArea from '../../components/pages/contact/social';
-import AboutArea from '../../components/pages/contact/about';
-import { useArvAmplitude } from '../../library/hooks/Amplitude/useArvAmplitude';
+import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
+import ProfileArea from '../components/pages/contact/profile';
+import EmailArea from '../components/pages/contact/email';
+import SocialArea from '../components/pages/contact/social';
+import AboutArea from '../components/pages/contact/about';
+import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const ContactIndex = ({ showToast }: { showToast: Function }) => {
   useArvAmplitude('arv_contact');
@@ -36,12 +36,12 @@ const Main = styled.main`
   align-items: center;
 
   // 변경 속성
-  margin-top: 164px; // Contact에서만
+  margin-top: ${({ theme }) => theme.margin.DesktopTop};
   margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px; // Contact에서만
-    margin-bottom: 97px; // 48px + 1px + '48px'
-    padding: ${({ theme }) => theme.padding.MobileWrap};
+    margin-top: ${({ theme }) => theme.margin.MobileTop};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
   }
 `;

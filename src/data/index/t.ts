@@ -54,8 +54,8 @@ export const t = {
 
   contact: {
     profileAlt: {
-      k: 'UI/UX 디자이너 김경환의 프로필 사진',
-      e: 'Profile photo of UI/UX designer KyungHwan Kim',
+      k: '프로덕트 디자이너 김경환의 프로필 사진',
+      e: 'Profile photo of product designer KyungHwan Kim',
     },
 
     copyButton: {
@@ -74,8 +74,8 @@ export const t = {
     },
 
     brunchAlt: {
-      k: 'UI/UX 디자이너 김경환의 브런치 링크 버튼 이미지',
-      e: 'Brunch, the Korean version of Medium, Link Button Image of KyungHwan Kim, UI/UX designer',
+      k: '프로덕트 디자이너 김경환의 브런치 링크 버튼 이미지',
+      e: 'Brunch, the Korean version of Medium, Link Button Image of KyungHwan Kim, Product Designer',
     },
 
     about: {
@@ -105,8 +105,8 @@ export const t = {
               e: '2020.06.08 ~ Present',
             },
             contents: {
-              k: '쿠돈 UI/UX 디자이너',
-              e: 'Koodon UI/UX Designer',
+              k: '쿠돈 프로덕트 디자이너',
+              e: 'Koodon Product Designer',
             },
           },
           {
@@ -115,8 +115,8 @@ export const t = {
               e: '2019.04.23 ~ 2020.05.31',
             },
             contents: {
-              k: '패션 스타트업 UI/UX 디자이너',
-              e: 'Fashion StartUp UI/UX Designer',
+              k: '패션 스타트업 프로덕트 디자이너',
+              e: 'Fashion StartUp Product Designer',
             },
           },
           {
@@ -145,8 +145,18 @@ export const t = {
               e: '2020.09.12 ~ Present',
             },
             contents: {
-              k: "UI/UX 디자인 경험을 전 세계 사람들과 공유하는 '디자인 공유하기' 프로젝트를 진행하고 있습니다.",
-              e: "I am working on a 'SHARE DESIGN' project to share UI/UX design experience with people around the world.",
+              k: "프로덕트 디자인 경험을 전 세계 사람들과 공유하는 '디자인 공유하기' 프로젝트를 진행하고 있습니다.",
+              e: "I am working on a 'SHARE DESIGN' project to share product design experience with people around the world.",
+            },
+          },
+          {
+            term: {
+              k: '2019.02.21 ~ 현재',
+              e: '2019.02.21 ~ Present',
+            },
+            contents: {
+              k: "카카오에서 운영하는 디지털 공간인 브런치에 디자인을 공부하면서 얻은 지식과 깨달음, 그 과정에서 겪은 시행착오를 공유하는 '디자인 독학하기' 프로젝트를 진행하고 있습니다.",
+              e: "I am working on a 'SHARE DESIGN' project to share product design experience with people around the world.",
             },
           },
           {
@@ -215,8 +225,8 @@ export const t = {
               e: '2019.08.27',
             },
             contents: {
-              k: '과학 기자에서 UI/UX 디자이너가 되기까지: 경험을 연결해 나만의 큰 그림 설계하기',
-              e: 'From Science Journalist to UI/UX Designer: Design your own big picture by connecting your experience',
+              k: '과학 기자에서 프로덕트 디자이너가 되기까지: 경험을 연결해 나만의 큰 그림 설계하기',
+              e: 'From Science Journalist to Product Designer: Design your own big picture by connecting your experience',
             },
           },
         ],

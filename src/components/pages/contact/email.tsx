@@ -6,6 +6,8 @@ import PSmall from '../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useMyRipple } from '../../../library/hooks/useMyRipple';
+import PMedium from '../../../foundation/typography/p-medium';
+import H1Title from '../../../foundation/typography/h1-title';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
   const copyItRef = useRef(null);
@@ -15,20 +17,20 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
 
   return (
     <EmailDiv>
-      <H2Title text={t.myEmail} color="gray1" />
+      <H1Title text={t.myEmail} color="gray0" />
       <EmailButtonDiv>
         <CopyToClipboard
           text="dalgudot@gmail.com"
           onCopy={() => showToast(t.contact.toastMessage)}
         >
           <CopyButton ref={copyItRef}>
-            <PSmall text={t.contact.copyButton} color="gray1" />
+            <PMedium text={t.contact.copyButton} color="gray0" />
           </CopyButton>
         </CopyToClipboard>
 
         <SendButton ref={sendEmailRef}>
           <a href="mailto:dalgudot@gmail.com" target="_blank">
-            <PSmall text={t.contact.sendButton} color="gray1" />
+            <PMedium text={t.contact.sendButton} color="gray0" />
           </a>
         </SendButton>
       </EmailButtonDiv>
@@ -45,7 +47,7 @@ const EmailDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 36px;
-  background-color: ${({ theme }) => theme.gray7__40};
+  background-color: ${({ theme }) => theme.gray8};
   border: solid 1px ${({ theme }) => theme.gray7};
   border-radius: ${({ theme }) => theme.borderRadius.R13};
 
@@ -54,13 +56,17 @@ const EmailDiv = styled.div`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 36px 0;
+
+    h1 {
+      font-size: 28px;
+    }
   }
 `;
 
 const EmailButtonDiv = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 24px;
+  margin-top: 32px;
 
   // 바뀌는 요소
   max-width: 360px;
@@ -78,7 +84,6 @@ const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.R13};
 
   // 바뀌는 요소
-
   width: 200px;
   height: 54px;
 
@@ -91,5 +96,9 @@ const Button = styled.button`
 const CopyButton = styled(Button)``;
 
 const SendButton = styled(Button)`
-  margin-left: 9px;
+  margin-left: 11px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-left: 9px;
+  }
 `;

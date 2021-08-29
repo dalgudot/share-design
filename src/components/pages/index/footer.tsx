@@ -11,12 +11,11 @@ import { useWindowWidth } from '../../../library/hooks/useWindowWidth';
 
 const Footer = () => {
   const [loading, setLoading] = useState(true);
+  const date = useDate();
   const [today, setToday] = useState('');
   const [total, setTotal] = useState('');
 
   useEffect(() => {
-    const date = useDate();
-
     // 새롭게 추가되는 값까지 받기 위해 once 대신 on 메소드 활용
     firebase
       .database()
@@ -29,9 +28,7 @@ const Footer = () => {
         setLoading(false);
       });
 
-    return () => setToday('');
-
-    // CleanUp Function
+    return () => setLoading(true); // CleanUp Function
   }, []);
 
   useEffect(() => {
@@ -46,7 +43,7 @@ const Footer = () => {
         setLoading(false);
       });
 
-    return () => setTotal(''); // CleanUp Function
+    return () => setLoading(true); // CleanUp Function
   }, []);
 
   const width: number = useWindowWidth();

@@ -59,11 +59,12 @@ const Nav = styled.nav`
   position: fixed;
 
   // Properties that change
-  top: 125px; // 145-24 + 4(4는 시각 보정)
+  margin-top: 58px; // 72px - 24px
+  top: ${({ theme }) => theme.margin.DesktopTop};
   right: 4.5vw;
 
   p {
-    padding-top: 24px;
+    margin-top: 24px;
     text-align: end;
   }
 
@@ -73,6 +74,7 @@ const Nav = styled.nav`
     z-index: ${({ theme }) => theme.zIndex.Bar};
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray9};
+    margin-top: 0;
     top: unset;
     bottom: 0;
     left: 0;
@@ -81,7 +83,7 @@ const Nav = styled.nav`
     justify-content: space-evenly;
 
     p {
-      padding-top: 4px;
+      margin-top: 4px;
       text-align: center;
       font-size: 10px;
     }

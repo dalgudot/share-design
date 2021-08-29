@@ -38,7 +38,7 @@ const ToastWrapMotion = styled(motion.div)`
   max-width: 480px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: ${({ theme }) => theme.padding.MobileWrap};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 

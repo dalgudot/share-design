@@ -36,10 +36,10 @@ const HeaderContainer = styled.header`
   width: 100%;
 
   // Properties that change
-  height: 63px;
+  height: ${({ theme }) => theme.margin.DesktopTop};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 56px;
+    height: ${({ theme }) => theme.margin.MobileTop};
   }
 
   // iOS top safe area
