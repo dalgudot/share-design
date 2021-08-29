@@ -17,8 +17,8 @@ export const uiUxDesign2 = () => {
     },
 
     hashTags: {
-      k: '#UI #UX #디자인 #모션 #인터랙션',
-      e: '#UI #UX #Design #Motion #Interaction',
+      k: '#모션 #인터랙션',
+      e: '#Motion #Interaction',
     },
 
     references: [

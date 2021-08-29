@@ -47,7 +47,7 @@ const SocialDiv = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 48px;
-  max-width: 480px;
+  max-width: 380px;
   position: relative;
 
   // iOS bottom safe area

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import PLarge from '../../../foundation/typography/p-medium';
+import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleMessage = () => {
@@ -33,7 +33,7 @@ const Container = styled.div`
   }
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 64px;
+    margin-top: 56px;
 
     span {
       height: 20px;

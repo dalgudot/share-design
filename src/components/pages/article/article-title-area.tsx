@@ -10,10 +10,10 @@ const ArticleTitleArea = ({
   dateTime,
   articleTitle,
 }: {
-  categoryTitle?: object;
-  date?: object;
+  categoryTitle?: { k: string; e: string };
+  date?: string;
   dateTime?: string;
-  articleTitle: object;
+  articleTitle: { k: string; e: string };
 }) => {
   return (
     <TitleArea>
@@ -28,7 +28,7 @@ const ArticleTitleArea = ({
       )}
       <H1Title //
         text={articleTitle}
-        color="gray1"
+        color="gray0"
         marginTop="4px"
       />
       <Profile marginTop="16px" />
@@ -39,6 +39,14 @@ const ArticleTitleArea = ({
 export default ArticleTitleArea;
 
 const TitleArea = styled.div`
+  h1 {
+    font-size: 39px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      font-size: 28px;
+    }
+  }
+
   p {
     margin-left: 2px; // categoryTitle 시각 보정
   }

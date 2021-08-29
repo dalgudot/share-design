@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import TabAbout24 from '../../../foundation/svg/tab_about_24';
+import TabIntroduction24 from '../../../foundation/svg/tab_introduction_24';
 import TabContact24 from '../../../foundation/svg/tab_contact_24';
 import TabRecord24 from '../../../foundation/svg/tab_record_24';
 import PMedium from '../../../foundation/typography/p-medium';
@@ -29,7 +29,7 @@ const ResponsiveNavBar = () => {
           </Link>
           <Link href="/introduction">
             <a>
-              <TabAbout24 pathname={pathname} />
+              <TabIntroduction24 pathname={pathname} />
               <PMedium
                 text={{ k: '프로젝트 소개', e: 'PROJECT INTRO' }}
                 color={pathname === '/introduction' ? 'gray0' : 'gray4'}

@@ -1,10 +1,17 @@
-import PMedium from '../../../foundation/typography/p-medium';
+import PLarge from '../../../foundation/typography/p-large';
 
-const AboutContents = ({ contentsArray }: { contentsArray: object[] }) => {
+const IntroductionContents = ({
+  contentsArray,
+}: {
+  contentsArray: {
+    k: string;
+    e: string;
+  }[];
+}) => {
   return (
     <>
       {contentsArray.map((text, index) => (
-        <PMedium //
+        <PLarge //
           key={index}
           text={text}
           color="gray3"
@@ -15,4 +22,4 @@ const AboutContents = ({ contentsArray }: { contentsArray: object[] }) => {
   );
 };
 
-export default AboutContents;
+export default IntroductionContents;

@@ -22,7 +22,7 @@ const ContactIndex = ({ showToast }: { showToast: Function }) => {
           showToast={showToast} // _app에서 Page Component에 전달된 showToast 함수 전달
         />
         <AboutArea />
-        <SocialArea />
+        {/* <SocialArea /> */}
       </Main>
     </>
   );

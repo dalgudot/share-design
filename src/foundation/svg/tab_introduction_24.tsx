@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { mediaBreakPoint } from '../../styles/common';
 
-const TabAbout24 = ({ pathname }: any) => {
+const TabIntroduction24 = ({ pathname }: any) => {
   const themeContext = useContext(ThemeContext);
   const color: string =
     pathname === '/introduction' ? themeContext.gray0 : themeContext.gray4;
@@ -17,7 +17,7 @@ const TabAbout24 = ({ pathname }: any) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <g
-        id="000-Icon/icon_about_24"
+        id="000-Icon/icon_introduction_24"
         stroke="none"
         strokeWidth="1"
         fill="none"
@@ -33,7 +33,7 @@ const TabAbout24 = ({ pathname }: any) => {
     </SVG>
   );
 };
-export default TabAbout24;
+export default TabIntroduction24;
 
 const SVG = styled.svg`
   display: none;

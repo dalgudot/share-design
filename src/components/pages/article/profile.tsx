@@ -4,6 +4,7 @@ import PSmall from '../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 import { t } from '../../../data/index/t';
 import { mediaBreakPoint } from '../../../styles/common';
+import PMedium from '../../../foundation/typography/p-medium';
 
 const Profile = ({ marginTop }: { marginTop: string }) => {
   const goToContact = () => {
@@ -18,9 +19,9 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
           src="/images/profile-photo@3x.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
-        <PSmall text={t.myName} color="gray1" />
+        <PMedium text={t.myName} color="gray1" />
         <Dot />
-        <PSmall text={t.myJob} color="gray1" />
+        <PMedium text={t.myJob} color="gray1" />
       </Author>
     </span>
   );

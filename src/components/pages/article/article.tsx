@@ -8,7 +8,7 @@ import ArticleToolBar from './article-tool-bar/article-tool-bar';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../library/functions/visits-and-views';
-import AboutContents from '../introduction/introduction-contents';
+import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
@@ -30,11 +30,14 @@ const Article = ({
   showToast,
   referencesData,
 }: {
-  categoryTitle?: object;
-  date?: object;
+  categoryTitle?: { k: string; e: string };
+  date?: string;
   dateTime?: string;
-  articleTitle: object;
-  contentsArray: object[];
+  articleTitle: { k: string; e: string };
+  contentsArray: {
+    k: string;
+    e: string;
+  }[];
   showToast?: Function;
   referencesData?: object[];
 }) => {
@@ -48,7 +51,7 @@ const Article = ({
   }, []);
 
   // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.
-  // ex) About > First Content일 때
+  // ex) Introduction > First Content일 때
   scrollTop();
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
@@ -89,7 +92,7 @@ const Article = ({
   const contentsSwitch = () => {
     switch (pathname) {
       case '/introduction':
-        return <AboutContents contentsArray={contentsArray} />;
+        return <IntroductionContents contentsArray={contentsArray} />;
       case '/article/ui-ux-design/1':
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
       case '/article/ui-ux-design/2':
@@ -128,7 +131,7 @@ const Article = ({
             </GoToFirstContent>
           )} */}
 
-          {/* about에는 댓글 넣지 않음 */}
+          {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
             <Response
               showToast={showToast}
@@ -139,14 +142,15 @@ const Article = ({
             />
           )}
 
-          <ArticleNotice />
+          {/* introduction에는 iOS 앱 다운로드 넣지 않음 */}
+          {router.pathname !== '/introduction' && <ArticleNotice />}
 
           {referencesData && (
             <ArticleReference referencesData={referencesData} />
           )}
           <div ref={responseRef} />
 
-          {/* about에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
+          {/* introduction에는 progressbar 넣지 않음, 처음부터 100%인 스크롤 버그 */}
           {/* {router.pathname !== '/introduction' && <ArticleProgressBar />} */}
           {/* <ArticleToolBar /> */}
         </ArticleContainer>
@@ -158,17 +162,21 @@ const Article = ({
 export default Article;
 
 const Main = styled.main`
-  width: 100%;
-  height: 100%;
   background-color: ${({ theme }) => theme.gray7};
   display: flex;
   justify-content: center;
 
-  /* iOS top safe area */
-  margin-bottom: calc(env(safe-area-inset-bottom));
+  margin-top: ${({ theme }) => theme.margin.DesktopTop};
+  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: ${({ theme }) => theme.margin.MobileTop};
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
+
+  /* iOS top safe area */
+  margin-bottom: calc(env(safe-area-inset-bottom));
 `;
 
 const ArticleContainer = styled.article`
@@ -178,11 +186,11 @@ const ArticleContainer = styled.article`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
 
   // 바뀌는 속성
-  margin: ${({ theme }) => theme.padding.LeftRightPadding};
+  margin-top: 72px;
 
-  /* @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: ${({ theme }) => theme.padding.LeftRightPadding};
-  } */
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 24px;
+  }
 `;
 
 type BackgroundType = {

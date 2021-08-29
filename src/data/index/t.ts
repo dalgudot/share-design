@@ -151,16 +151,6 @@ export const t = {
           },
           {
             term: {
-              k: '2019.02.21 ~ 현재',
-              e: '2019.02.21 ~ Present',
-            },
-            contents: {
-              k: "카카오에서 운영하는 디지털 공간인 브런치에 디자인을 공부하면서 얻은 지식과 깨달음, 그 과정에서 겪은 시행착오를 공유하는 '디자인 독학하기' 프로젝트를 진행하고 있습니다.",
-              e: "I am working on a 'SHARE DESIGN' project to share product design experience with people around the world.",
-            },
-          },
-          {
-            term: {
               k: '2017.05.26 ~ 2018.12.20',
               e: '2017.05.26 ~ 2018.12.20',
             },

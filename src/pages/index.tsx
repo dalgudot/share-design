@@ -44,8 +44,8 @@ const Main = styled.main`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: ${({ theme }) => theme.margin.MobileTop};
-    padding: ${({ theme }) => theme.padding.LeftRightPadding};
     margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
+    padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 
   // iOS bottom safe area

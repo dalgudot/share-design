@@ -17,8 +17,8 @@ export const uiUxDesign1 = () => {
     },
 
     hashTags: {
-      k: '#UI #UX #디자인 #토글 #버튼',
-      e: '#UI #UX #Design #Toggle #Button',
+      k: '#토글 #버튼',
+      e: '#Toggle #Button',
     },
 
     langChangeButton: {
