@@ -7,7 +7,7 @@ const borderRadius = {
 };
 
 const maxWidth = {
-  List: '600px',
+  List: '640px',
   Paragraph: '740px',
 };
 
@@ -22,25 +22,13 @@ const zIndex = {
 
 const padding = {
   LeftRightPadding: '0 4.5vw',
-
-  // 아래 3개는 추후 삭제
-  MobileWrap: '0 4.5vw',
-  TabletWrap: '0 12vw',
-  DesktopWrap: '0 16.6667%',
 };
 
 const margin = {
   DesktopTop: '73px', // 72px + 1px, Header만큼만
   MobileTop: '57px', // 56px + 1px, Header만큼만
-
-  // 아래는 교체하거나 삭제할 속성
-  MobileWrap: '72px auto 85px',
-  MobileBottom: '85px', // 48px + 1px + '36px'
-  /////////////////////////////////////////////
-  DesktopWrap: '109px auto 105px',
-  DesktopBottom: '105px', // 56px + 1px + '48px' // Desktop은 Top, Bottom이 같은 높이
-  DefaultMobileBottom: '36px',
-  DefaultDesktopBottom: '96px',
+  DesktopBottom: '144px', // Same Height as footer margin-bottom(48px) + 96px
+  MobileBottom: '104px', // 56 + 48px
 };
 
 export const darkTheme: DefaultTheme = {
@@ -118,19 +106,12 @@ declare module 'styled-components' {
     };
     padding: {
       LeftRightPadding: string;
-      MobileWrap: string;
-      TabletWrap: string;
-      DesktopWrap: string;
     };
     margin: {
-      MobileWrap: string;
-      MobileTop: string;
-      MobileBottom: string;
-      DesktopWrap: string;
       DesktopTop: string;
+      MobileTop: string;
       DesktopBottom: string;
-      DefaultMobileBottom: string;
-      DefaultDesktopBottom: string;
+      MobileBottom: string;
     };
   }
 }

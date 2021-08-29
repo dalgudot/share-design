@@ -99,7 +99,7 @@ const Divider = styled.span`
 
 // Framer Motion
 const koVariants = (width: number, numberMediaBreakPoint: number) => {
-  if (width < numberMediaBreakPoint) {
+  if (width <= numberMediaBreakPoint) {
     return {
       on: { x: 0 },
       off: { x: 33 },
@@ -113,7 +113,7 @@ const koVariants = (width: number, numberMediaBreakPoint: number) => {
 };
 
 const enVariants = (width: number, numberMediaBreakPoint: number) => {
-  if (width < numberMediaBreakPoint) {
+  if (width <= numberMediaBreakPoint) {
     return {
       on: { x: -33 },
       off: { x: 0 },

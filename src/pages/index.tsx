@@ -40,13 +40,12 @@ export default Index;
 
 const Main = styled.main`
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
-  /*  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom}; */
+  margin-bottom: ${({ theme }) => theme.margin.DesktopBottom};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: ${({ theme }) => theme.margin.MobileTop};
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
 
-    /* margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
-     */
+    margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
   }
 `;

@@ -144,10 +144,9 @@ const Main = styled.main`
 const DivContainer = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
-  margin: ${({ theme }) => theme.margin.DesktopWrap};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: ${({ theme }) => theme.margin.MobileWrap};
+    margin: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
 

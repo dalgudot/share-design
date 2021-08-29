@@ -7,6 +7,7 @@ import firebase from 'firebase/app';
 import { useState } from 'react';
 import { useDate } from '../../../library/hooks/useDate';
 import LoadingSkeletonRect from '../../../foundation/framer-motion/loading-skeleton-rect';
+import { useWindowWidth } from '../../../library/hooks/useWindowWidth';
 
 const Footer = () => {
   const [loading, setLoading] = useState(true);
@@ -48,53 +49,61 @@ const Footer = () => {
     return () => setTotal(''); // CleanUp Function
   }, []);
 
-  return (
-    <>
-      <FooterContainer>
-        {/*  */}
-        <Left>
-          <Statistics>
-            {loading === true ? (
-              <LoadingSkeletonRect width="61px" height="21px" />
-            ) : (
-              <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
-            )}
-            <Divider />
-            {loading === true ? (
-              <LoadingSkeletonRect width="85px" height="21px" />
-            ) : (
-              <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
-            )}
-          </Statistics>
-        </Left>
+  const width: number = useWindowWidth();
+  const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
+  const numberMediaBreakPoint = Number(stringMediaBreakPoint);
 
-        <Right>
-          <Social>
-            <a href="https://brunch.co.kr/@dalgudot" target="_blank">
-              <PSmall text="Brunch" color="gray0" weight={700} />
-            </a>
-            <Divider />
-            <a href="https://www.facebook.com/dalgudot" target="_blank">
-              <PSmall text="Facebook" color="gray0" weight={700} />
-            </a>
-            <Divider />
-            <a href="https://www.linkedin.com/in/dalgudot" target="_blank">
-              <PSmall text="LinkedIn" color="gray0" weight={700} />
-            </a>
-          </Social>
-          <Link href="/contact">
-            <a>
-              <PSmall
-                text="ⓒ KyungHwan Kim. All rights reserved"
-                color="gray4"
-              />
-            </a>
-          </Link>
-        </Right>
-        {/*  */}
-      </FooterContainer>
-    </>
-  );
+  if (width <= numberMediaBreakPoint) {
+    return <></>;
+  } else {
+    return (
+      <>
+        <FooterContainer>
+          {/*  */}
+          <Left>
+            <Statistics>
+              {loading === true ? (
+                <LoadingSkeletonRect width="61px" height="21px" />
+              ) : (
+                <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
+              )}
+              <Divider />
+              {loading === true ? (
+                <LoadingSkeletonRect width="85px" height="21px" />
+              ) : (
+                <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
+              )}
+            </Statistics>
+          </Left>
+
+          <Right>
+            <Social>
+              <a href="https://brunch.co.kr/@dalgudot" target="_blank">
+                <PSmall text="Brunch" color="gray0" weight={700} />
+              </a>
+              <Divider />
+              <a href="https://www.facebook.com/dalgudot" target="_blank">
+                <PSmall text="Facebook" color="gray0" weight={700} />
+              </a>
+              <Divider />
+              <a href="https://www.linkedin.com/in/dalgudot" target="_blank">
+                <PSmall text="LinkedIn" color="gray0" weight={700} />
+              </a>
+            </Social>
+            <Link href="/contact">
+              <a>
+                <PSmall
+                  text="ⓒ KyungHwan Kim. All rights reserved"
+                  color="gray4"
+                />
+              </a>
+            </Link>
+          </Right>
+          {/*  */}
+        </FooterContainer>
+      </>
+    );
+  }
 };
 
 export default Footer;
@@ -109,16 +118,6 @@ const FooterContainer = styled.footer`
   bottom: 48px;
   left: 0;
   right: 0;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    position: relative;
-    flex-direction: column;
-    margin-bottom: 80px; // 56(Tab bar height) + 24
-
-    p {
-      font-size: 14px;
-    }
-  }
 
   // iOS bottom safe area
   padding-bottom: calc(env(safe-area-inset-bottom));

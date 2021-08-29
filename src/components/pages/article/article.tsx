@@ -168,7 +168,6 @@ const Main = styled.main`
   margin-bottom: calc(env(safe-area-inset-bottom));
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    padding: ${({ theme }) => theme.padding.MobileWrap};
   }
 `;
 
@@ -179,11 +178,11 @@ const ArticleContainer = styled.article`
   max-width: ${({ theme }) => theme.maxWidth.Paragraph};
 
   // 바뀌는 속성
-  margin: ${({ theme }) => theme.margin.DesktopWrap};
+  margin: ${({ theme }) => theme.padding.LeftRightPadding};
 
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: ${({ theme }) => theme.margin.MobileWrap};
-  }
+  /* @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin: ${({ theme }) => theme.padding.LeftRightPadding};
+  } */
 `;
 
 type BackgroundType = {

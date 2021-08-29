@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { t } from '../../data/index/t';
 import TextStyle from '../../foundation/typography/atoms/text-style';
-import { fontWeight } from '../../foundation/typography/atoms/font';
 
 const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
@@ -31,26 +30,7 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
     // display: block || 'none',
   };
 
-  return (
-    <BtnStyle style={style} onClick={setMode}>
-      <TextStyle
-        type="p"
-        text="나중에 아래 타입 정하기"
-        // text={
-        //   `${theme}` === 'darkTheme'
-        //     ? `${lang}` === 'ko'
-        //       ? t[themeMode[k]]
-        //       : t[themeMode[e]]
-        //     : `${lang}` === 'ko'
-        //     ? t[themeMode[k]]
-        //     : t[themeMode[e]]
-        // }
-        textSize="medium"
-        weight={fontWeight[700]}
-        color="gray2"
-      />
-    </BtnStyle>
-  );
+  return <BtnStyle style={style} onClick={setMode}></BtnStyle>;
 };
 
 export default ThemeChangeButton;
