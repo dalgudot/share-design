@@ -152,6 +152,7 @@ const Main = styled.main`
   }
 
   /* iOS top safe area */
+  margin-top: calc(env(safe-area-inset-top));
   margin-bottom: calc(env(safe-area-inset-bottom));
 `;
 
