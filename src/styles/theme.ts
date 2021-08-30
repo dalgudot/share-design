@@ -17,7 +17,7 @@ const zIndex = {
   Modal: 90001,
   ModalBackgroundBlur: 90000,
   Bar: 10000,
-  BarFillEmptySpace: 9999,
+  BarSafeArea: 9999,
   Background: -1,
 };
 
@@ -103,7 +103,7 @@ declare module 'styled-components' {
       Modal: number;
       ModalBackgroundBlur: number;
       Bar: number;
-      BarFillEmptySpace: number;
+      BarSafeArea: number;
       Background: number;
     };
     padding: {

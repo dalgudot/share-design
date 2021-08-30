@@ -51,7 +51,7 @@ const SocialDiv = styled.div`
   position: relative;
 
   // iOS bottom safe area
-  margin-bottom: calc(env(safe-area-inset-bottom));
+  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
 
   img {
     width: 24px;

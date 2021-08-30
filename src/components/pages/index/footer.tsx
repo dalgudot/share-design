@@ -128,7 +128,7 @@ const FooterContainer = styled.footer`
   right: 0;
 
   // iOS bottom safe area
-  padding-bottom: calc(env(safe-area-inset-bottom));
+  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
 `;
 
 const Left = styled.div`

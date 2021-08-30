@@ -48,6 +48,7 @@ const ResponsiveNavBar = () => {
             </a>
           </Link>
         </Nav>
+        <NavBarSafeArea />
       </>
     );
   } else return <></>;
@@ -59,7 +60,8 @@ const Nav = styled.nav`
   position: fixed;
 
   // Properties that change
-  margin-top: 58px; // 72px - 24px
+  margin-top: 58px;
+  // 72px - 24px
   top: ${({ theme }) => theme.margin.DesktopTop};
   right: 4.5vw;
 
@@ -69,12 +71,15 @@ const Nav = styled.nav`
   }
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    width: 100%;
+    // iOS bottom safe area
+    margin-bottom: calc(env(safe-area-inset-bottom));
+
+    /* width: 100%; */
     height: 56px;
     z-index: ${({ theme }) => theme.zIndex.Bar};
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray9};
-    margin-top: 0;
+    /* margin-top: 0px; */
     top: unset;
     bottom: 0;
     left: 0;
@@ -95,8 +100,17 @@ const Nav = styled.nav`
       justify-content: center;
       align-items: center;
     }
+  }
+`;
 
-    // iOS bottom safe area
-    margin-bottom: calc(env(safe-area-inset-bottom));
+const NavBarSafeArea = styled.div`
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: ${({ theme }) => theme.zIndex.BarSafeArea};
+    background-color: ${({ theme }) => theme.gray9};
+    height: 55px; // status 바 가리면서 header height를 넘지 않음
   }
 `;

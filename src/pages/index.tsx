@@ -6,6 +6,8 @@ import Footer from '../components/pages/index/footer';
 import List from '../components/pages/index/list';
 import { articleData } from '../data/article-data';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { useWindowHeight } from '../library/hooks/useWindowHeight';
+import PLarge from '../foundation/typography/p-large';
 
 const Index = () => {
   useArvAmplitude('arv_home');
@@ -13,6 +15,10 @@ const Index = () => {
     VisitsAndViewsDuringSession('Home');
   }, []);
   const data = articleData();
+
+  // for iOS env(safe-area-inset-bottom)
+  const height = useWindowHeight();
+  console.log(height);
 
   return (
     <>
@@ -32,6 +38,15 @@ const Index = () => {
         </ul>
       </Main>
       <Footer />
+      <ComingSoon height={height * 0.7}>
+        <div />
+        <PLarge
+          text="Coming Soon 😎"
+          color="gray1"
+          weight={700}
+          marginTop="36px"
+        />
+      </ComingSoon>
     </>
   );
 };
@@ -50,4 +65,19 @@ const Main = styled.main`
 
   // iOS bottom safe area
   /* padding-bottom: calc(env(safe-area-inset-bottom)); */
+`;
+
+// for iOS env(safe-area-inset-bottom)
+const ComingSoon = styled.div<{ height: number }>`
+  div {
+    width: 1px;
+    height: ${({ height }) => height}px;
+    background-color: ${({ theme }) => theme.gray7};
+    margin: 0 auto;
+  }
+
+  p {
+    margin-bottom: 144px;
+    text-align: center;
+  }
 `;

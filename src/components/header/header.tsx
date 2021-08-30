@@ -16,6 +16,7 @@ const Header = () => {
         </Link>
         <LangChangeToggle />
       </HeaderContainer>
+      <HeaderSafeArea />
     </>
   );
 };
@@ -44,4 +45,22 @@ const HeaderContainer = styled.header`
 
   // iOS top safe area
   margin-top: calc(env(safe-area-inset-top));
+`;
+
+const HeaderSafeArea = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: ${({ theme }) => theme.zIndex.BarSafeArea};
+  background-color: ${({ theme }) => theme.gray9};
+
+  // Properties that change
+  height: ${({ theme }) =>
+    theme.margin.DesktopTop}; // status 바 가리면서 header height를 넘지 않음
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: ${({ theme }) =>
+      theme.margin.MobileTop}; // status 바 가리면서 header height를 넘지 않음
+  }
 `;
