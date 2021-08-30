@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Profile from './profile';
-import H1Title from '../../../foundation/typography/h1-title';
 import { mediaBreakPoint } from '../../../styles/common';
-import PSmall from '../../../foundation/typography/p-small';
+import PMedium from '../../../foundation/typography/p-medium';
+import H1Title from '../../../foundation/typography/h1-title';
 
 const ArticleTitleArea = ({
   categoryTitle,
@@ -19,10 +19,10 @@ const ArticleTitleArea = ({
     <TitleArea>
       {categoryTitle && date && (
         <CategoryDateArea>
-          <PSmall text={categoryTitle} color="gray4" />
-          <span />
+          <PMedium text={categoryTitle} color="gray4" />
+          <Divider />
           <time dateTime={dateTime}>
-            <PSmall text={date} color="gray4" />
+            <PMedium text={date} color="gray4" />
           </time>
         </CategoryDateArea>
       )}
@@ -62,19 +62,17 @@ const CategoryDateArea = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 16px;
   }
+`;
 
-  span {
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.gray4};
-    opacity: 0.9;
+const Divider = styled.span`
+  width: 1px;
+  background-color: ${({ theme }) => theme.gray4};
 
-    // 바뀌는 속성
-    margin: 1px 5px 0;
+  height: 12px;
+  margin: 0 6px 0 8px; // 시각 보정
 
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin: 1px 4px 0;
-    }
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: 8px;
+    margin: 1px 3px 0 5px; // 모바일 시각 보정
   }
 `;

@@ -1,61 +1,48 @@
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { btnHoverTap } from '../../foundation/framer-motion/variants';
-import PMedium from '../../foundation/typography/p-medium';
-import PLarge from '../../foundation/typography/p-medium';
-import PSmall from '../../foundation/typography/p-small';
+import PLarge from '../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../styles/common';
 
 const AloneButton = ({
-  size, // small or medium
   btnText,
-  color,
   marginTop,
 }: {
-  size: string;
   btnText:
     | {
         k: string;
         e: string;
       }
     | string;
-  color?: string;
   marginTop?: string;
 }) => {
   return (
     <MotionDiv //
-      size={size}
-      bgColor={color}
       marginTop={marginTop}
       variants={btnHoverTap}
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      {size === 'small' ? (
-        <PMedium text={btnText} color="gray2" />
-      ) : (
-        <PLarge text={btnText} color="gray2" />
-      )}
+      <PLarge text={btnText} color="gray1" />
     </MotionDiv>
   );
 };
 
 export default AloneButton;
 
-type MotionDivType = {
-  marginTop?: string;
-  size: string;
-  bgColor?: string;
-};
-
-const MotionDiv = styled(motion.div)<MotionDivType>`
+const MotionDiv = styled(motion.div)<{ marginTop?: string }>`
   margin-top: ${({ marginTop }) => marginTop};
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: ${({ size, theme }) =>
-    size === 'small' ? theme.borderRadius.R13 : theme.borderRadius.R26};
-  background-color: ${({ bgColor, theme }) =>
-    bgColor !== 'gray6' ? theme.gray7 : theme.gray6};
-  padding: ${({ size }) => (size === 'small' ? '12px 26px' : '18px 32px')};
+  background-color: ${({ theme }) => theme.gray6};
+
+  // properties that change
+  border-radius: ${({ theme }) => theme.borderRadius.R26};
+  padding: 20px 32px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    border-radius: ${({ theme }) => theme.borderRadius.R13};
+    padding: 16px 28px;
+  }
 `;

@@ -1,7 +1,7 @@
 import TextStyle from './atoms/text-style';
 import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const H2Title = ({
+const H3Title = ({
   text,
   color,
   weight,
@@ -22,16 +22,16 @@ const H2Title = ({
       type="h2"
       text={useSetLanguage(text)}
       textSize={{
-        mobile: '21px',
-        desktop: '24px',
+        mobile: '28px',
+        desktop: '34px',
       }}
       weight={weight || 700}
       color={color}
-      letterSpacing="-1px"
+      letterSpacing="-0.75px"
       lineHeight={1.4}
       marginTop={marginTop}
     />
   );
 };
 
-export default H2Title;
+export default H3Title;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/t-article-common';
-import H1Title from '../../../foundation/typography/h1-title';
 import H2Title from '../../../foundation/typography/h2-title';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -8,7 +7,7 @@ import { mediaBreakPoint } from '../../../styles/common';
 const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
   return (
     <Container>
-      <H1Title //
+      <H2Title //
         text={tArticleCommon().ReferencesTitle}
         color="gray1"
       />
@@ -19,7 +18,11 @@ const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
             <PLarge text={reference.title} color="gray1" weight={700} />
             <PLarge text={reference.content} color="gray3" marginTop="8px" />
           </ReferenceContents>
-          <PLarge text={tArticleCommon().chevronRight} color="gray1" />
+          <PLarge
+            text={tArticleCommon().chevronRight}
+            color="gray1"
+            weight={700}
+          />
         </A>
       ))}
     </Container>

@@ -1,7 +1,7 @@
 import TextStyle from './atoms/text-style';
 import { useSetLanguage } from '../../library/hooks/useSetLanguage';
 
-const H1Title = ({
+const H4Title = ({
   text,
   color,
   weight,
@@ -19,19 +19,19 @@ const H1Title = ({
 }) => {
   return (
     <TextStyle
-      type="h1"
+      type="h4"
       text={useSetLanguage(text)}
       textSize={{
-        mobile: '32px',
-        desktop: '39px',
+        mobile: '18px',
+        desktop: '21px',
       }}
       weight={weight || 700}
       color={color}
-      letterSpacing="-0.75px"
+      letterSpacing="-0.2px"
       lineHeight={1.4}
       marginTop={marginTop}
     />
   );
 };
 
-export default H1Title;
+export default H4Title;

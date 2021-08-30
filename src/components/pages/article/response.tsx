@@ -5,11 +5,9 @@ import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useRouter } from 'next/router';
 import PLarge from '../../../foundation/typography/p-large';
-import PSmall from '../../../foundation/typography/p-small';
 import AloneButton from '../../button/alone-button';
 import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas/wave-loading/wave-loading';
-import H1Title from '../../../foundation/typography/h1-title';
 import PMedium from '../../../foundation/typography/p-medium';
 
 const Response = ({
@@ -61,7 +59,7 @@ const Response = ({
     return (
       <>
         <Container>
-          <H1Title text={tArticleCommon().responses} color="gray1" />
+          <H2Title text={tArticleCommon().responses} color="gray1" />
           {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
@@ -96,9 +94,7 @@ const Response = ({
         {/* 버튼 영역 */}
         <A onClick={checkIsResponse}>
           <AloneButton //
-            size="medium"
             btnText={tArticleCommon().writeResponse}
-            color="gray6"
           />
         </A>
       </>
@@ -148,9 +144,9 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
 `;
 
 const A = styled.a`
-  margin: 48px auto 0;
+  margin: 72px auto 0;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 36px auto 0;
+    margin: 48px auto 0;
   }
 `;

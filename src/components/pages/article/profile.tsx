@@ -61,8 +61,8 @@ const Dot = styled.span`
   width: 2px;
   background-color: ${({ theme }) => theme.gray1};
   border-radius: 50%;
-  margin-left: 4px;
-  margin-right: 4px;
   margin-top: 3px;
   margin-bottom: 2px; // 시각 보정
+  margin-left: 5px;
+  margin-right: 3px;
 `;

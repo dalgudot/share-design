@@ -38,9 +38,14 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
                 <PLarge
                   text={tArticleCommon().articleNotice.iOSAPPDownload}
                   color="gray1"
+                  weight={700}
                 />
               </Left>
-              <PLarge text={tArticleCommon().chevronRight} color="gray1" />
+              <PLarge
+                text={tArticleCommon().chevronRight}
+                color="gray1"
+                weight={700}
+              />
             </Title>
             {/* <PSmall
               text={tArticleCommon().articleNotice.iOSAPPDownloadContents[0]}
@@ -68,6 +73,21 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   };
 };
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px ${({ theme }) => theme.gray6};
+
+  // 바뀌는 속성
+  margin-top: 144px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-top: 96px;
+  }
+`;
+
 const A = styled.a`
   padding: 32px 0;
   border-top: solid 1px ${({ theme }) => theme.gray6};
@@ -88,44 +108,3 @@ const Left = styled.div`
     margin-left: 8px;
   }
 `;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-bottom: solid 1px ${({ theme }) => theme.gray6};
-
-  // 바뀌는 속성
-  margin-top: 120px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px;
-  }
-`;
-
-{
-  /* 인스타그램 빼기
-        <A href="https://www.instagram.com/dalgu_dot/" target="_blank">
-          <Title>
-            <Left>
-              <IconInstagramLogo24 />
-              <PLarge
-                text={tArticleCommon().articleNotice.newNotification}
-                color="gray1"
-              />
-            </Left>
-            <PLarge text={tArticleCommon().chevronRight} color="gray1" />
-          </Title>
-          <PSmall
-            text={tArticleCommon().articleNotice.newNotificationContents[0]}
-            color="gray3"
-            marginTop="16px"
-          />
-          <PSmall
-            text={tArticleCommon().articleNotice.newNotificationContents[1]}
-            color="gray3"
-          />
-        </A>
-      )} */
-}

@@ -1,13 +1,11 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H2Title from '../../../foundation/typography/h2-title';
-import PSmall from '../../../foundation/typography/p-small';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useMyRipple } from '../../../library/hooks/useMyRipple';
 import PMedium from '../../../foundation/typography/p-medium';
-import H1Title from '../../../foundation/typography/h1-title';
+import H3Title from '../../../foundation/typography/h2-title';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
   const copyItRef = useRef(null);
@@ -17,7 +15,7 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
 
   return (
     <EmailDiv>
-      <H1Title text={t.myEmail} color="gray0" />
+      <H3Title text={t.myEmail} color="gray0" />
       <EmailButtonDiv>
         <CopyToClipboard
           text="dalgudot@gmail.com"

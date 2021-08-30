@@ -2,8 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
-import H1Title from '../../../../../foundation/typography/h1-title';
-import H2Title from '../../../../../foundation/typography/h2-title';
+import H3Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PMedium from '../../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../../styles/common';
@@ -70,7 +69,7 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <H1Title //
+      <H3Title //
         text={contentsArray[4]}
         color="gray2"
         marginTop="120px"
@@ -127,7 +126,7 @@ const UIUXDesignContents1 = ({
         marginTop="48px"
       />
 
-      <H1Title //
+      <H3Title //
         text={contentsArray[14]}
         color="gray2"
         marginTop="120px"
@@ -159,7 +158,7 @@ const UIUXDesignContents1 = ({
         marginTop="96px"
       />
 
-      <H1Title //
+      <H3Title //
         text={contentsArray[18]}
         color="gray2"
         marginTop="120px"
@@ -201,7 +200,7 @@ const UIUXDesignContents1 = ({
         marginTop="36px"
       />
 
-      <H1Title //
+      <H3Title //
         text={contentsArray[28]}
         color="gray2"
         marginTop="96px"

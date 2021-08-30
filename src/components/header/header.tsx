@@ -3,7 +3,7 @@ import { t } from '../../data/index/t';
 import { mediaBreakPoint } from '../../styles/common';
 import LangChangeToggle from './lang-change-toggle';
 import Link from 'next/link';
-import H3Title700 from '../../foundation/typography/h3-title';
+import H4Title700 from '../../foundation/typography/h4-title';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
       <HeaderContainer>
         <Link href="/">
           <a>
-            <H3Title700 text={t.shareDesign} color="gray0" />
+            <H4Title700 text={t.shareDesign} color="gray0" />
           </a>
         </Link>
         <LangChangeToggle />

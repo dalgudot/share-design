@@ -155,7 +155,7 @@ const Main = styled.main`
 
 const DivContainer = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.maxWidth.List};
+  max-width: ${({ theme }) => theme.maxWidth.DesktopList};
   margin-top: 48px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

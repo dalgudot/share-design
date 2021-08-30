@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { t } from '../../../data/index/t';
-import PLarge from '../../../foundation/typography/p-medium';
+import PLarge from '../../../foundation/typography/p-large';
 import AloneButton from '../../button/alone-button';
 
 const ErrorCommon = () => {
-  const btnText = t.errorMessage.btn;
-
   return (
     <Main>
       <PLarge //
@@ -15,7 +13,7 @@ const ErrorCommon = () => {
       />
       <Link href="/">
         <a>
-          <AloneButton size="medium" btnText={btnText} marginTop="24px" />
+          <AloneButton btnText={t.errorMessage.btn} marginTop="24px" />
         </a>
       </Link>
     </Main>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../styles/common';
-import H1Title from '../../../foundation/typography/h1-title';
+import H3Title from '../../../foundation/typography/h2-title';
 import PSmall from '../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 
@@ -22,7 +22,7 @@ const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
               <PSmall text={date} color="gray4" />
             </time>
           </CategoryDateArea>
-          <H1Title //
+          <H3Title //
             text={title}
             color="gray1"
             marginTop="4px"
@@ -39,7 +39,7 @@ export default List;
 
 const MotionLi = styled(motion.li)<{ marginTop?: string }>`
   width: 100%; /* 원하는 너비 */
-  max-width: ${({ theme }) => theme.maxWidth.List};
+  max-width: ${({ theme }) => theme.maxWidth.DesktopList};
   margin: 0 auto;
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
 
@@ -57,6 +57,7 @@ const MotionLi = styled(motion.li)<{ marginTop?: string }>`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 48px 0;
+    max-width: ${({ theme }) => theme.maxWidth.MobileList};
 
     p {
       font-size: 14px; // 모바일에서도 14px 유지

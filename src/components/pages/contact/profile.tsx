@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t';
-import H1Title from '../../../foundation/typography/h1-title';
+import H3Title from '../../../foundation/typography/h2-title';
 import PMedium from '../../../foundation/typography/p-medium';
 import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -12,7 +12,7 @@ const ProfileArea = () => {
         src="/images/profile-photo@3x.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
-      <H1Title text={t.myName} color="gray0" marginTop="10px" />
+      <H3Title text={t.myName} color="gray0" marginTop="10px" />
       <PMedium text={t.myJob} color="gray3" marginTop="2px" />
     </ProfileDiv>
   );

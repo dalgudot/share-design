@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
-import H1Title from '../../../../../foundation/typography/h1-title';
+import H3Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PSmall from '../../../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
@@ -115,7 +115,7 @@ const UIUXDesignContents2 = ({
         marginTop="36px"
       />
 
-      <H1Title //
+      <H3Title //
         text={contentsArray[12]}
         color="gray2"
         marginTop="120px"

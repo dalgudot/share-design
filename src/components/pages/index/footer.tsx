@@ -25,13 +25,9 @@ const Footer = () => {
         const data = objData && Object.values(objData);
         // The last value in the array is the current date
         data[data.length - 1] && setToday(data[data.length - 1]);
-        setLoading(false);
+        // setLoading(false);
       });
 
-    return () => {}; // CleanUp Function
-  }, []);
-
-  useEffect(() => {
     firebase
       .database()
       .ref('Number of Visitors/Total Visitors')
@@ -45,6 +41,21 @@ const Footer = () => {
 
     return () => {}; // CleanUp Function
   }, []);
+
+  // useEffect(() => {
+  //   firebase
+  //     .database()
+  //     .ref('Number of Visitors/Total Visitors')
+  //     .on('value', (snapshot) => {
+  //       const objData = snapshot.val();
+  //       const data = objData && Object.values(objData);
+  //       // data[0] is Total All
+  //       data[0] && setTotal(data[0]);
+  //       setLoading(false);
+  //     });
+
+  //   return () => {}; // CleanUp Function
+  // }, []);
 
   const width: number = useWindowWidth();
   const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');

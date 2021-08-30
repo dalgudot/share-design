@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import H1Title from '../../foundation/typography/h1-title';
+import H3Title from '../../foundation/typography/h2-title';
 import { usePalette } from 'react-palette';
 import React from 'react';
 import StaggerDots from '../../foundation/framer-motion/stagger-dots';
@@ -118,10 +118,10 @@ const ExtractColors = ({ image, imageRef }: { image: any; imageRef: any }) => {
 
       <Canvas ref={canvasRef} />
       {/* <button onClick={extractColor}>
-          <H1Title
+          <H3Title
             text={{ k: '버튼', e: '버튼' }}
             color="gray1"
-          ></H1Title>
+          ></H3Title>
         </button> */}
       {loading ? (
         <StaggerDots />

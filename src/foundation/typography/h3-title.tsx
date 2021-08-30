@@ -22,12 +22,12 @@ const H3Title = ({
       type="h3"
       text={useSetLanguage(text)}
       textSize={{
-        mobile: '18px',
-        desktop: '21px',
+        mobile: '21px',
+        desktop: '24px',
       }}
       weight={weight || 700}
       color={color}
-      letterSpacing="-0.2px"
+      letterSpacing="-1px"
       lineHeight={1.4}
       marginTop={marginTop}
     />

@@ -6,8 +6,8 @@ import IconStar48Fill from '../../../../../foundation/svg/icon_star_48_fill';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../../../styles/common';
-import PSmall from '../../../../../foundation/typography/p-small';
 import H3Title from '../../../../../foundation/typography/h3-title';
+import PMedium from '../../../../../foundation/typography/p-medium';
 
 const KoodonWriteReview = () => {
   const [starCount, setStarCount] = useState([0, 0, 0, 0, 0]); // 0: off 1: on
@@ -66,14 +66,14 @@ const KoodonWriteReview = () => {
             maxLength={500}
           />
           <CountCharacters>
-            <PSmall //
+            <PMedium //
               text={{
                 k: String(reviewText.length),
                 e: String(reviewText.length),
               }}
               color="gray4"
             />
-            <PSmall //
+            <PMedium //
               text={{ k: '/500', e: '/500' }}
               color="gray4"
             />
