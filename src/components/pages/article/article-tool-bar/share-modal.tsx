@@ -161,11 +161,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
             </CopyToClipboard>
 
             <motion.button onClick={closeModal} variants={listUp}>
-              <AloneButton
-                size="small"
-                btnText={t.closeButton}
-                marginTop="36px"
-              />
+              <AloneButton btnText={t.closeButton} marginTop="36px" />
             </motion.button>
           </UlMotion>
         </DivMotion>
