@@ -37,12 +37,6 @@ const MotionDiv = styled(motion.div)<{ marginTop?: string }>`
   align-items: center;
   background-color: ${({ theme }) => theme.gray6};
 
-  // properties that change
   border-radius: ${({ theme }) => theme.borderRadius.R26};
-  padding: 20px 32px;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    border-radius: ${({ theme }) => theme.borderRadius.R13};
-    padding: 16px 28px;
-  }
+  padding: 18px 32px;
 `;

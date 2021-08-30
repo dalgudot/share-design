@@ -84,7 +84,7 @@ const Container = styled.div`
   margin-top: 144px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px;
+    margin-top: 120px;
   }
 `;
 
