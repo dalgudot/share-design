@@ -5,6 +5,7 @@ import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
 import H3Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
+import PMedium from '../../../../../foundation/typography/p-medium';
 import PSmall from '../../../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../../../library/hooks/useWindowHeight';
@@ -78,7 +79,7 @@ const UIUXDesignContents2 = ({
             variants={listVariants}
           >
             <img src={value.src} alt={useSetLanguage(value.alt)} />
-            <PSmall text={value.photoSrc} color="gray3" />
+            <PMedium text={value.photoSrc} color="gray2" weight={700} />
           </MotionLi>
         ))}
       </MotionUl>
