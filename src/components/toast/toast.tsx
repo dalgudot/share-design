@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import React from 'react';
-import PLarge from '../../foundation/typography/p-medium';
+import PLarge from '../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../styles/common';
 
 const MyToast = ({
