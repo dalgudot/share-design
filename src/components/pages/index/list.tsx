@@ -72,9 +72,8 @@ const CategoryDateArea = styled.div`
 
 const Divider = styled.span`
   width: 1px;
-  height: 10px;
   background-color: ${({ theme }) => theme.gray4};
-
+  height: 10px;
   margin: 0 4px 0 6px; // 시각 보정
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

@@ -9,7 +9,7 @@ import AboutArea from '../components/pages/contact/about';
 import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
 
 const ContactIndex = ({ showToast }: { showToast: Function }) => {
-  useArvAmplitude('arv_contact');
+  // useArvAmplitude('arv_contact');
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);

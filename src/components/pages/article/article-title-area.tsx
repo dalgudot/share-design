@@ -67,12 +67,11 @@ const CategoryDateArea = styled.div`
 const Divider = styled.span`
   width: 1px;
   background-color: ${({ theme }) => theme.gray4};
-
   height: 12px;
   margin: 0 6px 0 8px; // 시각 보정
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: 8px;
+    height: 10px;
     margin: 1px 3px 0 5px; // 모바일 시각 보정
   }
 `;

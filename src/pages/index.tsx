@@ -10,7 +10,7 @@ import { useWindowHeight } from '../library/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
 
 const Index = () => {
-  useArvAmplitude('arv_home');
+  // useArvAmplitude('arv_home');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
@@ -18,7 +18,6 @@ const Index = () => {
 
   // for iOS env(safe-area-inset-bottom)
   const height = useWindowHeight();
-  console.log(height);
 
   return (
     <>
