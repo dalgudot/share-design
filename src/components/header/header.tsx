@@ -4,6 +4,7 @@ import { mediaBreakPoint } from '../../styles/common';
 import LangChangeToggle from './lang-change-toggle';
 import Link from 'next/link';
 import H4Title700 from '../../foundation/typography/h4-title';
+import React from 'react';
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);
 
 const HeaderContainer = styled.header`
   display: flex;

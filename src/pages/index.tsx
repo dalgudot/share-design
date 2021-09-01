@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
   const data = articleData();
 
-  // for iOS env(safe-area-inset-bottom)
+  // temporary component for iOS env(safe-area-inset-bottom)
   const height = useWindowHeight();
 
   return (
@@ -37,6 +37,8 @@ const Index = () => {
         </ul>
       </Main>
       <Footer />
+
+      {/* temporary component for iOS env(safe-area-inset-bottom) */}
       <ComingSoon height={height * 0.7}>
         <div />
         <PLarge

@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useDate } from '../../../library/hooks/useDate';
 import LoadingSkeletonRect from '../../../foundation/framer-motion/loading-skeleton-rect';
 import { useWindowWidth } from '../../../library/hooks/useWindowWidth';
+import React from 'react';
 
 const Footer = () => {
   const [loading, setLoading] = useState(true);
@@ -38,8 +39,11 @@ const Footer = () => {
         data[0] && setTotal(data[0]);
         setLoading(false);
       });
-
-    return () => {}; // CleanUp Function
+    // CleanUp Function
+    return () => {
+      // console.log('I am in cleanup function');
+      setLoading(true);
+    };
   }, []);
 
   // useEffect(() => {
@@ -114,7 +118,7 @@ const Footer = () => {
   }
 };
 
-export default Footer;
+export default React.memo(Footer);
 
 const FooterContainer = styled.footer`
   padding: ${({ theme }) => theme.padding.LeftRightPadding};
