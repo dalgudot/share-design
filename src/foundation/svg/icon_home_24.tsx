@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useWindowWidth } from '../../library/hooks/useWindowWidth';
+import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 
 const IconHome24 = () => {
   const themeContext = useContext(ThemeContext);

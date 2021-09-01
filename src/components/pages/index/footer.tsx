@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import firebase from 'firebase/app';
 import { useState } from 'react';
-import { useDate } from '../../../library/hooks/useDate';
+import { useDate } from '../../../lib/hooks/useDate';
 import LoadingSkeletonRect from '../../../foundation/framer-motion/loading-skeleton-rect';
-import { useWindowWidth } from '../../../library/hooks/useWindowWidth';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import React from 'react';
 
 const Footer = () => {
@@ -45,21 +45,6 @@ const Footer = () => {
       setLoading(true);
     };
   }, []);
-
-  // useEffect(() => {
-  //   firebase
-  //     .database()
-  //     .ref('Number of Visitors/Total Visitors')
-  //     .on('value', (snapshot) => {
-  //       const objData = snapshot.val();
-  //       const data = objData && Object.values(objData);
-  //       // data[0] is Total All
-  //       data[0] && setTotal(data[0]);
-  //       setLoading(false);
-  //     });
-
-  //   return () => {}; // CleanUp Function
-  // }, []);
 
   const width: number = useWindowWidth();
   const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');

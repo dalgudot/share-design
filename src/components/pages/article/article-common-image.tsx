@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PMedium from '../../../foundation/typography/p-medium';
-import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
 type tStaticType =
   | {

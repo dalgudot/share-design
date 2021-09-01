@@ -4,7 +4,7 @@ import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import IconStar48Fill from '../../../../../foundation/svg/icon_star_48_fill';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
-import { useSetLanguage } from '../../../../../library/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import H3Title from '../../../../../foundation/typography/h3-title';
 import PMedium from '../../../../../foundation/typography/p-medium';

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import IconShare24 from '../../../../foundation/svg/icon_share_24';
 import { useDispatch, useSelector } from 'react-redux';
 import { btnHoverTap } from '../../../../foundation/framer-motion/variants';
-import { useTapAmplitude } from '../../../../library/hooks/Amplitude/useTapAmplitude';
+import { useTapAmplitude } from '../../../../lib/hooks/Amplitude/useTapAmplitude';
 
 const ShareToolButton = () => {
   const openModalForAmplitude = useSelector((state: any) => state.openModal);

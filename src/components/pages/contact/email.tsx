@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { t } from '../../../data/index/t';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { useMyRipple } from '../../../library/hooks/useMyRipple';
+import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 import PMedium from '../../../foundation/typography/p-medium';
 import H3Title from '../../../foundation/typography/h2-title';
 

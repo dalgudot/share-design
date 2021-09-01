@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useCanvas } from '../../../library/hooks/useCanvas';
+import { useCanvas } from '../../../lib/hooks/useCanvas';
 import { WaveGroup } from './wave-group';
 
 const WaveLoading = ({ marginTop }: { marginTop?: string }) => {

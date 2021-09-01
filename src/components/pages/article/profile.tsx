@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import styled from 'styled-components';
 import PSmall from '../../../foundation/typography/p-small';
-import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../../../data/index/t';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';

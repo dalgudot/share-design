@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import Response from './response';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useWindowWidth } from '../../../library/hooks/useWindowWidth';
-import { useWindowHeight } from '../../../library/hooks/useWindowHeight';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../library/functions/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import IntroductionContents from '../introduction/introduction-contents';
 import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
-import { scrollTop } from '../../../library/functions/scroll-top';
+import { scrollTop } from '../../../lib/functions/scroll-top';
 import UIUXDesignContents2 from './ui-ux-design/2/2';
 
 const Article = ({

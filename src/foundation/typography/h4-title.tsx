@@ -1,5 +1,5 @@
 import TextStyle from './atoms/text-style';
-import { useSetLanguage } from '../../library/hooks/useSetLanguage';
+import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
 const H4Title = ({
   text,

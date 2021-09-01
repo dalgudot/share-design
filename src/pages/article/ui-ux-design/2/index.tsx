@@ -1,6 +1,6 @@
 import Article from '../../../../components/pages/article/article';
 import { uiUxDesign2 } from '../../../../data/article/ui-ux-design/2';
-import { useArvAmplitude } from '../../../../library/hooks/Amplitude/useArvAmplitude';
+import { useArvAmplitude } from '../../../../lib/hooks/Amplitude/useArvAmplitude';
 
 const UIUXDesign2 = ({ showToast }: { showToast: Function }) => {
   // useArvAmplitude('arv_ui_ux_design_2');

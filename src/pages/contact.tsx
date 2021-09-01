@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import ProfileArea from '../components/pages/contact/profile';
 import EmailArea from '../components/pages/contact/email';
 import SocialArea from '../components/pages/contact/social';
 import AboutArea from '../components/pages/contact/about';
-import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
 const ContactIndex = ({ showToast }: { showToast: Function }) => {
   // useArvAmplitude('arv_contact');

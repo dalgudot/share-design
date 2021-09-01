@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import IconLanguage24 from '../../foundation/svg/icon_language_24';
-import { useWindowWidth } from '../../library/hooks/useWindowWidth';
+import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
-import useScrollPosition from '../../library/hooks/useScrollPosition';
+import useScrollPosition from '../../lib/hooks/useScrollPosition';
 import PLarge from '../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../styles/common';
 

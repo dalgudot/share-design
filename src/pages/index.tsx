@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../library/functions/visits-and-views';
+import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import Footer from '../components/pages/index/footer';
 import List from '../components/pages/index/list';
 import { articleData } from '../data/article-data';
-import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
-import { useWindowHeight } from '../library/hooks/useWindowHeight';
+import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
+import { useWindowHeight } from '../lib/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
 
 const Index = () => {

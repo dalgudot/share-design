@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { t } from '../../../data/index/t';
 import H3Title from '../../../foundation/typography/h2-title';
 import PMedium from '../../../foundation/typography/p-medium';
-import { useSetLanguage } from '../../../library/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ProfileArea = () => {

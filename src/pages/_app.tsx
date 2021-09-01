@@ -7,7 +7,7 @@ import '../styles/font.css';
 import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import React, { useEffect, useState } from 'react';
-import { PreventIllegalTheft } from '../library/functions/prevent-illegal-theft';
+import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps /*, AppContext */ } from 'next/app';

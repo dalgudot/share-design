@@ -1,6 +1,6 @@
 import Article from '../components/pages/article/article';
-import { ProjectIntroduction } from '../data/article/introduction';
-import { useArvAmplitude } from '../library/hooks/Amplitude/useArvAmplitude';
+import { ProjectIntroduction } from '../data/article/t-introduction';
+import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
 const Introduction = () => {
   // useArvAmplitude('arv_introduction');

@@ -23,7 +23,7 @@ import {
 } from '../../../../foundation/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useRef } from 'react';
-import { useMyRipple } from '../../../../library/hooks/useMyRipple';
+import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { useRouter } from 'next/router';
 
 const ShareModal = ({ showToast }: { showToast: Function }) => {
