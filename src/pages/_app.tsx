@@ -11,14 +11,13 @@ import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import ThemeChangeButton from '../components/button/theme-change-button';
-import Header from '../components/header/header';
+import ThemeChangeButton from '../components/common-components/button/theme-change-button';
+import Header from '../components/common-components/header/header';
 import { useRouter } from 'next/router';
-import ResponsiveNavBar from '../components/pages/index/responsive-nav-bar';
-import MyToast from '../components/toast/toast';
-import ShareModal from '../components/pages/article/article-tool-bar/share-modal';
-import HeadSEO from '../foundation/head-info/head-seo';
-import Footer from '../components/pages/index/footer';
+import ResponsiveNavBar from '../components/common-components/nav-bar/responsive-nav-bar';
+import MyToast from '../components/common-components/toast/toast';
+import ShareModal from '../components/pages-components/article/article-tool-bar/share-modal';
+import HeadSEO from '../seo/head-seo';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);

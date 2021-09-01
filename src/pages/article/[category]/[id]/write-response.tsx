@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
 import Router, { useRouter } from 'next/router';
-import { tArticleCommon } from '../../../../data/article/t-article-common';
-import { useDate } from '../../../../lib/hooks/useDate';
+import { tArticleCommon } from '../../../../data/article/common/t-article-common';
+import { getDate } from '../../../../lib/functions/get-date';
 import { mediaBreakPoint } from '../../../../styles/common';
 import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -17,7 +17,7 @@ import React from 'react';
 import PMedium from '../../../../foundation/typography/p-medium';
 
 const WriteResponse = ({ showToast }: { showToast: Function }) => {
-  const when = useDate().whenResponse;
+  const when = getDate().whenResponse;
   const router = useRouter();
   const { category, id } = router.query;
   const [profileGradient, setProfileGradient] = useState('');

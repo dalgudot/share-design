@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { t } from '../data/index/t';
+import { t } from '../data/index/t-index';
 import PLarge from '../foundation/typography/p-medium';
 
 const Privacy = () => {

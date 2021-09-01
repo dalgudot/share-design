@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import Footer from '../components/pages/index/footer';
-import List from '../components/pages/index/list';
-import { articleData } from '../data/article-data';
+import Footer from '../components/pages-components/index/footer';
+import List from '../components/pages-components/index/list';
+import { returnArticleData } from '../data/article/return-article-data';
 import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
@@ -14,7 +14,7 @@ const Index = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  const data = articleData();
+  const data = returnArticleData();
 
   // temporary component for iOS env(safe-area-inset-bottom)
   const height = useWindowHeight();

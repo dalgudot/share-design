@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import { useDate } from '../hooks/useDate';
+import { getDate } from './get-date';
 
 export const VisitsAndViewsDuringSession = (where: string) => {
   const statisticsOnOff: boolean = true;
@@ -29,9 +29,9 @@ const firebaseFetchSet = (route: string) => {
   });
 };
 
-const when = useDate().when;
-const year = useDate().year;
-const month = useDate().month;
+const when = getDate().when;
+const year = getDate().year;
+const month = getDate().month;
 
 // 방문자
 const VisitsDuringSession = () => {
