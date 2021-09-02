@@ -63,11 +63,11 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
       <HeadSEO />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {/* <ThemeChangeButton
-              setTheme={setMode}
-              lightTheme={lightTheme}
-              darkTheme={darkTheme}
-            /> */}
+          <ThemeChangeButton
+            setTheme={setMode}
+            lightTheme={lightTheme}
+            darkTheme={darkTheme}
+          />
           <ThemeProvider theme={mode}>
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}

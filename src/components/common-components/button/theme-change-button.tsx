@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { t } from '../../../data/index/t-index';
-import TextStyle from '../../../foundation/typography/atoms/text-style';
 
 const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
@@ -26,7 +24,7 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
   // index에서만 MODE_CHANGEButton 보여줌.
   const router = useRouter();
   const style = {
-    display: router.pathname === '/subscribe' ? 'block' : 'none',
+    display: router.pathname === '/' ? 'block' : 'none',
     // display: block || 'none',
   };
 
@@ -35,4 +33,11 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
 
 export default ThemeChangeButton;
 
-const BtnStyle = styled.button``;
+const BtnStyle = styled.button`
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 45%;
+  top: 45%;
+`;
