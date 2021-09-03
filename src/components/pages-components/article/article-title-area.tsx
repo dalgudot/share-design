@@ -39,14 +39,6 @@ const ArticleTitleArea = ({
 export default ArticleTitleArea;
 
 const TitleArea = styled.div`
-  h1 {
-    font-size: 39px;
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      font-size: 28px;
-    }
-  }
-
   p {
     margin-left: 2px; // categoryTitle 시각 보정
   }

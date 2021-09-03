@@ -5,8 +5,9 @@ import LangChangeToggle from './lang-change-toggle';
 import Link from 'next/link';
 import H4Title700 from '../../../foundation/typography/h4-title';
 import React from 'react';
+import ThemeChangeButton from '../button/theme-change-button';
 
-const Header = () => {
+const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
   return (
     <>
       <HeaderContainer>
@@ -16,6 +17,11 @@ const Header = () => {
           </a>
         </Link>
         <LangChangeToggle />
+        {/* <ThemeChangeButton
+          setTheme={setTheme}
+          lightTheme={lightTheme}
+          darkTheme={darkTheme}
+        /> */}
       </HeaderContainer>
       <HeaderSafeArea />
     </>

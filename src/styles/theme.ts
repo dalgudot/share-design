@@ -69,7 +69,7 @@ export const lightTheme: DefaultTheme = {
 };
 
 // 색과 관련된 GlobalStyle
-const GlobalColors = createGlobalStyle`
+export const GlobalColors = createGlobalStyle`
 body {
   background-color: ${({ theme }) => theme.gray9};
 }

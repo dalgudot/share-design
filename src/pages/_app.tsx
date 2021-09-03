@@ -11,19 +11,20 @@ import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import ThemeChangeButton from '../components/common-components/button/theme-change-button';
 import Header from '../components/common-components/header/header';
 import { useRouter } from 'next/router';
 import ResponsiveNavBar from '../components/common-components/nav-bar/responsive-nav-bar';
 import MyToast from '../components/common-components/toast/toast';
 import ShareModal from '../components/pages-components/article/article-tool-bar/share-modal';
 import HeadSEO from '../seo/head-seo';
+import { useMounted } from '../lib/hooks/useMounted';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
   const persistor = persistStore(store, {}, function () {
     persistor.persist();
   });
+
   const [mode, setMode] = useState(darkTheme);
 
   initFirebase();
@@ -63,15 +64,14 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
       <HeadSEO />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {/* <ThemeChangeButton
-            setTheme={setMode}
-            lightTheme={lightTheme}
-            darkTheme={darkTheme}
-          /> */}
           <ThemeProvider theme={mode}>
             <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
-            <Header />
+            <Header
+              setTheme={setMode}
+              darkTheme={darkTheme}
+              lightTheme={lightTheme}
+            />
             <ResponsiveNavBar />
             {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
             {/* <AnimatePresence> */}
@@ -85,7 +85,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
             />
             {/* </AnimatePresence> */}
             {/* AnimatePresence 밖에 ResponsiveNavBar 있어야 re-render 안 됨 */}
-
             {/* <ShareModal key={router.pathname} showToast={showToast} /> */}
             <MyToast
               key={toastMessage} // 토스트별 구분 위해 key 필요
