@@ -17,11 +17,11 @@ const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
           </a>
         </Link>
         <LangChangeToggle />
-        <ThemeChangeButton
+        {/* <ThemeChangeButton
           setTheme={setTheme}
           lightTheme={lightTheme}
           darkTheme={darkTheme}
-        />
+        /> */}
       </HeaderContainer>
       <HeaderSafeArea />
     </>

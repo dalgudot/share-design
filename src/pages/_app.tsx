@@ -25,7 +25,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     persistor.persist();
   });
 
-  // const isMounted = useMounted();
   const [mode, setMode] = useState(darkTheme);
 
   initFirebase();
@@ -60,38 +59,30 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <>
       <HeadSEO />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={mode}>
-            {isMounted && <GlobalColors />}
+            <GlobalColors />
             {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
-            {isMounted && (
-              <Header
-                setTheme={setMode}
-                darkTheme={darkTheme}
-                lightTheme={lightTheme}
-              />
-            )}
-            {isMounted && <ResponsiveNavBar />}
+            <Header
+              setTheme={setMode}
+              darkTheme={darkTheme}
+              lightTheme={lightTheme}
+            />
+            <ResponsiveNavBar />
             {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
             {/* <AnimatePresence> */}
             {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
-            {isMounted && (
-              <Component //
-                {...pageProps}
-                showToast={showToast}
-                // key={router.pathname}
-                // exit Animation 위해 필요한 key
-              />
-            )}
+
+            <Component //
+              {...pageProps}
+              showToast={showToast}
+              // key={router.pathname}
+              // exit Animation 위해 필요한 key
+            />
             {/* </AnimatePresence> */}
             {/* AnimatePresence 밖에 ResponsiveNavBar 있어야 re-render 안 됨 */}
             {/* <ShareModal key={router.pathname} showToast={showToast} /> */}

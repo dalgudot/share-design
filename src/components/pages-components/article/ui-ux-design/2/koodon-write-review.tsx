@@ -65,7 +65,7 @@ const KoodonWriteReview = () => {
             minLength={19}
             maxLength={500}
           />
-          <CountCharacters>
+          {/* <CountCharacters>
             <PMedium //
               text={{
                 k: String(reviewText.length),
@@ -77,7 +77,7 @@ const KoodonWriteReview = () => {
               text={{ k: '/500', e: '/500' }}
               color="gray4"
             />
-          </CountCharacters>
+          </CountCharacters> */}
         </MotionTextfield>
       </Container>
     </Div>
