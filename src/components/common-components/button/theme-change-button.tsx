@@ -11,6 +11,14 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
       type: 'MODE_CHANGE',
     });
 
+  // const mode = localStorage.getItem('mode');
+  // const themeChange = () => {
+  //   localStorage.setItem(
+  //     'mode',
+  //     mode === 'darkTheme' ? 'lightTheme' : 'darkTheme'
+  //   );
+  // };
+
   // 1)초기 mode  2)새로고침 mode 정의
   useEffect(() => {
     setTheme(mode === 'darkTheme' ? darkTheme : lightTheme);
@@ -21,14 +29,7 @@ const ThemeChangeButton = ({ setTheme, darkTheme, lightTheme }: any) => {
     setTheme(mode === 'darkTheme' ? lightTheme : darkTheme);
   };
 
-  // index에서만 MODE_CHANGEButton 보여줌.
-  const router = useRouter();
-  const style = {
-    display: router.pathname === '/' ? 'block' : 'none',
-    // display: block || 'none',
-  };
-
-  return <BtnStyle style={style} onClick={setMode}></BtnStyle>;
+  return <BtnStyle onClick={setMode}></BtnStyle>;
 };
 
 export default ThemeChangeButton;
