@@ -5,26 +5,33 @@ import { mediaBreakPoint } from '../../../styles/common';
 const TextStyle = ({
   type, // 기본값은 Styled-components에서 p
   text,
-  textSize,
+  color,
   weight,
+  textSize,
   lineHeight,
   letterSpacing,
-  color,
-  opacity,
   marginTop,
+  opacity,
 }: {
   type: any;
   text: string;
-  textSize: {
-    mobile: string;
-    desktop: string;
-  };
-  weight: number;
-  lineHeight?: number;
-  letterSpacing?: string;
   color: string;
-  opacity?: number;
+  weight: number;
+
+  textSize: {
+    desktop: string;
+    mobile: string;
+  };
+  lineHeight: {
+    desktop: string;
+    mobile: string;
+  };
+  letterSpacing: {
+    desktop: string;
+    mobile: string;
+  };
   marginTop?: string;
+  opacity?: number;
 }) => {
   const themeContext = useContext(ThemeContext);
   const textColorFunc = () => {
@@ -55,14 +62,16 @@ const TextStyle = ({
   return (
     <Text
       as={type} // HTML 태그 결정
-      mobileSize={textSize.mobile}
-      desktopSize={textSize.desktop}
-      weight={weight}
-      lineHeight={lineHeight}
-      letterSpacing={letterSpacing}
       textColor={textColor}
-      opacity={opacity}
+      weight={weight}
+      desktopFontSize={textSize.desktop}
+      mobileFontSize={textSize.mobile}
+      desktopLineHeight={lineHeight.desktop}
+      mobileLineHeight={lineHeight.mobile}
+      desktopLetterSpacing={letterSpacing.desktop}
+      mobileLetterSpacing={letterSpacing.mobile}
       marginTop={marginTop}
+      opacity={opacity}
     >
       {text}
     </Text>
@@ -72,28 +81,32 @@ const TextStyle = ({
 export default TextStyle;
 
 const Text = styled.p<TextType>`
-  font-weight: ${({ weight }) => weight};
-  line-height: ${({ lineHeight }) => lineHeight};
-  letter-spacing: ${({ letterSpacing }) => letterSpacing};
   color: ${({ textColor }) => textColor};
-  opacity: ${({ opacity }) => opacity};
+  font-weight: ${({ weight }) => weight};
+  //
+  font-size: ${({ desktopFontSize }) => desktopFontSize};
+  line-height: ${({ desktopLineHeight }) => desktopLineHeight};
+  letter-spacing: ${({ desktopLetterSpacing }) => desktopLetterSpacing};
+  //
   margin-top: ${({ marginTop }) => marginTop};
-
-  // 바뀌는 속성
-  font-size: ${({ desktopSize }) => desktopSize};
+  opacity: ${({ opacity }) => opacity};
 
   @media screen and (max-width: ${mediaBreakPoint.first}) {
-    font-size: ${({ mobileSize }) => mobileSize};
+    font-size: ${({ mobileFontSize }) => mobileFontSize};
+    line-height: ${({ mobileLineHeight }) => mobileLineHeight};
+    letter-spacing: ${({ mobileLetterSpacing }) => mobileLetterSpacing};
   }
 `;
 
 type TextType = {
-  mobileSize: string;
-  desktopSize: string;
-  weight: number;
-  lineHeight?: number;
-  letterSpacing?: string;
   textColor: any;
-  opacity?: number;
+  weight: number;
+  desktopFontSize: string;
+  mobileFontSize: string;
+  desktopLineHeight: string;
+  mobileLineHeight: string;
+  desktopLetterSpacing: string;
+  mobileLetterSpacing: string;
   marginTop?: string;
+  opacity?: number;
 };

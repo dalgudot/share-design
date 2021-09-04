@@ -21,13 +21,20 @@ const PMedium = ({
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '14px',
-        desktop: '18px',
-      }}
-      weight={weight || 400}
       color={color}
-      lineHeight={1.55}
+      weight={weight || 400}
+      textSize={{
+        desktop: '18px',
+        mobile: '14px',
+      }}
+      lineHeight={{
+        desktop: '22px',
+        mobile: '17px',
+      }}
+      letterSpacing={{
+        desktop: '0px',
+        mobile: '0px',
+      }}
       marginTop={marginTop}
     />
   );

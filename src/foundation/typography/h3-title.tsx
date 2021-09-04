@@ -21,14 +21,20 @@ const H3Title = ({
     <TextStyle
       type="h3"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '21px',
-        desktop: '24px',
-      }}
-      weight={weight || 700}
       color={color}
-      letterSpacing="-1px"
-      lineHeight={1.4}
+      weight={weight || 700}
+      textSize={{
+        desktop: '24px',
+        mobile: '21px',
+      }}
+      lineHeight={{
+        desktop: '29px',
+        mobile: '25px',
+      }}
+      letterSpacing={{
+        desktop: '0px',
+        mobile: '0px',
+      }}
       marginTop={marginTop}
     />
   );

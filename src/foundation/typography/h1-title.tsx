@@ -21,14 +21,20 @@ const H1Title = ({
     <TextStyle
       type="h1"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '32px',
-        desktop: '39px',
-      }}
-      weight={weight || 700}
       color={color}
-      letterSpacing="-0.75px"
-      lineHeight={1.4}
+      weight={weight || 700}
+      textSize={{
+        desktop: '39px',
+        mobile: '32px',
+      }}
+      lineHeight={{
+        desktop: '51px', // Visual Correction
+        mobile: '42px', // Visual Correction
+      }}
+      letterSpacing={{
+        desktop: '-0.3px', // Visual Correction
+        mobile: '-0.5px', // Visual Correction
+      }}
       marginTop={marginTop}
     />
   );

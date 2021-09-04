@@ -12,8 +12,8 @@ const ProfileArea = () => {
         src="/images/profile-photo@3x.jpg"
         alt={useSetLanguage(t.contact.profileAlt)}
       />
-      <H3Title text={t.myName} color="gray0" marginTop="10px" />
-      <PMedium text={t.myJob} color="gray3" marginTop="2px" />
+      <H3Title text={t.myName} color="gray0" marginTop="12px" />
+      <PMedium text={t.myJob} color="gray3" marginTop="6px" />
     </ProfileDiv>
   );
 };
@@ -26,17 +26,8 @@ const ProfileDiv = styled.div`
   align-items: center;
   margin-top: 72px;
 
-  // properties that change
-  h1 {
-    font-size: 28px;
-  }
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 48px;
-
-    h1 {
-      font-size: 24px;
-    }
   }
 `;
 

@@ -21,14 +21,20 @@ const H4Title = ({
     <TextStyle
       type="h4"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '18px',
-        desktop: '21px',
-      }}
-      weight={weight || 700}
       color={color}
-      letterSpacing="-0.2px"
-      lineHeight={1.4}
+      weight={weight || 700}
+      textSize={{
+        desktop: '21px',
+        mobile: '18px',
+      }}
+      lineHeight={{
+        desktop: '25px',
+        mobile: '22px',
+      }}
+      letterSpacing={{
+        desktop: '0px',
+        mobile: '0px',
+      }}
       marginTop={marginTop}
     />
   );

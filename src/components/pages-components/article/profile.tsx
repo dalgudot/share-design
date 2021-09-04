@@ -1,6 +1,5 @@
 import Router from 'next/router';
 import styled from 'styled-components';
-import PSmall from '../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../../../data/index/t-index';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -36,7 +35,7 @@ const Author = styled.a<{ marginTop: string }>`
   margin-left: 1px;
 
   img {
-    border: solid 2px ${({ theme }) => theme.gray1};
+    border: solid 2px ${({ theme }) => theme.gray2};
     border-radius: 50%;
 
     // 바뀌는 속성

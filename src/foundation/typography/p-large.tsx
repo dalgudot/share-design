@@ -21,14 +21,20 @@ const PLarge = ({
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '18px',
-        desktop: '21px',
-      }}
-      weight={weight || 400}
       color={color}
-      letterSpacing=""
-      lineHeight={1.67}
+      weight={weight || 400}
+      textSize={{
+        desktop: '21px',
+        mobile: '18px',
+      }}
+      lineHeight={{
+        desktop: '34px', // 21px * 1.618 - based on the body text
+        mobile: '29px', // 18px * 1.618 - based on the body text
+      }}
+      letterSpacing={{
+        desktop: '0px',
+        mobile: '0px',
+      }}
       marginTop={marginTop}
     />
   );

@@ -21,14 +21,20 @@ const PSmall = ({
     <TextStyle
       type="p"
       text={useSetLanguage(text)}
-      textSize={{
-        mobile: '10px',
-        desktop: '14px',
-      }}
-      weight={weight || 400}
       color={color}
-      letterSpacing="0.2px"
-      lineHeight={1.55}
+      weight={weight || 400}
+      textSize={{
+        desktop: '14px',
+        mobile: '10px',
+      }}
+      lineHeight={{
+        desktop: '17px',
+        mobile: '12px',
+      }}
+      letterSpacing={{
+        desktop: '0px',
+        mobile: '0px',
+      }}
       marginTop={marginTop}
     />
   );
