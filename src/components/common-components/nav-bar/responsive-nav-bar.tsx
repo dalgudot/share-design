@@ -88,7 +88,7 @@ const Nav = styled.nav`
     justify-content: space-evenly;
 
     p {
-      margin-top: 4px;
+      margin-top: 0px;
       text-align: center;
       font-size: 10px;
     }
@@ -99,6 +99,7 @@ const Nav = styled.nav`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: 3px; // Visual Correction
     }
   }
 `;
