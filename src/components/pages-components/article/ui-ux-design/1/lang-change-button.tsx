@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import PSmall from '../../../foundation/typography/p-small';
-import PMedium from '../../../foundation/typography/p-medium';
+import PSmall from '../../../../../foundation/typography/p-small';
+import PMedium from '../../../../../foundation/typography/p-medium';
 
 const LangChangeButton = ({
   text,

@@ -5,7 +5,6 @@ import IconLanguage24 from '../../../foundation/svg/icon_language_24';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
 import useScrollPosition from '../../../lib/hooks/useScrollPosition';
-import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';
 

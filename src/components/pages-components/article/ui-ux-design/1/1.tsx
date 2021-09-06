@@ -6,7 +6,7 @@ import H3Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PMedium from '../../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../../styles/common';
-import LangChangeButton from '../../../../common-components/header/lang-change-button';
+import LangChangeButton from './lang-change-button';
 import LangChangeToggle from './lang-change-toggle-article-1';
 import ArticleCommonImage from '../../article-common-image';
 
