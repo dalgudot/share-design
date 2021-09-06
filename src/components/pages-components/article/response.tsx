@@ -73,7 +73,7 @@ const Response = ({
                         k: response.when,
                         e: response.when,
                       }}
-                      color="gray2"
+                      color="gray4"
                       weight={700}
                     />
                   </LeftDiv>
@@ -105,10 +105,10 @@ const Response = ({
 export default Response;
 
 const Container = styled.div`
-  margin-top: 120px;
+  margin-top: 144px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 72px;
+    margin-top: 96px;
   }
 `;
 
