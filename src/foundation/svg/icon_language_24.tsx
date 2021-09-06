@@ -1,9 +1,19 @@
-import styled from 'styled-components';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const IconLanguage24 = ({ color }: any) => {
+const IconLanguage24 = () => {
+  const themeContext = useContext(ThemeContext);
+  const color: string = themeContext.gray0;
+
   return (
-    <SVG width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <motion.svg //
+      whileTap={{ scale: 1.7, rotateY: 720 }}
+      width="24px"
+      height="24px"
+      viewBox="0 0 24 24"
+      version="1.1"
+    >
       <g
         id="icon_language_24"
         stroke="none"
@@ -35,10 +45,8 @@ const IconLanguage24 = ({ color }: any) => {
         ></line>
         <line x1="4" y1="9" x2="20" y2="9" id="top-line" stroke={color}></line>
       </g>
-    </SVG>
+    </motion.svg>
   );
 };
 
 export default IconLanguage24;
-
-const SVG = styled(motion.svg)``;

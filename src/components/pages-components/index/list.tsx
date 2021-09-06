@@ -27,7 +27,7 @@ const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
             color="gray1"
             marginTop="8px"
           />
-          <PSmall text={hashTags} color="gray4" />
+          <PSmall text={hashTags} color="gray4" marginTop="24px" />
         </a>
       </Link>
       {/* List Contents Area  */}
@@ -49,7 +49,6 @@ const MotionLi = styled(motion.li)<{ marginTop?: string }>`
 
   p:nth-child(3) {
     margin-left: 2px;
-    margin-top: 24px;
   }
 
   // 바뀌는 속성

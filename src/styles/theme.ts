@@ -51,16 +51,17 @@ export const darkTheme: DefaultTheme = {
 };
 
 export const lightTheme: DefaultTheme = {
-  gray0: '#121213',
-  gray1: '#171718',
-  gray2: '#29292B',
+  // https://yeun.github.io/open-color/
+  gray0: '#212529', // open color
+  gray1: '#343a40', // open color
+  gray2: '#495057', // open color
   gray3: '#454548',
-  gray4: '#68686C',
-  gray5: '#8A8A90',
-  gray6: '#ADADB4',
-  gray7: '#D0D0D8',
-  gray8: '#DBDBE4',
-  gray9: '#E7E7F0',
+  gray4: '#9FA6AC',
+  gray5: '#C1C7CD',
+  gray6: '#DEE2E6', // open color
+  gray7: '#E8ECF0',
+  gray8: '#F1F3F5', // open color
+  gray9: '#F8F9FA', // open color
   borderRadius,
   maxWidth,
   zIndex,

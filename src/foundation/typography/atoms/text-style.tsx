@@ -17,7 +17,6 @@ const TextStyle = ({
   text: string;
   color: string;
   weight: number;
-
   textSize: {
     desktop: string;
     mobile: string;

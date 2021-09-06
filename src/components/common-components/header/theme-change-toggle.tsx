@@ -1,0 +1,109 @@
+import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import IconThemeChange24 from '../../../foundation/svg/icon_theme_change_24';
+import PLarge from '../../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../../styles/common';
+import { motion } from 'framer-motion';
+import PMedium from '../../../foundation/typography/p-medium';
+
+const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
+  const mode = useSelector((state: any) => state.themeMode);
+  const dispatch = useDispatch();
+  const themeChange = () =>
+    dispatch({
+      type: 'MODE_CHANGE',
+    });
+
+  // 1)초기 mode  2)새로고침 mode 정의
+  useEffect(() => {
+    setTheme(mode === 'darkTheme' ? darkTheme : lightTheme);
+  }, []);
+
+  const setMode = () => {
+    themeChange();
+    setTheme(mode === 'darkTheme' ? lightTheme : darkTheme);
+  };
+
+  return (
+    <ButtonContainer onClick={setMode}>
+      <IconThemeChange24 />
+      <motion.div //
+        variants={darkVariants}
+        initial={false}
+        animate={mode === 'darkTheme' ? 'on' : 'off'}
+        className="dark-width"
+      >
+        <PMedium
+          text="Dark"
+          color={mode === 'darkTheme' ? 'gray0' : 'gray4'}
+          weight={700}
+        />
+      </motion.div>
+      <Divider />
+      <motion.div //
+        variants={lightVariants}
+        initial={false}
+        animate={mode === 'lightTheme' ? 'on' : 'off'}
+        className="light-width"
+      >
+        <PMedium
+          text="Light"
+          color={mode === 'lightTheme' ? 'gray0' : 'gray4'}
+          weight={700}
+        />
+      </motion.div>
+    </ButtonContainer>
+  );
+};
+
+export default ThemeChangeToggle;
+
+const ButtonContainer = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0; // touch area
+
+  svg {
+    margin-right: 6px;
+  }
+
+  p {
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      display: none;
+    }
+  }
+
+  div {
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      display: none;
+    }
+  }
+
+  .dark-width {
+    width: 41px; // 38 + 3
+  }
+
+  .light-width {
+    width: 41px;
+  }
+`;
+
+const Divider = styled.div`
+  height: 12px;
+  width: 1px;
+  background-color: ${({ theme }) => theme.gray5};
+  margin: 3px 6px 0;
+`;
+
+// Framer Motion
+const darkVariants = {
+  on: { x: 2 },
+  off: { x: 54 },
+};
+
+const lightVariants = {
+  on: { x: -54 },
+  off: { x: 0 },
+};

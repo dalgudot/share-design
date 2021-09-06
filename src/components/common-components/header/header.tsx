@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { t } from '../../../data/index/t-index';
 import { mediaBreakPoint } from '../../../styles/common';
-import LangChangeToggle from './lang-change-toggle';
 import Link from 'next/link';
 import H4Title700 from '../../../foundation/typography/h4-title';
 import React from 'react';
-import ThemeChangeButton from '../button/theme-change-button';
+import ThemeChangeToggle from './theme-change-toggle';
+import LangChangeToggle from './lang-change-toggle';
 
 const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
   return (
@@ -16,12 +16,14 @@ const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
             <H4Title700 text={t.shareDesign} color="gray0" />
           </a>
         </Link>
-        <LangChangeToggle />
-        {/* <ThemeChangeButton
-          setTheme={setTheme}
-          lightTheme={lightTheme}
-          darkTheme={darkTheme}
-        /> */}
+        <RightSide>
+          <LangChangeToggle />
+          <ThemeChangeToggle
+            setTheme={setTheme}
+            lightTheme={lightTheme}
+            darkTheme={darkTheme}
+          />
+        </RightSide>
       </HeaderContainer>
       <HeaderSafeArea />
     </>
@@ -52,6 +54,11 @@ const HeaderContainer = styled.header`
 
   // iOS top safe area
   margin-top: calc(env(safe-area-inset-top));
+`;
+
+const RightSide = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const HeaderSafeArea = styled.div`

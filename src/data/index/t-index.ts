@@ -3,12 +3,6 @@ export const t = {
     k: '디자인 공유하기',
     e: 'SHARE DESIGN',
   },
-
-  header: {
-    langChangeToggleKo: 'ko',
-    langChangeToggleEn: 'en',
-  },
-
   myName: {
     k: '김경환',
     e: 'KyungHwan Kim',

@@ -18,6 +18,7 @@ import MyToast from '../components/common-components/toast/toast';
 import ShareModal from '../components/pages-components/article/article-tool-bar/share-modal';
 import HeadSEO from '../seo/head-seo';
 import { useMounted } from '../lib/hooks/useMounted';
+import WaveLoading from '../components/canvas-components/wave-loading/wave-loading';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);

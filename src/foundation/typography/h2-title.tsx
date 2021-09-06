@@ -1,7 +1,7 @@
 import TextStyle from './atoms/text-style';
 import { useSetLanguage } from '../../lib/hooks/useSetLanguage';
 
-const H3Title = ({
+const H2Title = ({
   text,
   color,
   weight,
@@ -40,4 +40,4 @@ const H3Title = ({
   );
 };
 
-export default H3Title;
+export default H2Title;

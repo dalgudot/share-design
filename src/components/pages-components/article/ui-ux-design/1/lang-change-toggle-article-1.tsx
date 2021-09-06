@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import IconLanguage24 from '../../../foundation/svg/icon_language_24';
-import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import IconLanguage24 from '../../../../../foundation/svg/icon_language_24';
+import { useWindowWidth } from '../../../../../lib/hooks/useWindowWidth';
 import { useRouter } from 'next/router';
-import useScrollPosition from '../../../lib/hooks/useScrollPosition';
-import PLarge from '../../../foundation/typography/p-large';
-import { mediaBreakPoint } from '../../../styles/common';
-import PMedium from '../../../foundation/typography/p-medium';
+import useScrollPosition from '../../../../../lib/hooks/useScrollPosition';
+import PLarge from '../../../../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../../../../styles/common';
 
-const LangChangeToggle = ({
+const LangChangeToggleArticle1 = ({
   setFinalToggle,
 }: {
   setFinalToggle?: Function;
@@ -50,11 +49,10 @@ const LangChangeToggle = ({
         variants={koVariants(width, numberMediaBreakPoint)}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'ko' ? 'on' : 'off'}
-        className="korean-width"
       >
-        <PMedium
-          text="Korean"
-          color={locale === 'ko' ? 'gray0' : 'gray4'}
+        <PLarge
+          text="ko"
+          color={locale === 'ko' ? 'gray0' : 'gray5'}
           weight={700}
         />
       </motion.div>
@@ -63,11 +61,10 @@ const LangChangeToggle = ({
         variants={enVariants(width, numberMediaBreakPoint)}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'en' ? 'on' : 'off'}
-        className="english-width"
       >
-        <PMedium
-          text="English"
-          color={locale === 'en' ? 'gray0' : 'gray4'}
+        <PLarge
+          text="en"
+          color={locale === 'en' ? 'gray0' : 'gray5'}
           weight={700}
         />
       </motion.div>
@@ -75,65 +72,52 @@ const LangChangeToggle = ({
   );
 };
 
-export default LangChangeToggle;
+export default LangChangeToggleArticle1;
 
 const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 0; // touch area
-  margin-right: 24px;
-
+  padding: 12px 0 12px 12px; // touch area
   div {
     margin-bottom: 2px;
     margin-left: 6px;
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      display: none;
-    }
-  }
-
-  .korean-width {
-    width: 60px; // 58 + 2
-  }
-
-  .english-width {
-    width: 60px;
   }
 `;
 
-const Divider = styled.div`
+const Divider = styled.span`
   height: 12px;
   width: 1px;
   margin-top: 2px;
   background-color: ${({ theme }) => theme.gray5};
+  margin-left: 6px;
 `;
 
 // Framer Motion
 const koVariants = (width: number, numberMediaBreakPoint: number) => {
-  // if (width <= numberMediaBreakPoint) {
-  //   return {
-  //     on: { x: 0 },
-  //     off: { x: 33 },
-  //   };
-  // } else {
-  return {
-    on: { x: 1 },
-    off: { x: 73 }, // 60 + 6 + 1 + 6
-  };
-  // }
+  if (width <= numberMediaBreakPoint) {
+    return {
+      on: { x: 0 },
+      off: { x: 33 },
+    };
+  } else {
+    return {
+      on: { x: 0 },
+      off: { x: 37 },
+    };
+  }
 };
 
 const enVariants = (width: number, numberMediaBreakPoint: number) => {
-  // if (width <= numberMediaBreakPoint) {
-  //   return {
-  //     on: { x: -33 },
-  //     off: { x: 0 },
-  //   };
-  // } else {
-  return {
-    on: { x: -73 }, //
-    off: { x: 0 },
-  };
-  // }
+  if (width <= numberMediaBreakPoint) {
+    return {
+      on: { x: -33 },
+      off: { x: 0 },
+    };
+  } else {
+    return {
+      on: { x: -37 },
+      off: { x: 0 },
+    };
+  }
 };
