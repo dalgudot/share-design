@@ -59,6 +59,10 @@ const HeaderContainer = styled.header`
 const RightSide = styled.div`
   display: flex;
   align-items: center;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-right: -4px;
+  }
 `;
 
 const HeaderSafeArea = styled.div`
