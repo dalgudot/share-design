@@ -28,8 +28,8 @@ const PMedium = ({
         mobile: '14px',
       }}
       lineHeight={{
-        desktop: '22px',
-        mobile: '17px',
+        desktop: '26px',
+        mobile: '20px',
       }}
       letterSpacing={{
         desktop: '0px',

@@ -52,16 +52,16 @@ export const darkTheme: DefaultTheme = {
 
 export const lightTheme: DefaultTheme = {
   // https://yeun.github.io/open-color/
-  gray0: '#212529', // open color
-  gray1: '#343a40', // open color
-  gray2: '#495057', // open color
+  gray0: '#212529',
+  gray1: '#343a40',
+  gray2: '#495057',
   gray3: '#454548',
   gray4: '#9FA6AC',
-  gray5: '#C1C7CD',
-  gray6: '#DEE2E6', // open color
+  gray5: '#B7BCC1',
+  gray6: '#DEE2E6',
   gray7: '#E8ECF0',
-  gray8: '#F1F3F5', // open color
-  gray9: '#F8F9FA', // open color
+  gray8: '#F1F3F5',
+  gray9: '#F8F9FA',
   borderRadius,
   maxWidth,
   zIndex,
