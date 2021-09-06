@@ -73,7 +73,7 @@ const Response = ({
                         k: response.when,
                         e: response.when,
                       }}
-                      color="gray4"
+                      color="gray2"
                       weight={700}
                     />
                   </LeftDiv>
