@@ -1,10 +1,10 @@
+import '../styles/font.css';
+import '../styles/global.css';
 import { useStore } from '../store/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components';
-import '../styles/font.css';
-import '../styles/global.css';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import React, { useEffect, useState } from 'react';
 import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
@@ -17,8 +17,6 @@ import ResponsiveNavBar from '../components/common-components/nav-bar/responsive
 import MyToast from '../components/common-components/toast/toast';
 import ShareModal from '../components/pages-components/article/article-tool-bar/share-modal';
 import HeadSEO from '../seo/head-seo';
-import { useMounted } from '../lib/hooks/useMounted';
-import WaveLoading from '../components/canvas-components/wave-loading/wave-loading';
 
 export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);

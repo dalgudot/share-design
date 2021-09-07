@@ -28,8 +28,8 @@ const PLarge = ({
         mobile: '18px',
       }}
       lineHeight={{
-        desktop: '34px', // 21px * 1.618 - based on the body text
-        mobile: '29px', // 18px * 1.618 - based on the body text
+        desktop: '36px', // 21px * 1.618 - based on the body text
+        mobile: '30px', // 18px * 1.618 - based on the body text
       }}
       letterSpacing={{
         desktop: '0px',
