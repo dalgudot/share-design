@@ -28,7 +28,7 @@ const ArticleTitleArea = ({
       )}
       <H1Title //
         text={articleTitle}
-        color="gray1"
+        color="gray0"
         marginTop="8px"
       />
       <Profile marginTop="16px" />

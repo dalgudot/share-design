@@ -35,7 +35,7 @@ const Author = styled.a<{ marginTop: string }>`
   margin-left: 1px;
 
   img {
-    border: solid 2px ${({ theme }) => theme.gray2};
+    /* border: solid 1px ${({ theme }) => theme.gray7}; */
     border-radius: 50%;
 
     // 바뀌는 속성

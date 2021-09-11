@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import IconThemeChange24 from '../../../foundation/svg/icon_theme_change_24';
-import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
 import PMedium from '../../../foundation/typography/p-medium';
+import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 
 const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
@@ -25,8 +25,17 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
     setTheme(mode === 'darkTheme' ? lightTheme : darkTheme);
   };
 
+  // for only mobile animation
+  const width: number = useWindowWidth();
+  const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
+  const numberMediaBreakPoint = Number(stringMediaBreakPoint);
+  const activeMobileAnimation: boolean = width <= numberMediaBreakPoint;
+
   return (
-    <ButtonContainer onClick={setMode}>
+    <ButtonContainer
+      onClick={setMode}
+      whileTap={activeMobileAnimation ? { scale: 1.7, rotateY: 720 } : {}}
+    >
       <IconThemeChange24 />
       <motion.div //
         variants={darkVariants}
@@ -59,7 +68,7 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
 
 export default ThemeChangeToggle;
 
-const ButtonContainer = styled.button`
+const ButtonContainer = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;

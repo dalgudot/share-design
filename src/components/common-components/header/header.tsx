@@ -61,7 +61,7 @@ const RightSide = styled.div`
   align-items: center;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-right: -4px;
+    margin-right: -8px;
   }
 `;
 

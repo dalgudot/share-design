@@ -31,10 +31,11 @@ const LangChangeToggle = ({
     setFinalToggle && setFinalToggle(true);
   };
 
-  // mediaBreakPoint.first를 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.
+  // for only mobile animation
   const width: number = useWindowWidth();
   const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
   const numberMediaBreakPoint = Number(stringMediaBreakPoint);
+  const activeMobileAnimation: boolean = width <= numberMediaBreakPoint;
 
   // Header에서 언어 전환 토글로 언어 전환했을 때 스크롤 유지
   const ScrollY = useScrollPosition();
@@ -43,7 +44,10 @@ const LangChangeToggle = ({
   }, [locale]);
 
   return (
-    <ButtonContainer onClick={setLanguageChange}>
+    <ButtonContainer
+      onClick={setLanguageChange}
+      whileTap={activeMobileAnimation ? { scale: 1.7, rotateY: 720 } : {}}
+    >
       <IconLanguage24 />
       <motion.div //
         variants={koVariants(width, numberMediaBreakPoint)}
@@ -76,7 +80,7 @@ const LangChangeToggle = ({
 
 export default LangChangeToggle;
 
-const ButtonContainer = styled.button`
+const ButtonContainer = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;

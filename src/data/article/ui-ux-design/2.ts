@@ -162,6 +162,7 @@ export const uiUxDesign2 = () => {
         k: '/images/ui-ux-design/002/img__thumbnail.jpg',
         e: '/images/ui-ux-design/002/img__thumbnail.jpg',
       },
+      // No Caption
       {
         k: '',
         e: '',
@@ -196,7 +197,7 @@ export const uiUxDesign2 = () => {
       },
       {
         k: "이 디자인은 사용자가 별을 누르면 UI가 사용자의 행동에 반응하면서 다음에 해야 할 '리뷰 쓰기'라는 행동을 유도하는 디자인이다. 다시 말해, 사용자의 행동에 반응하고 다음에 해야 할 행동을 알려주며 '소통'하는 인터랙션 디자인인 것이다. 하지만 별이 꼭 720도를 돌 필요가 있을까? 별은 돌거나 움직이지 않아도 된다.",
-        e: "This design is a design that induces the next action,'write a review', while the UI reacts to the user's actions when the user presses the star. In other words, it is an interaction design that responds to the user's actions, informs and communicates what to do next. But does the star really need to rotate 720 degrees? The star don't have to rotate or move.",
+        e: "This design is a design that induces the next action,'write a review', while the UI reacts to the user's actions when the user presses the star. In other words, it is an interaction design that responds to the user's actions, informs and communicates what to do next. But does the stars really need to rotate 720 degrees? The star don't have to rotate or move.",
       },
       {
         k: "\u00A0\u00A0\u00A0사실 이 모션은 쿠돈의 브랜드 키워드 3가지 '순환시키는, 도움이 되는, 재빠른' 중 '순환시키는'과 '재빠른'을 모션으로 실체화한 것이다. 브랜드를 담은 의미있는 모션이다. 하지만 이 모션이 사용자에게 의미가 있는지, 좋은 UX를 주는지는 의문이 든다.",
@@ -216,7 +217,7 @@ export const uiUxDesign2 = () => {
       },
       {
         k: '\u00A0\u00A0\u00A0모션 디자인이 UX에 미치는 영향에 대해 의견을 나누고 싶습니다. 새로운 시각의 의견이 있으시다면 자유롭게 아래 댓글에 공유 부탁드릴게요!',
-        e: '\u00A0\u00A0\u00A0I would like to share your thoughts on the impact of motion design on UX. If you have any new perspectives, feel free to share them in the reponses below!',
+        e: '\u00A0\u00A0\u00A0I would like to share your thoughts on the impact of motion design on UX. If you have any new perspectives, feel free to share them in the responses below!',
       },
     ],
   };
