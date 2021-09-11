@@ -50,7 +50,7 @@ const LangChangeToggle = ({
     >
       <IconLanguage24 />
       <motion.div //
-        variants={koVariants(width, numberMediaBreakPoint)}
+        variants={koVariants}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'ko' ? 'on' : 'off'}
         className="korean-width"
@@ -63,7 +63,7 @@ const LangChangeToggle = ({
       </motion.div>
       <Divider />
       <motion.div //
-        variants={enVariants(width, numberMediaBreakPoint)}
+        variants={enVariants}
         initial={false} // en으로 접속했을 때 애니메이션 작동 안 하도록 initial 설정
         animate={locale === 'en' ? 'on' : 'off'}
         className="english-width"
@@ -113,30 +113,12 @@ const Divider = styled.div`
 `;
 
 // Framer Motion
-const koVariants = (width: number, numberMediaBreakPoint: number) => {
-  // if (width <= numberMediaBreakPoint) {
-  //   return {
-  //     on: { x: 0 },
-  //     off: { x: 33 },
-  //   };
-  // } else {
-  return {
-    on: { x: 1 },
-    off: { x: 73 }, // 60 + 6 + 1 + 6
-  };
-  // }
+const koVariants = {
+  on: { x: 1 },
+  off: { x: 73 }, // 60 + 6 + 1 + 6
 };
 
-const enVariants = (width: number, numberMediaBreakPoint: number) => {
-  // if (width <= numberMediaBreakPoint) {
-  //   return {
-  //     on: { x: -33 },
-  //     off: { x: 0 },
-  //   };
-  // } else {
-  return {
-    on: { x: -73 }, //
-    off: { x: 0 },
-  };
-  // }
+const enVariants = {
+  on: { x: -73 }, // 60 + 6 + 1 + 6
+  off: { x: 0 },
 };
