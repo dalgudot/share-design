@@ -196,6 +196,8 @@ const LeftDiv = styled.div<{ profileGradient: string }>`
 `;
 
 const MultiLineTextField = styled(TextareaAutosize)`
+  -webkit-appearance: none; // remove iOS upper inner shadow
+
   overflow: hidden;
   width: 100%;
   background-color: transparent;
