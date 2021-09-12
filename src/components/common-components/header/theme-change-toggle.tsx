@@ -27,6 +27,7 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   };
 
   // S of JS -> Swfit
+  // https://developer111.tistory.com/37
   const [is_iOS, setIs_iOS] = useState<boolean>();
   const initNative = () => {
     const browserInfo = navigator.userAgent;
