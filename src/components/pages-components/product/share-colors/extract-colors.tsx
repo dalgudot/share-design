@@ -47,14 +47,14 @@ const ExtractColors = ({ image }: { image: any }) => {
           {/* iOS에서는 문제가 많아서 모바일 전체에서 다운로드 버튼 숨기기 */}
           {/* isMobile -> returns true if device type is mobile or tablet */}
           {/* 데스크톱과 안드로이드 기기에서만 다운로드 가능 */}
-          {(!isMobile || isAndroid) && (
-            <motion.button
-              onClick={downloadImageAndPalette}
-              whileTap={{ scale: 0.8 }}
-            >
-              <H1Title text={{ k: '다운로드', e: 'Download' }} color="gray1" />
-            </motion.button>
-          )}
+          {/* {(!isMobile || isAndroid) && ( */}
+          {/* <motion.button
+            onClick={downloadImageAndPalette}
+            whileTap={{ scale: 0.8 }}
+          >
+            <H1Title text={{ k: '다운로드', e: 'Download' }} color="gray1" />
+          </motion.button> */}
+          {/* )} */}
         </Container>
       </>
     );
