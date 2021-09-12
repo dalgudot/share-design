@@ -45,7 +45,7 @@ const Index = () => {
           text="Coming Soon 😎"
           color="gray1"
           weight={700}
-          marginTop="36px"
+          marginTop="48px"
         />
       </ComingSoon>
     </>
