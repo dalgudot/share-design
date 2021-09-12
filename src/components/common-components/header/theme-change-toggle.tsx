@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import IconThemeChange24 from '../../../foundation/svg/icon_theme_change_24';
 import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
@@ -10,10 +10,11 @@ import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
   const dispatch = useDispatch();
-  const themeChange = () =>
+  const themeChange = () => {
     dispatch({
       type: 'MODE_CHANGE',
     });
+  };
 
   // 1)초기 mode  2)새로고침 mode 정의
   useEffect(() => {
@@ -24,6 +25,33 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
     themeChange();
     setTheme(mode === 'darkTheme' ? lightTheme : darkTheme);
   };
+
+  // S of JS -> Swfit
+  const [is_iOS, setIs_iOS] = useState<boolean>();
+  const initNative = () => {
+    const browserInfo = navigator.userAgent;
+    if (browserInfo.indexOf('APP_WISHROOM_IOS') > -1) {
+      // alert('iOS APP');
+      setIs_iOS(true);
+    } else {
+      // alert('Browser');
+      setIs_iOS(false);
+    }
+  };
+
+  useEffect(() => {
+    initNative();
+  }, []);
+
+  const sendToNativeApp = () => {
+    is_iOS && window.webkit.messageHandlers.receiveModeFromJS.postMessage(mode);
+  };
+
+  useEffect(() => {
+    sendToNativeApp();
+    // console.log(mode);
+  }, [mode]);
+  // E of JS -> Swfit
 
   // for only mobile animation
   const width: number = useWindowWidth();

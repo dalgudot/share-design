@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { mediaBreakPoint } from '../../../styles/common';
-import UploadImage from '../../../components/pages-components/product/share-colors/upload-image';
-import ExtractColors from '../../../components/pages-components/product/share-colors/extract-colors';
+import UploadImage from '../../../components/pages-components/product/share-palette/upload-image';
+import ExtractColors from '../../../components/pages-components/product/share-palette/extract-colors';
 
 const ShareColorIndex = () => {
   const [image, setImage] = useState<[]>([]);
