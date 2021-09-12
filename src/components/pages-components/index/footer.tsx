@@ -42,7 +42,7 @@ const Footer = () => {
     // CleanUp Function
     return () => {
       // console.log('I am in cleanup function');
-      setLoading(true);
+      // setLoading(true);
     };
   }, []);
 
