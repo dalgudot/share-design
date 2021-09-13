@@ -1,7 +1,14 @@
 import styled from 'styled-components';
-import DragAndDropImageFile from './drag-and-drop-image-file';
+import PLarge from '../../../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../../../styles/common';
 
-const UploadImage = ({ setImage }: { setImage: Function }) => {
+const UploadImage = ({
+  image,
+  setImage,
+}: {
+  image: any;
+  setImage: Function;
+}) => {
   const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     // https://www.youtube.com/watch?v=iBonBC-ySgo
     const fileArray = Array.from(e.target.files as any).map((file) =>
@@ -20,22 +27,25 @@ const UploadImage = ({ setImage }: { setImage: Function }) => {
 
   return (
     <>
+      <Line />
       {/* https://github.com/facebook/react/issues/310 */}
-      <DragAndDropImageFile>
-        <div>
-          <MotionUploadPhotoLabel htmlFor="upload-photo">
-            <input
-              // display: 'none'은 접근성 문제 발생
-              style={{ opacity: '0', height: '0', width: '0' }}
-              id="upload-photo"
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={imageHandler}
-            />
-          </MotionUploadPhotoLabel>
-        </div>
-      </DragAndDropImageFile>
+      <MotionUploadPhotoLabel htmlFor="upload-photo">
+        <input
+          // display: 'none'은 접근성 문제 발생
+          style={{ opacity: '0', width: '0', height: '0' }}
+          id="upload-photo"
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={imageHandler}
+        />
+        <PLarge
+          text={{ k: '이미지 업로드', e: 'Upload Image' }}
+          color="gray2"
+          weight={700}
+          lineHeight={{ desktop: '28px', mobile: '23px' }}
+        />
+      </MotionUploadPhotoLabel>
       {/* https://helloinyong.tistory.com/275 */}
     </>
   );
@@ -43,12 +53,24 @@ const UploadImage = ({ setImage }: { setImage: Function }) => {
 
 export default UploadImage;
 
+const Line = styled.div`
+  width: 1px;
+  background-color: ${({ theme }) => theme.gray7};
+  margin: 36px 0 24px;
+
+  height: 144px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    height: 96px;
+  }
+`;
+
 const MotionUploadPhotoLabel = styled.label`
-  margin: 0 auto;
-  border-radius: 2px;
-  border: solid 1px ${({ theme }) => theme.gray1};
-  width: 300px;
-  height: 300px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.gray7};
+  padding: 20px 32px;
+  border-radius: 21px;
   cursor: pointer;
 `;

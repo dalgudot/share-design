@@ -58,7 +58,7 @@ export const lightTheme: DefaultTheme = {
   gray4: '#8D959D',
   gray5: '#92989D',
   gray6: '#D9DEE3',
-  gray7: '#EAEDF0',
+  gray7: '#E3E7EB',
   gray8: '#F1F2F4',
   gray9: '#F8F8FA',
   borderRadius,
