@@ -74,6 +74,9 @@ const MotionUploadPhotoLabel = styled.label`
   border-radius: 21px;
   cursor: pointer;
 
+  /* 탭바 env 위해 */
+  margin-bottom: 144px;
+
   max-width: 240px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

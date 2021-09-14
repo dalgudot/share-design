@@ -60,6 +60,9 @@ const Main = styled.main`
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 
+  // iOS bottom safe area
+  margin-bottom: calc(env(safe-area-inset-bottom));
+
   h1 {
     margin-top: 72px;
 
