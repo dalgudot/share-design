@@ -6,14 +6,14 @@ import ExtractColors from '../../../components/pages-components/product/share-pa
 import H1Title from '../../../foundation/typography/h1-title';
 import PLarge from '../../../foundation/typography/p-large';
 
-const ShareColorIndex = () => {
+const ShareColorIndex = ({ showToast }: { showToast: Function }) => {
   const [image, setImage] = useState<string[]>([]);
 
   return (
     <>
       <Main>
         <H1Title
-          text={{ k: '팔레트 공유하기🎨', e: 'SHARE PALETTE 🎨' }}
+          text={{ k: '팔레트 공유하기 🎨', e: 'SHARE PALETTE 🎨' }}
           color="gray1"
         />
         {!image[0] ? (
@@ -37,7 +37,7 @@ const ShareColorIndex = () => {
           <AfterUpload__MarginTop />
         )}
 
-        <ExtractColors image={image} />
+        <ExtractColors image={image} showToast={showToast} />
         <UploadImage image={image} setImage={setImage} />
       </Main>
     </>

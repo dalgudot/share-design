@@ -6,12 +6,17 @@ import TabContact24 from '../../../foundation/svg/tab_contact_24';
 import TabRecord24 from '../../../foundation/svg/tab_record_24';
 import PMedium from '../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../styles/common';
+import TabProduct24 from '../../../foundation/svg/tab_product_24';
 
 const ResponsiveNavBar = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  // 임시 pathname
   const isShow: boolean =
-    pathname === '/' || pathname === '/introduction' || pathname === '/contact';
+    pathname === '/' ||
+    pathname === '/product/share-palette' ||
+    pathname === '/introduction' ||
+    pathname === '/contact';
 
   if (isShow) {
     return (
@@ -24,6 +29,19 @@ const ResponsiveNavBar = () => {
                 text={{ k: '기록', e: 'RECORD' }}
                 color={pathname === '/' ? 'gray0' : 'gray4'}
                 weight={pathname === '/' ? 700 : 400}
+              />
+            </a>
+          </Link>
+          {/* 임시 pathname */}
+          <Link href="/product/share-palette">
+            <a>
+              <TabProduct24 pathname={pathname} />
+              <PMedium
+                text={{ k: '프로덕트', e: 'PRODUCT' }}
+                color={
+                  pathname === '/product/share-palette' ? 'gray0' : 'gray4'
+                }
+                weight={pathname === '/product/share-palette' ? 700 : 400}
               />
             </a>
           </Link>

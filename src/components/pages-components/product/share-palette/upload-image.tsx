@@ -73,4 +73,10 @@ const MotionUploadPhotoLabel = styled.label`
   padding: 20px 32px;
   border-radius: 21px;
   cursor: pointer;
+
+  max-width: 240px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    max-width: 200px;
+  }
 `;
