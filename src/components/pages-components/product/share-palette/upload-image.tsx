@@ -40,7 +40,11 @@ const UploadImage = ({
           onChange={imageHandler}
         />
         <PLarge
-          text={{ k: '이미지 업로드', e: 'Upload Image' }}
+          text={
+            !image[0]
+              ? { k: '이미지 업로드', e: 'Upload Image' }
+              : { k: '새 이미지 업로드', e: 'Upload New Image' }
+          }
           color="gray2"
           weight={700}
           lineHeight={{ desktop: '28px', mobile: '23px' }}
@@ -56,11 +60,12 @@ export default UploadImage;
 const Line = styled.div`
   width: 1px;
   background-color: ${({ theme }) => theme.gray7};
-  margin: 36px 0 24px;
 
+  margin: 72px 0 24px;
   height: 144px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin: 36px 0 24px;
     height: 96px;
   }
 `;
@@ -77,9 +82,9 @@ const MotionUploadPhotoLabel = styled.label`
   /* 탭바 env 위해 */
   margin-bottom: 144px;
 
-  max-width: 240px;
+  max-width: 280px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    max-width: 200px;
+    max-width: 240px;
   }
 `;

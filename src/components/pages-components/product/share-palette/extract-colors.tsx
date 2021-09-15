@@ -3,10 +3,10 @@ import { usePalette } from 'react-palette';
 import React from 'react';
 import WaveLoading from '../../../canvas-components/wave-loading/wave-loading';
 import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
-import PLarge from '../../../../foundation/typography/p-large';
 import PMedium from '../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../styles/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import PSmall from '../../../../foundation/typography/p-small';
 
 const ExtractColors = ({
   image,
@@ -25,12 +25,12 @@ const ExtractColors = ({
     k: '🎨 팔레트를 복사했습니다',
     e: '🎨 Copied palette',
   });
-  const copyPaletteButton = { k: '팔레트 복사', e: 'Copy Palette' };
+  const textbtnPaletteCopy = { k: '팔레트 복사', e: 'Copy Palette' };
 
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
 
-  console.log(organizedPaletteString);
+  console.log(colorsDataArray);
 
   if (loading === true && image[0]) {
     return <WaveLoading marginTop="48px" />;
@@ -39,25 +39,51 @@ const ExtractColors = ({
       <>
         <UploadedImage src={image[0]} alt={altTextUploadedImage} />
 
-        <WrapColorChip>
-          {colorsDataArray.map((hex?: string, idx?: number) => (
-            <ColorChip key={`${hex}${idx}`} hex={hex} />
+        <WrapPalette>
+          {colorsDataArray.map((hex: any, idx?: number) => (
+            <Palette key={`${hex}${idx}`} hex={hex} />
           ))}
-        </WrapColorChip>
+        </WrapPalette>
 
         <CopyToClipboard
           text={organizedPaletteString}
           onCopy={() => showToast(copyPaletteToastText)}
         >
-          <ButtonCopyPalette>
+          <BtnPaletteCopy>
             <PMedium
-              text={copyPaletteButton}
+              text={textbtnPaletteCopy}
               color="gray2"
               weight={700}
               // lineHeight={{ desktop: '28px', mobile: '23px' }}
             />
-          </ButtonCopyPalette>
+          </BtnPaletteCopy>
         </CopyToClipboard>
+
+        <GridColorChip>
+          {colorsDataArray.map((hex: any, idx?: number) => (
+            <ColorChipContainer key={`${idx}${hex}`}>
+              <ColorChip color={hex} />
+              <PSmall text={hex} color="gray3" weight={700} marginTop="12px" />
+              <CopyToClipboard
+                text={hex}
+                onCopy={() =>
+                  showToast({
+                    k: `${hex}를 복사했습니다`,
+                    e: `Copied ${hex}`,
+                  })
+                }
+              >
+                <BtnHexCopy>
+                  <PSmall
+                    text={{ k: '복사', e: 'copy' }}
+                    color="gray1"
+                    weight={700}
+                  />
+                </BtnHexCopy>
+              </CopyToClipboard>
+            </ColorChipContainer>
+          ))}
+        </GridColorChip>
       </>
     );
   } else {
@@ -72,7 +98,7 @@ const UploadedImage = styled.img`
   max-width: 480px;
 `;
 
-const ColorChip = styled.div<{ hex?: string }>`
+const Palette = styled.div<{ hex?: string }>`
   background-color: ${({ hex }) => hex};
   width: 100%;
   height: calc(480px / 6);
@@ -82,13 +108,13 @@ const ColorChip = styled.div<{ hex?: string }>`
   }
 `;
 
-const WrapColorChip = styled.div`
+const WrapPalette = styled.div`
   display: flex;
   width: 100%;
   max-width: 480px;
 `;
 
-const ButtonCopyPalette = styled.button`
+const BtnPaletteCopy = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,4 +127,45 @@ const ButtonCopyPalette = styled.button`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-top: 24px;
   }
+`;
+
+const GridColorChip = styled.div`
+  display: grid;
+  grid-template-columns: calc(448px / 3) calc(448px / 3) calc(448px / 3); // 84vw / 3
+  grid-template-rows: calc(448px / 3 * 1.6) calc(448px / 3 * 1.6);
+  column-gap: 16px; // gap은 2개니까 2로 나눔
+  row-gap: 16px;
+
+  margin-top: 72px;
+
+  @media all and (max-width: 480px) {
+    grid-template-columns: 28vw 28vw 28vw; // 84vw / 3
+    grid-template-rows: calc(28vw * 1.6) calc(28vw * 1.6);
+    column-gap: calc(7vw / 2); // 91vw - 7vw = 84vw, gap은 2개니까 2로 나눔
+    row-gap: calc(7vw / 2);
+  }
+`;
+
+const ColorChipContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ColorChip = styled.div<{ color: string }>`
+  background-color: ${({ color }) => color};
+  width: calc(448px / 3);
+  height: calc(448px / 3);
+
+  @media all and (max-width: 480px) {
+    width: 28vw;
+    height: 28vw;
+  }
+`;
+
+const BtnHexCopy = styled.button`
+  background-color: ${({ theme }) => theme.gray7};
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-top: 8px;
 `;
