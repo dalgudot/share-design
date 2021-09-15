@@ -61,8 +61,8 @@ const Line = styled.div`
   width: 1px;
   background-color: ${({ theme }) => theme.gray7};
 
-  margin: 72px 0 24px;
-  height: 144px;
+  margin: 72px 0 36px;
+  height: 180px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin: 36px 0 24px;
@@ -80,7 +80,7 @@ const MotionUploadPhotoLabel = styled.label`
   cursor: pointer;
 
   /* 탭바 env 위해 */
-  margin-bottom: 144px;
+  margin-bottom: 24vh;
 
   max-width: 280px;
 
