@@ -7,10 +7,13 @@ import { uiUxDesign2Info } from './article/ui-ux-design/2-info';
 import { contactInfo } from './index/contact-info';
 import { indexInfo } from './index/index-info';
 import { introductionInfo } from './index/introduction-info';
+import { sharePaletteInfo } from './product/share-palette';
 
 const HeadSEO = () => {
   const router = useRouter();
   const pathname: string = router.pathname;
+
+  console.log(pathname);
 
   const infoSwitch = () => {
     switch (pathname) {
@@ -26,6 +29,8 @@ const HeadSEO = () => {
         return uiUxDesign2Info;
       case '/article/[category]/[id]/write-response':
         return responseInfo;
+      case '/product/share-palette':
+        return sharePaletteInfo;
       default:
         return indexInfo;
     }
@@ -41,8 +46,8 @@ const HeadSEO = () => {
   };
 
   const keywords = {
-    k: '김경환, 디자인 공유하기, 디자인, 디자이너, UI, UX, UI 디자인, UX 디자인, UI/UX 디자인, 프로덕트 디자인, 디지털 프로덕트 디자인, IxD 디자인, 인터랙션 디자인, 디자인 포트폴리오, 웹 포트폴리오, 포트폴리오 웹 사이트, UI 디자인 포트폴리오, UX 디자인 포트폴리오, UI/UX 디자인 포트폴리오, 프로덕트 디자인 포트폴리오, 디지털 프로덕트 디자인 포트폴리오',
-    e: 'KyungHwan Kim, SHARE DESIGN, Share Design, Design, Designer, UI Design, UX Design, UI/UX Design, Product Design, Digital Product Design, IxD Design, Interaction Design, Design Portfolio, Web Portfolio, Portfolio Web Site, UI Design Portfolio, UX Design Portfolio, UI/UX Design portfolio, Product Design Portfolio, Digital Product Design Portfolio',
+    k: '김경환, 디자인 공유하기, 디자인, 디자이너, UI, UX, UI 디자인, UX 디자인, UI/UX 디자인, 프로덕트 디자인, 디지털 프로덕트 디자인, 인터랙션 디자인, 디자인 포트폴리오, 웹 포트폴리오, 포트폴리오 웹 사이트, UI 디자인 포트폴리오, UX 디자인 포트폴리오, UI/UX 디자인 포트폴리오, 프로덕트 디자인 포트폴리오, 디지털 프로덕트 디자인 포트폴리오',
+    e: 'KyungHwan Kim, SHARE DESIGN, Share Design, Design, Designer, UI Design, UX Design, UI/UX Design, Product Design, Digital Product Design, Interaction Design, Design Portfolio, Web Portfolio, Portfolio Web Site, UI Design Portfolio, UX Design Portfolio, UI/UX Design portfolio, Product Design Portfolio, Digital Product Design Portfolio',
   };
   // 공통 요소들
 
@@ -169,18 +174,14 @@ const HeadSEO = () => {
       />
       {/* E of fonts preload */}
       {/* S of Image preload */}
-      {pathname !== '/' && (
-        <>
-          <link
-            rel="preload"
-            href="/images/profile-photo@3x.jpg"
-            as="image"
-            type="image/jpg"
-          />
-        </>
-      )}
+      <link
+        rel="preload"
+        href="/images/profile-photo@3x.jpg"
+        as="image"
+        type="image/jpg"
+      />
 
-      {pathname === '/contact' && (
+      {/* {pathname === '/contact' && (
         <>
           <link
             rel="preload"
@@ -189,7 +190,7 @@ const HeadSEO = () => {
             type="image/png"
           />
         </>
-      )}
+      )} */}
       {/* E of Image preload */}
     </Head>
   );

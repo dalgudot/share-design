@@ -95,8 +95,18 @@ export const t = {
         contentsArray: [
           {
             term: {
-              k: '2020.06.08 ~ 현재',
-              e: '2020.06.08 ~ Present',
+              k: '2021.09.27 ~ 현재',
+              e: '2021.09.27 ~ Present',
+            },
+            contents: {
+              k: '슬리드(Slid) 프로덕트 디자이너',
+              e: 'Slid Product Designer',
+            },
+          },
+          {
+            term: {
+              k: '2020.06.08 ~ 2021.08.31',
+              e: '2020.06.08 ~ 2021.08.31',
             },
             contents: {
               k: '쿠돈 프로덕트 디자이너',
