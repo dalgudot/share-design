@@ -6,7 +6,7 @@ import ExtractColors from '../../../components/pages-components/product/share-pa
 import H1Title from '../../../foundation/typography/h1-title';
 import PLarge from '../../../foundation/typography/p-large';
 
-const ShareColorIndex = ({ showToast }: { showToast: Function }) => {
+const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
   const [image, setImage] = useState<string[]>([]);
 
   return (
@@ -44,7 +44,7 @@ const ShareColorIndex = ({ showToast }: { showToast: Function }) => {
   );
 };
 
-export default ShareColorIndex;
+export default SharePaletteIndex;
 
 const Main = styled.main`
   display: flex;

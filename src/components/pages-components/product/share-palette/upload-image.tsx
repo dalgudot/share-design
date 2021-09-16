@@ -31,8 +31,8 @@ const UploadImage = ({
       {/* https://github.com/facebook/react/issues/310 */}
       <MotionUploadPhotoLabel htmlFor="upload-photo">
         <input
-          // display: 'none'은 접근성 문제 발생
-          style={{ opacity: '0', width: '0', height: '0' }}
+          // display: 'none'은 접근성 문제 발생? -> none 아니면 iOS에서 버튼 크기가 커지는 문제 발생
+          style={{ display: 'none', opacity: '0', width: '0', height: '0' }}
           id="upload-photo"
           type="file"
           accept="image/*"
@@ -82,9 +82,9 @@ const MotionUploadPhotoLabel = styled.label`
   /* 탭바 env 위해 */
   margin-bottom: 24vh;
 
-  max-width: 280px;
+  max-width: 241px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    max-width: 240px;
+    max-width: 216px;
   }
 `;

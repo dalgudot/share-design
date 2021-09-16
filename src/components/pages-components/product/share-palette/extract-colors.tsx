@@ -30,7 +30,7 @@ const ExtractColors = ({
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
 
-  console.log(colorsDataArray);
+  // console.log(colorsDataArray);
 
   if (loading === true && image[0]) {
     return <WaveLoading marginTop="48px" />;
@@ -120,7 +120,7 @@ const BtnPaletteCopy = styled.button`
   align-items: center;
   background-color: ${({ theme }) => theme.gray7};
   padding: 16px 28px;
-  max-width: 240px;
+  /* max-width: 240px; */
   border-radius: 21px;
   margin-top: 36px;
 
@@ -135,14 +135,14 @@ const GridColorChip = styled.div`
   grid-template-rows: calc(448px / 3 * 1.6) calc(448px / 3 * 1.6);
   column-gap: 16px; // gap은 2개니까 2로 나눔
   row-gap: 16px;
-
-  margin-top: 72px;
+  margin-top: 96px;
 
   @media all and (max-width: 480px) {
     grid-template-columns: 28vw 28vw 28vw; // 84vw / 3
     grid-template-rows: calc(28vw * 1.6) calc(28vw * 1.6);
     column-gap: calc(7vw / 2); // 91vw - 7vw = 84vw, gap은 2개니까 2로 나눔
-    row-gap: calc(7vw / 2);
+    row-gap: 24px;
+    margin-top: 72px;
   }
 `;
 
