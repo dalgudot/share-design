@@ -16,8 +16,9 @@ html {
 
   /* iOS top safe area */
   /* top은 html에서 모두 동작하지만, bottom은 각각 해줘야. */
-  margin-top: calc(env(safe-area-inset-top));
-  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
+  /* fixed에는 적용 안 됨 -> header, nav-bar, toast에 따로 적용 */
+  padding-top: calc(env(safe-area-inset-top));
+  padding-bottom: calc(env(safe-area-inset-bottom));
 }
 
 /* (브라우저 오른쪽에 나타나는) 스크롤바 숨기기 */
@@ -39,9 +40,6 @@ body {
   -ms-overflow-style: none;
   /* Firefox */
   scrollbar-width: none;
-
-  /* iOS top safe area */
-  /* margin-bottom: calc(env(safe-area-inset-bottom)); */
 }
 
 * {

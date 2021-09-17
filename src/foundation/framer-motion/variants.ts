@@ -1,3 +1,41 @@
+// New variants
+export const buttonVariants = {
+  whileHover: {
+    scale: 1.05,
+    filter: 'brightness(1.3)',
+  },
+
+  whileTap: {
+    scale: 0.93,
+    opacity: 0.8,
+    transition: {
+      duration: 0.1,
+      ease: 'easeIn',
+    },
+  },
+};
+
+export const textButtonVariants = {
+  whileHover: {
+    scale: 1.02,
+    filter: 'brightness(1.3)',
+    originX: 0.1,
+  },
+
+  whileTap: {
+    scale: 0.98,
+    opacity: 0.8,
+    originX: 0.4,
+    transition: {
+      duration: 0.1,
+      ease: 'easeIn',
+    },
+  },
+};
+
+////////////////////////////////////////////////////////////////////////////
+// Below is old variants
+
 export const smoothTransition = { ease: [0.43, 0.13, 0.23, 0.96] };
 
 export const stagger = {
@@ -138,72 +176,11 @@ export const btnHoverTap = {
   },
 };
 
-export const smoothUp = {
-  initial: {
-    y: 12,
-    scale: 0.99,
-    opacity: 0,
-    transition: {
-      duration: 0.4,
-      smoothTransition,
-    },
-  },
-
-  animate: {
-    y: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      smoothTransition,
-    },
-  },
-
-  exit: {
-    y: 4,
-    scale: 1.03,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-      smoothTransition,
-    },
-  },
-
-  whileHover: {
-    scale: 1.04,
-  },
-
-  whileTap: { scale: 0.97 },
-};
-
 export const vibration = {
   animate: {
     x: [
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
-      -1.4,
-      0,
-      1.4,
-      0,
+      0, -1.4, 0, 1.4, 0, -1.4, 0, 1.4, 0, -1.4, 0, 1.4, 0, -1.4, 0, 1.4, 0,
+      -1.4, 0, 1.4, 0, -1.4, 0, 1.4, 0,
     ],
     transition: {
       duration: 0.55,
@@ -216,45 +193,4 @@ export const vibration = {
   },
 
   whileTap: { scale: 0.97 },
-};
-
-export const colorVariants = (color: string) => {
-  return {
-    initial: {
-      // background: `linear-gradient(${color})`,
-    },
-
-    animate: {
-      // scale: [1, 0.9, 1],
-      // opacity: [1, 0.9, 1],
-      x: [0, -1, 1, -0.5, 0.5, 0],
-      // background: [
-      //   `linear-gradient(${color})`,
-      //   'linear-gradient(24deg, #e66465, #9198e5)',
-      //   `linear-gradient(${color})`,
-      // ],
-      transition: {
-        duration: 0.4,
-        ease: 'easeInOut',
-      },
-    },
-
-    exit: {
-      y: 4,
-      scale: 1.03,
-      opacity: 0,
-      transition: {
-        duration: 0.2,
-        smoothTransition,
-      },
-    },
-
-    whileHover: {
-      scale: 1.04,
-    },
-
-    whileTap: {
-      scale: 0.97,
-    },
-  };
 };

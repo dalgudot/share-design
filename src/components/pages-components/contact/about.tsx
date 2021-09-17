@@ -40,6 +40,13 @@ const AboutArea = () => {
         weight={700}
       />
       <PLarge text={aboutData.career.contentsArray[2].contents} color="gray1" />
+      <PLarge
+        text={aboutData.career.contentsArray[3].term}
+        color="gray2"
+        marginTop="24px"
+        weight={700}
+      />
+      <PLarge text={aboutData.career.contentsArray[3].contents} color="gray1" />
 
       {/* 개인 프로젝트 */}
       <PLarge

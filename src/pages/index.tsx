@@ -63,9 +63,6 @@ const Main = styled.main`
     margin-bottom: ${({ theme }) => theme.margin.MobileBottom};
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
-
-  // iOS bottom safe area
-  /* padding-bottom: calc(env(safe-area-inset-bottom)); */
 `;
 
 // for iOS env(safe-area-inset-bottom)

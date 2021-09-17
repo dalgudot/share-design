@@ -39,6 +39,8 @@ const ToastWrapMotion = styled(motion.div)`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
+    // iOS top safe area
+    padding-top: calc(env(safe-area-inset-top));
   }
 `;
 
@@ -57,7 +59,6 @@ const toastVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      // ease: 'easeInOut',
       duration: 0.3,
     },
   },
@@ -67,7 +68,6 @@ const toastVariants = {
     opacity: 0,
     scale: 0.8,
     transition: {
-      // ease: 'easeInOut',
       duration: 0.4,
     },
   },

@@ -6,15 +6,21 @@ import H4Title700 from '../../../foundation/typography/h4-title';
 import React from 'react';
 import ThemeChangeToggle from './theme-change-toggle';
 import LangChangeToggle from './lang-change-toggle';
+import { motion } from 'framer-motion';
+import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
 const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
   return (
     <>
       <HeaderContainer>
         <Link href="/">
-          <a>
+          <motion.a
+            variants={textButtonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
             <H4Title700 text={t.shareDesign} color="gray0" />
-          </a>
+          </motion.a>
         </Link>
         <RightSide>
           <LangChangeToggle />
@@ -33,6 +39,8 @@ const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
 export default React.memo(Header);
 
 const HeaderContainer = styled.header`
+  margin-top: calc(env(safe-area-inset-top));
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,9 +59,6 @@ const HeaderContainer = styled.header`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: ${({ theme }) => theme.margin.MobileTop};
   }
-
-  // iOS top safe area
-  margin-top: calc(env(safe-area-inset-top));
 `;
 
 const RightSide = styled.div`

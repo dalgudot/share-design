@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import PLarge from '../../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../../styles/common';
+import { buttonVariants } from '../../../../foundation/framer-motion/variants';
 
 const UploadImage = ({
   image,
@@ -14,11 +16,15 @@ const UploadImage = ({
     const fileArray = Array.from(e.target.files as any).map((file) =>
       URL.createObjectURL(file)
     );
-    // const imageFile = URL.createObjectURL(e.target.files);
-    // setImage((prevImages: string[]) => prevImages.concat(fileArray));
 
-    // 새로운 배열은 보여주는 곳에서 추가해야 중복 없어짐.
+    // sessionStorage.setItem('UploadedImageSharePalette', fileArray[0]);
+
     setImage(fileArray);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
 
     Array.from(e.target.files as any).map((file: any) =>
       URL.revokeObjectURL(file)
@@ -29,10 +35,15 @@ const UploadImage = ({
     <>
       <Line />
       {/* https://github.com/facebook/react/issues/310 */}
-      <MotionUploadPhotoLabel htmlFor="upload-photo">
+      <MotionUploadPhotoLabel
+        variants={buttonVariants}
+        whileHover="whileHover"
+        whileTap="whileTap"
+        htmlFor="upload-photo"
+      >
         <input
-          // display: 'none'은 접근성 문제 발생
-          style={{ opacity: '0', width: '0', height: '0' }}
+          // display: 'none'은 접근성 문제 발생? -> none 아니면 iOS에서 버튼 크기가 커지는 문제 발생
+          style={{ display: 'none' }}
           id="upload-photo"
           type="file"
           accept="image/*"
@@ -40,7 +51,11 @@ const UploadImage = ({
           onChange={imageHandler}
         />
         <PLarge
-          text={{ k: '이미지 업로드', e: 'Upload Image' }}
+          text={
+            !image[0]
+              ? { k: '이미지 업로드', e: 'Upload Image' }
+              : { k: '새 이미지 업로드', e: 'Upload New Image' }
+          }
           color="gray2"
           weight={700}
           lineHeight={{ desktop: '28px', mobile: '23px' }}
@@ -56,21 +71,31 @@ export default UploadImage;
 const Line = styled.div`
   width: 1px;
   background-color: ${({ theme }) => theme.gray7};
-  margin: 36px 0 24px;
 
-  height: 144px;
+  margin: 72px 0 36px;
+  height: 180px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin: 36px 0 24px;
     height: 96px;
   }
 `;
 
-const MotionUploadPhotoLabel = styled.label`
+const MotionUploadPhotoLabel = styled(motion.label)`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: ${({ theme }) => theme.gray7};
-  padding: 20px 32px;
-  border-radius: 21px;
-  cursor: pointer;
+  padding: 22px 32px;
+  border-radius: 26px;
+
+  /* for iOS */
+  max-width: 241px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    border-radius: 24px;
+    max-width: 216px;
+  }
 `;
