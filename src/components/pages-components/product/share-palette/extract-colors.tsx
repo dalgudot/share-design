@@ -32,8 +32,6 @@ const ExtractColors = ({
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
 
-  // console.log(colorsDataArray);
-
   if (loading === true && image[0]) {
     return <WaveLoading marginTop="48px" />;
   } else if (loading === false && image[0]) {
