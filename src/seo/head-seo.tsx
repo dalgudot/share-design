@@ -13,8 +13,6 @@ const HeadSEO = () => {
   const router = useRouter();
   const pathname: string = router.pathname;
 
-  console.log(pathname);
-
   const infoSwitch = () => {
     switch (pathname) {
       case '/':

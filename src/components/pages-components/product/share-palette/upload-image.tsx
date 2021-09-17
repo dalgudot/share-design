@@ -14,11 +14,15 @@ const UploadImage = ({
     const fileArray = Array.from(e.target.files as any).map((file) =>
       URL.createObjectURL(file)
     );
-    // const imageFile = URL.createObjectURL(e.target.files);
-    // setImage((prevImages: string[]) => prevImages.concat(fileArray));
 
-    // 새로운 배열은 보여주는 곳에서 추가해야 중복 없어짐.
+    sessionStorage.setItem('UploadedImageSharePalette', fileArray[0]);
+
     setImage(fileArray);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
 
     Array.from(e.target.files as any).map((file: any) =>
       URL.revokeObjectURL(file)
@@ -79,9 +83,7 @@ const MotionUploadPhotoLabel = styled.label`
   border-radius: 21px;
   cursor: pointer;
 
-  /* 탭바 env 위해 */
-  margin-bottom: 24vh;
-
+  /* iOS */
   max-width: 241px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

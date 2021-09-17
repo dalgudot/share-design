@@ -33,6 +33,8 @@ const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
 export default React.memo(Header);
 
 const HeaderContainer = styled.header`
+  margin-top: calc(env(safe-area-inset-top));
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,9 +53,6 @@ const HeaderContainer = styled.header`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: ${({ theme }) => theme.margin.MobileTop};
   }
-
-  // iOS top safe area
-  margin-top: calc(env(safe-area-inset-top));
 `;
 
 const RightSide = styled.div`

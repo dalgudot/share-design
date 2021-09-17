@@ -6,6 +6,7 @@ import { mediaBreakPoint } from '../../../styles/common';
 import { motion } from 'framer-motion';
 import PMedium from '../../../foundation/typography/p-medium';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
+import { useIsiOS } from '../../../lib/hooks/useIsiOS';
 
 const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
@@ -28,29 +29,14 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
 
   // S of JS -> Swfit
   // https://developer111.tistory.com/37
-  const [is_iOS, setIs_iOS] = useState<boolean>();
-  const initNative = () => {
-    const browserInfo = navigator.userAgent;
-    if (browserInfo.indexOf('APP_WISHROOM_IOS') > -1) {
-      // alert('iOS APP');
-      setIs_iOS(true);
-    } else {
-      // alert('Browser');
-      setIs_iOS(false);
-    }
-  };
-
-  useEffect(() => {
-    initNative();
-  }, []);
-
+  const { is_iOS, is_iPadOS } = useIsiOS();
   const sendToNativeApp = () => {
-    is_iOS && window.webkit.messageHandlers.receiveModeFromJS.postMessage(mode);
+    (is_iOS || is_iPadOS) &&
+      window.webkit.messageHandlers.receiveModeFromJS.postMessage(mode);
   };
 
   useEffect(() => {
     sendToNativeApp();
-    // console.log(mode);
   }, [mode]);
   // E of JS -> Swfit
 

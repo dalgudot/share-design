@@ -75,11 +75,10 @@ const ResponsiveNavBar = () => {
 export default ResponsiveNavBar;
 
 const Nav = styled.nav`
-  position: fixed;
+  margin-bottom: calc(env(safe-area-inset-bottom));
 
-  // Properties that change
-  margin-top: 58px;
-  // 72px - 24px
+  position: fixed;
+  margin-top: 58px; // 72px - 24px
   top: ${({ theme }) => theme.margin.DesktopTop};
   right: 4.5vw;
 
@@ -89,9 +88,6 @@ const Nav = styled.nav`
   }
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    // iOS bottom safe area
-    margin-bottom: calc(env(safe-area-inset-bottom));
-
     /* width: 100%; */
     height: 56px;
     z-index: ${({ theme }) => theme.zIndex.Bar};
