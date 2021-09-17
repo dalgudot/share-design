@@ -28,7 +28,23 @@ export const textButtonVariants = {
     originX: 0.4,
     transition: {
       duration: 0.1,
-      ease: 'easeIn',
+      ease: 'easeInOut',
+    },
+  },
+};
+
+export const listVariants = {
+  whileHover: {
+    scale: 1.02,
+    filter: 'brightness(1.3)',
+  },
+
+  whileTap: {
+    scale: 0.98,
+    opacity: 0.8,
+    transition: {
+      duration: 0.1,
+      ease: 'easeInOut',
     },
   },
 };
