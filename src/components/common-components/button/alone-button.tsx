@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { btnHoverTap } from '../../../foundation/framer-motion/variants';
+import { buttonVariants } from '../../../foundation/framer-motion/variants';
 import PLarge from '../../../foundation/typography/p-large';
-import { mediaBreakPoint } from '../../../styles/common';
 
 const AloneButton = ({
   btnText,
@@ -19,7 +18,7 @@ const AloneButton = ({
   return (
     <MotionDiv //
       marginTop={marginTop}
-      variants={btnHoverTap}
+      variants={buttonVariants}
       whileHover="whileHover"
       whileTap="whileTap"
     >

@@ -4,12 +4,14 @@ import { mediaBreakPoint } from '../../../styles/common';
 import H3Title from '../../../foundation/typography/h2-title';
 import PSmall from '../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
+import { listVariants } from '../../../foundation/framer-motion/variants';
 
 // https://www.carlrippon.com/react-children-with-typescript/
 const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
   return (
     <MotionLi //
-      variants={liVariants}
+      variants={listVariants}
+      whileHover="whileHover"
       whileTap="whileTap"
     >
       {/* List Contents Area */}
