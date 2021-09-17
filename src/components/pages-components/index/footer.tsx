@@ -9,6 +9,8 @@ import { getDate } from '../../../lib/functions/get-date';
 import LoadingSkeletonRect from '../../../foundation/framer-motion/loading-skeleton-rect';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
 const Footer = () => {
   const [loading, setLoading] = useState(true);
@@ -56,7 +58,6 @@ const Footer = () => {
     return (
       <>
         <FooterContainer>
-          {/*  */}
           <Left>
             <Statistics>
               {loading === true ? (
@@ -75,17 +76,35 @@ const Footer = () => {
 
           <Right>
             <Social>
-              <a href="https://brunch.co.kr/@dalgudot" target="_blank">
+              <motion.a
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+                href="https://brunch.co.kr/@dalgudot"
+                target="_blank"
+              >
                 <PSmall text="Brunch" color="gray0" weight={700} />
-              </a>
+              </motion.a>
               <Divider />
-              <a href="https://www.facebook.com/dalgudot" target="_blank">
+              <motion.a
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+                href="https://www.facebook.com/dalgudot"
+                target="_blank"
+              >
                 <PSmall text="Facebook" color="gray0" weight={700} />
-              </a>
+              </motion.a>
               <Divider />
-              <a href="https://www.linkedin.com/in/dalgudot" target="_blank">
+              <motion.a
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+                href="https://www.linkedin.com/in/dalgudot"
+                target="_blank"
+              >
                 <PSmall text="LinkedIn" color="gray0" weight={700} />
-              </a>
+              </motion.a>
             </Social>
             <Link href="/contact">
               <a>
@@ -96,7 +115,6 @@ const Footer = () => {
               </a>
             </Link>
           </Right>
-          {/*  */}
         </FooterContainer>
       </>
     );

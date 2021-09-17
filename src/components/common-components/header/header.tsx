@@ -6,15 +6,21 @@ import H4Title700 from '../../../foundation/typography/h4-title';
 import React from 'react';
 import ThemeChangeToggle from './theme-change-toggle';
 import LangChangeToggle from './lang-change-toggle';
+import { motion } from 'framer-motion';
+import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
 const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
   return (
     <>
       <HeaderContainer>
         <Link href="/">
-          <a>
+          <motion.a
+            variants={textButtonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
             <H4Title700 text={t.shareDesign} color="gray0" />
-          </a>
+          </motion.a>
         </Link>
         <RightSide>
           <LangChangeToggle />

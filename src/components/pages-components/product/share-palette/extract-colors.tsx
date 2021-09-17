@@ -7,6 +7,8 @@ import PMedium from '../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../styles/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import PSmall from '../../../../foundation/typography/p-small';
+import { motion } from 'framer-motion';
+import { buttonVariants } from '../../../../foundation/framer-motion/variants';
 
 const ExtractColors = ({
   image,
@@ -49,14 +51,18 @@ const ExtractColors = ({
           text={organizedPaletteString}
           onCopy={() => showToast(copyPaletteToastText)}
         >
-          <BtnPaletteCopy>
+          <MotionBtnPaletteCopy
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
             <PMedium
               text={textbtnPaletteCopy}
               color="gray2"
               weight={700}
               // lineHeight={{ desktop: '28px', mobile: '23px' }}
             />
-          </BtnPaletteCopy>
+          </MotionBtnPaletteCopy>
         </CopyToClipboard>
 
         <GridColorChip>
@@ -73,13 +79,17 @@ const ExtractColors = ({
                   })
                 }
               >
-                <BtnHexCopy>
+                <MotionBtnHexCopy
+                  variants={buttonVariants}
+                  whileHover="whileHover"
+                  whileTap="whileTap"
+                >
                   <PSmall
                     text={{ k: '복사', e: 'copy' }}
                     color="gray1"
                     weight={700}
                   />
-                </BtnHexCopy>
+                </MotionBtnHexCopy>
               </CopyToClipboard>
             </ColorChipContainer>
           ))}
@@ -114,18 +124,20 @@ const WrapPalette = styled.div`
   max-width: 480px;
 `;
 
-const BtnPaletteCopy = styled.button`
+const MotionBtnPaletteCopy = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: ${({ theme }) => theme.gray7};
-  padding: 16px 28px;
-  /* max-width: 240px; */
-  border-radius: 21px;
+  padding: 18px 28px;
+  border-radius: 23px;
+
   margin-top: 36px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 24px;
+    border-radius: 21px;
+    margin-top: 28px;
   }
 `;
 
@@ -163,9 +175,15 @@ const ColorChip = styled.div<{ color: string }>`
   }
 `;
 
-const BtnHexCopy = styled.button`
+const MotionBtnHexCopy = styled(motion.button)`
   background-color: ${({ theme }) => theme.gray7};
+
   padding: 8px 16px;
-  border-radius: 8px;
-  margin-top: 8px;
+  border-radius: 11px;
+  margin-top: 10px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    border-radius: 10px;
+    margin-top: 8px;
+  }
 `;

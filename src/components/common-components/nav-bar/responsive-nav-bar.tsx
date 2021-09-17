@@ -7,6 +7,11 @@ import TabRecord24 from '../../../foundation/svg/tab_record_24';
 import PMedium from '../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../styles/common';
 import TabProduct24 from '../../../foundation/svg/tab_product_24';
+import { motion } from 'framer-motion';
+import {
+  buttonVariants,
+  textButtonVariants,
+} from '../../../foundation/framer-motion/variants';
 
 const ResponsiveNavBar = () => {
   const router = useRouter();
@@ -23,47 +28,87 @@ const ResponsiveNavBar = () => {
       <>
         <Nav>
           <Link href="/">
-            <a>
+            <motion.a
+              variants={buttonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+            >
               <TabRecord24 pathname={pathname} />
-              <PMedium
-                text={{ k: '기록', e: 'RECORD' }}
-                color={pathname === '/' ? 'gray0' : 'gray4'}
-                weight={pathname === '/' ? 700 : 400}
-              />
-            </a>
+              <motion.div
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+              >
+                <PMedium
+                  text={{ k: '기록', e: 'RECORD' }}
+                  color={pathname === '/' ? 'gray0' : 'gray4'}
+                  weight={pathname === '/' ? 700 : 400}
+                />
+              </motion.div>
+            </motion.a>
           </Link>
           {/* 임시 pathname */}
           <Link href="/product/share-palette">
-            <a>
+            <motion.a
+              variants={buttonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+            >
               <TabProduct24 pathname={pathname} />
-              <PMedium
-                text={{ k: '프로덕트', e: 'PRODUCT' }}
-                color={
-                  pathname === '/product/share-palette' ? 'gray0' : 'gray4'
-                }
-                weight={pathname === '/product/share-palette' ? 700 : 400}
-              />
-            </a>
+              <motion.div
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+              >
+                <PMedium
+                  text={{ k: '프로덕트', e: 'PRODUCT' }}
+                  color={
+                    pathname === '/product/share-palette' ? 'gray0' : 'gray4'
+                  }
+                  weight={pathname === '/product/share-palette' ? 700 : 400}
+                />
+              </motion.div>
+            </motion.a>
           </Link>
           <Link href="/introduction">
-            <a>
+            <motion.a
+              variants={buttonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+            >
               <TabIntroduction24 pathname={pathname} />
-              <PMedium
-                text={{ k: '프로젝트 소개', e: 'PROJECT INTRO' }}
-                color={pathname === '/introduction' ? 'gray0' : 'gray4'}
-                weight={pathname === '/introduction' ? 700 : 400}
-              />
-            </a>
+              <motion.div
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+              >
+                <PMedium
+                  text={{ k: '프로젝트 소개', e: 'PROJECT INTRO' }}
+                  color={pathname === '/introduction' ? 'gray0' : 'gray4'}
+                  weight={pathname === '/introduction' ? 700 : 400}
+                />
+              </motion.div>
+            </motion.a>
           </Link>
           <Link href="/contact">
-            <a>
+            <motion.a
+              variants={buttonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+            >
               <TabContact24 pathname={pathname} />
-              <PMedium
-                text={{ k: '연락처', e: 'CONTACT' }}
-                color={pathname === '/contact' ? 'gray0' : 'gray4'}
-                weight={pathname === '/contact' ? 700 : 400}
-              />
-            </a>
+              <motion.div
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+              >
+                <PMedium
+                  text={{ k: '연락처', e: 'CONTACT' }}
+                  color={pathname === '/contact' ? 'gray0' : 'gray4'}
+                  weight={pathname === '/contact' ? 700 : 400}
+                />
+              </motion.div>
+            </motion.a>
           </Link>
         </Nav>
         <NavBarSafeArea />

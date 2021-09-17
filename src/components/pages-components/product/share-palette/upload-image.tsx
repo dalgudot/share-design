@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import PLarge from '../../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../../styles/common';
+import { buttonVariants } from '../../../../foundation/framer-motion/variants';
 
 const UploadImage = ({
   image,
@@ -15,7 +17,7 @@ const UploadImage = ({
       URL.createObjectURL(file)
     );
 
-    sessionStorage.setItem('UploadedImageSharePalette', fileArray[0]);
+    // sessionStorage.setItem('UploadedImageSharePalette', fileArray[0]);
 
     setImage(fileArray);
 
@@ -33,10 +35,15 @@ const UploadImage = ({
     <>
       <Line />
       {/* https://github.com/facebook/react/issues/310 */}
-      <MotionUploadPhotoLabel htmlFor="upload-photo">
+      <MotionUploadPhotoLabel
+        variants={buttonVariants}
+        whileHover="whileHover"
+        whileTap="whileTap"
+        htmlFor="upload-photo"
+      >
         <input
           // display: 'none'은 접근성 문제 발생? -> none 아니면 iOS에서 버튼 크기가 커지는 문제 발생
-          style={{ display: 'none', opacity: '0', width: '0', height: '0' }}
+          style={{ display: 'none' }}
           id="upload-photo"
           type="file"
           accept="image/*"
@@ -74,19 +81,21 @@ const Line = styled.div`
   }
 `;
 
-const MotionUploadPhotoLabel = styled.label`
+const MotionUploadPhotoLabel = styled(motion.label)`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.gray7};
-  padding: 20px 32px;
-  border-radius: 21px;
-  cursor: pointer;
 
-  /* iOS */
+  background-color: ${({ theme }) => theme.gray7};
+  padding: 22px 32px;
+  border-radius: 26px;
+
+  /* for iOS */
   max-width: 241px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
+    border-radius: 24px;
     max-width: 216px;
   }
 `;
