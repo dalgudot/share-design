@@ -1,18 +1,13 @@
-import { useRef } from 'react';
 import styled from 'styled-components';
 import { t } from '../../../data/index/t-index';
 import { mediaBreakPoint } from '../../../styles/common';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { useMyRipple } from '../../../lib/hooks/useMyRipple';
 import PMedium from '../../../foundation/typography/p-medium';
 import H3Title from '../../../foundation/typography/h2-title';
+import { motion } from 'framer-motion';
+import { buttonVariants } from '../../../foundation/framer-motion/variants';
 
 const EmailArea = ({ showToast }: { showToast: Function }) => {
-  const copyItRef = useRef(null);
-  const sendEmailRef = useRef(null);
-  useMyRipple(copyItRef);
-  useMyRipple(sendEmailRef);
-
   return (
     <EmailDiv>
       <H3Title text={t.myEmail} color="gray0" />
@@ -21,16 +16,24 @@ const EmailArea = ({ showToast }: { showToast: Function }) => {
           text="dalgudot@gmail.com"
           onCopy={() => showToast(t.contact.toastMessage)}
         >
-          <CopyButton ref={copyItRef}>
+          <MotionCopyButton
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
             <PMedium text={t.contact.copyButton} color="gray0" />
-          </CopyButton>
+          </MotionCopyButton>
         </CopyToClipboard>
 
-        <SendButton ref={sendEmailRef}>
+        <MotionSendButton
+          variants={buttonVariants}
+          whileHover="whileHover"
+          whileTap="whileTap"
+        >
           <a href="mailto:dalgudot@gmail.com" target="_blank">
             <PMedium text={t.contact.sendButton} color="gray0" />
           </a>
-        </SendButton>
+        </MotionSendButton>
       </EmailButtonDiv>
     </EmailDiv>
   );
@@ -74,7 +77,7 @@ const EmailButtonDiv = styled.div`
   }
 `;
 
-const Button = styled.button`
+const MotionButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,9 +94,9 @@ const Button = styled.button`
   }
 `;
 
-const CopyButton = styled(Button)``;
+const MotionCopyButton = styled(MotionButton)``;
 
-const SendButton = styled(Button)`
+const MotionSendButton = styled(MotionButton)`
   margin-left: 11px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
