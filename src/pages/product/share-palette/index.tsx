@@ -6,8 +6,13 @@ import ExtractColors from '../../../components/pages-components/product/share-pa
 import H1Title from '../../../foundation/typography/h1-title';
 import PLarge from '../../../foundation/typography/p-large';
 import { useIsiOS } from '../../../lib/hooks/useIsiOS';
+import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
 const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
+  useEffect(() => {
+    VisitsAndViewsDuringSession('SHARE PALETTE');
+  }, []);
+
   const [image, setImage] = useState<string[]>([]);
 
   useEffect(() => {
@@ -36,7 +41,7 @@ const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
   const { is_iOS, is_iPadOS } = useIsiOS();
   const safeArea = () => {
     if (is_iOS) {
-      return '36vh';
+      return '50vh';
     } else if (is_iPadOS) {
       return '72vh';
     } else {
@@ -47,8 +52,6 @@ const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
   return (
     <>
       <Main safeArea={safeArea()}>
-        // is_iOS={is_iOS}
-        // is_iPadOS={is_iPadOS}
         <H1Title
           text={{ k: '팔레트 공유하기 🎨', e: 'SHARE PALETTE 🎨' }}
           color="gray1"

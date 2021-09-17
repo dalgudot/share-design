@@ -16,7 +16,7 @@ html {
 
   /* iOS top safe area */
   /* top은 html에서 모두 동작하지만, bottom은 각각 해줘야. */
-  /* fixed에는 적용 안 됨 */
+  /* fixed에는 적용 안 됨 -> header, nav-bar, toast에 따로 적용 */
   padding-top: calc(env(safe-area-inset-top));
   padding-bottom: calc(env(safe-area-inset-bottom));
 }

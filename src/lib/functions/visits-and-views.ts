@@ -86,6 +86,31 @@ const ViewsDuringSession = (where: string) => {
     // E of Index 날짜별 전체 조회수
   };
 
+  // Product
+  const viewsProduct = () => {
+    // S of Index 연도별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Product/001 ${where}/Total All on ${year}`
+    );
+    // E of Index 연도별 전체 조회수
+
+    // S of Index 전체 조회수
+    firebaseFetchSet(`Number of Views/Product/001 ${where}/Total All`);
+    // E of Index 전체 조회수
+
+    // S of 월별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Product/001 ${where}/${year}/${month}/Total All`
+    );
+    // E of 월별 전체 조회수
+
+    // S of Index 날짜별 전체 조회수
+    firebaseFetchSet(
+      `Number of Views/Product/001 ${where}/${year}/${month}/Total on ${when}`
+    );
+    // E of Index 날짜별 전체 조회수
+  };
+
   // Article
   const viewsArticle = () => {
     // S of Article 연도별 전체 조회수
@@ -133,8 +158,10 @@ const ViewsDuringSession = (where: string) => {
     // E of [각] Article 날짜별 조회수
   };
 
-  if (where === 'Home' || where === 'Contact') {
+  if (where === 'Home' || where === 'Product' || where === 'Contact') {
     views();
+  } else if (where === 'SHARE PALETTE') {
+    viewsProduct();
   } else {
     viewsArticle();
   }

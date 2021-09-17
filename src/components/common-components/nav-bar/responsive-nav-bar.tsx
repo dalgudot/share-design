@@ -75,8 +75,6 @@ const ResponsiveNavBar = () => {
 export default ResponsiveNavBar;
 
 const Nav = styled.nav`
-  margin-bottom: calc(env(safe-area-inset-bottom));
-
   position: fixed;
   margin-top: 58px; // 72px - 24px
   top: ${({ theme }) => theme.margin.DesktopTop};
@@ -88,12 +86,11 @@ const Nav = styled.nav`
   }
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    /* width: 100%; */
+    margin-bottom: calc(env(safe-area-inset-bottom));
     height: 56px;
     z-index: ${({ theme }) => theme.zIndex.Bar};
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray9};
-    /* margin-top: 0px; */
     top: unset;
     bottom: 0;
     left: 0;
