@@ -205,8 +205,18 @@ export const vibration = {
   },
 
   whileHover: {
-    scale: 1.04,
+    scale: 1.02,
+    filter: 'brightness(1.3)',
+    originX: 0.1,
   },
 
-  whileTap: { scale: 0.97 },
+  whileTap: {
+    scale: 0.98,
+    opacity: 0.8,
+    originX: 0.4,
+    transition: {
+      duration: 0.1,
+      ease: 'easeInOut',
+    },
+  },
 };
