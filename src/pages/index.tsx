@@ -21,6 +21,10 @@ const RecordIndex = () => {
 
   return (
     <>
+      <img
+        style={{ width: '400px', height: '400px' }}
+        src="/images/product/share-palette/share_palette_thumbnail_ko.png"
+      />
       <Main>
         <ul>
           {data.map((_, idx) => (
