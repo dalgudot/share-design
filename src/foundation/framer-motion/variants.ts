@@ -2,12 +2,12 @@
 export const buttonVariants = {
   whileHover: {
     scale: 1.05,
-    filter: 'brightness(1.3)',
+    // filter: 'brightness(1.3)',
   },
 
   whileTap: {
     scale: 0.93,
-    opacity: 0.8,
+    opacity: 0.7,
     transition: {
       duration: 0.1,
       ease: 'easeIn',
@@ -18,13 +18,13 @@ export const buttonVariants = {
 export const textButtonVariants = {
   whileHover: {
     scale: 1.02,
-    filter: 'brightness(1.3)',
+    // filter: 'brightness(1.3)',
     originX: 0.1,
   },
 
   whileTap: {
     scale: 0.98,
-    opacity: 0.8,
+    opacity: 0.7,
     originX: 0.4,
     transition: {
       duration: 0.1,
@@ -36,7 +36,7 @@ export const textButtonVariants = {
 export const listVariants = {
   whileHover: {
     scale: 1.02,
-    filter: 'brightness(1.3)',
+    // filter: 'brightness(1.3)',
   },
 
   whileTap: {
