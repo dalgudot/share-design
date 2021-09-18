@@ -9,8 +9,8 @@ import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
 
-const Index = () => {
-  // useArvAmplitude('arv_home');
+const RecordIndex = () => {
+  // useArvAmplitude('arv_record');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
@@ -52,7 +52,7 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default RecordIndex;
 
 const Main = styled.main`
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
