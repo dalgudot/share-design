@@ -83,8 +83,8 @@ export const uiUxDesign1 = () => {
         e: '\u00A0\u00A0\u00A0A toggle button is a button used to select one of two states. There are two types of SHARE DESIGN: English and Korean. When the user presses the language switch toggle button, the status changes to English when the language is Korean, and changes to Korean when the language is English.',
       },
       {
-        k: '/images/ui-ux-design/001/img__01__ko.png',
-        e: '/images/ui-ux-design/001/img__01__en.png',
+        k: '/images/article/ui-ux-design/001/img__01__ko.png',
+        e: '/images/article/ui-ux-design/001/img__01__en.png',
       },
       {
         k: '디자인 공유하기에서는 모든 UI 화면 상단 헤더(Header) 컴포넌트의 오른쪽에 언어를 전환할 수 있는 토글 버튼을 제공하고 있다(2021년 3월 기준). 사용자가 접속한 환경이 모바일인지, 태블릿인지, 데스크톱인지에 따라 헤더 컴포넌트의 모습이 바뀐다.',
@@ -111,8 +111,8 @@ export const uiUxDesign1 = () => {
         e: "\u00A0\u00A0\u00A0What if the text of the toggle button of SHARE DESIGN in Korean is not 'View in English', but 'Korean', which is the current state? The user has no way of knowing how the UI will react when that button is pressed. It is only after user press the button that user know that this button is a button to switch languages, and the text on the button indicates the current language. Such a button not only causes unnecessary trouble to the user, but also makes a bad UX because the user can only know what role the button does by operating it.",
       },
       {
-        k: '/images/ui-ux-design/001/img__02__ko.png',
-        e: '/images/ui-ux-design/001/img__02__en.png',
+        k: '/images/article/ui-ux-design/001/img__02__ko.png',
+        e: '/images/article/ui-ux-design/001/img__02__en.png',
       },
       {
         k: '사용자의 행동에 반응하는 UI 요소의 문구는 사용자의 행동에 UI가 어떤 반응을 보일지 알려주는 문구를 쓰는 게 좋은 UX를 만드는 사용자 중심 글쓰기(UX Writing)라 생각한다.',
@@ -125,8 +125,8 @@ export const uiUxDesign1 = () => {
       },
 
       {
-        k: '/images/ui-ux-design/001/img__03__ko.png',
-        e: '/images/ui-ux-design/001/img__03__en.png',
+        k: '/images/article/ui-ux-design/001/img__03__ko.png',
+        e: '/images/article/ui-ux-design/001/img__03__en.png',
       },
       {
         k: '최초의 언어 전환 토글 버튼의 넓은 면적이 사용자의 시선을 끌어 헤더 아래쪽에 있는 콘텐츠로 시선이 가는 걸 방해한다고 판단했다.',
@@ -159,8 +159,8 @@ export const uiUxDesign1 = () => {
       },
 
       {
-        k: '/images/ui-ux-design/001/img__04__ko.png',
-        e: '/images/ui-ux-design/001/img__04__en.png',
+        k: '/images/article/ui-ux-design/001/img__04__ko.png',
+        e: '/images/article/ui-ux-design/001/img__04__en.png',
       },
       {
         k: '이 모션은 Framer motion API로 개발했다. gray2는 #E0E0EA, gray5는 #68686C, spring은 Framer motion API의 기본 bezier curve를 의미한다.',
@@ -172,8 +172,8 @@ export const uiUxDesign1 = () => {
       },
 
       {
-        k: '/images/ui-ux-design/001/img__05__ko.png',
-        e: '/images/ui-ux-design/001/img__05__en.png',
+        k: '/images/article/ui-ux-design/001/img__05__ko.png',
+        e: '/images/article/ui-ux-design/001/img__05__en.png',
       },
       {
         k: '가로 길이가 768px 이상인 기기에서 언어 전환 토글 버튼의 모션이 동작하면 두 상태 중 한 상태는 비정상적인 모습이 되는 문제가 발생했다.',
@@ -186,8 +186,8 @@ export const uiUxDesign1 = () => {
       },
 
       {
-        k: '/images/ui-ux-design/001/img__06__ko.png',
-        e: '/images/ui-ux-design/001/img__06__en.png',
+        k: '/images/article/ui-ux-design/001/img__06__ko.png',
+        e: '/images/article/ui-ux-design/001/img__06__en.png',
       },
       {
         k: "가로 길이가 768px 미만인 기기에서 'ko'와 'en'의 폰트 크기는 18px이고, 768px 이상인 기기에서는 'ko'와 'en'의 폰트 크기가 21px이라 768px 이상인 기기에서는 'ko', 'en'의 가로 길이가 길어진다. 따라서 ko와 en이 이동하는 위치에 오차가 생기게 되고, 오차만큼 'ko'와 'en'을 더 움직이면 의도한 대로 모션이 작동한다.",

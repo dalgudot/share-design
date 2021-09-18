@@ -125,7 +125,7 @@ export const uiUxDesign2 = () => {
 
     listCount: [
       {
-        src: '/images/ui-ux-design/002/1@3x.jpg',
+        src: '/images/article/ui-ux-design/002/1@3x.jpg',
         alt: {
           k: 'Unsplash의 davisuko의 사진',
           e: 'Photo by davisuko on Unsplash',
@@ -133,7 +133,7 @@ export const uiUxDesign2 = () => {
         photoSrc: { k: 'davisuko on Unsplash', e: 'davisuko on Unsplash' },
       },
       {
-        src: '/images/ui-ux-design/002/2@3x.jpg',
+        src: '/images/article/ui-ux-design/002/2@3x.jpg',
         alt: {
           k: ' Unsplash의 Oleg Laptev의 사진',
           e: 'Photo by Oleg Laptev on Unsplash',
@@ -144,7 +144,7 @@ export const uiUxDesign2 = () => {
         },
       },
       {
-        src: '/images/ui-ux-design/002/3@3x.jpg',
+        src: '/images/article/ui-ux-design/002/3@3x.jpg',
         alt: {
           k: 'Unsplash의 Mae Mu의 사진',
           e: 'Photo by Mae Mu on Unsplash',
@@ -159,8 +159,8 @@ export const uiUxDesign2 = () => {
         e: "In digital products like apps or webs, motion is a great way to grab a user's attention or react to a user's actions. It can be seen as one of the methodologies of 'Interaction Design', which designs UI(User Interface) to communicate with users.",
       },
       {
-        k: '/images/ui-ux-design/002/img__thumbnail.jpg',
-        e: '/images/ui-ux-design/002/img__thumbnail.jpg',
+        k: '/images/article/ui-ux-design/002/img__thumbnail.jpg',
+        e: '/images/article/ui-ux-design/002/img__thumbnail.jpg',
       },
       // No Caption
       {
