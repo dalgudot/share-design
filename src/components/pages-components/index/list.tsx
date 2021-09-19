@@ -14,7 +14,6 @@ const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      {/* List Contents Area */}
       <Link href={url}>
         <a>
           <CategoryDateArea>
@@ -32,7 +31,6 @@ const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
           <PSmall text={hashTags} color="gray4" marginTop="24px" />
         </a>
       </Link>
-      {/* List Contents Area  */}
     </MotionLi>
   );
 };

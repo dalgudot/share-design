@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { tArticleCommon } from '../../../data/article/common/t-article-common';
+import { listVariants } from '../../../foundation/framer-motion/variants';
 import H2Title from '../../../foundation/typography/h2-title';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -13,7 +15,14 @@ const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
       />
 
       {referencesData.map((reference: any, idx: number) => (
-        <A key={idx} href={reference.url} target="_blank">
+        <MotionA
+          variants={listVariants}
+          whileHover="whileHover"
+          whileTap="whileTap"
+          key={idx}
+          href={reference.url}
+          target="_blank"
+        >
           <ReferenceContents>
             <PLarge text={reference.title} color="gray1" weight={700} />
             <PLarge text={reference.content} color="gray3" marginTop="8px" />
@@ -23,7 +32,7 @@ const ArticleReference = ({ referencesData }: { referencesData: object[] }) => {
             color="gray1"
             weight={700}
           />
-        </A>
+        </MotionA>
       ))}
     </Container>
   );
@@ -41,7 +50,7 @@ const Container = styled.div`
   }
 `;
 
-const A = styled.a`
+const MotionA = styled(motion.a)`
   padding: 36px 0;
   border-bottom: solid 1px ${({ theme }) => theme.gray6};
 
