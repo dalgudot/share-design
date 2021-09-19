@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import PMedium from '../../../foundation/typography/p-medium';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useIsiOS } from '../../../lib/hooks/useIsiOS';
+import { buttonVariants } from '../../../foundation/framer-motion/variants';
 
 const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   const mode = useSelector((state: any) => state.themeMode);
@@ -47,9 +48,13 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
   const activeMobileAnimation: boolean = width <= numberMediaBreakPoint;
 
   return (
-    <ButtonContainer
+    <MotionButtonContainer
       onClick={setMode}
-      whileTap={activeMobileAnimation ? { scale: 1.7, rotateY: 720 } : {}}
+      variants={buttonVariants}
+      whileHover="whileHover"
+      whileTap={
+        activeMobileAnimation ? { scale: 1.7, rotateY: 540 } : 'whileTap'
+      }
     >
       <IconThemeChange24 />
       <motion.div //
@@ -77,13 +82,13 @@ const ThemeChangeToggle = ({ setTheme, darkTheme, lightTheme }: any) => {
           weight={700}
         />
       </motion.div>
-    </ButtonContainer>
+    </MotionButtonContainer>
   );
 };
 
 export default ThemeChangeToggle;
 
-const ButtonContainer = styled(motion.button)`
+const MotionButtonContainer = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;

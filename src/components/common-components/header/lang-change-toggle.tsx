@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import useScrollPosition from '../../../lib/hooks/useScrollPosition';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';
+import { buttonVariants } from '../../../foundation/framer-motion/variants';
 
 const LangChangeToggle = ({
   setFinalToggle,
@@ -44,9 +45,13 @@ const LangChangeToggle = ({
   }, [locale]);
 
   return (
-    <ButtonContainer
+    <MotionButtonContainer
       onClick={setLanguageChange}
-      whileTap={activeMobileAnimation ? { scale: 1.7, rotateY: 720 } : {}}
+      variants={buttonVariants}
+      whileHover="whileHover"
+      whileTap={
+        activeMobileAnimation ? { scale: 1.7, rotateY: 540 } : 'whileTap'
+      }
     >
       <IconLanguage24 />
       <motion.div //
@@ -74,13 +79,13 @@ const LangChangeToggle = ({
           weight={700}
         />
       </motion.div>
-    </ButtonContainer>
+    </MotionButtonContainer>
   );
 };
 
 export default LangChangeToggle;
 
-const ButtonContainer = styled(motion.button)`
+const MotionButtonContainer = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
