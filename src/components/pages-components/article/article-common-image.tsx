@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PMedium from '../../../foundation/typography/p-medium';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
-type tStaticType =
+type tType =
   | {
       k: string;
       e: string;
@@ -12,24 +12,28 @@ type tStaticType =
 const ArticleCommonImage = ({
   src,
   caption,
+  alt,
   marginTop,
 }: {
-  src: tStaticType;
-  caption: tStaticType;
+  src: tType;
+  caption?: tType;
+  alt: tType;
   marginTop: string;
 }) => {
   return (
     <Figure marginTop={marginTop}>
       <img //
         src={useSetLanguage(src)}
-        alt={useSetLanguage(caption)}
+        alt={useSetLanguage(alt)}
       />
       <figcaption>
-        <PMedium //
-          text={caption}
-          color="gray5"
-          marginTop="4px"
-        />
+        {caption && (
+          <PMedium //
+            text={caption}
+            color="gray5"
+            marginTop="4px"
+          />
+        )}
       </figcaption>
     </Figure>
   );

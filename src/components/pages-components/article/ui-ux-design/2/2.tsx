@@ -3,10 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
-import H3Title from '../../../../../foundation/typography/h2-title';
+import H2Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PMedium from '../../../../../foundation/typography/p-medium';
-import PSmall from '../../../../../foundation/typography/p-small';
 import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
 import { useWindowHeight } from '../../../../../lib/hooks/useWindowHeight';
 import { mediaBreakPoint } from '../../../../../styles/common';
@@ -39,6 +38,7 @@ const UIUXDesignContents2 = ({
       <ArticleCommonImage
         src={contentsArray[1]}
         caption={contentsArray[2]}
+        alt={contentsArray[2]}
         marginTop="36px"
       />
 
@@ -116,7 +116,7 @@ const UIUXDesignContents2 = ({
         marginTop="36px"
       />
 
-      <H3Title //
+      <H2Title //
         text={contentsArray[12]}
         color="gray2"
         marginTop="120px"

@@ -14,7 +14,7 @@ const RecordIndex = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  const data = returnArticleData();
+  const datas = returnArticleData();
 
   // temporary component for iOS env(safe-area-inset-bottom)
   const height = useWindowHeight();
@@ -23,15 +23,15 @@ const RecordIndex = () => {
     <>
       <Main>
         <ul>
-          {data.map((_, idx) => (
+          {datas.map((data) => (
             <List
-              key={data[idx].url}
-              url={data[idx].url}
-              category={data[idx].category}
-              date={data[idx].date}
-              dateTime={data[idx].dateTime}
-              title={data[idx].title}
-              hashTags={data[idx].hashTags}
+              key={data.url}
+              url={data.url}
+              category={data.category}
+              date={data.date}
+              dateTime={data.dateTime}
+              title={data.title}
+              hashTags={data.hashTags}
             />
           ))}
         </ul>

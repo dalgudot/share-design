@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/1';
-import H3Title from '../../../../../foundation/typography/h2-title';
+import H2Title from '../../../../../foundation/typography/h2-title';
 import PLarge from '../../../../../foundation/typography/p-large';
 import PMedium from '../../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../../styles/common';
@@ -66,10 +66,11 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[2]}
         caption={contentsArray[3]}
+        alt={contentsArray[3]}
         marginTop="36px"
       />
 
-      <H3Title //
+      <H2Title //
         text={contentsArray[4]}
         color="gray2"
         marginTop="120px"
@@ -111,6 +112,7 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[9]}
         caption={contentsArray[10]}
+        alt={contentsArray[10]}
         marginTop="36px"
       />
 
@@ -123,10 +125,11 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[12]}
         caption={contentsArray[13]}
+        alt={contentsArray[13]}
         marginTop="48px"
       />
 
-      <H3Title //
+      <H2Title //
         text={contentsArray[14]}
         color="gray2"
         marginTop="120px"
@@ -158,7 +161,7 @@ const UIUXDesignContents1 = ({
         marginTop="96px"
       />
 
-      <H3Title //
+      <H2Title //
         text={contentsArray[18]}
         color="gray2"
         marginTop="120px"
@@ -173,6 +176,7 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[20]}
         caption={contentsArray[21]}
+        alt={contentsArray[21]}
         marginTop="36px"
       />
 
@@ -185,6 +189,7 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[23]}
         caption={contentsArray[24]}
+        alt={contentsArray[24]}
         marginTop="36px"
       />
 
@@ -197,10 +202,11 @@ const UIUXDesignContents1 = ({
       <ArticleCommonImage //
         src={contentsArray[26]}
         caption={contentsArray[27]}
+        alt={contentsArray[27]}
         marginTop="36px"
       />
 
-      <H3Title //
+      <H2Title //
         text={contentsArray[28]}
         color="gray2"
         marginTop="96px"
