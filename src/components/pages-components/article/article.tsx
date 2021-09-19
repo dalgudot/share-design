@@ -14,6 +14,7 @@ import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
 import { scrollTop } from '../../../lib/functions/scroll-top';
 import UIUXDesignContents2 from './ui-ux-design/2/2';
+import ProductContents1 from './product-design/1/product-contents-1';
 
 const Article = ({
   categoryTitle,
@@ -75,6 +76,7 @@ const Article = ({
       behavior: 'smooth',
     });
   };
+
   const [responseLoading, setResponseLoading] = useState(true);
 
   useEffect(() => {
@@ -91,6 +93,8 @@ const Article = ({
         return <UIUXDesignContents1 contentsArray={contentsArray} />;
       case '/article/ui-ux-design/2':
         return <UIUXDesignContents2 contentsArray={contentsArray} />;
+      case '/article/product-design/1':
+        return <ProductContents1 contentsArray={contentsArray} />;
     }
   };
   const contents = contentsSwitch();

@@ -1,27 +1,17 @@
 import Article from '../../../../components/pages-components/article/article';
 import { uiUxDesign2 } from '../../../../data/article/ui-ux-design/2';
-import { useArvAmplitude } from '../../../../lib/hooks/Amplitude/useArvAmplitude';
 
 const UIUXDesign2 = ({ showToast }: { showToast: Function }) => {
-  // useArvAmplitude('arv_ui_ux_design_2');
-
-  const categoryTitle = uiUxDesign2().category;
-  const date = uiUxDesign2().date;
-  const dateTime = uiUxDesign2().dateTime;
-  const articleTitle = uiUxDesign2().title;
-  const contentsArray = uiUxDesign2().contents;
-  const referencesData: object[] = uiUxDesign2().references;
-
   return (
     <>
       <Article //
-        categoryTitle={categoryTitle}
-        date={date}
-        dateTime={dateTime}
-        articleTitle={articleTitle}
-        contentsArray={contentsArray}
+        categoryTitle={uiUxDesign2().category}
+        date={uiUxDesign2().date}
+        dateTime={uiUxDesign2().dateTime}
+        articleTitle={uiUxDesign2().title}
+        contentsArray={uiUxDesign2().contents}
+        referencesData={uiUxDesign2().references}
         showToast={showToast}
-        referencesData={referencesData}
       />
     </>
   );
