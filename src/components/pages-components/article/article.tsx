@@ -122,9 +122,7 @@ const Article = ({
             />
           )}
 
-          {/* introduction에는 iOS 앱 다운로드 넣지 않음 */}
-          {router.pathname !== '/introduction' && <ArticleNotice />}
-          {/* <ArticleNotice /> */}
+          <ArticleNotice />
 
           {referencesData && (
             <ArticleReference referencesData={referencesData} />

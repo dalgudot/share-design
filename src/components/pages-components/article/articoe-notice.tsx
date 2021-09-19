@@ -6,6 +6,8 @@ import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
+import { motion } from 'framer-motion';
+import { listVariants } from '../../../foundation/framer-motion/variants';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // webkit 에러 해결
@@ -23,20 +25,23 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
       ? 'https://apps.apple.com/kr/app/%EB%94%94%EC%9E%90%EC%9D%B8-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/id1557230065'
       : 'https://apps.apple.com/kr/app/share-design/id1557230065?l=en';
 
-  const { isAndroid, isIos } = ua;
+  const { isAndroid } = ua;
 
   return (
     <>
       {/* 안드로이드 폰인 경우 앱 다운로드 빼기, 추후 iOS 앱인 경우도 빼기  */}
-      {/* 인스타그램은 하단에 백업 */}
       {isAndroid === false && (
-        <Container>
+        <MotionContainer
+          variants={listVariants}
+          whileHover="whileHover"
+          whileTap="whileTap"
+        >
           <A href={appStoreURL} target="_blank">
             <Title>
               <Left>
                 <IconAppleLogo24 />
                 <PLarge
-                  text={tArticleCommon().articleNotice.iOSAPPDownload}
+                  text={tArticleCommon().iOSAPPDownload}
                   color="gray1"
                   weight={700}
                 />
@@ -47,17 +52,8 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
                 weight={700}
               />
             </Title>
-            {/* <PSmall
-              text={tArticleCommon().articleNotice.iOSAPPDownloadContents[0]}
-              color="gray3"
-              marginTop="16px"
-            />
-            <PSmall
-              text={tArticleCommon().articleNotice.iOSAPPDownloadContents[1]}
-              color="gray3"
-            /> */}
           </A>
-        </Container>
+        </MotionContainer>
       )}
     </>
   );
@@ -65,15 +61,7 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
 
 export default withUserAgent(ArticleNotice);
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const ua = useUserAgent(context.req.headers['user-agent']);
-
-  return {
-    props: { ua },
-  };
-};
-
-const Container = styled.div`
+const MotionContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,3 +96,11 @@ const Left = styled.div`
     margin-left: 8px;
   }
 `;
+
+export const getServerSideProps: GetServerSideProps = async (context: any) => {
+  const ua = useUserAgent(context.req.headers['user-agent']);
+
+  return {
+    props: { ua },
+  };
+};

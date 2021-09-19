@@ -1,19 +1,21 @@
-import Router from 'next/router';
 import styled from 'styled-components';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { t } from '../../../data/index/t-index';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
 const Profile = ({ marginTop }: { marginTop: string }) => {
-  const goToContact = () => {
-    Router.push('/contact');
-  };
-
   return (
-    // 버튼 inline-block으로 만들기 위해 span wrap 필요
-    <span>
-      <Author onClick={goToContact} marginTop={marginTop}>
+    <Link href="/contact">
+      <MotionA
+        variants={textButtonVariants}
+        whileHover="whileHover"
+        whileTap="whileTap"
+        marginTop={marginTop}
+      >
         <img
           src="/images/profile-photo@3x.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
@@ -21,21 +23,20 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
         <PMedium text={t.myName} color="gray1" />
         <Dot />
         <PMedium text={t.myJob} color="gray1" />
-      </Author>
-    </span>
+      </MotionA>
+    </Link>
   );
 };
 
 export default Profile;
 
-const Author = styled.a<{ marginTop: string }>`
-  display: flex;
+const MotionA = styled(motion.a)<{ marginTop: string }>`
+  display: inline-flex;
   align-items: center;
   margin-top: ${({ marginTop }) => marginTop};
   margin-left: 1px;
 
   img {
-    /* border: solid 1px ${({ theme }) => theme.gray7}; */
     border-radius: 50%;
 
     // 바뀌는 속성
@@ -58,7 +59,7 @@ const Author = styled.a<{ marginTop: string }>`
 const Dot = styled.span`
   height: 2px;
   width: 2px;
-  background-color: ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.gray2};
   border-radius: 50%;
   margin-top: 3px;
   margin-bottom: 2px; // 시각 보정

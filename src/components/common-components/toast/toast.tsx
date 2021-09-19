@@ -13,7 +13,7 @@ const MyToast = ({
 }) => {
   return (
     <>
-      <ToastWrapMotion
+      <MotionToastContainer
         variants={toastVariants}
         initial="hide"
         animate={toastOn === true ? 'show' : 'hide'}
@@ -21,14 +21,14 @@ const MyToast = ({
         <Div>
           <PLarge text={toastMessage} color="gray1" />
         </Div>
-      </ToastWrapMotion>
+      </MotionToastContainer>
     </>
   );
 };
 
 export default React.memo(MyToast);
 
-const ToastWrapMotion = styled(motion.div)`
+const MotionToastContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
   position: fixed; // toast 위치의 핵심
   top: 28px;
