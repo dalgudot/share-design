@@ -6,6 +6,7 @@ const H1Title = ({
   color,
   weight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -16,6 +17,7 @@ const H1Title = ({
   color: string;
   weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -28,14 +30,15 @@ const H1Title = ({
         mobile: '32px',
       }}
       lineHeight={{
-        desktop: '51px', // Visual Correction
-        mobile: '42px', // Visual Correction
+        desktop: '53px', // Visual Correction
+        mobile: '44px', // Visual Correction
       }}
       letterSpacing={{
         desktop: '-0.3px', // Visual Correction
         mobile: '-0.5px', // Visual Correction
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };

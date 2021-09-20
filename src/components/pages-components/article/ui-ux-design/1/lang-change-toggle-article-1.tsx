@@ -78,7 +78,7 @@ const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 0 12px 12px; // touch area
+  padding: 4px;
   div {
     margin-bottom: 2px;
     margin-left: 6px;

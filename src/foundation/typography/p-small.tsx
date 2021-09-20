@@ -6,6 +6,7 @@ const PSmall = ({
   color,
   weight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -16,6 +17,7 @@ const PSmall = ({
   color: string;
   weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -36,6 +38,7 @@ const PSmall = ({
         mobile: '0px',
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };

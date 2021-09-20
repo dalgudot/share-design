@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import IconStar48Fill from '../../../../../foundation/svg/icon_star_48_fill';
-import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/2';
+import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/ui-ux-design-2';
 import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import H3Title from '../../../../../foundation/typography/h3-title';
@@ -120,6 +120,8 @@ const MotionTextfield = styled(motion.div)`
 `;
 
 const MultiLineTextField = styled(TextareaAutosize)`
+  -webkit-appearance: none; // remove iOS upper inner shadow
+
   overflow: hidden;
   width: 100%;
   background-color: transparent;
@@ -153,7 +155,7 @@ const CountCharacters = styled.div`
   align-items: end;
   text-align: right;
   position: relative;
-  margin-top: -1px;
+  margin-top: 28px;
 
   p:nth-child(1) {
     position: absolute;

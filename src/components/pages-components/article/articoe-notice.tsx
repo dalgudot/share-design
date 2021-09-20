@@ -42,13 +42,13 @@ const ArticleNotice = ({ ua }: { ua?: any }) => {
                 <IconAppleLogo24 />
                 <PLarge
                   text={tArticleCommon().iOSAPPDownload}
-                  color="gray1"
+                  color="gray2"
                   weight={700}
                 />
               </Left>
               <PLarge
                 text={tArticleCommon().chevronRight}
-                color="gray1"
+                color="gray2"
                 weight={700}
               />
             </Title>
