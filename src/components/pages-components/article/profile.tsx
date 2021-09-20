@@ -20,9 +20,9 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
           src="/images/profile-photo@3x.jpg"
           alt={useSetLanguage(t.contact.profileAlt)}
         />
-        <PMedium text={t.myName} color="gray1" />
+        <PMedium text={t.myName} color="gray2" />
         <Dot />
-        <PMedium text={t.myJob} color="gray1" />
+        <PMedium text={t.myJob} color="gray2" />
       </MotionA>
     </Link>
   );
@@ -38,6 +38,8 @@ const MotionA = styled(motion.a)<{ marginTop: string }>`
 
   img {
     border-radius: 50%;
+
+    border: solid 1px ${({ theme }) => theme.gray2};
 
     // 바뀌는 속성
     width: 32px;

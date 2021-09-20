@@ -19,7 +19,7 @@ const ProductContents1 = ({ contentsArray }: contentsArrayInterface) => {
             k: string;
             e: string;
           };
-      alt:
+      alt?:
         | string
         | {
             k: string;
@@ -79,7 +79,7 @@ const ProductContents1 = ({ contentsArray }: contentsArrayInterface) => {
               k: string;
               e: string;
             };
-        alt:
+        alt?:
           | string
           | {
               k: string;

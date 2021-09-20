@@ -1,5 +1,5 @@
 import Article from '../../../../components/pages-components/article/article';
-import { productDesign1 } from '../../../../data/article/product-design/1';
+import { productDesign1 } from '../../../../data/article/product-design/product-design-1';
 
 const ProductDesign1 = ({ showToast }: { showToast: Function }) => {
   return (

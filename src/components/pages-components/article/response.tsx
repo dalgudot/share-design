@@ -59,7 +59,7 @@ const Response = ({
     return (
       <>
         <Container>
-          <H2Title text={tArticleCommon().responses} color="gray1" />
+          <H2Title text={tArticleCommon().responses} color="gray2" />
           {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
@@ -82,7 +82,7 @@ const Response = ({
                       k: response.newResponse,
                       e: response.newResponse,
                     }}
-                    color="gray2"
+                    color="gray3"
                     marginTop="8px"
                   />
                 </ResponseDiv>
@@ -108,7 +108,7 @@ const Container = styled.div`
   margin-top: 144px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px;
+    margin-top: 120px;
   }
 `;
 

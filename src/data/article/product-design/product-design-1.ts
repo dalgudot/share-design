@@ -7,9 +7,9 @@ export const productDesign1 = () => {
       e: 'PRODUCT DESIGN',
     },
 
-    date: '2021.09.19',
+    date: '2021.09.20',
 
-    dateTime: '2021-09-19',
+    dateTime: '2021-09-20',
 
     title: {
       k: '좋은 UX를 만드는 UI 버튼의 인터랙션 디자인은?',
@@ -44,24 +44,30 @@ export const productDesign1 = () => {
           k: '/images/product/share-palette/share_palette_thumbnail_ko.png',
           e: '/images/product/share-palette/share_palette_thumbnail_en.png',
         },
-        caption: '',
+        // caption: '',
         alt: 'Photo by Rodion Kutsaev on Unsplash',
       },
       {
         key: 'PLarge',
         content: {
-          k: '생각해둔 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 20일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 3가지 크기의 버튼으로 사용자와 소통한다는 뜻이다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
+          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 20일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 3가지 크기의 버튼으로 사용자와 소통한다는 뜻이다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
           e: '',
         },
       },
       {
         key: 'img',
         content: {
-          k: '/images/product/share-palette/share_palette_thumbnail_ko.png',
-          e: '/images/product/share-palette/share_palette_thumbnail_en.png',
+          k: '/images/article/product/001/product_design_01_ko.png',
+          e: '/images/article/product/001/product_design_01_en.png',
         },
-        caption: '',
-        alt: 'Photo by Rodion Kutsaev on Unsplash',
+        caption: {
+          k: "마우스 포인터를 올려두거나 손가락으로 터치하는 것과 같은 사용자의 물리적 행동에 반응하는 UI 요소인 버튼만 꼭지점을 둥글게 디자인하고, 다른 요소들은 꼭지점을 모두 직각으로 디자인해 시각적으로 구분했다. 이미지를 업로드하면 '이미지 업로드' 버튼명은 '새 이미지 업로드'로 바뀐다.",
+          e: '',
+        },
+        alt: {
+          k: "마우스 포인터를 올려두거나 손가락으로 터치하는 것과 같은 사용자의 물리적 행동에 반응하는 UI 요소인 버튼만 꼭지점을 둥글게 디자인하고, 다른 요소들은 꼭지점을 모두 직각으로 디자인해 시각적으로 구분했다. 이미지를 업로드하면 '이미지 업로드' 버튼명은 '새 이미지 업로드'로 바뀐다.",
+          e: '',
+        },
       },
       {
         key: 'PLarge',
@@ -78,13 +84,9 @@ export const productDesign1 = () => {
         },
       },
       {
-        key: 'img',
-        content: {
-          k: '/images/product/share-palette/share_palette_thumbnail_ko.png',
-          e: '/images/product/share-palette/share_palette_thumbnail_en.png',
-        },
+        key: 'ExampleComponent',
+        component_key: '1',
         caption: '',
-        alt: 'Photo by Rodion Kutsaev on Unsplash',
       },
       {
         key: 'H2Title',
@@ -109,10 +111,12 @@ export const productDesign1 = () => {
       },
       {
         key: 'img',
-        content: '/images/article/product/1/glenn-carstens-peters-unsplash.jpg',
+        content:
+          '/images/article/product/001/glenn-carstens-peters-unsplash.jpg',
         caption: '',
-        alt: 'Photo by Rodion Kutsaev on Unsplash',
+        alt: '',
       },
+
       {
         key: 'PLarge',
         content: {
@@ -135,8 +139,8 @@ export const productDesign1 = () => {
         },
       },
       {
-        key: 'Component',
-        content: '',
+        key: 'ExampleComponent',
+        component_key: '2',
         caption: '',
       },
       {

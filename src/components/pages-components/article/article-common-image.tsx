@@ -1,13 +1,8 @@
 import styled from 'styled-components';
+import { tType } from '../../../../type';
 import PMedium from '../../../foundation/typography/p-medium';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
-
-type tType =
-  | {
-      k: string;
-      e: string;
-    }
-  | string;
+import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleCommonImage = ({
   src,
@@ -17,21 +12,21 @@ const ArticleCommonImage = ({
 }: {
   src: tType;
   caption?: tType;
-  alt: tType;
+  alt?: tType;
   marginTop: string;
 }) => {
   return (
     <Figure marginTop={marginTop}>
       <img //
         src={useSetLanguage(src)}
-        alt={useSetLanguage(alt)}
+        alt={alt && useSetLanguage(alt)}
       />
       <figcaption>
         {caption && (
           <PMedium //
             text={caption}
-            color="gray5"
-            marginTop="4px"
+            color="gray4"
+            marginTop="8px"
           />
         )}
       </figcaption>
@@ -42,9 +37,23 @@ const ArticleCommonImage = ({
 export default ArticleCommonImage;
 
 const Figure = styled.figure<{ marginTop: string }>`
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: 48px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-bottom: 36px;
+  }
+
+  p {
+    margin-top: 8px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin-top: 2px;
+    }
+  }
+
   img {
     width: 100%;
     height: auto;
-    margin-top: ${({ marginTop }) => marginTop};
   }
 `;

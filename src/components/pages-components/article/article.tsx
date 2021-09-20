@@ -7,14 +7,16 @@ import ArticleTitleArea from './article-title-area';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import IntroductionContents from '../introduction/introduction-contents';
-import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
 import ArticleNotice from './articoe-notice';
 import ArticleReference from './article-reference';
 import { scrollTop } from '../../../lib/functions/scroll-top';
-import UIUXDesignContents2 from './ui-ux-design/2/2';
-import ProductContents1 from './product-design/1/product-contents-1';
+import { distributeContentsTypes } from '../../../../type';
+import PLarge from '../../../foundation/typography/p-large';
+import ArticleCommonImage from './article-common-image';
+import H2Title from '../../../foundation/typography/h2-title';
+import ExampleComponentUiUxDesign1 from './ui-ux-design/1/example-component-ui-ux-design-1';
+import ExampleComponentUiUxDesign2 from './ui-ux-design/2/example-component-ui-ux-design-2';
 
 const Article = ({
   categoryTitle,
@@ -29,10 +31,7 @@ const Article = ({
   date?: string;
   dateTime?: string;
   articleTitle: { k: string; e: string };
-  contentsArray: {
-    k: string;
-    e: string;
-  }[];
+  contentsArray: any[];
   showToast?: Function;
   referencesData?: object[];
 }) => {
@@ -78,26 +77,73 @@ const Article = ({
   };
 
   const [responseLoading, setResponseLoading] = useState(true);
-
   useEffect(() => {
     router.query.CompleteResponse === 'true' ? goToResponse() : goToTop();
-
     return () => setResponse([] || null);
   }, []);
 
-  const contentsSwitch = () => {
-    switch (pathname) {
-      case '/introduction':
-        return <IntroductionContents contentsArray={contentsArray} />;
-      case '/article/ui-ux-design/1':
-        return <UIUXDesignContents1 contentsArray={contentsArray} />;
-      case '/article/ui-ux-design/2':
-        return <UIUXDesignContents2 contentsArray={contentsArray} />;
-      case '/article/product-design/1':
-        return <ProductContents1 contentsArray={contentsArray} />;
+  const distributeContents = (
+    content: distributeContentsTypes,
+    idx: number
+  ) => {
+    if (content.key === 'PLarge') {
+      return (
+        <PLarge
+          key={`${content.key}${idx}`}
+          text={content.content}
+          color="gray3"
+          marginTop="36px"
+        />
+      );
+    } else if (content.key === 'img') {
+      return (
+        <ArticleCommonImage
+          key={`${content.key}${idx}`}
+          src={content.content}
+          caption={content.caption}
+          alt={content.alt}
+          marginTop="36px"
+        />
+      );
+    } else if (content.key === 'H2Title') {
+      return (
+        <H2Title
+          key={`${content.key}${idx}`}
+          text={content.content}
+          color="gray2"
+          className="h2__title__margin__bottom"
+        />
+      );
+    } else if (content.key === 'ExampleComponent') {
+      switch (pathname) {
+        case '/article/ui-ux-design/1':
+          return (
+            <ExampleComponentUiUxDesign1
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              caption={content.caption}
+            />
+          );
+        case '/article/ui-ux-design/2':
+          return (
+            <ExampleComponentUiUxDesign2
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              caption={content.caption}
+            />
+          );
+        case '/article/product-design/1':
+          return;
+      }
+    } else {
+      return;
     }
   };
-  const contents = contentsSwitch();
+
+  const contents = contentsArray.map(
+    (content: distributeContentsTypes, idx: number) =>
+      distributeContents(content, idx)
+  );
 
   return (
     <>
@@ -129,9 +175,11 @@ const Article = ({
           <ArticleNotice />
 
           {referencesData && (
-            <ArticleReference referencesData={referencesData} />
+            <>
+              <div ref={responseRef} />
+              <ArticleReference referencesData={referencesData} />
+            </>
           )}
-          <div ref={responseRef} />
         </ArticleContainer>
       </Main>
     </>
@@ -144,6 +192,15 @@ const Main = styled.main`
   background-color: ${({ theme }) => theme.gray7};
   display: flex;
   justify-content: center;
+
+  .h2__title__margin__bottom {
+    margin-top: 96px;
+    margin-bottom: -12px; // PLarge의 상단 36px 상쇄
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin-top: 72px;
+    }
+  }
 
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
   padding-bottom: ${({ theme }) => theme.margin.DesktopBottom};

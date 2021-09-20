@@ -15,28 +15,6 @@ const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
 
   const [image, setImage] = useState<string[]>([]);
 
-  // useEffect(() => {
-  //   const uploadedImageSharePalette = sessionStorage.getItem(
-  //     'UploadedImageSharePalette'
-  //   );
-
-  //   uploadedImageSharePalette &&
-  //     uploadedImageSharePalette !== 'undefined' &&
-  //     setImage([uploadedImageSharePalette]);
-  // }, []);
-
-  // Remove 'UploadedImageSharePalette' in sessionStorage because an error occurs when reloading
-  // This is not working in Safari
-  // useEffect(() => {
-  //   const deleteDateSessionStorage = () => {
-  //     sessionStorage.removeItem('UploadedImageSharePalette');
-  //   };
-  //   window.addEventListener('beforeunload', deleteDateSessionStorage);
-
-  //   return () =>
-  //     window.removeEventListener('beforeunload', deleteDateSessionStorage);
-  // }, []);
-
   // Solve iPad Safe Area
   const { is_iOS, is_iPadOS } = useIsiOS();
   const safeArea = () => {

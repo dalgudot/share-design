@@ -6,6 +6,7 @@ const PMedium = ({
   color,
   weight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -16,6 +17,7 @@ const PMedium = ({
   color: string;
   weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -28,7 +30,7 @@ const PMedium = ({
         mobile: '14px',
       }}
       lineHeight={{
-        desktop: '26px',
+        desktop: '27px',
         mobile: '22px',
       }}
       letterSpacing={{
@@ -36,6 +38,7 @@ const PMedium = ({
         mobile: '0px',
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };
