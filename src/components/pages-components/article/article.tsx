@@ -17,6 +17,7 @@ import ArticleCommonImage from './article-common-image';
 import H2Title from '../../../foundation/typography/h2-title';
 import ExampleComponentUiUxDesign1 from './ui-ux-design/1/example-component-ui-ux-design-1';
 import ExampleComponentUiUxDesign2 from './ui-ux-design/2/example-component-ui-ux-design-2';
+import ExampleComponentProductDesign1 from './product-design/1/example-component-product-design-1';
 
 const Article = ({
   categoryTitle,
@@ -32,7 +33,7 @@ const Article = ({
   dateTime?: string;
   articleTitle: { k: string; e: string };
   contentsArray: any[];
-  showToast?: Function;
+  showToast: Function;
   referencesData?: object[];
 }) => {
   const width: number = useWindowWidth();
@@ -133,7 +134,14 @@ const Article = ({
             />
           );
         case '/article/product-design/1':
-          return;
+          return (
+            <ExampleComponentProductDesign1
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              caption={content.caption}
+              showToast={showToast}
+            />
+          );
       }
     } else {
       return;

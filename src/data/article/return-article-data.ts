@@ -4,14 +4,14 @@ import { uiUxDesign2 } from './ui-ux-design/ui-ux-design-2';
 
 export const returnArticleData = () => {
   return [
-    // {
-    //   url: productDesign1().url,
-    //   category: productDesign1().category,
-    //   date: productDesign1().date,
-    //   dateTime: productDesign1().dateTime,
-    //   title: productDesign1().title,
-    //   hashTags: productDesign1().hashTags,
-    // },
+    {
+      url: productDesign1().url,
+      category: productDesign1().category,
+      date: productDesign1().date,
+      dateTime: productDesign1().dateTime,
+      title: productDesign1().title,
+      hashTags: productDesign1().hashTags,
+    },
     {
       url: uiUxDesign2().url,
       category: uiUxDesign2().category,

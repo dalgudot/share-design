@@ -72,10 +72,37 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: "마우스 포인터로 사용자와 인터랙션하는 데스크톱 UI에서 버튼의 인터랙션은 총 4가지 상태로 구분할 수 있다. 첫 번째는 사용자의 눈동자 움직임(시각)과 인터랙션하는 '기본 상태'다. 사용자는 버튼과 다른 UI 요소를 시각적으로 구분해 버튼을 발견한다. 두 번째는 마우스 포인터를 버튼 위에 올려둔 '호버 상태(Hover)', 세 번째는 버튼을 '누른 상태(Active 또는 Pressed)', 네 번째는 디자이너가 정한 어떤 조건을 충족하지 않아 사용자가 버튼을 눌러도 반응하지 않는 '사용 불가 상태(Disabled)'다.",
+          k: "마우스 포인터로 사용자와 인터랙션하는 데스크톱 UI에서 버튼의 인터랙션은 총 4가지 상태로 구분할 수 있다. 첫 번째는 사용자의 눈동자 움직임(시각)과 인터랙션하는 '기본 상태'다. 사용자는 버튼과 다른 UI 요소를 시각적으로 구분해 버튼을 발견한다. 두 번째는 마우스 포인터를 버튼 위에 올려둔 '호버 상태(Hover)', 세 번째는 버튼을 '누른 상태(Pressed 또는 Active)', 네 번째는 디자이너가 정한 어떤 조건을 충족하지 않아 사용자가 버튼을 눌러도 반응하지 않는 '사용 불가 상태(Disabled)'다.",
           e: '',
         },
       },
+
+      {
+        key: 'ExampleComponent',
+        component_key: '1',
+        caption: { k: `기본 상태`, e: 'Default State' },
+      },
+      {
+        key: 'ExampleComponent',
+        component_key: '2',
+        caption: { k: '호버 상태', e: 'Hover State' },
+      },
+      {
+        key: 'ExampleComponent',
+        component_key: '3',
+        caption: { k: '누른 상태', e: 'Pressed State' },
+      },
+      {
+        key: 'ExampleComponent',
+        component_key: '4',
+        caption: { k: '사용 불가 상태', e: 'Disabled State' },
+      },
+      {
+        key: 'ExampleComponent',
+        component_key: '5',
+        // caption: { k: '버튼 내용 캡션 설명', e: '~' },
+      },
+
       {
         key: 'PLarge',
         content: {
@@ -83,11 +110,7 @@ export const productDesign1 = () => {
           e: '',
         },
       },
-      {
-        key: 'ExampleComponent',
-        component_key: '1',
-        caption: '',
-      },
+
       {
         key: 'H2Title',
         content: {
