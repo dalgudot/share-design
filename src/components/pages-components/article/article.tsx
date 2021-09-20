@@ -33,7 +33,7 @@ const Article = ({
   dateTime?: string;
   articleTitle: { k: string; e: string };
   contentsArray: any[];
-  showToast: Function;
+  showToast?: Function;
   referencesData?: object[];
 }) => {
   const width: number = useWindowWidth();

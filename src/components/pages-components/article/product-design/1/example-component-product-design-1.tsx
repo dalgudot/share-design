@@ -13,9 +13,9 @@ const ExampleComponentProductDesign1 = ({
 }: {
   component_key: string;
   caption?: tType;
-  showToast: Function;
+  showToast?: any;
 }) => {
-  const ButtonText = { k: '버튼', e: 'Button' };
+  const buttonText = { k: '버튼', e: 'Button' };
   const height: number = useWindowHeight();
 
   const ArticleExampleComponentChildren = (
@@ -28,7 +28,7 @@ const ExampleComponentProductDesign1 = ({
           <>
             <ListLine height={height} />
             <ExampleBtn1>
-              <PMedium text={ButtonText} color="gray2" weight={700} />
+              <PMedium text={buttonText} color="gray2" weight={700} />
             </ExampleBtn1>
           </>
         );
@@ -36,7 +36,7 @@ const ExampleComponentProductDesign1 = ({
         return (
           <>
             <ExampleBtn2>
-              <PMedium text={ButtonText} color="gray2" weight={700} />
+              <PMedium text={buttonText} color="gray2" weight={700} />
             </ExampleBtn2>
           </>
         );
@@ -44,7 +44,7 @@ const ExampleComponentProductDesign1 = ({
         return (
           <>
             <ExampleBtn3>
-              <PMedium text={ButtonText} color="gray2" weight={700} />
+              <PMedium text={buttonText} color="gray2" weight={700} />
             </ExampleBtn3>
           </>
         );
@@ -52,7 +52,7 @@ const ExampleComponentProductDesign1 = ({
         return (
           <>
             <ExampleBtn4>
-              <PMedium text={ButtonText} color="gray2" weight={700} />
+              <PMedium text={buttonText} color="gray2" weight={700} />
             </ExampleBtn4>
           </>
         );
@@ -71,7 +71,7 @@ const ExampleComponentProductDesign1 = ({
               whileHover="whileHover"
               whileTap="whileTap"
             >
-              <PMedium text={ButtonText} color="gray2" weight={700} />
+              <PMedium text={buttonText} color="gray2" weight={700} />
             </ExampleBtn>
             <PMedium //
               text={{
