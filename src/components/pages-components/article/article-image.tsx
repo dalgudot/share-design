@@ -4,19 +4,17 @@ import PMedium from '../../../foundation/typography/p-medium';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
-const ArticleCommonImage = ({
+const ArticleImage = ({
   src,
   caption,
   alt,
-  marginTop,
 }: {
   src: tType;
   caption?: tType;
   alt?: tType;
-  marginTop: string;
 }) => {
   return (
-    <Figure marginTop={marginTop}>
+    <Figure>
       <img //
         src={useSetLanguage(src)}
         alt={alt && useSetLanguage(alt)}
@@ -34,21 +32,21 @@ const ArticleCommonImage = ({
   );
 };
 
-export default ArticleCommonImage;
+export default ArticleImage;
 
-const Figure = styled.figure<{ marginTop: string }>`
-  margin-top: ${({ marginTop }) => marginTop};
-  margin-bottom: 48px;
+const Figure = styled.figure`
+  margin-top: 24px;
+  margin-bottom: 72px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-bottom: 36px;
   }
 
   p {
-    margin-top: 8px;
+    margin-top: 8px; // caption
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin-top: 2px;
+      margin-top: 2px; // caption
     }
   }
 

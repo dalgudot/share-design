@@ -69,8 +69,6 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
 
-- [React-Loading-Skeleton](https://github.com/dvtng/react-loading-skeleton)
-
 <br/>
 
 #### BackEnd

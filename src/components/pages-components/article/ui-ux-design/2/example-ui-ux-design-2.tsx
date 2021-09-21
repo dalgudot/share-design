@@ -1,7 +1,6 @@
 import { tType } from '../../../../../../type';
 import { useInView } from 'react-intersection-observer';
 import { uiUxDesign2 } from '../../../../../data/article/ui-ux-design/ui-ux-design-2';
-import { useWindowHeight } from '../../../../../lib/hooks/useWindowHeight';
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import { motion } from 'framer-motion';
@@ -9,8 +8,9 @@ import PMedium from '../../../../../foundation/typography/p-medium';
 import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
 import KoodonWriteReview from './koodon-write-review';
+import ArticleLine from '../../article-line';
 
-const ExampleComponentUiUxDesign2 = ({
+const ExampleUiUxDesign2 = ({
   component_key,
 }: {
   component_key: string;
@@ -21,14 +21,13 @@ const ExampleComponentUiUxDesign2 = ({
     threshold: 0,
   });
   const listCount = uiUxDesign2().listCount;
-  const height: number = useWindowHeight();
 
   const ArticleExampleComponentChildren = (component_key: string) => {
     switch (component_key) {
       case '1':
         return (
           <>
-            <ListLine height={height} />
+            <ArticleLine />
             <MotionUl
               ref={ref}
               variants={stagger}
@@ -45,15 +44,15 @@ const ExampleComponentUiUxDesign2 = ({
                 </MotionLi>
               ))}
             </MotionUl>
-            <ListLine height={height} />
+            <ArticleLine />
           </>
         );
       case '2':
         return (
           <>
-            <ListLine height={height} />
+            <ArticleLine />
             <KoodonWriteReview />
-            <ListLine height={height} />
+            <ArticleLine />
           </>
         );
       default:
@@ -68,21 +67,7 @@ const ExampleComponentUiUxDesign2 = ({
   return <>{exampleComponent(component_key)}</>;
 };
 
-export default ExampleComponentUiUxDesign2;
-
-// 화면 세로 길이에 따라 길이가 달라지는 선분
-const ListLine = styled.span<{ height: number }>`
-  width: 1px;
-  height: ${({ height }) => height * 0.3}px;
-  background-color: ${({ theme }) => theme.gray6};
-
-  // 바뀌는 속성
-  margin: 56px auto;
-
-  @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin: 48px auto;
-  }
-`;
+export default ExampleUiUxDesign2;
 
 const MotionUl = styled(motion.ul)`
   li:nth-child(1) {

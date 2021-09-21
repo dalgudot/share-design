@@ -10,7 +10,7 @@ import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas-components/wave-loading/wave-loading';
 import PMedium from '../../../foundation/typography/p-medium';
 
-const Response = ({
+const ArticleResponse = ({
   showToast,
   response,
   setResponse,
@@ -102,7 +102,7 @@ const Response = ({
   }
 };
 
-export default Response;
+export default ArticleResponse;
 
 const Container = styled.div`
   margin-top: 144px;

@@ -8,13 +8,16 @@ import {
   tomorrow,
   vscDarkPlus,
 } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { mediaBreakPoint } from '../../../styles/common';
+import { tType } from '../../../../type';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
 
 const MySyntaxHighlighter = ({
   language,
   codeString,
 }: {
   language: 'tsx' | 'typescript' | 'css';
-  codeString: string;
+  codeString: tType;
 }) => {
   return (
     <>
@@ -25,7 +28,7 @@ const MySyntaxHighlighter = ({
           wrapLines={true}
           wrapLongLines={true}
         >
-          {codeString}
+          {useSetLanguage(codeString)}
         </SyntaxHighlighter>
       </Container>
     </>
@@ -36,13 +39,29 @@ export default MySyntaxHighlighter;
 
 const Container = styled.div`
   pre {
-    padding: 48px !important;
+    background: rgb(30, 30, 30, 0.95) !important;
     border-radius: 24px;
+
+    margin: 36px 0 0 !important; // Remove default setting
+    padding: 56px !important;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin: 24px 0 0 !important; // Remove default setting
+      padding: 36px !important;
+      max-width: 91vw !important;
+    }
   }
+
   span {
-    font-size: 18px;
+    text-align: left;
     font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
       'Courier New', monospace !important;
+
+    font-size: 16px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      font-size: 13px;
+    }
   }
 `;
 

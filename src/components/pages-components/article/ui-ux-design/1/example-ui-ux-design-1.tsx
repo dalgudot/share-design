@@ -8,7 +8,7 @@ import LangChangeToggleArticle1 from './lang-change-toggle-article-1';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import PMedium from '../../../../../foundation/typography/p-medium';
 
-const ExampleComponentUiUxDesign1 = ({
+const ExampleUiUxDesign1 = ({
   component_key,
   caption,
 }: {
@@ -86,7 +86,7 @@ const ExampleComponentUiUxDesign1 = ({
   return <>{exampleComponent(component_key)}</>;
 };
 
-export default ExampleComponentUiUxDesign1;
+export default ExampleUiUxDesign1;
 
 const Figure = styled.figure`
   margin: 96px auto 60px;
