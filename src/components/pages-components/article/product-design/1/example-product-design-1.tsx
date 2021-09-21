@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import PMedium from '../../../../../foundation/typography/p-medium';
 import { buttonVariants } from '../../../../../foundation/framer-motion/variants';
 import H3Title from '../../../../../foundation/typography/h3-title';
-import MySyntaxHighlighter from '../../my-syntax-highlighter';
+import ArticleSyntaxHighlighter from '../../article-syntax-highlighter';
 import ArticleLine from '../../article-line';
 import Go from '../../go';
 import ArticleFigure from '../../article-figure';
@@ -99,41 +99,38 @@ const ExampleProductDesign1 = ({
                 marginTop="16px"
               />
               <ArticleLine />
-              <H3Title
-                className="h3__max__width"
-                text={{
-                  k: '프레이머 모션 API로 버튼 인터랙션 구현',
-                  e: 'Implementing Interaction of button with Framer Motion API',
-                }}
-                color="gray2"
-              />
-              <PMedium //
-                className="caption__max__width"
-                text={{
-                  k: "아래는 '팔레트 공유하기'에서 실제로 쓰고 있는 버튼의 코드입니다. 프레이머 모션 API(Framer Motion API)를 활용했습니다. 디자인 공유하기에서는 언어는 Typescript, 주요 라이브러리는 React, styled-component, Framer Motion, 프레임워크는 Next.js를 쓰고 있습니다.",
-                  e: "Below is the code of the real button used in 'SHARE PALETTE'. In SHARE DESIGN, the programing language is Typescript, the main library is React, styled-component, Framer Motion, and the framework is Next.js.",
-                }}
-                color="gray4"
-              />
-              <MySyntaxHighlighter language="tsx" codeString={content} />
             </>
           </ArticleFigure>
         );
 
       case '6':
         return (
-          <ArticleFigure caption={caption} className="syntax__highlighter__p">
-            <MySyntaxHighlighter language="tsx" codeString={content} />
-          </ArticleFigure>
+          <ArticleSyntaxHighlighter
+            language="tsx"
+            codeString={content}
+            caption={caption}
+          />
         );
 
       case '7':
         return (
-          <ArticleFigure caption={caption} className="syntax__highlighter__p">
-            <MySyntaxHighlighter language="tsx" codeString={content} />
-          </ArticleFigure>
+          <ArticleSyntaxHighlighter
+            language="tsx"
+            codeString={content}
+            caption={caption}
+          />
         );
+
       case '8':
+        return (
+          <ArticleSyntaxHighlighter
+            language="tsx"
+            codeString={content}
+            caption={caption}
+          />
+        );
+
+      case '9':
         return (
           <Go
             targetBlank={false}
@@ -149,35 +146,10 @@ const ExampleProductDesign1 = ({
     }
   };
 
-  return <Container>{ArticleExampleComponentChildren()}</Container>;
+  return <>{ArticleExampleComponentChildren()}</>;
 };
 
 export default ExampleProductDesign1;
-
-const Container = styled.div`
-  .h3__max__width {
-    margin: 96px auto 0;
-    max-width: 240px;
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin: 72px auto 0;
-      max-width: 200px;
-    }
-  }
-
-  .caption__max__width {
-    margin: 24px auto 0;
-    max-width: 540px;
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin: 20px auto 0;
-    }
-  }
-
-  .syntax__highlighter__p {
-    text-align: left;
-  }
-`;
 
 const ExampleBtn = styled(motion.button)`
   display: flex;

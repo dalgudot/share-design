@@ -111,7 +111,7 @@ const Article = ({
           key={`${content.key}${idx}`}
           text={content.content}
           color="gray2"
-          className="h2__title__margin__bottom"
+          className="h2__title__margin"
         />
       );
     } else if (content.key === 'ExampleComponent') {
@@ -224,12 +224,12 @@ const ArticleContainer = styled.article`
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 
-  .h2__title__margin__bottom {
-    margin-top: 96px;
+  .h2__title__margin {
+    margin-top: 120px;
     margin-bottom: -12px; // PLarge의 상단 36px 상쇄
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin-top: 72px;
+      margin-top: 96px;
     }
   }
 `;

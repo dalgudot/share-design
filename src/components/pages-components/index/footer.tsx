@@ -105,7 +105,7 @@ const Footer = () => {
               >
                 <PSmall text="LinkedIn" color="gray0" weight={700} />
               </motion.a>
-              <Divider />
+              {/* <Divider />
               <motion.a
                 variants={textButtonVariants}
                 whileHover="whileHover"
@@ -114,7 +114,7 @@ const Footer = () => {
                 target="_blank"
               >
                 <PSmall text="GitHub" color="gray0" weight={700} />
-              </motion.a>
+              </motion.a> */}
             </Social>
             <Link href="/contact">
               <a>

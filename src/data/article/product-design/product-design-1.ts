@@ -13,7 +13,7 @@ export const productDesign1 = () => {
 
     title: {
       k: '좋은 UX를 만드는 UI 버튼의 인터랙션 디자인은?',
-      e: 'What is interaction design of the UI button for good UX?',
+      e: 'What is the interaction design of the UI button for good UX?',
     },
 
     hashTags: {
@@ -113,6 +113,7 @@ export const productDesign1 = () => {
           e: '',
         },
       },
+
       {
         key: 'PLarge',
         content: {
@@ -120,11 +121,12 @@ export const productDesign1 = () => {
           e: '',
         },
       },
+
       {
         key: 'PLarge',
         content: {
           k: '\u00A0\u00A0\u00A0난 사용자가 컴퓨터 키보드를 누를 때 누르는 걸 느낄 수 있는 것처럼, 디자인 공유하기에서 버튼을 눌렀을 때에도 비슷한 느낌을 받을 수 있도록 하고 싶었다. UI 화면 상에서 버튼이 물리적으로 눌리는 건 아니지만, 마치 눌리는 것처럼 모션을 디자인해 물리적인 버튼을 누르는 것과 같은 사용자 경험(UX)을 만들고 싶었다. 나는 이런 섬세한 인터랙션 디자인이 모이고 모여 좋은 사용감을 만들고, 좋은 사용자 경험(UX)을 줄 수 있다고 믿는다.',
-          e: '',
+          e: 'I wanted the user to feel the same when they press a computer keyboard, so they feel the same when they press the button in SAHRE DESIGN.',
         },
       },
       {
@@ -149,6 +151,7 @@ export const productDesign1 = () => {
           e: '',
         },
       },
+
       {
         key: 'PLarge',
         content: {
@@ -161,6 +164,27 @@ export const productDesign1 = () => {
       {
         key: 'ExampleComponent',
         component_key: '5',
+      },
+
+      {
+        key: 'H2Title',
+        content: {
+          k: '프레이머 모션 API로 버튼 인터랙션 구현',
+          e: 'Implementing Interaction of button with Framer Motion API',
+        },
+      },
+
+      {
+        key: 'PLarge',
+        content: {
+          k: "아래는 '팔레트 공유하기'에서 실제로 쓰고 있는 버튼의 코드다. 프레이머 모션 API(Framer Motion API)를 활용했다. 디자인 공유하기에서는 언어는 Typescript, 주요 라이브러리는 React, styled-component, Framer Motion, 프레임워크는 Next.js를 쓰고 있다.",
+          e: "Below is the code of the real button used in 'SHARE PALETTE'. In SHARE DESIGN, the programing language is Typescript, the main library is React, styled-component, Framer Motion, and the framework is Next.js.",
+        },
+      },
+
+      {
+        key: 'ExampleComponent',
+        component_key: '6',
         content: `// extract-colors.tsx 
 // React Component
 ...
@@ -181,15 +205,15 @@ export const productDesign1 = () => {
   </MotionBtnPaletteCopy>
 </CopyToClipboard>
 ...`,
-        caption: {
-          k: "디자인 공유하기 모든 버튼 Framer Motion variants는 'buttonVariants'이다.",
-          e: '~',
-        },
+        // caption: {
+        //   k: "디자인 공유하기 모든 버튼 Framer Motion variants는 'buttonVariants'이다.",
+        //   e: '~',
+        // },
       },
 
       {
         key: 'ExampleComponent',
-        component_key: '6',
+        component_key: '7',
         content: `// extract-colors.tsx 
 // styled-components
 const MotionBtnPaletteCopy = styled(motion.button)\`
@@ -207,15 +231,15 @@ const MotionBtnPaletteCopy = styled(motion.button)\`
     margin-top: 28px;
 }
 \`;`,
-        caption: {
-          k: "styeld-component에서 프레이머 모션을 쓰려면 'styled(motion.button)'과 같이 코드를 작성하면 된다.",
-          e: '~',
-        },
+        // caption: {
+        //   k: "styeld-component에서 프레이머 모션을 쓰려면 'styled(motion.button)'과 같이 코드를 작성하면 된다.",
+        //   e: '~',
+        // },
       },
 
       {
         key: 'ExampleComponent',
-        component_key: '7',
+        component_key: '8',
         content: `// variants.ts
 // Framer Motion variants      
 export const buttonVariants = {
@@ -232,10 +256,10 @@ export const buttonVariants = {
     },
   },
 };`,
-        caption: {
-          k: '프레이머 모션 API variants들은 variants.ts에서 관리하고 있다.',
-          e: '~',
-        },
+        // caption: {
+        //   k: '프레이머 모션 API variants들은 variants.ts에서 관리하고 있다.',
+        //   e: '~',
+        // },
       },
 
       {
@@ -271,7 +295,7 @@ export const buttonVariants = {
 
       {
         key: 'ExampleComponent',
-        component_key: '8',
+        component_key: '9',
       },
     ],
   };

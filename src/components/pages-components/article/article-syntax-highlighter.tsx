@@ -11,17 +11,20 @@ import {
 import { mediaBreakPoint } from '../../../styles/common';
 import { tType } from '../../../../type';
 import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import PMedium from '../../../foundation/typography/p-medium';
 
-const MySyntaxHighlighter = ({
+const ArticleSyntaxHighlighter = ({
   language,
   codeString,
+  caption,
 }: {
   language: 'tsx' | 'typescript' | 'css';
   codeString: tType;
+  caption?: tType;
 }) => {
   return (
     <>
-      <Container>
+      <Figure>
         <SyntaxHighlighter
           language={language}
           style={vscDarkPlus}
@@ -30,23 +33,32 @@ const MySyntaxHighlighter = ({
         >
           {useSetLanguage(codeString)}
         </SyntaxHighlighter>
-      </Container>
+        {caption && (
+          <figcaption>
+            <PMedium //
+              text={caption}
+              color="gray4"
+              marginTop="8px"
+            />
+          </figcaption>
+        )}
+      </Figure>
     </>
   );
 };
 
-export default MySyntaxHighlighter;
+export default ArticleSyntaxHighlighter;
 
-const Container = styled.div`
+const Figure = styled.figure`
   pre {
     background: rgb(30, 30, 30, 0.95) !important;
-    border-radius: 24px;
+    border-radius: 16px;
 
-    margin: 36px 0 0 !important; // Remove default setting
+    margin: 48px 0 0 !important; // Remove default setting
     padding: 56px !important;
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin: 24px 0 0 !important; // Remove default setting
+      margin: 36px 0 0 !important; // Remove default setting
       padding: 36px !important;
       max-width: 91vw !important;
     }

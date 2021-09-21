@@ -4,8 +4,45 @@ import { mediaBreakPoint } from '../../styles/common';
 
 const TabIntroduction24 = ({ pathname }: any) => {
   const themeContext = useContext(ThemeContext);
-  const color: string =
-    pathname === '/introduction' ? themeContext.gray0 : themeContext.gray4;
+
+  const TurnOnOff = () => {
+    const on: boolean = pathname === '/introduction';
+
+    if (on) {
+      return (
+        <g
+          id="000-Icon/icon_introduction_24_on"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <path
+            d="M21,6 L21,18 L3,18 L3,6 L21,6 Z M11,9 L6,9 L6,13 L11,13 L11,9 Z M10,10 L10,12 L7,12 L7,10 L10,10 Z"
+            id="Shape"
+            fill={themeContext.gray0}
+          ></path>
+        </g>
+      );
+    } else {
+      return (
+        <g
+          id="000-Icon/icon_introduction_24"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <path
+            d="M21,6 L21,18 L3,18 L3,6 L21,6 Z M20,7 L4,7 L4,17 L20,17 L20,7 Z M11,9 L11,13 L6,13 L6,9 L11,9 Z M10,10 L7,10 L7,12 L10,12 L10,10 Z"
+            id="Shape"
+            fill={themeContext.gray4}
+            fill-rule="nonzero"
+          ></path>
+        </g>
+      );
+    }
+  };
 
   return (
     <SVG
@@ -16,20 +53,7 @@ const TabIntroduction24 = ({ pathname }: any) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <g
-        id="000-Icon/icon_introduction_24"
-        stroke="none"
-        strokeWidth="1"
-        fill="none"
-        fillRule="evenodd"
-      >
-        <path
-          d="M21,6 L21,18 L3,18 L3,6 L21,6 Z M20,7 L4,7 L4,17 L20,17 L20,7 Z M10.5,8.5 L10.5,12.5 L5.5,12.5 L5.5,8.5 L10.5,8.5 Z M9.5,9.5 L6.5,9.5 L6.5,11.5 L9.5,11.5 L9.5,9.5 Z"
-          id="Shape"
-          fill={color}
-          fillRule="nonzero"
-        ></path>
-      </g>
+      {TurnOnOff()}
     </SVG>
   );
 };

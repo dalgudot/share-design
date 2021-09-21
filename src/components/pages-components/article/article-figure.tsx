@@ -15,15 +15,15 @@ const ArticleFigure = ({
     <>
       <Figure className={className}>
         {children}
-        <figcaption>
-          {caption && (
+        {caption && (
+          <figcaption>
             <PMedium //
               text={caption}
               color="gray4"
               marginTop="16px"
             />
-          )}
-        </figcaption>
+          </figcaption>
+        )}
       </Figure>
     </>
   );
