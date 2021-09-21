@@ -7,9 +7,9 @@ export const productDesign1 = () => {
       e: 'PRODUCT DESIGN',
     },
 
-    date: '2021.09.21',
+    date: '2021.09.22',
 
-    dateTime: '2021-09-21',
+    dateTime: '2021-09-22',
 
     title: {
       k: '좋은 UX를 만드는 UI 버튼의 인터랙션 디자인은?',
@@ -50,7 +50,7 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 21일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 3가지 크기의 버튼으로 사용자와 소통한다는 뜻이다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
+          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 3가지 크기의 버튼으로 사용자와 소통한다는 뜻이다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
           e: '',
         },
       },
@@ -125,8 +125,8 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: '\u00A0\u00A0\u00A0난 사용자가 컴퓨터 키보드를 누를 때 누르는 걸 느낄 수 있는 것처럼, 디자인 공유하기에서 버튼을 눌렀을 때에도 비슷한 느낌을 받을 수 있도록 하고 싶었다. UI 화면 상에서 버튼이 물리적으로 눌리는 건 아니지만, 마치 눌리는 것처럼 모션을 디자인해 물리적인 버튼을 누르는 것과 같은 사용자 경험(UX)을 만들고 싶었다. 나는 이런 섬세한 인터랙션 디자인이 모이고 모여 좋은 사용감을 만들고, 좋은 사용자 경험(UX)을 줄 수 있다고 믿는다.',
-          e: 'I wanted the user to feel the same when they press a computer keyboard, so they feel the same when they press the button in SAHRE DESIGN.',
+          k: '\u00A0\u00A0\u00A0난 사용자가 컴퓨터 키보드를 누를 때 누르는 걸 느낄 수 있는 것처럼, 디자인 공유하기에서 버튼을 눌렀을 때에도 비슷한 느낌을 받을 수 있도록 하고 싶었다. UI 화면 상에서 버튼이 물리적으로 눌리는 건 아니지만, 마치 눌리는 것처럼 모션을 디자인해 물리적인 버튼을 누르는 것과 같은 사용자 경험(UX)을 만들고 싶었다. 나는 이런 섬세한 인터랙션 디자인이 모이고 모여 좋은 사용감을 만들고, 사용자에게 좋은 사용자 경험(UX)을 줄 수 있다고 믿는다.',
+          e: `I wanted to make sure that when a user presses a button on SHARE DESIGN, they feel similar to pressing a computer keyboard. Altough it's not real sense, I would like to make a User Experience(UX) like pressing a physical button by designing the motion as if it was pressed. In my opinion, I believe that this delicate interaction design make a good usability and give users a good User Experience(UX).`,
         },
       },
       {
@@ -198,17 +198,13 @@ export const productDesign1 = () => {
     whileTap="whileTap"
   >
     <PMedium
-      text={textbtnPaletteCopy}
+      text={textbtnCopyPalette}
       color="gray2"
       weight={700}
     />
   </MotionBtnPaletteCopy>
 </CopyToClipboard>
 ...`,
-        // caption: {
-        //   k: "디자인 공유하기 모든 버튼 Framer Motion variants는 'buttonVariants'이다.",
-        //   e: '~',
-        // },
       },
 
       {
@@ -231,10 +227,6 @@ const MotionBtnPaletteCopy = styled(motion.button)\`
     margin-top: 28px;
 }
 \`;`,
-        // caption: {
-        //   k: "styeld-component에서 프레이머 모션을 쓰려면 'styled(motion.button)'과 같이 코드를 작성하면 된다.",
-        //   e: '~',
-        // },
       },
 
       {
@@ -256,17 +248,13 @@ export const buttonVariants = {
     },
   },
 };`,
-        // caption: {
-        //   k: '프레이머 모션 API variants들은 variants.ts에서 관리하고 있다.',
-        //   e: '~',
-        // },
       },
 
       {
         key: 'H2Title',
         content: {
           k: '마치며',
-          e: '',
+          e: 'Epilogue',
         },
       },
       {

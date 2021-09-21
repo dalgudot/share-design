@@ -13,9 +13,9 @@ const TabRecord24 = ({ pathname }: any) => {
         <g
           id="000-Icon/icon_record_24_on"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <path
             d="M18,3 L18,21 L6,21 L6,3 L18,3 Z M12,12 L9,12 L9,13 L12,13 L12,12 Z M15,9 L9,9 L9,10 L15,10 L15,9 Z M15,6 L9,6 L9,7 L15,7 L15,6 Z"

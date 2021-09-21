@@ -13,9 +13,9 @@ const TabContact24 = ({ pathname }: any) => {
         <g
           id="000-Icon/icon_contact_24_on"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <path
             d="M2.99902969,6.63232389 L12,13.6334308 L20.9990297,6.63332389 L21,18 L3,18 L2.99902969,6.63232389 Z M20.1850297,5.99932389 L12,12.367 L3.81302969,5.99932389 L20.1850297,5.99932389 Z"

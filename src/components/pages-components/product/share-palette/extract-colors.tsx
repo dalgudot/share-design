@@ -27,7 +27,7 @@ const ExtractColors = ({
     k: '🎨 팔레트를 복사했습니다',
     e: '🎨 Copied palette',
   });
-  const textbtnPaletteCopy = { k: '팔레트 복사', e: 'Copy Palette' };
+  const textbtnCopyPalette = { k: '팔레트 복사', e: 'Copy Palette' };
 
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
@@ -54,7 +54,7 @@ const ExtractColors = ({
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <PMedium text={textbtnPaletteCopy} color="gray2" weight={700} />
+            <PMedium text={textbtnCopyPalette} color="gray2" weight={700} />
           </MotionBtnPaletteCopy>
         </CopyToClipboard>
 
