@@ -34,8 +34,8 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: "최근 디자인 공유하기(SHARE DESIGN) 프로젝트의 첫 번째 프로덕트인 '팔레트 공유하기(SHARE PALETTE)'를 배포했다. 이미지를 업로드하면 이미지에서 6개의 색을 추출해 색상 팔레트를 만들어주는 디지털 프로덕트다. 🎨",
-          e: '',
+          k: "최근 디자인 공유하기(SHARE DESIGN) 프로젝트의 첫 번째 웹 프로덕트인 '팔레트 공유하기(SHARE PALETTE)'를 배포했다. 이미지를 업로드하면 이미지에서 6개의 색을 추출해 색상 팔레트를 만들어주는 디지털 프로덕트다. 🎨",
+          e: "I recently released 'SHARE PALETTE', the first web product of the SHARE DESIGN project. It is a digital product that extracts 6 colors from image you upload and create a color palette. 🎨",
         },
       },
       {
@@ -50,8 +50,8 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 3가지 크기의 버튼으로 사용자와 소통한다는 뜻이다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
-          e: '',
+          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
+          e: 'As of September 22, 2021, SHARE PALETTE is a very simple product becasue I plan to develop the product by adding feature one by one. SHARE PALETTE interacts with users with buttons of three sizes. Below is an image of SHARE PALETTE before and after uploading an image.',
         },
       },
       {
@@ -62,18 +62,18 @@ export const productDesign1 = () => {
         },
         caption: {
           k: "마우스 포인터를 올려두거나 손가락으로 터치하는 것과 같은 사용자의 물리적 행동에 반응하는 UI 요소인 버튼만 꼭지점을 둥글게 디자인하고, 다른 요소들은 꼭지점을 모두 직각으로 디자인해 시각적으로 구분했다. 이미지를 업로드하면 버튼명은 '이미지 업로드'에서 '새 이미지 업로드'로 바뀐다.",
-          e: '',
+          e: "Only buttons, which are UI elements that respond to the user's physical actions, such as placing the mouse pointer over or touching with a finger, have rounded vertices, and all other elements are visually distinguished by designing all vertices at right angles. When you upload an image, the button name changes from 'Upload Image' to 'Upload New Image'.",
         },
         alt: {
-          k: "마우스 포인터를 올려두거나 손가락으로 터치하는 것과 같은 사용자의 물리적 행동에 반응하는 UI 요소인 버튼만 꼭지점을 둥글게 디자인하고, 다른 요소들은 꼭지점을 모두 직각으로 디자인해 시각적으로 구분했다. 이미지를 업로드하면 '이미지 업로드' 버튼명은 '새 이미지 업로드'로 바뀐다.",
-          e: '',
+          k: '이미지를 업로드하기 전후의 팔레트 공유하기의 모습',
+          e: 'An image of SHARE PALETTE before and after uploading an image',
         },
       },
       {
         key: 'PLarge',
         content: {
           k: "마우스 포인터로 사용자와 인터랙션하는 데스크톱 UI에서 버튼의 인터랙션은 총 4가지 상태로 구분할 수 있다. 첫 번째는 사용자의 눈동자 움직임(시각)과 인터랙션하는 '기본 상태'다. 사용자는 버튼과 다른 UI 요소를 시각적으로 구분해 버튼을 발견한다. 두 번째는 '마우스 포인터를 올린 상태(Hover)', 세 번째는 버튼을 '누른 상태(Pressed 또는 Active)', 네 번째는 디자이너가 정한 어떤 조건을 충족하지 않아 사용자가 버튼을 눌러도 반응하지 않는 '사용 불가 상태(Disabled)'다.",
-          e: '',
+          e: "In the desktop UI where the user interacts with the mouse pointer, button interaction can be divided into four states. The first is the 'Default State' that interacts with the user's eye movement (vision). Users discover buttons by visually distinguishing them from other UI elements. The second is 'Hover State(Mouse Pointer Over)', the third is 'Pressed(Active) State', and the fourth is 'Disabled State' that does not react with user when the user presses the button because it does not meet certain conditions set by the designer.",
         },
       },
 
