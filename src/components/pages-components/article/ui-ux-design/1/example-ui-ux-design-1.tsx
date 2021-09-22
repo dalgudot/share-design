@@ -1,5 +1,3 @@
-import { useRef, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { tType } from '../../../../../../type';
 import LangChangeButton from './lang-change-button';
@@ -15,50 +13,14 @@ const ExampleUiUxDesign1 = ({
   component_key: string;
   caption?: tType;
 }) => {
-  const router = useRouter();
-  const locale = router.locale;
-
-  // 본문에 있는 첫 번째 언어 전환 토글 버튼과 두 번째 언어 전환 토글 버튼 눌렀을 때 스크롤 유지
-  const firstTogglePositionRef = useRef<HTMLDivElement>(null);
-  const finalTogglePositionRef = useRef<HTMLDivElement>(null);
-  const [firstToggle, setfirstToggle] = useState(false);
-  const [finalToggle, setFinalToggle] = useState(false);
-
-  const gotoFirstRefAfterLocaleChange = () => {
-    firstTogglePositionRef?.current?.scrollIntoView();
-  };
-
-  const gotoFinalRefAfterLocaleChange = () => {
-    finalTogglePositionRef?.current?.scrollIntoView();
-  };
-
-  useEffect(() => {
-    if (firstToggle === true) {
-      gotoFirstRefAfterLocaleChange();
-      setfirstToggle(false);
-    }
-  }, [locale]);
-
-  useEffect(() => {
-    if (finalToggle === true) {
-      finalToggle === true && gotoFinalRefAfterLocaleChange();
-      setFinalToggle(false);
-    }
-  }, [locale]);
-
   const ArticleExampleComponentChildren = (component_key: string) => {
     switch (component_key) {
       case '1':
-        return (
-          <LangChangeButton
-            setfirstToggle={setfirstToggle}
-            text={uiUxDesign1().langChangeButton}
-          />
-        );
+        return <LangChangeButton text={uiUxDesign1().langChangeButton} />;
       case '2':
         return (
           <WrapLangchangeToggleArticle1>
-            <LangChangeToggleArticle1 setFinalToggle={setFinalToggle} />
+            <LangChangeToggleArticle1 />
           </WrapLangchangeToggleArticle1>
         );
       default:

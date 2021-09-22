@@ -47,7 +47,7 @@ const Article = ({
 
   // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.
   // ex) Introduction > First Content일 때
-  // scrollTop();
+  scrollTop();
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
   const [response, setResponse] = useState<object[]>([] || null);
@@ -225,7 +225,7 @@ const ArticleContainer = styled.article`
   }
 
   .h2__title__margin {
-    margin-top: 120px;
+    margin-top: 96px;
     margin-bottom: -12px; // PLarge의 상단 36px 상쇄
 
     @media all and (max-width: ${mediaBreakPoint.first}) {
