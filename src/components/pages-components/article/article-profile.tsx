@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
-const Profile = ({ marginTop }: { marginTop: string }) => {
+const ArticleProfile = ({ marginTop }: { marginTop: string }) => {
   return (
     <Link href="/contact">
       <MotionA
@@ -28,7 +28,7 @@ const Profile = ({ marginTop }: { marginTop: string }) => {
   );
 };
 
-export default Profile;
+export default ArticleProfile;
 
 const MotionA = styled(motion.a)<{ marginTop: string }>`
   display: inline-flex;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Profile from './profile';
+import ArticleProfile from './article-profile';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';
 import H1Title from '../../../foundation/typography/h1-title';
@@ -31,7 +31,7 @@ const ArticleTitleArea = ({
         color="gray0"
         marginTop="8px"
       />
-      <Profile marginTop="16px" />
+      <ArticleProfile marginTop="16px" />
     </TitleArea>
   );
 };

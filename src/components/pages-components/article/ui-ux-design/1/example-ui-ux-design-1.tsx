@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { tType } from '../../../../../../type';
 import LangChangeButton from './lang-change-button';
 import { uiUxDesign1 } from '../../../../../data/article/ui-ux-design/ui-ux-design-1';
-import ArticleExampleComponent from '../../article-example-component';
 import LangChangeToggleArticle1 from './lang-change-toggle-article-1';
 import { mediaBreakPoint } from '../../../../../styles/common';
+import PMedium from '../../../../../foundation/typography/p-medium';
 
-const ExampleComponentUiUxDesign1 = ({
+const ExampleUiUxDesign1 = ({
   component_key,
   caption,
 }: {
@@ -68,16 +68,31 @@ const ExampleComponentUiUxDesign1 = ({
 
   const exampleComponent = (component_key: string) => {
     return (
-      <ArticleExampleComponent caption={caption}>
+      <Figure>
         {ArticleExampleComponentChildren(component_key) as JSX.Element}
-      </ArticleExampleComponent>
+        <figcaption>
+          {caption && (
+            <PMedium //
+              text={caption}
+              color="gray4"
+              marginTop="16px"
+            />
+          )}
+        </figcaption>
+      </Figure>
     );
   };
 
   return <>{exampleComponent(component_key)}</>;
 };
 
-export default ExampleComponentUiUxDesign1;
+export default ExampleUiUxDesign1;
+
+const Figure = styled.figure`
+  margin: 96px auto 60px;
+  text-align: center;
+  max-width: 420px;
+`;
 
 const WrapLangchangeToggleArticle1 = styled.div`
   display: flex;

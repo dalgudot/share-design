@@ -6,6 +6,14 @@ export type tType =
     }
   | string;
 
+// https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
+// This is solution of webkit error in typescript
+declare global {
+  interface Window {
+    webkit: any;
+  }
+}
+
 export type distributeContentsTypes = {
   key: string;
   component_key?: string;

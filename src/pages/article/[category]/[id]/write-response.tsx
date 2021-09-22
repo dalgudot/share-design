@@ -117,8 +117,8 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
 
         <MotionPostButton
           variants={buttonVariants}
-          whileHover="whileHover"
-          whileTap="whileTap"
+          whileHover={!btnDisbled ? 'whileHover' : ''}
+          whileTap={!btnDisbled ? 'whileTap' : ''}
           type="submit"
           onClick={(e) => setNewResponseAndQuitWriteResponseMode(e)}
           disabled={btnDisbled}

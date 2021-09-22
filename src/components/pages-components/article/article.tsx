@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Response from './response';
+import ArticleResponse from './article-response';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
@@ -8,15 +8,16 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import ArticleMessage from './article-message';
-import ArticleNotice from './articoe-notice';
+import ArticleDownloadAPP from './article-download-APP';
 import ArticleReference from './article-reference';
 import { scrollTop } from '../../../lib/functions/scroll-top';
 import { distributeContentsTypes } from '../../../../type';
 import PLarge from '../../../foundation/typography/p-large';
-import ArticleCommonImage from './article-common-image';
+import ArticleImage from './article-image';
 import H2Title from '../../../foundation/typography/h2-title';
-import ExampleComponentUiUxDesign1 from './ui-ux-design/1/example-component-ui-ux-design-1';
-import ExampleComponentUiUxDesign2 from './ui-ux-design/2/example-component-ui-ux-design-2';
+import ExampleUiUxDesign1 from './ui-ux-design/1/example-ui-ux-design-1';
+import ExampleUiUxDesign2 from './ui-ux-design/2/example-ui-ux-design-2';
+import ExampleProductDesign1 from './product-design/1/example-product-design-1';
 
 const Article = ({
   categoryTitle,
@@ -46,7 +47,7 @@ const Article = ({
 
   // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.
   // ex) Introduction > First Content일 때
-  scrollTop();
+  // scrollTop();
 
   // https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
   const [response, setResponse] = useState<object[]>([] || null);
@@ -97,12 +98,11 @@ const Article = ({
       );
     } else if (content.key === 'img') {
       return (
-        <ArticleCommonImage
+        <ArticleImage
           key={`${content.key}${idx}`}
           src={content.content}
           caption={content.caption}
           alt={content.alt}
-          marginTop="36px"
         />
       );
     } else if (content.key === 'H2Title') {
@@ -111,14 +111,14 @@ const Article = ({
           key={`${content.key}${idx}`}
           text={content.content}
           color="gray2"
-          className="h2__title__margin__bottom"
+          className="h2__title__margin"
         />
       );
     } else if (content.key === 'ExampleComponent') {
       switch (pathname) {
         case '/article/ui-ux-design/1':
           return (
-            <ExampleComponentUiUxDesign1
+            <ExampleUiUxDesign1
               key={`${content.key}${idx}`}
               component_key={content.component_key as string}
               caption={content.caption}
@@ -126,14 +126,22 @@ const Article = ({
           );
         case '/article/ui-ux-design/2':
           return (
-            <ExampleComponentUiUxDesign2
+            <ExampleUiUxDesign2
               key={`${content.key}${idx}`}
               component_key={content.component_key as string}
               caption={content.caption}
             />
           );
         case '/article/product-design/1':
-          return;
+          return (
+            <ExampleProductDesign1
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              content={content.content}
+              caption={content.caption}
+              showToast={showToast}
+            />
+          );
       }
     } else {
       return;
@@ -163,7 +171,7 @@ const Article = ({
 
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
-            <Response
+            <ArticleResponse
               showToast={showToast}
               response={response}
               setResponse={setResponse}
@@ -172,7 +180,7 @@ const Article = ({
             />
           )}
 
-          <ArticleNotice />
+          <ArticleDownloadAPP />
 
           {referencesData && (
             <>
@@ -192,15 +200,6 @@ const Main = styled.main`
   background-color: ${({ theme }) => theme.gray7};
   display: flex;
   justify-content: center;
-
-  .h2__title__margin__bottom {
-    margin-top: 96px;
-    margin-bottom: -12px; // PLarge의 상단 36px 상쇄
-
-    @media all and (max-width: ${mediaBreakPoint.first}) {
-      margin-top: 72px;
-    }
-  }
 
   margin-top: ${({ theme }) => theme.margin.DesktopTop};
   padding-bottom: ${({ theme }) => theme.margin.DesktopBottom};
@@ -224,14 +223,18 @@ const ArticleContainer = styled.article`
     margin-top: 24px;
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
+
+  .h2__title__margin {
+    margin-top: 120px;
+    margin-bottom: -12px; // PLarge의 상단 36px 상쇄
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin-top: 96px;
+    }
+  }
 `;
 
-type BackgroundType = {
-  height: number;
-  width: number;
-};
-
-const Background = styled.div<BackgroundType>`
+const Background = styled.div<{ height: number; width: number }>`
   position: absolute;
   top: 0;
   left: 0;

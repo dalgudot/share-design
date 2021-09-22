@@ -23,11 +23,11 @@ const ExtractColors = ({
     k: '팔레트 공유하기에 업로드된 이미지',
     e: 'Image uploaded to SHARE PALETTE',
   });
-  const copyPaletteToastText = useSetLanguage({
+  const textCopyPaletteToast = useSetLanguage({
     k: '🎨 팔레트를 복사했습니다',
     e: '🎨 Copied palette',
   });
-  const textbtnPaletteCopy = { k: '팔레트 복사', e: 'Copy Palette' };
+  const textbtnCopyPalette = { k: '팔레트 복사', e: 'Copy Palette' };
 
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
@@ -47,19 +47,14 @@ const ExtractColors = ({
 
         <CopyToClipboard
           text={organizedPaletteString}
-          onCopy={() => showToast(copyPaletteToastText)}
+          onCopy={() => showToast(textCopyPaletteToast)}
         >
           <MotionBtnPaletteCopy
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <PMedium
-              text={textbtnPaletteCopy}
-              color="gray2"
-              weight={700}
-              // lineHeight={{ desktop: '28px', mobile: '23px' }}
-            />
+            <PMedium text={textbtnCopyPalette} color="gray2" weight={700} />
           </MotionBtnPaletteCopy>
         </CopyToClipboard>
 
@@ -126,11 +121,10 @@ const MotionBtnPaletteCopy = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: ${({ theme }) => theme.gray7};
   padding: 18px 28px;
-  border-radius: 23px;
 
+  border-radius: 23px;
   margin-top: 36px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {

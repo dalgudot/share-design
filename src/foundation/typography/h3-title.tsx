@@ -30,8 +30,8 @@ const H3Title = ({
         mobile: '21px',
       }}
       lineHeight={{
-        desktop: '29px',
-        mobile: '25px',
+        desktop: '31px',
+        mobile: '28px',
       }}
       letterSpacing={{
         desktop: '0px',

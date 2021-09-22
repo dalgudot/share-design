@@ -39,7 +39,6 @@ export default List;
 
 const MotionLi = styled(motion.li)<{ marginTop?: string }>`
   width: 100%; /* 원하는 너비 */
-  max-width: ${({ theme }) => theme.maxWidth.DesktopList};
   margin: 0 auto;
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
 
@@ -53,6 +52,7 @@ const MotionLi = styled(motion.li)<{ marginTop?: string }>`
 
   // 바뀌는 속성
   padding: 72px 0; // 목록 사이의 간격
+  max-width: ${({ theme }) => theme.maxWidth.DesktopList};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     padding: 48px 0;

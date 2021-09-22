@@ -52,7 +52,7 @@ export const tArticleCommon = () => {
 
     writeResponse: {
       k: '댓글 남기기',
-      e: 'Write a response',
+      e: 'Write a Response',
     },
 
     preventResponseToastMessage: {

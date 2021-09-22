@@ -8,41 +8,72 @@ import {
   tomorrow,
   vscDarkPlus,
 } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { mediaBreakPoint } from '../../../styles/common';
+import { tType } from '../../../../type';
+import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import PMedium from '../../../foundation/typography/p-medium';
 
-const MySyntaxHighlighter = ({
+const ArticleSyntaxHighlighter = ({
   language,
   codeString,
+  caption,
 }: {
   language: 'tsx' | 'typescript' | 'css';
-  codeString: string;
+  codeString: tType;
+  caption?: tType;
 }) => {
   return (
     <>
-      <Container>
+      <Figure>
         <SyntaxHighlighter
           language={language}
           style={vscDarkPlus}
           wrapLines={true}
           wrapLongLines={true}
         >
-          {codeString}
+          {useSetLanguage(codeString)}
         </SyntaxHighlighter>
-      </Container>
+        {caption && (
+          <figcaption>
+            <PMedium //
+              text={caption}
+              color="gray4"
+              marginTop="8px"
+            />
+          </figcaption>
+        )}
+      </Figure>
     </>
   );
 };
 
-export default MySyntaxHighlighter;
+export default ArticleSyntaxHighlighter;
 
-const Container = styled.div`
+const Figure = styled.figure`
   pre {
-    padding: 48px !important;
-    border-radius: 24px;
+    background: rgb(30, 30, 30, 0.95) !important;
+    border-radius: 16px;
+
+    margin: 48px 0 0 !important; // Remove default setting
+    padding: 56px !important;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin: 36px 0 0 !important; // Remove default setting
+      padding: 36px !important;
+      max-width: 91vw !important;
+    }
   }
+
   span {
-    font-size: 18px;
+    text-align: left;
     font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
       'Courier New', monospace !important;
+
+    font-size: 16px;
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      font-size: 13px;
+    }
   }
 `;
 
