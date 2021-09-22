@@ -28,6 +28,17 @@ export const productDesign1 = () => {
         content:
           'Complete documentation of the Motion animation library and Framer’s code features.',
       },
+      {
+        url: 'https://github.com/react-syntax-highlighter/react-syntax-highlighter',
+        title: 'react-syntax-highlighter',
+        content:
+          'Syntax highlighting component for React using the seriously super amazing lowlight and refractor by wooorm',
+      },
+      {
+        url: '  https://github.com/leonardokl/react-palette',
+        title: 'react-palette',
+        content: 'Extract prominent colors from an image',
+      },
     ],
 
     contents: [
@@ -50,7 +61,7 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트다. 팔레트 공유하기는 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
+          k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트이며, 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
           e: 'As of September 22, 2021, SHARE PALETTE is a very simple product becasue I plan to develop the product by adding feature one by one. SHARE PALETTE interacts with users with buttons of three sizes. Below is an image of SHARE PALETTE before and after uploading an image.',
         },
       },
@@ -101,8 +112,8 @@ export const productDesign1 = () => {
       {
         key: 'PLarge',
         content: {
-          k: "\u00A0\u00A0\u00A0위에서 '호버 상태'는 변화가 없어보이지만 '기본 상태'의 1.05배만큼 커진 상태다. 모바일에서는 마우스 포인터가 아닌 손가락으로 UI를 조작하기 때문에 '호버 상태'는 있을 수 없다. 따라서 모바일에서는 기본 상태, 누른 상태, 사용 불가 상태 3가지 상태로 인터랙션을 디자인한다. 현재 디자인 공유하기에서는 사용자가 버튼을 쓰지 못하도록 해야 하는 경우는 사용자가 댓글을 쓸 때밖에 없기 때문에 '사용 불가 상태'는 각 아티클의 '댓글 남기기' 화면에서만 확인할 수 있다.",
-          e: 'Write a response',
+          k: "위에서 '호버 상태'는 변화가 없어보이지만 '기본 상태'의 1.05배만큼 커진 상태다. 모바일에서는 마우스 포인터가 아닌 손가락으로 UI를 조작하기 때문에 '마우스 포인터를 올린 상태'는 있을 수 없다. 따라서 모바일에서는 기본 상태, 누른 상태, 사용 불가 상태 3가지 상태로 인터랙션을 디자인한다. 현재 디자인 공유하기에서는 사용자가 버튼을 쓰지 못하도록 해야 하는 경우는 사용자가 댓글을 쓸 때밖에 없기 때문에 '사용 불가 상태'는 각 아티클의 '댓글 남기기' 화면에서만 확인할 수 있다.",
+          e: "Above, although 'Hover State' looks unchanged, it has grown by 1.05 times than the 'Default State'.On mobile, there is no 'Hover State' because the UI is operated fingers rather than mouse pointer. Therefore, in mobile, interactions are designed in three states: Default State, Pressed State, and Disabled State. Currently, in SHARE DESIGN, the only case where the user should not be able to use the button is when the user writes a comment, so the 'Disabled State' can only be checked on the 'Write a Response' of each article.",
         },
       },
 
@@ -110,7 +121,7 @@ export const productDesign1 = () => {
         key: 'H2Title',
         content: {
           k: '디지털 UI의 버튼을 물리적인 버튼을 누르는 것처럼 느끼도록',
-          e: '',
+          e: 'Make the buttons on the digital UI feel like pressing a physical button',
         },
       },
 
@@ -118,7 +129,7 @@ export const productDesign1 = () => {
         key: 'PLarge',
         content: {
           k: "4가지 중 특히 중요하게 생각한 건 '누른 상태'다. 데스크톱과 모바일에서 모두 쓰이는 상태이고, 사용자가 이 버튼의 기능을 쓰고 싶다는 의사를 명확히 밝힌 것이기 때문이다.",
-          e: '',
+          e: "Among the four, the most important thing is the 'pressed state'. This is because it is the state used on both desktop and mobile, and the user has clearly stated that he wants to use the function of this button.",
         },
       },
 
@@ -134,21 +145,21 @@ export const productDesign1 = () => {
         content:
           '/images/article/product/001/glenn-carstens-peters-unsplash.jpg',
         caption: '',
-        alt: '',
+        alt: 'Photo by Glenn Carstens Peters on Unsplash',
       },
 
       {
         key: 'PLarge',
         content: {
           k: '책상 위에 책상 위로 튀어나오지 않은 평평한 버튼이 있다고 상상해보자. 그 버튼을 누르면 책상 내부로 버튼이 쑥 들어가며 작동한다. 이때 버튼에는 그림자가 생겨 누르기 전보다 약간 어두워질 것이고, 사용자의 눈과의 거리가 조금 더 생겼기 때문에 누르기 전보다 작게 보일 것이다. 이런 시각적 변화를 디지털 프로덕트의 UI에 적용하면 사용자가 디지털 UI의 버튼을 물리적인 버튼을 누르는 것처럼 느낄 수 있지 않을까?',
-          e: '',
+          e: "Imagine there is a flat button on your desk that doesn't protrude above the desk. When you press the button, it slides into the desk and works. At this time, the button will have a shadow and will be slightly darker than before pressing, and will appear smaller than before pressing because the distance from the user's eyes is slightly increased. If this visual change is applied to the UI of a digital product, wouldn't it be possible for the user to feel that the button on the digital UI is pressing a physical button?",
         },
       },
       {
         key: 'PLarge',
         content: {
           k: '\u00A0\u00A0\u00A0이를 구현하기 위해 이용한 시각적 요소는 크기와 투명도다. 사용자가 버튼을 누를 때 크기는 조금 작아지고, 투명도를 조절해 색은 바뀌는 모션을 추가한 것이다. 위에서 상상한 상황에서 버튼 색은 누르기 전보다 눌렀을 때 어두워지지만, 디자인 공유하기는 다크 모드와 라이트 모드를 모두 대응해야 하기 때문에 투명도를 낮춰 색이 약해지도록 해서 어두워지는 게 아닌 색이 변하는 걸 보여주는 식으로 디자인했다. 일반적으로 버튼 색이 기본 상태보다 밝아지며 사용자의 눈에 더 잘 띄도록 하는 디자인을 많은 프로덕트에서 찾아볼 수 있다.',
-          e: '',
+          e: '\u00A0\u00A0\u00A0The visual elements used to implement this are size and opacity. When the user presses the button, the size becomes slightly smaller and the color changes by adjusting the opacity is added. In the situation imagined above, the color of the button becomes darker when it is pressed than before it is pressed, but since SHARE DESIGN has to cope with both dark and light modes, the design is designed in such a way that the color changes by lowering the opacity so that the color becomes weaker than when it is pressed. In general, the color of the button is lighter than the Default State, and designs that make it more noticeable to the user can be found in many products.',
         },
       },
 
@@ -156,7 +167,7 @@ export const productDesign1 = () => {
         key: 'PLarge',
         content: {
           k: '\u00A0\u00A0\u00A0데스크톱에서는 호버 상태에서 버튼의 크기가 살짝 커지도록 디자인했기 때문에 버튼을 누를 때 버튼의 크기 변화가 모바일보다 크다. 아래 버튼을 통해 직접 동작시켜볼 수 있으며, 버튼을 누르면 토스트 메시지를 통해 사용자가 버튼을 눌러 하고 싶었던 일이 잘 완료됐다는 걸 알려주며 인터랙션한다. 예를 들면 팔레트 공유하기에서 팔레트를 복사하면 팔레트가 잘 복사됐다는 걸 사용자에게 알려준다.',
-          e: '',
+          e: '\u00A0\u00A0\u00A0Since the size of the button is designed to be slightly larger in the Hover State on the desktop, the size change of the button when the button is pressed is larger than on the mobile. You can try to operate it directly through the button below, and when you press the button, the user interacts by telling them that the task they wanted to do by pressing the button was completed through a toast message. For example, if you copy a palette in SAHRE PALETTE, it notifies the user that the palette has been copied successfully.',
         },
       },
 
@@ -186,7 +197,7 @@ export const productDesign1 = () => {
         key: 'ExampleComponent',
         component_key: '6',
         content: `// extract-colors.tsx 
-// React Component
+// Button Component
 ...
 <CopyToClipboard
   text={organizedPaletteString}
@@ -261,15 +272,15 @@ export const buttonVariants = {
         key: 'PLarge',
         content: {
           k: '이번에 팔레트 공유하기 버튼의 인터랙션을 디자인하면서 디자인 공유하기의 모든 버튼에 같은 인터랙션을 적용했습니다. 살아있는 프로덕트 같은 느낌이 들어 상당히 만족스럽습니다.',
-          e: '',
+          e: "While designing the interaction of the SHARE PALETTE button this time, I applied the same interaction to all the buttons in the SHARE DESIGN. It feels like a living product, and I'm quite satisfied with it.",
         },
       },
 
       {
         key: 'PLarge',
         content: {
-          k: '\u00A0\u00A0\u00A0팔레트 공유하기는 아직 단순한 프로덕트이고 거의 같은 프로덕트들도 찾아보면 여럿 있지만, 팔레트 공유하기로 추출한 6개의 색 외에 새로운 색을 팔레트에 추가하는 기능, Unsplash에서 무작위로 이미지를 가져와 색상 팔레트를 생성하는 기능, 사람들과 내가 만든 팔레트를 공유할 수 있는 기능 등과 같은 미리 기획해둔 아이디어들을 모두 구현하면 디자이너들이 실무나 개인 작업에서 꽤 유용하게 쓸 수 있는 프로덕트가 될 수 있지 않을까 싶습니다.',
-          e: '',
+          k: '\u00A0\u00A0\u00A0팔레트 공유하기는 아직 단순한 프로덕트이고 거의 같은 프로덕트들도 찾아보면 여럿 있지만, 팔레트 공유하기로 추출한 6개의 색 외에 새로운 색을 팔레트에 추가하는 기능, Unsplash에서 무작위로 이미지를 가져와 색상 팔레트를 생성하는 기능, 사람들과 내가 만든 팔레트를 공유할 수 있는 기능 등 미리 기획해둔 아이디어들을 모두 구현하면 디자이너들이 실무나 개인 작업에서 꽤 유용하게 쓸 수 있는 프로덕트가 될 수 있지 않을까 싶습니다.',
+          e: '\u00A0\u00A0\u00A0SHARE PALETTE is still a simple product, and there are many similar products if you look for them, but If I implement all the ideas I have planned in advance such as the feature to add new colors to the palette in addition to the 6 colors extracted by SHARE PALETTE, the feature to randomly import images from Unsplash to create a color palette, and the feature to share my palette with people, I think it can become a product that designers can use quite usefully in their work or personal work.',
         },
       },
 
@@ -277,7 +288,7 @@ export const buttonVariants = {
         key: 'PLarge',
         content: {
           k: '\u00A0\u00A0\u00A0팔레트 공유하기(SHARE PALETTE)에 추가하면 좋을 것 같은 기능이나, 디자인 작업을 하시다가 있으면 좋겠다고 생각했던 프로덕트가 있으시다면 댓글로 남겨주세요! 🙏',
-          e: '',
+          e: '\u00A0\u00A0\u00A0If you have a feature that you would like to add to SHARE PALETTE, or a product that you would like to have while designing, please leave a response! 🙏',
         },
       },
 

@@ -55,6 +55,8 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Device-Detect](https://github.com/duskload/react-device-detect#readme)
 
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+
 <br/>
 
 #### Interaction
