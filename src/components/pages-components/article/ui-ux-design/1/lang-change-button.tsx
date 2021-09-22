@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import PSmall from '../../../../../foundation/typography/p-small';
 import PMedium from '../../../../../foundation/typography/p-medium';
 
 const LangChangeButton = ({
   text,
-  setfirstToggle,
 }: {
   text:
     | {
@@ -14,7 +12,6 @@ const LangChangeButton = ({
         e: string;
       }
     | string;
-  setfirstToggle: Function;
 }) => {
   const router = useRouter();
   const locale = router.locale;
@@ -29,8 +26,6 @@ const LangChangeButton = ({
         ? router.push(router.asPath, router.asPath, { locale: 'en' })
         : router.push(router.asPath, router.asPath, { locale: 'ko' });
     }
-
-    setfirstToggle(true);
   };
 
   return (

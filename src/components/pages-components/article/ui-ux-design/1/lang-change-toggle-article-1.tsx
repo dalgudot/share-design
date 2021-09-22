@@ -8,11 +8,7 @@ import useScrollPosition from '../../../../../lib/hooks/useScrollPosition';
 import PLarge from '../../../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../../../styles/common';
 
-const LangChangeToggleArticle1 = ({
-  setFinalToggle,
-}: {
-  setFinalToggle?: Function;
-}) => {
+const LangChangeToggleArticle1 = () => {
   const router = useRouter();
   const locale = router.locale;
   const setLanguageChange = () => {
@@ -26,9 +22,6 @@ const LangChangeToggleArticle1 = ({
         ? router.push(router.asPath, router.asPath, { locale: 'en' })
         : router.push(router.asPath, router.asPath, { locale: 'ko' });
     }
-
-    // ui-ux article 1 본문 중 2번째 언어 전환 토글 눌렀을 때 작동
-    setFinalToggle && setFinalToggle(true);
   };
 
   // mediaBreakPoint.first를 기준으로 토글 글씨의 크기가 바뀌고, 그에 따라 글씨의 너비가 바뀌기 때문에 움직이는 x 좌표의 거리도 바뀐다.

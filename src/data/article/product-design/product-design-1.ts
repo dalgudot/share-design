@@ -46,7 +46,7 @@ export const productDesign1 = () => {
         key: 'PLarge',
         content: {
           k: "최근 디자인 공유하기(SHARE DESIGN) 프로젝트의 첫 번째 웹 프로덕트인 '팔레트 공유하기(SHARE PALETTE)'를 배포했다. 이미지를 업로드하면 이미지에서 6개의 색을 추출해 색상 팔레트를 만들어주는 디지털 프로덕트다. 🎨",
-          e: "I recently released 'SHARE PALETTE', the first web product of the SHARE DESIGN project. It is a digital product that extracts 6 colors from image you upload and create a color palette. 🎨",
+          e: "I recently released 'SHARE PALETTE', the first web product of the SHARE DESIGN project. It is a digital product that extracts 6 colors from images you upload and creates a color palette. 🎨",
         },
       },
       {
@@ -62,7 +62,7 @@ export const productDesign1 = () => {
         key: 'PLarge',
         content: {
           k: '미리 기획해 놓은 기능들을 하나씩 추가해 나가며 프로덕트를 발전시킬 계획이라 2021년 9월 22일 현재 팔레트 공유하기는 대단히 단순한 프로덕트이며, 3가지 크기의 버튼으로 사용자와 인터랙션(Interaction)한다. 아래는 이미지를 업로드하기 전후의 팔레트 공유하기의 모습이다.',
-          e: 'As of September 22, 2021, SHARE PALETTE is a very simple product becasue I plan to develop the product by adding feature one by one. SHARE PALETTE interacts with users with buttons of three sizes. Below is an image of SHARE PALETTE before and after uploading an image.',
+          e: 'As of September 22, 2021, SHARE PALETTE is a very simple product because I plan to develop the product by adding features one by one. SHARE PALETTE interacts with users with buttons of three sizes. Below is an image of SHARE PALETTE before and after uploading an image.',
         },
       },
       {
@@ -113,7 +113,7 @@ export const productDesign1 = () => {
         key: 'PLarge',
         content: {
           k: "위에서 '호버 상태'는 변화가 없어보이지만 '기본 상태'의 1.05배만큼 커진 상태다. 모바일에서는 마우스 포인터가 아닌 손가락으로 UI를 조작하기 때문에 '마우스 포인터를 올린 상태'는 있을 수 없다. 따라서 모바일에서는 기본 상태, 누른 상태, 사용 불가 상태 3가지 상태로 인터랙션을 디자인한다. 현재 디자인 공유하기에서는 사용자가 버튼을 쓰지 못하도록 해야 하는 경우는 사용자가 댓글을 쓸 때밖에 없기 때문에 '사용 불가 상태'는 각 아티클의 '댓글 남기기' 화면에서만 확인할 수 있다.",
-          e: "Above, although 'Hover State' looks unchanged, it has grown by 1.05 times than the 'Default State'.On mobile, there is no 'Hover State' because the UI is operated fingers rather than mouse pointer. Therefore, in mobile, interactions are designed in three states: Default State, Pressed State, and Disabled State. Currently, in SHARE DESIGN, the only case where the user should not be able to use the button is when the user writes a comment, so the 'Disabled State' can only be checked on the 'Write a Response' of each article.",
+          e: "Above, although 'Hover State' looks unchanged, it has grown by 1.05 times than the 'Default State'.On mobile, there is no 'Hover State' because the UI is operated with fingers rather than mouse pointer. Therefore, in mobile, interactions are designed in three states: Default State, Pressed State, and Disabled State. Currently, in SHARE DESIGN, the only case where the user should not be able to use the button is when the user writes a comment, so the 'Disabled State' can only be checked on the 'Write a Response' of each article.",
         },
       },
 
