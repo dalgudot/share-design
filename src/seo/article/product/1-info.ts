@@ -13,8 +13,8 @@ export const productDesign1Info = {
 
   // Aricle마다 다른 이미지
   thumbnail: {
-    k: '/images/product/share-palette/share_palette_thumbnail_ko.png',
-    e: '/images/product/share-palette/share_palette_thumbnail_en.png',
+    k: '/images/article/product/001/article_product_1_thumbnail_ko.png',
+    e: '/images/article/product/001/article_product_1_thumbnail_en.png',
   },
 
   description: {
