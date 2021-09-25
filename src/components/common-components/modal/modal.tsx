@@ -5,6 +5,7 @@ import { fadeInOut } from '../../../foundation/framer-motion/variants';
 import { useModal } from '../../../lib/hooks/useModal';
 import ShareModal from './share-modal/share-modal';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const Modal = () => {
   const { modalOn, closeModal } = useModal();
@@ -14,6 +15,28 @@ const Modal = () => {
       return <ShareModal />;
     }
   };
+
+  // 모달 스크롤 막기
+  // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/
+  useEffect(() => {
+    // 리렌더 방지 위해 'style.csstext' 활용
+    if (modalOn === true) {
+      // document.body.style.cssText = `overflow: hidden; height: 100vh;`;
+      document.body.style.cssText = `overflow: hidden;`;
+      // height 없이 overflow: hidden;만 해도 잘 동작.
+
+      return () => {
+        document.body.style.cssText = `overflow: "";`;
+      };
+    }
+  }, [modalOn]);
+
+  // Modal 켜져 있는데 화면 이동하면 Modal 종료
+  useEffect(() => {
+    if (modalOn === true) {
+      closeModal();
+    }
+  }, [router.pathname]);
 
   return (
     <>

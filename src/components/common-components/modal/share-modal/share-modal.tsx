@@ -136,11 +136,13 @@ const MotionContainer = styled(motion.div)`
   left: 0;
   right: 0;
   justify-content: center;
-  max-width: 400px;
+  min-width: 420px;
+  max-width: 420px;
   margin: 0 auto;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    top: 10%;
+    min-width: 300px;
+    top: 13%;
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;
@@ -151,6 +153,7 @@ const MotionUl = styled(motion.ul)`
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.R13};
   background-color: ${({ theme }) => theme.gray8};
+  border: solid 1px ${({ theme }) => theme.gray7};
   padding: 20px 40px 28px; // top은 20px + 16px(Li margin-top)
 
   button {

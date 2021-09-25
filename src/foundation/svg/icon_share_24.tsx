@@ -7,7 +7,7 @@ const IconShare24 = () => {
   const themeContext = useContext(ThemeContext);
   const color: string = themeContext.gray2;
   const width: number = useWindowWidth();
-  const pxSize: string = width < 1350 ? '24px' : '30px';
+  const pxSize: string = width < 1351 ? '24px' : '30px';
 
   return (
     <SVG width={pxSize} height={pxSize} viewBox="0 0 24 24" version="1.1">
