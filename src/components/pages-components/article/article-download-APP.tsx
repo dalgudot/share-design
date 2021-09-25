@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import IconAppleLogo24 from '../../../foundation/svg/icon_logo_apple_24';
 import { useUserAgent, withUserAgent } from 'next-useragent';
 import { GetServerSideProps } from 'next';
-import Go from './go';
+import Go from './article-go';
 
 // https://stackoverflow.com/questions/56457935/typescript-error-property-x-does-not-exist-on-type-window
 // This is solution of webkit error in typescript

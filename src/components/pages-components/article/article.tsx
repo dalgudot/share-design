@@ -18,6 +18,7 @@ import H2Title from '../../../foundation/typography/h2-title';
 import ExampleUiUxDesign1 from './ui-ux-design/1/example-ui-ux-design-1';
 import ExampleUiUxDesign2 from './ui-ux-design/2/example-ui-ux-design-2';
 import ExampleProductDesign1 from './product-design/1/example-product-design-1';
+import ArticleToolBar from './article-tool-bar';
 
 const Article = ({
   categoryTitle,
@@ -186,6 +187,7 @@ const Article = ({
           )}
         </ArticleContainer>
       </Main>
+      <ArticleToolBar />
     </>
   );
 };

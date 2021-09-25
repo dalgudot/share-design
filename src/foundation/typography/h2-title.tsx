@@ -27,11 +27,11 @@ const H2Title = ({
       weight={weight || 700}
       textSize={{
         desktop: '34px',
-        mobile: '28px',
+        mobile: '27px',
       }}
       lineHeight={{
         desktop: '47px', // Visual Correction
-        mobile: '38px', // Visual Correction
+        mobile: '39px', // Visual Correction
       }}
       letterSpacing={{
         desktop: '-0.1px',

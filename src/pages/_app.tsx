@@ -15,7 +15,7 @@ import Header from '../components/common-components/header/header';
 import { useRouter } from 'next/router';
 import ResponsiveNavBar from '../components/common-components/nav-bar/responsive-nav-bar';
 import Toast from '../components/common-components/toast/toast';
-import ShareModal from '../components/common-components/modal/share-modal';
+import Modal from '../components/common-components/modal/modal';
 import HeadSEO from '../seo/head-seo';
 import { RecoilRoot } from 'recoil';
 
@@ -39,25 +39,25 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
           <RecoilRoot>
             <ThemeProvider theme={mode}>
               <GlobalColors />
-              {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
               <Header
                 setTheme={setMode}
                 darkTheme={darkTheme}
                 lightTheme={lightTheme}
               />
               <ResponsiveNavBar />
-              {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
-              {/* <AnimatePresence> */}
               {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
+              {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
+              {/* Page Transition 위해 AnimatePresence는 _app에 정의 */}
+              {/* AnimatePresence 밖에 ResponsiveNavBar 있어야 re-render 안 됨 */}
+              {/* <AnimatePresence> */}
               <Component //
                 {...pageProps}
-                // key={router.pathname}
+                // key={`page${router.pathname}`}
                 // exit Animation 위해 필요한 key
               />
               {/* </AnimatePresence> */}
-              {/* AnimatePresence 밖에 ResponsiveNavBar 있어야 re-render 안 됨 */}
-              {/* <ShareModal key={router.pathname} showToast={showToast} /> */}
-              <Toast />
+              <Modal key={`Modal${router.pathname}`} />
+              <Toast key={`Toast${router.pathname}`} />
             </ThemeProvider>
           </RecoilRoot>
         </PersistGate>

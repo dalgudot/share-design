@@ -7,7 +7,7 @@ import { buttonVariants } from '../../../../../foundation/framer-motion/variants
 import H3Title from '../../../../../foundation/typography/h3-title';
 import ArticleSyntaxHighlighter from '../../article-syntax-highlighter';
 import ArticleLine from '../../article-line';
-import Go from '../../go';
+import Go from '../../article-go';
 import ArticleFigure from '../../article-figure';
 import { useToast } from '../../../../../lib/hooks/useToast';
 

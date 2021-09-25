@@ -34,26 +34,18 @@ let store: any;
 
 type InitialStateTypes = {
   themeMode: string;
-  openModal: boolean;
-  modalZIndexHandler: boolean;
 };
 
 type actionTypesTypes = {
   MODE_CHANGE: string;
-  OPEN_MODAL: string;
-  MODAL_Z_INDEX_HANDLER: string;
 };
 
 const InitialState: InitialStateTypes = {
   themeMode: 'darkTheme',
-  openModal: false,
-  modalZIndexHandler: false,
 };
 
 export const actionTypes: actionTypesTypes = {
   MODE_CHANGE: 'MODE_CHANGE',
-  OPEN_MODAL: 'OPEN_MODAL',
-  MODAL_Z_INDEX_HANDLER: 'MODAL_Z_INDEX_HANDLER',
 };
 
 export const reducer = (state = InitialState, action: any) => {
@@ -62,18 +54,6 @@ export const reducer = (state = InitialState, action: any) => {
       return {
         ...state,
         themeMode: state.themeMode === 'darkTheme' ? 'lightTheme' : 'darkTheme',
-      };
-
-    case actionTypes.OPEN_MODAL:
-      return {
-        ...state,
-        openModal: state.openModal === false ? true : false,
-      };
-
-    case actionTypes.MODAL_Z_INDEX_HANDLER:
-      return {
-        ...state,
-        modalZIndexHandler: state.modalZIndexHandler === false ? true : false,
       };
 
     default:

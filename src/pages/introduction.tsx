@@ -3,7 +3,7 @@ import { ProjectIntroduction } from '../data/introduction/t-introduction';
 import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
 const Introduction = () => {
-  useArvAmplitude('arv_introduction');
+  // useArvAmplitude('arv_introduction');
   return (
     <>
       <Article //
