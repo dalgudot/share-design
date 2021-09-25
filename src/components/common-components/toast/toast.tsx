@@ -5,34 +5,29 @@ import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useToast } from '../../../lib/hooks/useToast';
 
-const Toast = ({}: // toastOn,
-// toastMessage,
-{
-  // toastOn: boolean;
-  // toastMessage: string;
-}) => {
+const Toast = () => {
   const { toastOn, toastMessage } = useToast();
-
   return (
     <>
-      <MotionToastContainer
+      <MotionToastPositionContainer
         // 토스트별 구분 위해 key 필요
-        key={toastMessage}
+        // key={toastMessage}
         variants={toastVariants}
-        initial="hide"
+        initial={false}
         animate={toastOn === true ? 'show' : 'hide'}
+        exit="hide"
       >
-        <Div>
+        <ToastContainer>
           <PLarge text={toastMessage} color="gray1" />
-        </Div>
-      </MotionToastContainer>
+        </ToastContainer>
+      </MotionToastPositionContainer>
     </>
   );
 };
 
-export default React.memo(Toast);
+export default Toast;
 
-const MotionToastContainer = styled(motion.div)`
+const MotionToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
   position: fixed; // toast 위치의 핵심
   top: 28px;
@@ -48,7 +43,7 @@ const MotionToastContainer = styled(motion.div)`
   }
 `;
 
-const Div = styled.div`
+const ToastContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -57,6 +57,8 @@ SHARE DESIGN is the result. I plan to continue to share my Design Experience thr
 
 - [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
+- [Recoil](https://github.com/facebookexperimental/Recoil)
+
 <br/>
 
 #### Interaction
