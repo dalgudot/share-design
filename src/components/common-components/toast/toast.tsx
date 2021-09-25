@@ -3,17 +3,21 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
+import { useToast } from '../../../lib/hooks/useToast';
 
-const MyToast = ({
-  toastOn,
-  toastMessage,
-}: {
-  toastOn: boolean;
-  toastMessage: string;
+const Toast = ({}: // toastOn,
+// toastMessage,
+{
+  // toastOn: boolean;
+  // toastMessage: string;
 }) => {
+  const { toastOn, toastMessage } = useToast();
+
   return (
     <>
       <MotionToastContainer
+        // 토스트별 구분 위해 key 필요
+        key={toastMessage}
         variants={toastVariants}
         initial="hide"
         animate={toastOn === true ? 'show' : 'hide'}
@@ -26,7 +30,7 @@ const MyToast = ({
   );
 };
 
-export default React.memo(MyToast);
+export default React.memo(Toast);
 
 const MotionToastContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};

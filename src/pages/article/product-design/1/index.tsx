@@ -1,7 +1,7 @@
 import Article from '../../../../components/pages-components/article/article';
 import { productDesign1 } from '../../../../data/article/product-design/product-design-1';
 
-const ProductDesign1 = ({ showToast }: { showToast: Function }) => {
+const ProductDesign1 = () => {
   return (
     <>
       <Article //
@@ -11,7 +11,6 @@ const ProductDesign1 = ({ showToast }: { showToast: Function }) => {
         articleTitle={productDesign1().title}
         contentsArray={productDesign1().contents}
         referencesData={productDesign1().references}
-        showToast={showToast}
       />
     </>
   );

@@ -17,8 +17,10 @@ import {
 import { scrollTop } from '../../../../lib/functions/scroll-top';
 import React from 'react';
 import PMedium from '../../../../foundation/typography/p-medium';
+import { useToast } from '../../../../lib/hooks/useToast';
 
-const WriteResponse = ({ showToast }: { showToast: Function }) => {
+const WriteResponse = () => {
+  const { showToast } = useToast();
   const when = getDate().whenResponse;
   const router = useRouter();
   const { category, id } = router.query;

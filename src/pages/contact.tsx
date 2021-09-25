@@ -8,7 +8,7 @@ import SocialArea from '../components/pages-components/contact/social';
 import AboutArea from '../components/pages-components/contact/about';
 import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
-const ContactIndex = ({ showToast }: { showToast: Function }) => {
+const ContactIndex = () => {
   // useArvAmplitude('arv_contact');
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
@@ -18,9 +18,7 @@ const ContactIndex = ({ showToast }: { showToast: Function }) => {
     <>
       <Main>
         <ProfileArea />
-        <EmailArea //
-          showToast={showToast} // _app에서 Page Component에 전달된 showToast 함수 전달
-        />
+        <EmailArea />
         <AboutArea />
         {/* <SocialArea /> */}
       </Main>

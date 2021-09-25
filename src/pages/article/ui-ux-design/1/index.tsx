@@ -1,7 +1,7 @@
 import Article from '../../../../components/pages-components/article/article';
 import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/ui-ux-design-1';
 
-const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
+const UIUXDesign1 = () => {
   return (
     <>
       <Article //
@@ -11,7 +11,6 @@ const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
         articleTitle={uiUxDesign1().title}
         contentsArray={uiUxDesign1().contents}
         referencesData={uiUxDesign1().references}
-        showToast={showToast}
       />
     </>
   );

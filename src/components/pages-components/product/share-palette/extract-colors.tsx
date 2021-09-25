@@ -9,14 +9,10 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import PSmall from '../../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '../../../../foundation/framer-motion/variants';
+import { useToast } from '../../../../lib/hooks/useToast';
 
-const ExtractColors = ({
-  image,
-  showToast,
-}: {
-  image: string[];
-  showToast: Function;
-}) => {
+const ExtractColors = ({ image }: { image: string[] }) => {
+  const { showToast } = useToast();
   const { data, loading, error } = usePalette(image[0]);
   const colorsDataArray = Object.values(data);
   const altTextUploadedImage = useSetLanguage({

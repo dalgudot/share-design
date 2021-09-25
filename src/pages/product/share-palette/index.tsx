@@ -8,11 +8,10 @@ import PLarge from '../../../foundation/typography/p-large';
 import { useIsiOS } from '../../../lib/hooks/useIsiOS';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
-const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
+const SharePaletteIndex = () => {
   useEffect(() => {
     VisitsAndViewsDuringSession('SHARE PALETTE');
   }, []);
-
   const [image, setImage] = useState<string[]>([]);
 
   // Solve iPad Safe Area
@@ -54,7 +53,7 @@ const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
         ) : (
           <AfterUpload__MarginTop />
         )}
-        <ExtractColors image={image} showToast={showToast} />
+        <ExtractColors image={image} />
         <UploadImage image={image} setImage={setImage} />
       </Main>
     </>

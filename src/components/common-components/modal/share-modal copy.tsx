@@ -4,31 +4,33 @@ import {
   TwitterShareButton,
 } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import IconShareFacebook24 from '../../../../foundation/svg/icon_share_facebook_24';
-import IconShareLinkedin24 from '../../../../foundation/svg/icon_share_linkedin_24';
-import IconShareTwitter24 from '../../../../foundation/svg/icon_share_twitter_24';
-import IconShareCopyURL24 from '../../../../foundation/svg/icon_share_copyURL_24';
+import IconShareFacebook24 from '../../../foundation/svg/icon_share_facebook_24';
+import IconShareLinkedin24 from '../../../foundation/svg/icon_share_linkedin_24';
+import IconShareTwitter24 from '../../../foundation/svg/icon_share_twitter_24';
+import IconShareCopyURL24 from '../../../foundation/svg/icon_share_copyURL_24';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { mediaBreakPoint } from '../../../../styles/common';
-import AloneButton from '../../../common-components/button/alone-button';
-import { t } from '../../../../data/index/t-index';
-import PLarge from '../../../../foundation/typography/p-large';
+import { mediaBreakPoint } from '../../../styles/common';
+import AloneButton from '../button/alone-button';
+import { t } from '../../../data/index/t-index';
+import PLarge from '../../../foundation/typography/p-large';
 import {
   btnHoverTap,
   fadeInOut,
   listUp,
   stagger,
   ScaleDownInUpOut,
-} from '../../../../foundation/framer-motion/variants';
+} from '../../../foundation/framer-motion/variants';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useRef } from 'react';
-import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { useRouter } from 'next/router';
+import { useToast } from '../../../lib/hooks/useToast';
 
-const ShareModal = ({ showToast }: { showToast: Function }) => {
+const ShareModal = () => {
   const url = window.location.href; // 현재 URL
   // console.log(url);
+
+  const { showToast } = useToast();
 
   const openModal = useSelector((state: any) => state.openModal);
   const modalZIndexHandler = useSelector(
@@ -76,15 +78,6 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
     }
   }, [router.pathname]);
 
-  const facebookRef = useRef(null);
-  const linkedinRef = useRef(null);
-  const twitterRef = useRef(null);
-  const copyURLRef = useRef(null);
-  useMyRipple(facebookRef);
-  useMyRipple(linkedinRef);
-  useMyRipple(twitterRef);
-  useMyRipple(copyURLRef);
-
   return (
     <>
       <BackgroundBlurMotion
@@ -109,7 +102,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
             animate={openModal === true ? 'animate' : 'initial'}
           >
             <FacebookShareButton url={url} className="list__common">
-              <LiMotion ref={facebookRef}>
+              <LiMotion>
                 <IconShareFacebook24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -121,7 +114,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
             </FacebookShareButton>
 
             <LinkedinShareButton url={url} className="list__common">
-              <LiMotion ref={linkedinRef} variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareLinkedin24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -133,7 +126,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
             </LinkedinShareButton>
 
             <TwitterShareButton url={url} className="list__common">
-              <LiMotion ref={twitterRef} variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareTwitter24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -149,7 +142,7 @@ const ShareModal = ({ showToast }: { showToast: Function }) => {
               text={url}
               onCopy={() => showToast(t.shareModal.toastMessage)}
             >
-              <LiMotion ref={copyURLRef} variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareCopyURL24 />
                 <motion.div //
                   variants={btnHoverTap}

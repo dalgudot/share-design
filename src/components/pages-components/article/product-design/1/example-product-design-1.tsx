@@ -9,18 +9,18 @@ import ArticleSyntaxHighlighter from '../../article-syntax-highlighter';
 import ArticleLine from '../../article-line';
 import Go from '../../go';
 import ArticleFigure from '../../article-figure';
+import { useToast } from '../../../../../lib/hooks/useToast';
 
 const ExampleProductDesign1 = ({
   component_key,
   content,
   caption,
-  showToast,
 }: {
   component_key: string;
   content: tType;
   caption?: tType;
-  showToast?: any;
 }) => {
+  const { showToast } = useToast();
   const buttonText = { k: '버튼', e: 'Button' };
 
   const ArticleExampleComponentChildren = () => {
