@@ -1,13 +1,13 @@
 import { tType } from './../../../type.d';
-import { atom, useRecoilState } from 'recoil';
+import { atom, selector, useRecoilState } from 'recoil';
 
-const toastState = atom({
-  key: 'toastState', // unique ID (with respect to other atoms/selectors)
+const toastState = atom<boolean>({
+  key: 'toast', // unique ID (with respect to other atoms/selectors)
   default: false, // default value (aka initial value)
 });
 
-const toastMessageState = atom({
-  key: 'toastMessageState',
+const toastMessageState = atom<string>({
+  key: 'toastMessage',
   default: '',
 });
 

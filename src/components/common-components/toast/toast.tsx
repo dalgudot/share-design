@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
@@ -9,23 +9,26 @@ const Toast = () => {
   const { toastOn, toastMessage } = useToast();
   return (
     <>
-      <MotionToastPositionContainer
-        // 토스트별 구분 위해 key 필요
-        // key={toastMessage}
-        variants={toastVariants}
-        initial={false}
-        animate={toastOn === true ? 'show' : 'hide'}
-        exit="hide"
-      >
-        <ToastContainer>
-          <PLarge text={toastMessage} color="gray1" />
-        </ToastContainer>
-      </MotionToastPositionContainer>
+      <AnimatePresence>
+        {toastOn && (
+          <MotionToastPositionContainer
+            key={toastMessage}
+            variants={toastVariants}
+            initial="hide"
+            animate="show"
+            exit="hide"
+          >
+            <ToastContainer>
+              <PLarge text={toastMessage} color="gray1" />
+            </ToastContainer>
+          </MotionToastPositionContainer>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
-export default Toast;
+export default React.memo(Toast);
 
 const MotionToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};

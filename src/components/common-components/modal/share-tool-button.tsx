@@ -1,48 +1,41 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import IconShare24 from '../../../foundation/svg/icon_share_24';
-import { useDispatch, useSelector } from 'react-redux';
-import { btnHoverTap } from '../../../foundation/framer-motion/variants';
-import { useTapAmplitude } from '../../../lib/hooks/Amplitude/useTapAmplitude';
+import { buttonVariants } from '../../../foundation/framer-motion/variants';
+import { useModal } from '../../../lib/hooks/useModal';
+import PMedium from '../../../foundation/typography/p-medium';
+import PSmall from '../../../foundation/typography/p-small';
 
 const ShareToolButton = () => {
-  const openModalForAmplitude = useSelector((state: any) => state.openModal);
-
-  const dispatch = useDispatch();
-  const OPEN_MODAL = () =>
-    dispatch({
-      type: 'OPEN_MODAL',
-    });
-  const MODAL_Z_INDEX_HANDLER = () =>
-    dispatch({
-      type: 'MODAL_Z_INDEX_HANDLER',
-    });
-
-  const openModal = () => {
-    !openModalForAmplitude && useTapAmplitude('tap_open_share_modal');
-    OPEN_MODAL(); // to ture
-    MODAL_Z_INDEX_HANDLER();
-  };
+  const { openModal } = useModal();
 
   return (
     <>
-      <ShareButtonMotion
-        onClick={openModal}
-        variants={btnHoverTap}
+      <MotionShareButton
+        onClick={() => openModal()}
+        variants={buttonVariants}
         whileHover="whileHover"
         whileTap="whileTap"
       >
         <IconShare24 />
-      </ShareButtonMotion>
+        <PSmall text={{ k: '공유하기', e: 'Share' }} color="gray2" />
+      </MotionShareButton>
     </>
   );
 };
 
 export default ShareToolButton;
 
-const ShareButtonMotion = styled(motion.button)`
+const MotionShareButton = styled(motion.button)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  p {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 2px;
+  }
 `;
