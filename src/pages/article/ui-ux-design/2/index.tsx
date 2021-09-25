@@ -1,7 +1,9 @@
 import Article from '../../../../components/pages-components/article/article';
 import { uiUxDesign2 } from '../../../../data/article/ui-ux-design/ui-ux-design-2';
+import { useArvAmplitude } from '../../../../lib/hooks/Amplitude/useArvAmplitude';
 
 const UIUXDesign2 = () => {
+  // useArvAmplitude('arv_ui_ux_design_2');
   return (
     <>
       <Article //

@@ -31,19 +31,6 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   initFirebase();
   PreventIllegalTheft();
 
-  // Amplitude initialize
-  // 참고: https://developers.amplitude.com/docs/advanced-settings
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const amplitude = require('amplitude-js');
-      amplitude
-        .getInstance()
-        .init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, null, {
-          // optional configuration options
-        });
-    }
-  }, []);
-
   return (
     <>
       <HeadSEO />
@@ -78,3 +65,16 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+// Amplitude initialize
+// 참고: https://developers.amplitude.com/docs/advanced-settings
+// useEffect(() => {
+//   if (typeof window !== undefined) {
+//     const amplitude = require('amplitude-js');
+//     amplitude
+//       .getInstance()
+//       .init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY, null, {
+//         // optional configuration options
+//       });
+//   }
+// }, []);
