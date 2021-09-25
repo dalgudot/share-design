@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../../styles/common';
-import ShareToolButton from './share-tool-button';
+import ShareToolButton from '../../../common-components/modal/share-tool-button';
 
 const ArticleToolBar = () => {
   return (
