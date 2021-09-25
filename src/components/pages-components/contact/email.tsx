@@ -6,8 +6,11 @@ import PMedium from '../../../foundation/typography/p-medium';
 import H3Title from '../../../foundation/typography/h2-title';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '../../../foundation/framer-motion/variants';
+import { useToast } from '../../../lib/hooks/useToast';
 
-const EmailArea = ({ showToast }: { showToast: Function }) => {
+const EmailArea = () => {
+  const { showToast } = useToast();
+
   return (
     <EmailDiv>
       <H3Title text={t.myEmail} color="gray0" />

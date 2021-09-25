@@ -7,12 +7,13 @@ import H1Title from '../../../foundation/typography/h1-title';
 import PLarge from '../../../foundation/typography/p-large';
 import { useIsiOS } from '../../../lib/hooks/useIsiOS';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
+import { useArvAmplitude } from '../../../lib/hooks/Amplitude/useArvAmplitude';
 
-const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
+const SharePaletteIndex = () => {
+  // useArvAmplitude('arv_share_palette');
   useEffect(() => {
     VisitsAndViewsDuringSession('SHARE PALETTE');
   }, []);
-
   const [image, setImage] = useState<string[]>([]);
 
   // Solve iPad Safe Area
@@ -54,7 +55,7 @@ const SharePaletteIndex = ({ showToast }: { showToast: Function }) => {
         ) : (
           <AfterUpload__MarginTop />
         )}
-        <ExtractColors image={image} showToast={showToast} />
+        <ExtractColors image={image} />
         <UploadImage image={image} setImage={setImage} />
       </Main>
     </>

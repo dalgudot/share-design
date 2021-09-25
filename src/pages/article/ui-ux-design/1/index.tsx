@@ -1,7 +1,9 @@
 import Article from '../../../../components/pages-components/article/article';
 import { uiUxDesign1 } from '../../../../data/article/ui-ux-design/ui-ux-design-1';
+import { useArvAmplitude } from '../../../../lib/hooks/Amplitude/useArvAmplitude';
 
-const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
+const UIUXDesign1 = () => {
+  // useArvAmplitude('arv_ui_ux_design_1');
   return (
     <>
       <Article //
@@ -11,7 +13,6 @@ const UIUXDesign1 = ({ showToast }: { showToast: Function }) => {
         articleTitle={uiUxDesign1().title}
         contentsArray={uiUxDesign1().contents}
         referencesData={uiUxDesign1().references}
-        showToast={showToast}
       />
     </>
   );

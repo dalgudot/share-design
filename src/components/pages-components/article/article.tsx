@@ -25,7 +25,6 @@ const Article = ({
   dateTime,
   articleTitle,
   contentsArray,
-  showToast,
   referencesData,
 }: {
   categoryTitle?: { k: string; e: string };
@@ -33,7 +32,6 @@ const Article = ({
   dateTime?: string;
   articleTitle: { k: string; e: string };
   contentsArray: any[];
-  showToast?: Function;
   referencesData?: object[];
 }) => {
   const width: number = useWindowWidth();
@@ -139,7 +137,6 @@ const Article = ({
               component_key={content.component_key as string}
               content={content.content}
               caption={content.caption}
-              showToast={showToast}
             />
           );
       }
@@ -172,7 +169,6 @@ const Article = ({
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
             <ArticleResponse
-              showToast={showToast}
               response={response}
               setResponse={setResponse}
               responseLoading={responseLoading}
