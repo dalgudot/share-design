@@ -21,26 +21,66 @@ import {
   stagger,
   ScaleDownInUpOut,
 } from '../../../foundation/framer-motion/variants';
-import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useToast } from '../../../lib/hooks/useToast';
 
 const ShareModal = () => {
   const url = window.location.href; // 현재 URL
+  // console.log(url);
+
   const { showToast } = useToast();
 
+  const openModal = useSelector((state: any) => state.openModal);
+  const modalZIndexHandler = useSelector(
+    (state: any) => state.modalZIndexHandler
+  );
+  // console.log(`openModal: ${openModal}`);
+  // console.log(`modalZIndexHandler: ${modalZIndexHandler}`);
+
+  // 모달 스크롤 막기
+  // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/
+  useEffect(() => {
+    // 리렌더 방지 위해 'style.csstext' 활용
+    if (modalZIndexHandler === true && openModal === true) {
+      // document.body.style.cssText = `overflow: hidden; height: 100vh;`;
+      document.body.style.cssText = `overflow: hidden;`;
+      // height 없이 overflow: hidden;만 해도 잘 동작.
+
+      return () => {
+        document.body.style.cssText = `overflow: "";`;
+      };
+    }
+  }, [modalZIndexHandler]);
+
+  const dispatch = useDispatch();
+  const OPEN_MODAL = () =>
+    dispatch({
+      type: 'OPEN_MODAL',
+    });
+  const MODAL_Z_INDEX_HANDLER = () =>
+    dispatch({
+      type: 'MODAL_Z_INDEX_HANDLER',
+    });
+
+  const closeModal = () => {
+    OPEN_MODAL(); // to false
+    setTimeout(() => MODAL_Z_INDEX_HANDLER(), 400); // 사라지는 애니메이션 위한 시간, Framer Varianst와 시간 통일
+  };
+
   // Modal 켜져 있는데 화면 이동하면 Modal 종료
-  // const router = useRouter();
-  // useEffect(() => {
-  //   if (modalZIndexHandler === true && openModal === true) {
-  //     OPEN_MODAL();
-  //     MODAL_Z_INDEX_HANDLER();
-  //   }
-  // }, [router.pathname]);
+  const router = useRouter();
+  useEffect(() => {
+    if (modalZIndexHandler === true && openModal === true) {
+      OPEN_MODAL();
+      MODAL_Z_INDEX_HANDLER();
+    }
+  }, [router.pathname]);
 
   return (
     <>
-      <MotionBackgroundBlur
+      <BackgroundBlurMotion
         variants={fadeInOut}
         initial={false}
         animate={openModal === true ? 'animate' : 'initial'}
@@ -49,20 +89,20 @@ const ShareModal = () => {
         onClick={closeModal}
       />
       <Wrap openModal={openModal} modalZIndexHandler={modalZIndexHandler}>
-        <MotionDiv
+        <DivMotion
           variants={ScaleDownInUpOut}
           initial={false}
           animate={openModal === true ? 'animate' : 'initial'}
           openModal={openModal}
           modalZIndexHandler={modalZIndexHandler}
         >
-          <MotionUl //
+          <UlMotion //
             variants={stagger}
             initial={false}
             animate={openModal === true ? 'animate' : 'initial'}
           >
             <FacebookShareButton url={url} className="list__common">
-              <MotionLi variants={listUp}>
+              <LiMotion>
                 <IconShareFacebook24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -70,11 +110,11 @@ const ShareModal = () => {
                 >
                   <PLarge text={t.shareModal.facebook} color="gray1" />
                 </motion.div>
-              </MotionLi>
+              </LiMotion>
             </FacebookShareButton>
 
             <LinkedinShareButton url={url} className="list__common">
-              <MotionLi variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareLinkedin24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -82,11 +122,11 @@ const ShareModal = () => {
                 >
                   <PLarge text={t.shareModal.linkedin} color="gray1" />
                 </motion.div>
-              </MotionLi>
+              </LiMotion>
             </LinkedinShareButton>
 
             <TwitterShareButton url={url} className="list__common">
-              <MotionLi variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareTwitter24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -94,7 +134,7 @@ const ShareModal = () => {
                 >
                   <PLarge text={t.shareModal.twitter} color="gray1" />
                 </motion.div>
-              </MotionLi>
+              </LiMotion>
             </TwitterShareButton>
 
             {/* CopyToClipboard 밑에는 자식 컴포넌트 1개만 가능 */}
@@ -102,7 +142,7 @@ const ShareModal = () => {
               text={url}
               onCopy={() => showToast(t.shareModal.toastMessage)}
             >
-              <MotionLi variants={listUp}>
+              <LiMotion variants={listUp}>
                 <IconShareCopyURL24 />
                 <motion.div //
                   variants={btnHoverTap}
@@ -110,14 +150,14 @@ const ShareModal = () => {
                 >
                   <PLarge text={t.shareModal.copyURL} color="gray1" />
                 </motion.div>
-              </MotionLi>
+              </LiMotion>
             </CopyToClipboard>
 
             <motion.button onClick={closeModal} variants={listUp}>
               <AloneButton btnText={t.closeButton} marginTop="36px" />
             </motion.button>
-          </MotionUl>
-        </MotionDiv>
+          </UlMotion>
+        </DivMotion>
       </Wrap>
     </>
   );
@@ -125,12 +165,12 @@ const ShareModal = () => {
 
 export default React.memo(ShareModal);
 
-type MotionBackgroundBlurType = {
+type BackgroundBlurMotionType = {
   openModal: boolean;
   modalZIndexHandler: boolean;
 };
 
-const MotionBackgroundBlur = styled(motion.div)<MotionBackgroundBlurType>`
+const BackgroundBlurMotion = styled(motion.div)<BackgroundBlurMotionType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
@@ -155,7 +195,7 @@ type modalHandlerType = {
   modalZIndexHandler: boolean;
 };
 
-const Wrap = styled.div<MotionBackgroundBlurType>`
+const Wrap = styled.div<BackgroundBlurMotionType>`
   // 사라지는 애니메이션에서 z-index 조건 순서가 중요
   z-index: ${({ openModal, modalZIndexHandler, theme }) =>
     modalZIndexHandler === false && openModal === false
@@ -175,7 +215,7 @@ const Wrap = styled.div<MotionBackgroundBlurType>`
   justify-content: center;
 `;
 
-const MotionDiv = styled(motion.div)<modalHandlerType>`
+const DivMotion = styled(motion.div)<modalHandlerType>`
   width: 100%;
   max-width: 400px;
 
@@ -185,7 +225,7 @@ const MotionDiv = styled(motion.div)<modalHandlerType>`
   }
 `;
 
-const MotionUl = styled(motion.ul)`
+const UlMotion = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +239,7 @@ const MotionUl = styled(motion.ul)`
   }
 `;
 
-const MotionLi = styled(motion.li)`
+const LiMotion = styled(motion.li)`
   cursor: pointer;
   width: 100%;
   height: 100%;
