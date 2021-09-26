@@ -101,7 +101,6 @@ const Palette = styled.div<{ hex?: string }>`
   background-color: ${({ hex }) => hex};
   width: 100%;
   height: calc(480px / 6);
-
   @media all and (max-width: 480px) {
     height: calc(91vw / 6); // 양옆 4.5vw * 2 뺀 나머지
   }
@@ -119,10 +118,8 @@ const MotionBtnPaletteCopy = styled(motion.button)`
   align-items: center;
   background-color: ${({ theme }) => theme.gray7};
   padding: 18px 28px;
-
   border-radius: 23px;
   margin-top: 36px;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     border-radius: 21px;
     margin-top: 28px;
@@ -136,7 +133,6 @@ const GridColorChip = styled.div`
   column-gap: 16px; // gap은 2개니까 2로 나눔
   row-gap: 16px;
   margin-top: 96px;
-
   @media all and (max-width: 480px) {
     grid-template-columns: 28vw 28vw 28vw; // 84vw / 3
     grid-template-rows: calc(28vw * 1.6) calc(28vw * 1.6);
@@ -156,7 +152,6 @@ const ColorChip = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
   width: calc(448px / 3);
   height: calc(448px / 3);
-
   @media all and (max-width: 480px) {
     width: 28vw;
     height: 28vw;
@@ -165,11 +160,9 @@ const ColorChip = styled.div<{ color: string }>`
 
 const MotionBtnHexCopy = styled(motion.button)`
   background-color: ${({ theme }) => theme.gray7};
-
   padding: 8px 16px;
   border-radius: 11px;
   margin-top: 10px;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     border-radius: 10px;
     margin-top: 8px;

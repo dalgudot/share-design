@@ -41,13 +41,9 @@ const DotContainer = styled.div`
 `;
 
 const staggerVariants = {
-  initial: {
-    transition: {},
-  },
-
   animate: {
     transition: {
-      staggerChildren: 0.09,
+      staggerChildren: 0.1,
     },
   },
 };
