@@ -40,7 +40,6 @@ export default React.memo(Header);
 
 const HeaderContainer = styled.header`
   margin-top: calc(env(safe-area-inset-top));
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,10 +53,10 @@ const HeaderContainer = styled.header`
   width: 100%;
 
   // Properties that change
-  height: ${({ theme }) => theme.margin.DesktopTop};
+  height: ${({ theme }) => theme.height.DesktopBarHeight};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    height: ${({ theme }) => theme.margin.MobileTop};
+    height: ${({ theme }) => theme.height.MobileBarHeight};
   }
 `;
 

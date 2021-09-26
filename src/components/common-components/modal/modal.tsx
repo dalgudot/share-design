@@ -22,11 +22,14 @@ const Modal = () => {
     // 리렌더 방지 위해 'style.csstext' 활용
     if (modalOn === true) {
       // document.body.style.cssText = `overflow: hidden; height: 100vh;`;
-      document.body.style.cssText = `overflow: hidden;`;
       // height 없이 overflow: hidden;만 해도 잘 동작.
+      document.body.style.cssText = `overflow: hidden; touch-action: none; -ms-touch-action: none;`;
+
+      // 사파리에서 스크롤되는 문제 해결: touch-action: none; -ms-touch-action: none;
+      // https://stackoverflow.com/questions/3047337/does-overflowhidden-applied-to-body-work-on-iphone-safari
 
       return () => {
-        document.body.style.cssText = `overflow: "";`;
+        document.body.style.cssText = ``;
       };
     }
   }, [modalOn]);

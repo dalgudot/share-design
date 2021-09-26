@@ -1,16 +1,19 @@
-import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useWindowWidth } from '../../lib/hooks/useWindowWidth';
+import { mediaBreakPoint } from '../../styles/common';
 
 const IconShare24 = () => {
   const themeContext = useContext(ThemeContext);
   const color: string = themeContext.gray2;
   const width: number = useWindowWidth();
-  const pxSize: string = width < 1351 ? '24px' : '30px';
+  const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
+  const numberMediaBreakPoint = Number(stringMediaBreakPoint);
+  const activeMobileAnimation: boolean = width <= numberMediaBreakPoint;
+  const pxSize: string = activeMobileAnimation ? '24px' : '30px';
 
   return (
-    <SVG width={pxSize} height={pxSize} viewBox="0 0 24 24" version="1.1">
+    <svg width={pxSize} height={pxSize} viewBox="0 0 24 24" version="1.1">
       <g
         id="000-Icon/icon_share-iOS_24"
         stroke="none"
@@ -28,9 +31,7 @@ const IconShare24 = () => {
           points="9 11 6 11 6 20 18 20 18 11 15 11"
         ></polyline>
       </g>
-    </SVG>
+    </svg>
   );
 };
 export default IconShare24;
-
-const SVG = styled.svg``;

@@ -141,8 +141,9 @@ const MotionContainer = styled(motion.div)`
   margin: 0 auto;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    min-width: 300px;
-    top: 13%;
+    min-width: 40vw;
+    max-width: 420px;
+    top: 15vh;
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
 `;

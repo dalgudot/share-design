@@ -25,6 +25,11 @@ const padding = {
   LeftRightPadding: '0 4.5vw',
 };
 
+const height = {
+  DesktopBarHeight: '64px', // 63px + 1px,
+  MobileBarHeight: '56px', // 55px + 1px
+};
+
 const margin = {
   DesktopTop: '64px', // 63px + 1px, Header만큼만
   MobileTop: '56px', // 55px + 1px, Header만큼만
@@ -47,6 +52,7 @@ export const darkTheme: DefaultTheme = {
   maxWidth,
   zIndex,
   padding,
+  height,
   margin,
 };
 
@@ -65,6 +71,7 @@ export const lightTheme: DefaultTheme = {
   maxWidth,
   zIndex,
   padding,
+  height,
   margin,
 };
 
@@ -108,6 +115,10 @@ declare module 'styled-components' {
     };
     padding: {
       LeftRightPadding: string;
+    };
+    height: {
+      DesktopBarHeight: string;
+      MobileBarHeight: string;
     };
     margin: {
       DesktopTop: string;

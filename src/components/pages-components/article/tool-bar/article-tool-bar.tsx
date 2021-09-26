@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../../../styles/common';
-import ShareToolButton from '../../common-components/modal/share-tool-button';
+import { mediaBreakPoint } from '../../../../styles/common';
+import ShareToolButton from './share-tool-button';
 
 const ArticleToolBar = () => {
   const router = useRouter();
@@ -25,6 +25,7 @@ const ArticleToolBar = () => {
 export default ArticleToolBar;
 
 const ArticleToolBarContainer = styled.div`
+  margin-bottom: calc(env(safe-area-inset-bottom));
   z-index: ${({ theme }) => theme.zIndex.Bar};
   display: flex;
   justify-content: center;
@@ -38,11 +39,10 @@ const ArticleToolBarContainer = styled.div`
   background-color: ${({ theme }) => theme.gray9};
 
   // 바뀌는 요소
-  height: ${({ theme }) => theme.margin.DesktopTop};
+  height: ${({ theme }) => theme.height.DesktopBarHeight};
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-bottom: calc(env(safe-area-inset-bottom));
-    height: ${({ theme }) => theme.margin.MobileTop};
+    height: ${({ theme }) => theme.height.MobileBarHeight};
   }
 `;
 

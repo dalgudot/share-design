@@ -132,7 +132,7 @@ const Nav = styled.nav`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-bottom: calc(env(safe-area-inset-bottom));
-    height: 56px;
+    height: ${({ theme }) => theme.height.MobileBarHeight};
     z-index: ${({ theme }) => theme.zIndex.Bar};
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray9};

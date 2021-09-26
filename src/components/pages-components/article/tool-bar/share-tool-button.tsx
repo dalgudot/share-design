@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import IconShare24 from '../../../foundation/svg/icon_share_24';
-import { buttonVariants } from '../../../foundation/framer-motion/variants';
-import { useModal } from '../../../lib/hooks/useModal';
-import PMedium from '../../../foundation/typography/p-medium';
-import PSmall from '../../../foundation/typography/p-small';
+import IconShare24 from '../../../../foundation/svg/icon_share_24';
+import { buttonVariants } from '../../../../foundation/framer-motion/variants';
+import { useModal } from '../../../../lib/hooks/useModal';
+import PSmall from '../../../../foundation/typography/p-small';
 
 const ShareToolButton = () => {
   const { openModal } = useModal();
@@ -36,6 +35,6 @@ const MotionShareButton = styled(motion.button)`
   p {
     text-align: center;
     font-size: 10px;
-    margin-top: 2px;
+    margin-top: 1px;
   }
 `;
