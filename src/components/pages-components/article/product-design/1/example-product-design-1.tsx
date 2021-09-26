@@ -31,8 +31,13 @@ const ExampleProductDesign1 = ({
             <>
               <ArticleLine />
               <H3Title
-                text={{ k: '버튼의 4가지 상태', e: '4 states of a button' }}
+                text={{ k: '디자인 공유하기 버튼의 ', e: "SHARE DESIGN's" }}
                 color="gray2"
+              />
+              <H3Title
+                text={{ k: '4가지 상태', e: '4 states of a button' }}
+                color="gray2"
+                marginTop="6px"
               />
               <ExampleBtn1>
                 <PMedium text={buttonText} color="gray2" weight={700} />
