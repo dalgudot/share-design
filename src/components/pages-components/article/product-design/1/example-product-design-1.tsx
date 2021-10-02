@@ -9,7 +9,7 @@ import ArticleSyntaxHighlighter from '../../article-syntax-highlighter';
 import ArticleLine from '../../article-line';
 import Go from '../../article-go';
 import ArticleFigure from '../../article-figure';
-import { useToast } from '../../../../../lib/hooks/useToast';
+import { useToast } from '../../../../common-components/toast/useToast';
 
 const ExampleProductDesign1 = ({
   component_key,

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
-import { useToast } from '../../../lib/hooks/useToast';
+import { useToast } from './useToast';
 
 const Toast = () => {
   const { toastOn, toastMessage } = useToast();

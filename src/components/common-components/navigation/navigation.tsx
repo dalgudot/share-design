@@ -13,7 +13,7 @@ import {
   textButtonVariants,
 } from '../../../foundation/framer-motion/variants';
 
-const ResponsiveNavBar = () => {
+const Navigation = () => {
   const router = useRouter();
   const pathname = router.pathname;
   // 임시 pathname '/product/share-palette'
@@ -111,13 +111,13 @@ const ResponsiveNavBar = () => {
             </motion.a>
           </Link>
         </Nav>
-        <NavBarSafeArea />
+        <NavSafeArea />
       </>
     );
   } else return <></>;
 };
 
-export default ResponsiveNavBar;
+export default Navigation;
 
 const Nav = styled.nav`
   position: fixed;
@@ -160,7 +160,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavBarSafeArea = styled.div`
+const NavSafeArea = styled.div`
   @media all and (max-width: ${mediaBreakPoint.first}) {
     position: fixed;
     bottom: 0;

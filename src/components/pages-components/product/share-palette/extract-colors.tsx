@@ -9,7 +9,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import PSmall from '../../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '../../../../foundation/framer-motion/variants';
-import { useToast } from '../../../../lib/hooks/useToast';
+import { useToast } from '../../../common-components/toast/useToast';
 
 const ExtractColors = ({ image }: { image: string[] }) => {
   const { showToast } = useToast();

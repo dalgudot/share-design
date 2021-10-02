@@ -17,7 +17,7 @@ import {
 import { scrollTop } from '../../../../lib/functions/scroll-top';
 import React from 'react';
 import PMedium from '../../../../foundation/typography/p-medium';
-import { useToast } from '../../../../lib/hooks/useToast';
+import { useToast } from '../../../../components/common-components/toast/useToast';
 
 const WriteResponse = () => {
   const { showToast } = useToast();
