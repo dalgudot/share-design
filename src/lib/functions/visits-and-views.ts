@@ -16,7 +16,8 @@ export const VisitsAndViewsDuringSession = (where: string) => {
   };
 
   // console.log(location.hostname === 'localhost');
-  (location.hostname === 'localhost') === false && statisticsFunction();
+  // When **location.hostname === 'localhost'** is false, execute function **statisticsFunction()**
+  location.hostname === 'localhost' || statisticsFunction();
 };
 
 const firebaseFetchSet = (route: string) => {
