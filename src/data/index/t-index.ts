@@ -228,15 +228,6 @@ export const t = {
     },
   },
 
-  errorMessage: {
-    message: {
-      k: '디자인 공유하기에 없는 페이지입니다.',
-      e: 'This Page is not in SHARE DESIGN.',
-    },
-
-    btn: { k: '홈으로', e: 'Go to Home' },
-  },
-
   privacyMessage: {
     k: '디자인 공유하기는 개인 정보를 수집하지 않습니다.',
     e: 'SHARE DESIGN does not collect any privacy information.',
