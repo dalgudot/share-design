@@ -6,6 +6,7 @@ const H2Title = ({
   color,
   weight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -16,6 +17,7 @@ const H2Title = ({
   color: string;
   weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -25,17 +27,18 @@ const H2Title = ({
       weight={weight || 700}
       textSize={{
         desktop: '34px',
-        mobile: '28px',
+        mobile: '27px',
       }}
       lineHeight={{
         desktop: '47px', // Visual Correction
-        mobile: '38px', // Visual Correction
+        mobile: '39px', // Visual Correction
       }}
       letterSpacing={{
         desktop: '-0.1px',
         mobile: '0px',
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };

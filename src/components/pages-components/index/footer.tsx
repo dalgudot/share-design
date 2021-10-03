@@ -105,6 +105,16 @@ const Footer = () => {
               >
                 <PSmall text="LinkedIn" color="gray0" weight={700} />
               </motion.a>
+              {/* <Divider />
+              <motion.a
+                variants={textButtonVariants}
+                whileHover="whileHover"
+                whileTap="whileTap"
+                href="https://github.com/dalgudot"
+                target="_blank"
+              >
+                <PSmall text="GitHub" color="gray0" weight={700} />
+              </motion.a> */}
             </Social>
             <Link href="/contact">
               <a>
@@ -147,7 +157,11 @@ const Statistics = styled.div`
   align-items: center;
 `;
 
-const Right = styled.div``;
+const Right = styled.div`
+  a {
+    text-align: right;
+  }
+`;
 
 const Social = styled.div`
   display: flex;

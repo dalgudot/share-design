@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Response from './response';
+import ArticleResponse from './article-response';
 import { mediaBreakPoint } from '../../../styles/common';
 import { useWindowWidth } from '../../../lib/hooks/useWindowWidth';
 import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
@@ -7,13 +7,18 @@ import ArticleTitleArea from './article-title-area';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
-import IntroductionContents from '../introduction/introduction-contents';
-import UIUXDesignContents1 from './ui-ux-design/1/1';
 import ArticleMessage from './article-message';
-import ArticleNotice from './articoe-notice';
+import ArticleDownloadAPP from './article-download-APP';
 import ArticleReference from './article-reference';
 import { scrollTop } from '../../../lib/functions/scroll-top';
-import UIUXDesignContents2 from './ui-ux-design/2/2';
+import { distributeContentsTypes } from '../../../../type';
+import PLarge from '../../../foundation/typography/p-large';
+import ArticleImage from './article-image';
+import H2Title from '../../../foundation/typography/h2-title';
+import ExampleUiUxDesign1 from './ui-ux-design/1/example-ui-ux-design-1';
+import ExampleUiUxDesign2 from './ui-ux-design/2/example-ui-ux-design-2';
+import ExampleProductDesign1 from './product-design/1/example-product-design-1';
+import ArticleToolBar from './tool-bar/article-tool-bar';
 
 const Article = ({
   categoryTitle,
@@ -21,18 +26,13 @@ const Article = ({
   dateTime,
   articleTitle,
   contentsArray,
-  showToast,
   referencesData,
 }: {
   categoryTitle?: { k: string; e: string };
   date?: string;
   dateTime?: string;
   articleTitle: { k: string; e: string };
-  contentsArray: {
-    k: string;
-    e: string;
-  }[];
-  showToast?: Function;
+  contentsArray: any[];
   referencesData?: object[];
 }) => {
   const width: number = useWindowWidth();
@@ -75,25 +75,81 @@ const Article = ({
       behavior: 'smooth',
     });
   };
-  const [responseLoading, setResponseLoading] = useState(true);
 
+  const [responseLoading, setResponseLoading] = useState(true);
   useEffect(() => {
     router.query.CompleteResponse === 'true' ? goToResponse() : goToTop();
-
     return () => setResponse([] || null);
   }, []);
 
-  const contentsSwitch = () => {
-    switch (pathname) {
-      case '/introduction':
-        return <IntroductionContents contentsArray={contentsArray} />;
-      case '/article/ui-ux-design/1':
-        return <UIUXDesignContents1 contentsArray={contentsArray} />;
-      case '/article/ui-ux-design/2':
-        return <UIUXDesignContents2 contentsArray={contentsArray} />;
+  const distributeContents = (
+    content: distributeContentsTypes,
+    idx: number
+  ) => {
+    if (content.key === 'PLarge') {
+      return (
+        <PLarge
+          key={`${content.key}${idx}`}
+          text={content.content}
+          color="gray3"
+          marginTop="36px"
+        />
+      );
+    } else if (content.key === 'img') {
+      return (
+        <ArticleImage
+          key={`${content.key}${idx}`}
+          src={content.content}
+          caption={content.caption}
+          alt={content.alt}
+        />
+      );
+    } else if (content.key === 'H2Title') {
+      return (
+        <H2Title
+          key={`${content.key}${idx}`}
+          text={content.content}
+          color="gray2"
+          className="h2__title__margin"
+        />
+      );
+    } else if (content.key === 'ExampleComponent') {
+      switch (pathname) {
+        case '/article/ui-ux-design/1':
+          return (
+            <ExampleUiUxDesign1
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              caption={content.caption}
+            />
+          );
+        case '/article/ui-ux-design/2':
+          return (
+            <ExampleUiUxDesign2
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              caption={content.caption}
+            />
+          );
+        case '/article/product-design/1':
+          return (
+            <ExampleProductDesign1
+              key={`${content.key}${idx}`}
+              component_key={content.component_key as string}
+              content={content.content}
+              caption={content.caption}
+            />
+          );
+      }
+    } else {
+      return;
     }
   };
-  const contents = contentsSwitch();
+
+  const contents = contentsArray.map(
+    (content: distributeContentsTypes, idx: number) =>
+      distributeContents(content, idx)
+  );
 
   return (
     <>
@@ -113,8 +169,7 @@ const Article = ({
 
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' && (
-            <Response
-              showToast={showToast}
+            <ArticleResponse
               response={response}
               setResponse={setResponse}
               responseLoading={responseLoading}
@@ -122,16 +177,17 @@ const Article = ({
             />
           )}
 
-          {/* introduction에는 iOS 앱 다운로드 넣지 않음 */}
-          {router.pathname !== '/introduction' && <ArticleNotice />}
-          {/* <ArticleNotice /> */}
+          <ArticleDownloadAPP />
 
           {referencesData && (
-            <ArticleReference referencesData={referencesData} />
+            <>
+              <div ref={responseRef} />
+              <ArticleReference referencesData={referencesData} />
+            </>
           )}
-          <div ref={responseRef} />
         </ArticleContainer>
       </Main>
+      <ArticleToolBar />
     </>
   );
 };
@@ -165,14 +221,18 @@ const ArticleContainer = styled.article`
     margin-top: 24px;
     padding: ${({ theme }) => theme.padding.LeftRightPadding};
   }
+
+  .h2__title__margin {
+    margin-top: 96px;
+    margin-bottom: -12px; // PLarge의 상단 36px 상쇄
+
+    @media all and (max-width: ${mediaBreakPoint.first}) {
+      margin-top: 96px;
+    }
+  }
 `;
 
-type BackgroundType = {
-  height: number;
-  width: number;
-};
-
-const Background = styled.div<BackgroundType>`
+const Background = styled.div<{ height: number; width: number }>`
   position: absolute;
   top: 0;
   left: 0;

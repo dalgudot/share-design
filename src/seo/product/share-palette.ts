@@ -12,8 +12,8 @@ export const sharePaletteInfo = {
   type: 'website',
 
   thumbnail: {
-    k: '/images/og_image_ko.jpg',
-    e: '/images/og_image_en.jpg',
+    k: '/images/product/share-palette/share_palette_thumbnail_ko.png',
+    e: '/images/product/share-palette/share_palette_thumbnail_en.png',
   },
 
   description: {

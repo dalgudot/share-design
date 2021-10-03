@@ -4,17 +4,11 @@ import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
 const Introduction = () => {
   // useArvAmplitude('arv_introduction');
-  const articleTitle = ProjectIntroduction().title;
-  const contentsArray: {
-    k: string;
-    e: string;
-  }[] = ProjectIntroduction().contents;
-
   return (
     <>
       <Article //
-        articleTitle={articleTitle}
-        contentsArray={contentsArray}
+        articleTitle={ProjectIntroduction().title}
+        contentsArray={ProjectIntroduction().contents}
       />
     </>
   );

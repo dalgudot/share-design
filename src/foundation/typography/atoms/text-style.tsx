@@ -12,6 +12,7 @@ const TextStyle = ({
   letterSpacing,
   marginTop,
   opacity,
+  className,
 }: {
   type: any;
   text: string;
@@ -31,6 +32,7 @@ const TextStyle = ({
   };
   marginTop?: string;
   opacity?: number;
+  className?: string;
 }) => {
   const themeContext = useContext(ThemeContext);
   const textColorFunc = () => {
@@ -71,6 +73,7 @@ const TextStyle = ({
       mobileLetterSpacing={letterSpacing.mobile}
       marginTop={marginTop}
       opacity={opacity}
+      className={className}
     >
       {text}
     </Text>

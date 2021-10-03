@@ -9,25 +9,21 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import PSmall from '../../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '../../../../foundation/framer-motion/variants';
+import { useToast } from '../../../../lib/hooks/useToast';
 
-const ExtractColors = ({
-  image,
-  showToast,
-}: {
-  image: string[];
-  showToast: Function;
-}) => {
+const ExtractColors = ({ image }: { image: string[] }) => {
+  const { showToast } = useToast();
   const { data, loading, error } = usePalette(image[0]);
   const colorsDataArray = Object.values(data);
   const altTextUploadedImage = useSetLanguage({
     k: '팔레트 공유하기에 업로드된 이미지',
     e: 'Image uploaded to SHARE PALETTE',
   });
-  const copyPaletteToastText = useSetLanguage({
+  const textCopyPaletteToast = useSetLanguage({
     k: '🎨 팔레트를 복사했습니다',
     e: '🎨 Copied palette',
   });
-  const textbtnPaletteCopy = { k: '팔레트 복사', e: 'Copy Palette' };
+  const textbtnCopyPalette = { k: '팔레트 복사', e: 'Copy Palette' };
 
   const paletteString = colorsDataArray.toString();
   const organizedPaletteString = paletteString.replace(/,/gi, ' '); // /찾을 문자열/gi 라는 정규식 이용해 ',' 모두를 '\n'으로 교체
@@ -47,19 +43,14 @@ const ExtractColors = ({
 
         <CopyToClipboard
           text={organizedPaletteString}
-          onCopy={() => showToast(copyPaletteToastText)}
+          onCopy={() => showToast(textCopyPaletteToast)}
         >
           <MotionBtnPaletteCopy
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <PMedium
-              text={textbtnPaletteCopy}
-              color="gray2"
-              weight={700}
-              // lineHeight={{ desktop: '28px', mobile: '23px' }}
-            />
+            <PMedium text={textbtnCopyPalette} color="gray2" weight={700} />
           </MotionBtnPaletteCopy>
         </CopyToClipboard>
 
@@ -110,7 +101,6 @@ const Palette = styled.div<{ hex?: string }>`
   background-color: ${({ hex }) => hex};
   width: 100%;
   height: calc(480px / 6);
-
   @media all and (max-width: 480px) {
     height: calc(91vw / 6); // 양옆 4.5vw * 2 뺀 나머지
   }
@@ -126,13 +116,10 @@ const MotionBtnPaletteCopy = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: ${({ theme }) => theme.gray7};
   padding: 18px 28px;
   border-radius: 23px;
-
   margin-top: 36px;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     border-radius: 21px;
     margin-top: 28px;
@@ -146,7 +133,6 @@ const GridColorChip = styled.div`
   column-gap: 16px; // gap은 2개니까 2로 나눔
   row-gap: 16px;
   margin-top: 96px;
-
   @media all and (max-width: 480px) {
     grid-template-columns: 28vw 28vw 28vw; // 84vw / 3
     grid-template-rows: calc(28vw * 1.6) calc(28vw * 1.6);
@@ -166,7 +152,6 @@ const ColorChip = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
   width: calc(448px / 3);
   height: calc(448px / 3);
-
   @media all and (max-width: 480px) {
     width: 28vw;
     height: 28vw;
@@ -175,11 +160,9 @@ const ColorChip = styled.div<{ color: string }>`
 
 const MotionBtnHexCopy = styled(motion.button)`
   background-color: ${({ theme }) => theme.gray7};
-
   padding: 8px 16px;
   border-radius: 11px;
   margin-top: 10px;
-
   @media all and (max-width: ${mediaBreakPoint.first}) {
     border-radius: 10px;
     margin-top: 8px;

@@ -25,6 +25,11 @@ const padding = {
   LeftRightPadding: '0 4.5vw',
 };
 
+const height = {
+  DesktopBarHeight: '64px', // 63px + 1px,
+  MobileBarHeight: '56px', // 55px + 1px
+};
+
 const margin = {
   DesktopTop: '64px', // 63px + 1px, Header만큼만
   MobileTop: '56px', // 55px + 1px, Header만큼만
@@ -47,6 +52,7 @@ export const darkTheme: DefaultTheme = {
   maxWidth,
   zIndex,
   padding,
+  height,
   margin,
 };
 
@@ -57,7 +63,7 @@ export const lightTheme: DefaultTheme = {
   gray3: '#62666A',
   gray4: '#8D959D',
   gray5: '#92989D',
-  gray6: '#D9DEE3',
+  gray6: '#CAD0D6',
   gray7: '#E3E7EB',
   gray8: '#F1F2F4',
   gray9: '#F8F8FA',
@@ -65,6 +71,7 @@ export const lightTheme: DefaultTheme = {
   maxWidth,
   zIndex,
   padding,
+  height,
   margin,
 };
 
@@ -108,6 +115,10 @@ declare module 'styled-components' {
     };
     padding: {
       LeftRightPadding: string;
+    };
+    height: {
+      DesktopBarHeight: string;
+      MobileBarHeight: string;
     };
     margin: {
       DesktopTop: string;

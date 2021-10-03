@@ -9,12 +9,12 @@ import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
 
-const Index = () => {
-  // useArvAmplitude('arv_home');
+const RecordIndex = () => {
+  // useArvAmplitude('arv_record');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);
-  const data = returnArticleData();
+  const datas = returnArticleData();
 
   // temporary component for iOS env(safe-area-inset-bottom)
   const height = useWindowHeight();
@@ -23,15 +23,15 @@ const Index = () => {
     <>
       <Main>
         <ul>
-          {data.map((_, idx) => (
+          {datas.map((data) => (
             <List
-              key={data[idx].url}
-              url={data[idx].url}
-              category={data[idx].category}
-              date={data[idx].date}
-              dateTime={data[idx].dateTime}
-              title={data[idx].title}
-              hashTags={data[idx].hashTags}
+              key={data.url}
+              url={data.url}
+              category={data.category}
+              date={data.date}
+              dateTime={data.dateTime}
+              title={data.title}
+              hashTags={data.hashTags}
             />
           ))}
         </ul>
@@ -52,7 +52,7 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default RecordIndex;
 
 const Main = styled.main`
   margin-top: ${({ theme }) => theme.margin.DesktopTop};

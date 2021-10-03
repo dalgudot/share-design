@@ -9,20 +9,20 @@ import AloneButton from '../../common-components/button/alone-button';
 import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas-components/wave-loading/wave-loading';
 import PMedium from '../../../foundation/typography/p-medium';
+import { useToast } from '../../../lib/hooks/useToast';
 
-const Response = ({
-  showToast,
+const ArticleResponse = ({
   response,
   setResponse,
   responseLoading,
   setResponseLoading,
 }: {
-  showToast: any;
   response: object[];
   setResponse: Function;
   responseLoading: boolean;
   setResponseLoading: Function;
 }) => {
+  const { showToast } = useToast();
   const router = useRouter();
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Response = ({
     return (
       <>
         <Container>
-          <H2Title text={tArticleCommon().responses} color="gray1" />
+          <H2Title text={tArticleCommon().responses} color="gray2" />
           {response.length > 0 && (
             <ContentsContainer>
               {response.map((response: any, idx) => (
@@ -82,7 +82,7 @@ const Response = ({
                       k: response.newResponse,
                       e: response.newResponse,
                     }}
-                    color="gray2"
+                    color="gray3"
                     marginTop="8px"
                   />
                 </ResponseDiv>
@@ -102,13 +102,13 @@ const Response = ({
   }
 };
 
-export default Response;
+export default ArticleResponse;
 
 const Container = styled.div`
   margin-top: 144px;
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
-    margin-top: 96px;
+    margin-top: 120px;
   }
 `;
 

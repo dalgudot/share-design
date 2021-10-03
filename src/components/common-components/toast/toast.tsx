@@ -1,34 +1,36 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import PLarge from '../../../foundation/typography/p-large';
 import { mediaBreakPoint } from '../../../styles/common';
+import { useToast } from '../../../lib/hooks/useToast';
 
-const MyToast = ({
-  toastOn,
-  toastMessage,
-}: {
-  toastOn: boolean;
-  toastMessage: string;
-}) => {
+const Toast = () => {
+  const { toastOn, toastMessage } = useToast();
   return (
     <>
-      <ToastWrapMotion
-        variants={toastVariants}
-        initial="hide"
-        animate={toastOn === true ? 'show' : 'hide'}
-      >
-        <Div>
-          <PLarge text={toastMessage} color="gray1" />
-        </Div>
-      </ToastWrapMotion>
+      <AnimatePresence>
+        {toastOn && (
+          <MotionToastPositionContainer
+            key={toastMessage}
+            variants={toastVariants}
+            initial="hide"
+            animate="show"
+            exit="hide"
+          >
+            <ToastContainer>
+              <PLarge text={toastMessage} color="gray1" />
+            </ToastContainer>
+          </MotionToastPositionContainer>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
-export default React.memo(MyToast);
+export default React.memo(Toast);
 
-const ToastWrapMotion = styled(motion.div)`
+const MotionToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
   position: fixed; // toast 위치의 핵심
   top: 28px;
@@ -44,7 +46,7 @@ const ToastWrapMotion = styled(motion.div)`
   }
 `;
 
-const Div = styled.div`
+const ToastContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

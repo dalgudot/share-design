@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import firebase from 'firebase/app';
 import Router, { useRouter } from 'next/router';
@@ -8,15 +8,19 @@ import { mediaBreakPoint } from '../../../../styles/common';
 import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
 import PLarge from '../../../../foundation/typography/p-large';
-import { useMyRipple } from '../../../../lib/hooks/useMyRipple';
 import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
 import { motion } from 'framer-motion';
-import { vibration } from '../../../../foundation/framer-motion/variants';
+import {
+  buttonVariants,
+  vibration,
+} from '../../../../foundation/framer-motion/variants';
 import { scrollTop } from '../../../../lib/functions/scroll-top';
 import React from 'react';
 import PMedium from '../../../../foundation/typography/p-medium';
+import { useToast } from '../../../../lib/hooks/useToast';
 
-const WriteResponse = ({ showToast }: { showToast: Function }) => {
+const WriteResponse = () => {
+  const { showToast } = useToast();
   const when = getDate().whenResponse;
   const router = useRouter();
   const { category, id } = router.query;
@@ -76,9 +80,6 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
     return () => {}; // CleanUp Function
   }, [textLength]);
 
-  const postBtnRef = useRef(null);
-  useMyRipple(postBtnRef);
-
   return (
     <Main>
       <DivContainer>
@@ -116,8 +117,10 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
           maxLength={3000}
         />
 
-        <PostButton
-          ref={postBtnRef}
+        <MotionPostButton
+          variants={buttonVariants}
+          whileHover={!btnDisbled ? 'whileHover' : ''}
+          whileTap={!btnDisbled ? 'whileTap' : ''}
           type="submit"
           onClick={(e) => setNewResponseAndQuitWriteResponseMode(e)}
           disabled={btnDisbled}
@@ -131,7 +134,7 @@ const WriteResponse = ({ showToast }: { showToast: Function }) => {
             }
             color="gray2"
           />
-        </PostButton>
+        </MotionPostButton>
       </DivContainer>
     </Main>
   );
@@ -226,7 +229,9 @@ const MultiLineTextField = styled(TextareaAutosize)`
   }
 `;
 
-const PostButton = styled.button<{ textLengthCondition: boolean }>`
+const MotionPostButton = styled(motion.button)<{
+  textLengthCondition: boolean;
+}>`
   width: 100%;
   padding: 14px 0;
   border-radius: ${({ theme }) => theme.borderRadius.R13};

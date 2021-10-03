@@ -16,9 +16,6 @@ const UploadImage = ({
     const fileArray = Array.from(e.target.files as any).map((file) =>
       URL.createObjectURL(file)
     );
-
-    // sessionStorage.setItem('UploadedImageSharePalette', fileArray[0]);
-
     setImage(fileArray);
 
     window.scrollTo({

@@ -7,6 +7,7 @@ const PLarge = ({
   weight,
   lineHeight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -21,6 +22,7 @@ const PLarge = ({
     mobile: string;
   };
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -43,6 +45,7 @@ const PLarge = ({
         mobile: '0px',
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };

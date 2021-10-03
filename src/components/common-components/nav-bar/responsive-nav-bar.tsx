@@ -16,7 +16,7 @@ import {
 const ResponsiveNavBar = () => {
   const router = useRouter();
   const pathname = router.pathname;
-  // 임시 pathname
+  // 임시 pathname '/product/share-palette'
   const isShow: boolean =
     pathname === '/' ||
     pathname === '/product/share-palette' ||
@@ -132,7 +132,7 @@ const Nav = styled.nav`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     margin-bottom: calc(env(safe-area-inset-bottom));
-    height: 56px;
+    height: ${({ theme }) => theme.height.MobileBarHeight};
     z-index: ${({ theme }) => theme.zIndex.Bar};
     border-top: solid 1px ${({ theme }) => theme.gray7};
     background-color: ${({ theme }) => theme.gray9};
@@ -168,6 +168,6 @@ const NavBarSafeArea = styled.div`
     width: 100%;
     z-index: ${({ theme }) => theme.zIndex.BarSafeArea};
     background-color: ${({ theme }) => theme.gray9};
-    height: 55px; // status 바 가리면서 header height를 넘지 않음
+    height: 55px;
   }
 `;

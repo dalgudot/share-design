@@ -5,13 +5,13 @@ SHARE DESIGN is a digital product to share UI/UX design experience with people a
 
 <br/>
 
-## I share my UI/UX Design Experience 🙌
+## I share my Design Experience 🙌
 
-Hi. I am KyungHwan Kim, UI/UX Designer based in South Korea. 'SHARE DESIGN' is a space to share my UI/UX Design Experience with people around the world.
+Hi. I am KyungHwan Kim, Product Designer based in South Korea. 'SHARE DESIGN' is a space to share my Design Experience with people around the world.
 
-I'm learning and inspiring by a lot thanks to the experience shared by designers around the world. As a UI/UX Designer, I also wanted to share my experience around the world.
+I'm learning and inspiring by a lot thanks to the experience shared by designers around the world. As a Product Designer, I also wanted to share my experience around the world.
 
-SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experience through SHARE DESIGN.
+SHARE DESIGN is the result. I plan to continue to share my Design Experience through SHARE DESIGN.
 
 <br/>
 
@@ -55,6 +55,10 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 
 - [React-Device-Detect](https://github.com/duskload/react-device-detect#readme)
 
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+
+- [Recoil](https://github.com/facebookexperimental/Recoil)
+
 <br/>
 
 #### Interaction
@@ -68,8 +72,6 @@ SHARE DESIGN is the result. I plan to continue to share my UI/UX Design Experien
 - [React-Use-Ripple](https://www.npmjs.com/package/react-use-ripple)
 
 - [React-Parallax-tilt](https://github.com/mkosir/react-parallax-tilt)
-
-- [React-Loading-Skeleton](https://github.com/dvtng/react-loading-skeleton)
 
 <br/>
 

@@ -6,6 +6,7 @@ const H3Title = ({
   color,
   weight,
   marginTop,
+  className,
 }: {
   text:
     | {
@@ -16,6 +17,7 @@ const H3Title = ({
   color: string;
   weight?: 100 | 300 | 400 | 700;
   marginTop?: string;
+  className?: string;
 }) => {
   return (
     <TextStyle
@@ -28,14 +30,15 @@ const H3Title = ({
         mobile: '21px',
       }}
       lineHeight={{
-        desktop: '29px',
-        mobile: '25px',
+        desktop: '31px',
+        mobile: '28px',
       }}
       letterSpacing={{
         desktop: '0px',
         mobile: '0px',
       }}
       marginTop={marginTop}
+      className={className}
     />
   );
 };
