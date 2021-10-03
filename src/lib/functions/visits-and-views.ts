@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import { getDate } from './get-date';
 
-export const VisitsAndViewsDuringSession = (where: string) => {
+export const visitsAndViewsDuringSession = (where: string) => {
   const statisticsFunction = () => {
     const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
     // console.log('visitsDuringSession');

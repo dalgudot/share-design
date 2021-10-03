@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../../lib/functions/visits-and-views';
+import { visitsAndViewsDuringSession } from '../../lib/functions/visits-and-views';
 
 const ProductIndex = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('Product');
+    visitsAndViewsDuringSession('Product');
   }, []);
 
   return <></>;
