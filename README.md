@@ -1,4 +1,4 @@
-SHARE DESIGN is a digital product to share UI/UX design experience with people around the world.
+SHARE DESIGN is a digital product to share product design experience with people around the world.
 
 **SHARE DESIGN URL:**
 [https://share-design.kr/en](https://share-design.kr/en)
