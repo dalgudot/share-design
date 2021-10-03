@@ -5,12 +5,10 @@ import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import Footer from '../components/pages-components/index/footer';
 import List from '../components/pages-components/index/list';
 import { returnArticleData } from '../data/article/return-article-data';
-import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
 import PLarge from '../foundation/typography/p-large';
 
 const RecordIndex = () => {
-  // useArvAmplitude('arv_record');
   useEffect(() => {
     VisitsAndViewsDuringSession('Home');
   }, []);

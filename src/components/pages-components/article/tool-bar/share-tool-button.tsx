@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import IconShare24 from '../../../../foundation/svg/icon_share_24';
 import { buttonVariants } from '../../../../foundation/framer-motion/variants';
-import { useModal } from '../../../../lib/hooks/useModal';
+import { useModal } from '../../../common-components/modal/useModal';
 import PSmall from '../../../../foundation/typography/p-small';
 
 const ShareToolButton = () => {

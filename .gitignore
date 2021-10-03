@@ -35,3 +35,6 @@ yarn-error.log*
 
 # Ref
 Reference.txt
+
+# Default Component
+default-component.tsx

@@ -1,5 +1,5 @@
-import { tType } from './../../../type.d';
-import { atom, selector, useRecoilState } from 'recoil';
+import { tType } from '../../../../type';
+import { atom, useRecoilState } from 'recoil';
 
 const toastState = atom<boolean>({
   key: 'toast', // unique ID (with respect to other atoms/selectors)

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { fadeInOut } from '../../../foundation/framer-motion/variants';
-import { useModal } from '../../../lib/hooks/useModal';
+import { useModal } from './useModal';
 import ShareModal from './share-modal/share-modal';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

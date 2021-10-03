@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { VisitsAndViewsDuringSession } from '../../lib/functions/visits-and-views';
 
-const ProductIndex = () => {
+const DesignSystemtIndex = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('Product');
+    VisitsAndViewsDuringSession('Design System');
   }, []);
 
   return <></>;
 };
 
-export default ProductIndex;
+export default DesignSystemtIndex;

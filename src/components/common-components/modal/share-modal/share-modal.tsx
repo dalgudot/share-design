@@ -19,8 +19,8 @@ import {
   buttonVariants,
   ModalScaleEffect,
 } from '../../../../foundation/framer-motion/variants';
-import { useToast } from '../../../../lib/hooks/useToast';
-import { useModal } from '../../../../lib/hooks/useModal';
+import { useToast } from '../../toast/useToast';
+import { useModal } from '../useModal';
 import PMedium from '../../../../foundation/typography/p-medium';
 
 const ShareModal = () => {
