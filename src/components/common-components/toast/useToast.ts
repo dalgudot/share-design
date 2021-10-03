@@ -19,7 +19,7 @@ export const useToast = () => {
     if (toastOn === true) return;
     else if (toastOn === false) {
       setToastOn(true);
-      setToastMessage(toastMessage as any);
+      setToastMessage(toastMessage as string | ((currVal: string) => string));
       setTimeout(() => setToastOn(false), 1850);
     }
   };
