@@ -2,8 +2,6 @@ import firebase from 'firebase/app';
 import { getDate } from './get-date';
 
 export const VisitsAndViewsDuringSession = (where: string) => {
-  const statisticsOnOff: boolean = true;
-
   const statisticsFunction = () => {
     const visitsDuringSession = sessionStorage.getItem('visitsDuringSession');
     // console.log('visitsDuringSession');
@@ -17,7 +15,8 @@ export const VisitsAndViewsDuringSession = (where: string) => {
     viewsDuringSession ?? ViewsDuringSession(where);
   };
 
-  statisticsOnOff && statisticsFunction();
+  // console.log(location.hostname === 'localhost');
+  (location.hostname === 'localhost') === false && statisticsFunction();
 };
 
 const firebaseFetchSet = (route: string) => {
