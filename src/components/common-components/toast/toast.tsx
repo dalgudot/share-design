@@ -32,7 +32,7 @@ export default React.memo(Toast);
 
 const MotionToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
-  position: fixed; // toast 위치의 핵심
+  position: fixed;
   top: 28px;
   left: 0;
   right: 0;

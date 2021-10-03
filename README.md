@@ -55,7 +55,7 @@ SHARE DESIGN is the result. I plan to continue to share my Design Experience thr
 
 - [React-Device-Detect](https://github.com/duskload/react-device-detect#readme)
 
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [React-Syntax-Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
 - [Recoil](https://github.com/facebookexperimental/Recoil)
 
@@ -63,7 +63,7 @@ SHARE DESIGN is the result. I plan to continue to share my Design Experience thr
 
 #### Interaction
 
-- [Framer Motion](https://github.com/framer/motion)
+- [Framer-Motion](https://github.com/framer/motion)
 
 - [React-Intersection-Observer](https://github.com/thebuilder/react-intersection-observer)
 

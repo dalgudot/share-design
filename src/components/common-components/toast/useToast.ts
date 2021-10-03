@@ -2,8 +2,8 @@ import { tType } from '../../../../type';
 import { atom, useRecoilState } from 'recoil';
 
 const toastState = atom<boolean>({
-  key: 'toast', // unique ID (with respect to other atoms/selectors)
-  default: false, // default value (aka initial value)
+  key: 'toast',
+  default: false,
 });
 
 const toastMessageState = atom<string>({
@@ -19,7 +19,7 @@ export const useToast = () => {
     if (toastOn === true) return;
     else if (toastOn === false) {
       setToastOn(true);
-      setToastMessage(toastMessage as any);
+      setToastMessage(toastMessage as string | ((currVal: string) => string));
       setTimeout(() => setToastOn(false), 1850);
     }
   };

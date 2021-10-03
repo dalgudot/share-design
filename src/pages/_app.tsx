@@ -1,13 +1,13 @@
 import '../styles/font.css';
 import '../styles/global.css';
-import { useStore } from '../store/store';
+import { useStore } from '../state-management/redux-store/redux-store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components';
 import GlobalColors, { darkTheme, lightTheme } from '../styles/theme';
 import React, { useEffect, useState } from 'react';
-import { PreventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
+import { preventIllegalTheft } from '../lib/functions/prevent-illegal-theft';
 import { AnimatePresence } from 'framer-motion';
 import initFirebase from '../utils/initFirebase';
 import type { AppProps } from 'next/app';
@@ -29,7 +29,7 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   initFirebase();
-  PreventIllegalTheft();
+  preventIllegalTheft();
 
   return (
     <>
