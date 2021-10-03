@@ -4,6 +4,7 @@ import ErrorCommon from '../components/pages-components/error/error-common';
 
 const ErrorPage = ({ statusCode }: { statusCode: number }) => {
   statusCode && console.log(statusCode);
+  console.log(statusCode);
   return <ErrorCommon />;
 };
 
