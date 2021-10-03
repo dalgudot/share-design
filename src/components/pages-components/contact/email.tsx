@@ -6,7 +6,7 @@ import PMedium from '../../../foundation/typography/p-medium';
 import H3Title from '../../../foundation/typography/h2-title';
 import { motion } from 'framer-motion';
 import { buttonVariants } from '../../../foundation/framer-motion/variants';
-import { useToast } from '../../../lib/hooks/useToast';
+import { useToast } from '../../common-components/toast/useToast';
 
 const EmailArea = () => {
   const { showToast } = useToast();

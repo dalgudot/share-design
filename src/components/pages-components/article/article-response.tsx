@@ -9,7 +9,7 @@ import AloneButton from '../../common-components/button/alone-button';
 import H2Title from '../../../foundation/typography/h2-title';
 import WaveLoading from '../../canvas-components/wave-loading/wave-loading';
 import PMedium from '../../../foundation/typography/p-medium';
-import { useToast } from '../../../lib/hooks/useToast';
+import { useToast } from '../../common-components/toast/useToast';
 
 const ArticleResponse = ({
   response,
