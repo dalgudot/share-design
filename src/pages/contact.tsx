@@ -6,10 +6,8 @@ import ProfileArea from '../components/pages-components/contact/profile';
 import EmailArea from '../components/pages-components/contact/email';
 import SocialArea from '../components/pages-components/contact/social';
 import AboutArea from '../components/pages-components/contact/about';
-import { useArvAmplitude } from '../lib/hooks/Amplitude/useArvAmplitude';
 
 const ContactIndex = () => {
-  // useArvAmplitude('arv_contact');
   useEffect(() => {
     VisitsAndViewsDuringSession('Contact');
   }, []);
