@@ -7,12 +7,12 @@ import { useToast } from './useToast';
 
 const Toast = () => {
   const { toastOn, toastMessage } = useToast();
-
   return (
     <>
       <AnimatePresence>
         {toastOn && (
           <MotionToastPositionContainer
+            key={toastMessage}
             variants={toastVariants}
             initial="hide"
             animate="show"

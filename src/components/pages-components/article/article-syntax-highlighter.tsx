@@ -10,7 +10,7 @@ import {
 } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { mediaBreakPoint } from '../../../styles/common';
 import { tType } from '../../../../type';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../foundation/typography/useSetLanguage';
 import PMedium from '../../../foundation/typography/p-medium';
 
 const ArticleSyntaxHighlighter = ({
