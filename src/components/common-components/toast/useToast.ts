@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { tType } from '../../../../type';
 import { atom, useRecoilState } from 'recoil';
 
@@ -6,7 +7,7 @@ const toastState = atom<boolean>({
   default: false,
 });
 
-const toastMessageState = atom<string>({
+const toastMessageState = atom<tType>({
   key: 'toastMessage',
   default: '',
 });
@@ -14,13 +15,32 @@ const toastMessageState = atom<string>({
 export const useToast = () => {
   const [toastOn, setToastOn] = useRecoilState(toastState);
   const [toastMessage, setToastMessage] = useRecoilState(toastMessageState);
-  const showToast = (toastMessage: tType) => {
-    // 연속 동작 방지
-    if (toastOn === true) return;
-    else if (toastOn === false) {
+
+  useEffect(() => {
+    // console.log('useEffect');
+    const timeoutId = setTimeout(() => {
+      toastOn && setToastOn(false);
+      // console.log('EXCUTE');
+    }, 1850);
+
+    return () => {
+      clearTimeout(timeoutId);
+      // console.log('cleanUp');
+    };
+  }, [toastOn, toastMessage]);
+
+  const showToast = (message: tType) => {
+    if (toastOn === false) {
       setToastOn(true);
-      setToastMessage(toastMessage as string | ((currVal: string) => string));
-      setTimeout(() => setToastOn(false), 1850);
+      setToastMessage(message);
+    }
+    if (toastOn === true) {
+      setToastOn(false);
+      setToastMessage(message);
+      // To animate a new toast, setTimeout is needed
+      setTimeout(() => {
+        setToastOn(true);
+      }, 200);
     }
   };
   return { toastOn, toastMessage, showToast };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { usePalette } from 'react-palette';
 import React from 'react';
 import WaveLoading from '../../../canvas-components/wave-loading/wave-loading';
-import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../foundation/typography/useSetLanguage';
 import PMedium from '../../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../../styles/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -19,10 +19,10 @@ const ExtractColors = ({ image }: { image: string[] }) => {
     k: '팔레트 공유하기에 업로드된 이미지',
     e: 'Image uploaded to SHARE PALETTE',
   });
-  const textCopyPaletteToast = useSetLanguage({
+  const textCopyPaletteToast = {
     k: '🎨 팔레트를 복사했습니다',
     e: '🎨 Copied palette',
-  });
+  };
   const textbtnCopyPalette = { k: '팔레트 복사', e: 'Copy Palette' };
 
   const paletteString = colorsDataArray.toString();

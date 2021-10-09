@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { mediaBreakPoint } from '../../../../../styles/common';
 import { motion } from 'framer-motion';
 import PMedium from '../../../../../foundation/typography/p-medium';
-import { useSetLanguage } from '../../../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../../foundation/typography/useSetLanguage';
 import { stagger } from '../../../../../foundation/framer-motion/variants';
 import KoodonWriteReview from './koodon-write-review';
 import ArticleLine from '../../article-line';

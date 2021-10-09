@@ -5,7 +5,7 @@ import Router, { useRouter } from 'next/router';
 import { tArticleCommon } from '../../../../data/article/common/t-article-common';
 import { getDate } from '../../../../lib/functions/get-date';
 import { mediaBreakPoint } from '../../../../styles/common';
-import { useSetLanguage } from '../../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../../foundation/typography/useSetLanguage';
 import TextareaAutosize from 'react-textarea-autosize';
 import PLarge from '../../../../foundation/typography/p-large';
 import { gradientGenerator } from '../../../../lib/functions/gradient-generator';
