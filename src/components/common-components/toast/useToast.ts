@@ -17,15 +17,12 @@ export const useToast = () => {
   const [toastMessage, setToastMessage] = useRecoilState(toastMessageState);
 
   useEffect(() => {
-    // console.log('useEffect');
     const timeoutId = setTimeout(() => {
       toastOn && setToastOn(false);
-      // console.log('EXCUTE');
     }, 1850);
 
     return () => {
       clearTimeout(timeoutId);
-      // console.log('cleanUp');
     };
   }, [toastOn, toastMessage]);
 
@@ -51,3 +48,5 @@ export const useToast = () => {
 // atom: 데이터 조각, selector 1) atom에서 파생된 데이터 조각 2) 데이터를 반환하는 순수 함수
 
 // https://ui.toast.com/weekly-pick/ko_20200616
+
+// https://reactgo.com/settimeout-in-react-hooks/

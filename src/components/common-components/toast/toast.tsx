@@ -12,7 +12,7 @@ const Toast = () => {
     <>
       <AnimatePresence>
         {toastOn && (
-          <MotionToastPositionContainer
+          <ToastPositionContainer
             variants={toastVariants}
             initial="hide"
             animate="show"
@@ -21,7 +21,7 @@ const Toast = () => {
             <ToastContainer>
               <PLarge text={toastMessage} color="gray1" />
             </ToastContainer>
-          </MotionToastPositionContainer>
+          </ToastPositionContainer>
         )}
       </AnimatePresence>
     </>
@@ -30,7 +30,7 @@ const Toast = () => {
 
 export default React.memo(Toast);
 
-const MotionToastPositionContainer = styled(motion.div)`
+const ToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
   position: fixed;
   top: 28px;
