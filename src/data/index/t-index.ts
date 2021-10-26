@@ -109,8 +109,8 @@ export const t = {
               e: '2020.06.08 ~ 2021.08.31',
             },
             contents: {
-              k: '쿠돈 프로덕트 디자이너',
-              e: 'Koodon Product Designer',
+              k: '중고 명품 스타트업 프로덕트 디자이너',
+              e: 'Used Luxury startup Product Designer',
             },
           },
           {
@@ -120,7 +120,7 @@ export const t = {
             },
             contents: {
               k: '패션 스타트업 프로덕트 디자이너',
-              e: 'Fashion StartUp Product Designer',
+              e: 'Fashion startUp Product Designer',
             },
           },
           {
