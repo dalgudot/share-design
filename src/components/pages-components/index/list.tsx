@@ -5,39 +5,122 @@ import H3Title from '../../../foundation/typography/h2-title';
 import PSmall from '../../../foundation/typography/p-small';
 import { motion } from 'framer-motion';
 import { listVariants } from '../../../foundation/framer-motion/variants';
+import { tType } from '../../../../type';
 
-// https://www.carlrippon.com/react-children-with-typescript/
-const List = ({ url, category, date, dateTime, title, hashTags }: ListType) => {
+export type ListType = {
+  type: 'share-design' | 'brunch';
+  url: string;
+  category: tType;
+  date: tType;
+  dateTime: string;
+  title: tType;
+  hashTags: tType;
+};
+
+const List: React.FC<ListType> = ({
+  type,
+  url,
+  category,
+  date,
+  dateTime,
+  title,
+  hashTags,
+}) => {
+  const contents = () => {
+    if (type === 'share-design') {
+      return (
+        <ListNextLink url={url}>
+          <ListContents
+            category={category}
+            date={date}
+            dateTime={dateTime}
+            title={title}
+            hashTags={hashTags}
+          />
+        </ListNextLink>
+      );
+    } else {
+      return (
+        <ListExternalLink url={url}>
+          <ListContents
+            category={category}
+            date={date}
+            dateTime={dateTime}
+            title={title}
+            hashTags={hashTags}
+          />
+        </ListExternalLink>
+      );
+    }
+  };
+
   return (
-    <MotionLi //
+    <Li //
       variants={listVariants}
       whileHover="whileHover"
       whileTap="whileTap"
     >
-      <Link href={url}>
-        <a>
-          <CategoryDateArea>
-            <PSmall text={category} color="gray4" />
-            <Divider />
-            <time dateTime={dateTime}>
-              <PSmall text={date} color="gray4" />
-            </time>
-          </CategoryDateArea>
-          <H3Title //
-            text={title}
-            color="gray1"
-            marginTop="8px"
-          />
-          <PSmall text={hashTags} color="gray4" marginTop="24px" />
-        </a>
-      </Link>
-    </MotionLi>
+      {contents()}
+    </Li>
   );
 };
 
 export default List;
 
-const MotionLi = styled(motion.li)<{ marginTop?: string }>`
+type LinkType = {
+  url: string;
+  children: JSX.Element;
+};
+
+const ListNextLink: React.FC<LinkType> = ({ url, children }) => {
+  return (
+    <Link href={url}>
+      <a>{children}</a>
+    </Link>
+  );
+};
+
+const ListExternalLink: React.FC<LinkType> = ({ url, children }) => {
+  return (
+    <a href={url} target="_blank">
+      {children}
+    </a>
+  );
+};
+
+const ListContents = ({
+  category,
+  date,
+  dateTime,
+  title,
+  hashTags,
+}: {
+  category: tType;
+  date: tType;
+  dateTime: string;
+  title: tType;
+  hashTags: tType;
+}) => {
+  return (
+    <>
+      <CategoryDateArea>
+        <PSmall text={category} color="gray4" />
+        <Divider />
+        <time dateTime={dateTime}>
+          <PSmall text={date} color="gray4" />
+        </time>
+      </CategoryDateArea>
+      <H3Title //
+        text={title}
+        color="gray1"
+        marginTop="8px"
+      />
+      <PSmall text={hashTags} color="gray4" marginTop="24px" />
+    </>
+  );
+};
+
+const Li = styled(motion.li)<{ marginTop?: string }>`
   width: 100%; /* 원하는 너비 */
   margin: 0 auto;
   border-bottom: solid 1px ${({ theme }) => theme.gray7};
@@ -79,41 +162,3 @@ const Divider = styled.span`
     margin: 1px 3px 0 5px; // 모바일 시각 보정
   }
 `;
-
-// Framer Motion
-const liVariants = {
-  whileHover: {
-    scale: 1.02,
-  },
-
-  whileTap: { scale: 0.98 },
-};
-
-type ListType = {
-  url: string;
-  category:
-    | {
-        k: string;
-        e: string;
-      }
-    | string;
-  date:
-    | {
-        k: string;
-        e: string;
-      }
-    | string;
-  dateTime: string;
-  title:
-    | {
-        k: string;
-        e: string;
-      }
-    | string;
-  hashTags:
-    | {
-        k: string;
-        e: string;
-      }
-    | string;
-};

@@ -28,7 +28,7 @@ const SharePaletteIndex = () => {
 
   return (
     <>
-      <Main safeArea={safeArea()}>
+      {/* <Main safeArea={safeArea()}>
         <H1Title
           text={{ k: '팔레트 공유하기 🎨', e: 'SHARE PALETTE 🎨' }}
           color="gray1"
@@ -55,7 +55,7 @@ const SharePaletteIndex = () => {
         )}
         <ExtractColors image={image} />
         <UploadImage image={image} setImage={setImage} />
-      </Main>
+      </Main> */}
     </>
   );
 };

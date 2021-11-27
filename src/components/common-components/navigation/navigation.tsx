@@ -48,7 +48,7 @@ const Navigation = () => {
             </motion.a>
           </Link>
           {/* 임시 pathname */}
-          <Link href="/product/share-palette">
+          {/* <Link href="/product/share-palette">
             <motion.a
               variants={buttonVariants}
               whileHover="whileHover"
@@ -69,7 +69,7 @@ const Navigation = () => {
                 />
               </motion.div>
             </motion.a>
-          </Link>
+          </Link> */}
           <Link href="/introduction">
             <motion.a
               variants={buttonVariants}

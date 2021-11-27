@@ -11,35 +11,35 @@ const UploadImage = ({
   image: any;
   setImage: Function;
 }) => {
-  const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // https://www.youtube.com/watch?v=iBonBC-ySgo
-    const fileArray = Array.from(e.target.files as any).map((file) =>
-      URL.createObjectURL(file)
-    );
-    setImage(fileArray);
+  // const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const fileArray = Array.from(e.target.files as any).map((file) =>
+  //     URL.createObjectURL(file)
+  //   );
+  //   setImage(fileArray);
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth',
+  //   });
 
-    Array.from(e.target.files as any).map((file: any) =>
-      URL.revokeObjectURL(file)
-    );
-  };
+  //   Array.from(e.target.files as any).map((file: any) =>
+  //     URL.revokeObjectURL(file)
+  //   );
+  // };
 
   return (
     <>
       <Line />
       {/* https://github.com/facebook/react/issues/310 */}
-      <MotionUploadPhotoLabel
+      {/* <MotionUploadPhotoLabel
         variants={buttonVariants}
         whileHover="whileHover"
         whileTap="whileTap"
         htmlFor="upload-photo"
-      >
-        <input
-          // display: 'none'은 접근성 문제 발생? -> none 아니면 iOS에서 버튼 크기가 커지는 문제 발생
+      > */}
+      {/* display: 'none'은 접근성 문제 발생? -> none 아니면 iOS에서 버튼 크기가 커지는 문제 발생 */}
+      {/* <input
+
           style={{ display: 'none' }}
           id="upload-photo"
           type="file"
@@ -57,7 +57,7 @@ const UploadImage = ({
           weight={700}
           lineHeight={{ desktop: '28px', mobile: '23px' }}
         />
-      </MotionUploadPhotoLabel>
+      </MotionUploadPhotoLabel> */}
       {/* https://helloinyong.tistory.com/275 */}
     </>
   );
