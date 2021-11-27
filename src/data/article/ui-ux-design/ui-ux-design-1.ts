@@ -1,5 +1,7 @@
 export const uiUxDesign1 = () => {
   return {
+    type: 'share-design',
+
     url: '/article/ui-ux-design/1',
 
     category: {

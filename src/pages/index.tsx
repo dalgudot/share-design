@@ -24,6 +24,7 @@ const RecordIndex = () => {
           {datas.map((data) => (
             <List
               key={data.url}
+              type={data.type}
               url={data.url}
               category={data.category}
               date={data.date}
@@ -37,7 +38,7 @@ const RecordIndex = () => {
       <Footer />
 
       {/* temporary component for iOS env(safe-area-inset-bottom) */}
-      <ComingSoon height={height * 0.7}>
+      {/* <ComingSoon height={height * 0.7}>
         <div />
         <PLarge
           text="Coming Soon 😎"
@@ -45,7 +46,7 @@ const RecordIndex = () => {
           weight={700}
           marginTop="48px"
         />
-      </ComingSoon>
+      </ComingSoon> */}
     </>
   );
 };
