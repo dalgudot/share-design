@@ -7,12 +7,12 @@ import { useToast } from './useToast';
 
 const Toast = () => {
   const { toastOn, toastMessage } = useToast();
+
   return (
     <>
       <AnimatePresence>
         {toastOn && (
-          <MotionToastPositionContainer
-            key={toastMessage}
+          <ToastPositionContainer
             variants={toastVariants}
             initial="hide"
             animate="show"
@@ -21,7 +21,7 @@ const Toast = () => {
             <ToastContainer>
               <PLarge text={toastMessage} color="gray1" />
             </ToastContainer>
-          </MotionToastPositionContainer>
+          </ToastPositionContainer>
         )}
       </AnimatePresence>
     </>
@@ -30,9 +30,9 @@ const Toast = () => {
 
 export default React.memo(Toast);
 
-const MotionToastPositionContainer = styled(motion.div)`
+const ToastPositionContainer = styled(motion.div)`
   z-index: ${({ theme }) => theme.zIndex.Toast};
-  position: fixed; // toast 위치의 핵심
+  position: fixed;
   top: 28px;
   left: 0;
   right: 0;

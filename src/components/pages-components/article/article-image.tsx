@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tType } from '../../../../type';
 import PMedium from '../../../foundation/typography/p-medium';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../foundation/typography/useSetLanguage';
 import { mediaBreakPoint } from '../../../styles/common';
 
 const ArticleImage = ({

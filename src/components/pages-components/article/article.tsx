@@ -6,7 +6,7 @@ import { useWindowHeight } from '../../../lib/hooks/useWindowHeight';
 import ArticleTitleArea from './article-title-area';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
-import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
+import { visitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 import ArticleMessage from './article-message';
 import ArticleDownloadAPP from './article-download-APP';
 import ArticleReference from './article-reference';
@@ -41,7 +41,7 @@ const Article = ({
   const pathname: string = router.pathname;
   // 모든 Article 통계 함수는 여기서 실행
   useEffect(() => {
-    VisitsAndViewsDuringSession(router.pathname);
+    visitsAndViewsDuringSession(router.pathname);
   }, []);
 
   // <Article />끼리 이동하는 경우처럼 같은 컴포넌트의 이동에서는 스크롤이 유지되기 때문에 'scrollTop()' 필요.

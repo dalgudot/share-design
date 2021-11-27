@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../foundation/typography/useSetLanguage';
 import { t } from '../../../data/index/t-index';
 import { mediaBreakPoint } from '../../../styles/common';
 import PMedium from '../../../foundation/typography/p-medium';

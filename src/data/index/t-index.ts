@@ -109,8 +109,8 @@ export const t = {
               e: '2020.06.08 ~ 2021.08.31',
             },
             contents: {
-              k: '쿠돈 프로덕트 디자이너',
-              e: 'Koodon Product Designer',
+              k: '중고 명품 스타트업 프로덕트 디자이너',
+              e: 'Used Luxury startup Product Designer',
             },
           },
           {
@@ -120,7 +120,7 @@ export const t = {
             },
             contents: {
               k: '패션 스타트업 프로덕트 디자이너',
-              e: 'Fashion StartUp Product Designer',
+              e: 'Fashion startUp Product Designer',
             },
           },
           {
@@ -226,19 +226,5 @@ export const t = {
         ],
       },
     },
-  },
-
-  errorMessage: {
-    message: {
-      k: '디자인 공유하기에 없는 페이지입니다.',
-      e: 'This Page is not in SHARE DESIGN.',
-    },
-
-    btn: { k: '홈으로', e: 'Go to Home' },
-  },
-
-  privacyMessage: {
-    k: '디자인 공유하기는 개인 정보를 수집하지 않습니다.',
-    e: 'SHARE DESIGN does not collect any privacy information.',
   },
 };

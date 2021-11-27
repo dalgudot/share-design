@@ -139,6 +139,7 @@ const MotionContainer = styled(motion.div)`
   min-width: 420px;
   max-width: 420px;
   margin: 0 auto;
+  filter: drop-shadow(1px 16px 72px rgba(0, 0, 0, 0.16));
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     min-width: 40vw;

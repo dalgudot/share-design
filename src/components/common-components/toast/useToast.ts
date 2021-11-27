@@ -1,12 +1,13 @@
+import { useEffect } from 'react';
 import { tType } from '../../../../type';
 import { atom, useRecoilState } from 'recoil';
 
 const toastState = atom<boolean>({
-  key: 'toast', // unique ID (with respect to other atoms/selectors)
-  default: false, // default value (aka initial value)
+  key: 'toast',
+  default: false,
 });
 
-const toastMessageState = atom<string>({
+const toastMessageState = atom<tType>({
   key: 'toastMessage',
   default: '',
 });
@@ -14,13 +15,29 @@ const toastMessageState = atom<string>({
 export const useToast = () => {
   const [toastOn, setToastOn] = useRecoilState(toastState);
   const [toastMessage, setToastMessage] = useRecoilState(toastMessageState);
-  const showToast = (toastMessage: tType) => {
-    // 연속 동작 방지
-    if (toastOn === true) return;
-    else if (toastOn === false) {
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      toastOn && setToastOn(false);
+    }, 1850);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [toastOn, toastMessage]);
+
+  const showToast = (message: tType) => {
+    if (toastOn === false) {
       setToastOn(true);
-      setToastMessage(toastMessage as any);
-      setTimeout(() => setToastOn(false), 1850);
+      setToastMessage(message);
+    }
+    if (toastOn === true) {
+      setToastOn(false);
+      setToastMessage(message);
+      // To animate a new toast, setTimeout is needed
+      setTimeout(() => {
+        setToastOn(true);
+      }, 200);
     }
   };
   return { toastOn, toastMessage, showToast };
@@ -31,3 +48,5 @@ export const useToast = () => {
 // atom: 데이터 조각, selector 1) atom에서 파생된 데이터 조각 2) 데이터를 반환하는 순수 함수
 
 // https://ui.toast.com/weekly-pick/ko_20200616
+
+// https://reactgo.com/settimeout-in-react-hooks/

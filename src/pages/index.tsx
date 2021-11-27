@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaBreakPoint } from '../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
+import { visitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
 import Footer from '../components/pages-components/index/footer';
 import List from '../components/pages-components/index/list';
 import { returnArticleData } from '../data/article/return-article-data';
@@ -10,7 +10,7 @@ import PLarge from '../foundation/typography/p-large';
 
 const RecordIndex = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('Home');
+    visitsAndViewsDuringSession('Home');
   }, []);
   const datas = returnArticleData();
 

@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { t } from '../../../data/index/t-index';
 import PLarge from '../../../foundation/typography/p-large';
 import AloneButton from '../../common-components/button/alone-button';
+import { tType } from '../../../../type';
 
-const ErrorCommon = () => {
+const ErrorCommon = ({ message }: { message: tType }) => {
+  const btnText = { k: '홈으로', e: 'Go to Home' };
+
   return (
     <Main>
       <PLarge //
-        text={t.errorMessage.message}
+        text={message}
         color="gray2"
       />
       <Link href="/">
         <a>
-          <AloneButton btnText={t.errorMessage.btn} marginTop="24px" />
+          <AloneButton btnText={btnText} marginTop="24px" />
         </a>
       </Link>
     </Main>

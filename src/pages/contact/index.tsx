@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import { mediaBreakPoint } from '../styles/common';
+import { mediaBreakPoint } from '../../styles/common';
 import { useEffect } from 'react';
-import { VisitsAndViewsDuringSession } from '../lib/functions/visits-and-views';
-import ProfileArea from '../components/pages-components/contact/profile';
-import EmailArea from '../components/pages-components/contact/email';
-import SocialArea from '../components/pages-components/contact/social';
-import AboutArea from '../components/pages-components/contact/about';
+import { visitsAndViewsDuringSession } from '../../lib/functions/visits-and-views';
+import ProfileArea from '../../components/pages-components/contact/profile';
+import EmailArea from '../../components/pages-components/contact/email';
+import SocialArea from '../../components/pages-components/contact/social';
+import AboutArea from '../../components/pages-components/contact/about';
 
 const ContactIndex = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('Contact');
+    visitsAndViewsDuringSession('Contact');
   }, []);
 
   return (

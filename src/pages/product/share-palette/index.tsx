@@ -6,11 +6,11 @@ import ExtractColors from '../../../components/pages-components/product/share-pa
 import H1Title from '../../../foundation/typography/h1-title';
 import PLarge from '../../../foundation/typography/p-large';
 import { useIsiOS } from '../../../lib/hooks/useIsiOS';
-import { VisitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
+import { visitsAndViewsDuringSession } from '../../../lib/functions/visits-and-views';
 
 const SharePaletteIndex = () => {
   useEffect(() => {
-    VisitsAndViewsDuringSession('SHARE PALETTE');
+    visitsAndViewsDuringSession('SHARE PALETTE');
   }, []);
   const [image, setImage] = useState<string[]>([]);
 

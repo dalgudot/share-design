@@ -4,7 +4,7 @@ import { t } from '../../../data/index/t-index';
 import IconContactFacebook24 from '../../../foundation/svg/icon_contact_facebook_24';
 import IconContactLinkedIn24 from '../../../foundation/svg/icon_contact_linkedin_24';
 import { useMyRipple } from '../../../lib/hooks/useMyRipple';
-import { useSetLanguage } from '../../../lib/hooks/useSetLanguage';
+import { useSetLanguage } from '../../../foundation/typography/useSetLanguage';
 
 const SocialArea = () => {
   const brunchRef = useRef(null);
