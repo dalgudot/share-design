@@ -41,10 +41,11 @@ const Footer = () => {
         data[0] && setTotal(data[0]);
         setLoading(false);
       });
-    // CleanUp Function
+
     return () => {
-      // console.log('I am in cleanup function');
-      // setLoading(true);
+      setLoading(true);
+      setToday('');
+      setTotal('');
     };
   }, []);
 
@@ -52,83 +53,83 @@ const Footer = () => {
   const stringMediaBreakPoint = mediaBreakPoint.first.replace('px', '');
   const numberMediaBreakPoint = Number(stringMediaBreakPoint);
 
-  if (width <= numberMediaBreakPoint) {
-    return <></>;
-  } else {
-    return (
-      <>
-        <FooterContainer>
-          <Left>
-            <Statistics>
-              {loading === true ? (
-                <LoadingSkeletonRect width="61px" height="21px" />
-              ) : (
-                <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
-              )}
-              <Divider />
-              {loading === true ? (
-                <LoadingSkeletonRect width="85px" height="21px" />
-              ) : (
-                <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
-              )}
-            </Statistics>
-          </Left>
+  // if (width <= numberMediaBreakPoint) {
+  //   return <></>;
+  // } else {
+  return (
+    <>
+      <FooterContainer>
+        <Left>
+          <Statistics>
+            {loading === true ? (
+              <LoadingSkeletonRect width="61px" height="21px" />
+            ) : (
+              <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
+            )}
+            <Divider />
+            {loading === true ? (
+              <LoadingSkeletonRect width="85px" height="21px" />
+            ) : (
+              <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
+            )}
+          </Statistics>
+        </Left>
 
-          <Right>
-            <Social>
-              <motion.a
-                variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
-                href="https://brunch.co.kr/@dalgudot"
-                target="_blank"
-              >
-                <PSmall text="Brunch" color="gray0" weight={700} />
-              </motion.a>
-              <Divider />
-              <motion.a
-                variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
-                href="https://www.facebook.com/dalgudot"
-                target="_blank"
-              >
-                <PSmall text="Facebook" color="gray0" weight={700} />
-              </motion.a>
-              <Divider />
-              <motion.a
-                variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
-                href="https://www.linkedin.com/in/dalgudot"
-                target="_blank"
-              >
-                <PSmall text="LinkedIn" color="gray0" weight={700} />
-              </motion.a>
-              <Divider />
-              <motion.a
-                variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
-                href="https://github.com/dalgudot"
-                target="_blank"
-              >
-                <PSmall text="GitHub" color="gray0" weight={700} />
-              </motion.a>
-            </Social>
-            <Link href="/contact">
-              <a>
-                <PSmall
-                  text="ⓒ KyungHwan Kim. All rights reserved"
-                  color="gray4"
-                />
-              </a>
-            </Link>
-          </Right>
-        </FooterContainer>
-      </>
-    );
-  }
+        <Right>
+          <Social>
+            <motion.a
+              variants={textButtonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+              href="https://brunch.co.kr/@dalgudot"
+              target="_blank"
+            >
+              <PSmall text="Brunch" color="gray0" weight={700} />
+            </motion.a>
+            <Divider />
+            <motion.a
+              variants={textButtonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+              href="https://www.facebook.com/dalgudot"
+              target="_blank"
+            >
+              <PSmall text="Facebook" color="gray0" weight={700} />
+            </motion.a>
+            <Divider />
+            <motion.a
+              variants={textButtonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+              href="https://www.linkedin.com/in/dalgudot"
+              target="_blank"
+            >
+              <PSmall text="LinkedIn" color="gray0" weight={700} />
+            </motion.a>
+            <Divider />
+            <motion.a
+              variants={textButtonVariants}
+              whileHover="whileHover"
+              whileTap="whileTap"
+              href="https://github.com/dalgudot"
+              target="_blank"
+            >
+              <PSmall text="GitHub" color="gray0" weight={700} />
+            </motion.a>
+          </Social>
+          <Link href="/contact">
+            <a>
+              <PSmall
+                text="ⓒ KyungHwan Kim. All rights reserved"
+                color="gray4"
+              />
+            </a>
+          </Link>
+        </Right>
+      </FooterContainer>
+    </>
+  );
+  // }
 };
 
 export default React.memo(Footer);
@@ -143,6 +144,27 @@ const FooterContainer = styled.footer`
   bottom: 48px;
   left: 0;
   right: 0;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    margin-bottom: calc(env(safe-area-inset-bottom));
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    position: relative;
+    padding-bottom: 112px; // MobileBarHeight: '56px' + 56px
+    margin-top: -56px;
+
+    p {
+      font-size: 14px;
+    }
+
+    a {
+      text-align: center;
+    }
+  }
 `;
 
 const Left = styled.div`
@@ -150,6 +172,10 @@ const Left = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   margin-left: 2px; // Visual Correction
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    display: none;
+  }
 `;
 
 const Statistics = styled.div`
@@ -169,6 +195,10 @@ const Social = styled.div`
   align-items: center;
   margin-right: 1px; // Visual Correction
   margin-bottom: 10px;
+
+  @media all and (max-width: ${mediaBreakPoint.first}) {
+    display: none;
+  }
 `;
 
 const Divider = styled.span`
