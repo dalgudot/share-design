@@ -19,6 +19,7 @@ import ExampleUiUxDesign1 from './ui-ux-design/1/example-ui-ux-design-1';
 import ExampleUiUxDesign2 from './ui-ux-design/2/example-ui-ux-design-2';
 import ExampleProductDesign1 from './product-design/1/example-product-design-1';
 import ArticleToolBar from './tool-bar/article-tool-bar';
+import Go from './article-go';
 
 const Article = ({
   categoryTitle,
@@ -168,16 +169,27 @@ const Article = ({
           {contents}
 
           {/* introduction에는 댓글 넣지 않음 */}
-          {router.pathname !== '/introduction' && (
+          {router.pathname !== '/introduction' ? (
             <ArticleResponse
               response={response}
               setResponse={setResponse}
               responseLoading={responseLoading}
               setResponseLoading={setResponseLoading}
             />
+          ) : (
+            <Go
+              targetBlank={false}
+              href="/article/ui-ux-design/1"
+              text={{
+                k: `👋\u00A0\u00A0첫 번째 콘텐츠 보러 가기`,
+                e: `👋\u00A0\u00A0Go to the first content`,
+              }}
+              marginTopDesktop="144px"
+              marginTopMobile="120px"
+            />
           )}
 
-          <ArticleDownloadAPP />
+          {router.pathname !== '/introduction' && <ArticleDownloadAPP />}
 
           {referencesData && (
             <>
