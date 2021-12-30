@@ -95,32 +95,12 @@ export const t = {
         contentsArray: [
           {
             term: {
-              k: '2021.09.27 ~ 현재',
-              e: '2021.09.27 ~ Present',
+              k: '2019.04.23 ~ 현재',
+              e: '2019.04.23 ~ Present',
             },
             contents: {
-              k: '슬리드(Slid) 프로덕트 디자이너',
-              e: 'Slid Product Designer',
-            },
-          },
-          {
-            term: {
-              k: '2020.06.08 ~ 2021.08.31',
-              e: '2020.06.08 ~ 2021.08.31',
-            },
-            contents: {
-              k: '중고 명품 스타트업 프로덕트 디자이너',
-              e: 'Used Luxury startup Product Designer',
-            },
-          },
-          {
-            term: {
-              k: '2019.04.23 ~ 2020.05.31',
-              e: '2019.04.23 ~ 2020.05.31',
-            },
-            contents: {
-              k: '패션 스타트업 프로덕트 디자이너',
-              e: 'Fashion startUp Product Designer',
+              k: '프로덕트 디자이너',
+              e: 'Product Designer',
             },
           },
           {
