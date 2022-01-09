@@ -13,7 +13,7 @@ const Header = ({ setTheme, darkTheme, lightTheme }: any) => {
   return (
     <>
       <HeaderContainer>
-        <Link href="/">
+        <Link href="/" passHref>
           <motion.a
             variants={textButtonVariants}
             whileHover="whileHover"
