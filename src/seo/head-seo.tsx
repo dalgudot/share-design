@@ -89,7 +89,7 @@ const HeadSEO = () => {
         content={useSetLanguage(info.description)}
       />
       <meta property="og:image" content={useSetLanguage(info.thumbnail)} />
-      {/* 페이북 권장 사이즈 1200 : 630 = 1.9 : 1(약) */}
+      {/* 페이스북 권장 사이즈 1200 : 630 = 1.9 : 1(약) */}
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:type" content={info.type} />

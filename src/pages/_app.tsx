@@ -39,14 +39,11 @@ export default function ShareDesignApp({ Component, pageProps }: AppProps) {
           <RecoilRoot>
             <ThemeProvider theme={theme}>
               <GlobalColors />
-              {/* 2022.01.09 브런치 글 위해 임시로 넣어둠 */}
-              {router.pathname !== '/etude/canvas/stage-lighting-wave' && (
-                <Header
-                  setTheme={setTheme}
-                  darkTheme={darkTheme}
-                  lightTheme={lightTheme}
-                />
-              )}
+              <Header
+                setTheme={setTheme}
+                darkTheme={darkTheme}
+                lightTheme={lightTheme}
+              />
               <Navigation />
               {/* 여기서 모든 페이지가 key를 갖고 있기 때문에 다른 곳에서는 따로 key를 지정하지 않아도 된다 */}
               {/* AnimatePresence 밖에 Header 있어야 re-render 안 됨 */}
