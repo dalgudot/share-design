@@ -6,7 +6,7 @@ import Footer from '../components/pages-components/index/footer';
 import List from '../components/pages-components/index/list';
 import { returnArticleData } from '../data/article/return-article-data';
 import { useWindowHeight } from '../lib/hooks/useWindowHeight';
-import PLarge from '../foundation/typography/p-large';
+import NewBlogNotice from '../components/common-components/notice/new-blog-notice';
 
 const RecordIndex = () => {
   useEffect(() => {
@@ -20,6 +20,7 @@ const RecordIndex = () => {
   return (
     <>
       <Main>
+        <NewBlogNotice />
         <ul>
           {datas.map((data) => (
             <List

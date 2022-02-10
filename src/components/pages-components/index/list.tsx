@@ -57,8 +57,8 @@ const List: React.FC<ListType> = ({
   return (
     <Li //
       variants={listVariants}
-      whileHover="whileHover"
-      whileTap="whileTap"
+      whileHover='whileHover'
+      whileTap='whileTap'
     >
       {contents()}
     </Li>
@@ -82,7 +82,7 @@ const ListNextLink: React.FC<LinkType> = ({ url, children }) => {
 
 const ListExternalLink: React.FC<LinkType> = ({ url, children }) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target='_blank'>
       {children}
     </a>
   );
@@ -104,18 +104,18 @@ const ListContents = ({
   return (
     <>
       <CategoryDateArea>
-        <PSmall text={category} color="gray4" />
+        <PSmall text={category} color='gray4' />
         <Divider />
         <time dateTime={dateTime}>
-          <PSmall text={date} color="gray4" />
+          <PSmall text={date} color='gray4' />
         </time>
       </CategoryDateArea>
       <H3Title //
         text={title}
-        color="gray1"
-        marginTop="8px"
+        color='gray1'
+        marginTop='8px'
       />
-      <PSmall text={hashTags} color="gray4" marginTop="24px" />
+      <PSmall text={hashTags} color='gray4' marginTop='24px' />
     </>
   );
 };
