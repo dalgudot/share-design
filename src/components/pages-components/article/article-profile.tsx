@@ -9,22 +9,31 @@ import { textButtonVariants } from '../../../foundation/framer-motion/variants';
 
 const ArticleProfile = ({ marginTop }: { marginTop: string }) => {
   return (
-    <Link href="/contact">
-      <MotionA
-        variants={textButtonVariants}
-        whileHover="whileHover"
-        whileTap="whileTap"
-        marginTop={marginTop}
-      >
-        <img
-          src="/images/profile-photo@3x.jpg"
-          alt={useSetLanguage(t.contact.profileAlt)}
-        />
-        <PMedium text={t.myName} color="gray2" />
-        <Dot />
-        <PMedium text={t.myJob} color="gray2" />
-      </MotionA>
-    </Link>
+    // <Link href="/contact">
+    // <MotionA
+    //   variants={textButtonVariants}
+    //   whileHover="whileHover"
+    //   whileTap="whileTap"
+    //   marginTop={marginTop}
+    // >
+    <MotionA
+      href='https://blog.dalgu.app/contact'
+      target='_blank'
+      variants={textButtonVariants}
+      whileHover='whileHover'
+      whileTap='whileTap'
+      marginTop={marginTop}
+    >
+      <img
+        src='/images/profile-photo@3x.jpg'
+        alt={useSetLanguage(t.contact.profileAlt)}
+      />
+      <PMedium text={t.myName} color='gray2' />
+      <Dot />
+      <PMedium text={t.myJob} color='gray2' />
+    </MotionA>
+    // </MotionA>
+    // </Link>
   );
 };
 

@@ -27,17 +27,17 @@ const Navigation = () => {
     return (
       <>
         <Nav>
-          <Link href="/">
+          <Link href='/'>
             <motion.a
               variants={buttonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
+              whileHover='whileHover'
+              whileTap='whileTap'
             >
               <TabRecord24 pathname={pathname} />
               <motion.div
                 variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
+                whileHover='whileHover'
+                whileTap='whileTap'
               >
                 <PMedium
                   text={{ k: '기록', e: 'RECORD' }}
@@ -70,17 +70,17 @@ const Navigation = () => {
               </motion.div>
             </motion.a>
           </Link> */}
-          <Link href="/introduction">
+          <Link href='/introduction'>
             <motion.a
               variants={buttonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
+              whileHover='whileHover'
+              whileTap='whileTap'
             >
               <TabIntroduction24 pathname={pathname} />
               <motion.div
                 variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
+                whileHover='whileHover'
+                whileTap='whileTap'
               >
                 <PMedium
                   text={{ k: '프로젝트 소개', e: 'PROJECT INTRO' }}
@@ -90,26 +90,34 @@ const Navigation = () => {
               </motion.div>
             </motion.a>
           </Link>
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <motion.a
               variants={buttonVariants}
               whileHover="whileHover"
               whileTap="whileTap"
+            > */}
+          <motion.a
+            href='https://blog.dalgu.app/contact'
+            target='_blank'
+            variants={buttonVariants}
+            whileHover='whileHover'
+            whileTap='whileTap'
+          >
+            <TabContact24 pathname={pathname} />
+            <motion.div
+              variants={textButtonVariants}
+              whileHover='whileHover'
+              whileTap='whileTap'
             >
-              <TabContact24 pathname={pathname} />
-              <motion.div
-                variants={textButtonVariants}
-                whileHover="whileHover"
-                whileTap="whileTap"
-              >
-                <PMedium
-                  text={{ k: '연락처', e: 'CONTACT' }}
-                  color={pathname === '/contact' ? 'gray0' : 'gray4'}
-                  weight={pathname === '/contact' ? 700 : 400}
-                />
-              </motion.div>
-            </motion.a>
-          </Link>
+              <PMedium
+                text={{ k: '연락처', e: 'CONTACT' }}
+                color={pathname === '/contact' ? 'gray0' : 'gray4'}
+                weight={pathname === '/contact' ? 700 : 400}
+              />
+            </motion.div>
+          </motion.a>
+          {/* </motion.a>
+          </Link> */}
         </Nav>
         <NavSafeArea />
       </>

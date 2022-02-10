@@ -20,6 +20,7 @@ import ExampleUiUxDesign2 from './ui-ux-design/2/example-ui-ux-design-2';
 import ExampleProductDesign1 from './product-design/1/example-product-design-1';
 import ArticleToolBar from './tool-bar/article-tool-bar';
 import Go from './article-go';
+import NewBlogNotice from '../../common-components/notice/new-blog-notice';
 
 const Article = ({
   categoryTitle,
@@ -92,8 +93,8 @@ const Article = ({
         <PLarge
           key={`${content.key}${idx}`}
           text={content.content}
-          color="gray3"
-          marginTop="36px"
+          color='gray3'
+          marginTop='36px'
         />
       );
     } else if (content.key === 'img') {
@@ -110,8 +111,8 @@ const Article = ({
         <H2Title
           key={`${content.key}${idx}`}
           text={content.content}
-          color="gray2"
-          className="h2__title__margin"
+          color='gray2'
+          className='h2__title__margin'
         />
       );
     } else if (content.key === 'ExampleComponent') {
@@ -179,13 +180,13 @@ const Article = ({
           ) : (
             <Go
               targetBlank={false}
-              href="/article/ui-ux-design/1"
+              href='/article/ui-ux-design/1'
               text={{
                 k: `👋\u00A0\u00A0첫 번째 콘텐츠 보러 가기`,
                 e: `👋\u00A0\u00A0Go to the first content`,
               }}
-              marginTopDesktop="144px"
-              marginTopMobile="120px"
+              marginTopDesktop='144px'
+              marginTopMobile='120px'
             />
           )}
 
