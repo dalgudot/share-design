@@ -15,10 +15,12 @@ const Go = ({
 }: {
   targetBlank: boolean;
   href: string;
-  text: {
-    k: string;
-    e: string;
-  };
+  text:
+    | {
+        k: string;
+        e: string;
+      }
+    | string;
   children?: JSX.Element;
   marginTopDesktop: string;
   marginTopMobile: string;
@@ -27,19 +29,19 @@ const Go = ({
     <>
       <MotionContainer
         variants={listVariants}
-        whileHover="whileHover"
-        whileTap="whileTap"
+        whileHover='whileHover'
+        whileTap='whileTap'
         marginTopDesktop={marginTopDesktop}
         marginTopMobile={marginTopMobile}
       >
         {targetBlank === true && (
-          <A href={href} target="_blank">
+          <A href={href} target='_blank'>
             <Title>
               <Left>
                 {children && children}
-                <PLarge text={text} color="gray2" weight={700} />
+                <PLarge text={text} color='gray2' weight={700} />
               </Left>
-              <PLarge text=">" color="gray2" weight={700} />
+              <PLarge text='>' color='gray2' weight={700} />
             </Title>
           </A>
         )}
@@ -49,9 +51,9 @@ const Go = ({
               <Title>
                 <Left>
                   {children && children}
-                  <PLarge text={text} color="gray2" weight={700} />
+                  <PLarge text={text} color='gray2' weight={700} />
                 </Left>
-                <PLarge text=">" color="gray2" weight={700} />
+                <PLarge text='>' color='gray2' weight={700} />
               </Title>
             </A>
           </Link>
