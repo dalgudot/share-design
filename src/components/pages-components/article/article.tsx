@@ -21,6 +21,7 @@ import ExampleProductDesign1 from './product-design/1/example-product-design-1';
 import ArticleToolBar from './tool-bar/article-tool-bar';
 import Go from './article-go';
 import NewBlogNotice from '../../common-components/notice/new-blog-notice';
+import YoonSeulNotice from '../../common-components/notice/yoonseul-notice';
 
 const Article = ({
   categoryTitle,
@@ -165,9 +166,13 @@ const Article = ({
             articleTitle={articleTitle}
           />
 
+          <YoonSeulNotice />
+
           <ArticleMessage />
 
           {contents}
+
+          <YoonSeulNotice />
 
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' ? (
@@ -190,7 +195,7 @@ const Article = ({
             />
           )}
 
-          {router.pathname !== '/introduction' && <ArticleDownloadAPP />}
+          {/* {router.pathname !== '/introduction' && <ArticleDownloadAPP />} */}
 
           {referencesData && (
             <>
