@@ -7,6 +7,7 @@ import PLarge from '../../../foundation/typography/p-large';
 import PMedium from '../../../foundation/typography/p-medium';
 import { mediaBreakPoint } from '../../../styles/common';
 
+// 2022.04.22 추가
 const YoonSeulNotice = () => {
   const router = useRouter();
   const locale = router.locale;
