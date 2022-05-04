@@ -20,7 +20,7 @@ const RecordIndex = () => {
   return (
     <>
       <Main>
-        <NewBlogNotice />
+        {/* <NewBlogNotice /> */}
         <ul>
           {datas.map((data) => (
             <List
