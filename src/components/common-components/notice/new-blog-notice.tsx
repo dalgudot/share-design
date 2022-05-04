@@ -42,9 +42,9 @@ const NewBlogNotice = () => {
 export default NewBlogNotice;
 
 const MotionA = styled(motion.a)`
-  max-width: ${({ theme }) => theme.maxWidth.DesktopList};
-  margin: 112px auto 0;
-  /* margin-top: 112px; */
+  max-width: ${({ theme }) => theme.maxWidth.Paragraph};
+  /* margin: 112px auto 0; */
+  margin-top: 48px;
   height: 108px;
   border: 1px solid ${({ theme }) => theme.gray1};
   padding: 0 32px;
@@ -83,9 +83,10 @@ const MotionA = styled(motion.a)`
 
   @media all and (max-width: ${mediaBreakPoint.first}) {
     height: 96px;
-    margin: 96px auto 0;
+    /* margin: 96px auto 0; */
+    margin-top: 36px;
     padding: 0 20px;
-    max-width: ${({ theme }) => theme.maxWidth.MobileList};
+    /* max-width: ${({ theme }) => theme.maxWidth.MobileList}; */
   }
 `;
 

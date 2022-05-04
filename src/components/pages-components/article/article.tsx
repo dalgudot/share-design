@@ -166,13 +166,15 @@ const Article = ({
             articleTitle={articleTitle}
           />
 
-          <YoonSeulNotice />
+          {/* <YoonSeulNotice /> */}
 
           <ArticleMessage />
 
           {contents}
 
-          <YoonSeulNotice />
+          {/* <YoonSeulNotice /> */}
+
+          <NewBlogNotice />
 
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' ? (
