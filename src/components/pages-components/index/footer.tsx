@@ -62,15 +62,15 @@ const Footer = () => {
         <Left>
           <Statistics>
             {loading === true ? (
-              <LoadingSkeletonRect width="61px" height="21px" />
+              <LoadingSkeletonRect width='61px' height='21px' />
             ) : (
-              <PSmall text={`TODAY ${today}`} color="gray4" weight={700} />
+              <PSmall text={`TODAY ${today}`} color='gray4' weight={700} />
             )}
             <Divider />
             {loading === true ? (
-              <LoadingSkeletonRect width="85px" height="21px" />
+              <LoadingSkeletonRect width='85px' height='21px' />
             ) : (
-              <PSmall text={`TOTAL ${total}`} color="gray4" weight={700} />
+              <PSmall text={`TOTAL ${total}`} color='gray4' weight={700} />
             )}
           </Statistics>
         </Left>
@@ -79,49 +79,49 @@ const Footer = () => {
           <Social>
             <motion.a
               variants={textButtonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
-              href="https://brunch.co.kr/@dalgudot"
-              target="_blank"
+              whileHover='whileHover'
+              whileTap='whileTap'
+              href='https://brunch.co.kr/@dalgudot'
+              target='_blank'
             >
-              <PSmall text="Brunch" color="gray0" weight={700} />
+              <PSmall text='Brunch' color='gray0' weight={700} />
             </motion.a>
             <Divider />
             <motion.a
               variants={textButtonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
-              href="https://www.facebook.com/dalgudot"
-              target="_blank"
+              whileHover='whileHover'
+              whileTap='whileTap'
+              href='https://www.instagram.com/dalgu_dot/'
+              target='_blank'
             >
-              <PSmall text="Facebook" color="gray0" weight={700} />
+              <PSmall text='Instagram' color='gray0' weight={700} />
             </motion.a>
             <Divider />
             <motion.a
               variants={textButtonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
-              href="https://www.linkedin.com/in/dalgudot"
-              target="_blank"
+              whileHover='whileHover'
+              whileTap='whileTap'
+              href='https://www.linkedin.com/in/dalgudot'
+              target='_blank'
             >
-              <PSmall text="LinkedIn" color="gray0" weight={700} />
+              <PSmall text='LinkedIn' color='gray0' weight={700} />
             </motion.a>
             <Divider />
             <motion.a
               variants={textButtonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
-              href="https://github.com/dalgudot"
-              target="_blank"
+              whileHover='whileHover'
+              whileTap='whileTap'
+              href='https://github.com/dalgudot'
+              target='_blank'
             >
-              <PSmall text="GitHub" color="gray0" weight={700} />
+              <PSmall text='GitHub' color='gray0' weight={700} />
             </motion.a>
           </Social>
-          <Link href="/contact">
+          <Link href='/contact'>
             <a>
               <PSmall
-                text="ⓒ KyungHwan Kim. All rights reserved"
-                color="gray4"
+                text='ⓒ KyungHwan Kim. All rights reserved'
+                color='gray4'
               />
             </a>
           </Link>
