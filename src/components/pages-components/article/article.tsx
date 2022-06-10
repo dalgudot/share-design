@@ -42,6 +42,7 @@ const Article = ({
   const height: number = useWindowHeight();
   const router = useRouter();
   const pathname: string = router.pathname;
+
   // 모든 Article 통계 함수는 여기서 실행
   useEffect(() => {
     visitsAndViewsDuringSession(router.pathname);
@@ -165,17 +166,11 @@ const Article = ({
             dateTime={dateTime}
             articleTitle={articleTitle}
           />
-
           {/* <YoonSeulNotice /> */}
-
           <ArticleMessage />
-
           {contents}
-
           {/* <YoonSeulNotice /> */}
-
           <NewBlogNotice />
-
           {/* introduction에는 댓글 넣지 않음 */}
           {router.pathname !== '/introduction' ? (
             <ArticleResponse
@@ -196,9 +191,7 @@ const Article = ({
               marginTopMobile='120px'
             />
           )}
-
           {/* {router.pathname !== '/introduction' && <ArticleDownloadAPP />} */}
-
           {referencesData && (
             <>
               <div ref={responseRef} />
