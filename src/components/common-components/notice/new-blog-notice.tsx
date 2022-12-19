@@ -22,7 +22,7 @@ const NewBlogNotice = () => {
         />
       )}
       <NoticeContents
-        url='https://apps.apple.com/app/today-to-do-good-habit/id1622514232'
+        url='https://apps.apple.com/app/reminder-to-do-list/id6444939279'
         text1={`✅ \u00A0`}
         text2={
           isKo

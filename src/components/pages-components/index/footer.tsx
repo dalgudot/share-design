@@ -87,7 +87,7 @@ const Footer = () => {
               <PSmall text='Brunch' color='gray0' weight={700} />
             </motion.a>
             <Divider />
-            <motion.a
+            {/* <motion.a
               variants={textButtonVariants}
               whileHover='whileHover'
               whileTap='whileTap'
@@ -96,7 +96,7 @@ const Footer = () => {
             >
               <PSmall text='Instagram' color='gray0' weight={700} />
             </motion.a>
-            <Divider />
+            <Divider /> */}
             <motion.a
               variants={textButtonVariants}
               whileHover='whileHover'
